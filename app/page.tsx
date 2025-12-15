@@ -1,7 +1,10 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import { Outfit } from 'next/font/google';
+
+const outfit = Outfit({ subsets: ['latin'] });
 
 export default function Home() {
   const scrollToContent = () => {
@@ -11,8 +14,51 @@ export default function Home() {
     }
   };
 
+  const programs = [
+    {
+      icon: '📊',
+      iconSrc: '/Key%20Programs/Math.svg',
+      title: 'Math',
+      subtitle: 'Build Logic · Spark Interest',
+      description: 'Fun, structured learning that builds math thinking and problem-solving from basics to competitions.',
+      features: ['Step-by-step curriculum', 'Mind map practice', 'Contest problem review', '1 on 1 support'],
+      color: '#7EC97E',
+      bgGradient: 'from-[rgba(126,201,126,0.1)] to-[rgba(107,184,107,0.1)]'
+    },
+    {
+      icon: '♟️',
+      iconSrc: '/Key%20Programs/Chess.svg',
+      title: 'Chess',
+      subtitle: 'Build Strategy · Perspective',
+      description: 'Structured coaching from beginner to advanced levels develops strategic thinking and resilience.',
+      features: ['Beginner to rank courses', 'Practice matches', 'Master game analysis', 'Online & offline competition'],
+      color: '#F4A460',
+      bgGradient: 'from-[rgba(244,164,96,0.1)] to-[rgba(232,148,81,0.1)]'
+    },
+    {
+      icon: '🌍',
+      iconSrc: '/Key%20Programs/Global_Education.svg',
+      title: 'Global Education',
+      subtitle: 'Plan Ahead · Go Global',
+      description: 'One-step support for applications, language skills, and profile enhancement.',
+      features: ['Personalized plans', 'Elite school guidance', 'Language improvement', 'Profile building'],
+      color: '#9B8FD8',
+      bgGradient: 'from-[rgba(155,143,216,0.1)] to-[rgba(138,126,199,0.1)]'
+    },
+    {
+      icon: '💻',
+      iconSrc: '/Key%20Programs/Programming.svg',
+      title: 'Programming',
+      subtitle: 'Learn to code · Develop the brain',
+      description: "Don't just let children play games; teach them how to create games",
+      features: ['Extensive programming experience', 'Learning Path Planning', 'Creative Projects', 'competition awards'],
+      color: '#4ECDC4',
+      bgGradient: 'from-[rgba(78,205,196,0.1)] to-[rgba(69,183,209,0.1)]'
+    }
+  ];
+
   return (
-    <div className="min-h-screen bg-[#FBF9F4]">
+    <div className={`min-h-screen bg-[#FBF9F4] ${outfit.className}`}>
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
         <div className="max-w-[1920px] mx-auto px-14">
@@ -20,28 +66,22 @@ export default function Home() {
             {/* Logo */}
             <div className="flex items-center gap-5">
               <div className="w-20 h-20 bg-gradient-to-b from-[#A8D5FF] to-[#6BB6FF] rounded-[20px] flex items-center justify-center">
-                <span className="text-[40px]">🐧</span>
+                <span className="text-[40px]">🧠</span>
               </div>
-              <span className="text-[40px] font-bold text-black leading-[79.7px]">DeepBrain Academy</span>
+              <div className="flex flex-col">
+                <span className="text-[20px] font-medium text-[#274777] tracking-[25%]">DEEP BRAIN ACADEMY</span>
+                <span className="text-[13px] font-medium text-[rgba(19,28,72,0.5)] tracking-[38%]">DEEPER-SHARPER-BRIGHTER</span>
+              </div>
             </div>
 
-            {/* Nav Links */}
-            <div className="flex items-center gap-[53px]">
-              <a href="#" className="text-[26.5px] text-[#2C3E50] hover:text-blue-600 transition">首页</a>
-              <a href="#" className="text-[26.5px] text-[#2C3E50] hover:text-blue-600 transition">课程介绍</a>
-              <a href="#" className="text-[26.5px] text-[#2C3E50] hover:text-blue-600 transition">留学服务</a>
-              <a href="#" className="text-[26.5px] text-[#2C3E50] hover:text-blue-600 transition">成功案例</a>
-              <a href="#" className="text-[26.5px] text-[#2C3E50] hover:text-blue-600 transition">关于我们</a>
-            </div>
-
-            {/* Buttons */}
-            <div className="flex items-center gap-5">
-              <button className="px-[30px] h-[75.67px] text-[26.5px] text-[#6BB6FF] rounded-[33px] hover:bg-gray-50 transition">
-                登录
-              </button>
-              <button className="px-[30px] h-[75px] bg-gradient-to-b from-[#7EC97E] to-[#6BB87B] text-white text-[26.5px] rounded-[33px] hover:shadow-lg transition">
-                免费试听
-              </button>
+            {/* Nav Links - Figma order */}
+            <div className="flex items-center gap-[48px] text-[26px] text-[#333]">
+              <a href="#" className="font-bold hover:text-[#6BB6FF] transition">Home</a>
+              <a href="#" className="hover:text-[#6BB6FF] transition">Global Education</a>
+              <a href="#" className="hover:text-[#6BB6FF] transition">Math</a>
+              <a href="#" className="hover:text-[#6BB6FF] transition">Chess</a>
+              <a href="#" className="hover:text-[#6BB6FF] transition">Programming</a>
+              <a href="#" className="hover:text-[#6BB6FF] transition">About Us</a>
             </div>
           </div>
         </div>
@@ -50,59 +90,42 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative h-screen pt-[133px] bg-gradient-to-b from-[#E8F4FC] to-[#FBF9F4] overflow-hidden flex flex-col">
         {/* Background Decorations */}
-        <div className="absolute top-[133px] right-[67px] w-[133px] h-[133px] bg-[#FFD4A3] rounded-full opacity-20 blur-[133px]"></div>
-        <div className="absolute bottom-[100px] left-[66px] w-[212px] h-[212px] bg-[#C4B5FD] rounded-full opacity-20 blur-[133px]"></div>
-
-        <div className="max-w-[1920px] mx-auto px-14 py-[80px] flex-1 flex items-center">
-          <div className="grid grid-cols-2 gap-[133px] w-full">
+        <div className="absolute top-[200px] right-[100px] w-[133px] h-[133px] bg-[#FFD4A3] rounded-full opacity-20 blur-[133px]"></div>
+        
+        <div className="max-w-[1920px] mx-auto px-14 py-[60px] flex-1 flex items-center">
+          <div className="grid grid-cols-2 gap-[100px] w-full items-center">
             {/* Left Content */}
             <div>
-              <h1 className="text-[66.4px] font-bold text-[#2C3E50] leading-[1.2] mb-[27px]">
-                启迪智慧 • 成就未来
+              <h1 className="text-[66px] font-bold text-[#2C3E50] leading-[1.2] mb-[30px]">
+                Inspiring Minds
               </h1>
-              <h2 className="text-[53px] font-bold text-[#2C3E50] leading-[1.3] mb-[27px]">
-                奥数 • 象棋 • 留学规划
+              <h2 className="text-[36px] font-bold text-[#2C3E50] leading-[1.6] mb-[30px]">
+                Math Olympiad • Chess • Global Education
               </h2>
-              <div className="flex items-center gap-[13px] mb-[27px]">
-                <span className="text-[26.5px] text-[#7EC97E]">趣味学习.</span>
-                <span className="text-[26.5px] text-[#F4A460]">专业指导.</span>
-                <span className="text-[26.5px] text-[#9B8FD8]">全面成长.</span>
+              <div className="flex items-center gap-[20px] mb-[30px]">
+                <span className="text-[24px] text-[#7EC97E]">Fun Learning.</span>
+                <span className="text-[24px] text-[#F4A460]">Expert Guidance.</span>
+                <span className="text-[24px] text-[#9B8FD8]">Holistic Growth.</span>
               </div>
-              <p className="text-[26.5px] text-[#7C8B99] leading-[1.6] mb-[40px] max-w-[743px]">
-                结合国际教育理念与传统智力游戏，为6-15岁儿童提供奥数思维训练、中国象棋启蒙，以及专业的海外留学规划服务。让孩子在快乐中学习，在挑战中成长。
+              <p className="text-[24px] text-[#7C8B99] leading-[1.6] mb-[40px] max-w-[741px]">
+                We offer math thinking, chess, and global education support for ages 6-18, helping children learn with joy and grow through challenges.
               </p>
               
               {/* Buttons */}
-              <div className="flex gap-[27px] mb-[40px]">
-                <button className="flex items-center justify-center gap-[13px] px-[53px] h-[95.6px] bg-gradient-to-b from-[#7EC97E] to-[#6BB87B] text-white text-[26.5px] rounded-[40px] hover:shadow-xl transition">
-                  立即开始免费试听
+              <div className="flex gap-[27px]">
+                <button className="flex items-center justify-center gap-[13px] px-[53px] h-[95px] bg-gradient-to-b from-[#7EC97E] to-[#6BB87B] text-white text-[28px] rounded-[40px] hover:shadow-xl transition">
+                  Free Trial
                   <svg className="w-[33px] h-[33px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.77} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
                 </button>
-                <button className="flex items-center justify-center gap-[13px] px-[53px] h-[95.6px] bg-white text-[#6BB6FF] text-[26.5px] rounded-[40px] hover:shadow-lg transition">
+                <button className="flex items-center justify-center gap-[13px] px-[53px] h-[95px] bg-white text-[#6BB6FF] text-[28px] rounded-[40px] hover:shadow-lg transition">
                   <svg className="w-[33px] h-[33px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.77} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.77} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                  观看介绍视频
+                  Watch Video
                 </button>
-              </div>
-
-              {/* Tags */}
-              <div className="flex items-center gap-[27px]">
-                <div className="px-[27px] h-[60px] bg-white rounded-[27px] flex items-center justify-center text-[23px] text-[#7C8B99] shadow-sm">
-                  小班教学
-                </div>
-                <div className="px-[27px] h-[60px] bg-white rounded-[27px] flex items-center justify-center text-[23px] text-[#7C8B99] shadow-sm">
-                  双师课堂
-                </div>
-                <div className="px-[27px] h-[60px] bg-white rounded-[27px] flex items-center justify-center text-[23px] text-[#7C8B99] shadow-sm">
-                  个性化辅导
-                </div>
-                <div className="px-[27px] h-[60px] bg-white rounded-[27px] flex items-center justify-center text-[23px] text-[#7C8B99] shadow-sm">
-                  阶梯式进阶
-                </div>
               </div>
             </div>
 
@@ -112,7 +135,7 @@ export default function Home() {
                 <div className="absolute inset-[13px] rounded-[33px] overflow-hidden">
                   <Image
                     src="/Image (儿童学习场景).svg"
-                    alt="儿童学习场景"
+                    alt="Learning Scene"
                     fill
                     priority
                     quality={75}
@@ -121,23 +144,9 @@ export default function Home() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 </div>
               </div>
-
-              {/* Floating Tags */}
-              <div className="absolute bottom-[89px] left-[217px] flex gap-[20px]">
-                <div className="px-[50px] h-[129px] bg-[#F5FFF5] border-t-[4px] border-[#7EC97E] rounded-[33px] shadow-[0px_7px_10px_-7px_rgba(0,0,0,0.1),0px_17px_25px_-5px_rgba(0,0,0,0.1)] flex items-center justify-center text-[26.5px] text-[#144514]">
-                  奥数
-                </div>
-                <div className="px-[50px] h-[129px] bg-[#FFF9F4] border-t-[4px] border-[#F4A460] rounded-[33px] shadow-[0px_7px_10px_-7px_rgba(0,0,0,0.1),0px_17px_25px_-5px_rgba(0,0,0,0.1)] flex items-center justify-center text-[26.5px] text-[#643A16]">
-                  象棋
-                </div>
-                <div className="px-[50px] h-[129px] bg-[#EEEBFF] border-t-[4px] border-[#9B8FD8] rounded-[33px] shadow-[0px_7px_10px_-7px_rgba(0,0,0,0.1),0px_17px_25px_-5px_rgba(0,0,0,0.1)] flex items-center justify-center text-[26.5px] text-[#170E45]">
-                  留学
-                </div>
-              </div>
-
-              {/* Star Emoji */}
-              <div className="absolute top-[-37px] right-[55px] text-[60px]">⭐</div>
-              <div className="absolute bottom-[293px] left-[-40px] text-[50px] opacity-[0.86]">✨</div>
+              {/* Star decorations */}
+              <div className="absolute -top-10 right-0 text-[60px]">⭐</div>
+              <div className="absolute bottom-20 -left-10 text-[50px] opacity-80">✨</div>
             </div>
           </div>
         </div>
@@ -147,7 +156,7 @@ export default function Home() {
           <button 
             onClick={scrollToContent}
             className="w-[60px] h-[60px] bg-[#6BB6FF] hover:bg-[#4A9FEF] rounded-full shadow-lg flex items-center justify-center transition-all hover:scale-110"
-            aria-label="向下滚动"
+            aria-label="Scroll down"
           >
             <svg className="w-[30px] h-[30px] text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M19 9l-7 7-7-7" />
@@ -159,284 +168,221 @@ export default function Home() {
       {/* Trust Badges */}
       <section id="trust-badges" className="py-[106px] bg-white scroll-mt-[133px]">
         <div className="max-w-[1920px] mx-auto px-14">
-          <div className="grid grid-cols-4 gap-[53px]">
+          <div className="grid grid-cols-4 gap-[40px]">
             {[
-              { 
-                icon: '👥', 
-                number: '10,000+', 
-                label: '在读学员', 
-                bgColor: 'bg-[rgba(126,201,126,0.13)]',
-                numberColor: 'text-[#7EC97E]'
-              },
-              { 
-                icon: '😊', 
-                number: '98%', 
-                label: '家长满意度', 
-                bgColor: 'bg-[rgba(244,164,96,0.13)]',
-                numberColor: 'text-[#F4A460]'
-              },
-              { 
-                icon: '🏆', 
-                number: '200+', 
-                label: '获奖学员', 
-                bgColor: 'bg-[rgba(155,143,216,0.13)]',
-                numberColor: 'text-[#9B8FD8]'
-              },
-              { 
-                icon: '📚', 
-                number: '15年', 
-                label: '教学经验', 
-                bgColor: 'bg-[rgba(107,182,255,0.13)]',
-                numberColor: 'text-[#6BB6FF]'
-              }
+              { emoji: '👨‍🎓', title: '2,000+', desc: 'Past Students', color: '#7EC97E' },
+              { emoji: '😊', title: '100%', desc: 'Parent Satisfaction', color: '#F4A460' },
+              { emoji: '🏆', title: '200+', desc: 'Award winners', color: '#9B8FD8' },
+              { emoji: '📚', title: '20 years', desc: 'Teaching Experience', color: '#6BB6FF' }
             ].map((item, idx) => (
-              <div key={idx} className={`${item.bgColor} rounded-[33px] p-[40px] flex flex-col items-center hover:scale-105 transition`}>
-                <div className={`w-[106px] h-[106px] ${item.bgColor} rounded-[27px] flex items-center justify-center text-[53px] mb-[27px]`}>
-                  {item.icon}
+              <div key={idx} className="bg-white rounded-[33px] p-[40px] border border-gray-100 hover:shadow-xl transition">
+                <div className="w-[107px] h-[107px] bg-gradient-to-br from-[rgba(107,182,255,0.2)] to-[rgba(74,159,239,0.2)] rounded-[27px] flex items-center justify-center text-[53px] mb-[27px]">
+                  {item.emoji}
                 </div>
-                <div className={`text-[40px] font-semibold ${item.numberColor} mb-[13px]`}>
-                  {item.number}
-                </div>
-                <div className="text-[26.5px] text-[#7C8B99]">
-                  {item.label}
-                </div>
+                <h3 className="text-[40px] font-semibold mb-[13px]" style={{ color: item.color }}>
+                  {item.title}
+                </h3>
+                <p className="text-[26.5px] text-[#7C8B99]">{item.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Learning Modules */}
-      <section className="py-[106px] bg-[#FBF9F4]">
+      {/* Key Programs with Auto-scroll Animation */}
+      <section className="py-[133px] bg-white">
         <div className="max-w-[1920px] mx-auto px-14">
-          {/* Header */}
-          <div className="mb-[106px]">
-            <div className="inline-flex items-center gap-[27px] px-[27px] py-[13px] bg-white rounded-[33px] shadow-sm mb-[27px]">
+          <div className="text-center mb-[53px]">
+            <div className="inline-flex items-center gap-[27px] px-[27px] py-[13px] bg-white rounded-[33px] mb-[27px] shadow-sm">
               <span className="text-[40px]">🎯</span>
-              <span className="text-[26.5px] text-[#6BB6FF]">核心课程</span>
+              <span className="text-[26.5px] text-[#6BB6FF]">Core Courses</span>
             </div>
             <h2 className="text-[53px] font-bold text-[#2C3E50] mb-[27px] leading-[1.3]">
-              三大学习模块 · 全面发展
+              Key Programs
             </h2>
-            <p className="text-[26.5px] text-[#7C8B99] max-w-[1115px]">
-              专注儿童智力开发与国际教育，为孩子的未来奠定坚实基础
+            <p className="text-[26.5px] text-[#7C8B99]">
+              Focusing on children's intellectual development and international education, laying a solid foundation for children's future.
             </p>
           </div>
 
-          {/* Modules Grid */}
-          <div className="grid grid-cols-3 gap-[40px] mb-[67px]">
-            {[
-              {
-                number: '1',
-                emoji: '📊',
-                title: '奥数思维训练',
-                subtitle: '培养逻辑思维 · 激发数学兴趣',
-                desc: '采用趣味化教学方式，从基础到竞赛，循序渐进培养孩子的数学思维能力和问题解决能力。',
-                features: ['阶梯式课程体系', '思维导图训练', '竞赛真题解析', '1对1答疑辅导'],
-                gradient: 'from-[rgba(126,201,126,0.1)] to-[rgba(107,184,107,0.1)]',
-                accentColor: '#7EC97E',
-                buttonColor: 'text-[#7EC97E]'
-              },
-              {
-                number: '2',
-                emoji: '♟️',
-                title: '中国象棋课程',
-                subtitle: '传承智慧 · 锻炼全局观',
-                desc: '从零基础入门到提高段位，专业教练团队指导，让孩子在对弈中学习策略思维和抗挫折能力。',
-                features: ['启蒙到段位课程', '实战对弈训练', '大师棋谱讲解', '线上线下比赛'],
-                gradient: 'from-[rgba(244,164,96,0.1)] to-[rgba(232,148,81,0.1)]',
-                accentColor: '#F4A460',
-                buttonColor: 'text-[#F4A460]'
-              },
-              {
-                number: '3',
-                emoji: '✈️',
-                title: '留学规划服务',
-                subtitle: '提前规划 · 成就国际视野',
-                desc: '为有留学意向的家庭提供一站式规划服务，从学术准备、语言培训到申请指导全方位支持。',
-                features: ['个性化规划方案', '名校申请指导', '语言能力提升', '背景提升活动'],
-                gradient: 'from-[rgba(155,143,216,0.1)] to-[rgba(138,126,199,0.1)]',
-                accentColor: '#9B8FD8',
-                buttonColor: 'text-[#9B8FD8]'
-              }
-            ].map((module, idx) => (
-              <div key={idx} className={`relative bg-gradient-to-br ${module.gradient} rounded-[40px] p-[53px] hover:shadow-xl transition`}>
-                <div className="relative mb-[40px]">
-                  <div className="absolute -top-[40px] -left-[40px] w-[212px] h-[212px] rounded-full opacity-10 blur-[80px]" style={{ backgroundColor: module.accentColor }}></div>
-                  <div className="relative w-[66px] h-[66px] bg-white bg-opacity-40 rounded-[20px] flex items-center justify-center text-[33px] font-bold mb-[27px]" style={{ color: module.accentColor }}>
-                    {module.number}
-                  </div>
-                  <div className="w-[106px] h-[106px] rounded-[27px] flex items-center justify-center text-[53px]" style={{ backgroundColor: `${module.accentColor}33` }}>
-                    {module.emoji}
-                  </div>
+          {/* Programs Grid */}
+          <div className="grid grid-cols-4 gap-[48px]">
+            {programs.map((program, idx) => (
+              <div key={idx} className={`relative bg-gradient-to-br ${program.bgGradient} rounded-[36px] p-[48px] shadow-lg hover:shadow-xl transition flex flex-col h-full`}>
+                <div className="absolute top-8 right-8 w-[60px] h-[60px] bg-white/40 rounded-[18px] flex items-center justify-center text-[30px] font-bold" style={{ color: program.color }}>
+                  {idx + 1}
                 </div>
-                
-                <h3 className="text-[40px] font-semibold text-[#2C3E50] mb-[13px]">
-                  {module.title}
-                </h3>
-                <p className="text-[26.5px] mb-[27px]" style={{ color: module.accentColor }}>
-                  {module.subtitle}
-                </p>
-                <p className="text-[26.5px] text-[#7C8B99] leading-[1.6] mb-[27px]">
-                  {module.desc}
-                </p>
-                
-                <ul className="space-y-[13px] mb-[40px]">
-                  {module.features.map((feature, i) => (
-                    <li key={i} className="flex items-center gap-[13px]">
-                      <div className="w-[10px] h-[10px] rounded-full" style={{ backgroundColor: module.accentColor }}></div>
-                      <span className="text-[23px] text-[#2C3E50]">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                
-                <button className={`w-full h-[82px] bg-white rounded-[27px] font-medium ${module.buttonColor} hover:shadow-md transition flex items-center justify-center gap-[13px] text-[26.5px]`}>
-                  了解详情
-                  <svg className="w-[30px] h-[30px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </button>
-              </div>
-            ))}
-          </div>
-
-          {/* CTA Button */}
-          <div className="text-center">
-            <button className="px-[67px] h-[96px] bg-gradient-to-b from-[#6BB6FF] to-[#4A9FEF] text-white text-[26.5px] rounded-[40px] hover:shadow-xl transition">
-              预约免费试听课程
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* Advantages */}
-      <section className="py-[133px] bg-white">
-        <div className="max-w-[1920px] mx-auto px-14 grid grid-cols-[854px_1fr] gap-[53px]">
-          {/* Left Content */}
-          <div>
-            <div className="mb-[53px]">
-              <div className="inline-flex items-center gap-[27px] px-[27px] py-[13px] bg-[#E8F4FC] rounded-[33px] mb-[27px]">
-                <span className="text-[40px]">💎</span>
-                <span className="text-[26.5px] text-[#6BB6FF]">我们的优势</span>
-              </div>
-              <h2 className="text-[53px] font-bold text-[#2C3E50] mb-[27px] leading-[1.3]">
-                为什么选择DeepBrain Academy
-              </h2>
-              <p className="text-[26.5px] text-[#7C8B99]">
-                我们深知每个孩子都是独一无二的，因此我们致力于提供最优质、最个性化的教育服务
-              </p>
-            </div>
-
-            <div className="space-y-[40px]">
-              {[
-                { emoji: '🎮', title: '趣味化教学', desc: '游戏化学习体验，让孩子在快乐中掌握知识，保持持久学习热情', stat: '95%', label: '课堂参与度' },
-                { emoji: '👥', title: '个性化关怀', desc: '小班授课，关注每个孩子的成长节奏，提供针对性指导方案', stat: '1:6', label: '师生比例' },
-                { emoji: '👨‍🏫', title: '专业师资团队', desc: '来自清华、北师大等名校的资深教师，具备丰富的国际教育经验', stat: '10年+', label: '平均教龄' },
-                { emoji: '📈', title: '成果可见', desc: '科学的评估体系，定期反馈学习进度，让成长看得见', stat: '每月', label: '学习报告' }
-              ].map((item, idx) => (
-                <div key={idx} className="bg-[#FBF9F4] rounded-[33px] p-[40px] flex items-start gap-[27px] hover:shadow-xl transition">
-                  <div className="w-[93px] h-[93px] bg-gradient-to-br from-[rgba(107,182,255,0.2)] to-[rgba(74,159,239,0.2)] rounded-[23px] flex items-center justify-center text-[46px] flex-shrink-0">
-                    {item.emoji}
+                  
+                  <div className={`w-[96px] h-[96px] rounded-[24px] flex items-center justify-center text-[48px] mb-[27px]`} style={{ backgroundColor: `${program.color}15` }}>
+                    <Image
+                      src={program.iconSrc}
+                      alt={`${program.title} icon`}
+                      width={60}
+                      height={60}
+                    />
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-[30px] font-semibold text-[#2C3E50] mb-[13px]">{item.title}</h3>
-                    <p className="text-[26.5px] text-[#7C8B99] leading-[1.6] mb-[13px]">{item.desc}</p>
-                    <div className="flex items-baseline gap-[13px]">
-                      <span className="text-[26.5px] font-semibold text-[#6BB6FF]">{item.stat}</span>
-                      <span className="text-[20px] text-[#7C8B99]">{item.label}</span>
+                  
+                  {/* Top content block with fixed min height to align bullet start (slightly tighter) */}
+                  <div className="flex flex-col gap-[12px] min-h-[300px] mb-[18px]">
+                    <h3 className="text-[36px] font-semibold text-[#2C3E50]">
+                      {program.title}
+                    </h3>
+                    {/* Keep subtitle + description same height to align bullet start */}
+                    <div className="min-h-[170px] flex flex-col gap-[12px]">
+                      <p className="text-[22px]" style={{ color: program.color }}>
+                        {program.subtitle}
+                      </p>
+                      <p className="text-[24px] text-[#7C8B99] leading-[1.6]">
+                        {program.description}
+                      </p>
                     </div>
                   </div>
+                  
+                  <div className="space-y-[12px] mb-[32px]">
+                    {program.features.map((feature, fIdx) => (
+                      <div key={fIdx} className="flex items-start gap-[12px]">
+                        <div className="w-[9px] h-[9px] mt-[11px] rounded-full" style={{ backgroundColor: program.color }}></div>
+                        <span className="text-[21px] text-[#2C3E50] leading-[1.5]">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  <button className="mt-auto w-full h-[74px] bg-white rounded-[24px] flex items-center justify-center gap-[12px] hover:shadow-lg transition">
+                    <span className="text-[24px]" style={{ color: program.color }}>Learn More</span>
+                    <svg className="w-[27px] h-[27px]" style={{ color: program.color }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.25} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                  </button>
                 </div>
               ))}
             </div>
-          </div>
-
-          {/* Right Image Box */}
-          <div className="relative">
-            <div className="relative w-[854px] h-[431px] rounded-[40px] overflow-hidden shadow-[0px_41px_83px_-20px_rgba(0,0,0,0.25)]">
-              <Image
-                src="/Image (学习场景).svg"
-                alt="学习场景"
-                fill
-                loading="lazy"
-                className="object-cover"
-              />
-            </div>
-            <div className="absolute left-[655px] top-[237px] w-[238px] h-[234px] bg-gradient-to-b from-[#7EC97E] to-[#6BB87B] rounded-[33px] shadow-[0px_13px_17px_-10px_rgba(0,0,0,0.1),0px_33px_41px_-8px_rgba(0,0,0,0.1)] p-[40px] text-white">
-              <p className="text-[26.5px] opacity-90 mb-[7px]">累计服务</p>
-              <p className="text-[40px] font-semibold mb-[7px]">10,000+</p>
-              <p className="text-[26.5px] opacity-90">家庭信赖之选</p>
-            </div>
-            <div className="absolute left-[-27px] top-[-27px] w-[159px] h-[159px] bg-[#FFD4A3] rounded-full opacity-20 blur-[133px]"></div>
-            <div className="absolute left-[285px] bottom-[80px] w-[133px] h-[133px] bg-[#9B8FD8] rounded-full opacity-20 blur-[133px]"></div>
-          </div>
         </div>
       </section>
 
-      {/* Rewards Data */}
-      <section className="py-[133px] bg-gradient-to-b from-white to-[#E8F4FC]">
+      {/* Why DeepBrain Academy */}
+      <section className="py-[133px] bg-white">
         <div className="max-w-[1920px] mx-auto px-14">
-          <div className="text-center mb-[53px]">
-            <div className="inline-flex items-center gap-[27px] px-[27px] py-[13px] bg-white rounded-[33px] shadow-sm mb-[27px]">
-              <span className="text-[40px]">🏆</span>
-              <span className="text-[26.5px] text-[#6BB6FF]">学员成就</span>
+          {/* Top Section - Title左 + Image右 */}
+          <div className="flex gap-[80px] items-start mb-[80px]">
+            {/* Left - Title */}
+            <div className="flex-1">
+              <div className="inline-flex items-center gap-[27px] px-[27px] py-[13px] bg-[#E8F4FC] rounded-[33px] mb-[27px]">
+                <span className="text-[40px]">💎</span>
+                <span className="text-[26.5px] text-[#6BB6FF]">Pros</span>
+              </div>
+              <h2 className="text-[53px] font-bold text-[#2C3E50] mb-[27px] leading-[1.3]">
+                Why DeepBrain Academy?
+              </h2>
+              <p className="text-[26.5px] text-[#7C8B99] leading-[1.6]">
+                herefore we are committed to providing the highest quality and most personalized educational services.
+              </p>
             </div>
-            <h2 className="text-[53px] font-bold text-[#2C3E50] mb-[27px] leading-[1.3]">
-              荣誉墙 · 见证成长
-            </h2>
-            <p className="text-[26.5px] text-[#7C8B99]">
-              每一个奖项背后，都是孩子们努力的结晶
-            </p>
+
+            {/* Right - Image with Overlay */}
+            <div className="w-[850px] flex-shrink-0 relative">
+              {/* Image Container - 按Figma比例 850.97 x 429.45 */}
+              <div className="relative w-full h-[429px] rounded-[40px] overflow-hidden shadow-[0px_41px_83px_-20px_rgba(0,0,0,0.25)]">
+                <Image
+                  src="/Image (学习场景).svg"
+                  alt="Learning Scene"
+                  fill
+                  loading="lazy"
+                  className="object-cover"
+                />
+              </div>
+              
+              {/* Stats Overlay - 紧凑版，右下角 */}
+              <div className="absolute bottom-[-40px] right-[-20px] bg-gradient-to-b from-[#7EC97E] to-[#6BB87B] rounded-[27px] shadow-xl p-[30px] w-[200px] z-10">
+                <p className="text-[18px] text-white/90 mb-[6px] leading-[1.3]">We Served</p>
+                <h3 className="text-[36px] font-semibold text-white mb-[6px] leading-[1.1]">10,000+</h3>
+                <p className="text-[16px] text-white/90 leading-[1.3]">Trusted choice for families</p>
+              </div>
+
+              {/* Decorations */}
+              <div className="absolute -left-[30px] -top-[60px] w-[159px] h-[159px] bg-[#FFD4A3] rounded-full opacity-20 blur-[133px]"></div>
+            </div>
           </div>
 
-          <div className="grid grid-cols-4 gap-[27px] mb-[53px]">
+          {/* Bottom Section - Four Cards横跨全宽 */}
+          <div className="grid grid-cols-2 gap-[40px]">
             {[
-              { emoji: '🥇', number: '156', label: '国际奥数获奖', color: '#FFD700' },
-              { emoji: '♟️', number: '89', label: '象棋段位认证', color: '#F4A460' },
-              { emoji: '🎓', number: '234', label: '海外名校录取', color: '#9B8FD8' },
-              { emoji: '⭐', number: '1,000+', label: '学习里程碑达成', color: '#7EC97E' }
-            ].map((stat, idx) => (
-              <div key={idx} className="bg-white border-t-[7px] rounded-[40px] p-[40px] text-center hover:shadow-lg transition" style={{ borderColor: stat.color }}>
-                <div className="w-[133px] h-[133px] rounded-[33px] mx-auto flex items-center justify-center text-[66px] mb-[27px]" style={{ backgroundColor: `${stat.color}1A` }}>
-                  {stat.emoji}
+              { icon: '🎮', title: 'Engaging Learning Way', desc: 'Gamified learning allow children to acquire knowledge in a fun way and maintain their enthusiasm in the long run.', stat: '95%', label: 'Class Participation' },
+              { icon: '👨‍🏫', title: 'Professional Coaching Team', desc: 'Experienced Tutors from top universities with strong international teaching backgrounds.', stat: '10ys+', label: 'Average teaching experience' },
+              { icon: '👥', title: 'Personalized Support', desc: 'Small class let us to support each child\'s unique pace and provide tailored guidance.', stat: '1:6', label: 'Student-Teacher Ratio' },
+              { icon: '📈', title: 'Visible Achievement', desc: 'A structure evaluation system with regular progress feedback ensures visible growth.', stat: 'Weekly', label: 'Study Report' }
+            ].map((item, idx) => (
+              <div key={idx} className="bg-[#FBF9F4] rounded-[33px] p-[40px] hover:shadow-lg transition flex items-start gap-[26px]">
+                {/* Icon on the left */}
+                <div className="w-[80px] h-[80px] bg-gradient-to-br from-[rgba(107,182,255,0.2)] to-[rgba(74,159,239,0.2)] rounded-[23px] flex items-center justify-center text-[40px] flex-shrink-0">
+                  {item.icon}
                 </div>
-                <div className="text-[40px] font-semibold mb-[13px]" style={{ color: stat.color }}>
-                  {stat.number}
-                </div>
-                <div className="text-[26.5px] text-[#7C8B99]">
-                  {stat.label}
+                
+                {/* Content on the right */}
+                <div className="flex-1 flex flex-col min-w-0">
+                  <h4 className="text-[28px] font-semibold text-[#2C3E50] mb-[13px] leading-[1.3]">
+                    {item.title}
+                  </h4>
+                  <p className="text-[24px] text-[#7C8B99] leading-[1.5] mb-[16px]">
+                    {item.desc}
+                  </p>
+                  <div className="flex items-center gap-[13px] mt-auto">
+                    <span className="text-[26px] font-semibold text-[#6BB6FF]">{item.stat}</span>
+                    <span className="text-[20px] text-[#7C8B99]">{item.label}</span>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
+        </div>
+      </section>
 
-          {/* Latest Awards */}
-          <div className="bg-white rounded-[40px] shadow-lg p-[53px] mb-[40px]">
-            <div className="flex items-center justify-between mb-[53px]">
-              <h3 className="text-[40px] font-semibold text-[#2C3E50]">最新获奖</h3>
-              <button className="text-[26.5px] text-[#6BB6FF] hover:text-[#4A9FEF] transition">
-                查看全部 →
-              </button>
+      {/* Honor Wall */}
+      <section className="py-[133px] bg-gradient-to-b from-white to-[#E8F4FC]">
+        <div className="max-w-[1920px] mx-auto px-14">
+          <div className="text-center mb-[53px]">
+            <div className="inline-flex items-center gap-[27px] px-[27px] py-[13px] bg-white rounded-[33px] mb-[27px] shadow-sm">
+              <span className="text-[40px]">🏆</span>
+              <span className="text-[26.5px] text-[#6BB6FF]">Achievements</span>
             </div>
-            <div className="grid grid-cols-3 gap-[27px]">
+            <h2 className="text-[53px] font-bold text-[#2C3E50] mb-[27px] leading-[1.3]">
+              Honor Wall
+            </h2>
+            <p className="text-[26.5px] text-[#7C8B99]">
+              Behind every award lies the culmination of the student's hard work.
+            </p>
+          </div>
+
+          {/* Student Achievements Grid */}
+          <div className="bg-white rounded-[40px] shadow-lg p-[53px]">
+            <div className="flex items-center justify-between mb-[53px]">
+              <h3 className="text-[40px] font-semibold text-[#2C3E50]">Where Our Students Go</h3>
+              <button className="text-[26.5px] text-[#6BB6FF] hover:underline">See All →</button>
+            </div>
+            
+            <div className="grid grid-cols-2 gap-[27px]">
               {[
-                { emoji: '👦', name: '小明', achievement: '2024年华杯赛全国一等奖', date: '2024.11' },
-                { emoji: '👧', name: '小红', achievement: '获得象棋业余5段证书', date: '2024.10' },
-                { emoji: '👦', name: '小李', achievement: '成功录取美国顶尖中学', date: '2024.09' }
+                { emoji: '👦', school: 'Harvard University · Early Action', name: 'Ethan L.', level: 'Undergraduate', year: 'Class of 2029' },
+                { emoji: '👧', school: 'Duke University', name: 'Sophia W.', level: 'Undergraduate', year: 'Class of 2029' },
+                { emoji: '👦', school: 'Yale University', name: 'Benjamin C.', level: 'Undergraduate', year: 'Class of 2029' },
+                { emoji: '👦', school: 'Columbia University · Rabi Scholarship', name: 'Benjamin C.', level: 'Undergraduate', year: 'Class of 2029' },
+                { emoji: '👦', school: 'Brown University', name: 'Benjamin C.', level: 'Undergraduate', year: 'Class of 2029' },
+                { emoji: '👧', school: 'Dartmouth College', name: 'Charlotte Z.', level: 'Undergraduate', year: 'Class of 2029' },
+                { emoji: '👧', school: 'Cornell University · Presidential Scholarship', name: 'Charlotte Z.', level: 'Undergraduate', year: 'Class of 2029' },
+                { emoji: '👧', school: 'Williams College', name: 'Evelyn Z.', level: 'Undergraduate', year: 'Class of 2029' }
               ].map((student, idx) => (
-                <div key={idx} className="bg-[#FBF9F4] rounded-[27px] p-[40px]">
-                  <div className="flex items-center gap-[27px] mb-[27px]">
-                    <div className="w-[93px] h-[93px] bg-gradient-to-br from-[rgba(255,215,0,0.2)] to-[rgba(255,165,0,0.2)] rounded-[23px] flex items-center justify-center text-[40px]">
-                      {student.emoji}
-                    </div>
-                    <div className="flex-1">
-                      <p className="text-[30px] font-semibold text-[#2C3E50] mb-[7px]">{student.name}</p>
-                      <p className="text-[26.5px] text-[#7C8B99] leading-[1.6]">{student.achievement}</p>
-                    </div>
+                <div key={idx} className="bg-white rounded-[27px] p-[40px] border border-gray-100 flex items-center gap-[27px] hover:shadow-lg transition">
+                  <div className="w-[93px] h-[93px] bg-gradient-to-br from-[rgba(255,215,0,0.2)] to-[rgba(255,165,0,0.2)] rounded-[23px] flex items-center justify-center text-[40px] flex-shrink-0">
+                    {student.emoji}
                   </div>
-                  <div className="flex items-center justify-between pt-[27px] border-t border-gray-200">
-                    <span className="text-[23px] text-[#7C8B99]">{student.date}</span>
-                    <span className="text-[23px]">⭐</span>
+                  <div className="flex-1">
+                    <h4 className="text-[30px] font-semibold text-[#2C3E50] mb-[7px]">
+                      {student.school}
+                    </h4>
+                    <p className="text-[26.5px] text-[#7C8B99] mb-[7px]">{student.name}</p>
+                    <div className="flex gap-[13px]">
+                      <span className="text-[23px] text-[#7C8B99]">{student.level}</span>
+                      <span className="text-[23px] text-[#7C8B99]">{student.year}</span>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -444,54 +390,52 @@ export default function Home() {
           </div>
 
           {/* Mascot Message */}
-          <div className="flex items-center justify-center gap-[27px]">
+          <div className="flex items-center justify-center gap-[27px] mt-[80px]">
             <div className="w-[107px] h-[107px] bg-gradient-to-br from-[#A8D5FF] to-[#6BB6FF] rounded-[27px] flex items-center justify-center text-[50px] flex-shrink-0">
               🐧
             </div>
             <div className="bg-white rounded-[33px] rounded-tl-none p-[40px] shadow-lg">
               <p className="text-[26.5px] text-[#2C3E50]">
-                下一个获奖的就是你！继续加油哦！💪
+                You could be the next! Keep going! 💪
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Success Stories */}
-      <section className="py-[106px] bg-[#FBF9F4]">
+      {/* Parents' Voices */}
+      <section className="py-[133px] bg-white">
         <div className="max-w-[1920px] mx-auto px-14">
-          <div className="text-center mb-[106px]">
-            <div className="inline-flex items-center gap-[27px] px-[27px] py-[13px] bg-white rounded-[33px] shadow-sm mb-[27px]">
+          <div className="text-center mb-[53px]">
+            <div className="inline-flex items-center gap-[27px] px-[27px] py-[13px] bg-white rounded-[33px] mb-[27px] shadow-sm">
               <span className="text-[40px]">💬</span>
-              <span className="text-[26.5px] text-[#6BB6FF]">家长心声</span>
+              <span className="text-[26.5px] text-[#6BB6FF]">Parents' Voices</span>
             </div>
             <h2 className="text-[53px] font-bold text-[#2C3E50] mb-[27px] leading-[1.3]">
-              听听他们怎么说
+              Listen to what they said
             </h2>
             <p className="text-[26.5px] text-[#7C8B99]">
-              真实的学习体验，来自家长和孩子的认可
+              Authentic learning experiences, endorsed by parents and children.
             </p>
           </div>
 
-          <div className="grid grid-cols-2 gap-[67px] mb-[80px]">
+          <div className="grid grid-cols-2 gap-[67px]">
             {/* Image */}
             <div className="relative">
-              <div className="w-[864px] h-[399px] rounded-[40px] overflow-hidden shadow-[0px_41px_83px_-20px_rgba(0,0,0,0.25)]">
+              <div className="relative w-[864px] h-[399px] rounded-[40px] overflow-hidden shadow-[0px_41px_83px_-20px_rgba(0,0,0,0.25)]">
                 <Image
                   src="/Image (成功案例).svg"
-                  alt="成功案例"
+                  alt="Success Story"
                   fill
                   loading="lazy"
                   className="object-cover"
                 />
               </div>
-              <div className="absolute -bottom-[40px] -left-[40px] w-[133px] h-[133px] bg-gradient-to-br from-[#6BB6FF] to-[#4A9FEF] rounded-[33px] shadow-xl flex items-center justify-center">
-                <Image
-                  src="/quote.svg"
-                  alt="quote"
-                  width={66}
-                  height={66}
-                />
+              
+              {/* Quote Icon Overlay */}
+              {/* Quote icon moves to top-left (Figma position) */}
+              <div className="absolute -top-[20px] -left-[20px] w-[132px] h-[132px] bg-gradient-to-b from-[#6BB6FF] to-[#4A9FEF] rounded-[33px] shadow-xl flex items-center justify-center z-10">
+                <Image src="/quote.svg" alt="Quote" width={60} height={60} />
               </div>
             </div>
 
@@ -499,12 +443,12 @@ export default function Home() {
             <div>
               <div className="bg-white rounded-[40px] shadow-[0px_7px_10px_-7px_rgba(0,0,0,0.1),0px_17px_25px_-5px_rgba(0,0,0,0.1)] p-[53px] mb-[40px] relative overflow-hidden">
                 <p className="text-[26.5px] text-[#2C3E50] leading-[1.6] mb-[40px]">
-                  "孩子在这里学习奥数已经一年了，从最初的抗拒到现在主动要求上课，真的看到了他对数学的热爱。老师们非常耐心，会用孩子能理解的方式讲解复杂的问题。"
+                  "One year of Math Olympiad here transformed my son. He shifted from resisting to actively loving math. The teachers are patient and make complex concepts easy to understand."
                 </p>
                 
                 <div className="inline-flex items-center gap-[27px] px-[27px] h-[73px] bg-[rgba(126,201,126,0.13)] rounded-[27px] mb-[40px]">
                   <span className="text-[33px]">🎉</span>
-                  <span className="text-[23px] text-[#7EC97E] font-medium">数学成绩提升40分</span>
+                  <span className="text-[23px] text-[#7EC97E] font-medium">Math score improved by 36 points</span>
                 </div>
 
                 <div className="flex items-center gap-[27px] pt-[40px] border-t border-[#E8F4FC]">
@@ -512,47 +456,49 @@ export default function Home() {
                     👩
                   </div>
                   <div>
-                    <p className="text-[30px] font-semibold text-[#2C3E50] mb-[7px]">张女士</p>
-                    <p className="text-[26.5px] text-[#7C8B99]">小学四年级家长</p>
-                    <p className="text-[26.5px] text-[#7C8B99]">北京海淀区</p>
+                    <h4 className="text-[30px] font-semibold text-[#2C3E50]">Mrs. Sun</h4>
+                    <p className="text-[26.5px] text-[#7C8B99]">Parent of our student</p>
+                    <p className="text-[26.5px] text-[#7C8B99]">Hackensack, NJ</p>
                   </div>
                 </div>
 
-                <div className="absolute bottom-0 left-0 right-0 h-[10px] bg-gradient-to-r from-[#7EC97E] to-[#6BB87B] rounded-b-[40px]"></div>
+                <div className="absolute bottom-0 left-0 right-0 h-[10px] bg-[#7EC97E] rounded-b-[40px]"></div>
               </div>
 
               {/* Carousel Controls */}
-              <div className="flex items-center justify-between px-[67px]">
-                <button className="w-[80px] h-[80px] bg-white rounded-[20px] shadow-md flex items-center justify-center hover:bg-gray-50 transition text-[26.5px]">
-                  ←
+              <div className="flex items-center justify-between">
+                <button className="w-[79px] h-[79px] bg-white rounded-[20px] shadow-md flex items-center justify-center hover:shadow-lg transition">
+                  <svg className="w-[40px] h-[40px] text-[#6BB6FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3.3} d="M15 19l-7-7 7-7" />
+                  </svg>
                 </button>
+                
                 <div className="flex gap-[13px]">
-                  <div className="w-[53px] h-[13px] bg-[#6BB6FF] rounded-full"></div>
-                  <div className="w-[13px] h-[13px] bg-[#E8F4FC] rounded-full"></div>
-                  <div className="w-[13px] h-[13px] bg-[#E8F4FC] rounded-full"></div>
+                  <div className="w-[40px] h-[7px] bg-[#6BB6FF] rounded-full"></div>
+                  <div className="w-[13px] h-[7px] bg-[#E8F4FC] rounded-full"></div>
+                  <div className="w-[13px] h-[7px] bg-[#E8F4FC] rounded-full"></div>
                 </div>
-                <button className="w-[80px] h-[80px] bg-white rounded-[20px] shadow-md flex items-center justify-center hover:bg-gray-50 transition text-[26.5px]">
-                  →
+                
+                <button className="w-[79px] h-[79px] bg-white rounded-[20px] shadow-md flex items-center justify-center hover:shadow-lg transition">
+                  <svg className="w-[40px] h-[40px] text-[#6BB6FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3.3} d="M9 5l7 7-7 7" />
+                  </svg>
                 </button>
               </div>
             </div>
           </div>
 
-          {/* Stats */}
-          <div className="grid grid-cols-4 gap-[27px]">
+          {/* Bottom Stats */}
+          <div className="grid grid-cols-4 gap-[40px] mt-[80px]">
             {[
-              { number: '98%', label: '家长推荐率' },
-              { number: '95%', label: '续课率' },
-              { number: '4.9/5.0', label: '满意度' },
-              { number: '⭐⭐⭐⭐⭐', label: '推荐指数' }
+              { value: '98%', label: 'Parent Referral Rate' },
+              { value: '95%', label: 'Renewal Rate' },
+              { value: '4.9/5.0', label: 'Satisfaction Rate' },
+              { value: '⭐⭐⭐⭐⭐', label: 'Recommendation Rate' }
             ].map((stat, idx) => (
-              <div key={idx} className="bg-white rounded-[27px] p-[40px] text-center">
-                <div className="text-[30px] font-semibold text-[#6BB6FF] mb-[13px]">
-                  {stat.number}
-                </div>
-                <div className="text-[26.5px] text-[#7C8B99]">
-                  {stat.label}
-                </div>
+              <div key={idx} className="bg-white rounded-[27px] p-[40px] text-center shadow-sm hover:shadow-lg transition">
+                <h4 className="text-[30px] font-semibold text-[#6BB6FF] mb-[13px]">{stat.value}</h4>
+                <p className="text-[26.5px] text-[#7C8B99]">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -560,79 +506,93 @@ export default function Home() {
       </section>
 
       {/* News Section */}
-      <section className="py-[106px] bg-white">
+      <section className="py-[133px] bg-[#FBF9F4]">
         <div className="max-w-[1920px] mx-auto px-14">
-          <div className="text-center mb-[106px]">
+          <div className="text-center mb-[53px]">
             <div className="inline-flex items-center gap-[27px] px-[27px] py-[13px] bg-[#E8F4FC] rounded-[33px] mb-[27px]">
               <span className="text-[40px]">📚</span>
-              <span className="text-[26.5px] text-[#6BB6FF]">最新资讯</span>
+              <span className="text-[26.5px] text-[#6BB6FF]">Latest News</span>
             </div>
             <h2 className="text-[53px] font-bold text-[#2C3E50] mb-[27px] leading-[1.3]">
-              教育洞察 · 持续更新
+              Educational Insights
             </h2>
             <p className="text-[26.5px] text-[#7C8B99]">
-              分享教育理念、学习方法和行业动态
+              Sharing educational philosophies, learning methods, and industry trends
             </p>
           </div>
 
-          <div className="grid grid-cols-3 gap-[67px]">
+          <div className="grid grid-cols-3 gap-[40px]">
             {[
-              {
-                category: '行业洞察',
-                categoryColor: '#7EC97E',
-                title: '2024年儿童教育五大趋势：个性化学习成主流',
-                excerpt: '随着AI技术的发展，个性化教育正在改变传统教学模式，为每个孩子量身定制学习路径...',
-                date: '2024.11.20',
-                readTime: '5分钟',
-                bgGradient: 'from-[#E8F4FC] to-[#C4D9F0]'
+              { 
+                tag: 'Industry Insights', 
+                tagColor: '#7EC97E', 
+                title: 'Top 5 Trends in Children\'s Education 2024: Personalized Learning', 
+                excerpt: 'AI is transforming traditional teaching, making personalized learning paths possible for every child...', 
+                date: '2024.11.20', 
+                time: '5 min',
+                image: '/education_1.svg'
               },
-              {
-                category: '课程更新',
-                categoryColor: '#F4A460',
-                title: '全新奥数思维课程V3.0上线：更有趣，更高效',
-                excerpt: '经过半年的研发和测试，我们的奥数课程全面升级，引入更多互动元素和游戏化设计...',
-                date: '2024.11.15',
-                readTime: '3分钟',
-                bgGradient: 'from-[#E8F4FC] to-[#C4D9F0]'
+              { 
+                tag: 'Course Update', 
+                tagColor: '#F4A460', 
+                title: 'New Math thinking Course V3.0: More fun, More Effective', 
+                excerpt: 'After six months of testing, our Math Olympiad course is upgraded with more interactive and gamified features...', 
+                date: '2024.11.15', 
+                time: '3 min',
+                image: '/education_2.svg'
               },
-              {
-                category: '学习方法',
-                categoryColor: '#9B8FD8',
-                title: '如何培养孩子的象棋兴趣？五个实用小技巧',
-                excerpt: '象棋不仅能锻炼逻辑思维，还能培养耐心和专注力。本文分享家长可以在家实践的方法...',
-                date: '2024.11.10',
-                readTime: '4分钟',
-                bgGradient: 'from-[#E8F4FC] to-[#C4D9F0]'
+              { 
+                tag: 'Learning methods', 
+                tagColor: '#9B8FD8', 
+                title: 'How to Build Your Child\'s Interest in Chess: 5 Tips', 
+                excerpt: 'Chess strengthens logic, patience and focus. Here are practical tips parents can use at home...', 
+                date: '2024.11.10', 
+                time: '4 min',
+                image: '/education_3.svg'
               }
             ].map((article, idx) => (
-              <div key={idx} className="bg-white rounded-[40px] overflow-hidden hover:shadow-xl transition border border-gray-100">
-                <div className={`h-[318px] bg-gradient-to-br ${article.bgGradient} relative`}>
-                  <div className="absolute top-[27px] left-[27px]">
-                    <div className="inline-flex items-center gap-[13px] px-[27px] h-[60px] bg-white bg-opacity-90 rounded-[20px]">
-                      <div className="w-[10px] h-[10px] rounded-full" style={{ backgroundColor: article.categoryColor }}></div>
-                      <span className="text-[23px] font-medium" style={{ color: article.categoryColor }}>
-                        {article.category}
-                      </span>
-                    </div>
+              <div key={idx} className="bg-white rounded-[40px] overflow-hidden shadow-md hover:shadow-xl transition flex flex-col h-full">
+                <div className="relative h-[318px] bg-white">
+                  {/* Cover Image (no overlay) */}
+                  <Image
+                    src={article.image}
+                    alt={article.title}
+                    fill
+                    className="object-cover"
+                    loading="lazy"
+                  />
+
+                  {/* Tag */}
+                  <div className="absolute top-[27px] left-[27px] px-[27px] h-[60px] bg-white/95 rounded-[20px] flex items-center gap-[13px]">
+                    <div className="w-[27px] h-[27px] rounded-full" style={{ backgroundColor: article.tagColor }}></div>
+                    <span className="text-[23px]" style={{ color: article.tagColor }}>{article.tag}</span>
                   </div>
                 </div>
-                <div className="p-[40px]">
-                  <h3 className="text-[40px] font-semibold text-[#2C3E50] leading-[1.05] mb-[27px] hover:text-[#6BB6FF] transition">
-                    {article.title}
-                  </h3>
-                  <p className="text-[26.5px] text-[#7C8B99] leading-[1.6] mb-[27px]">
-                    {article.excerpt}
-                  </p>
-                  <div className="flex items-center justify-between pt-[27px] border-t border-gray-100">
-                    <div className="flex items-center gap-[13px] text-[20px] text-[#7C8B99]">
-                      <span>📅 {article.date}</span>
-                      <span>•</span>
-                      <span>⏱ {article.readTime}</span>
+                
+                <div className="p-[40px] flex flex-col h-full">
+                  <div className="flex-1">
+                    <h3 className="text-[40px] font-normal text-[#2C3E50] leading-[1.05] mb-[20px] min-h-[130px]">
+                      {article.title}
+                    </h3>
+                    <p className="text-[26.5px] text-[#7C8B99] leading-[1.6] mb-[32px]">
+                      {article.excerpt}
+                    </p>
+                  </div>
+                  
+                  <div className="flex items-center justify-between pt-[32px] border-t border-[#E8F4FC]">
+                    <div className="flex items-center gap-[13px]">
+                      <svg className="w-[23px] h-[23px] text-[#7C8B99]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                      </svg>
+                      <span className="text-[20px] text-[#7C8B99]">{article.date}</span>
+                      <span className="text-[20px] text-[#7C8B99]">•</span>
+                      <span className="text-[20px] text-[#7C8B99]">{article.time}</span>
                     </div>
-                    <button className="flex items-center gap-[7px] text-[23px] text-[#6BB6FF] hover:text-[#4A9FEF] font-medium">
-                      阅读
-                      <svg className="w-[27px] h-[27px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    
+                    <button className="flex items-center gap-[7px] hover:gap-[13px] transition-all">
+                      <span className="text-[23px] text-[#6BB6FF]">Read</span>
+                      <svg className="w-[27px] h-[27px] text-[#6BB6FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                       </svg>
                     </button>
                   </div>
@@ -646,81 +606,100 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-[#2C3E50] text-white py-[106px]">
         <div className="max-w-[1920px] mx-auto px-14">
-          <div className="grid grid-cols-5 gap-[80px] mb-[80px]">
+          <div className="grid grid-cols-6 gap-[60px] mb-[80px]">
             {/* Company Info */}
             <div className="col-span-2">
-              <div className="flex items-center gap-[20px] mb-[40px]">
-                <div className="w-[93px] h-[93px] bg-gradient-to-br from-[#A8D5FF] to-[#6BB6FF] rounded-[23px] flex items-center justify-center text-[50px]">
-                  🐧
+              <div className="flex items-center gap-5 mb-[40px]">
+                <div className="w-20 h-20 bg-gradient-to-b from-[#A8D5FF] to-[#6BB6FF] rounded-[20px] flex items-center justify-center">
+                  <span className="text-[40px]">🧠</span>
                 </div>
-                <span className="text-[40px] font-semibold">DeepBrain Academy</span>
               </div>
-              <p className="text-[26.5px] text-[#C8CFD6] leading-[1.6] mb-[40px]">
-                专注于6-15岁儿童的智力开发与国际教育，通过奥数、象棋和留学规划三大核心服务，为孩子的未来奠定坚实基础。
+              <p className="text-[22px] text-[#C8CFD6] leading-[1.6] mb-[40px]">
+                We provide courses in Olympiad Math, Programming, Chess, and Global Education Planning to help children aged 6–18 learn happily, train their critical thinking, and build challenging skills.
               </p>
               <div className="space-y-[20px]">
                 <div className="flex items-center gap-[20px]">
-                  <span className="text-[27px]">📞</span>
-                  <span className="text-[23px] text-white">400-888-6666</span>
+                  <svg className="w-[27px] h-[27px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                  <span className="text-[22px] text-white">914-488-4460</span>
                 </div>
                 <div className="flex items-center gap-[20px]">
-                  <span className="text-[27px]">📧</span>
-                  <span className="text-[23px] text-white">hello@pengilearning.com</span>
+                  <svg className="w-[27px] h-[27px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  <span className="text-[22px] text-white">chris@deepbraintechnology.com</span>
                 </div>
                 <div className="flex items-center gap-[20px]">
-                  <span className="text-[27px]">📍</span>
-                  <span className="text-[23px] text-white">北京市海淀区中关村大街1号</span>
+                  <svg className="w-[27px] h-[27px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                  <span className="text-[22px] text-white">92 Massasoit St, Waltham, MA 02453</span>
                 </div>
               </div>
             </div>
 
-            {/* Links */}
+            {/* Course Center */}
             <div>
-              <h3 className="text-[30px] font-semibold mb-[27px]">课程中心</h3>
-              <ul className="space-y-[20px] text-[23px] text-[#A8B5C3]">
-                <li><a href="#" className="hover:text-white transition">奥数思维训练</a></li>
-                <li><a href="#" className="hover:text-white transition">中国象棋课程</a></li>
-                <li><a href="#" className="hover:text-white transition">留学规划服务</a></li>
-                <li><a href="#" className="hover:text-white transition">课程价格</a></li>
-              </ul>
+              <h4 className="text-[27px] font-semibold mb-[27px]">Course Center</h4>
+              <div className="space-y-[20px]">
+                <a href="#" className="block text-[20px] text-[#A8B5C3] hover:text-white transition">Olympiad Math</a>
+                <a href="#" className="block text-[20px] text-[#A8B5C3] hover:text-white transition">Chess</a>
+                <a href="#" className="block text-[20px] text-[#A8B5C3] hover:text-white transition">Global Education</a>
+                <a href="#" className="block text-[20px] text-[#A8B5C3] hover:text-white transition">Programming</a>
+              </div>
             </div>
 
+            {/* About Us */}
             <div>
-              <h3 className="text-[30px] font-semibold mb-[27px]">关于我们</h3>
-              <ul className="space-y-[20px] text-[23px] text-[#A8B5C3]">
-                <li><a href="#" className="hover:text-white transition">公司介绍</a></li>
-                <li><a href="#" className="hover:text-white transition">师资团队</a></li>
-                <li><a href="#" className="hover:text-white transition">联系我们</a></li>
-                <li><a href="#" className="hover:text-white transition">加入我们</a></li>
-              </ul>
+              <h4 className="text-[27px] font-semibold mb-[27px]">About Us</h4>
+              <div className="space-y-[20px]">
+                <a href="#" className="block text-[20px] text-[#A8B5C3] hover:text-white transition">Our Company</a>
+                <a href="#" className="block text-[20px] text-[#A8B5C3] hover:text-white transition">Our Team</a>
+                <a href="#" className="block text-[20px] text-[#A8B5C3] hover:text-white transition">Contact Us</a>
+                <a href="#" className="block text-[20px] text-[#A8B5C3] hover:text-white transition">Careers</a>
+              </div>
             </div>
 
+            {/* Help Center */}
             <div>
-              <h3 className="text-[30px] font-semibold mb-[27px]">帮助中心</h3>
-              <ul className="space-y-[20px] text-[23px] text-[#A8B5C3]">
-                <li><a href="#" className="hover:text-white transition">常见问题</a></li>
-                <li><a href="#" className="hover:text-white transition">退款政策</a></li>
-                <li><a href="#" className="hover:text-white transition">隐私政策</a></li>
-                <li><a href="#" className="hover:text-white transition">服务条款</a></li>
-              </ul>
+              <h4 className="text-[27px] font-semibold mb-[27px]">Help Center</h4>
+              <div className="space-y-[20px]">
+                <a href="#" className="block text-[20px] text-[#A8B5C3] hover:text-white transition">FAQ</a>
+                <a href="#" className="block text-[20px] text-[#A8B5C3] hover:text-white transition">Refund Policy</a>
+                <a href="#" className="block text-[20px] text-[#A8B5C3] hover:text-white transition">Privacy Policy</a>
+                <a href="#" className="block text-[20px] text-[#A8B5C3] hover:text-white transition">Terms of Service</a>
+              </div>
+            </div>
+
+            {/* Resource Center + 小红书 */}
+            <div>
+              <h4 className="text-[27px] font-semibold mb-[27px]">Resource Center</h4>
+              <div className="space-y-[20px] mb-[40px]">
+                <a href="#" className="block text-[20px] text-[#A8B5C3] hover:text-white transition">Learning Materials</a>
+                <a href="#" className="block text-[20px] text-[#A8B5C3] hover:text-white transition">Educational Blogs</a>
+                <a href="#" className="block text-[20px] text-[#A8B5C3] hover:text-white transition">Successful Cases</a>
+                <a href="#" className="block text-[20px] text-[#A8B5C3] hover:text-white transition">Events</a>
+              </div>
+              
+              {/* 小红书二维码 */}
+              <div className="pt-[40px] border-t border-[#3D4F63]">
+                <p className="text-[23px] text-[#A8B5C3] mb-[20px]">Follow Us</p>
+                <div className="w-[240px] h-[240px] bg-[#3D4F63] rounded-[30px] flex items-center justify-center">
+                  <Image src="/xhs.svg" alt="小红书" width={180} height={180} />
+                </div>
+              </div>
             </div>
           </div>
 
           {/* Bottom Bar */}
-          <div className="pt-[40px] border-t border-[#3D4F63]">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-[27px] text-[26.5px] text-[#A8B5C3]">
-                <span>© 2024 Pengi Learning. All rights reserved.</span>
-                <span>|</span>
-                <a href="#" className="hover:text-white">京ICP备12345678号</a>
-                <span>|</span>
-                <a href="#" className="hover:text-white">京公网安备11010802012345号</a>
-              </div>
-              <div className="flex gap-[40px] text-[23px] text-[#A8B5C3]">
-                <a href="#" className="hover:text-white">隐私政策</a>
-                <a href="#" className="hover:text-white">用户协议</a>
-                <a href="#" className="hover:text-white">网站地图</a>
-              </div>
+          <div className="flex items-center justify-between pt-[40px] border-t border-[#3D4F63]">
+            <p className="text-[23px] text-[#A8B5C3]">© 2025 DeepBrain Academy. All rights reserved.</p>
+            <div className="flex items-center gap-[40px]">
+              <a href="#" className="text-[20px] text-[#A8B5C3] hover:text-white transition">Privacy Policy</a>
+              <a href="#" className="text-[20px] text-[#A8B5C3] hover:text-white transition">Terms of Use</a>
+              <a href="#" className="text-[20px] text-[#A8B5C3] hover:text-white transition">Site Map</a>
             </div>
           </div>
         </div>
