@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Outfit } from 'next/font/google';
 
 const outfit = Outfit({ subsets: ['latin'] });
@@ -64,7 +65,7 @@ export default function Home() {
         <div className="max-w-[1920px] mx-auto px-14">
           <div className="flex items-center justify-between h-[133px]">
             {/* Logo */}
-            <div className="flex items-center gap-5">
+            <Link href="/" className="flex items-center gap-5">
               <div className="w-20 h-20 bg-gradient-to-b from-[#A8D5FF] to-[#6BB6FF] rounded-[20px] flex items-center justify-center">
                 <span className="text-[40px]">🧠</span>
               </div>
@@ -72,16 +73,16 @@ export default function Home() {
                 <span className="text-[20px] font-medium text-[#274777] tracking-[25%]">DEEP BRAIN ACADEMY</span>
                 <span className="text-[13px] font-medium text-[rgba(19,28,72,0.5)] tracking-[38%]">DEEPER-SHARPER-BRIGHTER</span>
               </div>
-            </div>
+            </Link>
 
             {/* Nav Links - Figma order */}
             <div className="flex items-center gap-[48px] text-[26px] text-[#333]">
-              <a href="#" className="font-bold hover:text-[#6BB6FF] transition">Home</a>
-              <a href="#" className="hover:text-[#6BB6FF] transition">Global Education</a>
-              <a href="#" className="hover:text-[#6BB6FF] transition">Math</a>
-              <a href="#" className="hover:text-[#6BB6FF] transition">Chess</a>
-              <a href="#" className="hover:text-[#6BB6FF] transition">Programming</a>
-              <a href="#" className="hover:text-[#6BB6FF] transition">About Us</a>
+              <Link href="/" className="font-bold hover:text-[#6BB6FF] transition">Home</Link>
+              <Link href="/global-education" className="hover:text-[#6BB6FF] transition">Global Education</Link>
+              <Link href="#" className="hover:text-[#6BB6FF] transition">Math</Link>
+              <Link href="#" className="hover:text-[#6BB6FF] transition">Chess</Link>
+              <Link href="#" className="hover:text-[#6BB6FF] transition">Programming</Link>
+              <Link href="#" className="hover:text-[#6BB6FF] transition">About Us</Link>
             </div>
           </div>
         </div>
