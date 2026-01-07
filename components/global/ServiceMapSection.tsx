@@ -161,41 +161,43 @@ export default function ServiceMapSection({ serviceSteps }: ServiceMapSectionPro
 
         {/* Transparent Service Section */}
         <div className="max-w-[1200px] mx-auto">
-          <div className="text-center mb-[60px]">
-            <h3 className="text-[40px] font-bold text-[#2C3E50] mb-[20px]">
-              Transparent Service
-            </h3>
-            <p className="text-[20px] text-[#7C8B99] leading-[1.6] max-w-[900px] mx-auto">
-              Monitor progress, access documents, and review history any time via our "Growth Portfolio" system—transforming the application process into a transparent, guided journey.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-3 gap-[40px]">
-            <div className="text-center">
-              <div className="w-[80px] h-[80px] bg-gradient-to-br from-[#6BB6FF]/20 to-[#4A9FEF]/20 rounded-[20px] flex items-center justify-center text-[40px] mx-auto mb-[20px]">
-                📊
-              </div>
-              <h4 className="text-[24px] font-semibold text-[#2C3E50]">
-                Progress Tracking
-              </h4>
+          <div className="bg-white rounded-[40px] shadow-[0_10px_40px_rgba(0,0,0,0.08)] hover:shadow-[0_15px_50px_rgba(0,0,0,0.12)] transition-shadow p-[60px]">
+            <div className="text-center mb-[60px]">
+              <h3 className="text-[40px] font-bold text-[#2C3E50] mb-[20px]">
+                Transparent Service
+              </h3>
+              <p className="text-[20px] text-[#7C8B99] leading-[1.6] max-w-[900px] mx-auto">
+                Monitor progress, access documents, and review history any time via our "Growth Portfolio" system—transforming the application process into a transparent, guided journey.
+              </p>
             </div>
 
-            <div className="text-center">
-              <div className="w-[80px] h-[80px] bg-gradient-to-br from-[#7EC97E]/20 to-[#6BB87B]/20 rounded-[20px] flex items-center justify-center text-[40px] mx-auto mb-[20px]">
-                ☁️
+            <div className="grid grid-cols-3 gap-[40px]">
+              <div className="text-center">
+                <div className="w-[80px] h-[80px] bg-gradient-to-br from-[#6BB6FF]/20 to-[#4A9FEF]/20 rounded-[20px] flex items-center justify-center text-[40px] mx-auto mb-[20px]">
+                  📊
+                </div>
+                <h4 className="text-[24px] font-semibold text-[#2C3E50]">
+                  Progress Tracking
+                </h4>
               </div>
-              <h4 className="text-[24px] font-semibold text-[#2C3E50]">
-                Cloud Doc Storage
-              </h4>
-            </div>
 
-            <div className="text-center">
-              <div className="w-[80px] h-[80px] bg-gradient-to-br from-[#F4A460]/20 to-[#E89451]/20 rounded-[20px] flex items-center justify-center text-[40px] mx-auto mb-[20px]">
-                💬
+              <div className="text-center">
+                <div className="w-[80px] h-[80px] bg-gradient-to-br from-[#7EC97E]/20 to-[#6BB87B]/20 rounded-[20px] flex items-center justify-center text-[40px] mx-auto mb-[20px]">
+                  ☁️
+                </div>
+                <h4 className="text-[24px] font-semibold text-[#2C3E50]">
+                  Cloud Doc Storage
+                </h4>
               </div>
-              <h4 className="text-[24px] font-semibold text-[#2C3E50]">
-                24/7 Chat
-              </h4>
+
+              <div className="text-center">
+                <div className="w-[80px] h-[80px] bg-gradient-to-br from-[#F4A460]/20 to-[#E89451]/20 rounded-[20px] flex items-center justify-center text-[40px] mx-auto mb-[20px]">
+                  💬
+                </div>
+                <h4 className="text-[24px] font-semibold text-[#2C3E50]">
+                  24/7 Chat
+                </h4>
+              </div>
             </div>
           </div>
         </div>

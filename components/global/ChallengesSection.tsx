@@ -17,8 +17,15 @@ interface ChallengesSectionProps {
  */
 export default function ChallengesSection({ challenges }: ChallengesSectionProps) {
   return (
-    <section id="challenges" className="py-[133px] bg-white scroll-mt-[133px]">
+    <section id="challenges" className="pt-[80px] pb-[133px] bg-white scroll-mt-[133px]">
       <div className="max-w-[1920px] mx-auto px-14">
+        {/* Top Message */}
+        <div className="text-center mb-[60px]">
+          <p className="text-[26.5px] text-[#9B8FD8] font-semibold">
+            2,000+ families guided. You're not alone.
+          </p>
+        </div>
+
         <div className="text-center mb-[80px]">
           <div className="inline-flex items-center gap-[20px] px-[30px] py-[15px] bg-[#F3F0FF] rounded-[33px] mb-[27px]">
             <span className="text-[32px]">🤔</span>
@@ -33,7 +40,7 @@ export default function ChallengesSection({ challenges }: ChallengesSectionProps
         </div>
 
         {/* Challenges Grid */}
-        <div className="grid grid-cols-2 gap-[40px] mb-[80px]">
+        <div className="grid grid-cols-2 gap-[40px]">
           {challenges.map((challenge, idx) => (
             <div key={idx} className="bg-[#FBF9F4] rounded-[33px] p-[48px] hover:shadow-lg transition">
               <div className="flex items-start gap-[27px] mb-[27px]">
@@ -72,19 +79,6 @@ export default function ChallengesSection({ challenges }: ChallengesSectionProps
               </div>
             </div>
           ))}
-        </div>
-
-        {/* We Get It Section */}
-        <div className="bg-gradient-to-br from-[#F3F0FF] to-[#E8F4FC] rounded-[40px] p-[60px] text-center">
-          <h3 className="text-[40px] font-bold text-[#2C3E50] mb-[20px]">
-            We Get It.
-          </h3>
-          <p className="text-[24px] text-[#7C8B99] mb-[13px]">
-            Applications aren't just academic—they're life-changing. Anxiety is normal. But there's the good news:
-          </p>
-          <p className="text-[26px] font-semibold text-[#9B8FD8]">
-            2,000+ families guided. You're not alone.
-          </p>
         </div>
       </div>
     </section>
