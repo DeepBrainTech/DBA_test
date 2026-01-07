@@ -9,11 +9,11 @@
 import { Outfit } from 'next/font/google';
 import Navigation from '@/components/layout/Navigation';
 import Footer from '@/components/layout/Footer';
-import GlobalHeroSection from '@/components/sections/GlobalHeroSection';
-import ChallengesSection from '@/components/sections/ChallengesSection';
-import ServiceMapSection from '@/components/sections/ServiceMapSection';
-import GlobalAdvantagesSection from '@/components/sections/GlobalAdvantagesSection';
-import CTASection from '@/components/sections/CTASection';
+import GlobalHeroSection from '@/components/global/GlobalHeroSection';
+import ChallengesSection from '@/components/global/ChallengesSection';
+import ServiceMapSection from '@/components/global/ServiceMapSection';
+import GlobalAdvantagesSection from '@/components/global/GlobalAdvantagesSection';
+import CTASection from '@/components/global/CTASection';
 import { features, challenges, serviceSteps, globalAdvantages } from '@/data/global-education';
 
 const outfit = Outfit({ subsets: ['latin'] });
