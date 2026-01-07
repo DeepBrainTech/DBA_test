@@ -10,11 +10,14 @@ import { Outfit } from 'next/font/google';
 import Navigation from '@/components/layout/Navigation';
 import Footer from '@/components/layout/Footer';
 import GlobalHeroSection from '@/components/global/GlobalHeroSection';
+import StatsSection from '@/components/global/StatsSection';
+import AdmissionLettersSection from '@/components/global/AdmissionLettersSection';
+import ComparisonTableSection from '@/components/global/ComparisonTableSection';
 import ChallengesSection from '@/components/global/ChallengesSection';
 import ServiceMapSection from '@/components/global/ServiceMapSection';
-import GlobalAdvantagesSection from '@/components/global/GlobalAdvantagesSection';
+import FacultySection from '@/components/global/FacultySection';
 import CTASection from '@/components/global/CTASection';
-import { features, challenges, serviceSteps, globalAdvantages } from '@/data/global-education';
+import { features, challenges, serviceSteps } from '@/data/global-education';
 
 const outfit = Outfit({ subsets: ['latin'] });
 
@@ -26,9 +29,12 @@ export default function GlobalEducation() {
     <div className={`min-h-screen bg-[#FBF9F4] ${outfit.className}`}>
       <Navigation />
       <GlobalHeroSection features={features} />
+      <StatsSection />
+      <AdmissionLettersSection />
+      <ComparisonTableSection />
       <ChallengesSection challenges={challenges} />
       <ServiceMapSection serviceSteps={serviceSteps} />
-      <GlobalAdvantagesSection advantages={globalAdvantages} />
+      <FacultySection />
       <CTASection />
       <Footer />
     </div>
