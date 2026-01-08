@@ -24,7 +24,7 @@ export default function StatsSection() {
   ];
 
   return (
-    <section className="py-[80px] bg-[#F7F6FC]">
+    <section id="stats" className="py-[80px] bg-[#F7F6FC]">
       <div className="max-w-[1920px] mx-auto px-[51px]">
         <div className="relative">
           {/* Quote marks */}
