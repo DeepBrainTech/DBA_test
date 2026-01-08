@@ -30,21 +30,21 @@ export default function Navigation({ className = '' }: { className?: string }) {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 bg-white shadow-sm ${className}`}>
-      <div className="max-w-[1920px] mx-auto px-14">
-        <div className="flex items-center justify-between h-[133px]">
+      <div className="max-w-[1920px] mx-auto px-11">
+        <div className="flex items-center justify-between h-[106px]">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-5">
-            <div className="w-20 h-20 bg-gradient-to-b from-[#A8D5FF] to-[#6BB6FF] rounded-[20px] flex items-center justify-center">
-              <span className="text-[40px]">🧠</span>
+          <Link href="/" className="flex items-center gap-4">
+            <div className="w-16 h-16 bg-gradient-to-b from-[#A8D5FF] to-[#6BB6FF] rounded-[16px] flex items-center justify-center">
+              <span className="text-[32px]">🧠</span>
             </div>
             <div className="flex flex-col">
-              <span className="text-[20px] font-medium text-[#274777] tracking-[25%]">DEEP BRAIN ACADEMY</span>
-              <span className="text-[13px] font-medium text-[rgba(19,28,72,0.5)] tracking-[38%]">DEEPER-SHARPER-BRIGHTER</span>
+              <span className="text-[16px] font-medium text-[#274777] tracking-[25%]">DEEP BRAIN ACADEMY</span>
+              <span className="text-[10px] font-medium text-[rgba(19,28,72,0.5)] tracking-[38%]">DEEPER-SHARPER-BRIGHTER</span>
             </div>
           </Link>
 
           {/* Nav Links */}
-          <div className="flex items-center gap-[48px] text-[26px] text-[#333]">
+          <div className="flex items-center gap-[38px] text-[21px] text-[#333]">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (

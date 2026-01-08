@@ -20,7 +20,7 @@ interface GlobalHeroSectionProps {
  */
 export default function GlobalHeroSection({ features }: GlobalHeroSectionProps) {
   const handleScrollDown = () => {
-    scrollToElement('challenges');
+    scrollToElement('stats');
   };
 
   return (
