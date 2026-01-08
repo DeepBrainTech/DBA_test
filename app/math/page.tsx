@@ -1,3 +1,10 @@
-export default function PageName() {
-    return <div>页面内容</div>;
-  }
+import MathHero from "@/components/math/MathHero";
+
+export default function MathPage() {
+  return (
+    <>
+      <MathHero />
+      {/* Other Math sections will go here */}
+    </>
+  );
+}
