@@ -16,7 +16,9 @@ import ComparisonTableSection from '@/components/global/ComparisonTableSection';
 import ChallengesSection from '@/components/global/ChallengesSection';
 import ServiceMapSection from '@/components/global/ServiceMapSection';
 import FacultySection from '@/components/global/FacultySection';
-import CTASection from '@/components/global/CTASection';
+import PricingSection from '@/components/global/PricingSection';
+import AdmissionSection from '@/components/global/AdmissionSection';
+import BookFreeSection from '@/components/global/BookFreeSection';
 import { features, challenges, serviceSteps } from '@/data/global-education';
 
 const outfit = Outfit({ subsets: ['latin'] });
@@ -35,7 +37,9 @@ export default function GlobalEducation() {
       <ChallengesSection challenges={challenges} />
       <ServiceMapSection serviceSteps={serviceSteps} />
       <FacultySection />
-      <CTASection />
+      <PricingSection />
+      <AdmissionSection />
+      <BookFreeSection />
       <Footer />
     </div>
   );
