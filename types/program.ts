@@ -14,6 +14,8 @@ export interface Program {
   iconSrc: string;
   /** 课程标题 */
   title: string;
+  /** URL路径slug */
+  slug: string;
   /** 副标题 */
   subtitle: string;
   /** 课程描述 */
