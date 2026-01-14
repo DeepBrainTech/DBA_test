@@ -25,7 +25,7 @@ export default function MathPage() {
 
   const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const googleFormUrl = 'https://docs.google.com/forms/d/15cX7NUtR4T_DXA9zk_9e5U-wXu6t-qncOJaKqFsl8o0/viewform';
+    const googleFormUrl = 'https://forms.gle/2mMzKoQkXHa2CVHe6';
     window.open(googleFormUrl, '_blank');
   };
 
