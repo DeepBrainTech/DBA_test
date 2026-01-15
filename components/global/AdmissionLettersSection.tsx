@@ -21,21 +21,21 @@ export default function AdmissionLettersSection() {
       studentName: 'Emma Z.',
       studentClass: 'Undergraduate Class of 2029',
       studentInitial: 'E',
-      imagePath: '/Global/admission1.png'
+      imagePath: '/global/admission1.png'
     },
     {
       school: 'HARVARD',
       studentName: 'Ethan L.',
       studentClass: 'Undergraduate Class of 2029',
       studentInitial: 'E',
-      imagePath: '/Global/admission2.png'
+      imagePath: '/global/admission2.png'
     },
     {
       school: 'Yale',
       studentName: 'Benjamin C.',
       studentClass: 'Undergraduate Class of 2027',
       studentInitial: 'B',
-      imagePath: '/Global/admission3.png'
+      imagePath: '/global/admission3.png'
     }
   ];
 

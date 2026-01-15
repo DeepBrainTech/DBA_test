@@ -12,7 +12,7 @@ import type { Program, TrustBadge, Advantage, StudentAchievement, NewsArticle } 
 export const programs: Program[] = [
   {
     icon: '📊',
-    iconSrc: '/Key%20Programs/Math.svg',
+    iconSrc: '/KeyPrograms/Math.svg',
     title: 'Math',
     slug: 'math',
     subtitle: 'Build Logic · Spark Interest',
@@ -23,7 +23,7 @@ export const programs: Program[] = [
   },
   {
     icon: '♟️',
-    iconSrc: '/Key%20Programs/Chess.svg',
+    iconSrc: '/KeyPrograms/Chess.svg',
     title: 'Chess',
     slug: 'chess',
     subtitle: 'Build Strategy · Perspective',
@@ -34,7 +34,7 @@ export const programs: Program[] = [
   },
   {
     icon: '🌍',
-    iconSrc: '/Key%20Programs/Global_Education.svg',
+    iconSrc: '/KeyPrograms/Global_Education.svg',
     title: 'Global Education',
     slug: 'global-education',
     subtitle: 'Plan Ahead · Go Global',
@@ -45,7 +45,7 @@ export const programs: Program[] = [
   },
   {
     icon: '💻',
-    iconSrc: '/Key%20Programs/Programming.svg',
+    iconSrc: '/KeyPrograms/Programming.svg',
     title: 'Programming',
     slug: 'programming',
     subtitle: 'Learn to code · Develop the brain',
