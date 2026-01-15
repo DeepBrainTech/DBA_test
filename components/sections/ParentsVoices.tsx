@@ -33,7 +33,7 @@ export default function ParentsVoices() {
           <div className="relative">
             <div className="relative w-[864px] h-[399px] rounded-[40px] overflow-hidden shadow-[0px_41px_83px_-20px_rgba(0,0,0,0.25)]">
               <Image
-                src="/Image (成功案例).svg"
+                src="/sucess.svg"
                 alt="Success Story"
                 fill
                 loading="lazy"

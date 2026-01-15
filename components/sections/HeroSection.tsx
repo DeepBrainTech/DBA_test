@@ -64,7 +64,7 @@ export default function HeroSection() {
             <div className="relative w-[867px] h-[587px] bg-white rounded-[40px] shadow-[0px_13px_17px_-10px_rgba(0,0,0,0.1),0px_33px_41px_-8px_rgba(0,0,0,0.1)]">
               <div className="absolute inset-[13px] rounded-[33px] overflow-hidden">
                 <Image
-                  src="/Image (儿童学习场景).svg"
+                  src="/child.svg"
                   alt="Learning Scene"
                   fill
                   priority

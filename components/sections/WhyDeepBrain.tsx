@@ -40,7 +40,7 @@ export default function WhyDeepBrain({ advantages }: WhyDeepBrainProps) {
             {/* Image Container */}
             <div className="relative w-full h-[429px] rounded-[40px] overflow-hidden shadow-[0px_41px_83px_-20px_rgba(0,0,0,0.25)]">
               <Image
-                src="/Image (学习场景).svg"
+                src="/learn.svg"
                 alt="Learning Scene"
                 fill
                 loading="lazy"
