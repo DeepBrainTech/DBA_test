@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\app",
+    "\\app\\chess",
+    "\\app\\global-education",
+    "\\components\\chess",
+    "\\components\\global",
+    "\\components\\layout",
+    "\\data",
+    "\\types"
+  ],
+  "SelectedNode": "\\app\\chess\\page.tsx",
+  "PreviewInSolutionExplorer": false
+}
