@@ -28,8 +28,8 @@ export default function ChessHeroSection({ features }: ChessHeroSectionProps) {
             {/* Background Image */}
             <div className="absolute inset-0 z-0">
                 <Image
-                    src="/global/cover.svg"
-                    alt="Global Education Background"
+                    src="/chess/ChessBackground.png"
+                    alt="Chess Background"
                     fill
                     className="object-cover"
                     priority

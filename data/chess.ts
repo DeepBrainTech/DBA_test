@@ -1,21 +1,12 @@
-﻿/**
- * 文件用途：象棋页面数据配置
- * 依赖关系：依赖 types/chess.ts 中的类型定义
- * 注意事项：数据修改后需要确保类型匹配
- */
+﻿import type { Feature, Course, ChessPhilosophyData } from "@/types/chess";
 
-import type { Feature, ChessPhilosophyData, Course } from '@/types/chess';
-
-
-/**
- * 特性列表
- */
 export const features: Feature[] = [
-    { icon: '🎓', title: 'Brain Traning' },
-    { icon: '🏛️', title: 'Boost Concentraining' },
-    { icon: '🏅', title: 'Build Resilience' },
-    { icon: '📈', title: 'Still Level Certification' }
+    { icon: '🧠', title: 'Brain Training' },
+    { icon: "🎯", title: "Boost Concentration" },
+    { icon: "💪", title: "Build Resilience" },
+    { icon: "🏆", title: "Skill Level Certification" }
 ];
+
 
 export const chessPhilosophy: ChessPhilosophyData = {
     badgeText: "Educational Value",
@@ -26,25 +17,25 @@ export const chessPhilosophy: ChessPhilosophyData = {
     cards: [
         {
             id: "life",
-            iconSrc: "/chess/icons/brain.svg",
+            iconSrc: "/chess/brain.png",
             title: "Simulation of Life",
             description: "Every game builds strategy and foresight.",
         },
         {
             id: "resilience",
-            iconSrc: "/chess/icons/heart.svg",
+            iconSrc: "/chess/heart.png",
             title: "Resilience",
             description: "Learn from wins and losses, grow from setbacks.",
         },
         {
             id: "decision",
-            iconSrc: "/chess/icons/target.svg",
+            iconSrc: "/chess/target.png",
             title: "Decision Making",
             description: "Each move teaches trade-offs.",
         },
         {
             id: "character",
-            iconSrc: "/chess/icons/shield.svg",
+            iconSrc: "/chess/shield.png",
             title: "Character Building",
             description: "Grace under pressure.",
         },
@@ -69,64 +60,123 @@ export const chessPhilosophy: ChessPhilosophyData = {
 };
 
 export const courses: Course[] = [
-    {
-        id: "chess",
-        tag: "Beginner / Intermediate",
-        title: "Beginner / Intermediate Chess Class",
-        subtitle: "Think Ahead · Build Strategy · Grow Resilience",
-        features: [
-            {
-                icon: "♟",
-                title: "Small Group Instruction",
-                description: "Up to 6 students per class with focused guidance.",
-            },
-            {
-                icon: "💪",
-                title: "Resilience",
-                description: "Learn to adapt and grow from both wins and losses.",
-            },
-            {
-                icon: "🧠",
-                title: "Mathematical Thinking",
-                description: "Develop logic, foresight, and structured reasoning.",
-            },
-            {
-                icon: "🎯",
-                title: "Personalized Training",
-                description: "Customized plans based on skill level and goals.",
-            },
-        ],
-        ctaText: "Start Your Chess Journey",
-        qrImage: "/chess/qr-chess.png",
-    },
-    {
-        id: "go",
-        tag: "Advanced Logic",
-        title: "Mathematical Go Class",
-        subtitle: "Abstract Thinking · Pattern Recognition · Strategy",
-        features: [
-            {
-                icon: "⚫",
-                title: "Small Group Instruction",
-                description: "Deep conceptual teaching in small groups.",
-            },
-            {
-                icon: "📘",
-                title: "Top Curriculum",
-                description: "Competition-oriented Go curriculum.",
-            },
-            {
-                icon: "📐",
-                title: "Logical Reasoning",
-                description: "Train large-scale strategic thinking.",
-            },
-            {
-                icon: "👤",
-                title: "Personalized Training",
-                description: "Individual feedback and growth tracking.",
-            },
-        ],
-        ctaText: "Start Your Go Journey",
-        qrImage: "/chess/qr-go.png",
-    },
+  {
+    id: "chess",
+    tag: "Featured Program",
+    title: "Beginner/Intermediate Chess Class",
+    subtitle: "Learning chess: Engaging, effective, and insightful.",
+
+    cards: [
+        {
+            id: "small-group",
+            iconSrc: "/chess/group.png",
+            title: "Small Group Instruction",
+            description: "High Teacher–Student Ratio (1:3 to 1:6); World-class instructor",
+        },
+        {
+            id: "resilience",
+            iconSrc: "/chess/heart.png",
+            title: "Resilience",
+            description: "Learn from wins and losses, grow from setbacks.",
+        },
+        {
+            id: "math-thinking",
+            iconSrc: "/chess/brain.png",
+            title: "Mathematical Thinking",
+            description:
+                "Develops Math minds, strong logical reasoning, spatial visualization and creativity",
+        },
+        {
+            id: "personalized",
+            iconSrc: "/chess/rocket.png",
+            title: "Personalized Training",
+            description: "Designed to prepare students for advanced Fog-of-War chess.",
+        },
+    ],
+
+    ctaIcon: "♟",
+    ctaText: "Start Your Chess Journey",
+    ctaDescription:
+      "Equip your child to face life's challenges with confidence through the timeless wisdom of chess.",
+    qrImage: "/chess/qr-chess.png",
+  },
+
+  {
+    id: "go",
+    tag: "Featured Program",
+    title: "Mathematical Go Class",
+    subtitle: "Elite Instruction, Open to All",
+
+      cards: [
+          {
+              id: "small-group",
+              iconSrc: "/chess/group.png",
+              title: "Small Group Instruction",
+              description: "Limited to 3–6 students with world-class instructors.",
+          },
+          {
+              id: "top-curriculum",
+              iconSrc: "/chess/bulb.png",
+              title: "Top Curriculum",
+              description:
+                  "Expertly structured curriculum designed to unlock your child’s potential.",
+          },
+          {
+              id: "logical",
+              iconSrc: "/chess/brain.png",
+              title: "Logical Reasoning",
+              description:
+                  "Develops logical reasoning, focus, spatial visualization, and creativity.",
+          },
+          {
+              id: "personalized",
+              iconSrc: "/chess/rocket.png",
+              title: "Personalized Training",
+              description: "A pathway to advanced class — Quantum Go.",
+          },
+      ],
+
+    ctaIcon: "⚫",
+    ctaText: "Start Your Go Journey",
+    ctaDescription:
+      "Build friendships and sharpen your mind through Go.",
+    qrImage: "/chess/qr-go.png",
+  },
 ];
+export const chessCourse: Course = {
+    tag: "Educational Value",
+    title: "Mental Gymnastics",
+    subtitle:
+        "We believe chess is one of the most powerful tools to train logic, focus, and strategic thinking in children.",
+
+    features: [
+        {
+            icon: "♟️",
+            title: "Strategic Thinking",
+            description:
+                "Chess trains children to think ahead, analyze consequences, and make informed decisions."
+        },
+        {
+            icon: "🧠",
+            title: "Logical Reasoning",
+            description:
+                "Every move is built on logic, helping students strengthen structured thinking skills."
+        },
+        {
+            icon: "🎯",
+            title: "Focus & Patience",
+            description:
+                "Long-term concentration and patience are essential to success in chess and in life."
+        },
+        {
+            icon: "🏆",
+            title: "Competition Mindset",
+            description:
+                "Students learn resilience, sportsmanship, and confidence through structured competition."
+        }
+    ],
+
+    ctaText: "Start your Chess Journey",
+    qrImage: "/chess/qr-code.svg"
+};
+

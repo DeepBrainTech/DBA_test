@@ -66,4 +66,7 @@ export interface Course {
     ctaText: string;
     /** 二维码图片路径 */
     qrImage: string;
+
+    ctaIcon?: string;          // "♟" or "⚫"
+    ctaDescription?: string;   // the paragraph in the CTA panel
 }

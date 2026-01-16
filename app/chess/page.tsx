@@ -11,7 +11,10 @@ import Footer from "@/components/layout/Footer";
 
 import ChessHeroSection from "@/components/chess/ChessHeroSection";
 import ChessPhilosophySection from "@/components/chess/ChessPhilosophySection";
+import FacultySection from '@/components/chess/FacultySection';
 import CourseSection from "@/components/chess/CourseSection";
+import PricingSection from '@/components/chess/PricingSection';
+import BookFreeSection from '@/components/chess/BookFreeSection';
 
 import { features, courses, chessPhilosophy } from "@/data/chess";
 
@@ -33,11 +36,19 @@ export default function ChessPage() {
             {/* Philosophy / Educational Value */}
             <ChessPhilosophySection data={chessPhilosophy} />
 
+            {/* FacultySection */}
+            <FacultySection />
+
             {/* Courses (Chess + Go) */}
             {courses.map((course) => (
                 <CourseSection key={course.id} course={course} />
             ))}
 
+            {/* Pricing */}
+            <PricingSection />
+
+            {/*Booking*/}
+            <BookFreeSection />
 
             {/* Footer */}
             <Footer />
