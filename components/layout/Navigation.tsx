@@ -17,7 +17,7 @@ const navLinks = [
   { href: '/global-education', label: 'Global Education' },
   { href: '#', label: 'Math' },
   { href: '#', label: 'Chess' },
-  { href: '#', label: 'Programming' },
+  { href: '/programming', label: 'Programming' },
   { href: '#', label: 'About Us' }
 ];
 
