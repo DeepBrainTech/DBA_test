@@ -18,7 +18,7 @@ const navLinks = [
   { href: 'Math', label: 'Math' },
   { href: '#', label: 'Chess' },
   { href: '/programming', label: 'Programming' },
-  { href: '#', label: 'About Us' }
+  { href: '/about', label: 'About Us' }
 ];
 
 /**
