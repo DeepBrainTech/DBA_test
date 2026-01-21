@@ -15,9 +15,9 @@ import { usePathname } from 'next/navigation';
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/global-education', label: 'Global Education' },
-  { href: '/math', label: 'Math' },
+  { href: 'Math', label: 'Math' },
   { href: '#', label: 'Chess' },
-  { href: '#', label: 'Programming' },
+  { href: '/programming', label: 'Programming' },
   { href: '/about', label: 'About Us' }
 ];
 
