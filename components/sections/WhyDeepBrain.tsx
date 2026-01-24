@@ -40,7 +40,7 @@ export default function WhyDeepBrain({ advantages }: WhyDeepBrainProps) {
             {/* Image Container */}
             <div className="relative w-full h-[429px] rounded-[40px] overflow-hidden shadow-[0px_41px_83px_-20px_rgba(0,0,0,0.25)]">
               <Image
-                src="/Image (学习场景).svg"
+                src="/learn.svg"
                 alt="Learning Scene"
                 fill
                 loading="lazy"
@@ -50,9 +50,9 @@ export default function WhyDeepBrain({ advantages }: WhyDeepBrainProps) {
             
             {/* Stats Overlay */}
             <div className="absolute bottom-[-40px] right-[-20px] bg-gradient-to-b from-[#7EC97E] to-[#6BB87B] rounded-[27px] shadow-xl p-[30px] w-[200px] z-10">
-              <p className="text-[18px] text-white/90 mb-[6px] leading-[1.3]">We Served</p>
+              <p className="text-[18px] text-white/90 mb-[6px] leading-[1.3]">Trusted by</p>
               <h3 className="text-[36px] font-semibold text-white mb-[6px] leading-[1.1]">10,000+</h3>
-              <p className="text-[16px] text-white/90 leading-[1.3]">Trusted choice for families</p>
+              <p className="text-[16px] text-white/90 leading-[1.3]">Families WorldWide</p>
             </div>
 
             {/* Decorations */}
