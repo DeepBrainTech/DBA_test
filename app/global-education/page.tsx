@@ -4,11 +4,16 @@
  * 注意事项：页面只负责布局和组件组装，不包含业务逻辑
  */
 
+/**
+ * 文件用途：全球教育页面入口，负责组装各个Section组件
+ * 依赖关系：依赖所有Section组件和数据文件
+ * 注意事项：页面只负责布局和组件组装，不包含业务逻辑
+ * Navigation 和 Footer 已在根 layout.tsx 中统一管理，无需在此导入
+ */
+
 'use client';
 
 import { Outfit } from 'next/font/google';
-import Navigation from '@/components/layout/Navigation';
-import Footer from '@/components/layout/Footer';
 import GlobalHeroSection from '@/components/global/GlobalHeroSection';
 import StatsSection from '@/components/global/StatsSection';
 import AdmissionLettersSection from '@/components/global/AdmissionLettersSection';
@@ -29,7 +34,6 @@ const outfit = Outfit({ subsets: ['latin'] });
 export default function GlobalEducation() {
   return (
     <div className={`min-h-screen bg-[#FBF9F4] ${outfit.className}`}>
-      <Navigation />
       <GlobalHeroSection features={features} />
       <StatsSection />
       <AdmissionLettersSection />
@@ -40,7 +44,6 @@ export default function GlobalEducation() {
       <PricingSection />
       <AdmissionSection />
       <BookFreeSection />
-      <Footer />
     </div>
   );
 }
