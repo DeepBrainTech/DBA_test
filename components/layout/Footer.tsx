@@ -73,6 +73,13 @@ export default function Footer() {
                   qrCodeSrc="/icon_qrcode/ins_qr.png" 
                   platformName="Instagram" 
                 />
+                
+                {/* WeChat 图标 - 悬停显示二维码 */}
+                <SocialIconWithQR 
+                  iconSrc="/icon_qrcode/wechat_icon.svg"
+                  qrCodeSrc="/icon_qrcode/wechat_qr.jpg" 
+                  platformName="WeChat" 
+                />
               </div>
             </div>
           </div>
