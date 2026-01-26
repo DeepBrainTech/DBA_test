@@ -31,7 +31,7 @@ export default function WhyDeepBrain({ advantages }: WhyDeepBrainProps) {
               Why DeepBrain Academy?
             </h2>
             <p className="text-[26.5px] text-[#7C8B99] leading-[1.6]">
-              herefore we are committed to providing the highest quality and most personalized educational services.
+              We are committed to providing the highest quality and most personalized educational services.
             </p>
           </div>
 
@@ -52,7 +52,7 @@ export default function WhyDeepBrain({ advantages }: WhyDeepBrainProps) {
             <div className="absolute bottom-[-40px] right-[-20px] bg-gradient-to-b from-[#7EC97E] to-[#6BB87B] rounded-[27px] shadow-xl p-[30px] w-[200px] z-10">
               <p className="text-[18px] text-white/90 mb-[6px] leading-[1.3]">Trusted by</p>
               <h3 className="text-[36px] font-semibold text-white mb-[6px] leading-[1.1]">10,000+</h3>
-              <p className="text-[16px] text-white/90 leading-[1.3]">Families WorldWide</p>
+              <p className="text-[16px] text-white/90 leading-[1.3]">Families Worldwide</p>
             </div>
 
             {/* Decorations */}
