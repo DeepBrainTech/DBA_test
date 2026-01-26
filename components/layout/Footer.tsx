@@ -7,7 +7,7 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
+import SocialIconWithQR from './SocialIconWithQR';
 
 /**
  * 页脚组件
@@ -48,6 +48,33 @@ export default function Footer() {
                 <span className="text-[22px] text-white">92 Massasoit St, Waltham, MA 02453</span>
               </div>
             </div>
+            
+            {/* Follow Us 和二维码部分 */}
+            <div className="pt-[40px] border-t border-[#3D4F63] mt-[40px]">
+              <p className="text-[23px] text-[#A8B5C3] mb-[20px]">Follow Us</p>
+              <div className="flex flex-row items-start gap-[20px]">
+                {/* RedNote 图标 - 悬停显示二维码 */}
+                <SocialIconWithQR 
+                  iconSrc="/icon_qrcode/rednote_icon.svg"
+                  qrCodeSrc="/icon_qrcode/rednote_qr.svg" 
+                  platformName="RedNote" 
+                />
+                
+                {/* Facebook Public Page 图标 - 悬停显示二维码 */}
+                <SocialIconWithQR 
+                  iconSrc="/icon_qrcode/facebook_icon.svg"
+                  qrCodeSrc="/icon_qrcode/fb_public_qr.png" 
+                  platformName="Facebook" 
+                />
+                
+                {/* Instagram 图标 - 悬停显示二维码 */}
+                <SocialIconWithQR 
+                  iconSrc="/icon_qrcode/instgram_icon.svg"
+                  qrCodeSrc="/icon_qrcode/ins_qr.png" 
+                  platformName="Instagram" 
+                />
+              </div>
+            </div>
           </div>
 
           {/* Course Center */}
@@ -83,22 +110,14 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Resource Center + 小红书 */}
+          {/* Resource Center */}
           <div>
             <h4 className="text-[27px] font-semibold mb-[27px]">Resource Center</h4>
-            <div className="space-y-[20px] mb-[40px]">
+            <div className="space-y-[20px]">
               <Link href="#" className="block text-[20px] text-[#A8B5C3] hover:text-white transition">Learning Materials</Link>
               <Link href="#" className="block text-[20px] text-[#A8B5C3] hover:text-white transition">Educational Blogs</Link>
               <Link href="#" className="block text-[20px] text-[#A8B5C3] hover:text-white transition">Successful Cases</Link>
               <Link href="#" className="block text-[20px] text-[#A8B5C3] hover:text-white transition">Events</Link>
-            </div>
-            
-            {/* 小红书二维码 */}
-            <div className="pt-[40px] border-t border-[#3D4F63]">
-              <p className="text-[23px] text-[#A8B5C3] mb-[20px]">Follow Us</p>
-              <div className="w-[240px] h-[240px] bg-[#3D4F63] rounded-[30px] flex items-center justify-center">
-                <Image src="/xhs.svg" alt="小红书" width={180} height={180} />
-              </div>
             </div>
           </div>
         </div>
