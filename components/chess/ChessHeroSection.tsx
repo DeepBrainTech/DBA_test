@@ -10,7 +10,7 @@ import Image from 'next/image';
 import { scrollToElement } from '@/lib/scroll';
 import type { Feature } from '@/types/chess';
 
-interface GlobalHeroSectionProps {
+interface ChessHeroSectionProps {
     features: Feature[];
 }
 
