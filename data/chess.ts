@@ -143,40 +143,4 @@ export const courses: Course[] = [
     qrImage: "/chess/qr-go.png",
   },
 ];
-export const chessCourse: Course = {
-    tag: "Educational Value",
-    title: "Mental Gymnastics",
-    subtitle:
-        "We believe chess is one of the most powerful tools to train logic, focus, and strategic thinking in children.",
-
-    cards: [
-        {
-            icon: "♟️",
-            title: "Strategic Thinking",
-            description:
-                "Chess trains children to think ahead, analyze consequences, and make informed decisions."
-        },
-        {
-            icon: "🧠",
-            title: "Logical Reasoning",
-            description:
-                "Every move is built on logic, helping students strengthen structured thinking skills."
-        },
-        {
-            icon: "🎯",
-            title: "Focus & Patience",
-            description:
-                "Long-term concentration and patience are essential to success in chess and in life."
-        },
-        {
-            icon: "🏆",
-            title: "Competition Mindset",
-            description:
-                "Students learn resilience, sportsmanship, and confidence through structured competition."
-        }
-    ],
-
-    ctaText: "Start your Chess Journey",
-    qrImage: "/chess/qr-code.svg"
-};
 
