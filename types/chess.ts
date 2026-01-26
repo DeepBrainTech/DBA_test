@@ -51,6 +51,13 @@ export interface CourseFeature {
     description: string;
 }
 
+export interface CourseCard {
+  id: string;
+  iconSrc: string;
+  title: string;
+  description: string;
+}
+
 export interface Course {
     /** 唯一 id（用于 key） */
     id: string;

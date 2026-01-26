@@ -33,7 +33,7 @@ export default function CourseSection({ course }: CourseSectionProps) {
 
                 {/* 4 cards */}
                 <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-                    {(course.cards ?? []).map((c) => (
+                    {course.cards.map((c) => (
                         <div
                             key={c.id}
                             className="rounded-[26px] bg-[#FBF9F4] px-10 py-12 text-center"
