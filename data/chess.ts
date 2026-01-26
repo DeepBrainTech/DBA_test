@@ -149,7 +149,7 @@ export const chessCourse: Course = {
     subtitle:
         "We believe chess is one of the most powerful tools to train logic, focus, and strategic thinking in children.",
 
-    features: [
+    cards: [
         {
             icon: "♟️",
             title: "Strategic Thinking",
