@@ -61,7 +61,7 @@ export interface Course {
     /** 副标题 */
     subtitle: string;
     /** 特性列表 */
-    features: CourseFeature[];
+    cards?: CourseCard[]; 
     /** CTA 文案 */
     ctaText: string;
     /** 二维码图片路径 */
@@ -70,3 +70,4 @@ export interface Course {
     ctaIcon?: string;          // "♟" or "⚫"
     ctaDescription?: string;   // the paragraph in the CTA panel
 }
+
