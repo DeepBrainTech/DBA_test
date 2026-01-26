@@ -68,7 +68,7 @@ export interface Course {
     /** 副标题 */
     subtitle: string;
     /** 特性列表 */
-    cards?: CourseCard[]; 
+    cards: CourseCard[]; 
     /** CTA 文案 */
     ctaText: string;
     /** 二维码图片路径 */
