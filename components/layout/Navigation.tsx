@@ -1,12 +1,13 @@
 /**
  * 文件用途：导航栏组件（可在多个页面复用）
- * 依赖关系：依赖 Next.js Link 组件
+ * 依赖关系：依赖 Next.js Link 和 Image 组件
  * 注意事项：需要根据当前路由高亮激活的链接
  */
 
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
 /**
@@ -34,8 +35,14 @@ export default function Navigation({ className = '' }: { className?: string }) {
         <div className="flex items-center justify-between h-[106px]">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-4">
-            <div className="w-16 h-16 bg-gradient-to-b from-[#A8D5FF] to-[#6BB6FF] rounded-[16px] flex items-center justify-center">
-              <span className="text-[32px]">🧠</span>
+            <div className="w-16 h-16 flex items-center justify-center">
+              <Image 
+                src="/home/logo.png" 
+                alt="DeepBrain Academy Logo" 
+                width={64} 
+                height={64}
+                className="object-contain"
+              />
             </div>
             <div className="flex flex-col">
               <span className="text-[16px] font-medium text-[#274777] tracking-[25%]">DEEP BRAIN ACADEMY</span>

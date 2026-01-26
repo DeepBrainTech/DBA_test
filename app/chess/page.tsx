@@ -4,12 +4,14 @@
  * 注意事项：页面只负责布局与组件组合，不包含业务逻辑
  */
 
+/**
+ * 文件用途：Chess 页面入口，负责组装各个 Section 组件
+ * 依赖关系：依赖 chess 相关 Section 组件与数据文件
+ * 注意事项：页面只负责布局与组件组合，不包含业务逻辑
+ * Navigation 和 Footer 已在根 layout.tsx 中统一管理，无需在此导入
+ */
+
 import { Outfit } from "next/font/google";
-
-import ColorBoxSection from "@/components/chess/ColorBox";
-
-import Navigation from "@/components/layout/Navigation";
-import Footer from "@/components/layout/Footer";
 
 import ChessHeroSection from "@/components/chess/ChessHeroSection";
 import ChessPhilosophySection from "@/components/chess/ChessPhilosophySection";
@@ -29,8 +31,6 @@ const outfit = Outfit({ subsets: ["latin"] });
 export default function ChessPage() {
     return (
         <div className={`min-h-screen bg-[#FBF9F4] ${outfit.className}`}>
-            {/* Global Navigation */}
-            <Navigation />
             {/*<ColorBoxSection />*/}
             {/* Hero Section */}
             <ChessHeroSection features={features} />
@@ -51,9 +51,6 @@ export default function ChessPage() {
 
             {/*Booking*/}
             <BookFreeSection />
-
-            {/* Footer */}
-            <Footer />
         </div>
     );
 }
