@@ -36,7 +36,7 @@ const programs: Program[] = [
         sessions: "12 sessions",
         sessionDetails: "1.5h / session",
         tuition: "$660",
-        regular: "$720"
+        regular: "$750"
     },
     {
         subject: "Chess/Go 1-on-1 Private Coaching",
@@ -53,9 +53,9 @@ export default function PricingSection() {
       <div className="max-w-[1920px] mx-auto px-14">
         {/* Header */}
         <div className="text-center mb-[80px]">
-          <div className="inline-flex items-center gap-[20px] px-[30px] py-[15px] bg-[#F3F0FF] rounded-[33px] mb-[27px]">
+          <div className="inline-flex items-center gap-[20px] px-[30px] py-[15px] bg-[#fdf5ee] rounded-[33px] mb-[27px]">
             <span className="text-[32px]">💎</span>
-            <span className="text-[24px] text-[#9B8FD8] font-medium">Pricing</span>
+            <span className="text-[24px] text-[#f4a460] font-medium">Pricing</span>
           </div>
           <h2 className="text-[53px] font-bold text-[#2C3E50] mb-[27px] leading-[1.3]">
             Winter and Spring Program

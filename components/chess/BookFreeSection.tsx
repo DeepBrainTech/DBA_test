@@ -22,7 +22,7 @@ const benefits: Benefit[] = [
 
 export default function BookFreeSection() {
   return (
-      <section id="book-free" className="bg-gradient-to-b from-[#B7AAFB] to-[#9A8ED7] py-[80px] relative">
+      <section id="book-free" className="bg-orange-400 py-[80px] relative">
       <div className="max-w-[1920px] mx-auto px-14">
               {/* Limited-time Offer Tag */}
               <div className="flex justify-center space-y-[16px] p-6" >
@@ -166,15 +166,14 @@ export default function BookFreeSection() {
                 </div>
 
                 {/* Submit Button */}
-                <button
-                  type="submit"
-                  className="w-full flex items-center justify-center gap-[10px] px-[42px] h-[76px] bg-gradient-to-b from-[#9B8FD8] to-[#8A7CC7] text-white text-[21px] font-normal rounded-[22px] hover:shadow-xl transition"
+                <a
+                    href="https://forms.gle/2mMzKoQkXHa2CVHe6"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full flex items-center justify-center gap-[10px] px-[42px] h-[76px] bg-orange-400 text-white text-[21px] font-normal rounded-[22px] hover:shadow-xl transition"
                 >
-                  Book Free Now
-                  <svg className="w-[26px] h-[26px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.77} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-                </button>
+                    Book Free Now →
+                </a>
 
                 {/* Privacy Statement */}
                 <p className="text-[19px] text-[#7C8B99] text-center leading-[25px]">
@@ -185,15 +184,15 @@ export default function BookFreeSection() {
                 {/* Statistics */}
                 <div className="flex items-center justify-center gap-[48px] pt-[32px] border-t border-[#E8F4FC]">
                   <div className="text-center">
-                    <div className="text-[24px] font-semibold text-[#9B8FD8]">2,456</div>
+                    <div className="text-[24px] font-semibold text-orange-400">2,456</div>
                     <div className="text-[21px] text-[#7C8B99]">Reserved</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-[24px] font-semibold text-[#9B8FD8]">99%</div>
+                    <div className="text-[24px] font-semibold text-orange-400">99%</div>
                     <div className="text-[21px] text-[#7C8B99]">Satisfied</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-[24px] font-semibold text-[#9B8FD8]">3</div>
+                    <div className="text-[24px] font-semibold text-orange-400">3</div>
                     <div className="text-[21px] text-[#7C8B99]">spots left</div>
                   </div>
                 </div>

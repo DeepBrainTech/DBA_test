@@ -67,7 +67,7 @@ export default function ChessHeroSection({ features }: ChessHeroSectionProps) {
                 {/* Discover the Charm of Board Games Button */}
                 <button
                     onClick={handleScrollDown}
-                    className="px-[60px] h-[90px] bg-gradient-to-b from-[#9B8FD8] to-[#8A7CC7] text-white text-[26px] rounded-[40px] hover:shadow-xl transition font-medium"
+                    className="px-[60px] h-[90px] bg-orange-400 text-white text-[26px] rounded-[40px] hover:shadow-xl transition font-medium"
                 >
                     Discover the Charm of Board Games
                 </button>

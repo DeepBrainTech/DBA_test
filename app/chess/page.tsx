@@ -6,6 +6,8 @@
 
 import { Outfit } from "next/font/google";
 
+import ColorBoxSection from "@/components/chess/ColorBox";
+
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
 
@@ -29,7 +31,7 @@ export default function ChessPage() {
         <div className={`min-h-screen bg-[#FBF9F4] ${outfit.className}`}>
             {/* Global Navigation */}
             <Navigation />
-
+            {/*<ColorBoxSection />*/}
             {/* Hero Section */}
             <ChessHeroSection features={features} />
 
