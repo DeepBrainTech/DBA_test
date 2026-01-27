@@ -7,6 +7,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import SocialIconWithQR from './SocialIconWithQR';
 
 /**
@@ -20,8 +21,14 @@ export default function Footer() {
           {/* Company Info */}
           <div className="col-span-2">
             <div className="flex items-center gap-5 mb-[40px]">
-              <div className="w-20 h-20 bg-gradient-to-b from-[#A8D5FF] to-[#6BB6FF] rounded-[20px] flex items-center justify-center">
-                <span className="text-[40px]">🧠</span>
+              <div className="w-20 h-20 flex items-center justify-center">
+                <Image 
+                  src="/home/logo.png" 
+                  alt="DeepBrain Academy Logo" 
+                  width={80} 
+                  height={80}
+                  className="object-contain"
+                />
               </div>
             </div>
             <p className="text-[22px] text-[#C8CFD6] leading-[1.6] mb-[40px]">
