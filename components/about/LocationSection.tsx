@@ -8,7 +8,7 @@
 
 const LOCATION = {
   name: 'DeepBrain Academy',
-  address: '120 County Rd, Suite 100-101 Tenafly, NJ 07670',
+  address: '120 County Rd, Suite 100-101, Tenafly, NJ 07670',
   phone: '914-488-4460',
   googleMapsEmbedUrl:
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6028.930857005808!2d-73.96620757921829!3d40.92746559425038!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2f1bfbdb0ab33%3A0xf426db7344911778!2s120%20County%20Rd%2C%20Tenafly%2C%20NJ%2007670!5e0!3m2!1sen!2sus!4v1769717629979!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade',
