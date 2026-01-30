@@ -8,6 +8,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import SocialIconWithQR from './SocialIconWithQR';
 
 /**
  * 页脚组件
@@ -20,8 +21,14 @@ export default function Footer() {
           {/* Company Info */}
           <div className="col-span-2">
             <div className="flex items-center gap-5 mb-[40px]">
-              <div className="w-20 h-20 bg-gradient-to-b from-[#A8D5FF] to-[#6BB6FF] rounded-[20px] flex items-center justify-center">
-                <span className="text-[40px]">🧠</span>
+              <div className="w-20 h-20 flex items-center justify-center">
+                <Image 
+                  src="/home/logo.png" 
+                  alt="DeepBrain Academy Logo" 
+                  width={80} 
+                  height={80}
+                  className="object-contain"
+                />
               </div>
             </div>
             <p className="text-[22px] text-[#C8CFD6] leading-[1.6] mb-[40px]">
@@ -38,14 +45,48 @@ export default function Footer() {
                 <svg className="w-[27px] h-[27px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                <span className="text-[22px] text-white">chris@deepbraintechnology.com</span>
+                <span className="text-[22px] text-white">info@deepbrainacademy.org</span>
               </div>
               <div className="flex items-center gap-[20px]">
                 <svg className="w-[27px] h-[27px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
-                <span className="text-[22px] text-white">92 Massasoit St, Waltham, MA 02453</span>
+                <span className="text-[22px] text-white">120 County Rd, Suite 100-101, Tenafly, NJ</span>
+              </div>
+            </div>
+            
+            {/* Follow Us 和二维码部分 */}
+            <div className="pt-[40px] border-t border-[#3D4F63] mt-[40px]">
+              <p className="text-[23px] text-[#A8B5C3] mb-[20px]">Follow Us</p>
+              <div className="flex flex-row items-start gap-[20px]">
+                {/* RedNote 图标 - 悬停显示二维码 */}
+                <SocialIconWithQR 
+                  iconSrc="/icon_qrcode/rednote_icon.svg"
+                  qrCodeSrc="/icon_qrcode/rednote_qr.svg" 
+                  platformName="RedNote" 
+                />
+                
+                {/* Facebook Public Page 图标 - 悬停显示二维码 */}
+                <SocialIconWithQR 
+                  iconSrc="/icon_qrcode/facebook_icon.svg"
+                  qrCodeSrc="/icon_qrcode/fb_public_qr.png" 
+                  platformName="Facebook" 
+                />
+                
+                {/* Instagram 图标 - 悬停显示二维码 */}
+                <SocialIconWithQR 
+                  iconSrc="/icon_qrcode/instgram_icon.svg"
+                  qrCodeSrc="/icon_qrcode/ins_qr.png" 
+                  platformName="Instagram" 
+                />
+                
+                {/* WeChat 图标 - 悬停显示二维码 */}
+                <SocialIconWithQR 
+                  iconSrc="/icon_qrcode/wechat_icon.svg"
+                  qrCodeSrc="/icon_qrcode/wechat_qr.jpg" 
+                  platformName="WeChat" 
+                />
               </div>
             </div>
           </div>
@@ -83,22 +124,14 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Resource Center + 小红书 */}
+          {/* Resource Center */}
           <div>
             <h4 className="text-[27px] font-semibold mb-[27px]">Resource Center</h4>
-            <div className="space-y-[20px] mb-[40px]">
+            <div className="space-y-[20px]">
               <Link href="#" className="block text-[20px] text-[#A8B5C3] hover:text-white transition">Learning Materials</Link>
               <Link href="#" className="block text-[20px] text-[#A8B5C3] hover:text-white transition">Educational Blogs</Link>
               <Link href="#" className="block text-[20px] text-[#A8B5C3] hover:text-white transition">Successful Cases</Link>
               <Link href="#" className="block text-[20px] text-[#A8B5C3] hover:text-white transition">Events</Link>
-            </div>
-            
-            {/* 小红书二维码 */}
-            <div className="pt-[40px] border-t border-[#3D4F63]">
-              <p className="text-[23px] text-[#A8B5C3] mb-[20px]">Follow Us</p>
-              <div className="w-[240px] h-[240px] bg-[#3D4F63] rounded-[30px] flex items-center justify-center">
-                <Image src="/xhs.svg" alt="小红书" width={180} height={180} />
-              </div>
             </div>
           </div>
         </div>
