@@ -93,7 +93,7 @@ export default function PreAMCProgram() {
           <div className="flex items-center gap-4 mb-6">
             <div className="w-24 h-24 rounded-lg overflow-hidden flex-shrink-0">
               <Image
-                src="/math/scan.png"
+                src="/math/scan.jpg"
                 alt="WeChat QR Code"
                 width={96}
                 height={96}

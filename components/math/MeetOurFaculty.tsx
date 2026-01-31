@@ -25,7 +25,7 @@ export default function MeetOurFaculty() {
     {
       name: 'Chris Chen',
       title: 'Assistant Professor of Harvard University',
-      image: '/math/Chris Chen.png',
+      image: '/math/chris-chen.png',
       badge: 'Expert',
       badgeColor: 'bg-[#FFE8E8] text-[#FF6B6B]',
       achievements: [
@@ -39,7 +39,7 @@ export default function MeetOurFaculty() {
       name: 'Yanming Zhang',
       title: 'AP Calculus, AP Physics Teacher',
       titleColor: 'text-[#81C784]',
-      image: '/math/Yanming Zhang.png',
+      image: '/math/yanming-zhang.png',
       achievements: [
         'Experienced Educator in Advanced STEM and Test Preparation',
         'The Best Math and Science Coach and Mentor in the USA and the World'
@@ -50,7 +50,7 @@ export default function MeetOurFaculty() {
       name: 'Chenxiao Tian',
       title: 'Math Tutor',
       titleColor: 'text-[#81C784]',
-      image: '/math/Chenxiao Tian.png',
+      image: '/math/chenxiao-tian.png',
       achievements: [
         'PhD in Mathematics and Statistics',
         'Published papers on Mathematics and Data Science',

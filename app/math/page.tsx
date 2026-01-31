@@ -6,6 +6,8 @@
  */
 
 import MathHero from '@/components/math/MathHero';
+import MathTeachingPhilosophy from '@/components/math/MathTeachingPhilosophy';
+import MeetOurFaculty from '@/components/math/MeetOurFaculty';
 import PreAMCProgram from '@/components/math/PreAMCProgram';
 import SevenStepsMethod from '@/components/math/SevenStepsMethod';
 import PricingSection from '@/components/math/PricingSection';
@@ -18,6 +20,8 @@ export default function MathPage() {
   return (
     <>
       <MathHero />
+      <MathTeachingPhilosophy />
+      <MeetOurFaculty />
       <PreAMCProgram />
       <SevenStepsMethod />
       <PricingSection />
