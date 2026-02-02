@@ -44,7 +44,7 @@ export default function HeroSection() {
             {/* Buttons */}
             <div className="flex gap-[27px]">
               <button className="flex items-center justify-center gap-[13px] px-[53px] h-[95px] bg-gradient-to-b from-[#7EC97E] to-[#6BB87B] text-white text-[28px] rounded-[40px] hover:shadow-xl transition">
-                Free Trial
+                Schedule A Consultation
                 <svg className="w-[33px] h-[33px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.77} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>

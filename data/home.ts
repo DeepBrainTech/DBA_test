@@ -72,29 +72,29 @@ export const trustBadges: TrustBadge[] = [
 export const advantages: Advantage[] = [
   {
     icon: '🎮',
-    title: 'Engaging Learning Way',
-    desc: 'Gamified learning allow children to acquire knowledge in a fun way and maintain their enthusiasm in the long run.',
+    title: 'Interactive Teaching Approach',
+    desc: 'Gamified learning allows children to master concepts joyfully and sustain their enthusiasm long-term.',
     stat: '95%',
     label: 'Class Participation'
   },
   {
     icon: '👨‍🏫',
-    title: 'Professional Coaching Team',
-    desc: 'Experienced Tutors from top universities with strong international teaching backgrounds.',
-    stat: '10ys+',
-    label: 'Average teaching experience'
+    title: 'World-Class Instructors',
+    desc: 'Experienced Instructors from top universities with strong teaching backgrounds.',
+    stat: '20yrs',
+    label: 'Teaching experience'
   },
   {
     icon: '👥',
     title: 'Personalized Support',
-    desc: 'Small class let us to support each child\'s unique pace and provide tailored guidance.',
-    stat: '1:6',
-    label: 'Student-Teacher Ratio'
+    desc: 'Small class sizes allow us to accommodate each child\'s unique pace and provide tailored guidance.',
+    stat: '1 on 1',
+    label: 'Private Tutoring'
   },
   {
     icon: '📈',
-    title: 'Visible Achievement',
-    desc: 'A structure evaluation system with regular progress feedback ensures visible growth.',
+    title: 'Tangible Results',
+    desc: 'A structured assessment system with regular feedback ensures measurable progress.',
     stat: 'Weekly',
     label: 'Study Report'
   }
@@ -119,30 +119,30 @@ export const studentAchievements: StudentAchievement[] = [
  */
 export const newsArticles: NewsArticle[] = [
   {
-    tag: 'Industry Insights',
-    tagColor: '#7EC97E',
-    title: 'Top 5 Trends in Children\'s Education 2024: Personalized Learning',
-    excerpt: 'AI is transforming traditional teaching, making personalized learning paths possible for every child...',
-    date: '2024.11.20',
+    tag: 'Learning methods',
+    tagColor: '#9B8FD8',
+    title: 'The Value of Learning Chess Is More Than Just "Becoming Smarter"',
+    excerpt: 'Does playing chess actually make you smarter? Is learning Go or chess genuinely useful, or does it just sound...',
+    date: '2025.11.30',
     time: '5 min',
     image: '/education_1.svg'
   },
   {
-    tag: 'Course Update',
-    tagColor: '#F4A460',
-    title: 'New Math thinking Course V3.0: More fun, More Effective',
-    excerpt: 'After six months of testing, our Math Olympiad course is upgraded with more interactive and gamified features...',
-    date: '2024.11.15',
-    time: '3 min',
+    tag: 'Learning methods',
+    tagColor: '#9B8FD8',
+    title: 'How Programming Education Shapes Thinking and Problem-Solving Skills',
+    excerpt: 'When programming is mentioned, many people still think of it mainly in career terms. Is learning to code only useful if a child...',
+    date: '2025.12.15',
+    time: '8 min',
     image: '/education_2.svg'
   },
   {
-    tag: 'Learning methods',
-    tagColor: '#9B8FD8',
-    title: 'How to Build Your Child\'s Interest in Chess: 5 Tips',
-    excerpt: 'Chess strengthens logic, patience and focus. Here are practical tips parents can use at home...',
-    date: '2024.11.10',
-    time: '4 min',
+    tag: 'Industry Insights',
+    tagColor: '#7EC97E',
+    title: 'Beyond Test Scores: Why Go Keeps Appearing in the Background of Gaokao Top Performers',
+    excerpt: 'In China, academic success is often measured by performance in the Gaokao, the national college entrance...',
+    date: '2025.12.25',
+    time: '7 min',
     image: '/education_3.svg'
   }
 ];

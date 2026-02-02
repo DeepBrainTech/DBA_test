@@ -24,10 +24,10 @@ export default function HonorWall({ achievements }: HonorWallProps) {
             <span className="text-[26.5px] text-[#6BB6FF]">Achievements</span>
           </div>
           <h2 className="text-[53px] font-bold text-[#2C3E50] mb-[27px] leading-[1.3]">
-            Honor Wall
+            Student Achievements
           </h2>
           <p className="text-[26.5px] text-[#7C8B99]">
-            Behind every award lies the culmination of the student's hard work.
+            Every award is a testament to our students' dedication.
           </p>
         </div>
 

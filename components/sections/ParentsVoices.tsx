@@ -1,112 +1,161 @@
 /**
  * 文件用途：家长评价区块组件
- * 依赖关系：依赖 Next.js Image 组件
- * 注意事项：包含评价卡片、轮播控制和统计数据
+ * 依赖关系：无
+ * 注意事项：2x2 评价卡片网格、轮播控制、底部统计
  */
 
 'use client';
 
-import Image from 'next/image';
+interface Testimonial {
+  quote: string;
+  achievement?: { emoji: string; text: string };
+  name: string;
+  role: string;
+  location: string;
+  avatar: string;
+}
 
-/**
- * 家长评价组件
- */
+const testimonials: Testimonial[] = [
+  {
+    quote:
+      'Yanming Zhang is a very nice person and professional tutor who can tutor 60 subjects. He has helped my daughter to ace physics tests in a few lessons and got a 36 in ACT IN A MONTH. Thanks, yanming! You are the best in USA.',
+    achievement: { emoji: '🎉', text: '36 points in ACT in a month' },
+    name: 'XH J.',
+    role: 'Parent of our student',
+    location: 'Hackensack, NJ',
+    avatar: '🙌',
+  },
+  {
+    quote:
+      'The tutor session was great. I needed assistance with Intro to Evolution Hw at a college level. Yanming was able to structure the problems down to beginner lever in order to help me understand. I strongly recommend his tutoring sessions even if it for just an hour a day. He was on time and we met in a location close to home.',
+    name: 'Yolanda L.',
+    role: 'Student',
+    location: 'Jersey City, NJ',
+    avatar: '🙌',
+  },
+  {
+    quote:
+      'Professor Zhang is passionate and humorous, and most importantly is dedicated to his students. gives his students a tremendous advantage by conveying a deep understanding of the material, far beyond what is taught in the classroom. We are extremely fortunate and blessed that he has helped us succeed academically. I give him the highest recommendation, without reservation.',
+    name: 'B. L.',
+    role: 'Neurosurgery Resident at NYU',
+    location: 'New York, NY',
+    avatar: '🙌',
+  },
+  {
+    quote:
+      'Yanming helped me self study for AP calculus AB and helped me through AP Physics I. I like his ability to break down concepts and problems into understandable parts, and ended up doing well on both exams.',
+    achievement: { emoji: '🌿', text: 'Admitted by Stanford University' },
+    name: 'Adam Z.',
+    role: 'Student',
+    location: 'Englewood Cliff, NJ',
+    avatar: '🙌',
+  },
+];
+
+const stats = [
+  { value: '98%', label: 'Referral Rate' },
+  { value: '95%', label: 'Renewal Rate' },
+  { value: '5.0/5.0', label: 'Satisfaction Rate' },
+  { value: '⭐⭐⭐⭐⭐', label: 'Recommendation Rate' },
+];
+
+const PAGINATION_DOTS = 6;
+
 export default function ParentsVoices() {
   return (
-    <section className="py-[133px] bg-white">
-      <div className="max-w-[1920px] mx-auto px-14">
-        <div className="text-center mb-[53px]">
-          <div className="inline-flex items-center gap-[27px] px-[27px] py-[13px] bg-white rounded-[33px] mb-[27px] shadow-sm">
-            <span className="text-[40px]">💬</span>
-            <span className="text-[26.5px] text-[#6BB6FF]">Parents' Voices</span>
+    <section className="py-[113px] bg-white">
+      <div className="max-w-[1920px] mx-auto px-12">
+        {/* Header */}
+        <div className="text-center mb-[45px]">
+          <div className="inline-flex items-center gap-[23px] px-[23px] py-[11px] bg-white rounded-[28px] mb-[23px] shadow-sm border border-[#E8F4FC]">
+            <span className="text-[34px]">💬</span>
+            <span className="text-[22.5px] text-[#6BB6FF]">Testimonials</span>
           </div>
-          <h2 className="text-[53px] font-bold text-[#2C3E50] mb-[27px] leading-[1.3]">
-            Listen to what they said
+          <h2 className="text-[45px] font-bold text-[#2C3E50] mb-[23px] leading-[1.3]">
+            Hear from Our Community
           </h2>
-          <p className="text-[26.5px] text-[#7C8B99]">
-            Authentic learning experiences, endorsed by parents and children.
+          <p className="text-[22.5px] text-[#7C8B99]">
+            Trusted by parents, loved by students.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 gap-[67px]">
-          {/* Image */}
-          <div className="relative">
-            <div className="relative w-[864px] h-[399px] rounded-[40px] overflow-hidden shadow-[0px_41px_83px_-20px_rgba(0,0,0,0.25)]">
-              <Image
-                src="/sucess.svg"
-                alt="Success Story"
-                fill
-                loading="lazy"
-                className="object-cover"
-              />
-            </div>
-            
-            {/* Quote Icon Overlay */}
-            <div className="absolute -top-[20px] -left-[20px] w-[132px] h-[132px] bg-gradient-to-b from-[#6BB6FF] to-[#4A9FEF] rounded-[33px] shadow-xl flex items-center justify-center z-10">
-              <Image src="/quote.svg" alt="Quote" width={60} height={60} />
-            </div>
-          </div>
-
-          {/* Testimonial */}
-          <div>
-            <div className="bg-white rounded-[40px] shadow-[0px_7px_10px_-7px_rgba(0,0,0,0.1),0px_17px_25px_-5px_rgba(0,0,0,0.1)] p-[53px] mb-[40px] relative overflow-hidden">
-              <p className="text-[26.5px] text-[#2C3E50] leading-[1.6] mb-[40px]">
-                "One year of Math Olympiad here transformed my son. He shifted from resisting to actively loving math. The teachers are patient and make complex concepts easy to understand."
+        {/* 2x2 Testimonial Grid */}
+        <div className="grid grid-cols-2 gap-[23px] mb-[34px]">
+          {testimonials.map((t, idx) => (
+            <div
+              key={idx}
+              className="bg-white rounded-[23px] p-[34px] shadow-[0px_6px_8px_-6px_rgba(0,0,0,0.1),0px_14px_21px_-4px_rgba(0,0,0,0.1)] hover:shadow-lg transition flex flex-col"
+            >
+              <p className="text-[22.5px] text-[#2C3E50] leading-[1.6] mb-[23px] flex-1">
+                &quot;{t.quote}&quot;
               </p>
-              
-              <div className="inline-flex items-center gap-[27px] px-[27px] h-[73px] bg-[rgba(126,201,126,0.13)] rounded-[27px] mb-[40px]">
-                <span className="text-[33px]">🎉</span>
-                <span className="text-[23px] text-[#7EC97E] font-medium">Math score improved by 36 points</span>
-              </div>
-
-              <div className="flex items-center gap-[27px] pt-[40px] border-t border-[#E8F4FC]">
-                <div className="w-[93px] h-[93px] bg-gradient-to-br from-[#A8D5FF] to-[#6BB6FF] rounded-[23px] flex items-center justify-center text-[40px]">
-                  👩
+              {t.achievement && (
+                <div className="inline-flex items-center gap-[11px] px-[23px] py-[11px] bg-[rgba(126,201,126,0.13)] rounded-[23px] mb-[23px] w-fit">
+                  <span className="text-[24px]">{t.achievement.emoji}</span>
+                  <span className="text-[20px] text-[#7EC97E] font-medium">
+                    {t.achievement.text}
+                  </span>
+                </div>
+              )}
+              <div className="flex items-center gap-[23px] pt-[17px] border-t border-[#E8F4FC]">
+                <div className="w-[56px] h-[56px] bg-gradient-to-br from-[#A8D5FF] to-[#6BB6FF] rounded-[17px] flex items-center justify-center text-[27px] flex-shrink-0">
+                  {t.avatar}
                 </div>
                 <div>
-                  <h4 className="text-[30px] font-semibold text-[#2C3E50]">Mrs. Sun</h4>
-                  <p className="text-[26.5px] text-[#7C8B99]">Parent of our student</p>
-                  <p className="text-[26.5px] text-[#7C8B99]">Hackensack, NJ</p>
+                  <h4 className="text-[22px] font-semibold text-[#2C3E50] mb-[3px]">
+                    {t.name}
+                  </h4>
+                  <p className="text-[19px] text-[#7C8B99]">{t.role}</p>
+                  <p className="text-[19px] text-[#7C8B99]">{t.location}</p>
                 </div>
               </div>
-
-              <div className="absolute bottom-0 left-0 right-0 h-[10px] bg-[#7EC97E] rounded-b-[40px]"></div>
             </div>
+          ))}
+        </div>
 
-            {/* Carousel Controls */}
-            <div className="flex items-center justify-between">
-              <button className="w-[79px] h-[79px] bg-white rounded-[20px] shadow-md flex items-center justify-center hover:shadow-lg transition">
-                <svg className="w-[40px] h-[40px] text-[#6BB6FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3.3} d="M15 19l-7-7 7-7" />
-                </svg>
-              </button>
-              
-              <div className="flex gap-[13px]">
-                <div className="w-[40px] h-[7px] bg-[#6BB6FF] rounded-full"></div>
-                <div className="w-[13px] h-[7px] bg-[#E8F4FC] rounded-full"></div>
-                <div className="w-[13px] h-[7px] bg-[#E8F4FC] rounded-full"></div>
-              </div>
-              
-              <button className="w-[79px] h-[79px] bg-white rounded-[20px] shadow-md flex items-center justify-center hover:shadow-lg transition">
-                <svg className="w-[40px] h-[40px] text-[#6BB6FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3.3} d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
-            </div>
+        {/* Carousel Controls */}
+        <div className="flex items-center justify-center gap-[34px] mb-[68px]">
+          <button
+            type="button"
+            className="w-[51px] h-[51px] bg-[#6BB6FF] hover:bg-[#4A9FEF] rounded-[17px] flex items-center justify-center text-white shadow-md hover:shadow-lg transition"
+            aria-label="Previous testimonials"
+          >
+            <svg className="w-[24px] h-[24px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <div className="flex gap-[8px] items-center">
+            {Array.from({ length: PAGINATION_DOTS }).map((_, i) => (
+              <div
+                key={i}
+                className={`h-[8px] rounded-full transition ${
+                  i === 0 ? 'bg-[#6BB6FF] w-[20px]' : 'bg-[#E8F4FC] w-[8px]'
+                }`}
+              />
+            ))}
           </div>
+          <button
+            type="button"
+            className="w-[51px] h-[51px] bg-[#6BB6FF] hover:bg-[#4A9FEF] rounded-[17px] flex items-center justify-center text-white shadow-md hover:shadow-lg transition"
+            aria-label="Next testimonials"
+          >
+            <svg className="w-[24px] h-[24px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
         </div>
 
         {/* Bottom Stats */}
-        <div className="grid grid-cols-4 gap-[40px] mt-[80px]">
-          {[
-            { value: '98%', label: 'Parent Referral Rate' },
-            { value: '95%', label: 'Renewal Rate' },
-            { value: '4.9/5.0', label: 'Satisfaction Rate' },
-            { value: '⭐⭐⭐⭐⭐', label: 'Recommendation Rate' }
-          ].map((stat, idx) => (
-            <div key={idx} className="bg-white rounded-[27px] p-[40px] text-center shadow-sm hover:shadow-lg transition">
-              <h4 className="text-[30px] font-semibold text-[#6BB6FF] mb-[13px]">{stat.value}</h4>
-              <p className="text-[26.5px] text-[#7C8B99]">{stat.label}</p>
+        <div className="grid grid-cols-4 gap-[34px]">
+          {stats.map((stat, idx) => (
+            <div
+              key={idx}
+              className="bg-white rounded-[23px] p-[34px] text-center shadow-sm hover:shadow-lg transition"
+            >
+              <h4 className="text-[25.5px] font-semibold text-[#6BB6FF] mb-[11px]">
+                {stat.value}
+              </h4>
+              <p className="text-[22.5px] text-[#7C8B99]">{stat.label}</p>
             </div>
           ))}
         </div>
@@ -114,4 +163,3 @@ export default function ParentsVoices() {
     </section>
   );
 }
-
