@@ -1,12 +1,12 @@
 /**
- * 文件用途：Book Free 预订表单组件（全球教育页面）
+ * 文件用途：Book Free 预订入口组件（全球教育页面）
  * 依赖关系：无
- * 注意事项：包含营销内容和预订表单
  */
 
 'use client';
 
-import { scrollToElement } from '@/lib/scroll';
+// TODO: 替换为你的 Google Form 链接
+const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfAceUQq9JJ3uu-EcWlHkTQ1O1jY_uzh-fptrN7_JC9rf-dqg/viewform';
 
 interface Benefit {
   icon: string;
@@ -14,22 +14,15 @@ interface Benefit {
 }
 
 const benefits: Benefit[] = [
-  {
-    icon: '📋',
-    text: 'Personalized Report'
-  },
-  {
-    icon: '🎯',
-    text: 'One-on-one consultation'
-  },
-  {
-    icon: '📊',
-    text: 'Background Evaluation & Analysis'
-  },
-  {
-    icon: '🎁',
-    text: 'Exclusive Application Resource Kit.'
-  }
+  { icon: '📋', text: 'Personalized Report' },
+  { icon: '🎯', text: 'One-on-one consultation' },
+  { icon: '📊', text: 'Background Evaluation & Analysis' },
+];
+
+const stats = [
+  { value: '1,234', label: 'Sessions Booked' },
+  { value: '100%', label: 'Satisfaction Rate' },
+  { value: '24h', label: 'Response Time' },
 ];
 
 export default function BookFreeSection() {
@@ -59,9 +52,7 @@ export default function BookFreeSection() {
 
             {/* You'll Get Section */}
             <div className="space-y-[16px]">
-              <h3 className="text-[24px] font-semibold text-white">
-                You'll Get:
-              </h3>
+              <h3 className="text-[24px] font-semibold text-white">You'll Get:</h3>
               <div className="space-y-[16px]">
                 {benefits.map((benefit, idx) => (
                   <div
@@ -69,20 +60,9 @@ export default function BookFreeSection() {
                     className="bg-white/10 rounded-[16px] px-[22px] py-[21px] flex items-center gap-[16px]"
                   >
                     <span className="text-[32px] flex-shrink-0">{benefit.icon}</span>
-                    <span className="text-[21px] text-white">
-                      {benefit.text}
-                    </span>
+                    <span className="text-[21px] text-white">{benefit.text}</span>
                   </div>
                 ))}
-              </div>
-            </div>
-
-            {/* Reserved Count */}
-            <div className="bg-white/20 rounded-[16px] px-[22px] py-[16px] flex items-center gap-[16px]">
-              <span className="text-[32px]">⏰</span>
-              <div>
-                <span className="text-[21px] text-white font-bold">2,456</span>
-                <span className="text-[21px] text-white ml-[8px]">Reserved</span>
               </div>
             </div>
 
@@ -101,127 +81,43 @@ export default function BookFreeSection() {
                 <span className="text-[18px] text-white/80">Risk-free Guarantee</span>
               </div>
             </div>
-
-            {/* Bottom Message - will be positioned at the bottom */}
           </div>
 
-          {/* Right Section - Booking Form */}
+          {/* Right Section - Simplified Schedule Card */}
           <div className="sticky top-[80px]">
             <div className="bg-white rounded-[22px] p-[42px] shadow-xl">
-              {/* Form Title */}
-              <h3 className="text-[32px] font-bold text-[#2C3E50] mb-[10px]">
-                Book Free Now
-              </h3>
-
-              {/* Form Subtitle */}
-              <p className="text-[21px] text-[#7C8B99] mb-[42px]">
-                Submit info, advisor contacts you within 24h.
+              <h2 className="text-[32px] font-bold text-[#2C3E50] mb-[10px]">
+                Schedule Your Consultation
+              </h2>
+              <p className="text-[21px] text-[#7C8B99] mb-[32px] leading-relaxed">
+                Submit your details and an advisor will contact you within 24h.
               </p>
 
-              {/* Form Fields */}
-              <form className="space-y-[22px]">
-                <div>
-                  <label className="block text-[18px] font-normal text-[#2C3E50] mb-[10px]">
-                    Student Name <span className="text-[#F4A460]">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Enter Student Name"
-                    className="w-full px-[22px] py-[16px] bg-[#FBF9F4] border-2 border-transparent rounded-[16px] text-[21px] text-[#7C8B99] focus:outline-none focus:ring-2 focus:ring-[#9B8FD8] focus:border-transparent"
-                  />
-                </div>
+              <a
+                href={GOOGLE_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-[10px] w-full px-[42px] h-[76px] bg-gradient-to-b from-[#9B8FD8] to-[#8A7CC7] text-white text-[21px] font-normal rounded-[22px] hover:shadow-xl transition"
+              >
+                Book Free Trial
+                <svg className="w-[26px] h-[26px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.77} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </a>
 
-                <div>
-                  <label className="block text-[18px] font-normal text-[#2C3E50] mb-[10px]">
-                    Target Country/City <span className="text-[#F4A460]">*</span>
-                  </label>
-                  <select className="w-full px-[22px] py-[16px] bg-[#FBF9F4] border-2 border-transparent rounded-[16px] text-[21px] text-[#7C8B99] focus:outline-none focus:ring-2 focus:ring-[#9B8FD8] focus:border-transparent">
-                    <option value="">Please select target country/region</option>
-                    <option value="us">United States</option>
-                    <option value="uk">United Kingdom</option>
-                    <option value="ca">Canada</option>
-                    <option value="au">Australia</option>
-                    <option value="sg">Singapore</option>
-                    <option value="hk">Hong Kong</option>
-                    <option value="eu">Europe</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label className="block text-[18px] font-normal text-[#2C3E50] mb-[10px]">
-                    Application Stage <span className="text-[#F4A460]">*</span>
-                  </label>
-                  <select className="w-full px-[22px] py-[16px] bg-[#FBF9F4] border-2 border-transparent rounded-[16px] text-[21px] text-[#7C8B99] focus:outline-none focus:ring-2 focus:ring-[#9B8FD8] focus:border-transparent">
-                    <option value="">Please select application stage</option>
-                    <option value="high-school">High School</option>
-                    <option value="undergraduate">Undergraduate</option>
-                    <option value="master">Master</option>
-                    <option value="phd">PhD</option>
-                    <option value="summer">Summer School/Exchange</option>
-                    <option value="undecided">Undecided</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label className="block text-[18px] font-normal text-[#2C3E50] mb-[10px]">
-                    Contact Number <span className="text-[#F4A460]">*</span>
-                  </label>
-                  <input
-                    type="tel"
-                    placeholder="Enter Guardian's Phone Number"
-                    className="w-full px-[22px] py-[16px] bg-[#FBF9F4] border-2 border-transparent rounded-[16px] text-[21px] text-[#7C8B99] focus:outline-none focus:ring-2 focus:ring-[#9B8FD8] focus:border-transparent"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-[18px] font-normal text-[#2C3E50] mb-[10px]">
-                    Wechat <span className="text-[18px] text-[#7C8B99] ml-[8px]">(Optional)</span>
-                  </label>
-                  <input
-                    type="text"
-                    className="w-full px-[22px] py-[16px] bg-[#FBF9F4] border-2 border-transparent rounded-[16px] text-[21px] text-[#7C8B99] focus:outline-none focus:ring-2 focus:ring-[#9B8FD8] focus:border-transparent"
-                  />
-                </div>
-
-                {/* Submit Button */}
-                <button
-                  type="submit"
-                  className="w-full flex items-center justify-center gap-[10px] px-[42px] h-[76px] bg-gradient-to-b from-[#9B8FD8] to-[#8A7CC7] text-white text-[21px] font-normal rounded-[22px] hover:shadow-xl transition"
-                >
-                  Book Free Now
-                  <svg className="w-[26px] h-[26px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.77} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-                </button>
-
-                {/* Privacy Statement */}
-                <p className="text-[19px] text-[#7C8B99] text-center leading-[25px]">
-                  Your data is private and secure.<br />
-                  Submit & agree to receive course info.
-                </p>
-
-                {/* Statistics */}
-                <div className="flex items-center justify-center gap-[48px] pt-[32px] border-t border-[#E8F4FC]">
-                  <div className="text-center">
-                    <div className="text-[24px] font-semibold text-[#9B8FD8]">2,456</div>
-                    <div className="text-[21px] text-[#7C8B99]">Reserved</div>
+              <div className="flex items-center justify-center gap-[48px] mt-[32px] pt-[32px] border-t border-[#E8F4FC]">
+                {stats.map((item, idx) => (
+                  <div key={idx} className="text-center">
+                    <div className="text-[24px] font-semibold text-[#9B8FD8]">{item.value}</div>
+                    <div className="text-[21px] text-[#7C8B99]">{item.label}</div>
                   </div>
-                  <div className="text-center">
-                    <div className="text-[24px] font-semibold text-[#9B8FD8]">99%</div>
-                    <div className="text-[21px] text-[#7C8B99]">Satisfied</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-[24px] font-semibold text-[#9B8FD8]">3</div>
-                    <div className="text-[21px] text-[#7C8B99]">spots left</div>
-                  </div>
-                </div>
-              </form>
+                ))}
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Bottom Message - Positioned at bottom */}
+        {/* Bottom Tagline */}
         <div className="flex items-center justify-center gap-[27px] mt-[80px]">
           <div className="bg-white/20 rounded-[27px] w-[106px] h-[106px] flex items-center justify-center flex-shrink-0">
             <span className="text-[60px]">💭</span>
