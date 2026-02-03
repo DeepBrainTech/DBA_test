@@ -8,35 +8,42 @@
 
 import { scrollToElement } from '@/lib/scroll';
 
-interface Program {
-  subject: string;
+interface ProgramRow {
   sessions: string;
-  sessionDetails?: string;
-  tuition: string;
+  earlyBirdTuition: string;
   hourlyRate: string;
 }
 
-const programs: Program[] = [
+interface ProgramGroup {
+  subjectLine1: string;
+  subjectLine2: string;
+  rows: ProgramRow[];
+}
+
+const programGroups: ProgramGroup[] = [
   {
-    subject: 'SAT Math Score Breakthrough Intensive',
-    sessions: '16 sessions',
-    sessionDetails: '2h per session',
-    tuition: '$1340 (promo)',
-    hourlyRate: '$45/h'
+    subjectLine1: 'SAT Math Score',
+    subjectLine2: 'Breakthrough Intensive',
+    rows: [
+      { sessions: '14h intensive program', earlyBirdTuition: '$850', hourlyRate: '$1020' },
+      { sessions: '32h extended program', earlyBirdTuition: '$1820', hourlyRate: '$2024' },
+    ],
   },
   {
-    subject: 'ACT Math Score Breakthrough Intensive',
-    sessions: '12 sessions',
-    sessionDetails: '2h per session',
-    tuition: '$1450 (promo)',
-    hourlyRate: '$45/h'
+    subjectLine1: 'ACT Math Score',
+    subjectLine2: 'Breakthrough Intensive',
+    rows: [
+      { sessions: '14h intensive program', earlyBirdTuition: '$850', hourlyRate: '$1020' },
+      { sessions: '32h extended program', earlyBirdTuition: '$1820', hourlyRate: '$2024' },
+    ],
   },
   {
-    subject: 'SAT/ACT Math 1-on-1 Elite Tutoring',
-    sessions: 'Flexible Scheduling',
-    tuition: '$900 / 10 sessions',
-    hourlyRate: '$100/h'
-  }
+    subjectLine1: 'SAT/ACT Math 1-on-1 Elite Tutoring',
+    subjectLine2: '',
+    rows: [
+      { sessions: 'Flexible Scheduling', earlyBirdTuition: 'Call for details', hourlyRate: '$100-215/h' },
+    ],
+  },
 ];
 
 export default function PricingSection() {
@@ -58,9 +65,9 @@ export default function PricingSection() {
         </div>
 
         {/* Pricing Table */}
-        <div className="bg-[#F5F5F5] rounded-[27px] p-[40px] mb-[40px]">
-          <h3 className="text-center text-[40px] font-semibold text-[#2C3E50] mb-[40px]">
-            AMC/SAT/ACT Math Programs
+        <div className="bg-[#F5F5F5] rounded-[27px] p-[24px] mb-[32px]">
+          <h3 className="text-center text-[40px] font-semibold text-[#2C3E50] mb-[24px]">
+            SAT/ACT Math Programs
           </h3>
           
           {/* Table */}
@@ -68,49 +75,54 @@ export default function PricingSection() {
             <table className="w-full">
               <thead>
                 <tr className="border-b-2 border-[#E0E0E0]">
-                  <th className="text-center py-[20px] px-[20px] text-[20px] font-semibold text-[#2C3E50]">
+                  <th className="text-center py-[12px] px-[12px] text-[18px] font-semibold text-[#2C3E50]">
                     Subject
                   </th>
-                  <th className="text-center py-[20px] px-[20px] text-[20px] font-semibold text-[#2C3E50]">
+                  <th className="text-center py-[12px] px-[12px] text-[18px] font-semibold text-[#2C3E50]">
                     Sessions
                   </th>
-                  <th className="text-center py-[20px] px-[20px] text-[20px] font-semibold text-[#2C3E50]">
-                    <span className="inline-block px-[20px] py-[10px] bg-[#F3F0FF] text-[#9B8FD8] rounded-[10px]">
-                      Tuition
+                  <th className="text-center py-[12px] px-[12px] text-[18px] font-semibold">
+                    <span className="inline-block px-[14px] py-[6px] bg-[#F3F0FF] text-[#9B8FD8] rounded-[8px]">
+                      Early Bird Tuition
                     </span>
                   </th>
-                  <th className="text-center py-[20px] px-[20px] text-[20px] font-semibold text-[#2C3E50]">
+                  <th className="text-center py-[12px] px-[12px] text-[18px] font-semibold text-[#2C3E50]">
                     Hourly Rate
                   </th>
                 </tr>
               </thead>
               <tbody>
-                {programs.map((program, idx) => (
-                  <tr 
-                    key={idx} 
-                    className="border-b border-[#E0E0E0] hover:bg-white/50 transition"
-                  >
-                    <td className="text-center py-[27px] px-[20px] text-[20px] text-[#2C3E50]">
-                      {program.subject}
-                    </td>
-                    <td className="text-center py-[27px] px-[20px] text-[20px] text-[#5C6B7A]">
-                      {program.sessions}
-                      {program.sessionDetails && (
-                        <span className="block text-[16px] text-[#7C8B99] mt-[5px]">
-                          {program.sessionDetails}
+                {programGroups.map((group, groupIdx) =>
+                  group.rows.map((row, rowIdx) => (
+                    <tr
+                      key={`${groupIdx}-${rowIdx}`}
+                      className="border-b border-[#E0E0E0] hover:bg-white/50 transition"
+                    >
+                      {rowIdx === 0 ? (
+                        <td
+                          rowSpan={group.rows.length}
+                          className="text-center py-[14px] px-[12px] text-[18px] text-[#2C3E50] align-middle leading-tight"
+                        >
+                          <span className="block">{group.subjectLine1}</span>
+                          {group.subjectLine2 && (
+                            <span className="block">{group.subjectLine2}</span>
+                          )}
+                        </td>
+                      ) : null}
+                      <td className="text-center py-[14px] px-[12px] text-[18px] text-[#5C6B7A]">
+                        {row.sessions}
+                      </td>
+                      <td className="text-center py-[14px] px-[12px]">
+                        <span className="inline-block px-[14px] py-[6px] bg-[#F3F0FF] text-[#9B8FD8] text-[18px] font-semibold rounded-[8px]">
+                          {row.earlyBirdTuition}
                         </span>
-                      )}
-                    </td>
-                    <td className="text-center py-[27px] px-[20px]">
-                      <span className="inline-block px-[20px] py-[10px] bg-[#F3F0FF] text-[#9B8FD8] text-[20px] font-semibold rounded-[10px]">
-                        {program.tuition}
-                      </span>
-                    </td>
-                    <td className="text-center py-[27px] px-[20px] text-[20px] text-[#2C3E50] font-medium">
-                      {program.hourlyRate}
-                    </td>
-                  </tr>
-                ))}
+                      </td>
+                      <td className="text-center py-[14px] px-[12px] text-[18px] text-[#2C3E50] font-medium">
+                        {row.hourlyRate}
+                      </td>
+                    </tr>
+                  ))
+                )}
               </tbody>
             </table>
           </div>
