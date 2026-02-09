@@ -1,23 +1,16 @@
 /**
  * 文件用途：关于我们页面的「我们的位置」区块，含嵌入式 Google 地图与地址/电话信息
- * 依赖关系：无外部业务依赖；地图使用 Google Maps 嵌入式 iframe
- * 注意事项：地址、电话与嵌入 URL 在 LOCATION 中维护
+ * 依赖关系：依赖数据文件；地图使用 Google Maps 嵌入式 iframe
+ * 注意事项：地址、电话与嵌入 URL 已提取到 data/about.ts，便于统一管理和修改
  */
 
 'use client';
 
-const LOCATION = {
-  name: 'DeepBrain Academy',
-  address: '120 County Rd, Suite 100-101, Tenafly, NJ 07670',
-  phone: '914-488-4460',
-  googleMapsEmbedUrl:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6028.930857005808!2d-73.96620757921829!3d40.92746559425038!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2f1bfbdb0ab33%3A0xf426db7344911778!2s120%20County%20Rd%2C%20Tenafly%2C%20NJ%2007670!5e0!3m2!1sen!2sus!4v1769717629979!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade',
-  googleMapsViewUrl: 'https://www.google.com/maps/search/?api=1&query=120+County+Rd+Tenafly+NJ+07670',
-};
+import { location } from '@/data/about';
 
 export default function LocationSection() {
   const handleCall = () => {
-    window.location.href = `tel:${LOCATION.phone}`;
+    window.location.href = `tel:${location.phone}`;
   };
 
   return (
@@ -40,13 +33,13 @@ export default function LocationSection() {
         {/* 地址与联系方式：写在 Our Location 标题下方，响应式间距与字号 */}
         <div className="text-center mb-6 sm:mb-8 md:mb-10">
           <h3 className="text-lg sm:text-xl font-bold text-[#2C3E50] mb-1.5 sm:mb-2">
-            {LOCATION.name}
+            {location.name}
           </h3>
           <p className="text-gray-600 text-xs sm:text-sm md:text-base mb-2 sm:mb-3 leading-relaxed px-2 sm:px-0">
-            {LOCATION.address}
+            {location.address}
           </p>
           <a
-            href={LOCATION.googleMapsViewUrl}
+            href={location.googleMapsViewUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="text-[#274777] font-medium text-xs sm:text-sm md:text-base hover:underline inline-block mb-3 sm:mb-4"
@@ -72,7 +65,7 @@ export default function LocationSection() {
                   d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                 />
               </svg>
-              {LOCATION.phone}
+              {location.phone}
             </button>
           </div>
         </div>
@@ -81,7 +74,7 @@ export default function LocationSection() {
         <div className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-lg bg-gray-200 w-full max-w-4xl sm:max-w-5xl md:max-w-6xl min-h-[280px] sm:min-h-[400px] md:min-h-[500px] lg:min-h-[600px] mx-auto">
           <iframe
             title="DeepBrain Academy 位置 - Google Maps"
-            src={LOCATION.googleMapsEmbedUrl}
+            src={location.googleMapsEmbedUrl}
             width="100%"
             height="100%"
             className="absolute inset-0 w-full h-full border-0"
