@@ -103,12 +103,12 @@ export default function CourseSection({ course }: CourseSectionProps) {
 
             {/* Register button (centered) */}
             <div className="mt-[46px] flex justify-center">
-                <button className="group inline-flex items-center justify-center gap-4 rounded-full bg-[#FF9966] px-12 py-5 text-[18px] font-semibold text-black shadow-[0_10px_25px_rgba(0,0,0,0.15)] transition hover:translate-y-[-1px] hover:shadow-[0_14px_30px_rgba(0,0,0,0.18)]">
+                <a href="https://forms.gle/2mMzKoQkXHa2CVHe6" target="_blank" rel="noopener noreferrer" className="group inline-flex items-center justify-center gap-4 rounded-full bg-[#FF9966] px-12 py-5 text-[18px] font-semibold text-black shadow-[0_10px_25px_rgba(0,0,0,0.15)] transition hover:translate-y-[-1px] hover:shadow-[0_14px_30px_rgba(0,0,0,0.18)]">
                     Register Now
                     <span className="">
                         →
                     </span>
-                </button>
+                </a>
             </div>
            </div>
         </section>
