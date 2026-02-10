@@ -37,7 +37,7 @@ export default function Navigation({ className = '' }: { className?: string }) {
           <Link href="/" className="flex items-center gap-4">
             <div className="w-16 h-16 flex items-center justify-center">
               <Image 
-                src="/home/logo.png" 
+                src="/nav_footer/logo.png" 
                 alt="DeepBrain Academy Logo" 
                 width={64} 
                 height={64}

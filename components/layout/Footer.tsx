@@ -23,7 +23,7 @@ export default function Footer() {
             <div className="flex items-center gap-5 mb-[40px]">
               <div className="w-20 h-20 flex items-center justify-center">
                 <Image 
-                  src="/home/logo.png" 
+                  src="/nav_footer/logo.png" 
                   alt="DeepBrain Academy Logo" 
                   width={80} 
                   height={80}
@@ -62,29 +62,29 @@ export default function Footer() {
               <div className="flex flex-row items-start gap-[20px]">
                 {/* RedNote 图标 - 悬停显示二维码 */}
                 <SocialIconWithQR 
-                  iconSrc="/icon_qrcode/rednote_icon.svg"
-                  qrCodeSrc="/icon_qrcode/rednote_qr.svg" 
+                  iconSrc="/nav_footer/rednote_icon.svg"
+                  qrCodeSrc="/nav_footer/rednote_qr.svg" 
                   platformName="RedNote" 
                 />
                 
                 {/* Facebook Public Page 图标 - 悬停显示二维码 */}
                 <SocialIconWithQR 
-                  iconSrc="/icon_qrcode/facebook_icon.svg"
-                  qrCodeSrc="/icon_qrcode/fb_public_qr.png" 
+                  iconSrc="/nav_footer/facebook_icon.svg"
+                  qrCodeSrc="/nav_footer/fb_public_qr.png" 
                   platformName="Facebook" 
                 />
                 
                 {/* Instagram 图标 - 悬停显示二维码 */}
                 <SocialIconWithQR 
-                  iconSrc="/icon_qrcode/instgram_icon.svg"
-                  qrCodeSrc="/icon_qrcode/ins_qr.png" 
+                  iconSrc="/nav_footer/instgram_icon.svg"
+                  qrCodeSrc="/nav_footer/ins_qr.png" 
                   platformName="Instagram" 
                 />
                 
                 {/* WeChat 图标 - 悬停显示二维码 */}
                 <SocialIconWithQR 
-                  iconSrc="/icon_qrcode/wechat_icon.svg"
-                  qrCodeSrc="/icon_qrcode/wechat_qr.jpg" 
+                  iconSrc="/nav_footer/wechat_icon.svg"
+                  qrCodeSrc="/nav_footer/wechat_qr.jpg" 
                   platformName="WeChat" 
                 />
               </div>
