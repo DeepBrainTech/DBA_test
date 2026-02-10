@@ -125,7 +125,7 @@ export const newsArticles: NewsArticle[] = [
     excerpt: 'Does playing chess actually make you smarter? Is learning Go or chess genuinely useful, or does it just sound...',
     date: '2025.11.30',
     time: '5 min',
-    image: '/education_1.svg'
+    image: '/home/education_1.svg'
   },
   {
     tag: 'Learning methods',
@@ -134,7 +134,7 @@ export const newsArticles: NewsArticle[] = [
     excerpt: 'When programming is mentioned, many people still think of it mainly in career terms. Is learning to code only useful if a child...',
     date: '2025.12.15',
     time: '8 min',
-    image: '/education_2.svg'
+    image: '/home/education_2.svg'
   },
   {
     tag: 'Industry Insights',
@@ -143,7 +143,7 @@ export const newsArticles: NewsArticle[] = [
     excerpt: 'In China, academic success is often measured by performance in the Gaokao, the national college entrance...',
     date: '2025.12.25',
     time: '7 min',
-    image: '/education_3.svg'
+    image: '/home/education_3.svg'
   }
 ];
 

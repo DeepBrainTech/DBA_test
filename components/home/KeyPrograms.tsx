@@ -90,4 +90,3 @@ export default function KeyPrograms({ programs }: KeyProgramsProps) {
     </section>
   );
 }
-

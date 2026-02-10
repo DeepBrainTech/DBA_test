@@ -14,13 +14,13 @@
 'use client';
 
 import { Outfit } from 'next/font/google';
-import HeroSection from '@/components/sections/HeroSection';
-import TrustBadges from '@/components/sections/TrustBadges';
-import KeyPrograms from '@/components/sections/KeyPrograms';
-import WhyDeepBrain from '@/components/sections/WhyDeepBrain';
-import HonorWall from '@/components/sections/HonorWall';
-import ParentsVoices from '@/components/sections/ParentsVoices';
-import NewsSection from '@/components/sections/NewsSection';
+import HeroSection from '@/components/home/HeroSection';
+import TrustBadges from '@/components/home/TrustBadges';
+import KeyPrograms from '@/components/home/KeyPrograms';
+import WhyDeepBrain from '@/components/home/WhyDeepBrain';
+import HonorWall from '@/components/home/HonorWall';
+import ParentsVoices from '@/components/home/ParentsVoices';
+import NewsSection from '@/components/home/NewsSection';
 import { programs, trustBadges, advantages, studentAchievements, newsArticles } from '@/data/home';
 
 const outfit = Outfit({ subsets: ['latin'] });

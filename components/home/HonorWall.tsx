@@ -74,5 +74,3 @@ export default function HonorWall({ achievements }: HonorWallProps) {
     </section>
   );
 }
-
-
