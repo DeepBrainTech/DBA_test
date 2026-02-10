@@ -48,6 +48,7 @@ export default function KeyPrograms({ programs }: KeyProgramsProps) {
                   alt={`${program.title} icon`}
                   width={60}
                   height={60}
+                  loading="lazy"
                 />
               </div>
               
