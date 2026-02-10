@@ -15,6 +15,7 @@ import { usePathname } from 'next/navigation';
  */
 const navLinks = [
   { href: '/', label: 'Home' },
+  { href: '/summer_camp', label: 'Summer Camp' },
   { href: '/global-education', label: 'Global Education' },
   { href: '/math', label: 'Math' },
   { href: '/chess', label: 'Chess' },
