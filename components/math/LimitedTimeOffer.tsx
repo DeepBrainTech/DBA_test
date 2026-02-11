@@ -2,23 +2,45 @@
 
 export default function LimitedTimeOffer() {
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-blue-50">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="bg-white rounded-3xl shadow-lg p-10 text-center border-4 border-blue-200">
-          <div className="flex items-center justify-center gap-2 mb-6">
-            <svg className="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-            </svg>
-            <h3 className="text-3xl font-bold text-gray-900">Limited Time Offer!</h3>
+    <section className="pb-[80px] bg-white">
+      <div className="max-w-[1920px] mx-auto px-14">
+        <div className="bg-gradient-to-r from-[#E8F5E9] to-[#F0F4FF] rounded-[27px] p-[40px] flex items-center justify-between gap-[40px]">
+          <div className="flex-1">
+            <div className="flex items-center gap-[13px] mb-[20px]">
+              <span className="text-[32px]">⏰</span>
+              <h3 className="text-[40px] font-bold text-[#2C3E50]">
+                Limited Time Offer!
+              </h3>
+            </div>
+            <div className="space-y-[13px]">
+              <div className="flex items-start gap-[10px]">
+                <div className="w-[6px] h-[6px] rounded-full bg-[#66BB6A] mt-[10px] flex-shrink-0"></div>
+                <p className="text-[20px] text-[#2C3E50] leading-[1.3]">
+                  5% off your second course (any course)
+                </p>
+              </div>
+              <div className="flex items-start gap-[10px]">
+                <div className="w-[6px] h-[6px] rounded-full bg-[#66BB6A] mt-[10px] flex-shrink-0"></div>
+                <p className="text-[20px] text-[#2C3E50] leading-[1.3]">
+                  5% additional discount for onsite registration
+                </p>
+              </div>
+            </div>
           </div>
-          <p className="text-gray-700 text-lg mb-3">5% off your second course (any course)</p>
-          <p className="text-gray-700 text-lg mb-8">5% additional discount for onsite registration</p>
-          <button className="px-12 py-3 bg-green-500 text-white rounded-lg font-semibold hover:bg-green-600 transition-colors flex items-center justify-center gap-2 mx-auto shadow-md">
-            Enroll Now
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/>
-            </svg>
-          </button>
+
+          <div className="flex-shrink-0">
+            <a
+              href="https://forms.gle/2mMzKoQkXHa2CVHe6"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-[13px] px-[53px] h-[95px] bg-[#4CAF50] text-white text-[28px] font-semibold rounded-[40px] hover:bg-[#43A047] hover:shadow-xl transition"
+            >
+              Enroll Now
+              <svg className="w-[33px] h-[33px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.77} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
     </section>
