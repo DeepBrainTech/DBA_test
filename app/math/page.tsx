@@ -14,7 +14,6 @@ import PricingSection from '@/components/math/PricingSection';
 import LimitedTimeOffer from '@/components/math/LimitedTimeOffer';
 import MathArtPlayDay from '@/components/math/MathArtPlayDay';
 import UnlockPotential from '@/components/math/UnlockPotential';
-import ScheduleConsultation from '@/components/math/ScheduleConsultation';
 
 export default function MathPage() {
   return (
@@ -28,7 +27,6 @@ export default function MathPage() {
       <LimitedTimeOffer />
       <MathArtPlayDay />
       <UnlockPotential />
-      <ScheduleConsultation />
     </>
   );
 }

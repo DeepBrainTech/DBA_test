@@ -1,23 +1,22 @@
 import React from 'react';
 import Image from 'next/image';
 
-interface Stat {
-  icon: string;
-  value: string;
-  label: string;
-  color: string;
-}
-
 interface FacultyMember {
   name: string;
   title: string;
-  titleColor?: string;
+  titleBg: string;
+  titleText: string;
   image: string;
-  badge?: string;
-  badgeColor?: string;
   achievements: string[];
   quote: string;
-  stats?: Stat[];
+}
+
+interface StatItem {
+  icon: string;
+  iconBg: string;
+  value: string;
+  label: string;
+  color: string;
 }
 
 export default function MeetOurFaculty() {
@@ -25,20 +24,21 @@ export default function MeetOurFaculty() {
     {
       name: 'Chris Chen',
       title: 'Assistant Professor of Harvard University',
+      titleBg: 'bg-[#E3F2FD]',
+      titleText: 'text-[#42A5F5]',
       image: '/math/chris-chen.png',
-      badge: 'Expert',
-      badgeColor: 'bg-[#FFE8E8] text-[#FF6B6B]',
       achievements: [
         'Founder of Cognitive Enhancement Methods and Tools',
         'Cultivating Top Talent with an Olympiad-Inspired Mindset',
         'Distinguished background in Math Olympiads'
       ],
-      quote: 'To reveal simplicity behind nature\'s profound beauty and harmony is a great joy.'
+      quote: "To reveal simplicity behind nature's profound beauty and harmony is a great joy."
     },
     {
       name: 'Yanming Zhang',
       title: 'AP Calculus, AP Physics Teacher',
-      titleColor: 'text-[#81C784]',
+      titleBg: 'bg-[#E8F5E9]',
+      titleText: 'text-[#66BB6A]',
       image: '/math/yanming-zhang.png',
       achievements: [
         'Experienced Educator in Advanced STEM and Test Preparation',
@@ -49,7 +49,8 @@ export default function MeetOurFaculty() {
     {
       name: 'Chenxiao Tian',
       title: 'Math Tutor',
-      titleColor: 'text-[#81C784]',
+      titleBg: 'bg-[#E8F5E9]',
+      titleText: 'text-[#66BB6A]',
       image: '/math/chenxiao-tian.png',
       achievements: [
         'PhD in Mathematics and Statistics',
@@ -60,105 +61,95 @@ export default function MeetOurFaculty() {
     }
   ];
 
+  const stats: StatItem[] = [
+    { icon: '👥', iconBg: 'bg-[#EAF6EE]', value: '1,000+', label: 'Students Taught', color: 'text-[#66BB6A]' },
+    { icon: '⭐', iconBg: 'bg-[#FFF1E4]', value: '100%', label: 'Parent Satisfaction', color: 'text-[#FFB74D]' },
+    { icon: '🏆', iconBg: 'bg-[#F1EEFF]', value: '50+', label: 'Award Winners', color: 'text-[#9C27B0]' },
+    { icon: '🛡️', iconBg: 'bg-[#EAF3FF]', value: '20+ years', label: 'Teaching Experience', color: 'text-[#42A5F5]' },
+  ];
+
   return (
-    <section className="py-20 px-4 bg-white">
-      <div className="max-w-6xl mx-auto">
-        <div className="flex items-center gap-2 mb-6 justify-center">
-          <span className="text-2xl">👨‍🏫</span>
-          <span className="text-[#8B7355] font-medium">Our Instructors</span>
+    <section className="py-[133px] bg-[#FBF9F4]">
+      <div className="max-w-[1920px] mx-auto px-14">
+        <div className="text-center mb-[80px]">
+          <div className="inline-flex items-center gap-[20px] px-[30px] py-[15px] bg-white rounded-[33px] mb-[27px]">
+            <span className="text-[32px]">�️</span>
+            <span className="text-[24px] text-[#66BB6A] font-medium">Our Instructors</span>
+          </div>
+          <h2 className="text-[53px] font-bold text-[#2C3E50] mb-[27px] leading-[1.3]">
+            Meet Our Faculty
+          </h2>
+          <p className="text-[26.5px] text-[#7C8B99] max-w-[1200px] mx-auto">
+            Featuring international competition winners and PhD graduates from top universities, we provide expert, results-driven guidance.
+          </p>
         </div>
 
-        <h2 className="text-4xl md:text-5xl font-bold text-center text-[#2C2C2C] mb-4">
-          Meet Our Faculty
-        </h2>
-        <p className="text-center text-gray-600 mb-16 max-w-2xl mx-auto">
-          Featuring international competition winners and PhD graduates from top universities, we provide expert, results-driven guidance.
-        </p>
+        <div className="grid grid-cols-3 gap-[40px] mb-[100px]">
+          {faculty.map((member, idx) => (
+            <div
+              key={idx}
+              className="bg-white rounded-[27px] border border-[#E8F4FC] overflow-hidden hover:shadow-lg transition"
+            >
+              <div className="relative h-[400px] bg-gradient-to-br from-[#F5F5F5] to-[#E0E0E0]">
+                <Image
+                  src={member.image}
+                  alt={member.name}
+                  fill
+                  className="object-cover"
+                  priority={idx === 0}
+                />
+                <div className="absolute top-[20px] left-[20px] bg-white/90 backdrop-blur-sm px-[20px] py-[10px] rounded-[20px] flex items-center gap-[8px]">
+                  <span className="text-[16px]">🏆</span>
+                  <span className="text-[16px] text-[#66BB6A] font-medium">Expert</span>
+                </div>
+              </div>
 
-        <div className="space-y-12">
-          {faculty.map((member, index) => (
-            <div key={index} className="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100">
-              <div className="grid md:grid-cols-2 gap-0">
-                <div className="relative h-[400px] md:h-auto">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    fill
-                    className="object-cover"
-                  />
-                  {member.badge && (
-                    <div className={`absolute top-6 left-6 ${member.badgeColor} px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2`}>
-                      <span>🏆</span>
-                      <span>{member.badge}</span>
+              <div className="p-[40px]">
+                <h3 className="text-[40px] font-semibold text-[#2C3E50] mb-[8px]">
+                  {member.name}
+                </h3>
+                <p className={`inline-block text-[14px] ${member.titleBg} ${member.titleText} px-3 py-1 rounded-md mb-[27px]`}>
+                  {member.title}
+                </p>
+
+                <div className="space-y-[13px] mb-[27px]">
+                  {member.achievements.map((achievement, hIdx) => (
+                    <div key={hIdx} className="flex items-start gap-[10px]">
+                      <div className="w-[6px] h-[6px] rounded-full bg-[#66BB6A] mt-[8px] flex-shrink-0"></div>
+                      <p className="text-[20px] text-[#5C6B7A] leading-[1.3]">
+                        {achievement}
+                      </p>
                     </div>
-                  )}
+                  ))}
                 </div>
 
-                <div className="p-8 md:p-12 flex flex-col justify-center">
-                  <h3 className="text-3xl font-bold text-[#2C2C2C] mb-2">
-                    {member.name}
-                  </h3>
-                  <p className={`${member.titleColor || 'text-[#81C784]'} font-medium mb-6`}>
-                    {member.title}
-                  </p>
-
-                  <ul className="space-y-3 mb-6">
-                    {member.achievements.map((achievement, i) => (
-                      <li key={i} className="flex items-start gap-3 text-gray-700">
-                        <span className="text-[#81C784] mt-1">●</span>
-                        <span>{achievement}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <div className="bg-[#F5F5F5] rounded-2xl p-6 mb-6 italic text-gray-700 border-l-4 border-[#81C784]">
-                    "{member.quote}"
+                <div className="border-t border-[#E8F4FC] pt-[27px]">
+                  <div className="flex items-start gap-[10px]">
+                    <span className="text-[27px] text-[#66BB6A] leading-none flex-shrink-0">&ldquo;</span>
+                    <p className="text-[20px] text-[#2C3E50] italic leading-[1.3]">
+                      {member.quote}
+                    </p>
                   </div>
-
-                  {member.stats && Array.isArray(member.stats) && (
-                    <div className="grid grid-cols-2 gap-4">
-                      {member.stats.map((stat: any, i: number) => (
-                        <div key={i} className="bg-[#FAFAFA] rounded-xl p-4 text-center">
-                          <div className="text-3xl mb-2">{stat.icon}</div>
-                          <div className={`text-2xl font-bold ${stat.color} mb-1`}>
-                            {stat.value}
-                          </div>
-                          <div className="text-sm text-gray-600">
-                            {stat.label}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  )}
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="mt-16 bg-gradient-to-r from-[#E8F5E9] to-[#F0F4FF] rounded-3xl p-12">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="text-4xl mb-3">👥</div>
-              <div className="text-3xl font-bold text-[#81C784] mb-2">1,000+</div>
-              <div className="text-gray-700 font-medium">Students Taught</div>
+        <div className="grid grid-cols-4 gap-[40px]">
+          {stats.map((stat, idx) => (
+            <div key={idx} className="bg-white rounded-[27px] p-[40px] text-center hover:shadow-lg transition">
+              <div className={`w-[100px] h-[100px] ${stat.iconBg} rounded-[27px] flex items-center justify-center text-[50px] mx-auto mb-[20px]`}>
+                {stat.icon}
+              </div>
+              <div className={`text-[53px] font-bold ${stat.color} mb-[13px]`}>
+                {stat.value}
+              </div>
+              <div className="text-[20px] text-[#7C8B99]">
+                {stat.label}
+              </div>
             </div>
-            <div className="text-center">
-              <div className="text-4xl mb-3">⭐</div>
-              <div className="text-3xl font-bold text-[#FFB74D] mb-2">100%</div>
-              <div className="text-gray-700 font-medium">Parent Satisfaction</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl mb-3">🏆</div>
-              <div className="text-3xl font-bold text-[#9C27B0] mb-2">50+</div>
-              <div className="text-gray-700 font-medium">Award Winners</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl mb-3">🎓</div>
-              <div className="text-3xl font-bold text-[#42A5F5] mb-2">20+ years</div>
-              <div className="text-gray-700 font-medium">Teaching Experience</div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
