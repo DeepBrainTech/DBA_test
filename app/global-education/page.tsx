@@ -26,7 +26,7 @@ import AdmissionSection from '@/components/global/AdmissionSection';
 import BookFreeSection from '@/components/global/BookFreeSection';
 import { features, challenges, serviceSteps } from '@/data/global-education';
 
-const outfit = Outfit({ subsets: ['latin'] });
+const outfit = Outfit({ subsets: ['latin'], weight: ['400', '700'] });
 
 /**
  * 全球教育页面组件

@@ -23,7 +23,7 @@ import ParentsVoices from '@/components/home/ParentsVoices';
 import NewsSection from '@/components/home/NewsSection';
 import { programs, trustBadges, advantages, studentAchievements, newsArticles } from '@/data/home';
 
-const outfit = Outfit({ subsets: ['latin'] });
+const outfit = Outfit({ subsets: ['latin'], weight: ['400', '700'] });
 
 /**
  * 首页组件

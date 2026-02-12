@@ -11,6 +11,7 @@ import LocationSection from '@/components/about/LocationSection';
 
 const outfit = Outfit({
   subsets: ['latin'],
+  weight: ['400', '700'],
   variable: '--font-outfit',
   display: 'swap',
 });
