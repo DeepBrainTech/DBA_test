@@ -25,7 +25,7 @@ export default function WhyDeepBrain({ advantages }: WhyDeepBrainProps) {
           {/* Left - Title，增加上边距让整块文字略往下靠 */}
           <div className="flex-1 w-full lg:max-w-[480px] pt-6 lg:pt-16">
             <div className="inline-flex items-center gap-3 px-4 py-2 bg-[#E8F4FC] rounded-2xl mb-4">
-              <span className="text-2xl">💎</span>
+              <Image src="/home/section-icons/pros.png" alt="Pros" width={32} height={32} className="w-8 h-8 shrink-0" />
               <span className="text-lg text-[#6BB6FF]">Pros</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-[#2C3E50] mb-3 leading-[1.3]">

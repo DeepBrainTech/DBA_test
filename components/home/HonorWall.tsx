@@ -1,11 +1,12 @@
 /**
  * 文件用途：荣誉墙区块组件
- * 依赖关系：依赖 types/program.ts 中的 StudentAchievement 类型
+ * 依赖关系：依赖 types/program.ts 中的 StudentAchievement 类型、Next.js Image 组件
  * 注意事项：展示学生成就列表；默认只显示两行，点击 See All 展开全部（需 Client Component 做展开/收起交互）
  */
 
 'use client';
 
+import Image from 'next/image';
 import { useState } from 'react';
 import type { StudentAchievement } from '@/types/program';
 
@@ -31,7 +32,7 @@ export default function HonorWall({ achievements }: HonorWallProps) {
         {/* 标签与 KeyPrograms 区块的 Core Courses 标签保持同一尺寸与样式 */}
         <div className="text-center mb-8 md:mb-10">
           <div className="inline-flex items-center gap-3 px-4 py-2 bg-white rounded-full mb-4 shadow-sm">
-            <span className="text-2xl">🏆</span>
+            <Image src="/home/section-icons/achievements.png" alt="Achievements" width={32} height={32} className="w-8 h-8 shrink-0" />
             <span className="text-lg md:text-xl text-[#6BB6FF]">Achievements</span>
           </div>
           {/* 主标题与 KeyPrograms 的 Key Programs 保持同一字号与样式 */}

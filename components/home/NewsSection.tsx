@@ -21,8 +21,8 @@ export default function NewsSection({ articles }: NewsSectionProps) {
     <section className="py-16 md:py-20 bg-[#FFFFFF]">
       <div className="max-w-[1920px] mx-auto px-6 md:px-14">
         <div className="text-center mb-8 md:mb-10">
-          <div className="inline-flex items-center gap-3 px-4 py-2 bg-white rounded-full mb-4 shadow-sm border border-[#E8F4FC]">
-            <span className="text-2xl">📚</span>
+          <div className="inline-flex items-center gap-3 px-8 py-2 bg-[#E8F4FC] rounded-full mb-4 shadow-sm border border-[#E8F4FC]">
+            <Image src="/home/section-icons/blog.png" alt="Blog" width={32} height={32} className="w-8 h-8 shrink-0" />
             <span className="text-lg md:text-xl text-[#6BB6FF]">Blog</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-[#2C3E50] mb-3 leading-tight">

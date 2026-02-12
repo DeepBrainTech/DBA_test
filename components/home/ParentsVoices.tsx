@@ -1,11 +1,12 @@
 /**
  * 文件用途：家长评价区块组件
- * 依赖关系：无
+ * 依赖关系：Next.js Image 组件（区块标签图标）
  * 注意事项：2x2 评价卡片网格、轮播控制、底部统计
  */
 
 'use client';
 
+import Image from 'next/image';
 import { useState } from 'react';
 
 interface Testimonial {
@@ -104,7 +105,7 @@ export default function ParentsVoices() {
         {/* 标签与主标题与 KeyPrograms 区块保持同一尺寸与样式 */}
         <div className="text-center mb-8 md:mb-10">
           <div className="inline-flex items-center gap-3 px-4 py-2 bg-white rounded-full mb-4 shadow-sm">
-            <span className="text-2xl">💬</span>
+            <Image src="/home/section-icons/testimonials.png" alt="Testimonials" width={32} height={32} className="w-8 h-8 shrink-0" />
             <span className="text-lg md:text-xl text-[#6BB6FF]">Testimonials</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-[#2C3E50] mb-3 leading-tight">
