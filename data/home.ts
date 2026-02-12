@@ -129,9 +129,9 @@ export const newsArticles: NewsArticle[] = [
     title: 'The Value of Learning Chess Is More Than Just "Becoming Smarter"',
     excerpt: 'Does playing chess actually make you smarter? Is learning Go or chess genuinely useful, or does it just sound...',
     date: '2025.11.30',
-    time: '5 min',
+    time: '7 min',
     image: '/home/education/education_1.png',
-    url: ''
+    url: '/blog/value-of-learning-chess'
   },
   {
     tag: 'Learning methods',
@@ -141,7 +141,7 @@ export const newsArticles: NewsArticle[] = [
     date: '2025.12.15',
     time: '8 min',
     image: '/home/education/education_2.png',
-    url: ''
+    url: '/blog/programming-shapes-thinking'
   },
   {
     tag: 'Industry Insights',
@@ -149,9 +149,9 @@ export const newsArticles: NewsArticle[] = [
     title: 'Beyond Test Scores: Why Go Keeps Appearing in the Background of Gaokao Top Performers',
     excerpt: 'In China, academic success is often measured by performance in the Gaokao, the national college entrance...',
     date: '2025.12.25',
-    time: '7 min',
+    time: '6 min',
     image: '/home/education/education_3.png',
-    url: ''
+    url: '/blog/go-gaokao-top-performers'
   }
 ];
 
