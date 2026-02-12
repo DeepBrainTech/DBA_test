@@ -7,12 +7,12 @@
 import type { Program, TrustBadge, Advantage, StudentAchievement, NewsArticle } from '@/types/program';
 
 /**
- * 核心课程列表
+ * 核心课程列表（图标存放在 public/home/key-programs/）
  */
 export const programs: Program[] = [
   {
     icon: '📊',
-    iconSrc: '/home/Math.svg',
+    iconSrc: '/home/key-programs/Math.svg',
     title: 'Math',
     slug: 'math',
     subtitle: 'Build Logic · Spark Interest',
@@ -23,7 +23,7 @@ export const programs: Program[] = [
   },
   {
     icon: '♟️',
-    iconSrc: '/home/Chess.svg',
+    iconSrc: '/home/key-programs/Chess.svg',
     title: 'Chess',
     slug: 'chess',
     subtitle: 'Build Strategy · Perspective',
@@ -34,7 +34,7 @@ export const programs: Program[] = [
   },
   {
     icon: '🌍',
-    iconSrc: '/home/Global_Education.svg',
+    iconSrc: '/home/key-programs/Global_Education.svg',
     title: 'Global Education',
     slug: 'global-education',
     subtitle: 'Plan Ahead · Go Global',
@@ -45,7 +45,7 @@ export const programs: Program[] = [
   },
   {
     icon: '💻',
-    iconSrc: '/home/Programming.svg',
+    iconSrc: '/home/key-programs/Programming.svg',
     title: 'Programming',
     slug: 'programming',
     subtitle: 'Learn to code · Develop the brain',
@@ -57,21 +57,23 @@ export const programs: Program[] = [
 ];
 
 /**
- * 信任徽章数据
+ * 信任徽章数据（图标存放在 public/home/trust-badges/；iconBg 可单独设置每个图标的外框背景）
  */
 export const trustBadges: TrustBadge[] = [
-  { emoji: '👨‍🎓', title: '2,000+', desc: 'Past Students', color: '#7EC97E' },
-  { emoji: '😊', title: '100%', desc: 'Parent Satisfaction', color: '#F4A460' },
-  { emoji: '🏆', title: '200+', desc: 'Award winners', color: '#9B8FD8' },
-  { emoji: '📚', title: '20 years', desc: 'Teaching Experience', color: '#6BB6FF' }
+  { iconSrc: '/home/trust-badges/trust-experience.png', iconBg: '#7EC97E20', title: '2,000+', desc: 'Past Students', color: '#7EC97E' },
+  { iconSrc: '/home/trust-badges/trust-satisfaction.png', iconBg: '#F4A46020', title: '100%', desc: 'Parent Satisfaction', color: '#F4A460' },
+  { iconSrc: '/home/trust-badges/trust-students.png', iconBg: '#9B8FD820', title: '80+', desc: 'Award winners', color: '#9B8FD8' },
+  { iconSrc: '/home/trust-badges/trust-award.png', iconBg: '#6BB6FF20', title: '20 years+', desc: 'Teaching Experience', color: '#6BB6FF' }
 ];
 
 /**
  * 优势卡片数据
  */
+/** Why DeepBrain 区块四个优势卡片（图标存放在 public/home/why-deepbrain/） */
 export const advantages: Advantage[] = [
   {
     icon: '🎮',
+    iconSrc: '/home/why-deepbrain/interactive.png',
     title: 'Interactive Teaching Approach',
     desc: 'Gamified learning allows children to master concepts joyfully and sustain their enthusiasm long-term.',
     stat: '95%',
@@ -79,6 +81,7 @@ export const advantages: Advantage[] = [
   },
   {
     icon: '👨‍🏫',
+    iconSrc: '/home/why-deepbrain/instructors.png',
     title: 'World-Class Instructors',
     desc: 'Experienced Instructors from top universities with strong teaching backgrounds.',
     stat: '20yrs',
@@ -86,6 +89,7 @@ export const advantages: Advantage[] = [
   },
   {
     icon: '👥',
+    iconSrc: '/home/why-deepbrain/personalized.png',
     title: 'Personalized Support',
     desc: 'Small class sizes allow us to accommodate each child\'s unique pace and provide tailored guidance.',
     stat: '1 on 1',
@@ -93,6 +97,7 @@ export const advantages: Advantage[] = [
   },
   {
     icon: '📈',
+    iconSrc: '/home/why-deepbrain/results.png',
     title: 'Tangible Results',
     desc: 'A structured assessment system with regular feedback ensures measurable progress.',
     stat: 'Weekly',

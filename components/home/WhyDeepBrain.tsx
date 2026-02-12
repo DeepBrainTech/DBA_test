@@ -17,28 +17,28 @@ interface WhyDeepBrainProps {
  */
 export default function WhyDeepBrain({ advantages }: WhyDeepBrainProps) {
   return (
-    <section className="py-[133px] bg-white">
-      <div className="max-w-[1920px] mx-auto px-14">
-        {/* Top Section - Title左 + Image右 */}
-        <div className="flex gap-[80px] items-start mb-[80px]">
-          {/* Left - Title */}
-          <div className="flex-1">
-            <div className="inline-flex items-center gap-[27px] px-[27px] py-[13px] bg-[#E8F4FC] rounded-[33px] mb-[27px]">
-              <span className="text-[40px]">💎</span>
-              <span className="text-[26.5px] text-[#6BB6FF]">Pros</span>
+    <section className="py-14 md:py-20 bg-white">
+      {/* 按设计图：内容居中且左右留出宽阔边距，使用较小 max-w + 较大 px */}
+      <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-16 xl:px-20">
+        {/* Top Section - Title左 + Image右，整体缩小间距与字号 */}
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start mb-10 lg:mb-12">
+          {/* Left - Title，增加上边距让整块文字略往下靠 */}
+          <div className="flex-1 w-full lg:max-w-[480px] pt-6 lg:pt-16">
+            <div className="inline-flex items-center gap-3 px-4 py-2 bg-[#E8F4FC] rounded-2xl mb-4">
+              <span className="text-2xl">💎</span>
+              <span className="text-lg text-[#6BB6FF]">Pros</span>
             </div>
-            <h2 className="text-[53px] font-bold text-[#2C3E50] mb-[27px] leading-[1.3]">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#2C3E50] mb-3 leading-[1.3]">
               Why DeepBrain Academy?
             </h2>
-            <p className="text-[26.5px] text-[#7C8B99] leading-[1.6]">
+            <p className="text-base md:text-lg text-[#7C8B99] leading-[1.6]">
               We are committed to providing the highest quality and most personalized educational services.
             </p>
           </div>
 
-          {/* Right - Image with Overlay */}
-          <div className="w-[850px] flex-shrink-0 relative">
-            {/* Image Container */}
-            <div className="relative w-full h-[429px] rounded-[40px] overflow-hidden shadow-[0px_41px_83px_-20px_rgba(0,0,0,0.25)]">
+          {/* Right - Image with Overlay，缩小宽高 */}
+          <div className="w-full lg:w-[520px] xl:w-[600px] flex-shrink-0 relative">
+            <div className="relative w-full aspect-[4/3] max-h-[320px] rounded-3xl overflow-hidden shadow-[0px_24px_48px_-12px_rgba(0,0,0,0.2)]">
               <Image
                 src="/home/learn.svg"
                 alt="Learning Scene"
@@ -47,39 +47,37 @@ export default function WhyDeepBrain({ advantages }: WhyDeepBrainProps) {
                 className="object-cover"
               />
             </div>
-            
-            {/* Stats Overlay */}
-            <div className="absolute bottom-[-40px] right-[-20px] bg-gradient-to-b from-[#7EC97E] to-[#6BB87B] rounded-[27px] shadow-xl p-[30px] w-[200px] z-10">
-              <p className="text-[18px] text-white/90 mb-[6px] leading-[1.3]">Trusted by</p>
-              <h3 className="text-[36px] font-semibold text-white mb-[6px] leading-[1.1]">10,000+</h3>
-              <p className="text-[16px] text-white/90 leading-[1.3]">Families Worldwide</p>
+            {/* Stats Overlay 缩小 */}
+            <div className="absolute bottom-[-20px] right-[-8px] bg-gradient-to-b from-[#7EC97E] to-[#6BB87B] rounded-2xl shadow-lg px-5 py-3 w-[160px] z-10">
+              <p className="text-xs text-white/90 mb-0.5 leading-tight">Trusted by</p>
+              <h3 className="text-2xl font-semibold text-white mb-0.5 leading-tight">10,000+</h3>
+              <p className="text-xs text-white/90 leading-tight">Families Worldwide</p>
             </div>
-
-            {/* Decorations */}
-            <div className="absolute -left-[30px] -top-[60px] w-[159px] h-[159px] bg-[#FFD4A3] rounded-full opacity-20 blur-[133px]"></div>
+            <div className="absolute -left-4 -top-8 w-24 h-24 bg-[#FFD4A3] rounded-full opacity-20 blur-3xl" aria-hidden="true" />
           </div>
         </div>
 
-        {/* Bottom Section - Four Cards横跨全宽 */}
-        <div className="grid grid-cols-2 gap-[40px]">
+        {/* Bottom Section - Four Cards，缩小卡片内边距与字号 */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
           {advantages.map((item, idx) => (
-            <div key={idx} className="bg-[#FBF9F4] rounded-[33px] p-[40px] hover:shadow-lg transition flex items-start gap-[26px]">
-              {/* Icon on the left */}
-              <div className="w-[80px] h-[80px] bg-gradient-to-br from-[rgba(107,182,255,0.2)] to-[rgba(74,159,239,0.2)] rounded-[23px] flex items-center justify-center text-[40px] flex-shrink-0">
-                {item.icon}
+            <div key={idx} className="bg-[#FBF9F4] rounded-2xl p-5 md:p-6 hover:shadow-lg transition flex items-start gap-4">
+              <div className="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-[rgba(107,182,255,0.2)] to-[rgba(74,159,239,0.2)] rounded-xl flex items-center justify-center flex-shrink-0 overflow-hidden">
+                {item.iconSrc ? (
+                  <Image src={item.iconSrc} alt="" width={56} height={56} className="w-8 h-8 md:w-9 md:h-9 object-contain" />
+                ) : (
+                  <span className="text-2xl">{item.icon}</span>
+                )}
               </div>
-              
-              {/* Content on the right */}
               <div className="flex-1 flex flex-col min-w-0">
-                <h4 className="text-[28px] font-semibold text-[#2C3E50] mb-[13px] leading-[1.3]">
+                <h4 className="text-lg md:text-xl font-semibold text-[#2C3E50] mb-2 leading-[1.3]">
                   {item.title}
                 </h4>
-                <p className="text-[24px] text-[#7C8B99] leading-[1.5] mb-[16px]">
+                <p className="text-sm md:text-base text-[#7C8B99] leading-[1.5] mb-2">
                   {item.desc}
                 </p>
-                <div className="flex items-center gap-[13px] mt-auto">
-                  <span className="text-[26px] font-semibold text-[#6BB6FF]">{item.stat}</span>
-                  <span className="text-[20px] text-[#7C8B99]">{item.label}</span>
+                <div className="flex items-center gap-2 mt-auto">
+                  <span className="text-lg font-semibold text-[#6BB6FF]">{item.stat}</span>
+                  <span className="text-sm text-[#7C8B99]">{item.label}</span>
                 </div>
               </div>
             </div>

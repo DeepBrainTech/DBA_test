@@ -18,68 +18,68 @@ interface KeyProgramsProps {
  */
 export default function KeyPrograms({ programs }: KeyProgramsProps) {
   return (
-    <section className="py-[133px] bg-white">
-      <div className="max-w-[1920px] mx-auto px-14">
-        <div className="text-center mb-[53px]">
-          <div className="inline-flex items-center gap-[27px] px-[27px] py-[13px] bg-white rounded-[33px] mb-[27px] shadow-sm">
-            <span className="text-[40px]">🎯</span>
-            <span className="text-[26.5px] text-[#6BB6FF]">Core Courses</span>
+    <section className="py-16 md:py-20 bg-[#FBF9F4]">
+
+      <div className="max-w-[1920px] mx-auto px-6 md:px-14">
+        <div className="text-center mb-8 md:mb-10">
+          <div className="inline-flex items-center gap-3 px-4 py-2 bg-white rounded-full mb-4 shadow-sm">
+            <span className="text-2xl">🎯</span>
+            <span className="text-lg md:text-xl text-[#6BB6FF]">Core Courses</span>
           </div>
-          <h2 className="text-[53px] font-bold text-[#2C3E50] mb-[27px] leading-[1.3]">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#2C3E50] mb-3 leading-tight">
             Key Programs
           </h2>
-          <p className="text-[26.5px] text-[#7C8B99]">
-            Focusing on children's intellectual development and international education, laying a solid foundation for children's future.
+          <p className="text-base md:text-lg text-[#7C8B99] max-w-2xl mx-auto">
+            Focusing on children&apos;s intellectual development and international education, laying a solid foundation for children&apos;s future.
           </p>
         </div>
 
-        {/* Programs Grid */}
-        <div className="grid grid-cols-4 gap-[48px]">
+        {/* 卡片之间的距离：改 gap-4 md:gap-6，如 gap-2 更近、gap-8 md:gap-10 更远；max-w 控制整块宽度 */}
+        <div className="grid grid-cols-4 gap-5 md:gap-8 max-w-[1200px] mx-auto">
           {programs.map((program, idx) => (
             <Link key={idx} href={`/${program.slug}`}>
-            <div className={`relative bg-gradient-to-br ${program.bgGradient} rounded-[36px] p-[48px] shadow-lg hover:shadow-xl transition flex flex-col h-full cursor-pointer`}>
-              <div className="absolute top-8 right-8 w-[60px] h-[60px] bg-white/40 rounded-[18px] flex items-center justify-center text-[30px] font-bold" style={{ color: program.color }}>
+            <div className={`relative bg-gradient-to-br ${program.bgGradient} rounded-2xl p-5 md:p-6 shadow-lg hover:shadow-xl transition flex flex-col h-full cursor-pointer`}>
+              <div className="absolute top-4 right-4 w-9 h-9 bg-white/40 rounded-xl flex items-center justify-center text-lg font-bold" style={{ color: program.color }}>
                 {idx + 1}
               </div>
-                
-              <div className={`w-[96px] h-[96px] rounded-[24px] flex items-center justify-center text-[48px] mb-[27px]`} style={{ backgroundColor: `${program.color}15` }}>
+
+              <div className={`w-14 h-14 md:w-16 md:h-16 rounded-xl flex items-center justify-center mb-4 shrink-0`} style={{ backgroundColor: `${program.color}15` }}>
                 <Image
                   src={program.iconSrc}
                   alt={`${program.title} icon`}
-                  width={60}
-                  height={60}
+                  width={40}
+                  height={40}
+                  className="w-8 h-8 md:w-10 md:h-10"
                   loading="lazy"
                 />
               </div>
-              
-              {/* Top content block with fixed min height to align bullet start */}
-              <div className="flex flex-col gap-[12px] min-h-[300px] mb-[18px]">
-                <h3 className="text-[36px] font-semibold text-[#2C3E50]">
+
+              <div className="flex flex-col gap-2 min-h-0 mb-3">
+                <h3 className="text-xl md:text-2xl font-semibold text-[#2C3E50]">
                   {program.title}
                 </h3>
-                {/* Keep subtitle + description same height to align bullet start */}
-                <div className="min-h-[170px] flex flex-col gap-[12px]">
-                  <p className="text-[22px]" style={{ color: program.color }}>
+                <div className="flex flex-col gap-1.5 min-h-0">
+                  <p className="text-base md:text-lg" style={{ color: program.color }}>
                     {program.subtitle}
                   </p>
-                  <p className="text-[24px] text-[#7C8B99] leading-[1.6]">
+                  <p className="text-base md:text-[16px] text-[#7C8B99] leading-snug line-clamp-3">
                     {program.description}
                   </p>
                 </div>
               </div>
-              
-              <div className="space-y-[12px] mb-[32px]">
+
+              <div className="space-y-1.5 mb-4">
                 {program.features.map((feature, fIdx) => (
-                  <div key={fIdx} className="flex items-start gap-[12px]">
-                    <div className="w-[9px] h-[9px] mt-[11px] rounded-full" style={{ backgroundColor: program.color }}></div>
-                    <span className="text-[21px] text-[#2C3E50] leading-[1.5]">{feature}</span>
+                  <div key={fIdx} className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 md:w-2 md:h-2 mt-1.5 rounded-full shrink-0" style={{ backgroundColor: program.color }} />
+                    <span className="text-base md:text-[17px] text-[#2C3E50] leading-snug">{feature}</span>
                   </div>
                 ))}
               </div>
-              
-              <div className="mt-auto w-full h-[74px] bg-white rounded-[24px] flex items-center justify-center gap-[12px] hover:shadow-lg transition">
-                <span className="text-[24px]" style={{ color: program.color }}>Learn More</span>
-                <svg className="w-[27px] h-[27px]" style={{ color: program.color }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+              <div className="mt-auto w-full h-11 md:h-12 bg-white rounded-xl flex items-center justify-center gap-2 hover:shadow-lg transition">
+                <span className="text-base md:text-lg font-medium" style={{ color: program.color }}>Learn More</span>
+                <svg className="w-5 h-5" style={{ color: program.color }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.25} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
               </div>

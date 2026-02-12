@@ -32,8 +32,12 @@ export interface Program {
  * 信任徽章类型
  */
 export interface TrustBadge {
-  /** emoji图标 */
-  emoji: string;
+  /** emoji 图标（可选，仅在没有 iconSrc 时作为后备展示） */
+  emoji?: string;
+  /** 图标图片路径（优先展示；无则且无 emoji 时图标区为空） */
+  iconSrc?: string;
+  /** 图标外框背景（CSS 值），如线性渐变或纯色，不填则用组件默认 */
+  iconBg?: string;
   /** 标题/数值 */
   title: string;
   /** 描述文字 */
@@ -46,8 +50,10 @@ export interface TrustBadge {
  * 优势卡片类型
  */
 export interface Advantage {
-  /** emoji图标 */
+  /** emoji 图标（无 iconSrc 时作为后备展示） */
   icon: string;
+  /** 图标图片路径（优先于 icon 展示；如 /home/why-deepbrain/xxx.png） */
+  iconSrc?: string;
   /** 标题 */
   title: string;
   /** 描述 */
