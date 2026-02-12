@@ -19,7 +19,7 @@ interface NewsSectionProps {
 export default function NewsSection({ articles }: NewsSectionProps) {
   return (
     <section className="py-16 md:py-20 bg-[#FFFFFF]">
-      <div className="max-w-[1920px] mx-auto px-6 md:px-14">
+      <div className="max-w-[1920px] mx-auto px-4 sm:px-6 md:px-14">
         <div className="text-center mb-8 md:mb-10">
           <div className="inline-flex items-center gap-3 px-8 py-2 bg-[#E8F4FC] rounded-full mb-4 shadow-sm border border-[#E8F4FC]">
             <Image src="/home/section-icons/blog.png" alt="Blog" width={32} height={32} className="w-8 h-8 shrink-0" />
@@ -33,7 +33,8 @@ export default function NewsSection({ articles }: NewsSectionProps) {
           </p>
         </div>
 
-        <div className="grid grid-cols-3 gap-5 md:gap-8 max-w-[1200px] mx-auto">
+        {/* 小屏 1 列、中屏 2 列、大屏 3 列 */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-8 max-w-[1200px] mx-auto">
           {articles.map((article, idx) => (
             <div
               key={idx}

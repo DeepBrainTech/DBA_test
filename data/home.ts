@@ -50,7 +50,7 @@ export const programs: Program[] = [
     slug: 'programming',
     subtitle: 'Learn to code · Develop the brain',
     description: "Don't just let children play games; teach them how to create games",
-    features: ['Extensive programming experience', 'Learning Path Planning', 'Creative Projects', 'competition awards'],
+    features: ['Project-Based Curriculum', 'Personalized Learning Roadmap', 'Creative Projects', 'Competition Prep & Awards'],
     color: '#4ECDC4',
     bgGradient: 'from-[rgba(78,205,196,0.1)] to-[rgba(69,183,209,0.1)]'
   }

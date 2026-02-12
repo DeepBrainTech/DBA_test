@@ -28,7 +28,7 @@ export default function HonorWall({ achievements }: HonorWallProps) {
 
   return (
     <section className="py-16 md:py-20 bg-gradient-to-b from-white to-[#E8F4FC]">
-      <div className="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-16">
+      <div className="max-w-[1920px] mx-auto px-4 sm:px-6 md:px-12 lg:px-16">
         {/* 标签与 KeyPrograms 区块的 Core Courses 标签保持同一尺寸与样式 */}
         <div className="text-center mb-8 md:mb-10">
           <div className="inline-flex items-center gap-3 px-4 py-2 bg-white rounded-full mb-4 shadow-sm">
