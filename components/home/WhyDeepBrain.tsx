@@ -40,7 +40,7 @@ export default function WhyDeepBrain({ advantages }: WhyDeepBrainProps) {
           <div className="w-full lg:w-[520px] xl:w-[600px] flex-shrink-0 relative">
             <div className="relative w-full aspect-[4/3] max-h-[320px] rounded-3xl overflow-hidden shadow-[0px_24px_48px_-12px_rgba(0,0,0,0.2)]">
               <Image
-                src="/home/learn.svg"
+                src="/home/why-deepbrain/learn.svg"
                 alt="Learning Scene"
                 fill
                 loading="lazy"

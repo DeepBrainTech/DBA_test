@@ -98,5 +98,7 @@ export interface NewsArticle {
   time: string;
   /** 封面图片路径 */
   image: string;
+  /** 文章详情页链接（暂未填写时可为空，点击会跳转到 #） */
+  url?: string;
 }
 

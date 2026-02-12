@@ -6,6 +6,8 @@
 
 'use client';
 
+import { useState } from 'react';
+
 interface Testimonial {
   quote: string;
   achievement?: { emoji: string; text: string };
@@ -23,7 +25,7 @@ const testimonials: Testimonial[] = [
     name: 'XH J.',
     role: 'Parent of our student',
     location: 'Hackensack, NJ',
-    avatar: '🙌',
+    avatar: '👧',
   },
   {
     quote:
@@ -31,7 +33,7 @@ const testimonials: Testimonial[] = [
     name: 'Yolanda L.',
     role: 'Student',
     location: 'Jersey City, NJ',
-    avatar: '🙌',
+    avatar: '👦',
   },
   {
     quote:
@@ -39,7 +41,7 @@ const testimonials: Testimonial[] = [
     name: 'B. L.',
     role: 'Neurosurgery Resident at NYU',
     location: 'New York, NY',
-    avatar: '🙌',
+    avatar: '👧',
   },
   {
     quote:
@@ -48,6 +50,31 @@ const testimonials: Testimonial[] = [
     name: 'Adam Z.',
     role: 'Student',
     location: 'Englewood Cliff, NJ',
+    avatar: '👧',
+  },
+  // 第二页评价
+  {
+    quote:
+      'Yan has been amazing for my son. He helped improve his ACT score and has really boosted my children\'s confidence in math. I couldn\'t be happier with the progress.',
+    name: 'Tekisha N.',
+    role: 'Parent of our students',
+    location: 'Tenafly, NJ',
+    avatar: '🙌',
+  },
+  {
+    quote:
+      'I am so grateful for the tutor who helped my son get an A in Chemistry 3 in just three weeks. The support and teaching were exactly what he needed.',
+    name: 'Zarina H.',
+    role: 'Parent of our student',
+    location: 'Jersey City, NJ',
+    avatar: '🙌',
+  },
+  {
+    quote:
+      'Professor Zhang is a superb and thoughtful tutor. I highly recommend him for GRE Quant preparation. He made the material clear and helped me feel confident going into the exam.',
+    name: 'Alyssa M.',
+    role: 'Student',
+    location: 'New York, NY',
     avatar: '🙌',
   },
 ];
@@ -59,54 +86,63 @@ const stats = [
   { value: '⭐⭐⭐⭐⭐', label: 'Recommendation Rate' },
 ];
 
-const PAGINATION_DOTS = 6;
+/** 每页展示的卡片数量（第一页 4 张，第二页 3 张） */
+const CARDS_PER_PAGE = 4;
+const TOTAL_PAGES = Math.ceil(testimonials.length / CARDS_PER_PAGE);
 
 export default function ParentsVoices() {
+  const [currentPage, setCurrentPage] = useState(0);
+  const start = currentPage * CARDS_PER_PAGE;
+  const visibleTestimonials = testimonials.slice(start, start + CARDS_PER_PAGE);
+
+  const goPrev = () => setCurrentPage((p) => Math.max(0, p - 1));
+  const goNext = () => setCurrentPage((p) => Math.min(TOTAL_PAGES - 1, p + 1));
+
   return (
-    <section className="py-[113px] bg-white">
-      <div className="max-w-[1920px] mx-auto px-12">
-        {/* Header */}
-        <div className="text-center mb-[45px]">
-          <div className="inline-flex items-center gap-[23px] px-[23px] py-[11px] bg-white rounded-[28px] mb-[23px] shadow-sm border border-[#E8F4FC]">
-            <span className="text-[34px]">💬</span>
-            <span className="text-[22.5px] text-[#6BB6FF]">Testimonials</span>
+    <section className="py-16 md:py-20 bg-[#FBF9F4]">
+      <div className="max-w-[1920px] mx-auto px-6 md:px-14">
+        {/* 标签与主标题与 KeyPrograms 区块保持同一尺寸与样式 */}
+        <div className="text-center mb-8 md:mb-10">
+          <div className="inline-flex items-center gap-3 px-4 py-2 bg-white rounded-full mb-4 shadow-sm">
+            <span className="text-2xl">💬</span>
+            <span className="text-lg md:text-xl text-[#6BB6FF]">Testimonials</span>
           </div>
-          <h2 className="text-[45px] font-bold text-[#2C3E50] mb-[23px] leading-[1.3]">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#2C3E50] mb-3 leading-tight">
             Hear from Our Community
           </h2>
-          <p className="text-[22.5px] text-[#7C8B99]">
+          <p className="text-base md:text-lg text-[#7C8B99] max-w-2xl mx-auto">
             Trusted by parents, loved by students.
           </p>
         </div>
 
-        {/* 2x2 Testimonial Grid */}
-        <div className="grid grid-cols-2 gap-[23px] mb-[34px]">
-          {testimonials.map((t, idx) => (
+        {/* 2x2 网格固定行高，卡片大小不随文字多少变化；长文案在卡片内滚动 */}
+        <div className="grid grid-cols-2 grid-rows-2 gap-4 md:gap-5 mb-6 md:mb-8 max-w-6xl mx-auto h-[550px] md:h-[680px]">
+          {visibleTestimonials.map((t, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-[23px] p-[34px] shadow-[0px_6px_8px_-6px_rgba(0,0,0,0.1),0px_14px_21px_-4px_rgba(0,0,0,0.1)] hover:shadow-lg transition flex flex-col"
+              className="bg-white rounded-xl p-4 md:p-5 shadow-sm hover:shadow-lg transition flex flex-col border-t-4 border-[#7EC97E] min-h-0"
             >
-              <p className="text-[22.5px] text-[#2C3E50] leading-[1.6] mb-[23px] flex-1">
+              <p className="text-base md:text-lg text-[#2C3E50] leading-snug mb-4 flex-1 min-h-0 overflow-y-auto">
                 &quot;{t.quote}&quot;
               </p>
               {t.achievement && (
-                <div className="inline-flex items-center gap-[11px] px-[23px] py-[11px] bg-[rgba(126,201,126,0.13)] rounded-[23px] mb-[23px] w-fit">
-                  <span className="text-[24px]">{t.achievement.emoji}</span>
-                  <span className="text-[20px] text-[#7EC97E] font-medium">
+                <div className="inline-flex items-center gap-2 px-3 py-2 bg-[rgba(126,201,126,0.13)] rounded-xl mb-4 w-fit">
+                  <span className="text-xl">{t.achievement.emoji}</span>
+                  <span className="text-base text-[#7EC97E] font-medium">
                     {t.achievement.text}
                   </span>
                 </div>
               )}
-              <div className="flex items-center gap-[23px] pt-[17px] border-t border-[#E8F4FC]">
-                <div className="w-[56px] h-[56px] bg-gradient-to-br from-[#A8D5FF] to-[#6BB6FF] rounded-[17px] flex items-center justify-center text-[27px] flex-shrink-0">
+              <div className="flex items-center gap-4 pt-4 border-t border-[#E8F4FC]">
+                <div className="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-[#A8D5FF] to-[#6BB6FF] rounded-xl flex items-center justify-center text-2xl flex-shrink-0">
                   {t.avatar}
                 </div>
                 <div>
-                  <h4 className="text-[22px] font-semibold text-[#2C3E50] mb-[3px]">
+                  <h4 className="text-lg md:text-xl font-semibold text-[#2C3E50] mb-0.5">
                     {t.name}
                   </h4>
-                  <p className="text-[19px] text-[#7C8B99]">{t.role}</p>
-                  <p className="text-[19px] text-[#7C8B99]">{t.location}</p>
+                  <p className="text-base text-[#7C8B99]">{t.role}</p>
+                  <p className="text-base text-[#7C8B99]">{t.location}</p>
                 </div>
               </div>
             </div>
@@ -114,48 +150,52 @@ export default function ParentsVoices() {
         </div>
 
         {/* Carousel Controls */}
-        <div className="flex items-center justify-center gap-[34px] mb-[68px]">
+        <div className="flex items-center justify-center gap-6 mb-10 md:mb-12">
           <button
             type="button"
-            className="w-[51px] h-[51px] bg-[#6BB6FF] hover:bg-[#4A9FEF] rounded-[17px] flex items-center justify-center text-white shadow-md hover:shadow-lg transition"
+            onClick={goPrev}
+            disabled={currentPage === 0}
+            className="w-10 h-10 md:w-11 md:h-11 bg-[#6BB6FF] hover:bg-[#4A9FEF] disabled:opacity-50 disabled:cursor-not-allowed rounded-xl flex items-center justify-center text-white shadow-md hover:shadow-lg transition"
             aria-label="Previous testimonials"
           >
-            <svg className="w-[24px] h-[24px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
             </svg>
           </button>
-          <div className="flex gap-[8px] items-center">
-            {Array.from({ length: PAGINATION_DOTS }).map((_, i) => (
+          <div className="flex gap-2 items-center">
+            {Array.from({ length: TOTAL_PAGES }).map((_, i) => (
               <div
                 key={i}
-                className={`h-[8px] rounded-full transition ${
-                  i === 0 ? 'bg-[#6BB6FF] w-[20px]' : 'bg-[#E8F4FC] w-[8px]'
+                className={`h-1.5 rounded-full transition ${
+                  i === currentPage ? 'bg-[#6BB6FF] w-5' : 'bg-[#E8F4FC] w-1.5'
                 }`}
               />
             ))}
           </div>
           <button
             type="button"
-            className="w-[51px] h-[51px] bg-[#6BB6FF] hover:bg-[#4A9FEF] rounded-[17px] flex items-center justify-center text-white shadow-md hover:shadow-lg transition"
+            onClick={goNext}
+            disabled={currentPage === TOTAL_PAGES - 1}
+            className="w-10 h-10 md:w-11 md:h-11 bg-[#6BB6FF] hover:bg-[#4A9FEF] disabled:opacity-50 disabled:cursor-not-allowed rounded-xl flex items-center justify-center text-white shadow-md hover:shadow-lg transition"
             aria-label="Next testimonials"
           >
-            <svg className="w-[24px] h-[24px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
             </svg>
           </button>
         </div>
 
-        {/* Bottom Stats */}
-        <div className="grid grid-cols-4 gap-[34px]">
+        {/* Bottom Stats：与上方评价卡片同宽，边距一致 */}
+        <div className="grid grid-cols-4 gap-3 md:gap-4 max-w-6xl mx-auto">
           {stats.map((stat, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-[23px] p-[34px] text-center shadow-sm hover:shadow-lg transition"
+              className="bg-white rounded-xl p-3 md:p-4 text-center shadow-sm hover:shadow-lg transition"
             >
-              <h4 className="text-[25.5px] font-semibold text-[#6BB6FF] mb-[11px]">
+              <h4 className="text-xl md:text-2xl font-semibold text-[#6BB6FF] mb-2">
                 {stat.value}
               </h4>
-              <p className="text-[22.5px] text-[#7C8B99]">{stat.label}</p>
+              <p className="text-base text-[#7C8B99]">{stat.label}</p>
             </div>
           ))}
         </div>

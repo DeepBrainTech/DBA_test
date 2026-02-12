@@ -41,19 +41,20 @@ export default function SocialIconWithQR({
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* 默认显示的图标 */}
-      <div className="w-[60px] h-[60px] bg-[#3D4F63] rounded-[15px] flex items-center justify-center shadow-lg cursor-pointer transition-transform hover:scale-110">
+      {/* 默认显示的图标：尺寸与页脚整体比例一致 */}
+      <div className="w-10 h-10 md:w-12 md:h-12 bg-[#3D4F63] rounded-xl flex items-center justify-center shadow-lg cursor-pointer transition-transform hover:scale-110">
         <Image 
           src={iconSrc} 
           alt={alt || platformName} 
-          width={40} 
-          height={40} 
+          width={35} 
+          height={35} 
+          className="w-6 h-6 md:w-8 md:h-8"
         />
       </div>
 
-      {/* 悬停时显示的二维码 - 在图标上方 */}
+      {/* 悬停时显示的二维码 - 在图标上方，尺寸与页脚比例一致 */}
       <div 
-        className={`absolute bottom-[70px] left-1/2 transform -translate-x-1/2 z-50 w-[180px] bg-[#3D4F63] rounded-[30px] flex flex-col items-center justify-center py-[20px] shadow-2xl transition-all duration-300 ${
+        className={`absolute bottom-full left-1/2 transform -translate-x-1/2 z-50 w-36 md:w-40 mb-2 bg-[#3D4F63] rounded-2xl flex flex-col items-center justify-center py-4 shadow-2xl transition-all duration-300 ${
           isHovered 
             ? 'opacity-100 translate-y-0 pointer-events-auto' 
             : 'opacity-0 translate-y-2 pointer-events-none'
@@ -62,11 +63,11 @@ export default function SocialIconWithQR({
         <Image 
           src={qrCodeSrc} 
           alt={`${platformName} QR Code`} 
-          width={135} 
-          height={135}
-          className="object-contain"
+          width={128} 
+          height={128}
+          className="object-contain w-28 h-28 md:w-32 md:h-32"
         />
-        <p className="text-[20px] text-[#A8B5C3] mt-[5px] text-center">
+        <p className="text-sm text-[#A8B5C3] mt-1 text-center">
           {platformName}
         </p>
       </div>
