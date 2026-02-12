@@ -9,11 +9,12 @@ import type { Feature, Challenge, ServiceStep, GlobalAdvantage } from '@/types/g
 /**
  * 特性列表
  */
+/** 英雄区四张卡片图标使用 public/global/Hero/ 下的 hero_1～hero_4.png */
 export const features: Feature[] = [
-  { icon: '🎓', title: 'Top Resources' },
-  { icon: '🏛️', title: 'Prestigious Institutions' },
-  { icon: '🏅', title: 'Ivy League Mentors' },
-  { icon: '📈', title: 'Direct Admissions Pathways' }
+  { icon: '/global/Hero/hero_1.png', title: 'Top Resources' },
+  { icon: '/global/Hero/hero_2.png', title: 'Prestigious Institutions' },
+  { icon: '/global/Hero/hero_3.png', title: 'Ivy League Mentors' },
+  { icon: '/global/Hero/hero_4.png', title: 'Direct Admissions Pathways' }
 ];
 
 /**
