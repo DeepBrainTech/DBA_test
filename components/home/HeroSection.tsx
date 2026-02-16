@@ -66,12 +66,17 @@ export default function HeroSection() {
             
             {/* Buttons - 小屏纵向排列；强制文案单行显示，避免换行 */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-4 sm:gap-4 md:gap-[22px] flex-wrap sm:flex-nowrap">
-              <button className="flex items-center justify-center gap-2 sm:gap-[10px] px-5 sm:px-6 md:px-[42px] h-11 sm:h-14 md:h-[75px] bg-gradient-to-b from-[#7EC97E] to-[#6BB87B] text-white text-sm sm:text-lg md:text-[22px] rounded-2xl md:rounded-[32px] hover:shadow-xl transition whitespace-nowrap shrink-0">
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSfAceUQq9JJ3uu-EcWlHkTQ1O1jY_uzh-fptrN7_JC9rf-dqg/viewform"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 sm:gap-[10px] px-5 sm:px-6 md:px-[42px] h-11 sm:h-14 md:h-[75px] bg-gradient-to-b from-[#7EC97E] to-[#6BB87B] text-white text-sm sm:text-lg md:text-[22px] rounded-2xl md:rounded-[32px] hover:shadow-xl transition whitespace-nowrap shrink-0"
+              >
                 Schedule A Consultation
                 <svg className="w-5 h-5 sm:w-6 sm:h-6 md:w-[26px] md:h-[26px] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.77} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
-              </button>
+              </a>
               <button 
                 onClick={handleWatchVideo}
                 className="flex items-center justify-center gap-2 sm:gap-[10px] px-5 sm:px-6 md:px-[42px] h-11 sm:h-14 md:h-[75px] bg-white text-[#6BB6FF] text-sm sm:text-lg md:text-[22px] rounded-2xl md:rounded-[32px] border-2 border-[#6BB6FF] hover:shadow-lg transition whitespace-nowrap shrink-0"
