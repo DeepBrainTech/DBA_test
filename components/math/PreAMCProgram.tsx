@@ -49,84 +49,83 @@ export default function PreAMCProgram() {
   ];
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-20 bg-white">
       <div className="mx-auto max-w-[1200px] px-6">
-        <div className="text-center">
-          <div className="inline-flex items-center gap-2 rounded-full bg-[#E8F5E9] px-6 py-3 mb-6">
-            <span className="text-2xl">💡</span>
-            <span className="text-[#4CAF50] text-sm font-medium">Our Programs</span>
+        <div className="rounded-[30px] border-2 border-dashed border-[#9C27B0]/30 bg-[#FAF5FF] p-10 mb-12">
+          <div className="text-center mb-10">
+            <div className="inline-flex items-center gap-2 rounded-full bg-[#E8F5E9] px-6 py-3 mb-6">
+              <span className="text-2xl">💡</span>
+              <span className="text-[#4CAF50] text-sm font-medium">Our Programs</span>
+            </div>
+            <h2 className="text-[36px] font-bold text-[#2C3E50] mb-3">
+              PRE-AMC Math Enrichment Program
+            </h2>
+            <p className="text-[16px] text-[#2C3E50]/65">
+              Designed for students in Grades 4-6 or equivalent level
+            </p>
           </div>
-          <h2 className="text-[36px] font-bold text-[#2C3E50] md:text-[42px]">
-            PRE-AMC Math Enrichment Program
-          </h2>
-          <p className="mt-4 text-[16px] text-[#2C3E50]/65">
-            Designed for students in Grades 4-6 or equivalent level
+
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {features.map((feature, idx) => (
+              <div key={idx} className="rounded-[20px] bg-white px-6 py-8 text-center">
+                <div className={`mx-auto mb-6 flex h-[86px] w-[86px] items-center justify-center rounded-[18px] ${feature.iconBg}`}>
+                  {feature.icon}
+                </div>
+                <h3 className="text-[18px] font-bold text-[#2C3E50] mb-2">
+                  {feature.title}
+                </h3>
+                <p className="text-[14px] leading-[1.5] text-[#2C3E50]/60">
+                  {feature.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="rounded-[30px] bg-[#FBF9F4] px-10 py-10 mb-12">
+          <p className="text-center text-[15px] leading-[1.7] text-[#2C3E50]/65 max-w-[900px] mx-auto">
+            This class is designed to spark curiosity, build logical reasoning, and develop problem-solving skills, while laying a strong foundation for future math competitions like MATHCOUNTS, MOEMS, and AMC.
+          </p>
+          <p className="text-center text-[13px] text-[#2C3E50]/50 mt-5 font-medium">
+            DeepBrain Academy Math Coaching Team
           </p>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-          {features.map((feature, idx) => (
-            <div key={idx} className="rounded-[26px] bg-[#FBF9F4] px-10 py-12 text-center">
-              <div className={`mx-auto mb-8 flex h-[86px] w-[86px] items-center justify-center rounded-[18px] ${feature.iconBg}`}>
-                {feature.icon}
+        <div className="rounded-[30px] border-2 border-dashed border-[#4CAF50]/30 bg-[#F5FFF5] px-10 py-8 mb-10">
+          <div className="flex flex-col md:flex-row gap-8 md:justify-between md:items-start">
+            <div className="flex-1">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-[20px]">⏰</span>
+                <h4 className="text-[24px] font-semibold text-[#2C3E50]">Class Time</h4>
               </div>
-              <h3 className="text-[18px] font-bold text-[#2C3E50] md:text-[20px]">
-                {feature.title}
-              </h3>
-              <p className="mt-3 text-[14px] leading-relaxed text-[#2C3E50]/55">
-                {feature.description}
-              </p>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-20 rounded-[30px] bg-[#FBF9F4] px-8 py-14 md:px-14">
-          <div className="relative">
-            <div className="absolute -left-2 -top-3 text-[#4CAF50]/35 text-3xl">&ldquo;</div>
-            <p className="text-center text-[16px] leading-relaxed text-[#2C3E50]/60 md:text-[18px] max-w-[900px] mx-auto">
-              This class is designed to spark curiosity, build logical reasoning, and develop problem-solving skills, while laying a strong foundation for future math competitions like MATHCOUNTS, MOEMS, and AMC.
-            </p>
-            <p className="text-center text-[14px] text-[#2C3E50]/50 mt-6 font-medium">
-              DeepBrain Academy Math Coaching Team
-            </p>
-          </div>
-        </div>
-
-        <div className="mt-[80px] rounded-[34px] border-2 border-dashed border-[#4CAF50]/30 bg-[#F5FFF5] px-10 py-10 md:px-12 md:py-12">
-          <div className="flex flex-col md:flex-row gap-10 md:justify-between">
-            <div className="max-w-[720px] text-left">
-              <div className="flex items-center gap-3">
-                <span className="text-[22px]">⏰</span>
-                <h4 className="text-[28px] font-semibold text-[#2C3E50]">Class Time</h4>
-              </div>
-              <div className="mt-5 space-y-2">
-                <p className="text-[18px] text-[#2C3E50]/70">Saturday 3:00-4:30 pm ET (Englewood, NJ & online)</p>
-                <p className="text-[18px] text-[#2C3E50]/70">Friday 3:45-5:15 pm ET (Tenafly, NJ & online)</p>
+              <div className="space-y-1.5">
+                <p className="text-[16px] text-[#2C3E50]/70">Saturday 3:00-4:30 pm ET (Englewood, NJ & online)</p>
+                <p className="text-[16px] text-[#2C3E50]/70">Friday 3:45-5:15 pm ET (Tenafly, NJ & online)</p>
               </div>
             </div>
-            <div className="self-end md:ml-auto flex flex-col items-end">
-              <div className="relative h-[110px] w-[110px] overflow-hidden rounded-md bg-white">
+            <div className="flex flex-col items-end">
+              <div className="relative h-[100px] w-[100px] overflow-hidden rounded-md bg-white">
                 <Image
                   src="/math/scan.jpg"
                   alt="WeChat QR Code"
-                  width={110}
-                  height={110}
+                  width={100}
+                  height={100}
                   className="object-contain"
                 />
               </div>
-              <p className="mt-3 text-right text-[14px] leading-6 text-[#2C3E50]/70">
+              <p className="mt-2 text-right text-[12px] leading-5 text-[#2C3E50]/70">
                 Scan to join our<br />WeChat Community
               </p>
             </div>
           </div>
         </div>
 
-        <div className="mt-[46px] flex justify-center gap-6">
+        <div className="flex justify-center gap-5">
           <a
             href="https://forms.gle/2mMzKoQkXHa2CVHe6"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-3 rounded-full border-2 border-[#4CAF50] bg-white px-10 py-4 text-[18px] font-semibold text-[#4CAF50] hover:bg-[#E8F5E9] transition"
+            className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#4CAF50] bg-white px-8 py-3.5 text-[16px] font-semibold text-[#4CAF50] hover:bg-[#E8F5E9] transition"
           >
             Watch Intro Class
             <span>→</span>
@@ -135,7 +134,7 @@ export default function PreAMCProgram() {
             href="https://forms.gle/2mMzKoQkXHa2CVHe6"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-3 rounded-full bg-[#4CAF50] px-10 py-4 text-[18px] font-semibold text-white shadow-lg hover:bg-[#43A047] transition"
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-[#4CAF50] px-8 py-3.5 text-[16px] font-semibold text-white shadow-lg hover:bg-[#43A047] transition"
           >
             Register Now
             <span>→</span>

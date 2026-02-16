@@ -62,39 +62,36 @@ export default function MathTeachingPhilosophy() {
   ];
 
   return (
-    <section id="math-teaching" className="py-[133px] bg-white">
+    <section id="math-teaching" className="py-[100px] bg-white">
       <div className="max-w-[1200px] mx-auto px-6">
-        <div className="flex flex-col items-center text-center">
-          <div className="inline-flex items-center gap-2 rounded-full bg-[#E8F5E9] px-6 py-3">
+        <div className="flex flex-col items-center text-center mb-[60px]">
+          <div className="inline-flex items-center gap-2 rounded-full bg-[#E8F5E9] px-6 py-3 mb-6">
             <span className="text-[#4CAF50] text-base">📐</span>
             <span className="text-[#4CAF50] text-sm font-medium">Teaching Features</span>
           </div>
 
-          <h2 className="mt-6 text-[44px] leading-tight font-bold text-[#2C3E50] md:text-[56px]">
+          <h2 className="text-[44px] leading-tight font-bold text-[#2C3E50] mb-4">
             Math Teaching Philosophy
           </h2>
-          <p className="mt-4 max-w-[820px] text-[16px] leading-relaxed text-[#2C3E50]/60 md:text-[18px]">
+          <p className="max-w-[820px] text-[16px] leading-relaxed text-[#2C3E50]/60">
             Our unique teaching methodology makes complex mathematical concepts easy to understand.
           </p>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {cards.map((card) => (
-            <div key={card.number} className="relative bg-[#FBF9F4] rounded-[26px] p-10">
-              <div className={`w-[52px] h-[52px] ${card.iconBg} rounded-[14px] flex items-center justify-center mb-6`}>
+            <div key={card.number} className="relative bg-[#FBF9F4] rounded-[20px] p-8">
+              <div className={`w-[48px] h-[48px] ${card.iconBg} rounded-[12px] flex items-center justify-center mb-5`}>
                 {card.icon}
               </div>
-              <h3 className="text-[20px] font-bold text-[#2C3E50] mb-3">{card.title}</h3>
-              <p className="text-[14px] leading-relaxed text-[#2C3E50]/55 mb-6">{card.description}</p>
+              <h3 className="text-[18px] font-bold text-[#2C3E50] mb-3">{card.title}</h3>
+              <p className="text-[14px] leading-[1.6] text-[#2C3E50]/60 mb-5">{card.description}</p>
               <div className="flex flex-wrap gap-2">
                 {card.tags.map((tag, i) => (
-                  <span key={i} className={`px-4 py-1.5 ${card.tagBg} ${card.tagText} rounded-full text-[13px] font-medium`}>
+                  <span key={i} className={`px-3 py-1.5 ${card.tagBg} ${card.tagText} rounded-full text-[12px] font-medium`}>
                     {tag}
                   </span>
                 ))}
-              </div>
-              <div className="absolute bottom-6 right-8 text-[48px] font-bold text-[#2C3E50]/5">
-                {card.number}
               </div>
             </div>
           ))}
