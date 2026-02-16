@@ -1,0 +1,102 @@
+/**
+ * 文件用途：Summer Camp 英雄区，主标题、副标题与四个特色亮点（与设计稿一致）
+ * 依赖关系：依赖 next/image、SummerCampHeroData 类型、scrollToElement 工具函数
+ * 注意事项：文案与设计稿一致；-mt-[106px] 使首屏与透明导航重叠；底部 5.png 可点击滚动至 Learning Strategies 区块
+ */
+
+'use client';
+
+import Image from 'next/image';
+
+import { scrollToElement } from '@/lib/scroll';
+import type { SummerCampHeroData } from '@/types/summer_camp';
+
+// 四张卡片图标静态导入，用于获取原始宽高并按原始尺寸展示
+import hero1 from '@/public/summer_camp/hero/1.png';
+import hero2 from '@/public/summer_camp/hero/2.png';
+import hero3 from '@/public/summer_camp/hero/3.png';
+import hero4 from '@/public/summer_camp/hero/4.png';
+
+const HERO_CARD_IMGS = [hero1, hero2, hero3, hero4] as const;
+
+interface HeroProps {
+  data: SummerCampHeroData;
+}
+
+export default function Hero({ data }: HeroProps) {
+  return (
+    <section className="relative -mt-[106px] flex flex-col pb-10 bg-[#FFFFFF]">
+      {/* 背景图区域：高度为设计稿的 90%；overflow-visible 让底部滚动指示器可伸入下方白色区域；pb-10 为伸出部分留白 */}
+      <div className="relative h-[450px] w-full overflow-visible bg-[#e8e8e8] md:h-[558px] lg:h-[666px]">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src={data.backgroundImage}
+            alt="Summer Camp hero background"
+            fill
+            priority
+            className="object-cover"
+          />
+          {/* 与 Global Education 一致的遮罩：50% 浅灰半透明，提升文字可读性 */}
+          <div className="absolute inset-0 bg-[lightgray]/50" aria-hidden />
+        </div>
+        {/* 整块内容区左右边距：改 px-* 可同时影响标题、副标题和卡片的左右留白；如 px-6 / px-8 / px-[48px] 等 */}
+        <div className="relative z-10 mx-auto flex h-full max-w-[1920px] flex-col items-center justify-center px-4 pt-[106px] text-center">
+          {/* 主标题：改 mt-* 可单独调「标题」相对内容区顶部的距离 */}
+          <h1 className="font-outfit mt-20 text-5xl font-bold leading-[1.75] text-[#333333] md:text-6xl lg:text-[80px] lg:leading-[140px]">
+            {data.title}
+          </h1>
+          {/* 副标题：改 mt-* 可单独调「标题与副标题」之间的间距 */}
+          <p className="font-outfit mt-4 max-w-[926px] text-xl font-medium leading-[46px] text-black md:text-2xl lg:text-[32px]">
+            {data.subtitle}
+          </p>
+          {/* 四卡片：不换行，大屏小屏均同一行；要单独调卡片与左右边距可在此 div 加 px-* 或 mx-* */}
+          <div className="mt-16 flex flex-nowrap items-stretch justify-center gap-[26px]">
+            {data.features.map((feature, index) => {
+              const img = HERO_CARD_IMGS[index];
+              return (
+                <div
+                  key={feature.label}
+                  className="flex min-h-[clamp(3.5rem,12vw,92.909px)] min-w-0 flex-1 max-w-[1920px] min-[1400px]:min-w-[350px] items-center gap-3 rounded-3xl bg-white/80 pl-4 pr-4 transition hover:shadow-lg cursor-pointer md:gap-5 md:pl-7 md:pr-7"
+                >
+                  {/* 图标限制最大宽高，避免过大；可改 max-w/max-h 数值调整大小 */}
+                  <Image
+                    src={img.src}
+                    alt=""
+                    width={img.width}
+                    height={img.height}
+                    className="shrink-0 max-h-14 w-auto object-contain md:max-h-16"
+                  />
+                  <span className="font-outfit text-[#2C3E50] text-base leading-[33px] lg:text-[22px] lg:whitespace-nowrap">
+                    {feature.label}
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+          {/* 四卡片下方文案：mt-8 使与卡片间距略小，整体上移一点 */}
+          <div className="mt-6 text-center font-outfit text-xl font-medium capitalize leading-10 text-white [text-shadow:_0px_2px_4px_rgb(0_0_0_/_0.20)]">
+            Join us this summer
+          </div>
+        </div>
+        {/* 5.png：绝对定位在背景图底部，仅图片可点击，平滑滚动至 Learning Strategies 区块 */}
+        <div className="absolute bottom-[-35px]  left-0 right-0 z-10 flex justify-center">
+          <button
+            type="button"
+            onClick={() => scrollToElement('learning-strategies')}
+            className="cursor-pointer border-0 bg-transparent p-0"
+            aria-label="滚动至 Learning Strategies"
+          >
+            <Image
+              src="/summer_camp/hero/5.png"
+              alt=""
+              width={1200}
+              height={600}
+              className="h-auto w-auto max-w-[90vw] object-contain"
+              unoptimized
+            />
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+}

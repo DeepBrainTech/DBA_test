@@ -1,7 +1,7 @@
 /**
  * 文件用途：全球教育页面英雄区组件
  * 依赖关系：依赖 types/global-education.ts 中的 Feature 类型和 scrollToElement 工具函数
- * 注意事项：包含背景图片、标题、特性卡片和按钮
+ * 注意事项：包含背景图片、标题、特性卡片和按钮；-mt-[106px] 使首屏与透明导航重叠，内容区 pt-[106px] 使文案在导航下方
  */
 
 'use client';
@@ -24,7 +24,7 @@ export default function GlobalHeroSection({ features }: GlobalHeroSectionProps) 
   };
 
   return (
-    <section className="relative flex flex-col">
+    <section className="relative -mt-[106px] flex flex-col">
       {/* 背景图区域高度 */}
       <div className="relative h-[95vh] overflow-visible">
         <div className="absolute inset-0 z-0">
@@ -39,7 +39,7 @@ export default function GlobalHeroSection({ features }: GlobalHeroSectionProps) 
         </div>
 
         {/* Hero Content：收窄内容区、整体居中；用上内边距把标题放到设计稿的垂直中段 */}
-        <div className="relative z-10 h-full w-full max-w-[1280px] mx-auto px-6 md:px-12 pt-[28vh] pb-0 flex flex-col items-center text-center">
+        <div className="relative z-10 h-full w-full max-w-[1280px] mx-auto px-6 md:px-12 pt-[106px] pb-0 flex flex-col items-center text-center">
           <h1 className="text-[80px] font-bold text-[#333] leading-[140px] mb-[30px]">
             Global Education
           </h1>

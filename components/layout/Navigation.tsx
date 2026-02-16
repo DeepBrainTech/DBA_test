@@ -1,7 +1,7 @@
 /**
  * 文件用途：导航栏组件（可在多个页面复用）
  * 依赖关系：依赖 Next.js Link 和 Image 组件
- * 注意事项：需要根据当前路由高亮激活的链接
+ * 注意事项：需要根据当前路由高亮激活的链接；使用透明背景便于首屏大图延伸至顶部；导航在文档流顶部不固定，随页面滚动，仅滚回顶部时可见
  */
 
 'use client';
@@ -30,8 +30,9 @@ const navLinks = [
 export default function Navigation({ className = '' }: { className?: string }) {
   const pathname = usePathname();
 
-  return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 bg-white shadow-sm ${className}`}>
+  /* 导航在文档流顶部，随页面滚动；只有用户滚回页面最上面才能看到 */
+    return (
+    <nav className={`relative top-0 left-0 right-0 z-50 bg-transparent shadow-[0_3.319px_10px_-3.319px_rgba(0,0,0,0.04)] ${className}`}>
       <div className="max-w-[1920px] mx-auto px-11">
         <div className="flex items-center justify-between h-[106px]">
           {/* Logo */}
@@ -59,7 +60,7 @@ export default function Navigation({ className = '' }: { className?: string }) {
                 <Link
                   key={link.label}
                   href={link.href}
-                  className={`hover:text-[#6BB6FF] transition ${isActive ? 'font-bold text-[#6BB6FF]' : ''}`}
+                  className={`hover:text-black transition ${isActive ? 'font-bold text-black' : ''}`}
                 >
                   {link.label}
                 </Link>

@@ -1,10 +1,14 @@
 /**
- * 文件用途：Summer Camp 页面入口，显示 Coming Soon 提示
- * 依赖关系：Navigation 和 Footer 已在根 layout.tsx 中统一管理
- * 注意事项：页面仅显示 Coming Soon 提示，后续可扩展为完整页面
+ * 文件用途：Summer Camp 页面入口，负责字体配置与区块拼接
+ * 依赖关系：依赖 components/summer_camp 下各区块组件与 summer_camp 页面数据
+ * 注意事项：Navigation 和 Footer 已在根布局统一管理，这里不重复引入
  */
 
 import { Outfit } from 'next/font/google';
+
+import Hero from '@/components/summer_camp/Hero';
+import LearningStrategies from '@/components/summer_camp/LearningStrategies';
+import { summerCampPageData } from '@/data/summer_camp';
 
 const outfit = Outfit({
   subsets: ['latin'],
@@ -12,18 +16,14 @@ const outfit = Outfit({
   display: 'swap',
 });
 
-/**
- * Summer Camp 页面组件
- * 当前显示 Coming Soon 提示
- */
-export default function SummerCampPage() {
+export default function Page() {
+  const { hero, learningStrategies } = summerCampPageData;
   return (
-    <div className={`${outfit.variable} ${outfit.className} min-h-screen bg-[#FBF9F4] pt-[106px]`}>
-      <div className="flex items-center justify-center min-h-[calc(100vh-106px)]">
-        <div className="text-center">
-          <h1 className="text-6xl font-bold text-[#274777] mb-4">Coming Soon</h1>
-        </div>
-      </div>
+    <div className={`${outfit.variable} ${outfit.className} min-h-screen`}>
+      <main>
+        <Hero data={hero} />
+        <LearningStrategies data={learningStrategies} />
+      </main>
     </div>
   );
 }

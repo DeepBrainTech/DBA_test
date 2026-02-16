@@ -1,7 +1,7 @@
 /**
  * 文件用途：首页英雄区组件
  * 依赖关系：依赖 Next.js Image 组件和 scrollToElement 工具函数
- * 注意事项：包含主标题、描述、按钮和 YouTube 视频
+ * 注意事项：包含主标题、描述、按钮和 YouTube 视频；-mt-[106px] 使首屏与透明导航重叠，内容区 pt-[106px] 使文案在导航下方
  */
 
 'use client';
@@ -38,15 +38,12 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative min-h-0 md:min-h-screen bg-gradient-to-b from-[#E8F4FC] to-[#FBF9F4] overflow-hidden flex flex-col
-      pt-16 sm:pt-24 md:pt-[100px] lg:pt-[133px]
-      pb-2 sm:pb-6">
+    <section className="relative -mt-[106px] min-h-0 md:min-h-screen bg-gradient-to-b from-[#E8F4FC] to-[#FBF9F4] overflow-hidden flex flex-col pb-2 sm:pb-6">
       {/* 小屏上下位置：改 pt-16 调整整块距顶（加大下移、减小上移）；改下方内容区 py-6 调内容区上下留白 */}
       {/* Background Decorations - 大屏显示，小屏减弱避免占空间 */}
       <div className="absolute top-[120px] right-4 md:top-[200px] md:right-[100px] w-20 h-20 md:w-[133px] md:h-[133px] bg-[#FFD4A3] rounded-full opacity-20 blur-[80px] md:blur-[133px] pointer-events-none" aria-hidden />
       
-      <div className="max-w-[1920px] mx-auto px-5 sm:px-6 md:px-10 lg:px-14 flex-1 flex items-center
-        py-6 sm:py-8 md:py-10 lg:py-[60px]">
+      <div className="max-w-[1920px] mx-auto px-5 sm:px-6 md:px-10 lg:px-14 flex-1 flex items-center pt-[106px] pb-6 sm:pb-8 md:pb-10 lg:pb-[60px]">
       {/* 小屏内容区上下留白：改 py-6（如 py-4 更紧凑、py-10 更宽松） */}
         {/* 小屏单列堆叠；大屏双列，笔记本端缩小间距避免拥挤 */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 md:gap-14 lg:gap-12 xl:gap-20 2xl:gap-[100px] w-full items-center">
