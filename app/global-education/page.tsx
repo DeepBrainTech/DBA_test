@@ -20,7 +20,6 @@ import AdmissionLettersSection from '@/components/global/AdmissionLettersSection
 import ComparisonTableSection from '@/components/global/ComparisonTableSection';
 import ChallengesSection from '@/components/global/ChallengesSection';
 import ServiceMapSection from '@/components/global/ServiceMapSection';
-import FacultySection from '@/components/global/FacultySection';
 import PricingSection from '@/components/global/PricingSection';
 import AdmissionSection from '@/components/global/AdmissionSection';
 import BookFreeSection from '@/components/global/BookFreeSection';
@@ -40,7 +39,6 @@ export default function GlobalEducation() {
       <ComparisonTableSection />
       <ChallengesSection challenges={challenges} />
       <ServiceMapSection serviceSteps={serviceSteps} />
-      <FacultySection />
       <PricingSection />
       <AdmissionSection />
       <BookFreeSection />
