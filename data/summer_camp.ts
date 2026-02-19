@@ -89,19 +89,19 @@ export const summerCampPageData: SummerCampPageData = {
       {
         title: 'Theory + Practice',
         description:
-          '将抽象的数学思维过程一步步拆解，让学生真正"听懂"而非死记硬背。通过图表、动画和实例演示，让复杂概念',
+          'Deep dive into advanced scientific concepts followed by immediate hands-on application through building functional prototypes.',
         tag: 'Methodology',
       },
       {
         title: 'University Exposure',
         description:
-          '严格控制每班人数（不超过8人），保证每位学生都能获得充分关注。实时提问与互动，让老师及时发现并解决每',
+          'Optional visits to university professor laboratories to experience real-world scientific research environments and advanced equipment.',
         tag: 'Experience',
       },
       {
         title: 'Expert Mentorship',
         description:
-          '由屡获殊荣的竞赛教练亲自授课，传授第一手竞赛经验与技巧。他们不仅教解题，更教如何在压力下保持最佳状态',
+          'Opportunities for 1:1 mentorship and recommendation letters for top-performing students, provided by our distinguished faculty.',
         tag: 'Guidance',
       },
       {

@@ -8,6 +8,7 @@ import { Outfit } from 'next/font/google';
 
 import Hero from '@/components/summer_camp/Hero';
 import LearningStrategies from '@/components/summer_camp/LearningStrategies';
+import TrackA from '@/components/summer_camp/trackA';
 import { summerCampPageData } from '@/data/summer_camp';
 
 const outfit = Outfit({
@@ -23,6 +24,7 @@ export default function Page() {
       <main>
         <Hero data={hero} />
         <LearningStrategies data={learningStrategies} />
+        <TrackA />
       </main>
     </div>
   );

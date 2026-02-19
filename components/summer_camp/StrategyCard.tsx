@@ -45,13 +45,14 @@ export default function StrategyCard({ card, index }: StrategyCardProps) {
           />
         </div>
       </div>
-      <div className="w-52 h-7 left-[37.17px] top-[157.98px] absolute inline-flex justify-start items-start">
-        <div className="flex-1 text-center justify-start text-slate-700 text-3xl font-semibold font-['Outfit'] leading-7">
+      {/* 卡片标题：与首页 KeyPrograms 卡片标题字号一致 */}
+      <div className="w-52 min-h-7 left-[37.17px] top-[157.98px] absolute inline-flex justify-start items-start">
+        <div className="flex-1 text-center justify-start text-slate-700 text-xl md:text-2xl font-semibold font-['Outfit'] leading-tight">
           {card.title}
         </div>
       </div>
-      <div className="w-52 h-24 left-[37.17px] top-[202.19px] absolute">
-        <div className="w-52 left-[0.83px] top-[-0.19px] absolute text-center justify-start text-slate-500 text-xl font-normal font-['Outfit'] leading-7">
+      <div className="w-52 min-h-24 left-[37.17px] top-[202.19px] absolute">
+        <div className="w-52 left-[0.83px] top-[-0.19px] absolute text-center justify-start text-slate-500 text-base md:text-lg font-normal font-['Outfit'] leading-snug">
           {card.description}
         </div>
       </div>
