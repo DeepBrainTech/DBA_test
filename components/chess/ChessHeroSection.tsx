@@ -64,13 +64,22 @@ export default function ChessHeroSection({ features }: ChessHeroSectionProps) {
                     ))}
                 </div>
 
-                {/* Discover the Charm of Board Games Button */}
-                <button
-                    onClick={handleScrollDown}
-                    className="px-[60px] h-[90px] bg-orange-400 text-white text-[26px] rounded-[40px] hover:shadow-xl transition font-medium"
-                >
-                    Discover the Charm of Board Games
-                </button>
+                {/* Bottom hint (Unlock + image) */}
+                <div className="absolute bottom-[12px] left-1/2 -translate-x-1/2 flex flex-col items-center gap-3">
+                    <p className="text-[14px] font-semibold text-white/90 drop-shadow">
+                        Discover the Charm of Board Games
+                    </p>
+
+                    {/* image icon */}
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/70 backdrop-blur shadow">
+                        <Image
+                            src="/chess/mouse-icon.png"
+                            alt="Scroll indicator"
+                            width={40}
+                            height={40}
+                        />
+                    </div>
+                </div>
             </div>
         </section>
     );
