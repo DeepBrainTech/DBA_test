@@ -19,9 +19,10 @@ export default function LearningStrategies({ data }: LearningStrategiesProps) {
   return (
     <section
       id="learning-strategies"
-      className="w-full max-w-[1344px] px-9 pt-24 pb-16 mx-auto flex flex-col justify-start items-start gap-16"
+      className="w-full px-14 pt-24 pb-16 flex flex-col justify-start items-start gap-16"
       aria-label="Learning Strategies"
     >
+      <div className="w-full max-w-[1344px] mx-auto px-9 flex flex-col justify-start items-start gap-16">
         {/* 1. 顶部引言块：按设计稿尺寸与定位，绿色渐变 + 引号 + 正文 + 署名；文字区略宽 */}
         <div className="w-full max-w-[1200px] mx-auto h-[468px] relative rounded-3xl overflow-hidden bg-gradient-to-r from-green-400/0 to-green-400/0">
           {/* 引号：设计稿 left/top 约 28px */}
@@ -31,9 +32,9 @@ export default function LearningStrategies({ data }: LearningStrategiesProps) {
             </div>
           </div>
           {/* 正文+署名：设计稿 left 约 114px, top 约 56px；内容区略宽 */}
-          <div className="w-full max-w-[960px] left-[113.83px] top-[56.07px] absolute inline-flex flex-col justify-start items-start gap-5">
+          <div className="w-full max-w-[960px] left-[125px] top-[56.07px] absolute inline-flex flex-col justify-start items-start gap-5">
             <div className="self-stretch h-80 relative">
-              <div className="w-full max-w-[920px] left-[6px] top-[0.10px] absolute text-center text-slate-700 text-base font-normal font-['Outfit'] leading-relaxed md:text-lg">
+              <div className="w-full max-w-[925px] left-[6px] top-[0.10px] absolute text-center text-slate-700 text-base font-normal font-['Outfit'] leading-relaxed md:text-lg">
                 {introParagraphs.map((p, i) => (
                   <span key={i}>
                     {p.replace(/\n/g, ' ')}
@@ -80,66 +81,64 @@ export default function LearningStrategies({ data }: LearningStrategiesProps) {
         </div>
 
         {/* 3. 四张策略卡：Identify, Innovate, Prototype, Present（由 StrategyCard 组件渲染） */}
-        <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center">
+        <div className="w-full  grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center">
           {data.strategies.map((card, index) => (
             <StrategyCard key={card.title} card={card} index={index} />
           ))}
         </div>
 
-        {/* 4. 底部对比表：Tailored Programs for Every Learner（与设计稿结构一致） */}
-        <div className="self-stretch h-[514.37px] relative bg-gradient-to-r from-red-400/10 to-red-400/10 rounded-3xl overflow-hidden">
-          <div className="w-7 h-16 left-[27.88px] top-[27.88px] absolute opacity-20">
-            <div className="left-0 top-[-0.46px] absolute justify-start text-rose-400 text-5xl md:text-6xl font-normal font-['Outfit'] leading-tight">
+        {/* 4. 底部对比表：与上方四张策略卡同宽(w-full)，按设计稿(图1) */}
+        <div className="w-full bg-gradient-to-r from-red-400/10 to-red-400/10 rounded-3xl overflow-hidden">
+          {/* 引号容器：左上角，引号与容器上、左边距一致 */}
+          <div className="flex justify-start items-start pt-3 pl-3 pb-0 md:pt-4 md:pl-4">
+            <div className="leading-none opacity-20 text-rose-400 text-5xl md:text-6xl font-normal font-['Outfit']" aria-hidden>
               &quot;
             </div>
           </div>
-          <div className="w-[1040.82px] h-96 left-[114.30px] top-[55.76px] absolute">
-            <div className="w-[1040.82px] h-10 left-0 top-0 absolute">
-              <div className="left-[288.36px] top-[-0.23px] absolute text-center justify-start text-slate-700 text-xl md:text-2xl font-semibold font-['Outfit'] leading-tight">
-                {data.comparisonSection.title}
+          {/* 内容区：紧贴容器上边距，标题在粉区内居中，与白卡留出设计稿中的间距 */}
+          <div className="px-6 pt-0 pb-14 md:px-15 md:pt-1 md:pb-15">
+            <h3 className="text-center text-slate-700 text-xl md:text-2xl font-bold font-['Outfit'] leading-tight">
+              {data.comparisonSection.title}
+            </h3>
+            {/* 白卡：仅包表格，设计稿中的轻微阴影与圆角 */}
+            <div className="mt-8 w-full overflow-hidden rounded-2xl bg-white shadow-sm px-4 py-5 md:px-5 md:py-6 md:mt-10">
+              {/* 表头：三列网格，设计稿中表头有极浅背景区分 */}
+              <div className="grid grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)_minmax(0,1.5fr)] gap-4 border-b border-zinc-100 pb-3 text-base md:text-lg font-['Outfit'] leading-7 bg-zinc-50/80">
+                <div className="text-center font-semibold text-rose-400">
+                  {data.comparisonSection.columnHeaders.feature}
+                </div>
+                <div className="text-center font-semibold text-rose-400">
+                  {data.comparisonSection.columnHeaders.trackA}
+                </div>
+                <div className="text-center font-semibold text-rose-400">
+                  {data.comparisonSection.columnHeaders.trackB}
+                </div>
               </div>
-            </div>
-            <div className="w-[1041px] h-72 left-[0.52px] top-[71.03px] absolute">
-              <div className="w-[1041px] h-80 px-5 pt-6 left-0 top-[0.49px] absolute bg-white rounded-2xl inline-flex flex-col justify-start items-start gap-4">
-                <div className="self-stretch h-9 border-b border-zinc-100 inline-flex justify-start items-start">
-                  <div className="w-[1003.83px] h-7 relative">
-                    <div className="w-64 left-[0.41px] top-[0.91px] absolute text-center justify-start text-rose-400 text-base md:text-lg font-semibold font-['Outfit'] leading-7 whitespace-nowrap">
-                      {data.comparisonSection.columnHeaders.feature}
-                    </div>
-                    <div className="w-80 left-[277.41px] top-[0.41px] absolute text-center justify-start text-rose-400 text-base md:text-lg font-semibold font-['Outfit'] leading-7 whitespace-nowrap">
-                      {data.comparisonSection.columnHeaders.trackA}
-                    </div>
-                    <div className="w-80 left-[653.41px] top-[0.41px] absolute text-center justify-start text-rose-400 text-base md:text-lg font-semibold font-['Outfit'] leading-7 whitespace-nowrap">
-                      {data.comparisonSection.columnHeaders.trackB}
-                    </div>
+              {/* 表体：每行三列 */}
+              {data.comparisonSection.rows.map((row, i) => (
+                <div
+                  key={row.feature}
+                  className={`grid grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)_minmax(0,1.5fr)] gap-4 py-3 text-base md:text-lg font-['Outfit'] leading-7 ${
+                    i < data.comparisonSection.rows.length - 1
+                      ? 'border-b border-zinc-100'
+                      : ''
+                  }`}
+                >
+                  <div className="text-center font-semibold text-slate-500">
+                    {row.feature}
+                  </div>
+                  <div className="text-center font-normal text-slate-500">
+                    {row.trackA}
+                  </div>
+                  <div className="text-center font-normal text-slate-500">
+                    {row.trackB}
                   </div>
                 </div>
-                {data.comparisonSection.rows.map((row, i) => (
-                  <div
-                    key={row.feature}
-                    className={`self-stretch h-9 inline-flex justify-start items-start ${
-                      i < data.comparisonSection.rows.length - 1
-                        ? 'border-b border-zinc-100'
-                        : ''
-                    }`}
-                  >
-                    <div className="w-[1003.83px] h-7 relative">
-                      <div className="w-64 left-[0.41px] top-[0.91px] absolute text-center justify-start text-slate-500 text-base md:text-lg font-semibold font-['Outfit'] leading-7 whitespace-nowrap">
-                        {row.feature}
-                      </div>
-                      <div className="w-80 left-[277.41px] top-[0.41px] absolute text-center justify-start text-slate-500 text-base md:text-lg font-normal font-['Outfit'] leading-7 whitespace-nowrap">
-                        {row.trackA}
-                      </div>
-                      <div className="w-80 left-[653.41px] top-[0.41px] absolute text-center justify-start text-slate-500 text-base md:text-lg font-normal font-['Outfit'] leading-7 whitespace-nowrap">
-                        {row.trackB}
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
+              ))}
             </div>
           </div>
         </div>
+      </div>
     </section>
   );
 }

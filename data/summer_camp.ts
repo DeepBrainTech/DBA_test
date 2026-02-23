@@ -112,7 +112,7 @@ export const summerCampPageData: SummerCampPageData = {
       },
     ],
     quote: {
-      text: '我们的课程，旨在点燃学生对数学的兴趣，并将这种兴趣转化为实实在在的学术竞争力。 让每一个孩子都能在数',
+      text: '',
       attribution: 'DeepBrain Academy Coaching Team',
     },
     featuredProjects: {
@@ -121,7 +121,7 @@ export const summerCampPageData: SummerCampPageData = {
       projects: [
         {
           title: 'Project 1 Spiral Wonders',
-          image: '/summer_camp/project1.png',
+          image: '/summer_camp/trackA/projects1.png',
           bullets: [
             'Explore bio-inspired structures like DNA and plant tendrils.',
             'Study mechanical anisotropy and geometric nonlinearity.',
@@ -130,7 +130,7 @@ export const summerCampPageData: SummerCampPageData = {
         },
         {
           title: 'Project 2 Art & Science of Origami',
-          image: '/summer_camp/project2.png',
+          image: '/summer_camp/trackA/projects2.png',
           bullets: [
             'Math meets Engineering: From solar panels to soft robotics.',
             'Computational origami and unfolding algorithms.',
@@ -139,7 +139,7 @@ export const summerCampPageData: SummerCampPageData = {
         },
         {
           title: 'Project 3 Bionic Acoustic Engineering',
-          image: '/summer_camp/project3.png',
+          image: '/summer_camp/trackA/projects3.png',
           bullets: [
             'Build instruments and analyze sound waveforms.',
             'Design artificial vocal cords and mimic animal sounds.',
@@ -148,7 +148,7 @@ export const summerCampPageData: SummerCampPageData = {
         },
         {
           title: 'Project 4 The Science of Magic',
-          image: '/summer_camp/project4.png',
+          image: '/summer_camp/trackA/projects4.png',
           bullets: [
             'Reverse-engineer "magic" using physics, materials, and perception.',
             'Explore anti-gravity, invisibility, and non-Newtonian fluids.',
@@ -157,7 +157,7 @@ export const summerCampPageData: SummerCampPageData = {
         },
         {
           title: 'Project 5 Robotics & Biomimetics',
-          image: '/summer_camp/project5.png',
+          image: '/summer_camp/trackA/projects5.png',
           bullets: [
             'Analyze insect locomotion patterns and soft-body motion.',
             'Design biomimetic mechanical structures and flexible grippers.',
@@ -166,7 +166,7 @@ export const summerCampPageData: SummerCampPageData = {
         },
         {
           title: 'Project 6 Bionic Organs Exploration',
-          image: '/summer_camp/project6.png',
+          image: '/summer_camp/trackA/projects6.png',
           bullets: [
             'Study human anatomy and organ function (heart, lungs, brain).',
             'Use micro-controller, muscle sensor, and servo motor to build prototypes.',
@@ -205,7 +205,7 @@ export const summerCampPageData: SummerCampPageData = {
       },
     ],
     quote: {
-      text: '我们的课程，旨在点燃学生对数学的兴趣，并将这种兴趣转化为实实在在的学术竞争力。 让每一个孩子都能在数',
+      text: 'This track is perfect for younger students who are eager to develop their cognitive skills and strategic thinking abilities. Through a combination of classic strategy games, coding projects, and engaging weekly themes, students will strengthen their logic, focus, and confidence. Our flexible enrollment allows you to choose the weeks that best fit your summer schedule.',
       attribution: 'DeepBrain Academy Coaching Team',
     },
     ctaLabel: 'Register Now',
@@ -238,7 +238,7 @@ export const summerCampPageData: SummerCampPageData = {
           session3: { courseName: 'Bionic Organs Exploration', tag: 'Online', tagVariant: 'blue' },
         },
         {
-          timeSlot: '3:10 PM - 4:40 PM',
+          timeSlot: '1:20 PM - 2:50 PM',
           session1: { courseName: 'The Art and Science of Origami', tag: 'Onsite', tagVariant: 'pink' },
           session2: { courseName: 'The Science of Magic', tag: 'Onsite', tagVariant: 'pink' },
           session3: { courseName: 'Bionic Organs Exploration', tag: 'Onsite', tagVariant: 'pink' },
@@ -264,12 +264,12 @@ export const summerCampPageData: SummerCampPageData = {
         },
         {
           timeSlot: '1:20 PM - 2:50 PM',
-          session1: { courseName: 'AMC Math', tag: 'Grade 3-5', tagVariant: 'pink' },
+          session1: { courseName: 'AMC Math', tag: 'Grade 3-5', tagVariant: 'pink', tag2: 'Grade 6-8', tag2Variant: 'pink' },
           session2: { courseName: 'Coding', tag: 'Intermediate', tagVariant: 'pink' },
           session3: { courseName: 'Chinese', tag: 'Intermediate', tagVariant: 'pink' },
         },
         {
-          timeSlot: '3:10 PM - 4:40 PM',
+          timeSlot: '1:20 PM - 2:50 PM',
           session1: { courseName: 'GO', tag: 'Intermediate', tagVariant: 'pink' },
           session2: { courseName: 'Chess', tag: 'Intermediate', tagVariant: 'pink' },
           session3: { courseName: 'AI', tag: 'Intermediate', tagVariant: 'pink' },
@@ -286,28 +286,28 @@ export const summerCampPageData: SummerCampPageData = {
     trackAHeaders: ['Enrollment Option', '1 Session (2 weeks)', '2 Sessions (4 weeks)', '3 Sessions (6 weeks)'],
     trackARows: [
       {
-        optionName: 'Morning/Afternoon Only (Onsite)',
-        session1: '950',
-        session2: { value: '1799 ($100+ OFF)', isDiscount: true },
-        session3: { value: '2499 ($350+ OFF)', isDiscount: true },
+        optionName: 'Morning/Afternoon Only\n(Onsite)',
+        session1: '1450',
+        session2: { value: '2799 ($100+ OFF)', isDiscount: true },
+        session3: { value: '3999 ($350+ OFF)', isDiscount: true },
       },
       {
-        optionName: 'Morning/Afternoon Only (Online)',
-        session1: '650',
-        session2: { value: '1229 ($70+ OFF)', isDiscount: true },
-        session3: { value: '1799 ($150+ OFF)', isDiscount: true },
+        optionName: 'Morning/Afternoon Only\n(Online)',
+        session1: '980',
+        session2: { value: '1899 ($70+ OFF)', isDiscount: true },
+        session3: { value: '2699 ($240+ OFF)', isDiscount: true },
       },
       {
         optionName: 'Full Day (Onsite)',
-        session1: '1,700',
-        session2: { value: '2999 ($400+ OFF)', isDiscount: true },
-        session3: { value: '4399 ($700+ OFF)', isDiscount: true },
+        session1: '2,700',
+        session2: { value: '4999 ($400+ OFF)', isDiscount: true },
+        session3: { value: '7399 ($700+ OFF)', isDiscount: true },
       },
       {
         optionName: 'Full Day (Online)',
-        session1: '1,150',
-        session2: { value: '2099 ($200+ OFF)', isDiscount: true },
-        session3: { value: '2999 ($450+ OFF)', isDiscount: true },
+        session1: '1,800',
+        session2: { value: '3399 ($200+ OFF)', isDiscount: true },
+        session3: { value: '4899 ($500+ OFF)', isDiscount: true },
       },
     ],
     materialFootnote:
@@ -317,12 +317,8 @@ export const summerCampPageData: SummerCampPageData = {
     trackBRows: [
       { optionName: 'Go (Beginner)', onsite: { value: '630', isDiscount: true }, online: '560' },
       { optionName: 'Go (Intermediate)', onsite: { value: '700', isDiscount: true }, online: '620' },
-      { optionName: 'AMC Math (Grade 1-2)', onsite: { value: '750', isDiscount: true }, online: '680' },
-      {
-        optionName: 'AMC Math (Grade 3-5, 6-8 )',
-        onsite: { value: '830', isDiscount: true },
-        online: '750',
-      },
+      { optionName: 'AMC Math (Fundamental)', onsite: { value: '850', isDiscount: true }, online: '780' },
+      { optionName: 'AMC Math (Advanced)', onsite: { value: '980', isDiscount: true }, online: '900' },
       { optionName: 'Chess (Beginner)', onsite: { value: '660', isDiscount: true }, online: '580' },
       { optionName: 'Chess (Intermediate)', onsite: { value: '730', isDiscount: true }, online: '650' },
       { optionName: 'Coding (Beginner)', onsite: { value: '780', isDiscount: true }, online: '700' },
@@ -335,8 +331,38 @@ export const summerCampPageData: SummerCampPageData = {
     limitedTimeOffer: {
       title: '⏱️ Limited Time Offer!',
       description:
-        'Early Bird Discount: Register by April 15, 2026, and receive an additional 5% off your total enrollment. Sibling Discount: Enroll two or more siblings and receive 10% off the second child\'s tuition. Payment Plans: Flexible payment plans are available for enrollments of 2 or more sessions.',
+        '**Early Bird Discount**: Register by March 15, 2026, and receive an **additional** **5%** **off** your total enrollment.\n\n**Sibling Discount**: Enroll two or more siblings and receive **10% off** the second child\'s tuition.\n\n**Payment Plans**: Flexible payment plans are available for enrollments of 2 or more sessions.',
     },
     ctaLabel: 'Enroll Now',
   },
+  bookFreeTrial: {
+    badgeText: 'Limited offer',
+    title: 'Empowering the next generation of thinkers and creators.',
+    subtitle:
+      'Book a free consultation with our advisor now to enjoy an early bird discount!',
+    ensureTitle: 'We ensure:',
+    ensureItems: [
+      { icon: '🧑‍🏫', text: 'Small group instruction with supervision' },
+      { icon: '📚', text: 'Course Materials' },
+      { icon: '🔬', text: 'Strict laboratory safety protocols' },
+      { icon: '💼', text: 'Weekly parent updates' },
+    ],
+    trustItems: [
+      { icon: '🔒', label: 'Secure Information' },
+      { icon: '⚡', label: 'Fast Response Time' },
+      { icon: '💯', label: 'Risk-free Guarantee' },
+    ],
+    cardTitle: 'Schedule Your Consultation',
+    cardSubtitle:
+      'Submit your details and an advisor will contact you within 24h.',
+    ctaLabel: 'Book Free Trial',
+    stats: [
+      { value: '1,234', label: 'Sessions Booked' },
+      { value: '100%', label: 'Satisfaction Rate' },
+      { value: '24h', label: 'Response Time' },
+    ],
+    bottomQuote:
+      'In the era of AI, we prepare students to lead by cultivating essential future-ready skills. 💻',
+  },
 };
+ 

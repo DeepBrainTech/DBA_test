@@ -124,12 +124,15 @@ export interface SummerCampTrackBData {
   ctaLabel: string;
 }
 
-/** 日程表单元格（课程名 + Online/Onsite 等标签） */
+/** 日程表单元格（课程名 + 一或两个标签，如 Online/Onsite 或 Grade 3-5 / Grade 6-8） */
 export interface ScheduleCell {
   courseName: string;
   tag: string;
   /** 蓝色 #45B7D1 为 Online/年级等，粉色 #EF6B83 为 Onsite/Intermediate 等 */
   tagVariant: 'blue' | 'pink';
+  /** 可选第二行标签（如 Grade 6-8），有则显示在 tag 下方 */
+  tag2?: string;
+  tag2Variant?: 'blue' | 'pink';
 }
 
 /** 日程表一行 */
@@ -201,6 +204,53 @@ export interface SummerCampPricingData {
   ctaLabel: string;
 }
 
+/** Book Free Trial 区块：「We ensure」单条（图标 emoji + 文案） */
+export interface SummerCampBookFreeTrialEnsureItem {
+  /** emoji，如 🧑‍🏫、📚、🔬、💼 */
+  icon: string;
+  /** 说明文案 */
+  text: string;
+}
+
+/** Book Free Trial 区块：信任标签（如 Secure Information） */
+export interface SummerCampBookFreeTrialTrustItem {
+  /** emoji，如 🔒、⚡、💯 */
+  icon: string;
+  label: string;
+}
+
+/** Book Free Trial 区块：底部统计项 */
+export interface SummerCampBookFreeTrialStat {
+  value: string;
+  label: string;
+}
+
+/** Book Free Trial 区块数据 */
+export interface SummerCampBookFreeTrialData {
+  /** 顶部徽标文案，如 Limited offer */
+  badgeText: string;
+  /** 主标题 */
+  title: string;
+  /** 副标题（预约咨询与早鸟优惠） */
+  subtitle: string;
+  /** 「We ensure」标题 */
+  ensureTitle: string;
+  /** 四项保障列表 */
+  ensureItems: SummerCampBookFreeTrialEnsureItem[];
+  /** 底部信任标签：Secure Information、Fast Response Time、Risk-free Guarantee */
+  trustItems: SummerCampBookFreeTrialTrustItem[];
+  /** 右侧卡片标题 */
+  cardTitle: string;
+  /** 右侧卡片副标题 */
+  cardSubtitle: string;
+  /** 主按钮文案，如 Book Free Trial */
+  ctaLabel: string;
+  /** 卡片底部三项统计 */
+  stats: SummerCampBookFreeTrialStat[];
+  /** 底部引用文案（AI 时代培养未来技能） */
+  bottomQuote: string;
+}
+
 /** 页面聚合数据（与设计稿结构一致，无 Overview / Track 3 / FinalCta） */
 export interface SummerCampPageData {
   hero: SummerCampHeroData;
@@ -210,4 +260,6 @@ export interface SummerCampPageData {
   trackB: SummerCampTrackBData;
   schedule: SummerCampScheduleData;
   pricing: SummerCampPricingData;
+  /** Book Free Trial 预约咨询区块 */
+  bookFreeTrial: SummerCampBookFreeTrialData;
 }

@@ -33,9 +33,10 @@ export default function StrategyCard({ card, index }: StrategyCardProps) {
   const iconSrc = getIconSrc(card, index);
 
   return (
-    <div className="w-72 h-[22rem] relative bg-[#FBF9F4] rounded-3xl">
-      <div className="w-24 h-24 left-[98.27px] top-[37.17px] absolute bg-rose-400/10 rounded-3xl inline-flex justify-center items-center">
-        <div className="w-10 h-10 relative overflow-hidden">
+    <div className="flex w-64 min-h-[20rem] flex-col items-center bg-[#FBF9F4] rounded-3xl px-6 pt-9 pb-8">
+      {/* 图标容器：无绝对定位，flex 自然排列 */}
+      <div className="w-20 h-20 shrink-0 rounded-3xl bg-rose-400/10 flex justify-center items-center">
+        <div className="w10 h-10 relative overflow-hidden">
           <Image
             src={iconSrc}
             alt=""
@@ -46,16 +47,13 @@ export default function StrategyCard({ card, index }: StrategyCardProps) {
         </div>
       </div>
       {/* 卡片标题：与首页 KeyPrograms 卡片标题字号一致 */}
-      <div className="w-52 min-h-7 left-[37.17px] top-[157.98px] absolute inline-flex justify-start items-start">
-        <div className="flex-1 text-center justify-start text-slate-700 text-xl md:text-2xl font-semibold font-['Outfit'] leading-tight">
-          {card.title}
-        </div>
-      </div>
-      <div className="w-52 min-h-24 left-[37.17px] top-[202.19px] absolute">
-        <div className="w-52 left-[0.83px] top-[-0.19px] absolute text-center justify-start text-slate-500 text-base md:text-lg font-normal font-['Outfit'] leading-snug">
-          {card.description}
-        </div>
-      </div>
+      <h3 className="mt-5 w-full text-center text-slate-700 text-xl md:text-2xl font-semibold font-['Outfit'] leading-tight">
+        {card.title}
+      </h3>
+      {/* 描述：居中，宽度由 max-w 限制 */}
+      <p className="mt-4 w-full max-w-[12rem] text-center text-slate-500 text-base md:text-lg font-normal font-['Outfit'] leading-snug">
+        {card.description}
+      </p>
     </div>
   );
 }
