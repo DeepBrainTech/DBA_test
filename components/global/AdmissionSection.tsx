@@ -30,7 +30,7 @@ export default function AdmissionSection() {
         {'</>'}
       </div>
       
-      <div className="max-w-[1920px] mx-auto px-14">
+      <div className="max-w-[1344px] mx-auto px-9">
         {/* Header */}
         <div className="text-center mb-[40px]">
           <h2 className="text-[53px] font-bold text-white mb-[27px] leading-[1.3]">

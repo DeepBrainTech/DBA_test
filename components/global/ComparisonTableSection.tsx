@@ -7,7 +7,7 @@
 export default function ComparisonTableSection() {
   return (
     <section className="py-[133px] bg-[#D7D2F1]">
-      <div className="max-w-[1920px] mx-auto px-[53px]">
+      <div className="max-w-[1344px] mx-auto px-9">
         {/* Comparison Table */}
         <div className="rounded-[40px] bg-white/80 backdrop-blur-sm p-[53px]">
           <h3 className="text-[40px] font-semibold text-[#9B8FD8] text-center mb-[53px]">

@@ -331,7 +331,7 @@ export const summerCampPageData: SummerCampPageData = {
     limitedTimeOffer: {
       title: '⏱️ Limited Time Offer!',
       description:
-        '**Early Bird Discount**: Register by March 15, 2026, and receive an **additional** **5%** **off** your total enrollment.\n\n**Sibling Discount**: Enroll two or more siblings and receive **10% off** the second child\'s tuition.\n\n**Payment Plans**: Flexible payment plans are available for enrollments of 2 or more sessions.',
+        '**Save More by Booking Early!**\n\n\u00A0\u00A0\u00A0\u00A0• Early Bird (Ends 3/15): Take an **additional 5% off** (up to $200 savings)!\n\n\u00A0\u00A0\u00A0\u00A0 • Regular (Ends 4/15): Take an **additional 3% off** (up to $120 savings).\n\n\u00A0\u00A0\u00A0\u00A0 • Last Call (Starting 5/15): Standard pricing applies.\n\n\u00A0\u00A0\u00A0\u00A0 • Note: These savings apply to Track A only and can be stacked with our Multi-Session discount. Track B is excluded from this promotion.\n\n **Sibling Discount**: Enroll two or more siblings and receive **10% off** the second child\'s tuition.\n\n **Payment Plans:** Flexible payment plans are available for enrollments of 2 or more sessions.',
     },
     ctaLabel: 'Enroll Now',
   },

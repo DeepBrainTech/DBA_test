@@ -15,6 +15,18 @@ export interface Feature {
 }
 
 /**
+ * 统计卡片类型（Stats 区块）
+ */
+export interface Stat {
+  /** 数值展示，如 7X、98% */
+  value: string;
+  /** 标题，如 Acceptance Rate */
+  title: string;
+  /** 描述文案 */
+  description: string;
+}
+
+/**
  * 挑战类型
  */
 export interface Challenge {

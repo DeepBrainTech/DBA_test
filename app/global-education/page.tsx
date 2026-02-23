@@ -23,7 +23,7 @@ import ServiceMapSection from '@/components/global/ServiceMapSection';
 import PricingSection from '@/components/global/PricingSection';
 import AdmissionSection from '@/components/global/AdmissionSection';
 import BookFreeSection from '@/components/global/BookFreeSection';
-import { features, challenges, serviceSteps } from '@/data/global-education';
+import { features, stats, challenges, serviceSteps } from '@/data/global-education';
 
 const outfit = Outfit({ subsets: ['latin'], weight: ['400', '700'] });
 
@@ -34,7 +34,7 @@ export default function GlobalEducation() {
   return (
     <div className={`min-h-screen bg-[#FBF9F4] ${outfit.className}`}>
       <GlobalHeroSection features={features} />
-      <StatsSection />
+      <StatsSection stats={stats} />
       <AdmissionLettersSection />
       <ComparisonTableSection />
       <ChallengesSection challenges={challenges} />

@@ -1,73 +1,66 @@
 /**
  * 文件用途：统计数据展示组件（全球教育页面）
- * 依赖关系：无
- * 注意事项：展示3个统计卡片：录取率、成功率、评分
+ * 依赖关系：依赖 types/global-education.ts 中的 Stat 类型
+ * 注意事项：展示3个统计卡片，布局与设计稿一致；数据由页面从 /data 传入
  */
 
-export default function StatsSection() {
-  const stats = [
-    {
-      value: '7X',
-      title: 'Acceptance Rate',
-      description: 'Our students are 7x more likely to get into the Ivy League and Top 15 colleges,'
-    },
-    {
-      value: '98%',
-      title: 'Success Rate',
-      description: '98% of our students are admitted to at least 1 of their Top 5 college choices'
-    },
-    {
-      value: '4.9+',
-      title: 'Trust Pilot Rating',
-      description: 'One of the only consulting companies with a 4.9'
-    }
-  ];
+import type { Stat } from '@/types/global-education';
 
+interface StatsSectionProps {
+  stats: Stat[];
+}
+
+export default function StatsSection({ stats }: StatsSectionProps) {
   return (
-    <section id="stats" className="py-[80px] bg-[#F7F6FC]">
-      <div className="max-w-[1920px] mx-auto px-[51px]">
-        <div className="relative">
-          {/* Quote marks */}
-          <div className="absolute left-[40px] top-[40px] text-[100px] text-[#313131] opacity-10 leading-[100px]">
-            "
-          </div>
-          <div className="absolute right-[40px] top-[85px] text-[100px] text-[#313131] opacity-10 leading-[100px] rotate-180">
-            "
+    <section id="stats" className="py-[75px] bg-[#FFFFFF]">
+      <div className="mx-auto max-w-[1344px] px-9">
+        {/* 与设计稿一致：slate-50 背景、圆角、引号与卡片均为文档流布局 */}
+        <div className="flex min-h-96 overflow-hidden rounded-[39.83px] bg-[#F7F6FC] ">
+          {/* 左上引号：文档流，占左侧窄列 */}
+          <div
+            className="flex shrink-0 items-start pt-10 pl-6 font-outfit text-6xl font-normal leading-[99.57px] text-zinc-800 opacity-10 md:pl-10"
+            aria-hidden
+          >
+            &quot;
           </div>
 
-          {/* Stats Cards Grid */}
-          <div className="flex items-stretch gap-[40px] px-[93px]">
+          {/* 三张统计卡片：中间主区域 */}
+          <div className="flex flex-1 flex-col items-stretch gap-8 px-6 py-10 md:flex-row md:gap-10 md:px-8 md:pt-[55px] md:pb-12">
             {stats.map((stat, idx) => (
               <div
                 key={idx}
-                className="flex-1 bg-white rounded-[27px] px-[40px] pt-[40px] pb-0 flex flex-col min-h-[337px]"
+                className="flex min-h-64 flex-1 flex-col gap-4 rounded-3xl bg-white px-6 pt-6 pb-5"
               >
-                {/* Value */}
-                <div className="text-center mb-[20px]">
-                  <p className="text-[50px] font-semibold text-[#A195DA] leading-[60px]">
+                <div className="flex shrink-0 items-center justify-center ">
+                  <p className="font-outfit text-center text-4xl font-semibold leading-tight text-violet-400">
                     {stat.value}
                   </p>
                 </div>
-
-                {/* Title */}
-                <div className="text-center mb-[27px]">
-                  <h4 className="text-[30px] font-semibold text-[#313131] leading-[42px]">
+                <div className="flex shrink-0 items-center justify-center">
+                  <h4 className="font-outfit flex-1 text-center text-2xl font-semibold leading-8 text-zinc-800">
                     {stat.title}
                   </h4>
                 </div>
-
-                {/* Description */}
-                <div className="text-center flex-1 flex items-start">
-                  <p className="text-[27px] text-[#7C8B99] font-light leading-[38px]">
+                <div className="flex flex-1 items-start justify-center">
+                  <p className="font-outfit w-full max-w-[15rem] text-center text-xl font-normal leading-8 text-slate-500">
                     {stat.description}
                   </p>
                 </div>
               </div>
             ))}
           </div>
+
+          {/* 右下引号：文档流，占右侧窄列，底部对齐 */}
+          <div
+            className="flex shrink-0 flex-col justify-end pb-10 pr-4 md:pr-6"
+            aria-hidden
+          >
+            <span className="origin-top-left rotate-180 font-outfit text-6xl font-normal leading-[99.57px] text-zinc-800 opacity-10 md: pb-12">
+              &quot;
+            </span>
+          </div>
         </div>
       </div>
     </section>
   );
 }
-

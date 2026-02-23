@@ -49,7 +49,7 @@ const programGroups: ProgramGroup[] = [
 export default function PricingSection() {
   return (
     <section className="pt-[60px] pb-[133px] bg-white">
-      <div className="max-w-[1920px] mx-auto px-14">
+      <div className="max-w-[1344px] mx-auto px-9">
         {/* Header */}
         <div className="text-center mb-[80px]">
           <div className="inline-flex items-center gap-[20px] px-[30px] py-[15px] bg-[#F3F0FF] rounded-[33px] mb-[27px]">

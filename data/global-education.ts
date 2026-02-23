@@ -4,7 +4,7 @@
  * 注意事项：数据修改后需要确保类型匹配
  */
 
-import type { Feature, Challenge, ServiceStep, GlobalAdvantage } from '@/types/global-education';
+import type { Feature, Stat, Challenge, ServiceStep, GlobalAdvantage } from '@/types/global-education';
 
 /**
  * 特性列表
@@ -15,6 +15,29 @@ export const features: Feature[] = [
   { icon: '/global/Hero/hero_2.png', title: 'Prestigious Institutions' },
   { icon: '/global/Hero/hero_3.png', title: 'Ivy League Mentors' },
   { icon: '/global/Hero/hero_4.png', title: 'Direct Admission Pathways' }
+];
+
+/**
+ * 统计卡片列表（Stats 区块）
+ */
+export const stats: Stat[] = [
+  {
+    value: '7X',
+    title: 'Acceptance Rate',
+    description:
+      'Our students are 7x more likely to get into the Ivy League and Top 15 colleges'
+  },
+  {
+    value: '98%',
+    title: 'Success Rate',
+    description:
+      '98% of our students are admitted to at least one of their Top 5 college choices'
+  },
+  {
+    value: '4.9+',
+    title: 'Trust Pilot Rating',
+    description: 'One of the only consulting companies with a 4.9'
+  }
 ];
 
 /**

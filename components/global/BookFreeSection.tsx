@@ -28,7 +28,7 @@ const stats = [
 export default function BookFreeSection() {
   return (
     <section id="book-free" className="bg-gradient-to-b from-[#B7AAFB] to-[#9A8ED7] py-[80px] relative">
-      <div className="max-w-[1920px] mx-auto px-14">
+      <div className="max-w-[1344px] mx-auto px-9">
         <div className="grid grid-cols-2 gap-[60px] items-start">
           {/* Left Section - Marketing Content */}
           <div className="space-y-[32px]">
