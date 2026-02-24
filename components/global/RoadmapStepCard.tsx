@@ -80,7 +80,8 @@ export function RoadmapStepCard({
             </p>
           </div>
         </div>
-        <p className="font-outfit text-xl font-normal leading-8 text-slate-500 whitespace-nowrap">
+        {/* 描述与标题、列表的间距：用 my-* 调节，如 my-2 / my-3 / my-4 */}
+        <p className="font-outfit text-xl font-normal leading-8 text-slate-500 whitespace-nowrap my-3">
           {step.description}
         </p>
         <div
