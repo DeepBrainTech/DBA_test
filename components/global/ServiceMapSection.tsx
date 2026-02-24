@@ -93,25 +93,27 @@ export default function ServiceMapSection({ serviceSteps }: ServiceMapSectionPro
                 {`Monitor progress, access documents, and review history any time via our "Growth Portfolio" system—transforming the application process into a transparent, guided journey.`}
               </p>
             </div>
-            <div className="mt-12 grid grid-cols-1 gap-10 md:grid-cols-3">
-              <div className="flex flex-col items-center gap-0 text-center">
-                <div className="relative h-10 w-10 shrink-0">
+            {/* 三列按内容宽度排布，间距由 gap 控制（改 md:gap-* 即可，如 md:gap-0 / md:gap-4 / md:gap-6） */}
+            <div className="mt-12 flex flex-col md:flex-row flex-wrap justify-center items-center md:gap-18">
+              {/* 图标与下方文字的间距：下面三个 div 的 gap-0 改为 gap-1 / gap-2 / gap-3 等 */}
+              <div className="flex flex-col items-center gap-1 text-center shrink-0">
+                <div className="relative h-8 w-8 shrink-0">
                   <Image src="/global/roadmap/t1.png" alt="" width={40} height={40} className="object-contain" />
                 </div>
                 <h4 className="font-outfit text-1xl font-normal leading-10 text-slate-700">
                   Progress Tracking
                 </h4>
               </div>
-              <div className="flex flex-col items-center gap-0 text-center">
-                <div className="relative h-10 w-10 shrink-0">
+              <div className="flex flex-col items-center gap-1 text-center shrink-0">
+                <div className="relative h-8 w-8 shrink-0">
                   <Image src="/global/roadmap/t2.png" alt="" width={40} height={40} className="object-contain" />
                 </div>
                 <h4 className="font-outfit text-1xl font-normal leading-10 text-slate-700">
                   Cloud Doc Storage
                 </h4>
               </div>
-              <div className="flex flex-col items-center gap-0 text-center">
-                <div className="relative h-10 w-10 shrink-0">
+              <div className="flex flex-col items-center gap-1 text-center shrink-0">
+                <div className="relative h-8 w-8 shrink-0">
                   <Image src="/global/roadmap/t3.png" alt="" width={40} height={40} className="object-contain" />
                 </div>
                 <h4 className="font-outfit text-1xl font-normal leading-10 text-slate-700">
