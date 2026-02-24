@@ -16,7 +16,7 @@ import SocialIconWithQR from './SocialIconWithQR';
  */
 export default function Footer({ className = '' }: { className?: string }) {
   return (
-    <footer className={`bg-[#2C3E50] text-white py-12 md:py-16 ${className}`}>
+    <footer className={`bg-[#2C3E50] text-white pt-12 md:pt-16 pb-0 ${className}`}>
       <div className="max-w-[1920px] mx-auto px-6 md:px-14">
         <div className="grid grid-cols-6 gap-5 md:gap-8 mb-8 md:mb-10">
           {/* Company Info */}
@@ -144,14 +144,18 @@ export default function Footer({ className = '' }: { className?: string }) {
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Bottom Bar */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 md:pt-8 border-t border-[#3D4F63]">
-          <p className="text-sm md:text-base text-[#A8B5C3] text-center sm:text-left">© 2025 DeepBrain Academy. All rights reserved.</p>
-          <div className="flex items-center gap-4 md:gap-6">
-            <Link href="#" className="text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Privacy Policy</Link>
-            <Link href="#" className="text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Terms of Use</Link>
-            <Link href="#" className="text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Site Map</Link>
+      {/* Bottom Bar：整条背景色 #1F2D3D，内容仍受 max-w 与 px 约束 */}
+      <div className="bg-[#1F2D3D]">
+        <div className="mx-auto px-6 md:px-14 py-4 md:py-5">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="text-sm md:text-base text-[#A8B5C3] text-center sm:text-left">© 2025 DeepBrain Academy. All rights reserved.</p>
+            <div className="flex items-center gap-4 md:gap-6">
+              <Link href="#" className="text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Privacy Policy</Link>
+              <Link href="#" className="text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Terms of Use</Link>
+              <Link href="#" className="text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Site Map</Link>
+            </div>
           </div>
         </div>
       </div>
