@@ -101,13 +101,13 @@ export default function UnlockPotential({ data }: UnlockPotentialProps) {
             </div>
           </div>
 
-          {/* 右侧：白色预约卡片 */}
-          <div className="mt-8 flex w-full flex-col gap-9 rounded-3xl bg-white px-6 pb-6 pt-8 shadow-[0px_29px_58px_-14px_rgba(0,0,0,0.25)] sm:px-8 sm:pb-8 sm:pt-12 lg:mt-12 lg:w-[607px] lg:shrink-0">
+          {/* 右侧：白色预约卡片（尺寸与各页 Book Free 卡片完全一致：宽度优先保证 607px） */}
+          <div className="w-full lg:w-[607px] lg:min-w-[607px] lg:shrink-0 min-h-[360px] mt-8 lg:mt-12 px-6 sm:px-8 pt-8 pb-6 sm:pt-12 sm:pb-8 bg-white rounded-3xl shadow-[0px_29px_58px_-14px_rgba(0,0,0,0.25)] flex flex-col gap-9">
             <div className="flex flex-col gap-2.5">
               <h3 className="font-outfit text-2xl font-semibold leading-10 text-slate-700 sm:text-3xl">
                 {data.cardTitle}
               </h3>
-              <p className="font-outfit text-lg font-normal leading-7 text-slate-500 sm:text-xl">
+              <p className="font-outfit text-lg font-normal leading-7 text-slate-500 sm:text-xl whitespace-nowrap">
                 {data.cardSubtitle}
               </p>
             </div>
@@ -126,11 +126,11 @@ export default function UnlockPotential({ data }: UnlockPotentialProps) {
 
             <div className="flex flex-wrap justify-between gap-6 border-t border-slate-100 pt-6">
               {data.stats.map((stat, i) => (
-                <div key={i} className="flex min-w-[100px] flex-col items-start gap-1">
-                  <span className="font-outfit text-xl font-semibold leading-7 text-[#4CAF50]">
+                <div key={i} className="flex min-w-[100px] flex-1 flex-row items-baseline gap-1.5 whitespace-nowrap">
+                  <span className="font-outfit shrink-0 text-xl font-semibold leading-7 text-[#4CAF50]">
                     {stat.value}
                   </span>
-                  <span className="font-outfit text-lg font-normal leading-7 text-slate-500">
+                  <span className="font-outfit truncate text-lg font-normal leading-7 text-slate-500">
                     {stat.label}
                   </span>
                 </div>

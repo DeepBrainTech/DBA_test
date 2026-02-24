@@ -129,13 +129,13 @@ export default function BookFreeSection() {
             </div>
           </div>
 
-          {/* 右侧：白色预约卡片 */}
-          <div className="w-full lg:w-[607px] lg:shrink-0 mt-8 lg:mt-12 px-6 sm:px-8 pt-8 pb-6 sm:pt-12 sm:pb-8 bg-white rounded-3xl shadow-[0px_29px_58px_-14px_rgba(0,0,0,0.25)] flex flex-col gap-9">
+          {/* 右侧：白色预约卡片（尺寸与各页 Book Free 卡片统一） */}
+          <div className="w-full lg:w-[607px] lg:min-w-[607px] lg:shrink-0 min-h-[360px] mt-8 lg:mt-12 px-6 sm:px-8 pt-8 pb-6 sm:pt-12 sm:pb-8 bg-white rounded-3xl shadow-[0px_29px_58px_-14px_rgba(0,0,0,0.25)] flex flex-col gap-9">
             <div className="flex flex-col gap-2.5">
               <h3 className="text-slate-700 text-2xl sm:text-3xl font-semibold leading-10">
                 Schedule Your Consultation
               </h3>
-              <p className="text-slate-500 text-lg sm:text-xl font-normal leading-7">
+              <p className="text-slate-500 text-lg sm:text-xl font-normal leading-7 whitespace-nowrap">
                 Submit your details and an advisor will contact you within 24h.
               </p>
             </div>
@@ -154,11 +154,11 @@ export default function BookFreeSection() {
 
             <div className="pt-6 border-t border-indigo-50 flex flex-wrap justify-between gap-6">
               {stats.map((stat, i) => (
-                <div key={i} className="flex flex-col items-start gap-1 min-w-[100px]">
-                  <span className="text-[#9B8FD8] text-xl font-semibold leading-7">
+                <div key={i} className="flex flex-row items-baseline gap-1.5 min-w-[100px] flex-1 whitespace-nowrap">
+                  <span className="text-[#9B8FD8] text-xl font-semibold leading-7 shrink-0">
                     {stat.value}
                   </span>
-                  <span className="text-slate-500 text-lg font-normal leading-7">
+                  <span className="text-slate-500 text-lg font-normal leading-7 truncate">
                     {stat.label}
                   </span>
                 </div>

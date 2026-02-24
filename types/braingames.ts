@@ -4,8 +4,23 @@
  * 注意事项：所有字段必须与数据源保持一致
  */
 
+/** 英雄区特色亮点项（与 summer_camp Hero 一致，图标按顺序使用） */
+export interface BraingamesHeroFeature {
+    /** 文案 */
+    label: string;
+}
+
+/** 英雄区数据（结构与 summer_camp Hero 一致） */
+export interface BraingamesHeroData {
+    title: string;
+    subtitle: string;
+    backgroundImage: string;
+    /** 四个特色亮点 */
+    features: BraingamesHeroFeature[];
+}
+
 /**
- * 特性卡片类型
+ * 特性卡片类型（课程区等仍用）
  */
 export interface Feature {
     /** emoji图标 */
@@ -58,11 +73,61 @@ export interface CourseCard {
   description: string;
 }
 
+/** 限时优惠区块（与 summer_camp Pricing 中 limitedTimeOffer 结构一致） */
+export interface BraingamesLimitedTimeOffer {
+  /** 标题，如 ⏱️ Limited Time Offer! */
+  title: string;
+  /** 描述正文，\n\n 分段，**text** 表示加粗 */
+  description: string;
+}
+
+/** Pricing 区块数据（限时优惠与 CTA 与 summer_camp 一致） */
+export interface BraingamesPricingData {
+  limitedTimeOffer: BraingamesLimitedTimeOffer;
+  /** 报名按钮文案 */
+  ctaLabel: string;
+}
+
+/** Book Free Trial 区块：「We ensure」单条（与 summer_camp 一致） */
+export interface BraingamesBookFreeEnsureItem {
+  icon: string;
+  text: string;
+}
+
+/** Book Free Trial 区块：信任标签（与 summer_camp 一致） */
+export interface BraingamesBookFreeTrustItem {
+  icon: string;
+  label: string;
+}
+
+/** Book Free Trial 区块：底部统计项（与 summer_camp 一致） */
+export interface BraingamesBookFreeStat {
+  value: string;
+  label: string;
+}
+
+/** Book Free Trial 区块数据（与 summer_camp 结构一致，无表单输入） */
+export interface BraingamesBookFreeTrialData {
+  badgeText: string;
+  title: string;
+  subtitle: string;
+  ensureTitle: string;
+  ensureItems: BraingamesBookFreeEnsureItem[];
+  trustItems: BraingamesBookFreeTrustItem[];
+  cardTitle: string;
+  cardSubtitle: string;
+  ctaLabel: string;
+  stats: BraingamesBookFreeStat[];
+  bottomQuote: string;
+}
+
 export interface Course {
     /** 唯一 id（用于 key） */
     id: string;
-    /** 标签（如 Beginner / Intermediate） */
+    /** 标签（如 Featured Program） */
     tag: string;
+    /** 标签前图标路径（可选，与 Educational Value badge 一致时使用） */
+    badgeIcon?: string;
     /** 课程标题 */
     title: string;
     /** 副标题 */
@@ -74,6 +139,14 @@ export interface Course {
     /** 二维码图片路径 */
     qrImage: string;
 
-    ctaIcon?: string;          // "♟" or "⚫"
+    ctaIcon?: string;          // "♟" or "⚫"（无 ctaIconSrc 时显示）
+    /** CTA 标题前图标图片路径（可选，如棋子图） */
+    ctaIconSrc?: string;
     ctaDescription?: string;   // the paragraph in the CTA panel
+    /** Section 背景样式类名（可选，如 Go 区块用 #FBF9F4） */
+    sectionBgClassName?: string;
+    /** 四张课程卡背景样式类名（可选，如 Go 区块卡片用白色） */
+    cardBgClassName?: string;
+    /** CTA 面板（Start Your Journey + WeChat）背景样式类名（可选） */
+    ctaPanelBgClassName?: string;
 }

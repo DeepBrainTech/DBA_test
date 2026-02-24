@@ -13,20 +13,24 @@ import CourseSection from "@/components/braingames/CourseSection";
 import PricingSection from '@/components/braingames/PricingSection';
 import BookFreeSection from '@/components/braingames/BookFreeSection';
 
-import { features, courses, chessPhilosophy } from "@/data/braingames";
+import { hero, courses, chessPhilosophy, bookFreeTrial } from "@/data/braingames";
 
 
-const outfit = Outfit({ subsets: ["latin"] });
+const outfit = Outfit({
+  subsets: ["latin"],
+  variable: "--font-outfit",
+  display: "swap",
+});
 
 /**
  * Brain Games 页面组件
  */
 export default function BraingamesPage() {
     return (
-        <div className={`min-h-screen bg-[#FBF9F4] ${outfit.className}`}>
+        <div className={`${outfit.variable} ${outfit.className} min-h-screen bg-[#FBF9F4]`}>
             {/*<ColorBoxSection />*/}
-            {/* Hero Section */}
-            <ChessHeroSection features={features} />
+            {/* Hero Section（与 summer_camp 结构一致） */}
+            <ChessHeroSection data={hero} />
 
             {/* Philosophy / Educational Value */}
             <ChessPhilosophySection data={chessPhilosophy} />
@@ -37,11 +41,11 @@ export default function BraingamesPage() {
                 <CourseSection key={course.id} course={course} />
             ))}
 
-            {/* Pricing */}
+            {/* Pricing（限时优惠为原版布局） */}
             <PricingSection />
 
-            {/*Booking*/}
-            <BookFreeSection />
+            {/* Book Free Trial（与 summer_camp 一致，无表单仅 CTA） */}
+            <BookFreeSection data={bookFreeTrial} />
         </div>
     );
 }

@@ -1,4 +1,17 @@
-import type { Feature, Course, ChessPhilosophyData } from "@/types/braingames";
+import type { Feature, Course, ChessPhilosophyData, BraingamesHeroData, BraingamesPricingData, BraingamesBookFreeTrialData } from "@/types/braingames";
+
+/** 英雄区数据（布局与 summer_camp Hero 一致） */
+export const hero: BraingamesHeroData = {
+    title: 'Brain Games',
+    subtitle: 'Small Board, Big Vision',
+    backgroundImage: '/braingames/hero/cover.png',
+    features: [
+        { label: 'Brain Training' },
+        { label: 'Boost Concentration' },
+        { label: 'Build Resilience' },
+        { label: 'Skill Level Certification' },
+    ],
+};
 
 export const features: Feature[] = [
     { icon: '🧠', title: 'Brain Training' },
@@ -17,25 +30,25 @@ export const chessPhilosophy: ChessPhilosophyData = {
     cards: [
         {
             id: "life",
-            iconSrc: "/braingames/brain.png",
+            iconSrc: "/braingames/educational/1.png",
             title: "Simulation of Life",
             description: "Every game builds strategy and foresight.",
         },
         {
             id: "resilience",
-            iconSrc: "/braingames/heart.png",
+            iconSrc: "/braingames/educational/2.png",
             title: "Resilience",
             description: "Learn from wins and losses, grow from setbacks.",
         },
         {
             id: "decision",
-            iconSrc: "/braingames/target.png",
+            iconSrc: "/braingames/educational/3.png",
             title: "Decision Making",
             description: "Each move teaches trade-offs.",
         },
         {
             id: "character",
-            iconSrc: "/braingames/shield.png",
+            iconSrc: "/braingames/educational/4.png",
             title: "Character Building",
             description: "Grace under pressure.",
         },
@@ -63,74 +76,77 @@ export const courses: Course[] = [
   {
     id: "chess",
     tag: "Featured Program",
+    badgeIcon: "/braingames/FeaturedProgram-chess/feature_program_icon.png",
     title: "Beginner/Intermediate Chess Class",
     subtitle: "Learning chess: Engaging, effective, and insightful.",
 
     cards: [
         {
             id: "small-group",
-            iconSrc: "/braingames/group.png",
+            iconSrc: "/braingames/FeaturedProgram-chess/1.png",
             title: "Small Group Instruction",
             description: "High Teacher–Student Ratio (1:3 to 1:6); World-class instructor",
         },
         {
             id: "resilience",
-            iconSrc: "/braingames/heart.png",
+            iconSrc: "/braingames/FeaturedProgram-chess/2.png",
             title: "Resilience",
             description: "Learn from wins and losses, grow from setbacks.",
         },
         {
             id: "math-thinking",
-            iconSrc: "/braingames/brain.png",
+            iconSrc: "/braingames/FeaturedProgram-chess/3.png",
             title: "Mathematical Thinking",
             description:
                 "Develops Math minds, strong logical reasoning, spatial visualization and creativity",
         },
         {
             id: "personalized",
-            iconSrc: "/braingames/rocket.png",
+            iconSrc: "/braingames/FeaturedProgram-chess/4.png",
             title: "Personalized Training",
             description: "Designed to prepare students for advanced Fog-of-War chess.",
         },
     ],
 
     ctaIcon: "♟",
+    ctaIconSrc: "/braingames/FeaturedProgram-chess/5.png",
     ctaText: "Start Your Chess Journey",
     ctaDescription:
       "Equip your child to face life's challenges with confidence through the timeless wisdom of chess.",
-    qrImage: "/braingames/qr-chess.png",
+    qrImage: "/braingames/qr-wechat.png",
   },
 
   {
     id: "go",
     tag: "Featured Program",
+    badgeIcon: "/braingames/FeaturedProgram-go/feature_program_icon.png",
     title: "Mathematical Go Class",
     subtitle: "Elite Instruction, Open to All",
 
       cards: [
           {
               id: "small-group",
-              iconSrc: "/braingames/group.png",
+              iconSrc: "/braingames/FeaturedProgram-go/1.png",
               title: "Small Group Instruction",
               description: "Limited to 3–6 students with world-class instructors.",
           },
           {
               id: "top-curriculum",
-              iconSrc: "/braingames/bulb.png",
+              iconSrc: "/braingames/FeaturedProgram-go/2.png",
               title: "Top Curriculum",
               description:
                   "Expertly structured curriculum designed to unlock your child's potential.",
           },
           {
               id: "logical",
-              iconSrc: "/braingames/brain.png",
+              iconSrc: "/braingames/FeaturedProgram-go/3.png",
               title: "Logical Reasoning",
               description:
                   "Develops logical reasoning, focus, spatial visualization, and creativity.",
           },
           {
               id: "personalized",
-              iconSrc: "/braingames/rocket.png",
+              iconSrc: "/braingames/FeaturedProgram-go/4.png",
               title: "Personalized Training",
               description: "A pathway to advanced class — Quantum Go.",
           },
@@ -140,6 +156,50 @@ export const courses: Course[] = [
     ctaText: "Start Your Go Journey",
     ctaDescription:
       "Build friendships and sharpen your mind through Go.",
-    qrImage: "/braingames/qr-go.png",
+    qrImage: "/braingames/qr-wechat.png",
+    sectionBgClassName: "bg-[#FBF9F4]",
+    cardBgClassName: "bg-white",
+    ctaPanelBgClassName: "bg-[#FDF5EE]",
   },
 ];
+
+/** Pricing 区块数据（限时优惠与 summer_camp 完全一致） */
+export const pricing: BraingamesPricingData = {
+  limitedTimeOffer: {
+    title: '⏱️ Limited Time Offer!',
+    description:
+      '**Save More by Booking Early!**\n\n\u00A0\u00A0\u00A0\u00A0• Early Bird (Ends 3/15): Take an **additional 5% off** (up to $200 savings)!\n\n\u00A0\u00A0\u00A0\u00A0 • Regular (Ends 4/15): Take an **additional 3% off** (up to $120 savings).\n\n\u00A0\u00A0\u00A0\u00A0 • Last Call (Starting 5/15): Standard pricing applies.\n\n\u00A0\u00A0\u00A0\u00A0 • Note: These savings apply to Track A only and can be stacked with our Multi-Session discount. Track B is excluded from this promotion.\n\n **Sibling Discount**: Enroll two or more siblings and receive **10% off** the second child\'s tuition.\n\n **Payment Plans:** Flexible payment plans are available for enrollments of 2 or more sessions.',
+  },
+  ctaLabel: 'Enroll Now',
+};
+
+/** Book Free Trial 区块数据（与 summer_camp 一致：无表单，仅 CTA 跳转） */
+export const bookFreeTrial: BraingamesBookFreeTrialData = {
+  badgeText: 'Limited offer',
+  title: 'Empowering the next generation of thinkers and creators.',
+  subtitle:
+    'Book a free consultation with our advisor now to enjoy an early bird discount!',
+  ensureTitle: 'You"ll get:',
+  ensureItems: [
+    { icon: '🧑‍🏫', text: 'Small group instruction with supervision' },
+    { icon: '📚', text: 'Course Materials' },
+    { icon: '🔬', text: 'Strict laboratory safety protocols' },
+    { icon: '💼', text: 'Weekly parent updates' },
+  ],
+  trustItems: [
+    { icon: '🔒', label: 'Secure Information' },
+    { icon: '⚡', label: 'Fast Response Time' },
+    { icon: '💯', label: 'Risk-free Guarantee' },
+  ],
+  cardTitle: 'Schedule Your Consultation',
+  cardSubtitle:
+    'Submit your details and an advisor will contact you within 24h.',
+  ctaLabel: 'Book Free Trial',
+  stats: [
+    { value: '1,234', label: 'Sessions Booked' },
+    { value: '100%', label: 'Satisfaction Rate' },
+    { value: '24h', label: 'Response Time' },
+  ],
+  bottomQuote:
+    'In the era of AI, we prepare students to lead by cultivating essential future-ready skills. ♟️',
+};
