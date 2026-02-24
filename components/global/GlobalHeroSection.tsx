@@ -21,13 +21,14 @@ interface GlobalHeroSectionProps {
 export default function GlobalHeroSection({ features }: GlobalHeroSectionProps) {
   return (
     <section className="relative -mt-[106px] flex flex-col pb-10 bg-[#FFFFFF]">
-      {/* 背景图区域：高度与 Summer Camp 一致（min-h vh） */}
-      <div className="relative min-h-[45vh] w-full overflow-visible bg-[#e8e8e8] md:min-h-[55vh] lg:min-h-[70vh]">
-        <div className="absolute inset-0 z-0">
+      {/* 背景图区域：高度与 Summer Camp 一致；用 svh 替代 vh 避免导航后封面区上下跳动 */}
+      <div className="relative min-h-[45svh] w-full overflow-visible bg-[#e8e8e8] md:min-h-[55svh] lg:min-h-[70svh]">
+        <div className="absolute inset-0 z-0 [contain:layout]">
           <Image
             src="/global/Hero/cover.png"
             alt="Global Education Background"
             fill
+            sizes="100vw"
             className="object-cover object-[50%_15%]"
             priority
           />

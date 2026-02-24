@@ -27,13 +27,15 @@ export default function Hero({ data }: HeroProps) {
   return (
     <section className="relative -mt-[106px] flex flex-col pb-10 bg-[#FFFFFF]">
       {/* 背景图区域：高度随视口变化（vh）；overflow-visible 让底部滚动指示器可伸入下方白色区域；pb-10 为伸出部分留白 */}
-      <div className="relative min-h-[45vh] w-full overflow-visible bg-[#e8e8e8] md:min-h-[55vh] lg:min-h-[70vh]">
-        <div className="absolute inset-0 z-0">
+      {/* 使用 svh 替代 vh，避免导航后视口重算导致封面区上下跳动 */}
+      <div className="relative min-h-[45svh] w-full overflow-visible bg-[#e8e8e8] md:min-h-[55svh] lg:min-h-[70svh]">
+        <div className="absolute inset-0 z-0 [contain:layout]">
           <Image
             src={data.backgroundImage}
             alt="Summer Camp hero background"
             fill
             priority
+            sizes="100vw"
             className="object-cover"
           />
           {/* 与 Global Education 一致的遮罩：50% 浅灰半透明，提升文字可读性 */}
