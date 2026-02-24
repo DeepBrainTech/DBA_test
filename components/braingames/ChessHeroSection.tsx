@@ -1,6 +1,6 @@
-﻿/**
- * 文件用途：象棋页面英雄区组件
- * 依赖关系：依赖 types/chess.ts 中的 Feature 类型和 scrollToElement 工具函数
+/**
+ * 文件用途：Brain Games 页面英雄区组件
+ * 依赖关系：依赖 types/braingames.ts 中的 Feature 类型和 scrollToElement 工具函数
  * 注意事项：包含背景图片、标题、特性卡片和按钮
  */
 
@@ -8,14 +8,14 @@
 
 import Image from 'next/image';
 import { scrollToElement } from '@/lib/scroll';
-import type { Feature } from '@/types/chess';
+import type { Feature } from '@/types/braingames';
 
 interface ChessHeroSectionProps {
     features: Feature[];
 }
 
 /**
- * 象棋英雄区组件
+ * Brain Games 英雄区组件
  * @param features 特性数据数组
  */
 export default function ChessHeroSection({ features }: ChessHeroSectionProps) {
@@ -28,7 +28,7 @@ export default function ChessHeroSection({ features }: ChessHeroSectionProps) {
             {/* Background Image */}
             <div className="absolute inset-0 z-0">
                 <Image
-                    src="/chess/ChessBackground.png"
+                    src="/braingames/ChessBackground.png"
                     alt="Chess Background"
                     fill
                     className="object-cover"
@@ -73,7 +73,7 @@ export default function ChessHeroSection({ features }: ChessHeroSectionProps) {
                     {/* image icon */}
                     <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/70 backdrop-blur shadow">
                         <Image
-                            src="/chess/mouse-icon.png"
+                            src="/braingames/mouse-icon.png"
                             alt="Scroll indicator"
                             width={40}
                             height={40}
@@ -84,4 +84,3 @@ export default function ChessHeroSection({ features }: ChessHeroSectionProps) {
         </section>
     );
 }
-

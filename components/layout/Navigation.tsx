@@ -18,7 +18,7 @@ const navLinks = [
   { href: '/summer_camp', label: 'Summer Camp' },
   { href: '/global-education', label: 'Global Education' },
   { href: '/math', label: 'Math' },
-  { href: '/chess', label: 'Chess' },
+  { href: '/braingames', label: 'Brain Games' },
   { href: '/programming', label: 'Programming' },
   { href: '/about', label: 'About Us' }
 ];

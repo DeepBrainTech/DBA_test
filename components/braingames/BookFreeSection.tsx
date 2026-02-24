@@ -1,5 +1,5 @@
 /**
- * 文件用途：Book Free 预订表单组件（全球教育页面）
+ * 文件用途：Book Free 预订表单组件（Brain Games 页面）
  * 依赖关系：无
  * 注意事项：包含营销内容和预订表单
  */
@@ -27,7 +27,7 @@ export default function BookFreeSection() {
               {/* Limited-time Offer Tag */}
               <div className="flex justify-center space-y-[16px] p-6" >
                 <div className="inline-flex items-center gap-[10px] px-[32px] py-[12px] bg-white/20 backdrop-blur-sm rounded-[32px] text-white">
-                    <span className="text-[26px]">⚡</span>  
+                    <span className="text-[26px]">⚡</span>
                     <span className="text-[21px] font-normal">Limited-time Offer</span>
                 </div>
             </div>

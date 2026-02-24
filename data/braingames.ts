@@ -1,4 +1,4 @@
-﻿import type { Feature, Course, ChessPhilosophyData } from "@/types/chess";
+import type { Feature, Course, ChessPhilosophyData } from "@/types/braingames";
 
 export const features: Feature[] = [
     { icon: '🧠', title: 'Brain Training' },
@@ -17,25 +17,25 @@ export const chessPhilosophy: ChessPhilosophyData = {
     cards: [
         {
             id: "life",
-            iconSrc: "/chess/brain.png",
+            iconSrc: "/braingames/brain.png",
             title: "Simulation of Life",
             description: "Every game builds strategy and foresight.",
         },
         {
             id: "resilience",
-            iconSrc: "/chess/heart.png",
+            iconSrc: "/braingames/heart.png",
             title: "Resilience",
             description: "Learn from wins and losses, grow from setbacks.",
         },
         {
             id: "decision",
-            iconSrc: "/chess/target.png",
+            iconSrc: "/braingames/target.png",
             title: "Decision Making",
             description: "Each move teaches trade-offs.",
         },
         {
             id: "character",
-            iconSrc: "/chess/shield.png",
+            iconSrc: "/braingames/shield.png",
             title: "Character Building",
             description: "Grace under pressure.",
         },
@@ -69,26 +69,26 @@ export const courses: Course[] = [
     cards: [
         {
             id: "small-group",
-            iconSrc: "/chess/group.png",
+            iconSrc: "/braingames/group.png",
             title: "Small Group Instruction",
             description: "High Teacher–Student Ratio (1:3 to 1:6); World-class instructor",
         },
         {
             id: "resilience",
-            iconSrc: "/chess/heart.png",
+            iconSrc: "/braingames/heart.png",
             title: "Resilience",
             description: "Learn from wins and losses, grow from setbacks.",
         },
         {
             id: "math-thinking",
-            iconSrc: "/chess/brain.png",
+            iconSrc: "/braingames/brain.png",
             title: "Mathematical Thinking",
             description:
                 "Develops Math minds, strong logical reasoning, spatial visualization and creativity",
         },
         {
             id: "personalized",
-            iconSrc: "/chess/rocket.png",
+            iconSrc: "/braingames/rocket.png",
             title: "Personalized Training",
             description: "Designed to prepare students for advanced Fog-of-War chess.",
         },
@@ -98,7 +98,7 @@ export const courses: Course[] = [
     ctaText: "Start Your Chess Journey",
     ctaDescription:
       "Equip your child to face life's challenges with confidence through the timeless wisdom of chess.",
-    qrImage: "/chess/qr-chess.png",
+    qrImage: "/braingames/qr-chess.png",
   },
 
   {
@@ -110,27 +110,27 @@ export const courses: Course[] = [
       cards: [
           {
               id: "small-group",
-              iconSrc: "/chess/group.png",
+              iconSrc: "/braingames/group.png",
               title: "Small Group Instruction",
               description: "Limited to 3–6 students with world-class instructors.",
           },
           {
               id: "top-curriculum",
-              iconSrc: "/chess/bulb.png",
+              iconSrc: "/braingames/bulb.png",
               title: "Top Curriculum",
               description:
-                  "Expertly structured curriculum designed to unlock your child’s potential.",
+                  "Expertly structured curriculum designed to unlock your child's potential.",
           },
           {
               id: "logical",
-              iconSrc: "/chess/brain.png",
+              iconSrc: "/braingames/brain.png",
               title: "Logical Reasoning",
               description:
                   "Develops logical reasoning, focus, spatial visualization, and creativity.",
           },
           {
               id: "personalized",
-              iconSrc: "/chess/rocket.png",
+              iconSrc: "/braingames/rocket.png",
               title: "Personalized Training",
               description: "A pathway to advanced class — Quantum Go.",
           },
@@ -140,7 +140,6 @@ export const courses: Course[] = [
     ctaText: "Start Your Go Journey",
     ctaDescription:
       "Build friendships and sharpen your mind through Go.",
-    qrImage: "/chess/qr-go.png",
+    qrImage: "/braingames/qr-go.png",
   },
 ];
-

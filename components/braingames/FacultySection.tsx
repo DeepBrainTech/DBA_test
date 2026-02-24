@@ -26,19 +26,19 @@ const facultyMembers: FacultyMember[] = [
     {
         name: 'Chris Chen',
         title: 'Assistant Professor at Harvard University',
-        imagePlaceholder: '/chess/chris-chen.jpg',
+        imagePlaceholder: '/braingames/chris-chen.jpg',
         highlights: [
             'The inventor of Quantum Go',
             'Top 20 Worldwide in Fog of War Chess',
             'Specializes in using chess for cognitive enhancement and neurological health.'
         ],
         quote:
-            "To reveal simplicity behind nature’s profound beauty and harmony is a great joy."
+            "To reveal simplicity behind nature's profound beauty and harmony is a great joy."
     },
     {
         name: 'Jerry Wang',
         title: 'National Grade 2 Athlete (Go)',
-        imagePlaceholder: '/chess/jerry-wang.jpg',
+        imagePlaceholder: '/braingames/jerry-wang.jpg',
         highlights: [
             'Master of deep strategy and complex logical deduction',
             'Full-Stack Software Engineer',
@@ -49,7 +49,7 @@ const facultyMembers: FacultyMember[] = [
     {
         name: 'Sherrie Ye',
         title: 'CWA 5-Dan',
-        imagePlaceholder: '/chess/sherrie-ye.jpg',
+        imagePlaceholder: '/braingames/sherrie-ye.jpg',
         highlights: [
             '10+ years of experience in Go, multiple years of teaching and training experience',
             'Leverages Go to foster cognitive development and learning pathways.'
@@ -113,8 +113,8 @@ export default function FacultySection() {
         {/* Faculty Cards */}
         <div className="grid grid-cols-3 gap-[40px] mb-[100px]">
           {facultyMembers.map((member, idx) => (
-            <div 
-              key={idx} 
+            <div
+              key={idx}
               className="bg-white rounded-[27px] border border-[#E8F4FC] overflow-hidden hover:shadow-lg transition"
             >
               {/* Image */}
@@ -191,4 +191,3 @@ export default function FacultySection() {
     </section>
   );
 }
-

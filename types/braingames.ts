@@ -1,5 +1,5 @@
-﻿/**
- * 文件用途：定义象棋页面相关的类型
+/**
+ * 文件用途：定义 Brain Games 页面相关的类型
  * 依赖关系：无
  * 注意事项：所有字段必须与数据源保持一致
  */
@@ -17,7 +17,7 @@ export interface Feature {
 
 export interface PhilosophyCard {
     id: string;
-    iconSrc: string; // e.g. "/chess/icons/brain.svg"
+    iconSrc: string; // e.g. "/braingames/icons/brain.svg"
     title: string;
     description: string;
 }
@@ -68,7 +68,7 @@ export interface Course {
     /** 副标题 */
     subtitle: string;
     /** 特性列表 */
-    cards: CourseCard[]; 
+    cards: CourseCard[];
     /** CTA 文案 */
     ctaText: string;
     /** 二维码图片路径 */
@@ -77,4 +77,3 @@ export interface Course {
     ctaIcon?: string;          // "♟" or "⚫"
     ctaDescription?: string;   // the paragraph in the CTA panel
 }
-

@@ -1,11 +1,11 @@
-﻿/**
- * 文件用途：Chess  课程展示 Section
- * 依赖关系：依赖 types/chess.ts
+/**
+ * 文件用途：Brain Games 课程展示 Section
+ * 依赖关系：依赖 types/braingames.ts
  * 注意事项：纯展示组件，无业务逻辑
  */
 
 import Image from "next/image";
-import type { Course } from "@/types/chess";
+import type { Course } from "@/types/braingames";
 
 interface CourseSectionProps {
     course: Course;
@@ -99,7 +99,7 @@ export default function CourseSection({ course }: CourseSectionProps) {
                     </p>
                 </div>
             </div>
-            </div>  
+            </div>
 
             {/* Register button (centered) */}
             <div className="mt-[46px] flex justify-center">

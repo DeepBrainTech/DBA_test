@@ -24,8 +24,8 @@ export const programs: Program[] = [
   {
     icon: '♟️',
     iconSrc: '/home/key-programs/Chess.svg',
-    title: 'Chess',
-    slug: 'chess',
+    title: 'Brain Games',
+    slug: 'braingames',
     subtitle: 'Build Strategy · Perspective',
     description: 'Structured coaching from beginner to advanced levels develops strategic thinking and resilience.',
     features: ['Beginner to rank courses', 'Practice matches', 'Master game analysis', 'Online & offline competition'],

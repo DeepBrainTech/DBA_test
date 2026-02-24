@@ -1,3 +1,8 @@
+/**
+ * 文件用途：占位色块组件（Brain Games 页面）
+ * 依赖关系：无
+ */
+
 export default function ColorBoxSection() {
     return (
         <section className="flex justify-center items-center w-full py-16">

@@ -70,7 +70,7 @@ export default function PricingSection() {
           <h3 className="text-center text-[40px] font-semibold text-[#2C3E50] mb-[40px]">
             Chess & Go Programs
           </h3>
-          
+
           {/* Table */}
           <div className="overflow-x-auto">
             <table className="w-full">
@@ -93,8 +93,8 @@ export default function PricingSection() {
               </thead>
               <tbody>
                 {programs.map((program, idx) => (
-                  <tr 
-                    key={idx} 
+                  <tr
+                    key={idx}
                     className="border-b border-[#E0E0E0] hover:bg-white/50 transition"
                   >
                     <td className="text-center py-[27px] px-[20px] text-[20px] text-[#2C3E50]">
@@ -147,9 +147,9 @@ export default function PricingSection() {
               </div>
             </div>
           </div>
-          
+
           <div className="flex-shrink-0">
-            <button 
+            <button
               onClick={() => scrollToElement('book-free')}
               className="flex items-center justify-center gap-[13px] px-[53px] h-[95px] !bg-[#f4a460] text-white text-[28px] font-semibold rounded-[40px] hover:bg-[#f4a460] hover:shadow-xl transition"
             >

@@ -1,5 +1,11 @@
-﻿import Image from "next/image";
-import type { ChessPhilosophyData } from "@/types/chess";
+/**
+ * 文件用途：Brain Games 教育理念 Section
+ * 依赖关系：依赖 types/braingames.ts
+ * 注意事项：纯展示组件，无业务逻辑
+ */
+
+import Image from "next/image";
+import type { ChessPhilosophyData } from "@/types/braingames";
 
 export default function ChessPhilosophySection({
     data,
@@ -61,7 +67,7 @@ export default function ChessPhilosophySection({
                     <div className="relative">
                         {/* decorative quote mark */}
                         <div className="absolute -left-2 -top-3 text-[#F4A460]/35 text-3xl">
-                            “
+                            "
                         </div>
 
                         <h3 className="text-center text-[22px] font-bold text-[#2C3E50] md:text-[28px]">
