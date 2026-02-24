@@ -134,7 +134,7 @@ export const serviceSteps: ServiceStep[] = [
     step: '3',
     icon: '📝',
     title: 'Strategic Application Prep',
-    duration: '2-4 mo before application',
+    duration: '3-6 mo before application',
     description: 'Refining school lists and crafting standout essays.',
     color: '#F4A460',
     bgColor: 'linear-gradient(to bottom, #F4A4601A, #E894511A)',
