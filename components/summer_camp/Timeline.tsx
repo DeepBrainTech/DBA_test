@@ -43,7 +43,7 @@ function ScheduleTableCard({
 export default function Timeline() {
   const { schedule } = summerCampPageData;
   return (
-    <div className="w-full px-14 py-24 bg-stone-50">
+    <div className="w-full px-14 py-24 bg-[#FBF9F4]">
       <div className="w-full max-w-[1280px] mx-auto px-9 flex flex-col justify-start items-start gap-16">
         {/* 标题区：Schedule 标签 + 主标题 + 描述 */}
         <div className="w-full flex flex-col items-center text-center gap-5">
