@@ -1,9 +1,11 @@
 'use client';
 
+import Image from 'next/image';
+
 export default function LimitedTimeOffer() {
   return (
     <section className="pb-20 bg-white">
-      <div className="max-w-[1200px] mx-auto px-6">
+      <div className="mx-auto w-full max-w-[1344px] px-9">
         <div className="bg-gradient-to-r from-[#E8F5E9] to-[#F0F4FF] rounded-[24px] p-8 flex items-center justify-between gap-8">
           <div className="flex-1">
             <div className="flex items-center gap-3 mb-5">
@@ -33,12 +35,22 @@ export default function LimitedTimeOffer() {
               href="https://forms.gle/2mMzKoQkXHa2CVHe6"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-3 px-10 py-5 bg-[#4CAF50] text-white text-[20px] font-semibold rounded-full hover:bg-[#43A047] hover:shadow-xl transition"
+              className="min-w-[150px] h-12 md:h-14 pl-18 pr-6 py-3 md:pl-20 md:pr-7 md:py-3.5 rounded-3xl bg-[#7EC97E] inline-flex flex-col justify-center items-center shadow-[0px_4.65px_6.97px_-4.65px_rgba(0,0,0,0.10)] shadow-[0px_11.62px_17.42px_-3.48px_rgba(0,0,0,0.10)] hover:bg-[#6BBD6B] transition-colors no-underline"
+              aria-label="Enroll Now"
             >
-              Enroll Now
-              <svg className="w-[24px] h-[24px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
+              <div className="inline-flex items-center justify-center gap-6 md:gap-7">
+                <span className="font-outfit text-white text-lg md:text-xl font-bold leading-7">
+                  Enroll Now
+                </span>
+                <Image
+                  src="/summer_camp/trackA/registernow.svg"
+                  alt=""
+                  width={24}
+                  height={24}
+                  className="shrink-0 w-6 h-6"
+                  aria-hidden
+                />
+              </div>
             </a>
           </div>
         </div>

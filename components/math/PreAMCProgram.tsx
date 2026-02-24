@@ -1,144 +1,110 @@
-'use client';
+/**
+ * 文件用途：Our Programs 课程区块（PRE-AMC / AMC 8/10 等复用），含 badge + 标题 + 副标题 + 四张卡；引用与 CTA 按 data 可选渲染
+ * 依赖关系：lucide-react、PreAMCProgramCard、data 由页面通过 props 传入
+ */
 
-import Image from 'next/image';
+import Link from 'next/link';
 
-export default function PreAMCProgram() {
-  const features = [
-    {
-      icon: (
-        <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <circle cx="12" cy="12" r="10" strokeWidth="2"/>
-          <circle cx="12" cy="12" r="6" strokeWidth="2"/>
-          <circle cx="12" cy="12" r="2" strokeWidth="2"/>
-        </svg>
-      ),
-      iconBg: 'bg-green-100',
-      title: 'Learning Objectives',
-      description: 'Foundations of pre-algebra with number theory, principle of inclusion-exclusion, etc.',
-    },
-    {
-      icon: (
-        <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
-        </svg>
-      ),
-      iconBg: 'bg-blue-100',
-      title: 'Small Group Format',
-      description: 'Small-group format with personalized interaction and feedback',
-    },
-    {
-      icon: (
-        <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 01-2 2z"/>
-        </svg>
-      ),
-      iconBg: 'bg-green-100',
-      title: 'Strategic Logic',
-      description: 'Integrates competition-style problems to strengthen logical reasoning and spatial thinking',
-    },
-    {
-      icon: (
-        <svg className="w-8 h-8 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
-        </svg>
-      ),
-      iconBg: 'bg-gray-100',
-      title: 'Merit Scholarship',
-      description: 'Up to $200 Scholarship',
-    },
-  ];
+import { ArrowRight } from 'lucide-react';
 
+import PreAMCProgramCard from '@/components/math/PreAMCProgramCard';
+import type { PreAMCProgramData } from '@/types/math';
+
+interface PreAMCProgramProps {
+  /** 课程区块数据 */
+  data: PreAMCProgramData;
+  /** 可选：section 外层样式，用于覆盖背景等（如 bg-[#FBF9F4]、渐变）。不传则默认 bg-white */
+  sectionClassName?: string;
+}
+
+export default function PreAMCProgram({ data, sectionClassName }: PreAMCProgramProps) {
+  const sectionClass = `${sectionClassName ?? 'bg-white'} py-24`;
   return (
-    <section className="py-20 bg-white">
-      <div className="mx-auto max-w-[1200px] px-6">
-        <div className="rounded-[30px] border-2 border-dashed border-[#9C27B0]/30 bg-[#FAF5FF] p-10 mb-12">
-          <div className="text-center mb-10">
-            <div className="inline-flex items-center gap-2 rounded-full bg-[#E8F5E9] px-6 py-3 mb-6">
-              <span className="text-2xl">💡</span>
-              <span className="text-[#4CAF50] text-sm font-medium">Our Programs</span>
-            </div>
-            <h2 className="text-[36px] font-bold text-[#2C3E50] mb-3">
-              PRE-AMC Math Enrichment Program
-            </h2>
-            <p className="text-[16px] text-[#2C3E50]/65">
-              Designed for students in Grades 4-6 or equivalent level
-            </p>
+    <section className={sectionClass}>
+      <div className="mx-auto w-full max-w-[1344px] px-9">
+        {/* 顶部：与 Math Teaching Philosophy 区块同布局——badge + 主标题 + 副标题 */}
+        <div className="mb-16 flex flex-col items-center text-center">
+          <div className="relative mb-6 inline-flex items-center gap-3 rounded-3xl bg-[#F0FFF0] px-5 py-3.5">
+            <span className="text-lg font-normal leading-none md:text-xl" aria-hidden>
+              💡
+            </span>
+            <span className="font-outfit text-[#7EC97E] text-lg font-normal leading-7 md:text-xl">
+              {data.badgeLabel}
+            </span>
           </div>
+          <h2 className="mb-4 font-outfit text-4xl font-bold leading-tight text-[#2C3E50] md:text-5xl">
+            {data.title}
+          </h2>
+          <p className="max-w-3xl font-outfit text-base leading-relaxed text-[#2C3E50]/60">
+            {data.subtitle}
+          </p>
+        </div>
 
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {features.map((feature, idx) => (
-              <div key={idx} className="rounded-[20px] bg-white px-6 py-8 text-center">
-                <div className={`mx-auto mb-6 flex h-[86px] w-[86px] items-center justify-center rounded-[18px] ${feature.iconBg}`}>
-                  {feature.icon}
-                </div>
-                <h3 className="text-[18px] font-bold text-[#2C3E50] mb-2">
-                  {feature.title}
-                </h3>
-                <p className="text-[14px] leading-[1.5] text-[#2C3E50]/60">
-                  {feature.description}
-                </p>
-              </div>
+        <div className="flex flex-col gap-16 md:gap-20">
+          {/* 四张特色卡片：图标来自 data 的 iconSrc；改 gap-6 可调卡片间距（如 gap-4 更密、gap-8 更疏） */}
+          <div className="grid w-full grid-cols-1 gap-9 sm:grid-cols-2 lg:grid-cols-4">
+            {data.features.map((feature) => (
+              <PreAMCProgramCard
+                key={feature.title}
+                cardClassName={feature.cardBg}
+                iconContainerClassName={feature.iconBg}
+                iconSrc={feature.iconSrc}
+                title={feature.title}
+                titleClassName={feature.titleClassName}
+                content={feature.description}
+                contentClassName={feature.contentClassName}
+                titleMaxCh={feature.titleMaxCh}
+                contentMaxCh={feature.contentMaxCh}
+              />
             ))}
           </div>
-        </div>
 
-        <div className="rounded-[30px] bg-[#FBF9F4] px-10 py-10 mb-12">
-          <p className="text-center text-[15px] leading-[1.7] text-[#2C3E50]/65 max-w-[900px] mx-auto">
-            This class is designed to spark curiosity, build logical reasoning, and develop problem-solving skills, while laying a strong foundation for future math competitions like MATHCOUNTS, MOEMS, and AMC.
-          </p>
-          <p className="text-center text-[13px] text-[#2C3E50]/50 mt-5 font-medium">
-            DeepBrain Academy Math Coaching Team
-          </p>
-        </div>
-
-        <div className="rounded-[30px] border-2 border-dashed border-[#4CAF50]/30 bg-[#F5FFF5] px-10 py-8 mb-10">
-          <div className="flex flex-col md:flex-row gap-8 md:justify-between md:items-start">
-            <div className="flex-1">
-              <div className="flex items-center gap-3 mb-4">
-                <span className="text-[20px]">⏰</span>
-                <h4 className="text-[24px] font-semibold text-[#2C3E50]">Class Time</h4>
+          {/* 课程理念引用（仅当 data 提供 quoteText 时渲染） */}
+          {data.quoteText != null && data.quoteText !== '' && (
+            <div className="mx-auto w-full max-w-[1268px] flex flex-col rounded-3xl overflow-hidden pt-5 pl-6 pr-8 pb-9 md:pt-6 md:pl-12 md:pr-8 md:pb-9 bg-gradient-to-r from-green-400/0 to-green-400/0">
+              <div className="flex justify-start pb-0" aria-hidden>
+                <span className="font-outfit text-4xl font-normal leading-none text-green-400 opacity-20 md:text-6xl">
+                  &quot;
+                </span>
               </div>
-              <div className="space-y-1.5">
-                <p className="text-[16px] text-[#2C3E50]/70">Saturday 3:00-4:30 pm ET (Englewood, NJ & online)</p>
-                <p className="text-[16px] text-[#2C3E50]/70">Friday 3:45-5:15 pm ET (Tenafly, NJ & online)</p>
+              <div className="mt-0.5 flex min-w-0 flex-1 flex-col items-center gap-5">
+                <p className="w-full max-w-[1028px] text-center font-outfit text-xl font-normal leading-7 text-slate-700">
+                  {data.quoteText}
+                </p>
+                {data.quoteAttribution != null && data.quoteAttribution !== '' && (
+                  <p className="font-outfit text-lg font-normal leading-7 text-slate-500">
+                    {data.quoteAttribution}
+                  </p>
+                )}
               </div>
             </div>
-            <div className="flex flex-col items-end">
-              <div className="relative h-[100px] w-[100px] overflow-hidden rounded-md bg-white">
-                <Image
-                  src="/math/scan.jpg"
-                  alt="WeChat QR Code"
-                  width={100}
-                  height={100}
-                  className="object-contain"
-                />
-              </div>
-              <p className="mt-2 text-right text-[12px] leading-5 text-[#2C3E50]/70">
-                Scan to join our<br />WeChat Community
-              </p>
-            </div>
-          </div>
-        </div>
+          )}
 
-        <div className="flex justify-center gap-5">
-          <a
-            href="https://forms.gle/2mMzKoQkXHa2CVHe6"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#4CAF50] bg-white px-8 py-3.5 text-[16px] font-semibold text-[#4CAF50] hover:bg-[#E8F5E9] transition"
-          >
-            Watch Intro Class
-            <span>→</span>
-          </a>
-          <a
-            href="https://forms.gle/2mMzKoQkXHa2CVHe6"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 rounded-full bg-[#4CAF50] px-8 py-3.5 text-[16px] font-semibold text-white shadow-lg hover:bg-[#43A047] transition"
-          >
-            Register Now
-            <span>→</span>
-          </a>
+          {/* 双 CTA（仅当 data 提供 ctaWatchUrl 时渲染） */}
+          {data.ctaWatchUrl != null && data.ctaWatchUrl !== '' && (
+            <div className="flex w-full flex-wrap justify-center gap-4">
+              <Link
+                href={data.ctaWatchUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-3xl bg-white px-8 py-4 font-outfit text-xl font-bold text-[#7EC97E] shadow-[0px_6.64px_9.96px_-6.64px_rgba(0,0,0,0.1),0px_16.59px_24.89px_-4.98px_rgba(0,0,0,0.1)] transition hover:bg-green-50"
+              >
+                Free Assessment
+                <ArrowRight className="size-6 shrink-0" strokeWidth={2.5} />
+              </Link>
+              {data.ctaRegisterUrl != null && data.ctaRegisterUrl !== '' && (
+                <Link
+                  href={data.ctaRegisterUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-[33px] bg-[#7EC97E] px-8 py-4 font-outfit text-xl font-bold text-white shadow-[0px_6.64px_9.96px_-6.64px_rgba(0,0,0,0.1),0px_16.59px_24.89px_-4.98px_rgba(0,0,0,0.1)] transition hover:bg-green-500"
+                >
+                  Register Now
+                  <ArrowRight className="size-6 shrink-0" strokeWidth={2.5} />
+                </Link>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </section>

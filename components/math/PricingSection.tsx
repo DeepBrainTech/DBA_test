@@ -49,21 +49,31 @@ export default function PricingSection() {
 
   return (
     <section className="py-20 bg-white">
-      <div className="max-w-[1200px] mx-auto px-6">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-3 px-6 py-3 bg-[#EAF3FF] rounded-full mb-6">
-            <span className="text-[24px]">💎</span>
-            <span className="text-[18px] text-[#42A5F5] font-medium">Pricing</span>
+      <div className="mx-auto w-full max-w-[1344px] px-9">
+        {/* 顶部与 Our Programs 同布局：badge + 主标题 + 副标题 */}
+        <div className="mb-16 flex flex-col items-center text-center">
+          <div className="relative mb-6 inline-flex items-center gap-3 rounded-3xl bg-[#F7FCF7] px-5 py-3.5">
+            <span className="text-lg font-normal leading-none md:text-xl" aria-hidden>
+              💎
+            </span>
+            <span className="font-outfit text-[#7EC97E] text-lg font-normal leading-7 md:text-xl">
+              Pricing
+            </span>
           </div>
-          <h2 className="text-[40px] font-bold text-[#2C3E50] mb-4 leading-[1.3]">
+          <h2 className="mb-4 font-outfit text-4xl font-bold leading-tight text-[#2C3E50] md:text-5xl">
             Winter and Spring Program
           </h2>
-          <p className="text-[20px] text-[#7C8B99]">
+          <p className="max-w-3xl font-outfit text-base leading-relaxed text-[#2C3E50]/60">
             2025-2026 School Year
           </p>
         </div>
 
-        <div className="bg-[#F5F5F5] rounded-[24px] p-8">
+        <div
+          className="rounded-[24px] p-8"
+          style={{
+            background: 'linear-gradient(to right, #9B8FD80D, #6BB6FF0D)',
+          }}
+        >
           <h3 className="text-center text-[32px] font-semibold text-[#2C3E50] mb-8">
             AMC/SAT/ACT Math Programs
           </h3>
@@ -104,26 +114,28 @@ export default function PricingSection() {
                         </span>
                       )}
                     </td>
-                    <td className="text-center py-5 px-4">
-                      {program.earlyBird.map((price, i) => (
-                        <span
-                          key={i}
-                          className={`inline-flex min-w-[130px] justify-center rounded-full px-5 py-2 text-[15px] font-semibold ${
-                            program.isCallForDetails
-                              ? 'bg-[#E8F5E9] text-[#4CAF50]'
-                              : 'bg-[#E8F5E9] text-[#4CAF50]'
-                          } ${i > 0 ? 'mt-2' : ''} block mx-auto`}
-                        >
-                          {price}
-                        </span>
-                      ))}
+                    <td className="py-5 px-4">
+                      <div className="flex flex-col items-center gap-2">
+                        {program.earlyBird.map((price, i) => (
+                          <span
+                            key={i}
+                            className={`flex min-w-[130px] justify-center rounded-full px-5 py-2 text-[15px] font-semibold ${
+                              program.isCallForDetails
+                                ? 'bg-[#E8F5E9] text-[#4CAF50]'
+                                : 'bg-[#E8F5E9] text-[#4CAF50]'
+                            }`}
+                          >
+                            {price}
+                          </span>
+                        ))}
+                      </div>
                     </td>
-                    <td className="text-center py-5 px-4 text-[16px] text-[#2C3E50] font-medium">
-                      {program.regular.map((price, i) => (
-                        <span key={i} className={`block ${i > 0 ? 'mt-2' : ''}`}>
-                          {price}
-                        </span>
-                      ))}
+                    <td className="py-5 px-4 text-center text-[16px] text-[#2C3E50] font-medium">
+                      <div className="flex flex-col items-center gap-2">
+                        {program.regular.map((price, i) => (
+                          <span key={i}>{price}</span>
+                        ))}
+                      </div>
                     </td>
                   </tr>
                 ))}
