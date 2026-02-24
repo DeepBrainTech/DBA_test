@@ -105,7 +105,7 @@ export const serviceSteps: ServiceStep[] = [
     duration: '1-2 mo.',
     description: 'Full profile review, clear goals, custom strategy.',
     color: '#9B8FD8',
-    bgColor: '#F3F0FF',
+    bgColor: 'linear-gradient(to bottom, #9B8FD81A, #8A7EC71A)',
     side: 'left',
     items: [
       'Comprehensive Evaluation',
@@ -121,7 +121,7 @@ export const serviceSteps: ServiceStep[] = [
     duration: '6-12 mo.',
     description: 'Build standout strengths.',
     color: '#6BB6FF',
-    bgColor: '#E8F4FC',
+    bgColor: 'linear-gradient(to bottom, #6BB6FF1A, #4A9FEF1A)',
     side: 'right',
     items: [
       'Academic Guidance',
@@ -137,7 +137,7 @@ export const serviceSteps: ServiceStep[] = [
     duration: '2-4 mo before application',
     description: 'Refining school lists and crafting standout essays.',
     color: '#F4A460',
-    bgColor: '#FFF3E8',
+    bgColor: 'linear-gradient(to bottom, #F4A4601A, #E894511A)',
     side: 'left',
     items: [
       'School & Major Selection',
@@ -153,13 +153,13 @@ export const serviceSteps: ServiceStep[] = [
     duration: 'Application Season',
     description: 'Expert application walkthrough & mock interviews.',
     color: '#7EC97E',
-    bgColor: '#E8F5E9',
+    bgColor: 'linear-gradient(to bottom, #7EC97E1A, #6BB86B1A)',
     side: 'right',
     items: [
       'Application Support',
       'School Communication',
-      'Mock Interviews & Feedback',
-      'Status Tracking'
+      'Status Tracking',
+      'Mock Interviews & Feedback'
     ]
   },
   {
@@ -169,7 +169,7 @@ export const serviceSteps: ServiceStep[] = [
     duration: 'Offer Received',
     description: 'Make the best choice, start strong abroad.',
     color: '#B19CD9',
-    bgColor: '#F3F0FF',
+    bgColor: 'linear-gradient(to bottom,#C4B5FD1A, #B4A5ED1A)',
     side: 'left',
     items: [
       'Decision Counseling & Analysis',

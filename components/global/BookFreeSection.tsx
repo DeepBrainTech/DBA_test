@@ -1,22 +1,34 @@
 /**
  * 文件用途：Book Free 预订入口组件（全球教育页面）
- * 依赖关系：无
+ * 依赖关系：无；布局参考 components/summer_camp/BookFreeTrialSection
+ * 图标均来自 public/global/book/，见下方 *ICON* 常量
  */
 
 'use client';
+
+import Image from 'next/image';
+import { ArrowRight, ListChecks } from 'lucide-react';
+
+/** 图标路径前缀（图片放在 public/global/book/ 下） */
+const BOOK_ICONS = '/global/book';
+
+/** 顶部徽标 ⚡、You'll Get 三项 📋🎯📊、信任三项 🔒⚡💯、底部 💭 对应文件名 */
+const BADGE_ICON = 'limitedoffer';
+const BENEFIT_ICONS = ['report', 'consultation', 'evaluation'];
+const TRUST_ICON_NAMES = ['secure', 'fast', 'riskfree'];
+const QUOTE_ICON = 'quote';
 
 // TODO: 替换为你的 Google Form 链接
 const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfAceUQq9JJ3uu-EcWlHkTQ1O1jY_uzh-fptrN7_JC9rf-dqg/viewform';
 
 interface Benefit {
-  icon: string;
   text: string;
 }
 
 const benefits: Benefit[] = [
-  { icon: '📋', text: 'Personalized Report' },
-  { icon: '🎯', text: 'One-on-one consultation' },
-  { icon: '📊', text: 'Background Evaluation & Analysis' },
+  { text: 'Personalized Report' },
+  { text: 'One-on-one consultation' },
+  { text: 'Background Evaluation & Analysis' },
 ];
 
 const stats = [
@@ -25,106 +37,150 @@ const stats = [
   { value: '24h', label: 'Response Time' },
 ];
 
+const trustItems = [
+  { label: 'Secure Information' },
+  { label: 'Fast Responding' },
+  { label: 'Risk-free Guarantee' },
+];
+
+const BOTTOM_QUOTE =
+  "Behind every acceptance: planning, guidance, and partnership. Start your journey here—let's make it possible! 🚀";
+
 export default function BookFreeSection() {
   return (
-    <section id="book-free" className="bg-gradient-to-b from-[#B7AAFB] to-[#9A8ED7] py-[80px] relative">
-      <div className="max-w-[1344px] mx-auto px-9">
-        <div className="grid grid-cols-2 gap-[60px] items-start">
-          {/* Left Section - Marketing Content */}
-          <div className="space-y-[32px]">
-            {/* Limited-time Offer Tag */}
-            <div className="flex justify-center">
-              <div className="inline-flex items-center gap-[10px] px-[32px] py-[12px] bg-white/20 backdrop-blur-sm rounded-[32px] text-white">
-                <span className="text-[26px]">⚡</span>
-                <span className="text-[21px] font-normal">Limited-time Offer</span>
-              </div>
+    <section
+      id="book-free"
+      className="w-full relative bg-gradient-to-b from-[#B7AAFB] to-[#9A8ED7] overflow-hidden"
+      aria-label="Book Free Consultation"
+    >
+      <div className="relative w-full max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+        {/* 顶部 Limited-time Offer 徽标（图标：public/global/book/limitedoffer.png） */}
+        <div className="flex justify-center mb-6 lg:mb-8">
+          <div className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-white/20 rounded-3xl opacity-90">
+            <Image
+              src={`${BOOK_ICONS}/${BADGE_ICON}.png`}
+              alt=""
+              width={20}
+              height={20}
+              className="shrink-0 brightness-0 invert"
+            />
+            <span className="text-white text-xl font-normal leading-7">
+              Limited-time Offer
+            </span>
+          </div>
+        </div>
+
+        {/* 主内容区：左文案 + 右卡片 */}
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-10 lg:gap-12 items-start">
+          {/* 左侧：标题、副标题、You'll Get 列表、信任标签 */}
+          <div className="flex flex-col gap-9">
+            <div className="flex flex-col gap-5">
+              <h2 className="text-white text-3xl sm:text-4xl font-bold leading-tight">
+                Your journey to a top school deserves a true strategic partner.
+              </h2>
+              <p className="text-white/90 text-lg sm:text-xl font-normal leading-7 max-w-[586px]">
+                Book a consultation with our chief advisor now.
+              </p>
             </div>
 
-            {/* Main Heading */}
-            <h2 className="text-[42px] font-bold text-white leading-[1.3]">
-              Your journey to a top school deserves a true strategic partner.
-            </h2>
-
-            {/* Subtitle */}
-            <p className="text-[21px] text-white/90 leading-[1.6]">
-              Book a consultation with our chief advisor now.
-            </p>
-
-            {/* You'll Get Section */}
-            <div className="space-y-[16px]">
-              <h3 className="text-[24px] font-semibold text-white">You'll Get:</h3>
-              <div className="space-y-[16px]">
-                {benefits.map((benefit, idx) => (
-                  <div
-                    key={idx}
-                    className="bg-white/10 rounded-[16px] px-[22px] py-[21px] flex items-center gap-[16px]"
+            <div className="flex flex-col gap-4">
+              <div className="flex items-center gap-2.5">
+                <ListChecks className="w-7 h-7 text-white shrink-0" strokeWidth={2} />
+                <span className="text-white text-xl font-semibold leading-7">
+                  You&apos;ll Get:
+                </span>
+              </div>
+              <ul className="flex flex-col gap-4">
+                {benefits.map((benefit, i) => (
+                  <li
+                    key={i}
+                    className="flex items-center gap-3.5 px-5 py-4 bg-white/20 rounded-xl"
                   >
-                    <span className="text-[32px] flex-shrink-0">{benefit.icon}</span>
-                    <span className="text-[21px] text-white">{benefit.text}</span>
-                  </div>
+                    <Image
+                      src={`${BOOK_ICONS}/${BENEFIT_ICONS[i] ?? ''}.png`}
+                      alt=""
+                      width={24}
+                      height={24}
+                      className="shrink-0 object-contain"
+                    />
+                    <span className="text-white text-lg sm:text-xl font-normal leading-7">
+                      {benefit.text}
+                    </span>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
 
-            {/* Guarantees/Features */}
-            <div className="flex items-center gap-[22px] flex-wrap">
-              <div className="flex items-center gap-[4px]">
-                <span className="text-[32px]">🔒</span>
-                <span className="text-[18px] text-white/80">Secure Information</span>
-              </div>
-              <div className="flex items-center gap-[4px]">
-                <span className="text-[32px]">⚡</span>
-                <span className="text-[18px] text-white/80">Fast Responding</span>
-              </div>
-              <div className="flex items-center gap-[4px]">
-                <span className="text-[32px]">💯</span>
-                <span className="text-[18px] text-white/80">Risk-free Guarantee</span>
-              </div>
+            <div className="flex flex-nowrap items-center gap-5">
+              {trustItems.map((item, i) => (
+                <div key={i} className="flex items-center gap-2 shrink-0">
+                  <Image
+                    src={`${BOOK_ICONS}/${TRUST_ICON_NAMES[i] ?? ''}.png`}
+                    alt=""
+                    width={24}
+                    height={24}
+                    className="shrink-0 object-contain opacity-90"
+                  />
+                  <span className="text-white/80 text-base sm:text-lg font-normal leading-6">
+                    {item.label}
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
 
-          {/* Right Section - Simplified Schedule Card */}
-          <div className="sticky top-[80px]">
-            <div className="bg-white rounded-[22px] p-[42px] shadow-xl">
-              <h2 className="text-[32px] font-bold text-[#2C3E50] mb-[10px]">
+          {/* 右侧：白色预约卡片 */}
+          <div className="w-full lg:w-[607px] lg:shrink-0 mt-8 lg:mt-12 px-6 sm:px-8 pt-8 pb-6 sm:pt-12 sm:pb-8 bg-white rounded-3xl shadow-[0px_29px_58px_-14px_rgba(0,0,0,0.25)] flex flex-col gap-9">
+            <div className="flex flex-col gap-2.5">
+              <h3 className="text-slate-700 text-2xl sm:text-3xl font-semibold leading-10">
                 Schedule Your Consultation
-              </h2>
-              <p className="text-[21px] text-[#7C8B99] mb-[32px] leading-relaxed">
+              </h3>
+              <p className="text-slate-500 text-lg sm:text-xl font-normal leading-7">
                 Submit your details and an advisor will contact you within 24h.
               </p>
+            </div>
 
+            <div className="flex flex-col gap-4">
               <a
                 href={GOOGLE_FORM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-[10px] w-full px-[42px] h-[76px] bg-gradient-to-b from-[#9B8FD8] to-[#8A7CC7] text-white text-[21px] font-normal rounded-[22px] hover:shadow-xl transition"
+                className="w-full h-14 bg-gradient-to-b from-[#9B8FD8] to-[#8A7CC7] rounded-2xl inline-flex justify-center items-center gap-2.5 text-white text-xl font-normal leading-7 hover:opacity-95 transition-opacity"
               >
                 Book Free Trial
-                <svg className="w-[26px] h-[26px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.77} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
+                <ArrowRight className="w-6 h-6 shrink-0" strokeWidth={2} />
               </a>
+            </div>
 
-              <div className="flex items-center justify-center gap-[48px] mt-[32px] pt-[32px] border-t border-[#E8F4FC]">
-                {stats.map((item, idx) => (
-                  <div key={idx} className="text-center">
-                    <div className="text-[24px] font-semibold text-[#9B8FD8]">{item.value}</div>
-                    <div className="text-[21px] text-[#7C8B99]">{item.label}</div>
-                  </div>
-                ))}
-              </div>
+            <div className="pt-6 border-t border-indigo-50 flex flex-wrap justify-between gap-6">
+              {stats.map((stat, i) => (
+                <div key={i} className="flex flex-col items-start gap-1 min-w-[100px]">
+                  <span className="text-[#9B8FD8] text-xl font-semibold leading-7">
+                    {stat.value}
+                  </span>
+                  <span className="text-slate-500 text-lg font-normal leading-7">
+                    {stat.label}
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
 
-        {/* Bottom Tagline */}
-        <div className="flex items-center justify-center gap-[27px] mt-[80px]">
-          <div className="bg-white/20 rounded-[27px] w-[106px] h-[106px] flex items-center justify-center flex-shrink-0">
-            <span className="text-[60px]">💭</span>
+        {/* 底部引用气泡（图标：public/global/book/quote.png） */}
+        <div className="mt-10 lg:mt-12 flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-5">
+          <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/20 rounded-2xl flex justify-center items-center shrink-0 p-2">
+            <Image
+              src={`${BOOK_ICONS}/${QUOTE_ICON}.png`}
+              alt=""
+              width={50}
+              height={50}
+              className="w-full h-full object-contain"
+            />
           </div>
-          <div className="bg-white/20 rounded-[33px] rounded-bl-[7px] px-[53px] py-[27px] flex-1 max-w-[1115px]">
-            <p className="text-[26px] text-white leading-[42px]">
-              Behind every acceptance: planning, guidance, and partnership. Start your journey here—let's make it possible! 🚀
+          <div className="px-6 sm:px-9 py-5 bg-white/20 rounded-3xl max-w-[780px]">
+            <p className="text-white text-lg sm:text-xl font-normal leading-7">
+              {BOTTOM_QUOTE}
             </p>
           </div>
         </div>

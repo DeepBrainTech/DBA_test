@@ -25,42 +25,37 @@ const admissionData: AdmissionData[] = [
 export default function AdmissionSection() {
   return (
     <section className="pt-[60px] pb-[133px] bg-gradient-to-b from-[#B7AAFB] to-[#9A8ED7] relative">
-      {/* Code Icon in top right corner */}
-      <div className="absolute top-[60px] right-14 text-[#E0E0E0] text-[24px] opacity-50">
-        {'</>'}
-      </div>
-      
       <div className="max-w-[1344px] mx-auto px-9">
         {/* Header */}
         <div className="text-center mb-[40px]">
-          <h2 className="text-[53px] font-bold text-white mb-[27px] leading-[1.3]">
+          <h2 className="text-5xl font-semibold text-white mb-[27px]">
             Prestigious School Admission Cases
           </h2>
-          <p className="text-[26.5px] text-white max-w-[1242px] mx-auto leading-relaxed">
+          <p className="text-2xl font-normal text-white max-w-[1100px] mx-auto leading-relaxed">
             With an outstanding programming background and project experience, our students have been successfully admitted to top universities for computer-related majors.
           </p>
         </div>
 
-        {/* Admission Statistics Table */}
+        {/* 表格区域：半透明白膜，无绝对定位 */}
         <div className="max-w-[1242px] mx-auto">
-          <div className="bg-[#E8E4F3] rounded-[27px] p-[40px]">
+          <div className="w-full min-h-[548px] bg-white/10 rounded-[10px] p-[40px]">
             <div className="overflow-x-auto">
               <table className="w-full">
                 <thead>
-                  <tr className="border-b-2 border-[#D0CCE0]">
-                    <th className="text-center py-[20px] px-[16px] text-[20px] font-semibold text-[#2C3E50]">
+                  <tr className="border-b-2 border-white/20">
+                    <th className="text-center py-[20px] px-[16px] text-[20px] font-semibold text-white">
                       College
                     </th>
-                    <th className="text-center py-[20px] px-[16px] text-[20px] font-semibold text-[#2C3E50]">
+                    <th className="text-center py-[20px] px-[16px] text-[20px] font-semibold text-white">
                       Offers Received
                     </th>
-                    <th className="text-center py-[20px] px-[16px] text-[20px] font-semibold text-[#2C3E50]">
+                    <th className="text-center py-[20px] px-[16px] text-[20px] font-semibold text-white">
                       General Admission Rate
                     </th>
-                    <th className="text-center py-[20px] px-[16px] text-[20px] font-semibold text-[#2C3E50]">
+                    <th className="text-center py-[20px] px-[16px] text-[20px] font-semibold text-white">
                       Our Admission Rate
                     </th>
-                    <th className="text-center py-[20px] px-[16px] text-[20px] font-semibold text-[#2C3E50]">
+                    <th className="text-center py-[20px] px-[16px] text-[20px] font-semibold text-white">
                       Times Better
                     </th>
                   </tr>
@@ -69,22 +64,22 @@ export default function AdmissionSection() {
                   {admissionData.map((data, idx) => (
                     <tr
                       key={idx}
-                      className="border-b border-[#D0CCE0] hover:bg-white/30 transition"
+                      className="border-b border-white/20 hover:bg-white/10 transition"
                     >
-                      <td className="text-center py-[27px] px-[16px] text-[20px] text-[#2C3E50] font-semibold">
+                      <td className="text-center py-[27px] px-[16px] text-[20px] font-normal text-white">
                         {data.college}
                       </td>
-                      <td className="text-center py-[27px] px-[16px] text-[20px] text-[#2C3E50]">
+                      <td className="text-center py-[27px] px-[16px] text-[20px] font-normal text-white">
                         {data.offersReceived}
                       </td>
-                      <td className="text-center py-[27px] px-[16px] text-[20px] text-[#2C3E50]">
+                      <td className="text-center py-[27px] px-[16px] text-[20px] font-normal text-white">
                         {data.generalAdmitRate}
                       </td>
-                      <td className="text-center py-[27px] px-[16px] text-[20px] text-[#2C3E50]">
+                      <td className="text-center py-[27px] px-[16px] text-[20px] font-normal text-white">
                         {data.ourAdmitRate}
                       </td>
                       <td className="text-center py-[27px] px-[16px] text-[20px]">
-                        <span className="font-bold text-[#E53935]">
+                        <span className="font-normal text-red-500">
                           {data.timesBetter}
                         </span>
                       </td>
