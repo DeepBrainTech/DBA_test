@@ -68,24 +68,24 @@ export default function GlobalHeroSection({ features }: GlobalHeroSectionProps) 
           <div className="mt-6 text-center font-outfit text-xl font-medium capitalize leading-10 text-white [text-shadow:_0px_2px_4px_rgb(0_0_0_/_0.20)]">
             Begin Your Journey
           </div>
-          {/* 与 Summer Camp 一致：文档流内紧跟文案，mt-4 -mb-[45px]，按钮与图片尺寸类一致 */}
-          <div className="mt-4 -mb-[45px] flex justify-center">
-            <button
-              type="button"
-              onClick={() => scrollToElement('stats')}
-              className="cursor-pointer border-0 bg-transparent p-0 min-w-[1vw] max-w-[35px]"
-              aria-label="滚动至 Stats 区块"
-            >
-              <Image
-                src="/global/Hero/hero_5.png"
-                alt=""
-                width={1200}
-                height={600}
-                className="h-auto w-full object-contain"
-                unoptimized
-              />
-            </button>
-          </div>
+        </div>
+        {/* hero_5 鼠标：固定锚定在封面容器底部，避免不同浏览器/缩放下因文档流高度变化而“脱离骑边效果” */}
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 flex translate-y-1/2 justify-center">
+          <button
+            type="button"
+            onClick={() => scrollToElement('stats')}
+            className="pointer-events-auto cursor-pointer border-0 bg-transparent p-0 min-w-[1vw] max-w-[35px]"
+            aria-label="滚动至 Stats 区块"
+          >
+            <Image
+              src="/global/Hero/hero_5.png"
+              alt=""
+              width={1200}
+              height={600}
+              className="h-auto w-full object-contain"
+              unoptimized
+            />
+          </button>
         </div>
       </div>
     </section>

@@ -41,7 +41,7 @@ export default function Hero({ data }: HeroProps) {
           {/* 与 Global Education 一致的遮罩：50% 浅灰半透明，提升文字可读性 */}
           <div className="absolute inset-0 bg-[lightgray]/50" aria-hidden />
         </div>
-        {/* 整块内容区：min-h-full 让内容可撑高背景区，cover 始终铺满；5.png 在流内紧接「Join us」下方，视觉上骑在 cover 上，无需绝对定位 */}
+        {/* 整块内容区：min-h-full 让内容可撑高背景区，cover 始终铺满 */}
         <div className="relative z-10 mx-auto flex min-h-full max-w-[1344px] flex-col items-center justify-center px-9 pt-[106px] pb-4 text-center">
           {/* 主标题：改 mt-* 可单独调「标题」相对内容区顶部的距离 */}
           <h1 className="font-outfit mt-20 text-5xl font-bold leading-[1.75] text-[#333333] md:text-6xl lg:text-[80px] lg:leading-[140px]">
@@ -79,24 +79,24 @@ export default function Hero({ data }: HeroProps) {
           <div className="mt-6 text-center font-outfit text-xl font-medium capitalize leading-10 text-white [text-shadow:_0px_2px_4px_rgb(0_0_0_/_0.20)]">
             Join us this summer
           </div>
-          {/* 5.png 鼠标：文档流内紧跟文案，视觉上骑在 cover 上；-mb-[35px] 让下半部分伸入下方白区，与之前效果一致 */}
-          <div className="mt-4 -mb-[45px] flex justify-center">
-            <button
-              type="button"
-              onClick={() => scrollToElement('learning-strategies')}
-              className="cursor-pointer border-0 bg-transparent p-0 min-w-[1vw] max-w-[35px]"
-              aria-label="滚动至 Learning Strategies"
-            >
-              <Image
-                src="/summer_camp/hero/5.png"
-                alt=""
-                width={1200}
-                height={600}
-                className="h-auto w-full object-contain"
-                unoptimized
-              />
-            </button>
-          </div>
+        </div>
+        {/* 5.png 鼠标：固定锚定在封面容器底部，避免不同浏览器/缩放下因文档流高度变化而“脱离骑边效果” */}
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 flex translate-y-1/2 justify-center">
+          <button
+            type="button"
+            onClick={() => scrollToElement('learning-strategies')}
+            className="pointer-events-auto cursor-pointer border-0 bg-transparent p-0 min-w-[1vw] max-w-[35px]"
+            aria-label="滚动至 Learning Strategies"
+          >
+            <Image
+              src="/summer_camp/hero/5.png"
+              alt=""
+              width={1200}
+              height={600}
+              className="h-auto w-full object-contain"
+              unoptimized
+            />
+          </button>
         </div>
       </div>
     </section>
