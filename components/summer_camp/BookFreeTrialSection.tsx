@@ -36,7 +36,7 @@ export default function BookFreeTrialSection({ data }: BookFreeTrialSectionProps
       className="w-full relative bg-gradient-to-b from-[#EF6B83] to-[#BA495E] overflow-hidden"
       aria-label="Book Free Trial"
     >
-      <div className="relative w-full max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+      <div className="relative w-full max-w-[min(1280px,90vw)] mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         {/* 顶部 Limited offer 徽标 */}
         <div className="flex justify-center mb-6 lg:mb-8">
           <div className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-white/20 rounded-3xl opacity-90">

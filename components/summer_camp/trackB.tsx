@@ -13,7 +13,7 @@ export default function TrackB() {
   const features = trackB.features;
   return (
     <div className="px-14 pt-20 bg-[#FFFFFF]">
-      <div className="w-full max-w-[1344px] mx-auto px-9 pt-0 flex flex-col justify-start items-center gap-16">
+      <div className="w-full max-w-[min(1280px,90vw)] mx-auto px-9 pt-0 flex flex-col justify-start items-center gap-16">
         {/* 标题区：Program 标签 + Track B 标题 + 副标题 */}
         <div className="w-full max-w-[892px] mx-auto flex flex-col items-center text-center gap-5">
           <div className="inline-flex items-center gap-3 rounded-3xl bg-rose-400/10 px-5 py-3.5">

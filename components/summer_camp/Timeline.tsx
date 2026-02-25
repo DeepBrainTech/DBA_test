@@ -44,7 +44,7 @@ export default function Timeline() {
   const { schedule } = summerCampPageData;
   return (
     <div className="w-full px-14 py-24 bg-[#FBF9F4]">
-      <div className="w-full max-w-[1280px] mx-auto px-9 flex flex-col justify-start items-start gap-16">
+      <div className="w-full max-w-[min(1280px,90vw)] mx-auto px-9 flex flex-col justify-start items-start gap-16">
         {/* 标题区：Schedule 标签 + 主标题 + 描述 */}
         <div className="w-full flex flex-col items-center text-center gap-5">
           <div className="inline-flex items-center gap-3 rounded-3xl bg-rose-400/10 px-5 py-3.5">

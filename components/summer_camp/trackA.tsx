@@ -15,7 +15,7 @@ export default function TrackA() {
   const { featuredProjects } = trackA;
   return (
     <div className="px-14 pt-20 bg-[#FBF9F4]">
-      <div className="w-full max-w-[1344px] mx-auto px-9 pt-0 flex flex-col justify-start items-center gap-16">
+      <div className="w-full max-w-[min(1280px,90vw)] mx-auto px-9 pt-0 flex flex-col justify-start items-center gap-16">
         {/* 标题区：Program 标签 + Track A 标题 + 副标题（整体居中；与 Learning Strategies 一致用固定最大宽容器 + mx-auto 保证居中） */}
         {/* 字号与 LearningStrategies 区块标题一致：badge text-lg/xl、主标题 3xl/4xl、副标题 base/lg */}
         <div className="w-full max-w-[892px] mx-auto flex flex-col items-center text-center gap-5">

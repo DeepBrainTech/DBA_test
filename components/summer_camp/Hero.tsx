@@ -42,7 +42,7 @@ export default function Hero({ data }: HeroProps) {
           <div className="absolute inset-0 bg-[lightgray]/50" aria-hidden />
         </div>
         {/* 整块内容区：min-h-full 让内容可撑高背景区，cover 始终铺满 */}
-        <div className="relative z-10 mx-auto flex min-h-full max-w-[1344px] flex-col items-center justify-center px-9 pt-[106px] pb-4 text-center">
+        <div className="relative z-10 mx-auto flex min-h-full max-w-[min(1280px,90vw)] flex-col items-center justify-center px-9 pt-[106px] pb-4 text-center">
           {/* 主标题：改 mt-* 可单独调「标题」相对内容区顶部的距离 */}
           <h1 className="font-outfit mt-20 text-5xl font-bold leading-[1.75] text-[#333333] md:text-6xl lg:text-[80px] lg:leading-[140px]">
             {data.title}

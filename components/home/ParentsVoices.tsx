@@ -101,7 +101,8 @@ export default function ParentsVoices() {
 
   return (
     <section className="py-16 md:py-20 bg-[#FBF9F4]">
-      <div className="max-w-[1920px] mx-auto px-6 md:px-14">
+      {/* 与 WhyDeepBrain 区域同宽同 padding，保证与前后区块左右对齐 */}
+        <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-16 xl:px-20">
         {/* 标签与主标题与 KeyPrograms 区块保持同一尺寸与样式 */}
         <div className="text-center mb-8 md:mb-10">
           <div className="inline-flex items-center gap-3 px-4 py-2 bg-white rounded-full mb-4 shadow-sm">

@@ -20,7 +20,8 @@ export default function KeyPrograms({ programs }: KeyProgramsProps) {
   return (
     <section className="py-14 md:py-18 bg-[#FBF9F4]">
 
-      <div className="max-w-[1920px] mx-auto px-4 sm:px-6 md:px-14">
+      {/* 与下方 WhyDeepBrain 区域同宽同 padding，保证卡片与下方区块左右对齐 */}
+        <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-16 xl:px-20">
         <div className="text-center mb-8 md:mb-10">
           <div className="inline-flex items-center gap-3 px-4 py-2 bg-white rounded-full mb-4 shadow-sm">
             <Image src="/home/section-icons/core_course.png" alt="Core Courses" width={32} height={32} className="w-8 h-8 shrink-0" />

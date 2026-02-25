@@ -184,6 +184,20 @@ export interface SummerCampTrackBPricingRow {
   online: string;
 }
 
+/** 限时优惠单张档位卡数据（Early Bird / Regular / Last minute） */
+export interface LimitedTimeOfferCardData {
+  /** 档位名称，如 Early Bird、Regular、Last minute */
+  title: string;
+  /** 截止日，如 Ends 3/15 */
+  endsDate: string;
+  /** 是否为“标准价”档位（只显示 Standard Pricing + 截止日） */
+  isStandardPricing?: boolean;
+  /** 折扣文案，如 5% OFF；isStandardPricing 时不传 */
+  discountLabel?: string;
+  /** 节省说明（Up to $xxx Savings）；isStandardPricing 时不传 */
+  savings?: { prefix: string; amount: string; suffix: string };
+}
+
 /** 价格区数据 */
 export interface SummerCampPricingData {
   badge: SectionBadge;

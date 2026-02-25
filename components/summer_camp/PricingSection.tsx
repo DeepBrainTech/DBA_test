@@ -5,41 +5,40 @@
  */
 
 import Image from 'next/image';
-import type { ReactNode } from 'react';
 import type {
+  LimitedTimeOfferCardData,
   PricingCell,
   SummerCampPricingData,
   SummerCampTrackAPricingRow,
   SummerCampTrackBPricingRow,
 } from '@/types/summer_camp';
+import LimitedTimeOfferCard from '@/components/summer_camp/LimitedTimeOfferCard';
 
 interface PricingSectionProps {
   /** 价格区块数据 */
   data: SummerCampPricingData;
 }
 
-/** 将 "**foo**" 解析为 <strong>foo</strong>，用于限时优惠描述 */
-function parseBoldSegments(text: string): ReactNode {
-  const parts: ReactNode[] = [];
-  let remaining = text;
-  let key = 0;
-  while (remaining.length > 0) {
-    const start = remaining.indexOf('**');
-    if (start === -1) {
-      parts.push(<span key={key++}>{remaining}</span>);
-      break;
-    }
-    parts.push(<span key={key++}>{remaining.slice(0, start)}</span>);
-    const end = remaining.indexOf('**', start + 2);
-    if (end === -1) {
-      parts.push(<span key={key++}>{remaining.slice(start + 2)}</span>);
-      break;
-    }
-    parts.push(<strong key={key++} className="font-bold">{remaining.slice(start + 2, end)}</strong>);
-    remaining = remaining.slice(end + 2);
-  }
-  return <>{parts}</>;
-}
+/** 限时优惠三档卡数据：Early Bird / Regular / Last minute */
+const LIMITED_TIME_OFFER_CARDS: LimitedTimeOfferCardData[] = [
+  {
+    title: 'Early Bird',
+    discountLabel: '5% OFF',
+    savings: { prefix: 'Up to', amount: '$200', suffix: 'Savings' },
+    endsDate: 'Ends 3/15',
+  },
+  {
+    title: 'Regular',
+    discountLabel: '3% OFF',
+    savings: { prefix: 'Up to', amount: '$120', suffix: 'Savings' },
+    endsDate: 'Ends 3/31',
+  },
+  {
+    title: 'Last minute',
+    isStandardPricing: true,
+    endsDate: 'Ends 4/15',
+  },
+];
 
 /** 渲染价格单元格：纯文案或带折扣标签样式 */
 function PriceCell({ cell }: { cell: string | PricingCell }) {
@@ -59,15 +58,13 @@ function PriceCell({ cell }: { cell: string | PricingCell }) {
 }
 
 export default function PricingSection({ data }: PricingSectionProps) {
-  const offerParagraphs = data.limitedTimeOffer.description.split('\n\n');
-
   return (
     <section
       id="pricing"
-      className="w-full px-9 py-20 flex flex-col justify-start items-start gap-16"
+      className="w-full px-14 py-24 flex flex-col justify-start items-start gap-16"
       aria-label="Pricing"
     >
-      <div className="w-full max-w-[1180px] mx-auto flex flex-col justify-start items-start gap-16">
+      <div className="w-full max-w-[min(1280px,90vw)] mx-auto px-9 flex flex-col justify-start items-start gap-16">
         {/* 区块标题：徽标 + 主标题 + 描述 */}
         <div className="self-stretch flex flex-col justify-start items-center gap-6 text-center">
           <div className="inline-flex justify-start items-start">
@@ -178,15 +175,31 @@ export default function PricingSection({ data }: PricingSectionProps) {
           </div>
         </div>
 
-        {/* 限时优惠：宽度 w-full（可改为 max-w-3xl 等）；高度由内容+内边距决定，可加 min-h-[200px] 或改 py-* */}
-        <div className="w-full pl-8 md:pl-20 pr-8 md:pr-48 py-14 bg-gradient-to-r from-[#C9B47E]/10 to-[#6BABFF]/10 rounded-3xl flex flex-col justify-start items-start gap-6">
-          <h3 className="text-slate-700 text-2xl md:text-3xl font-semibold font-['Outfit'] leading-10">
-            {data.limitedTimeOffer.title}
-          </h3>
-          <div className="flex flex-col gap-4 text-slate-500 text-lg md:text-xl font-normal font-['Outfit'] leading-7 overflow-x-auto">
-            {offerParagraphs.map((para, i) => (
-              <p key={i} className={i === 0 ? 'whitespace-nowrap' : undefined}>{parseBoldSegments(para)}</p>
-            ))}
+        {/* 限时优惠：宽度与上方 Track A/B 一致（w-full + px-6 md:px-9） */}
+        <div className="w-full px-6 md:px-9 pt-9 pb-9 bg-gradient-to-r from-stone-400/10 to-blue-400/10 rounded-3xl flex flex-col justify-start items-start gap-6">
+          <div className="w-full flex flex-col justify-start items-start gap-5">
+            <div className="self-stretch h-10 flex items-center">
+              <span className="text-slate-700 text-3xl font-normal font-['Outfit'] leading-10">⏱️ </span>
+              <span className="text-slate-700 text-3xl font-semibold font-['Outfit'] leading-10">Limited Time Offer!</span>
+            </div>
+            <div className="w-full">
+              <span className="text-slate-500 text-xl font-bold font-['Outfit'] leading-7">Save More by Booking Early!<br /></span>
+              <span className="text-slate-500 text-xl font-normal font-['Outfit'] leading-7">*Note: These savings apply to Track A only and can be stacked with our Multi-Session discount. Track B is excluded from this promotion.</span>
+            </div>
+            {/* 三张档位卡：铺满容器，内容居中；改 gap-* 可调卡片间距（如 gap-4 更密、gap-12 更疏） */}
+            <div className="w-full h-80 flex flex-row items-stretch gap-15">
+              {LIMITED_TIME_OFFER_CARDS.map((card, i) => (
+                <LimitedTimeOfferCard key={i} card={card} />
+              ))}
+            </div>
+            <div className="w-full">
+              <span className="text-slate-500 text-xl font-bold font-['Outfit'] leading-7">Sibling Discount</span>
+              <span className="text-slate-500 text-xl font-normal font-['Outfit'] leading-7">: Enroll two or more siblings and receive </span>
+              <span className="text-slate-500 text-xl font-bold font-['Outfit'] leading-7">10% off</span>
+              <span className="text-slate-500 text-xl font-normal font-['Outfit'] leading-7"> the second child&apos;s tuition.<br /></span>
+              <span className="text-slate-500 text-xl font-bold font-['Outfit'] leading-7">Payment Plans</span>
+              <span className="text-slate-500 text-xl font-normal font-['Outfit'] leading-7">: Flexible payment plans are available for enrollments of 2 or more sessions.<br /><br /></span>
+            </div>
           </div>
         </div>
 

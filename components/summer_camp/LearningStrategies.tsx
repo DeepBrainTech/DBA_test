@@ -22,7 +22,7 @@ export default function LearningStrategies({ data }: LearningStrategiesProps) {
       className="w-full px-14 pt-24 pb-16 flex flex-col justify-start items-start gap-16"
       aria-label="Learning Strategies"
     >
-      <div className="w-full max-w-[1344px] mx-auto px-9 flex flex-col justify-start items-start gap-16">
+      <div className="w-full max-w-[min(1280px,90vw)] mx-auto px-9 flex flex-col justify-start items-start gap-16">
         {/* 1. 顶部引言块：按设计稿尺寸与定位，绿色渐变 + 引号 + 正文 + 署名；文字区略宽 */}
         <div className="w-full max-w-[1200px] mx-auto h-[468px] relative rounded-3xl overflow-hidden bg-gradient-to-r from-green-400/0 to-green-400/0">
           {/* 引号：设计稿 left/top 约 28px */}
