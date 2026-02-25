@@ -19,7 +19,7 @@ export default function LearningStrategies({ data }: LearningStrategiesProps) {
   return (
     <section
       id="learning-strategies"
-      className="w-full px-4 sm:px-8 lg:px-14 pt-12 sm:pt-16 lg:pt-24 pb-10 sm:pb-12 lg:pb-16 flex flex-col justify-start items-start gap-8 sm:gap-12 lg:gap-16"
+      className="w-full px-4 sm:px-8 lg:px-14 pt-12 sm:pt-16 lg:pt-24 pb-10 sm:pb-12 lg:pb-16 bg-white flex flex-col justify-start items-start gap-8 sm:gap-12 lg:gap-16"
       aria-label="Learning Strategies"
     >
       <div className="w-full max-w-[min(1280px,95vw)] mx-auto px-0 sm:px-4 lg:px-9 flex flex-col justify-start items-start gap-8 sm:gap-12 lg:gap-16">
