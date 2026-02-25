@@ -4,7 +4,6 @@ import ProgrammingInnovators from "./ProgrammingInnovators";
 import ProgrammingStats from "./ProgrammingStats";
 import ProgrammingCourseRoadmap from './ProgrammingCourseRoadmap';
 import ProgrammingPricingSection from "./ProgrammingPricingSection";
-import ProgrammingFacultySection from "./ProgrammingFacultySection";
 import ProgrammingCompetition from "./ProgrammingCompetition";
 import ConsultationCTA from "./ConsultationCTA";
 export default function ProgrammingPage() {
@@ -17,7 +16,6 @@ export default function ProgrammingPage() {
       <ProgrammingStats />
       <ProgrammingCourseRoadmap />
       <ProgrammingPricingSection/>
-      <ProgrammingFacultySection/>
       <ProgrammingCompetition/>
       <ConsultationCTA/>
     </main>
