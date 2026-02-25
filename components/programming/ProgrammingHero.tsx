@@ -21,11 +21,11 @@ export default function ProgrammingHeroSection() {
           className="object-cover"
           priority
         />
-        {/* overlay（你原来那层渐变继续保留） */}
+        {/* overlay*/}
         <div className="absolute inset-0 bg-gradient-to-b from-[#DBFBFF]/40 to-[#F9F9F4]/40" />
       </div>
 
-      {/* Hero Content (完全对齐 Global 的容器写法) */}
+      {/* Hero Content*/}
       <div className="relative z-10 max-w-[1920px] mx-auto px-[81px] py-[120px] flex-1 flex flex-col items-center justify-center text-center translate-y-[65px]">
         {/* Main Title */}
         <h1 className="text-[80px] font-bold text-[#333] leading-[140px] mb-[30px]">
@@ -37,7 +37,7 @@ export default function ProgrammingHeroSection() {
           Master Coding. Build the Future.
         </p>
 
-        {/* Pills (复用 Global 的 pill 样式) */}
+        {/* Pills  */}
         <div className="flex items-start gap-[26px] mb-[80px] w-full max-w-[1759px]">
           {pills.map((p) => (
             <div
