@@ -1,105 +1,101 @@
-'use client';
+/**
+ * 文件用途：编程页面核心理念卡片区块 - 展示编程教育的四大核心价值
+ * 依赖关系：next/image；布局风格参考 ChessPhilosophySection（Educational Value）
+ * 注意事项：响应式布局，字号与 braingames Educational Value 保持一致
+ */
 
 import Image from 'next/image';
 
+/** 单张理念卡数据结构 */
 type PillarCardData = {
   title: string;
   desc: string;
-  iconSrc: string; // 透明背景的 icon（建议 svg 或裁切紧的 png）
+  iconSrc: string;
 };
 
+/** 四大编程教育核心理念 */
 const CARDS: PillarCardData[] = [
   {
     title: 'Digital-Age Literacy',
     desc: 'Coding is the fundamental language required to understand the modern world.',
-    iconSrc: '/programming/digital-age.svg',
+    iconSrc: '/programming/learn_to_code/1.png',
   },
   {
     title: 'Logical Reasoning',
     desc: 'Programming strengthens logical structures and enhances complex problem-solving abilities.',
-    iconSrc: '/programming/logical.svg',
+    iconSrc: '/programming/learn_to_code/2.png',
   },
   {
     title: 'Computational Thinking',
     desc: 'Develops critical skills including decomposition, pattern recognition, abstraction, and algorithm design.',
-    iconSrc: '/programming/computational.svg',
+    iconSrc: '/programming/learn_to_code/3.png',
   },
   {
-    title: "The Innovator’s Mindset",
+    title: "The Innovator's Mindset",
     desc: 'We empower students to transition from passive technology users to active creators.',
-    iconSrc: '/programming/innovator.svg',
+    iconSrc: '/programming/learn_to_code/4.png',
   },
 ];
 
+/** 单张理念卡组件 - 样式与 ChessPhilosophySection 理念卡一致 */
 function PillarCard({ title, desc, iconSrc }: PillarCardData) {
   return (
-    <div
-      className="
-        w-[414px] h-[484px]
-        rounded-[39.83px]
-        bg-[#FBF8F3]
-        shadow-[0_2px_12px_rgba(0,0,0,0.04)]
-        flex flex-col items-center
-        font-outfit
-        overflow-hidden
-      "
-    >
-      {/* icon background container (mint block) */}
-      <div className="mt-[53.1px] w-[132.8px] h-[132.8px] rounded-[33.19px] bg-[#E7F6F6] flex items-center justify-center flex-shrink-0">
-        {/* icon image (透明背景) */}
+    <div className="rounded-3xl bg-[#FBF9F4] px-6 pt-9 pb-8 text-center flex flex-col items-center">
+      {/* 图标容器：薄荷绿背景圆角方块 */}
+      <div className="w-20 h-20 shrink-0 rounded-3xl bg-[#4ECDC4]/10 flex justify-center items-center">
         <Image
           src={iconSrc}
-          alt={title}
-          width={64}
-          height={64}
-          className="h-[64px] w-[64px]"
+          alt=""
+          width={40}
+          height={40}
+          className="object-contain"
+          aria-hidden
         />
       </div>
-
-        {/* title block: fixed area + center */}
-        <div className="mt-[39.79px] w-[307.3px] h-[84px] flex items-center justify-center text-center">
-        <div className="w-full font-semibold text-[#2C3E50] text-[25px] leading-[35px]">
-            {title}
-        </div>
-        </div>
-
-        {/* desc */}
-        <div className="mt-[5px] w-[307.3px] text-center text-[#7A8A9A] text-[20px] leading-[30px]">
+      {/* 标题 - whitespace-nowrap 确保标题在同一行显示 */}
+      <h3 className="mt-5 w-full text-center text-slate-700 text-xl md:text-2xl font-semibold font-['Outfit'] leading-tight whitespace-nowrap">
+        {title}
+      </h3>
+      {/* 描述 */}
+      <p className="mt-4 w-full max-w-[18rem] text-center text-slate-500 text-base md:text-lg font-normal font-['Outfit'] leading-snug">
         {desc}
-        </div>
+      </p>
     </div>
   );
 }
 
 export default function ProgrammingPillars() {
   return (
-    <section className="w-full bg-white">
-      {/* Figma 容器宽：1400 */}
-      <div className="mx-auto w-[1400px] py-[60px]">
-        {/* Learn to Code pill */}
-        <div className="flex justify-center">
-          <div className="inline-flex items-center gap-[12px] rounded-[999px] bg-[#EAF7FF] px-[24px] py-[10px]">
-            {/* 这里如果你有真实小图标，也可以换成 Image */}
-            <span className="text-[18px]">💻</span>
-            <span className="text-[14px] font-medium text-[#2AAED6] font-outfit">
+    <section id="programming-pillars" className="bg-white">
+      <div className="mx-auto max-w-[1344px] px-9 py-24 flex flex-col gap-16">
+        {/* 顶部：badge + 主标题 + 副标题（与 ChessPhilosophySection 结构一致） */}
+        <div className="w-full flex flex-col items-center text-center gap-8">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-3 rounded-3xl bg-[#4ECDC4]/10 px-5 py-3.5">
+            <Image
+              src="/programming/learn_to_code/icon.png"
+              alt=""
+              width={24}
+              height={24}
+              className="w-6 h-6 object-contain"
+              aria-hidden
+            />
+            <span className="text-[#4ECDC4] text-lg md:text-xl font-normal font-['Outfit'] leading-7">
               Learn to Code
             </span>
           </div>
+          {/* 主标题 */}
+          <h2 className="text-center text-slate-700 text-3xl md:text-4xl font-bold font-['Outfit'] leading-tight">
+            Coding Is the New Literacy
+          </h2>
+          {/* 副标题 */}
+          <p className="max-w-[892px] text-slate-500 text-base md:text-lg font-normal font-['Outfit'] leading-relaxed text-center">
+            In the digital age, the ability to understand and command computers is as essential as reading, writing, and mathematics.
+          </p>
         </div>
 
-        {/* Title */}
-        <h2 className="mt-[26px] text-center text-[44px] leading-[58px] font-bold text-[#1F2937] font-outfit">
-          Coding Is the New Literacy
-        </h2>
-
-        {/* Subtitle */}
-        <p className="mt-[14px] mx-auto max-w-[980px] text-center text-[18px] leading-[28px] text-[#6B7280] font-outfit">
-          In the digital age, the ability to understand and command computers is as essential as reading,
-          writing, and mathematics.
-        </p>
-
-        {/* Cards row */}
-        <div className="mt-[50px] flex items-start justify-between gap-[26px]">
+        {/* 四张理念卡（响应式网格布局，与 ChessPhilosophySection 一致） */}
+        <div className="w-full grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {CARDS.map((c) => (
             <PillarCard key={c.title} {...c} />
           ))}

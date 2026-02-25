@@ -19,7 +19,7 @@ const PHASES: Phase[] = [
     phase: 'Phase 1',
     title: 'Foundations of AI & Python',
     weeks: 'Week 1-2',
-    icon: '/programming/foundations.svg',
+    icon: '/programming/featured_course/1.png',
     iconType: 'image',
     objectives:
       'Introduce the basic concepts of how machines learn and establish foundational coding skills in Python.',
@@ -31,7 +31,7 @@ const PHASES: Phase[] = [
     phase: 'Phase 2',
     title: 'Perception & Language',
     weeks: 'Week 3-4',
-    icon: '/programming/perception.svg',
+    icon: '/programming/featured_course/2.png',
     iconType: 'image',
     objectives:
       'Explore how AI processes complex data like images and human language through Computer Vision and Natural Language Processing.',
@@ -43,7 +43,7 @@ const PHASES: Phase[] = [
     phase: 'Phase 3',
     title: 'Logic, Interaction & Ethics',
     weeks: 'Week 5-8',
-    icon: '/programming/interaction.svg',
+    icon: '/programming/featured_course/3.png',
     iconType: 'image',
     objectives:
       'Apply coding logic to build interactive agents and engage in critical discussions regarding AI’s impact on society.',
@@ -55,85 +55,95 @@ const PHASES: Phase[] = [
 
 function PhaseRow(p: Phase) {
   const leftIcon = (
-    <div className="h-[58px] w-[58px] rounded-[16px] bg-[#E7F6F6] flex items-center justify-center">
+    <div className="h-20 w-20 rounded-2xl bg-[#E7F6F6] flex items-center justify-center">
       {p.iconType === 'image' ? (
-        <Image src={p.icon} alt={p.title} width={28} height={28} className="h-[28px] w-[28px]" />
+        <Image src={p.icon} alt={p.title} width={40} height={40} className="h-10 w-10" />
       ) : (
-        <span className="text-[22px] leading-[22px]">{p.icon}</span>
+        <span className="text-xl">{p.icon}</span>
       )}
     </div>
   );
 
   return (
-    <div
-      className="
-        w-full
-        rounded-[33px]
-        bg-white
-        px-[40px]
-        py-[34px]
-        font-outfit
-        shadow-[0_10px_30px_rgba(0,0,0,0.04)]
-      "
-    >
-      <div className="flex items-start gap-[34px]">
-        {/* 左侧栏 */}
-        <div className="w-[320px] flex-shrink-0">
-          <div className="inline-flex items-center justify-center rounded-[999px] bg-[#2AAED6] text-white text-[14px] px-[18px] py-[8px] shadow-[0_10px_22px_rgba(42,174,214,0.25)]">
-            {p.phase}
-          </div>
-
-          <div className="mt-[18px]">{leftIcon}</div>
-
-          <div className="mt-[18px] text-[22px] leading-[30px] font-semibold text-[#1F2937]">
-            {p.title}
-          </div>
-
-          <div className="mt-[8px] text-[16px] leading-[22px] text-[#6B7280]">
-            {p.weeks}
-          </div>
+    <div className="flex flex-col">
+      {/* Phase 按钮 - 使用 z-10 和 mb 负值让按钮骑在容器顶部 */}
+      <div className="relative z-10 ml-10 mb-[-1rem]">
+        <div className="inline-flex items-center justify-center rounded-full bg-[#2AAED6] text-white text-sm px-5 py-2 shadow-md">
+          {p.phase}
         </div>
+      </div>
 
-        {/* 中间内容 */}
-        <div className="flex-1">
-          {/* Objectives box */}
-          <div className="rounded-[18px] bg-[#FBF8F3] px-[26px] py-[20px]">
-            <div className="flex items-center gap-[10px] text-[18px] font-semibold text-[#1F2937]">
-              <span>🎯</span>
-              <span>Objectives</span>
+      {/* 主内容卡片 */}
+      <div className="w-full rounded-3xl bg-white px-10 pt-10 pb-8 font-outfit shadow-sm">
+        <div className="flex flex-col lg:flex-row items-start gap-2">
+          {/* 左侧栏 */}
+          <div className="w-full lg:w-72 shrink-0">
+            <div>{leftIcon}</div>
+
+            <div className="mt-4 text-xl font-semibold text-gray-800">
+              {p.title}
             </div>
 
-            <p className="mt-[10px] text-[16px] leading-[26px] text-[#6B7280] max-w-[820px]">
-              {p.objectives}
-            </p>
-          </div>
-
-          {/* Curriculum Focus */}
-          <div className="mt-[18px]">
-            <div className="flex items-center gap-[10px] text-[18px] font-semibold text-[#1F2937]">
-              <span>📚</span>
-              <span>Curriculum Focus</span>
-            </div>
-
-            <div className="mt-[14px] grid grid-cols-2 gap-x-[60px] gap-y-[14px] text-[16px] text-[#6B7280]">
-              {p.curriculum.map((item) => (
-                <div key={item} className="flex items-center gap-[12px]">
-                  <span className="h-[7px] w-[7px] rounded-full bg-[#2AAED6]" />
-                  <span>{item}</span>
-                </div>
-              ))}
+            <div className="mt-2 text-base text-gray-500">
+              {p.weeks}
             </div>
           </div>
-        </div>
 
-        {/* 右侧 Key Outcomes */}
-        <div className="w-[360px] flex-shrink-0">
-          <div className="h-full rounded-[18px] border border-[#2AAED6] bg-white px-[22px] py-[20px]">
-            <div className="text-[18px] font-semibold text-[#1F2937]">Key Outcomes</div>
+          {/* 中间内容 */}
+          <div className="flex-1">
+            {/* Objectives box */}
+            <div className="rounded-2xl bg-[#FBF8F3] px-6 py-5">
+              <div className="flex items-center gap-2.5 text-lg font-semibold text-gray-800">
+                <Image
+                  src="/programming/featured_course/objective.png"
+                  alt=""
+                  width={20}
+                  height={20}
+                  className="w-5 h-5 object-contain"
+                  aria-hidden
+                />
+                <span>Objectives</span>
+              </div>
 
-            <p className="mt-[14px] text-[16px] leading-[26px] text-[#2AAED6]">
-              {p.outcomes}
-            </p>
+              <p className="mt-2.5 text-base leading-relaxed text-gray-500">
+                {p.objectives}
+              </p>
+            </div>
+
+            {/* Curriculum Focus */}
+            <div className="mt-4">
+              <div className="flex items-center gap-2.5 text-lg font-semibold text-gray-800">
+                <Image
+                  src="/programming/featured_course/curriculum.png"
+                  alt=""
+                  width={20}
+                  height={20}
+                  className="w-5 h-5 object-contain"
+                  aria-hidden
+                />
+                <span>Curriculum Focus</span>
+              </div>
+
+              <div className="mt-3 grid grid-cols-2 gap-x-12 gap-y-3 text-base text-gray-500">
+                {p.curriculum.map((item) => (
+                  <div key={item} className="flex items-center gap-3">
+                    <span className="h-2 w-2 rounded-full bg-[#2AAED6]" />
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* 右侧 Key Outcomes */}
+          <div className="w-full lg:w-60 shrink-0">
+            <div className="h-full rounded-2xl border border-[#2AAED6] bg-white px-5 py-5">
+              <div className="text-lg font-semibold text-gray-800">Key Outcomes</div>
+
+              <p className="mt-3 text-base leading-relaxed text-[#2AAED6]">
+                {p.outcomes}
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -143,80 +153,65 @@ function PhaseRow(p: Phase) {
 
 export default function ProgrammingCourseRoadmap() {
   return (
-    <section className="w-full bg-[#FBF8F3]">
-      <div className="mx-auto max-w-[1813.5px] px-[81px] py-[90px] font-outfit">
-        {/* top pill */}
-        <div className="flex justify-center">
-          <div
-            className="
-              relative
-              h-[69px] w-[310px]
-              rounded-[33.19px] bg-white
-              shadow-[0px_1.6594641px_4.98px_rgba(0,0,0,0.1),_0px_1.6594641px_3.32px_-1.66px_rgba(0,0,0,0.1)]
-              flex items-center justify-center
-              gap-[12px]
-              text-[26.55px] leading-[42.48px]
-              text-[#4ECDC4]
-            "
-          >
+    <section className="bg-[#FBF8F3]">
+      <div className="mx-auto max-w-[1344px] px-9 py-24 font-outfit">
+        {/* 顶部：badge + 主标题 + 副标题（与 ProgrammingPillars 结构一致） */}
+        <div className="w-full flex flex-col items-center text-center gap-8">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-3 rounded-3xl bg-[#FFFFFF] px-5 py-3.5">
             <Image
-            src="/programming/featureCourse.svg"
-            alt="Featured Course"
-            width={33.2}
-            height={33.2}
-            className="h-[33.2px] w-[33.2px]"
+              src="/programming/featured_course/Icon.png"
+              alt=""
+              width={24}
+              height={24}
+              className="w-6 h-6 object-contain"
+              aria-hidden
             />
-            <span className="relative top-[-1px]">Featured Course</span>
+            <span className="text-[#4ECDC4] text-lg md:text-xl font-normal font-['Outfit'] leading-7">
+              Featured Course
+            </span>
           </div>
+          {/* 主标题 */}
+          <h2 className="text-center text-slate-700 text-3xl md:text-4xl font-bold font-['Outfit'] leading-tight">
+            AI &amp; Coding Exploratory Course
+          </h2>
+          {/* 副标题 */}
+          <p className="max-w-4xl text-slate-500 text-base md:text-lg font-normal font-['Outfit'] leading-relaxed text-center">
+            Python • AI Basics • Computer Vision • NLP • Chatbots • Game AI • Robotics
+          </p>
         </div>
 
-        <h2 className="mt-[26.39px] text-center text-[53.1px] leading-[69.03px] font-bold text-[#2C3E50]">
-          AI &amp; Coding Exploratory Course
-        </h2>
-
-
-        <p className="mt-[26.39px] text-center text-[26.55px] leading-[42.48px] text-[#7A8A9A]">
-          Python • AI Basics • Computer Vision • NLP • Chatbots • Game AI • Robotics
-        </p>
-
         {/* phases */}
-        <div className="mt-[40px] flex flex-col gap-[30px]">
+        <div className="mt-10 flex flex-col gap-8">
           {PHASES.map((p) => (
             <div key={p.phase}>{PhaseRow(p)}</div>
           ))}
         </div>
 
         {/* course info */}
-        <div className="mt-[40px] rounded-[22px] bg-gradient-to-b from-[#4ECDC4]/10 to-[#45B7D1]/10 px-[34px] py-[26px] shadow-[0_10px_26px_rgba(0,0,0,0.05)]">
-          <div className="flex items-center gap-[10px] text-[18px] font-semibold text-[#1F2937]">
-            <span>⚙️</span>
-            <span>Course Info</span>
+        <div className="mt-10 rounded-2xl bg-gradient-to-b from-[#4ECDC4]/5 via-[#45B7D1]/5 to-[#4ECDC4]/5 px-8 py-6 shadow-sm">
+          <div className="flex items-center gap-2.5 text-lg font-semibold text-gray-800">
+            <span>⏱️ Course Info</span>
           </div>
 
-          <div className="mt-[14px] text-[16px] leading-[28px] text-[#6B7280]">
-            <div>Instructor: Alex Yang</div>
+          <div className="mt-3 text-base leading-7 text-gray-500 space-y-1">
             <div>For: Students Grade 6-8</div>
-            <div>Need: Laptop + Browser/Zoom</div>
+            <div>Need: Laptop</div>
             <div>8-Week Hands-On Program</div>
           </div>
         </div>
 
         {/* CTA */}
-        <div className="mt-[54px] flex justify-center">
-          <button
-            className="
-              h-[56px] px-[44px]
-              rounded-[999px]
-              bg-[#2AAED6]
-              text-white text-[18px] font-semibold
-              shadow-[0_14px_30px_rgba(42,174,214,0.25)]
-              hover:translate-y-[-1px] hover:shadow-[0_18px_36px_rgba(42,174,214,0.28)]
-              transition
-              inline-flex items-center gap-[12px]
-            "
+        <div className="mt-14 flex justify-center">
+          <a
+            href="https://forms.gle/2mMzKoQkXHa2CVHe6"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex justify-center items-center gap-6 md:gap-7 min-w-[150px] h-12 md:h-14 pl-16 pr-6 py-3 md:pl-20 md:pr-7 md:py-3.5 bg-[#2AAED6] rounded-3xl text-white text-xl font-bold font-['Outfit'] leading-7 shadow-md hover:bg-[#45B7D1] transition-colors no-underline"
           >
-            Register Now <span className="text-[20px] leading-[20px]">→</span>
-          </button>
+            Register Now
+            <Image src="/programming/arrow.png" alt="" width={24} height={24} className="shrink-0 w-6 h-6" aria-hidden />
+          </a>
         </div>
       </div>
     </section>
