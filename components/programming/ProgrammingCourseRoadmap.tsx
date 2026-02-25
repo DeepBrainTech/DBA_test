@@ -19,8 +19,8 @@ const PHASES: Phase[] = [
     phase: 'Phase 1',
     title: 'Foundations of AI & Python',
     weeks: 'Week 1-2',
-    icon: '🎮',
-    iconType: 'emoji',
+    icon: '/programming/foundations.svg',
+    iconType: 'image',
     objectives:
       'Introduce the basic concepts of how machines learn and establish foundational coding skills in Python.',
     curriculum: ['Computer Logic', 'Python Basics', 'Machine Learning', 'Data Patterns'],
@@ -31,8 +31,8 @@ const PHASES: Phase[] = [
     phase: 'Phase 2',
     title: 'Perception & Language',
     weeks: 'Week 3-4',
-    icon: '🎗️',
-    iconType: 'emoji',
+    icon: '/programming/perception.svg',
+    iconType: 'image',
     objectives:
       'Explore how AI processes complex data like images and human language through Computer Vision and Natural Language Processing.',
     curriculum: ['Image Pixels', 'Python Functions', 'Text Tokenization', 'NLP Pipeline'],
@@ -43,8 +43,8 @@ const PHASES: Phase[] = [
     phase: 'Phase 3',
     title: 'Logic, Interaction & Ethics',
     weeks: 'Week 5-8',
-    icon: '🚀',
-    iconType: 'emoji',
+    icon: '/programming/interaction.svg',
+    iconType: 'image',
     objectives:
       'Apply coding logic to build interactive agents and engage in critical discussions regarding AI’s impact on society.',
     curriculum: ['Decision Logic', 'Game AI', 'Robot Sensing', 'AI Ethics'],
@@ -159,7 +159,13 @@ export default function ProgrammingCourseRoadmap() {
               text-[#4ECDC4]
             "
           >
-            <span className="text-[20px] leading-[20px]">⚙️</span>
+            <Image
+            src="/programming/featureCourse.svg"
+            alt="Featured Course"
+            width={33.2}
+            height={33.2}
+            className="h-[33.2px] w-[33.2px]"
+            />
             <span className="relative top-[-1px]">Featured Course</span>
           </div>
         </div>

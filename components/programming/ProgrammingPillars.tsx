@@ -58,13 +58,13 @@ function PillarCard({ title, desc, iconSrc }: PillarCardData) {
 
         {/* title block: fixed area + center */}
         <div className="mt-[39.79px] w-[307.3px] h-[84px] flex items-center justify-center text-center">
-        <div className="w-full font-semibold text-[#2C3E50] text-[29.87px] leading-[41.82px]">
+        <div className="w-full font-semibold text-[#2C3E50] text-[25px] leading-[35px]">
             {title}
         </div>
         </div>
 
         {/* desc */}
-        <div className="mt-[5px] w-[307.3px] text-center text-[#7A8A9A] text-[26.55px] leading-[42.48px]">
+        <div className="mt-[5px] w-[307.3px] text-center text-[#7A8A9A] text-[20px] leading-[30px]">
         {desc}
         </div>
     </div>
