@@ -13,7 +13,7 @@ import type { PreAMCProgramData, SevenStepsMethodData } from '@/types/math';
 
 const CTA_URL = 'https://forms.gle/2mMzKoQkXHa2CVHe6';
 
-/** 单张步骤卡：绿底圆角、图标(图片或 emoji)+标题、▸+描述 */
+/** 单张步骤卡 */
 function SevenStepCard({
   icon,
   iconSrc,
@@ -26,24 +26,24 @@ function SevenStepCard({
   description: string;
 }) {
   return (
-    <div className="flex flex-col gap-2 rounded-3xl bg-[#7EC97E10] pl-10 pr-7 pt-5 pb-5">
-      <div className="flex items-center gap-3">
+    <div className="flex flex-col gap-1.5 sm:gap-2 rounded-2xl lg:rounded-3xl bg-[#7EC97E10] px-4 sm:px-6 lg:pl-10 lg:pr-7 py-3 sm:py-4 lg:pt-5 lg:pb-5">
+      <div className="flex items-center gap-2 sm:gap-3">
         {iconSrc != null ? (
-          <div className="relative size-8 shrink-0 md:size-5">
+          <div className="relative w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 shrink-0">
             <Image src={iconSrc} alt="" fill className="object-contain" sizes="2.25rem" aria-hidden />
           </div>
         ) : (
-          <span className="font-outfit text-2xl font-semibold text-slate-700 md:text-2xl" aria-hidden>
+          <span className="font-outfit text-lg sm:text-xl lg:text-2xl font-semibold text-slate-700" aria-hidden>
             {icon}
           </span>
         )}
-        <h4 className="whitespace-nowrap font-outfit text-xl font-semibold text-slate-700 md:text-1xl">{title}</h4>
+        <h4 className="font-outfit text-base sm:text-lg lg:text-xl font-semibold text-slate-700">{title}</h4>
       </div>
-      <div className="flex items-start gap-2">
-        <span className="font-outfit text-xl text-green-400" aria-hidden>
+      <div className="flex items-start gap-1.5 sm:gap-2">
+        <span className="font-outfit text-base sm:text-lg lg:text-xl text-green-400" aria-hidden>
           ▸
         </span>
-        <p className="whitespace-nowrap font-outfit text-lg text-slate-500 md:text-xl">{description}</p>
+        <p className="font-outfit text-sm sm:text-base lg:text-lg xl:text-xl text-slate-500">{description}</p>
       </div>
     </div>
   );
@@ -92,7 +92,7 @@ export default function AMCProgram({ data, sevenStepsData }: AMCProgramProps) {
                     aria-hidden
                   />
                 </div>
-                <h3 className="whitespace-nowrap font-outfit text-3xl font-semibold leading-tight text-slate-700 md:text-3xl">
+                <h3 className="font-outfit text-xl sm:text-2xl lg:text-3xl font-semibold leading-tight text-slate-700">
                   {sevenStepsData.title}
                 </h3>
                 <p className="mt-3 font-outfit text-xl text-slate-500 md:text-2xl">
@@ -153,25 +153,25 @@ export default function AMCProgram({ data, sevenStepsData }: AMCProgramProps) {
             </div>
           </div>
 
-          {/* 双 CTA（与 PRE-AMC 样式一致） */}
-          <div className="flex w-full flex-wrap justify-center gap-4">
+          {/* 双 CTA */}
+          <div className="flex w-full flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4">
             <Link
               href={CTA_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-3xl bg-white px-8 py-4 font-outfit text-xl font-bold text-[#7EC97E] shadow-[0px_6.64px_9.96px_-6.64px_rgba(0,0,0,0.1),0px_16.59px_24.89px_-4.98px_rgba(0,0,0,0.1)] transition hover:bg-green-50"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl sm:rounded-2xl lg:rounded-3xl bg-white px-6 sm:px-8 py-3 sm:py-4 font-outfit text-base sm:text-lg lg:text-xl font-bold text-[#7EC97E] shadow-md transition hover:bg-green-50"
             >
               Free Assessment
-              <ArrowRight className="size-6 shrink-0" strokeWidth={2.5} />
+              <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 shrink-0" strokeWidth={2.5} />
             </Link>
             <Link
               href={CTA_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-[33px] bg-[#7EC97E] px-8 py-4 font-outfit text-xl font-bold text-white shadow-[0px_6.64px_9.96px_-6.64px_rgba(0,0,0,0.1),0px_16.59px_24.89px_-4.98px_rgba(0,0,0,0.1)] transition hover:bg-green-500"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl sm:rounded-2xl lg:rounded-[33px] bg-[#7EC97E] px-6 sm:px-8 py-3 sm:py-4 font-outfit text-base sm:text-lg lg:text-xl font-bold text-white shadow-md transition hover:bg-green-500"
             >
               Register Now
-              <ArrowRight className="size-6 shrink-0" strokeWidth={2.5} />
+              <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 shrink-0" strokeWidth={2.5} />
             </Link>
           </div>
         </div>

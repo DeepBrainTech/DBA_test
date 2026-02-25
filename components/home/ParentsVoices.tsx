@@ -100,25 +100,60 @@ export default function ParentsVoices() {
   const goNext = () => setCurrentPage((p) => Math.min(TOTAL_PAGES - 1, p + 1));
 
   return (
-    <section className="py-16 md:py-20 bg-[#FBF9F4]">
-      {/* 与 WhyDeepBrain 区域同宽同 padding，保证与前后区块左右对齐 */}
-        <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-16 xl:px-20">
-        {/* 标签与主标题与 KeyPrograms 区块保持同一尺寸与样式 */}
-        <div className="text-center mb-8 md:mb-10">
-          <div className="inline-flex items-center gap-3 px-4 py-2 bg-white rounded-full mb-4 shadow-sm">
-            <Image src="/home/section-icons/testimonials.png" alt="Testimonials" width={32} height={32} className="w-8 h-8 shrink-0" />
-            <span className="text-lg md:text-xl text-[#6BB6FF]">Testimonials</span>
+    <section className="py-12 sm:py-16 md:py-20 bg-[#FBF9F4]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20">
+        {/* 标签与主标题 */}
+        <div className="text-center mb-6 sm:mb-8 md:mb-10">
+          <div className="inline-flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 bg-white rounded-full mb-3 sm:mb-4 shadow-sm">
+            <Image src="/home/section-icons/testimonials.png" alt="Testimonials" width={32} height={32} className="w-6 h-6 sm:w-8 sm:h-8 shrink-0" />
+            <span className="text-base sm:text-lg md:text-xl text-[#6BB6FF]">Testimonials</span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-[#2C3E50] mb-3 leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#2C3E50] mb-2 sm:mb-3 leading-tight">
             Hear from Our Community
           </h2>
-          <p className="text-base md:text-lg text-[#7C8B99] max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg text-[#7C8B99] max-w-2xl mx-auto">
             Trusted by parents, loved by students.
           </p>
         </div>
 
-        {/* 2x2 网格固定行高，卡片大小不随文字多少变化；长文案在卡片内滚动 */}
-        <div className="grid grid-cols-2 grid-rows-2 gap-4 md:gap-5 mb-6 md:mb-8 max-w-6xl mx-auto h-[550px] md:h-[680px]">
+        {/* 移动端横向滚动 */}
+        <div className="md:hidden overflow-x-auto pb-4 -mx-2 px-2 mb-6">
+          <div className="flex gap-4 w-max">
+            {visibleTestimonials.map((t, idx) => (
+              <div
+                key={idx}
+                className="w-[280px] sm:w-[320px] flex-shrink-0 bg-white rounded-xl p-4 shadow-sm hover:shadow-lg transition flex flex-col border-t-4 border-[#7EC97E]"
+              >
+                <p className="text-sm sm:text-base text-[#2C3E50] leading-snug mb-3 flex-1 line-clamp-4">
+                  &quot;{t.quote}&quot;
+                </p>
+                {t.achievement && (
+                  <div className="inline-flex items-center gap-2 px-2 py-1.5 bg-[rgba(126,201,126,0.13)] rounded-lg mb-3 w-fit">
+                    <span className="text-lg">{t.achievement.emoji}</span>
+                    <span className="text-sm text-[#7EC97E] font-medium">
+                      {t.achievement.text}
+                    </span>
+                  </div>
+                )}
+                <div className="flex items-center gap-3 pt-3 border-t border-[#E8F4FC]">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-[#A8D5FF] to-[#6BB6FF] rounded-xl flex items-center justify-center text-xl sm:text-2xl flex-shrink-0">
+                    {t.avatar}
+                  </div>
+                  <div className="min-w-0">
+                    <h4 className="text-base sm:text-lg font-semibold text-[#2C3E50] truncate">
+                      {t.name}
+                    </h4>
+                    <p className="text-sm text-[#7C8B99] truncate">{t.role}</p>
+                    <p className="text-sm text-[#7C8B99] truncate">{t.location}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* 平板/桌面端 2x2 网格 */}
+        <div className="hidden md:grid grid-cols-2 grid-rows-2 gap-4 md:gap-5 mb-6 md:mb-8 max-w-6xl mx-auto h-[680px]">
           {visibleTestimonials.map((t, idx) => (
             <div
               key={idx}
@@ -152,15 +187,15 @@ export default function ParentsVoices() {
         </div>
 
         {/* Carousel Controls */}
-        <div className="flex items-center justify-center gap-6 mb-10 md:mb-12">
+        <div className="flex items-center justify-center gap-4 sm:gap-6 mb-8 sm:mb-10 md:mb-12">
           <button
             type="button"
             onClick={goPrev}
             disabled={currentPage === 0}
-            className="w-10 h-10 md:w-11 md:h-11 bg-[#6BB6FF] hover:bg-[#4A9FEF] disabled:opacity-50 disabled:cursor-not-allowed rounded-xl flex items-center justify-center text-white shadow-md hover:shadow-lg transition"
+            className="w-9 h-9 sm:w-10 sm:h-10 md:w-11 md:h-11 bg-[#6BB6FF] hover:bg-[#4A9FEF] disabled:opacity-50 disabled:cursor-not-allowed rounded-xl flex items-center justify-center text-white shadow-md hover:shadow-lg transition"
             aria-label="Previous testimonials"
           >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
             </svg>
           </button>
@@ -178,26 +213,26 @@ export default function ParentsVoices() {
             type="button"
             onClick={goNext}
             disabled={currentPage === TOTAL_PAGES - 1}
-            className="w-10 h-10 md:w-11 md:h-11 bg-[#6BB6FF] hover:bg-[#4A9FEF] disabled:opacity-50 disabled:cursor-not-allowed rounded-xl flex items-center justify-center text-white shadow-md hover:shadow-lg transition"
+            className="w-9 h-9 sm:w-10 sm:h-10 md:w-11 md:h-11 bg-[#6BB6FF] hover:bg-[#4A9FEF] disabled:opacity-50 disabled:cursor-not-allowed rounded-xl flex items-center justify-center text-white shadow-md hover:shadow-lg transition"
             aria-label="Next testimonials"
           >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
             </svg>
           </button>
         </div>
 
-        {/* Bottom Stats：与上方评价卡片同宽，边距一致 */}
-        <div className="grid grid-cols-4 gap-3 md:gap-4 max-w-6xl mx-auto">
+        {/* Bottom Stats：移动端 2x2 网格，桌面端 4 列 */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 max-w-6xl mx-auto">
           {stats.map((stat, idx) => (
             <div
               key={idx}
               className="bg-white rounded-xl p-3 md:p-4 text-center shadow-sm hover:shadow-lg transition"
             >
-              <h4 className="text-xl md:text-2xl font-semibold text-[#6BB6FF] mb-2">
+              <h4 className="text-lg sm:text-xl md:text-2xl font-semibold text-[#6BB6FF] mb-1 sm:mb-2">
                 {stat.value}
               </h4>
-              <p className="text-base text-[#7C8B99]">{stat.label}</p>
+              <p className="text-sm sm:text-base text-[#7C8B99]">{stat.label}</p>
             </div>
           ))}
         </div>

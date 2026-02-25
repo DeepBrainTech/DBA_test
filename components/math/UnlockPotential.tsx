@@ -82,7 +82,7 @@ export default function UnlockPotential({ data }: UnlockPotentialProps) {
               </ul>
             </div>
 
-            <div className="flex flex-nowrap items-center gap-5">
+            <div className="flex flex-wrap sm:flex-nowrap items-center gap-3 sm:gap-5">
               {data.trustItems.map((item, i) => (
                 <div key={i} className="flex shrink-0 items-center gap-2">
                   <Image
@@ -90,10 +90,10 @@ export default function UnlockPotential({ data }: UnlockPotentialProps) {
                     alt=""
                     width={24}
                     height={24}
-                    className="shrink-0 object-contain opacity-90"
+                    className="w-5 h-5 sm:w-6 sm:h-6 shrink-0 object-contain opacity-90"
                     aria-hidden
                   />
-                  <span className="font-outfit text-base font-normal leading-6 text-white/80 sm:text-lg">
+                  <span className="font-outfit text-sm sm:text-base lg:text-lg font-normal leading-6 text-white/80">
                     {item.label}
                   </span>
                 </div>
@@ -101,36 +101,36 @@ export default function UnlockPotential({ data }: UnlockPotentialProps) {
             </div>
           </div>
 
-          {/* 右侧：白色预约卡片（尺寸与各页 Book Free 卡片完全一致：宽度优先保证 607px） */}
-          <div className="w-full lg:w-[607px] lg:min-w-[607px] lg:shrink-0 min-h-[360px] mt-8 lg:mt-12 px-6 sm:px-8 pt-8 pb-6 sm:pt-12 sm:pb-8 bg-white rounded-3xl shadow-[0px_29px_58px_-14px_rgba(0,0,0,0.25)] flex flex-col gap-9">
-            <div className="flex flex-col gap-2.5">
-              <h3 className="font-outfit text-2xl font-semibold leading-10 text-slate-700 sm:text-3xl">
+          {/* 右侧：白色预约卡片 */}
+          <div className="w-full lg:w-[500px] xl:w-[607px] lg:shrink-0 min-h-[320px] lg:min-h-[360px] mt-6 lg:mt-12 px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8 lg:pt-12 pb-5 sm:pb-6 lg:pb-8 bg-white rounded-2xl lg:rounded-3xl shadow-[0px_29px_58px_-14px_rgba(0,0,0,0.25)] flex flex-col gap-5 sm:gap-7 lg:gap-9">
+            <div className="flex flex-col gap-2">
+              <h3 className="font-outfit text-xl sm:text-2xl lg:text-3xl font-semibold leading-tight text-slate-700">
                 {data.cardTitle}
               </h3>
-              <p className="font-outfit text-lg font-normal leading-7 text-slate-500 sm:text-xl whitespace-nowrap">
+              <p className="font-outfit text-sm sm:text-base lg:text-xl font-normal leading-relaxed text-slate-500">
                 {data.cardSubtitle}
               </p>
             </div>
 
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-3 sm:gap-4">
               <Link
                 href={ctaUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex h-14 w-full items-center justify-center gap-2.5 rounded-2xl bg-[#4CAF50] font-outfit text-xl font-normal leading-7 text-white transition-colors hover:bg-[#43A047]"
+                className="inline-flex h-11 sm:h-12 lg:h-14 w-full items-center justify-center gap-2 rounded-xl lg:rounded-2xl bg-[#4CAF50] font-outfit text-base sm:text-lg lg:text-xl font-normal text-white transition-colors hover:bg-[#43A047]"
               >
                 {data.ctaLabel}
-                <ArrowRight className="h-6 w-6 shrink-0" strokeWidth={2} />
+                <ArrowRight className="h-5 w-5 sm:h-6 sm:w-6 shrink-0" strokeWidth={2} />
               </Link>
             </div>
 
-            <div className="pt-6 border-t border-indigo-50 grid grid-cols-3 gap-x-6 gap-y-6 justify-items-center">
+            <div className="pt-4 sm:pt-6 border-t border-indigo-50 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-x-4 lg:gap-x-6 justify-items-center">
               {data.stats.map((stat, i) => (
-                <div key={i} className="flex flex-col gap-0.5 min-w-0 items-center text-center">
-                  <span className="font-outfit text-xl font-semibold leading-7 text-[#4CAF50]">
+                <div key={i} className="flex flex-col gap-0.5 items-center text-center">
+                  <span className="font-outfit text-base sm:text-lg lg:text-xl font-semibold text-[#4CAF50]">
                     {stat.value}
                   </span>
-                  <span className="font-outfit truncate text-lg font-normal leading-7 text-slate-500">
+                  <span className="font-outfit text-xs sm:text-sm lg:text-base font-normal text-slate-500 text-center">
                     {stat.label}
                   </span>
                 </div>

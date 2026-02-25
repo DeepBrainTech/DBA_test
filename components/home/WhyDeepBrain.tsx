@@ -36,9 +36,9 @@ export default function WhyDeepBrain({ advantages }: WhyDeepBrainProps) {
             </p>
           </div>
 
-          {/* Right - Image with Overlay，缩小宽高 */}
-          <div className="w-full lg:w-[520px] xl:w-[600px] flex-shrink-0 relative">
-            <div className="relative w-full aspect-[4/3] max-h-[320px] rounded-3xl overflow-hidden shadow-[0px_24px_48px_-12px_rgba(0,0,0,0.2)]">
+          {/* Right - Image with Overlay */}
+          <div className="w-full lg:w-[420px] xl:w-[520px] 2xl:w-[600px] flex-shrink-0 relative">
+            <div className="relative w-full aspect-[4/3] max-h-[260px] sm:max-h-[300px] lg:max-h-[320px] rounded-2xl lg:rounded-3xl overflow-hidden shadow-[0px_24px_48px_-12px_rgba(0,0,0,0.2)]">
               <Image
                 src="/home/why-deepbrain/learn.svg"
                 alt="Learning Scene"
@@ -47,10 +47,10 @@ export default function WhyDeepBrain({ advantages }: WhyDeepBrainProps) {
                 className="object-cover"
               />
             </div>
-            {/* Stats Overlay 缩小 */}
-            <div className="absolute bottom-[-20px] right-[-8px] bg-gradient-to-b from-[#7EC97E] to-[#6BB87B] rounded-2xl shadow-lg px-5 py-3 w-[160px] z-10">
+            {/* Stats Overlay - 移动端隐藏绝对定位统计 */}
+            <div className="hidden sm:block absolute bottom-[-16px] sm:bottom-[-20px] right-0 sm:right-[-8px] bg-gradient-to-b from-[#7EC97E] to-[#6BB87B] rounded-xl sm:rounded-2xl shadow-lg px-4 sm:px-5 py-2.5 sm:py-3 w-[140px] sm:w-[160px] z-10">
               <p className="text-xs text-white/90 mb-0.5 leading-tight">Trusted by</p>
-              <h3 className="text-2xl font-semibold text-white mb-0.5 leading-tight">10,000+</h3>
+              <h3 className="text-xl sm:text-2xl font-semibold text-white mb-0.5 leading-tight">10,000+</h3>
               <p className="text-xs text-white/90 leading-tight">Families Worldwide</p>
             </div>
             <div className="absolute -left-4 -top-8 w-24 h-24 bg-[#FFD4A3] rounded-full opacity-20 blur-3xl" aria-hidden="true" />
