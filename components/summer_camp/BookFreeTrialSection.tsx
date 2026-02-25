@@ -135,10 +135,10 @@ export default function BookFreeTrialSection({ data }: BookFreeTrialSectionProps
               </a>
             </div>
 
-            <div className="pt-6 border-t border-indigo-50 flex flex-wrap justify-between gap-6">
+            <div className="pt-6 border-t border-indigo-50 grid grid-cols-3 gap-x-6 gap-y-6 justify-items-center">
               {data.stats.map((stat, i) => (
-                <div key={i} className="flex flex-row items-baseline gap-1.5 min-w-[100px] flex-1 whitespace-nowrap">
-                  <span className="text-rose-400 text-xl font-semibold font-['Outfit'] leading-7 shrink-0">
+                <div key={i} className="flex flex-col gap-0.5 min-w-0 items-center text-center">
+                  <span className="text-rose-400 text-xl font-semibold font-['Outfit'] leading-7">
                     {stat.value}
                   </span>
                   <span className="text-slate-500 text-lg font-normal font-['Outfit'] leading-7 truncate">

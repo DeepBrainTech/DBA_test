@@ -110,9 +110,9 @@ export default function BookFreeSection({ data }: BookFreeSectionProps) {
             </div>
           </div>
 
-          {/* 右侧：白色预约卡片（尺寸与各页 Book Free 卡片统一：607px / 统一内边距与 min-height） */}
-          <div className="w-full lg:w-[607px] lg:min-w-[607px] lg:shrink-0 min-h-[360px] mt-8 lg:mt-30 px-6 sm:px-8 pt-8 pb-6 sm:pt-12 sm:pb-8 bg-white rounded-3xl shadow-[0px_29px_58px_-14px_rgba(0,0,0,0.25)] flex flex-col gap-9">
-            <div className="flex flex-col gap-2.5 mb-2">
+          {/* 右侧：白色预约卡片（与 global BookFreeSection 容器结构一致） */}
+          <div className="w-full lg:w-[607px] lg:min-w-[607px] lg:shrink-0 min-h-[360px] mt-8 lg:mt-12 px-6 sm:px-8 pt-8 pb-6 sm:pt-12 sm:pb-8 bg-white rounded-3xl shadow-[0px_29px_58px_-14px_rgba(0,0,0,0.25)] flex flex-col gap-9">
+            <div className="flex flex-col gap-2.5">
               <h3 className="text-slate-700 text-2xl sm:text-3xl font-semibold font-['Outfit'] leading-10">
                 {data.cardTitle}
               </h3>
@@ -121,7 +121,7 @@ export default function BookFreeSection({ data }: BookFreeSectionProps) {
               </p>
             </div>
 
-            <div className="flex flex-col bg-gradient-to-b from-[#F4A460] to-[#E89451] rounded-2xl gap-4">
+            <div className="flex flex-col gap-4">
               <a
                 href="https://forms.gle/2mMzKoQkXHa2CVHe6"
                 target="_blank"
@@ -133,10 +133,10 @@ export default function BookFreeSection({ data }: BookFreeSectionProps) {
               </a>
             </div>
 
-            <div className="pt-6 border-t border-indigo-50 flex flex-wrap justify-between gap-6">
+            <div className="pt-6 border-t border-indigo-50 grid grid-cols-3 gap-x-6 gap-y-6 justify-items-center">
               {data.stats.map((stat, i) => (
-                <div key={i} className="flex flex-row items-baseline gap-1.5 min-w-[100px] flex-1 whitespace-nowrap">
-                  <span className="text-[#F4A460] text-xl font-semibold font-['Outfit'] leading-7 shrink-0">
+                <div key={i} className="flex flex-col gap-0.5 min-w-0 items-center text-center">
+                  <span className="text-[#F4A460] text-xl font-semibold font-['Outfit'] leading-7">
                     {stat.value}
                   </span>
                   <span className="text-slate-500 text-lg font-normal font-['Outfit'] leading-7 truncate">

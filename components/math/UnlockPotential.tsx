@@ -27,9 +27,9 @@ export default function UnlockPotential({ data }: UnlockPotentialProps) {
       className="relative w-full overflow-hidden bg-gradient-to-b from-[#7EC97E] via-[#6BB86B] to-[#5FA65F]"
       aria-label="Book Free Trial"
     >
-      <div className="relative mx-auto w-full max-w-[1280px] px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+      <div className="relative w-full max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         {/* 顶部 Limited offer 徽标 */}
-        <div className="mb-6 flex justify-center lg:mb-8">
+        <div className="mb-6 flex justify-center lg:mb-18">
           <div className="inline-flex items-center gap-2.5 rounded-3xl bg-white/20 px-7 py-3.5 opacity-90">
             <Image
               src="/math/limited_time_offer/icon.png"
@@ -124,10 +124,10 @@ export default function UnlockPotential({ data }: UnlockPotentialProps) {
               </Link>
             </div>
 
-            <div className="flex flex-wrap justify-between gap-6 border-t border-slate-100 pt-6">
+            <div className="pt-6 border-t border-indigo-50 grid grid-cols-3 gap-x-6 gap-y-6 justify-items-center">
               {data.stats.map((stat, i) => (
-                <div key={i} className="flex min-w-[100px] flex-1 flex-row items-baseline gap-1.5 whitespace-nowrap">
-                  <span className="font-outfit shrink-0 text-xl font-semibold leading-7 text-[#4CAF50]">
+                <div key={i} className="flex flex-col gap-0.5 min-w-0 items-center text-center">
+                  <span className="font-outfit text-xl font-semibold leading-7 text-[#4CAF50]">
                     {stat.value}
                   </span>
                   <span className="font-outfit truncate text-lg font-normal leading-7 text-slate-500">
