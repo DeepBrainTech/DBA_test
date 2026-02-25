@@ -5,6 +5,7 @@
  */
 
 import Image from 'next/image';
+import Link from 'next/link';
 import type { Program } from '@/types/program';
 
 interface KeyProgramsProps {
@@ -35,7 +36,8 @@ export default function KeyPrograms({ programs }: KeyProgramsProps) {
         {/* Programs Grid */}
         <div className="grid grid-cols-4 gap-[48px]">
           {programs.map((program, idx) => (
-            <div key={idx} className={`relative bg-gradient-to-br ${program.bgGradient} rounded-[36px] p-[48px] shadow-lg hover:shadow-xl transition flex flex-col h-full`}>
+            <Link key={idx} href={`/${program.slug}`}>
+            <div className={`relative bg-gradient-to-br ${program.bgGradient} rounded-[36px] p-[48px] shadow-lg hover:shadow-xl transition flex flex-col h-full cursor-pointer`}>
               <div className="absolute top-8 right-8 w-[60px] h-[60px] bg-white/40 rounded-[18px] flex items-center justify-center text-[30px] font-bold" style={{ color: program.color }}>
                 {idx + 1}
               </div>
@@ -74,13 +76,14 @@ export default function KeyPrograms({ programs }: KeyProgramsProps) {
                 ))}
               </div>
               
-              <button className="mt-auto w-full h-[74px] bg-white rounded-[24px] flex items-center justify-center gap-[12px] hover:shadow-lg transition">
+              <div className="mt-auto w-full h-[74px] bg-white rounded-[24px] flex items-center justify-center gap-[12px] hover:shadow-lg transition">
                 <span className="text-[24px]" style={{ color: program.color }}>Learn More</span>
                 <svg className="w-[27px] h-[27px]" style={{ color: program.color }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.25} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
-              </button>
+              </div>
             </div>
+            </Link>
           ))}
         </div>
       </div>

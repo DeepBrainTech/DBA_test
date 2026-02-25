@@ -12,8 +12,9 @@ import type { Program, TrustBadge, Advantage, StudentAchievement, NewsArticle } 
 export const programs: Program[] = [
   {
     icon: '📊',
-    iconSrc: '/Key%20Programs/Math.svg',
+    iconSrc: '/KeyPrograms/Math.svg',
     title: 'Math',
+    slug: 'math',
     subtitle: 'Build Logic · Spark Interest',
     description: 'Fun, structured learning that builds math thinking and problem-solving from basics to competitions.',
     features: ['Step-by-step curriculum', 'Mind map practice', 'Contest problem review', '1 on 1 support'],
@@ -22,8 +23,9 @@ export const programs: Program[] = [
   },
   {
     icon: '♟️',
-    iconSrc: '/Key%20Programs/Chess.svg',
+    iconSrc: '/KeyPrograms/Chess.svg',
     title: 'Chess',
+    slug: 'chess',
     subtitle: 'Build Strategy · Perspective',
     description: 'Structured coaching from beginner to advanced levels develops strategic thinking and resilience.',
     features: ['Beginner to rank courses', 'Practice matches', 'Master game analysis', 'Online & offline competition'],
@@ -32,8 +34,9 @@ export const programs: Program[] = [
   },
   {
     icon: '🌍',
-    iconSrc: '/Key%20Programs/Global_Education.svg',
+    iconSrc: '/KeyPrograms/Global_Education.svg',
     title: 'Global Education',
+    slug: 'global-education',
     subtitle: 'Plan Ahead · Go Global',
     description: 'One-step support for applications, language skills, and profile enhancement.',
     features: ['Personalized plans', 'Elite school guidance', 'Language improvement', 'Profile building'],
@@ -42,8 +45,9 @@ export const programs: Program[] = [
   },
   {
     icon: '💻',
-    iconSrc: '/Key%20Programs/Programming.svg',
+    iconSrc: '/KeyPrograms/Programming.svg',
     title: 'Programming',
+    slug: 'programming',
     subtitle: 'Learn to code · Develop the brain',
     description: "Don't just let children play games; teach them how to create games",
     features: ['Extensive programming experience', 'Learning Path Planning', 'Creative Projects', 'competition awards'],
