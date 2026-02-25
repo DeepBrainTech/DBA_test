@@ -12,28 +12,28 @@ export default function MathTeachingPhilosophy() {
   const cards = mathPageData.teachingPhilosophyCards;
 
   return (
-    <section id="math-teaching" className="py-24 bg-white">
-      <div className="mx-auto w-full max-w-[1344px] px-9">
-        <div className="flex flex-col items-center text-center mb-16">
-          {/* 与 summer_camp Learning Strategies 区块 badge 样式一致：浅绿背景、药丸圆角、图标 1.png */}
-          <div className="relative inline-flex items-center gap-3 rounded-3xl bg-[#E8F5E9] px-5 py-3.5 mb-6">
-            <span className="relative block size-5 md:size-7 shrink-0">
+    <section id="math-teaching" className="py-12 sm:py-16 lg:py-24 bg-white">
+      <div className="mx-auto w-full max-w-[1344px] px-4 sm:px-6 lg:px-9">
+        <div className="flex flex-col items-center text-center mb-8 sm:mb-12 lg:mb-16">
+          {/* badge */}
+          <div className="relative inline-flex items-center gap-2 sm:gap-3 rounded-2xl lg:rounded-3xl bg-[#E8F5E9] px-4 sm:px-5 py-2.5 sm:py-3.5 mb-4 sm:mb-6">
+            <span className="relative block w-5 h-5 md:w-7 md:h-7 shrink-0">
               <Image src="/math/hero/1.png" alt="" fill className="object-contain" sizes="1.75rem" aria-hidden />
             </span>
-            <span className="text-[#4CAF50] text-lg md:text-xl font-normal font-outfit leading-7">
+            <span className="text-[#4CAF50] text-base sm:text-lg md:text-xl font-normal font-outfit">
               Teaching Features
             </span>
           </div>
 
-          <h2 className="text-4xl md:text-5xl leading-tight font-bold text-[#2C3E50] mb-4">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl leading-tight font-bold text-[#2C3E50] mb-3 sm:mb-4">
             Math Teaching Philosophy
           </h2>
-          <p className="max-w-3xl text-base leading-relaxed text-[#2C3E50]/60">
+          <p className="max-w-3xl text-sm sm:text-base leading-relaxed text-[#2C3E50]/60">
             Our unique teaching methodology makes complex mathematical concepts easy to understand.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
           {cards.map((card) => (
             <MathTeachingPhilosophyCard key={card.number} {...card} />
           ))}

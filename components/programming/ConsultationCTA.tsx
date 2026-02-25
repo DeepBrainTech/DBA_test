@@ -105,7 +105,7 @@ export default function ConsultationCTA() {
               </ul>
             </div>
 
-            <div className="flex flex-nowrap items-center gap-5">
+            <div className="flex flex-wrap sm:flex-nowrap items-center gap-3 sm:gap-5">
               {trustItems.map((item, i) => (
                 <div key={i} className="flex items-center gap-2 shrink-0">
                   <Image
@@ -113,9 +113,9 @@ export default function ConsultationCTA() {
                     alt=""
                     width={24}
                     height={24}
-                    className="shrink-0 object-contain opacity-90"
+                    className="w-5 h-5 sm:w-6 sm:h-6 shrink-0 object-contain opacity-90"
                   />
-                  <span className="text-white/80 text-base sm:text-lg font-normal leading-6">
+                  <span className="text-white/80 text-sm sm:text-base lg:text-lg font-normal leading-6">
                     {item.label}
                   </span>
                 </div>
@@ -124,36 +124,36 @@ export default function ConsultationCTA() {
           </div>
 
           {/* 右侧：白色预约卡片 */}
-          <div className="w-full lg:w-[607px] lg:min-w-[607px] lg:shrink-0 min-h-[360px] mt-8 lg:mt-12 px-6 sm:px-8 pt-8 pb-6 sm:pt-12 sm:pb-8 bg-white rounded-3xl shadow-[0px_29px_58px_-14px_rgba(0,0,0,0.25)] flex flex-col gap-9">
-            <div className="flex flex-col gap-2.5">
-              <h3 className="text-slate-700 text-2xl sm:text-3xl font-semibold leading-10">
+          <div className="w-full lg:w-[500px] xl:w-[607px] lg:shrink-0 min-h-[320px] lg:min-h-[360px] mt-6 lg:mt-12 px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8 lg:pt-12 pb-5 sm:pb-6 lg:pb-8 bg-white rounded-2xl lg:rounded-3xl shadow-[0px_29px_58px_-14px_rgba(0,0,0,0.25)] flex flex-col gap-5 sm:gap-7 lg:gap-9">
+            <div className="flex flex-col gap-2">
+              <h3 className="text-slate-700 text-xl sm:text-2xl lg:text-3xl font-semibold leading-tight">
                 Schedule Your Consultation
               </h3>
-              <p className="text-slate-500 text-lg sm:text-xl font-normal leading-7 whitespace-nowrap">
+              <p className="text-slate-500 text-sm sm:text-base lg:text-xl font-normal leading-relaxed">
                 Submit your details and an advisor will contact you within 24h.
               </p>
             </div>
 
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-3 sm:gap-4">
               <a
                 href={GOOGLE_FORM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full h-14 bg-gradient-to-b from-[#44D1C6] to-[#1DA89E] rounded-2xl inline-flex justify-center items-center gap-2.5 text-white text-xl font-normal leading-7 hover:opacity-95 transition-opacity"
+                className="w-full h-11 sm:h-12 lg:h-14 bg-gradient-to-b from-[#44D1C6] to-[#1DA89E] rounded-xl lg:rounded-2xl inline-flex justify-center items-center gap-2 text-white text-base sm:text-lg lg:text-xl font-normal hover:opacity-95 transition-opacity"
               >
                 Book Free Trial
-                <ArrowRight className="w-6 h-6 shrink-0" strokeWidth={2} />
+                <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 shrink-0" strokeWidth={2} />
               </a>
             </div>
 
             {/* 底部统计 */}
-            <div className="pt-6 border-t border-teal-50 grid grid-cols-3 gap-x-6 gap-y-6 justify-items-center">
+            <div className="pt-4 sm:pt-6 border-t border-teal-50 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-x-4 lg:gap-x-6 justify-items-center">
               {stats.map((stat, i) => (
-                <div key={i} className="flex flex-col gap-0.5 min-w-0 items-center text-center">
-                  <span className="text-[#2FBFB6] text-xl font-semibold leading-7">
+                <div key={i} className="flex flex-col gap-0.5 items-center text-center">
+                  <span className="text-[#2FBFB6] text-base sm:text-lg lg:text-xl font-semibold">
                     {stat.value}
                   </span>
-                  <span className="text-slate-500 text-lg font-normal leading-7 truncate">
+                  <span className="text-slate-500 text-xs sm:text-sm lg:text-base font-normal text-center">
                     {stat.label}
                   </span>
                 </div>

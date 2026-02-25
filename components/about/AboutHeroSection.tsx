@@ -16,7 +16,7 @@ export default function AboutHeroSection() {
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[black] mb-4 sm:mb-6 md:mb-8 text-center">
           {heroContent.title}
         </h1>
-        <p className="text-base sm:text-lg md:text-xl text-[#7C8B99] leading-relaxed max-w-4xl mx-auto text-center px-1 sm:px-0">
+        <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[#7C8B99] leading-relaxed max-w-4xl mx-auto text-center px-2 sm:px-4 break-words">
           {heroContent.description}
         </p>
       </div>

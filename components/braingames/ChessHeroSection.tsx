@@ -41,38 +41,40 @@ export default function ChessHeroSection({ data }: ChessHeroSectionProps) {
           <div className="absolute inset-0 bg-[lightgray]/10" aria-hidden />
         </div>
         {/* 内容区 */}
-        <div className="relative z-10 mx-auto flex min-h-full max-w-[1344px] flex-col items-center justify-center px-9 pt-[106px] pb-4 text-center">
-          <h1 className="font-outfit mt-20 text-5xl font-bold leading-[1.75] text-[#333333] md:text-6xl lg:text-[80px] lg:leading-[140px]">
+        <div className="relative z-10 mx-auto flex min-h-full max-w-[1344px] flex-col items-center justify-center px-4 sm:px-6 lg:px-9 pt-[106px] pb-4 text-center">
+          <h1 className="font-outfit mt-10 sm:mt-14 lg:mt-20 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[80px] font-bold leading-tight lg:leading-[1.75] xl:leading-[140px] text-[#333333]">
             {data.title}
           </h1>
-          <p className="font-outfit mt-4 max-w-[926px] text-xl font-medium leading-[46px] text-black md:text-2xl lg:text-[32px]">
+          <p className="font-outfit mt-2 sm:mt-3 lg:mt-4 max-w-[926px] text-base sm:text-lg md:text-xl lg:text-2xl xl:text-[32px] font-medium leading-relaxed lg:leading-[46px] text-black">
             {data.subtitle}
           </p>
-          {/* 四卡片：与 summer_camp 同一行布局 */}
-          <div className="mt-16 flex flex-nowrap items-stretch justify-center gap-[26px]">
-            {data.features.map((feature, index) => {
-              const img = HERO_CARD_IMGS[index];
-              return (
-                <div
-                  key={feature.label}
-                  className="flex min-h-[clamp(3.5rem,12vw,92.909px)] min-w-0 flex-1 max-w-[1920px] min-[1400px]:min-w-[350px] items-center gap-3 rounded-3xl bg-white/80 pl-4 pr-4 transition hover:shadow-lg cursor-pointer md:gap-5 md:pl-7 md:pr-7"
-                >
-                  <Image
-                    src={img.src}
-                    alt=""
-                    width={img.width}
-                    height={img.height}
-                    className="shrink-0 max-h-14 w-auto object-contain md:max-h-16"
-                  />
-                  <span className="font-outfit text-[#2C3E50] text-base leading-[33px] lg:text-[22px] lg:whitespace-nowrap">
-                    {feature.label}
-                  </span>
-                </div>
-              );
-            })}
+          {/* 四卡片：移动端横向滚动 */}
+          <div className="mt-8 sm:mt-12 lg:mt-16 w-full overflow-x-auto pb-2 -mx-2 px-2 lg:overflow-x-visible lg:mx-0 lg:px-0">
+            <div className="flex gap-3 sm:gap-4 lg:gap-[26px] w-max lg:w-auto lg:justify-center">
+              {data.features.map((feature, index) => {
+                const img = HERO_CARD_IMGS[index];
+                return (
+                  <div
+                    key={feature.label}
+                    className="flex-shrink-0 lg:flex-shrink flex min-h-[56px] sm:min-h-[70px] lg:min-h-[clamp(3.5rem,12vw,92.909px)] w-[180px] sm:w-[220px] lg:w-auto lg:flex-1 lg:max-w-[350px] items-center gap-2 sm:gap-3 md:gap-5 rounded-xl sm:rounded-2xl lg:rounded-3xl bg-white/80 px-3 sm:px-4 md:pl-7 md:pr-7 transition hover:shadow-lg cursor-pointer"
+                  >
+                    <Image
+                      src={img.src}
+                      alt=""
+                      width={img.width}
+                      height={img.height}
+                      className="shrink-0 max-h-10 sm:max-h-12 md:max-h-14 lg:max-h-16 w-auto object-contain"
+                    />
+                    <span className="font-outfit text-[#2C3E50] text-sm sm:text-base lg:text-[22px] leading-snug lg:leading-[33px]">
+                      {feature.label}
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
           </div>
           {/* 四卡片下方文案 */}
-          <div className="mt-6 text-center font-outfit text-xl font-medium capitalize leading-10 text-white [text-shadow:_0px_2px_4px_rgb(0_0_0_/_0.20)]">
+          <div className="mt-4 sm:mt-6 text-center font-outfit text-base sm:text-lg lg:text-xl font-medium capitalize leading-relaxed lg:leading-10 text-white [text-shadow:_0px_2px_4px_rgb(0_0_0_/_0.20)]">
             Discover the Charm of Board Games
           </div>
         </div>

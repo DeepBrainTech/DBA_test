@@ -3,7 +3,7 @@
 import Image from 'next/image';
 
 type StatItem = {
-  icon: string; // 可以用 emoji，也可以换成 svg
+  icon: string;
   value: string;
   label: string;
 };
@@ -19,8 +19,8 @@ function StatCard({ icon, value, label }: StatItem) {
   return (
     <div
       className="
-        flex-1 min-w-0 py-6 px-4
-        rounded-2xl
+        py-4 sm:py-6 px-3 sm:px-4
+        rounded-xl sm:rounded-2xl
         bg-gradient-to-b from-[#FFFFFF] to-[#E0F7FA]
         flex flex-col items-center justify-center
         text-center
@@ -30,24 +30,24 @@ function StatCard({ icon, value, label }: StatItem) {
       "
     >
       {/* icon */}
-      <div className="mb-3">
+      <div className="mb-2 sm:mb-3">
         <Image
           src={icon}
           alt=""
           width={28}
           height={28}
-          className="w-7 h-7 object-contain"
+          className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 object-contain"
           aria-hidden
         />
       </div>
 
       {/* value */}
-      <div className="text-2xl md:text-3xl font-semibold text-[#2AAED6]">
+      <div className="text-lg sm:text-2xl lg:text-3xl font-semibold text-[#2AAED6]">
         {value}
       </div>
 
-      {/* label - whitespace-nowrap 确保不换行 */}
-      <div className="mt-2 text-sm text-gray-500 whitespace-nowrap">
+      {/* label */}
+      <div className="mt-1 sm:mt-2 text-xs sm:text-sm text-gray-500 text-center">
         {label}
       </div>
     </div>
@@ -57,8 +57,9 @@ function StatCard({ icon, value, label }: StatItem) {
 export default function ProgrammingStats() {
   return (
     <section className="bg-white">
-      <div className="mx-auto max-w-[1344px] px-9 pt-8 pb-24">
-        <div className="flex flex-nowrap items-center justify-center gap-6">
+      <div className="mx-auto max-w-[1344px] px-4 sm:px-6 lg:px-9 pt-6 sm:pt-8 pb-12 sm:pb-16 lg:pb-24">
+        {/* 移动端2x2网格，平板/桌面4列 */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
           {STATS.map((s) => (
             <StatCard key={s.label} {...s} />
           ))}

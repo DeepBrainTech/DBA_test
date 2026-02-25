@@ -16,34 +16,34 @@ export default function LimitedTimeOfferCard({ card }: LimitedTimeOfferCardProps
   const { title, endsDate, isStandardPricing, discountLabel, savings } = card;
 
   return (
-    <div className="flex-1 min-w-0 h-full px-7 py-7 bg-white rounded-2xl flex flex-col justify-center items-center gap-7">
-      <div className="w-full text-center text-slate-700 text-xl font-bold font-['Outfit'] uppercase leading-7">
+    <div className="flex-1 min-w-0 h-full px-3 sm:px-5 lg:px-7 py-4 sm:py-5 lg:py-7 bg-white rounded-xl sm:rounded-2xl flex flex-col justify-center items-center gap-3 sm:gap-5 lg:gap-7">
+      <div className="w-full text-center text-slate-700 text-sm sm:text-base lg:text-xl font-bold font-['Outfit'] uppercase">
         {title}
       </div>
       {isStandardPricing ? (
         <>
-          <div className="w-full h-14 flex items-center justify-center text-center text-rose-400 text-3xl font-semibold font-['Outfit'] leading-7">
+          <div className="w-full flex items-center justify-center text-center text-rose-400 text-lg sm:text-xl lg:text-3xl font-semibold font-['Outfit']">
             Standard Pricing
           </div>
-          <div className="w-full h-14 flex items-center justify-center text-center text-slate-500 text-lg font-semibold font-['Outfit'] leading-7">
+          <div className="w-full flex items-center justify-center text-center text-slate-500 text-xs sm:text-sm lg:text-lg font-semibold font-['Outfit']">
             {endsDate}
           </div>
         </>
       ) : (
         <>
           <div className="w-full text-center">
-            <span className="text-rose-400 text-5xl font-semibold font-['Outfit'] leading-7"> </span>
-            <span className="text-rose-400 text-5xl font-semibold font-['Outfit']">{discountLabel}</span>
+            <span className="text-rose-400 text-2xl sm:text-3xl lg:text-5xl font-semibold font-['Outfit']">{discountLabel}</span>
           </div>
-          <div className="w-full text-center">
+          <div className="w-full text-center text-xs sm:text-sm lg:text-lg">
             {savings && (
               <>
-                <span className="text-slate-500 text-lg font-normal font-['Outfit'] leading-7">{savings.prefix} </span>
-                <span className="text-slate-500 text-lg font-semibold font-['Outfit'] leading-7">{savings.amount} </span>
-                <span className="text-slate-500 text-lg font-normal font-['Outfit'] leading-7">{savings.suffix}<br /></span>
+                <span className="text-slate-500 font-normal font-['Outfit']">{savings.prefix} </span>
+                <span className="text-slate-500 font-semibold font-['Outfit']">{savings.amount} </span>
+                <span className="text-slate-500 font-normal font-['Outfit']">{savings.suffix}</span>
+                <br />
               </>
             )}
-            <span className="text-slate-500 text-lg font-semibold font-['Outfit'] leading-7">{endsDate}</span>
+            <span className="text-slate-500 font-semibold font-['Outfit']">{endsDate}</span>
           </div>
         </>
       )}

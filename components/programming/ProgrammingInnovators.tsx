@@ -36,24 +36,24 @@ const MINI_CARDS: MiniCard[] = [
   },
 ];
 
-/** 单张能力卡组件 - 样式与 ChessPhilosophySection quotePills 一致 */
+/** 单张能力卡组件 */
 function MiniFeatureCard({ title, desc, icon, iconType = 'emoji' }: MiniCard) {
   return (
-    <div className="rounded-2xl bg-white px-6 py-5 md:px-8 md:py-6 text-center flex flex-col items-center">
+    <div className="rounded-xl sm:rounded-2xl bg-white px-4 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 text-center flex flex-col items-center">
       {/* 图标 */}
-      <div className="mb-3">
+      <div className="mb-2 sm:mb-3">
         {iconType === 'image' ? (
-          <Image src={icon} alt="" width={28} height={28} className="h-7 w-7 object-contain" aria-hidden />
+          <Image src={icon} alt="" width={28} height={28} className="h-6 w-6 sm:h-7 sm:w-7 object-contain" aria-hidden />
         ) : (
-          <span className="text-2xl leading-none">{icon}</span>
+          <span className="text-xl sm:text-2xl leading-none">{icon}</span>
         )}
       </div>
       {/* 标题 */}
-      <div className="text-[#4ECDC4] text-base md:text-lg font-semibold font-['Outfit'] leading-7">
+      <div className="text-[#4ECDC4] text-sm sm:text-base md:text-lg font-semibold font-['Outfit']">
         {title}
       </div>
       {/* 描述 */}
-      <div className="mt-2 text-slate-500 text-base font-normal font-['Outfit'] leading-relaxed">
+      <div className="mt-1.5 sm:mt-2 text-slate-500 text-xs sm:text-sm md:text-base font-normal font-['Outfit'] leading-relaxed">
         {desc}
       </div>
     </div>
@@ -63,34 +63,43 @@ function MiniFeatureCard({ title, desc, icon, iconType = 'emoji' }: MiniCard) {
 export default function ProgrammingInnovators() {
   return (
     <section className="bg-white">
-      <div className="mx-auto max-w-[1344px] px-9 pb-24">
-        {/* 渐变背景面板（与 ChessPhilosophySection 引用面板风格一致） */}
-        <div className="w-full rounded-3xl bg-linear-to-b from-[#4ECDC4]/10 to-[#45B7D1]/10 px-6 py-10 md:px-14 md:py-14">
+      <div className="mx-auto max-w-[1344px] px-4 sm:px-6 lg:px-9 pb-12 sm:pb-16 lg:pb-24">
+        {/* 渐变背景面板 */}
+        <div className="w-full rounded-2xl lg:rounded-3xl bg-linear-to-b from-[#4ECDC4]/10 to-[#45B7D1]/10 px-4 sm:px-6 md:px-14 py-6 sm:py-8 md:py-10 lg:py-14">
           <div className="relative">
             {/* 引号装饰 */}
-            <div className="leading-none opacity-20 text-[#4ECDC4] text-5xl md:text-6xl font-normal font-['Outfit']" aria-hidden>
+            <div className="leading-none opacity-20 text-[#4ECDC4] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal font-['Outfit']" aria-hidden>
               &quot;
             </div>
             {/* 主标题 */}
-            <h3 className="text-center text-slate-700 text-xl md:text-2xl font-semibold font-['Outfit'] leading-tight mt-2">
+            <h3 className="text-center text-slate-700 text-lg sm:text-xl md:text-2xl font-semibold font-['Outfit'] leading-tight mt-1 sm:mt-2">
               Cultivating Next-Generation Innovators
             </h3>
             {/* 副标题 */}
-            <p className="mx-auto mt-5 max-w-[925px] text-center text-slate-500 text-base md:text-lg font-normal font-['Outfit'] leading-relaxed">
+            <p className="mx-auto mt-3 sm:mt-4 lg:mt-5 max-w-[925px] text-center text-slate-500 text-sm sm:text-base md:text-lg font-normal font-['Outfit'] leading-relaxed">
               Our curriculum fosters logic, problem-solving, and creativity, empowering students to become the tech leaders of tomorrow.
             </p>
-            {/* 三张能力卡网格 */}
-            <div className="mx-auto mt-12 grid max-w-[980px] grid-cols-1 gap-6 md:grid-cols-3">
+            {/* 三张能力卡：移动端横向滚动 */}
+            <div className="md:hidden mx-auto mt-6 sm:mt-8 overflow-x-auto pb-2 -mx-2 px-2">
+              <div className="flex gap-4 w-max">
+                {MINI_CARDS.map((c) => (
+                  <div key={c.title} className="w-[200px] sm:w-[240px] flex-shrink-0">
+                    <MiniFeatureCard {...c} />
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="hidden md:grid mx-auto mt-12 max-w-[980px] grid-cols-3 gap-6">
               {MINI_CARDS.map((c) => (
                 <MiniFeatureCard key={c.title} {...c} />
               ))}
             </div>
             {/* 底部署名 */}
-            <div className="mt-10 text-center">
-              <div className="text-slate-700 text-base font-normal font-['Outfit'] leading-7">
+            <div className="mt-6 sm:mt-8 lg:mt-10 text-center">
+              <div className="text-slate-700 text-sm sm:text-base font-normal font-['Outfit']">
                 DeepBrain Academy Coaching Team
               </div>
-              <div className="mt-1 text-slate-500 text-base font-normal font-['Outfit'] leading-7">
+              <div className="mt-1 text-slate-500 text-xs sm:text-sm md:text-base font-normal font-['Outfit']">
                 Dedicated to the next generation of creators.
               </div>
             </div>

@@ -14,10 +14,10 @@ export default function ChessPhilosophySection({
 }) {
     return (
         <section id="educational-value" className="bg-white">
-            <div className="mx-auto max-w-[1344px] px-9 py-24 flex flex-col gap-16">
-                {/* 顶部：badge + 主标题 + 副标题（与 summer_camp LearningStrategies 一致） */}
-                <div className="w-full flex flex-col items-center text-center gap-8">
-                    <div className="inline-flex items-center gap-3 rounded-3xl bg-[#F4A460]/10 px-5 py-3.5">
+            <div className="mx-auto max-w-[1344px] px-4 sm:px-6 lg:px-9 py-12 sm:py-16 lg:py-24 flex flex-col gap-8 sm:gap-12 lg:gap-16">
+                {/* 顶部 */}
+                <div className="w-full flex flex-col items-center text-center gap-4 sm:gap-6 lg:gap-8">
+                    <div className="inline-flex items-center gap-2 sm:gap-3 rounded-2xl lg:rounded-3xl bg-[#F4A460]/10 px-4 sm:px-5 py-2.5 sm:py-3.5">
                         <Image
                             src="/braingames/educational/icon.png"
                             alt=""
@@ -26,20 +26,46 @@ export default function ChessPhilosophySection({
                             className="w-5 h-5 md:w-7 md:h-8 object-contain shrink-0"
                             aria-hidden
                         />
-                        <span className="text-[#F4A460] text-lg md:text-xl font-normal font-['Outfit'] leading-7">
+                        <span className="text-[#F4A460] text-base sm:text-lg md:text-xl font-normal font-['Outfit']">
                             {data.badgeText}
                         </span>
                     </div>
-                    <h2 className="text-center text-slate-700 text-3xl md:text-4xl font-bold font-['Outfit'] leading-tight">
+                    <h2 className="text-center text-slate-700 text-2xl sm:text-3xl md:text-4xl font-bold font-['Outfit'] leading-tight">
                         {data.heading}
                     </h2>
-                    <p className="max-w-[892px] text-slate-500 text-base md:text-lg font-normal font-['Outfit'] leading-relaxed text-center">
+                    <p className="max-w-[892px] text-slate-500 text-sm sm:text-base md:text-lg font-normal font-['Outfit'] leading-relaxed text-center">
                         {data.subheading}
                     </p>
                 </div>
 
-                {/* 4 张理念卡（字号与 summer_camp StrategyCard 一致） */}
-                <div className="w-full grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
+                {/* 4 张理念卡：移动端横向滚动 */}
+                <div className="lg:hidden w-full overflow-x-auto pb-4 -mx-2 px-2">
+                    <div className="flex gap-4 w-max">
+                        {data.cards.map((c) => (
+                            <div
+                                key={c.id}
+                                className="w-[240px] sm:w-[280px] flex-shrink-0 rounded-2xl lg:rounded-3xl bg-[#FBF9F4] px-4 sm:px-6 pt-6 sm:pt-9 pb-5 sm:pb-8 text-center flex flex-col items-center"
+                            >
+                                <div className="w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 shrink-0 rounded-2xl lg:rounded-3xl bg-[#F4A460]/10 flex justify-center items-center">
+                                    <Image
+                                        src={c.iconSrc}
+                                        alt=""
+                                        width={40}
+                                        height={40}
+                                        className="w-7 h-7 sm:w-8 sm:h-8 lg:w-10 lg:h-10 object-contain"
+                                    />
+                                </div>
+                                <h3 className="mt-3 sm:mt-4 lg:mt-5 w-full text-center text-slate-700 text-lg sm:text-xl md:text-2xl font-semibold font-['Outfit'] leading-tight">
+                                    {c.title}
+                                </h3>
+                                <p className="mt-2 sm:mt-3 lg:mt-4 w-full text-center text-slate-500 text-sm sm:text-base md:text-lg font-normal font-['Outfit'] leading-snug">
+                                    {c.description}
+                                </p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+                <div className="hidden lg:grid w-full grid-cols-4 gap-12">
                     {data.cards.map((c) => (
                         <div
                             key={c.id}
@@ -64,19 +90,37 @@ export default function ChessPhilosophySection({
                     ))}
                 </div>
 
-                {/* 引用 / 说明面板（字号与 summer_camp 区块一致） */}
-                <div className="w-full rounded-3xl bg-linear-to-r from-[#F4A4601A] to-[#E894511A] px-6 py-10 md:px-14 md:py-14">
+                {/* 引用 / 说明面板 */}
+                <div className="w-full rounded-2xl lg:rounded-3xl bg-linear-to-r from-[#F4A4601A] to-[#E894511A] px-4 sm:px-6 md:px-14 py-6 sm:py-8 md:py-10 lg:py-14">
                     <div className="relative">
-                        <div className="leading-none opacity-20 text-[#F4A460] text-5xl md:text-6xl font-normal font-['Outfit']" aria-hidden>
+                        <div className="leading-none opacity-20 text-[#F4A460] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal font-['Outfit']" aria-hidden>
                             &quot;
                         </div>
-                        <h3 className="text-center text-slate-700 text-xl md:text-2xl font-semibold font-['Outfit'] leading-tight mt-2">
+                        <h3 className="text-center text-slate-700 text-lg sm:text-xl md:text-2xl font-semibold font-['Outfit'] leading-tight mt-1 sm:mt-2">
                             {data.quoteHeading}
                         </h3>
-                        <p className="mx-auto mt-5 max-w-[925px] text-center text-slate-500 text-base md:text-lg font-normal font-['Outfit'] leading-relaxed">
+                        <p className="mx-auto mt-3 sm:mt-4 lg:mt-5 max-w-[925px] text-center text-slate-500 text-sm sm:text-base md:text-lg font-normal font-['Outfit'] leading-relaxed">
                             {data.quoteBody}
                         </p>
-                        <div className="mx-auto mt-12 grid max-w-[980px] grid-cols-1 gap-6 md:grid-cols-3">
+                        {/* quotePills：移动端横向滚动 */}
+                        <div className="md:hidden mx-auto mt-6 sm:mt-8 overflow-x-auto pb-2 -mx-2 px-2">
+                            <div className="flex gap-4 w-max">
+                                {data.quotePills.map((p) => (
+                                    <div
+                                        key={p.id}
+                                        className="w-[200px] sm:w-[240px] flex-shrink-0 rounded-xl sm:rounded-2xl bg-white px-4 sm:px-6 py-4 sm:py-5 text-center"
+                                    >
+                                        <div className="text-[#F4A460] text-sm sm:text-base md:text-lg font-semibold font-['Outfit']">
+                                            {p.title}
+                                        </div>
+                                        <div className="mt-1.5 sm:mt-2 text-slate-500 text-xs sm:text-sm md:text-base font-normal font-['Outfit'] leading-relaxed">
+                                            {p.description}
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                        <div className="hidden md:grid mx-auto mt-12 max-w-[980px] grid-cols-3 gap-6">
                             {data.quotePills.map((p) => (
                                 <div
                                     key={p.id}
@@ -85,17 +129,17 @@ export default function ChessPhilosophySection({
                                     <div className="text-[#F4A460] text-base md:text-lg font-semibold font-['Outfit'] leading-7">
                                         {p.title}
                                     </div>
-                                    <div className="mt-2 text-slate-500 text-base font-normal font-['Outfit'] leading-relaxed whitespace-nowrap">
+                                    <div className="mt-2 text-slate-500 text-base font-normal font-['Outfit'] leading-relaxed">
                                         {p.description}
                                     </div>
                                 </div>
                             ))}
                         </div>
-                        <div className="mt-10 text-center">
-                            <div className="text-slate-700 text-base font-normal font-['Outfit'] leading-7">
+                        <div className="mt-6 sm:mt-8 lg:mt-10 text-center">
+                            <div className="text-slate-700 text-sm sm:text-base font-normal font-['Outfit']">
                                 {data.footerLine1}
                             </div>
-                            <div className="mt-1 text-slate-500 text-base font-normal font-['Outfit'] leading-7">
+                            <div className="mt-1 text-slate-500 text-xs sm:text-sm md:text-base font-normal font-['Outfit']">
                                 {data.footerLine2}
                             </div>
                         </div>

@@ -18,9 +18,9 @@ export default function Footer({ className = '' }: { className?: string }) {
   return (
     <footer className={`bg-[#2C3E50] text-white pt-12 md:pt-16 pb-0 ${className}`}>
       <div className="max-w-[1920px] mx-auto px-6 md:px-14">
-        <div className="grid grid-cols-6 gap-5 md:gap-8 mb-8 md:mb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-8 md:gap-8 mb-8 md:mb-10">
           {/* Company Info */}
-          <div className="col-span-2">
+          <div className="sm:col-span-2 lg:col-span-2">
             <div className="flex items-center gap-3 md:gap-4 mb-6 md:mb-8">
               <div className="w-14 h-14 md:w-16 md:h-16 flex items-center justify-center shrink-0">
                 <Image
