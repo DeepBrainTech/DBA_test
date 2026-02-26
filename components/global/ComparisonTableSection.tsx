@@ -15,11 +15,12 @@ export default function ComparisonTableSection() {
 
   return (
     <section className="py-16 md:py-24 lg:py-[133px] bg-[#D7D2F1]">
-      <div className="max-w-[1344px] mx-auto px-4 sm:px-6 lg:px-9">
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-9">
         {/* Comparison Table */}
         <div className="rounded-2xl md:rounded-[40px] bg-white/80 backdrop-blur-sm p-4 sm:p-8 lg:p-[53px]">
-          <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-[40px] font-semibold text-[#9B8FD8] text-center mb-8 md:mb-12 lg:mb-[53px]">
-            DeepBrain Academy vs. Traditional Agencies
+          <h3 className="text-1xl sm:text-2xl md:text-3xl font-semibold text-center mb-8 md:mb-12 lg:mb-[53px]">
+            <span className="text-[#9B8FD8]">DeepBrain Academy</span>
+            <span className="text-[#7C8B99]"> vs. Traditional Agencies</span>
           </h3>
           
           {/* 桌面端表格布局 */}
@@ -27,13 +28,13 @@ export default function ComparisonTableSection() {
             {/* Table Header */}
             <div className="grid grid-cols-12 gap-5 border-b-[3px] border-[#E8F4FC] pb-6 mb-6">
               <div className="col-span-3">
-                <p className="text-xl xl:text-[27px] font-bold text-[#7C8B99]">Services</p>
+                <p className="text-xl xl:text-2xl font-bold text-[#7C8B99]">Services</p>
               </div>
               <div className="col-span-6 text-center">
-                <p className="text-xl xl:text-[27px] font-bold text-[#9B8FD8]">DeepBrain Academy</p>
+                <p className="text-xl xl:text-2xl font-bold text-[#9B8FD8]">DeepBrain Academy</p>
               </div>
               <div className="col-span-3 text-center">
-                <p className="text-xl xl:text-[27px] font-bold text-[#7C8B99]">Traditional Agencies</p>
+                <p className="text-xl xl:text-2xl font-bold text-[#7C8B99]">Traditional Agencies</p>
               </div>
             </div>
 
@@ -42,16 +43,16 @@ export default function ComparisonTableSection() {
               {comparisonData.map((row, idx) => (
                 <div key={idx} className={`grid grid-cols-12 gap-5 ${idx < 4 ? 'border-b border-[#E8F4FC] pb-6' : 'pb-6'}`}>
                   <div className="col-span-3">
-                    <p className="text-lg xl:text-[23px] text-[#2C3E50]">{row.service}</p>
+                    <p className="text-lg xl:text-2xl text-[#2C3E50]">{row.service}</p>
                   </div>
                   <div className="col-span-6 flex justify-center">
                     <div className="bg-[rgba(155,143,216,0.1)] rounded-xl xl:rounded-[20px] px-4 xl:px-[27px] py-2 xl:py-[13px] inline-flex items-center gap-3">
-                      <span className="text-lg xl:text-[23px] text-[#9B8FD8]">✓</span>
-                      <p className="text-lg xl:text-[23px] text-[#9B8FD8]">{row.deepbrain}</p>
+                      <span className="text-lg xl:text-2xl text-[#9B8FD8]">✓</span>
+                      <p className="text-lg xl:text-2xl text-[#9B8FD8]">{row.deepbrain}</p>
                     </div>
                   </div>
                   <div className="col-span-3 text-center flex items-center justify-center">
-                    <p className="text-lg xl:text-[23px] text-[#7C8B99]">{row.traditional}</p>
+                    <p className="text-lg xl:text-2xl text-[#7C8B99]">{row.traditional}</p>
                   </div>
                 </div>
               ))}

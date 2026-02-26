@@ -18,17 +18,17 @@ interface ChallengesSectionProps {
 export default function ChallengesSection({ challenges }: ChallengesSectionProps) {
   return (
     <section id="challenges" className="pt-12 sm:pt-16 lg:pt-[80px] pb-16 sm:pb-24 lg:pb-[133px] bg-white scroll-mt-20 lg:scroll-mt-[133px]">
-      <div className="max-w-[1344px] mx-auto px-4 sm:px-6 lg:px-9">
+      <div className="max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-9">
 
         <div className="text-center mb-10 sm:mb-14 lg:mb-[80px]">
           <div className="inline-flex items-center gap-2 sm:gap-3 rounded-2xl sm:rounded-3xl bg-[#F3F0FF] px-4 sm:px-5 py-2.5 sm:py-3.5 mb-4 sm:mb-6 lg:mb-[27px]">
             <span className="text-xl sm:text-2xl" aria-hidden>🤔</span>
-            <span className="text-lg sm:text-xl lg:text-2xl text-[#9B8FD8] font-normal">Common Challenges</span>
+            <span className="text-base sm:text-lg md:text-xl text-[#9B8FD8] font-normal">Common Challenges</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-[#2C3E50] mb-4 sm:mb-6 lg:mb-[27px] leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#2C3E50] mb-4 sm:mb-6 lg:mb-[27px] leading-tight">
             Facing these hurdles?
           </h2>
-          <p className="text-base sm:text-lg lg:text-2xl text-[#7C8B99]">
+          <p className="text-sm sm:text-base md:text-lg text-[#7C8B99]">
             {`You aren't alone in the application process.`}
           </p>
         </div>

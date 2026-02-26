@@ -35,8 +35,8 @@ export default function GlobalHeroSection({ features }: GlobalHeroSectionProps) 
           <div className="absolute inset-0 bg-[lightgray]/50" aria-hidden />
         </div>
         {/* 内容区 */}
-        <div className="relative z-10 mx-auto flex min-h-full max-w-[1600px] flex-col items-center justify-center px-4 sm:px-6 lg:px-9 pt-[106px] pb-4 text-center">
-          <div className="w-full max-w-[1344px]">
+        <div className="relative z-10 mx-auto flex min-h-full max-w-[min(1280px,95vw)] flex-col items-center justify-center px-4 sm:px-6 lg:px-9 pt-[106px] pb-4 text-center">
+          <div className="w-full">
             <h1 className="font-outfit mt-10 sm:mt-14 lg:mt-20 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[80px] font-bold leading-tight lg:leading-[1.75] xl:leading-[140px] text-[#333333]">
               Global Education
             </h1>

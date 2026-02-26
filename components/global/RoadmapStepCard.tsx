@@ -40,7 +40,7 @@ export function RoadmapStepCard({
 
   return (
     <div
-      className="w-full max-w-[1600px] rounded-2xl lg:rounded-[39.83px] overflow-hidden px-4 sm:px-8 lg:px-15 py-5 sm:py-6 lg:py-8"
+      className="w-full max-w-[1280px] rounded-2xl lg:rounded-[39.83px] overflow-hidden px-4 sm:px-8 lg:px-15 py-5 sm:py-6 lg:py-8"
       style={{ background: step.bgColor }}
     >
       {/* 移动端始终左对齐，桌面端根据 align 参数决定 */}

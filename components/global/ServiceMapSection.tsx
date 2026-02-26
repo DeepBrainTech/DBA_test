@@ -15,25 +15,26 @@ interface ServiceMapSectionProps {
 export default function ServiceMapSection({ serviceSteps }: ServiceMapSectionProps) {
   return (
     <section className="flex flex-col gap-12 sm:gap-16 lg:gap-28 bg-stone-50 px-4 sm:px-6 lg:px-14 pt-12 sm:pt-20 lg:pt-32 pb-10 sm:pb-12 lg:pb-16">
-      <div className="mx-auto w-full max-w-[1200px]">
+      <div className="mx-auto w-full max-w-[1280px]">
         {/* Header */}
         <div className="flex flex-col items-center gap-4 sm:gap-6 text-center">
           <div className="inline-flex items-center gap-2 sm:gap-4 rounded-2xl sm:rounded-[33px] bg-white px-4 sm:px-8 py-2.5 sm:py-4">
             <span className="font-outfit text-2xl sm:text-4xl text-slate-700">🗺️</span>
-            <span className="font-outfit text-lg sm:text-2xl font-normal text-violet-400">
+            <span className="font-outfit text-base sm:text-lg md:text-xl font-normal text-violet-400">
               Your Roadmap
             </span>
+
           </div>
-          <h2 className="font-outfit text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight text-slate-700">
+          <h2 className="font-outfit text-2xl sm:text-3xl md:text-4xl font-bold leading-tight text-slate-700">
             From Potential to Extraordinary
           </h2>
-          <p className="font-outfit max-w-3xl text-base sm:text-lg lg:text-2xl font-normal leading-relaxed lg:leading-10 text-slate-500">
+          <p className="font-outfit max-w-3xl text-sm sm:text-base md:text-lg font-normal leading-relaxed text-slate-500">
             A complete, systematic, and transparent service process.
           </p>
         </div>
 
         {/* Timeline：桌面端左右交替，移动端垂直堆叠 */}
-        <div className="relative mx-auto mt-10 sm:mt-14 lg:mt-20 w-full max-w-[1200px]">
+        <div className="relative mx-auto mt-10 sm:mt-14 lg:mt-20 w-full max-w-[1280px]">
           
           {/* 移动端垂直时间线 */}
           <div className="lg:hidden relative">
@@ -87,7 +88,7 @@ export default function ServiceMapSection({ serviceSteps }: ServiceMapSectionPro
                   {/* 中间数字圆 */}
                   <div className="relative z-10 flex shrink-0 items-center justify-center">
                     <div
-                      className="flex h-16 w-16 xl:h-20 xl:w-20 shrink-0 items-center justify-center rounded-full text-3xl xl:text-5xl font-semibold text-white shadow-lg"
+                      className="flex h-16 w-16 xl:h-25 xl:w-25 shrink-0 items-center justify-center rounded-full text-3xl xl:text-4xl font-normal text-white shadow-lg"
                       style={{
                         boxShadow: '0px 13.28px 16.59px -9.96px rgba(0,0,0,0.1), 0px 33.19px 41.49px -8.3px rgba(0,0,0,0.1)',
                         backgroundColor: step.color,
@@ -98,7 +99,7 @@ export default function ServiceMapSection({ serviceSteps }: ServiceMapSectionPro
                   </div>
 
                   {/* 右列 */}
-                  <div className="flex flex-1 max-w-[500px] xl:max-w-[650px] justify-start">
+                  <div className="flex flex-1 max-w-[600px] xl:max-w-[750px] justify-start">
                     {step.side === 'right' ? (
                       <RoadmapStepCard step={step} align="right" />
                     ) : (
@@ -115,10 +116,10 @@ export default function ServiceMapSection({ serviceSteps }: ServiceMapSectionPro
         <div className="mt-12 sm:mt-16 lg:mt-28">
           <div className="rounded-2xl lg:rounded-[39.83px] bg-white px-4 sm:px-8 lg:px-16 xl:px-24 pt-8 sm:pt-12 lg:pt-16 pb-6 sm:pb-8 shadow-[0_10px_40px_rgba(0,0,0,0.08)] transition-shadow hover:shadow-[0_15px_50px_rgba(0,0,0,0.12)]">
             <div className="mb-6 sm:mb-8 lg:mb-10 flex flex-col items-center gap-3 sm:gap-4 text-center">
-              <h3 className="font-outfit text-xl sm:text-2xl lg:text-4xl font-semibold leading-tight lg:leading-[55.76px] text-slate-700">
+              <h3 className="font-outfit text-xl sm:text-2xl md:text-3xl font-semibold leading-tight text-slate-700">
                 Transparent Service
               </h3>
-              <p className="font-outfit max-w-[61rem] text-sm sm:text-base lg:text-2xl font-normal leading-relaxed lg:leading-10 text-slate-500">
+              <p className="font-outfit max-w-[61rem] text-sm sm:text-base md:text-lg font-normal leading-relaxed text-slate-500">
                 {`Monitor progress, access documents, and review history any time via our "Growth Portfolio" system—transforming the application process into a transparent, guided journey.`}
               </p>
             </div>

@@ -41,14 +41,14 @@ export default function AdmissionLettersSection() {
 
   return (
     <section className="pt-2 pb-16 sm:pb-24 lg:pb-[150px] bg-[#FFFFFF]">
-      <div className="max-w-[1344px] mx-auto px-4 sm:px-6 lg:px-9">
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-9">
         {/* Admission Letters Grid：移动端单列，平板双列，桌面三列 */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-[45px]">
           {letters.map((letter, idx) => (
             <div key={idx} className="flex flex-col bg-[#FBF9F4] rounded-xl lg:rounded-[20px] p-4 sm:p-6 lg:p-[27px] hover:shadow-xl transition-shadow duration-300">
               {/* Card Title */}
               <div className="mb-4 sm:mb-6 lg:mb-[27px]">
-                <h4 className="text-xl sm:text-2xl lg:text-[32px] font-normal text-[#2C3E50] leading-tight lg:leading-[50px]">
+                <h4 className="text-1xl sm:text-2xl lg:text-2xl font-semibold text-[#2C3E50] leading-tight lg:leading-[50px]">
                   Accepted to {letter.school}
                 </h4>
               </div>
@@ -74,10 +74,10 @@ export default function AdmissionLettersSection() {
                 </div>
                 {/* 姓名 + 班级 */}
                 <div className="flex flex-col justify-center gap-0.5">
-                  <p className="font-outfit text-base sm:text-lg lg:text-xl font-normal text-slate-700">
+                  <p className="font-outfit text-base sm:text-lg lg:text-1xl font-normal text-slate-700">
                     {letter.studentName}
                   </p>
-                  <p className="font-outfit text-sm sm:text-base lg:text-xl font-normal text-slate-500">
+                  <p className="font-outfit text-sm sm:text-base lg:text-1xl font-normal text-slate-500">
                     {letter.studentClass}
                   </p>
                 </div>

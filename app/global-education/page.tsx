@@ -24,14 +24,18 @@ import AdmissionSection from '@/components/global/AdmissionSection';
 import BookFreeSection from '@/components/global/BookFreeSection';
 import { features, stats, challenges, serviceSteps } from '@/data/global-education';
 
-const outfit = Outfit({ subsets: ['latin'], weight: ['400', '700'] });
+const outfit = Outfit({
+  subsets: ['latin'],
+  variable: '--font-outfit',
+  display: 'swap',
+});
 
 /**
  * 全球教育页面组件
  */
 export default function GlobalEducation() {
   return (
-    <div className={`min-h-screen bg-[#FBF9F4] ${outfit.className}`}>
+    <div className={`${outfit.variable} ${outfit.className} min-h-screen bg-[#FBF9F4]`}>
       <GlobalHeroSection features={features} />
       <StatsSection stats={stats} />
       <AdmissionLettersSection />

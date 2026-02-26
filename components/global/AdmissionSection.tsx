@@ -25,13 +25,13 @@ const admissionData: AdmissionData[] = [
 export default function AdmissionSection() {
   return (
     <section className="pt-10 sm:pt-14 lg:pt-[60px] pb-16 sm:pb-24 lg:pb-[133px] bg-gradient-to-b from-[#B7AAFB] to-[#9A8ED7] relative">
-      <div className="max-w-[1344px] mx-auto px-4 sm:px-6 lg:px-9">
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-9">
         {/* Header */}
         <div className="text-center mb-8 sm:mb-10 lg:mb-[40px]">
-          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-semibold text-white mb-4 sm:mb-6 lg:mb-[27px]">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white mb-4 sm:mb-6 lg:mb-[27px]">
             Prestigious School Admission Cases
           </h2>
-          <p className="text-base sm:text-lg lg:text-2xl font-normal text-white max-w-[1100px] mx-auto leading-relaxed">
+          <p className="text-sm sm:text-base md:text-lg font-normal text-white max-w-[1100px] mx-auto leading-relaxed">
             With an outstanding programming background and project experience, our students have been successfully admitted to top universities for computer-related majors.
           </p>
         </div>

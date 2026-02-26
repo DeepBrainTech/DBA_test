@@ -13,7 +13,7 @@ interface StatsSectionProps {
 export default function StatsSection({ stats }: StatsSectionProps) {
   return (
     <section id="stats" className="py-10 sm:py-12 lg:py-[75px] bg-[#FFFFFF]">
-      <div className="mx-auto max-w-[1344px] px-4 sm:px-6 lg:px-9">
+      <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-9">
         {/* 移动端：无引号装饰，直接显示卡片 */}
         <div className="md:hidden flex flex-col gap-4">
           {stats.map((stat, idx) => (
