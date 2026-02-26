@@ -248,7 +248,7 @@ export const summerCampPageData: SummerCampPageData = {
     trackBTable: {
       title: 'Track B: Brain & Strategy Schedule',
       subtitle: 'We offer online and onsite options for each session.',
-      columnHeaders: ['Date & Time', 'Jun 8 - Jun 19', 'Jun 22 - Jul 3', 'Jul 6 - Jul 17'],
+      columnHeaders: ['Date & Time', 'Jun 20 - Jun 31', 'Aug 3 - Aug 14', 'Aug 17 - Aug 28'],
       rows: [
         {
           timeSlot: '9:00 AM - 10:30 AM',
@@ -269,7 +269,7 @@ export const summerCampPageData: SummerCampPageData = {
           session3: { courseName: 'Chinese', tag: 'Intermediate', tagVariant: 'pink' },
         },
         {
-          timeSlot: '1:20 PM - 2:50 PM',
+          timeSlot: '3:10 PM - 4:40 PM',
           session1: { courseName: 'GO', tag: 'Intermediate', tagVariant: 'pink' },
           session2: { courseName: 'Chess', tag: 'Intermediate', tagVariant: 'pink' },
           session3: { courseName: 'AI', tag: 'Intermediate', tagVariant: 'pink' },
