@@ -138,9 +138,9 @@ export interface ScheduleCell {
 /** 日程表一行 */
 export interface SummerCampScheduleRow {
   timeSlot: string;
-  session1: ScheduleCell;
-  session2: ScheduleCell;
-  session3: ScheduleCell;
+  session1: ScheduleCell | ScheduleCell[];
+  session2: ScheduleCell | ScheduleCell[];
+  session3: ScheduleCell | ScheduleCell[];
 }
 
 /** 单张日程表（Track A 或 Track B） */

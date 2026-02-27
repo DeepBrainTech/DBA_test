@@ -252,7 +252,7 @@ export const summerCampPageData: SummerCampPageData = {
       rows: [
         {
           timeSlot: '9:00 AM - 10:30 AM',
-          session1: { courseName: 'AMC Math', tag: 'Grade 1-2', tagVariant: 'blue' },
+          session1: { courseName: 'Mental Math', tag: 'Grade 1-2', tagVariant: 'blue' },
           session2: { courseName: 'Coding', tag: 'Beginner', tagVariant: 'blue' },
           session3: { courseName: 'Chinese', tag: 'Beginner', tagVariant: 'blue' },
         },
@@ -264,7 +264,10 @@ export const summerCampPageData: SummerCampPageData = {
         },
         {
           timeSlot: '1:20 PM - 2:50 PM',
-          session1: { courseName: 'AMC Math', tag: 'Grade 3-5', tagVariant: 'pink', tag2: 'Grade 6-8', tag2Variant: 'pink' },
+          session1: [
+            { courseName: 'Mental Math', tag: 'Grade 3-4', tagVariant: 'blue' as const },
+            { courseName: 'AMC Math', tag: 'Grade 5-8', tagVariant: 'pink' as const },
+          ],
           session2: { courseName: 'Coding', tag: 'Intermediate', tagVariant: 'pink' },
           session3: { courseName: 'Chinese', tag: 'Intermediate', tagVariant: 'pink' },
         },

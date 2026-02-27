@@ -72,21 +72,28 @@ export function ScheduleTable({
                 return <span className="text-left w-full">{row.timeSlot}</span>;
               })()}
             </div>
-            {[row.session1, row.session2, row.session3].map((cell: ScheduleCell, i) => (
-              <div key={i} className="inline-flex flex-col justify-start items-center gap-1 sm:gap-2 py-3 sm:py-4 px-1 sm:px-2 text-center">
-                <span
-                  className={`text-slate-700 text-sm sm:text-lg md:text-xl font-['Outfit'] leading-tight ${
-                    courseNameWeight === 'semibold' || boldRowIndexes?.includes(rowIndex) ? 'font-semibold' : 'font-normal'
-                  }`}
-                >
-                  {cell.courseName}
-                </span>
-                <ScheduleTag tag={cell.tag} tagVariant={cell.tagVariant} />
-                {cell.tag2 != null && (
-                  <ScheduleTag tag={cell.tag2} tagVariant={cell.tag2Variant ?? cell.tagVariant} />
-                )}
-              </div>
-            ))}
+            {[row.session1, row.session2, row.session3].map((cellData, i) => {
+              const cells = Array.isArray(cellData) ? cellData : [cellData];
+              return (
+                <div key={i} className="inline-flex flex-col justify-center items-center gap-2 sm:gap-3 py-3 sm:py-4 px-1 sm:px-2 text-center">
+                  {cells.map((cell: ScheduleCell, cellIndex) => (
+                    <div key={cellIndex} className="flex flex-col items-center gap-1 sm:gap-2">
+                      <span
+                        className={`text-slate-700 text-sm sm:text-lg md:text-xl font-['Outfit'] leading-tight ${
+                          courseNameWeight === 'semibold' || boldRowIndexes?.includes(rowIndex) ? 'font-semibold' : 'font-normal'
+                        }`}
+                      >
+                        {cell.courseName}
+                      </span>
+                      <ScheduleTag tag={cell.tag} tagVariant={cell.tagVariant} />
+                      {cell.tag2 != null && (
+                        <ScheduleTag tag={cell.tag2} tagVariant={cell.tag2Variant ?? cell.tagVariant} />
+                      )}
+                    </div>
+                  ))}
+                </div>
+              );
+            })}
           </div>
         ))}
       </div>
