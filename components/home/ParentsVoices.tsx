@@ -21,7 +21,7 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     quote:
-      'Yanming Zhang is a very nice person and professional tutor who can tutor 60 subjects. He has helped my daughter to ace physics tests in a few lessons and got a 36 in ACT IN A MONTH. Thanks, yanming! You are the best in USA.',
+      'Mr. Zhang is a very nice person and professional tutor who can tutor 60 subjects. He has helped my daughter to ace physics tests in a few lessons and got a 36 in ACT IN A MONTH. Thanks, Mr. Zhang! You are the best in USA.',
     achievement: { emoji: '🎉', text: '36 points in ACT in a month' },
     name: 'XH J.',
     role: 'Parent of our student',
@@ -30,7 +30,7 @@ const testimonials: Testimonial[] = [
   },
   {
     quote:
-      'The tutor session was great. I needed assistance with Intro to Evolution Hw at a college level. Yanming was able to structure the problems down to beginner lever in order to help me understand. I strongly recommend his tutoring sessions even if it for just an hour a day. He was on time and we met in a location close to home.',
+      'The tutor session was great. I needed assistance with Intro to Evolution Hw at a college level. Mr. Zhang was able to structure the problems down to beginner lever in order to help me understand. I strongly recommend his tutoring sessions even if it for just an hour a day. He was on time and we met in a location close to home.',
     name: 'Yolanda L.',
     role: 'Student',
     location: 'Jersey City, NJ',
@@ -46,7 +46,7 @@ const testimonials: Testimonial[] = [
   },
   {
     quote:
-      'Yanming helped me self study for AP calculus AB and helped me through AP Physics I. I like his ability to break down concepts and problems into understandable parts, and ended up doing well on both exams.',
+      'Mr. Zhang helped me self study for AP calculus AB and helped me through AP Physics I. I like his ability to break down concepts and problems into understandable parts, and ended up doing well on both exams.',
     achievement: { emoji: '🌿', text: 'Admitted by Stanford University' },
     name: 'Adam Z.',
     role: 'Student',
@@ -56,7 +56,7 @@ const testimonials: Testimonial[] = [
   // 第二页评价
   {
     quote:
-      'Yan has been amazing for my son. He helped improve his ACT score and has really boosted my children\'s confidence in math. I couldn\'t be happier with the progress.',
+      'Mr. Zhang has been amazing for my son. He helped improve his ACT score and has really boosted my children\'s confidence in math. I couldn\'t be happier with the progress.',
     name: 'Tekisha N.',
     role: 'Parent of our students',
     location: 'Tenafly, NJ',
@@ -76,6 +76,14 @@ const testimonials: Testimonial[] = [
     name: 'Alyssa M.',
     role: 'Student',
     location: 'New York, NY',
+    avatar: '🙌',
+  },
+  {
+    quote:
+      'My son attended the Pre-AMC and AMC Math Enrichment programs at DeepBrain Academy, and the experience was outstanding. The instruction is truly Ivy-League level, with a strong emphasis on deep mathematical reasoning and creative problem-solving--far beyond what he was exposed to in school. He said he appreciated so much the beauty of some of the mathematical techniques that he learned from the programs, which made him fall in love with math.I highly recommend this program for students who feel bored or under-challenged in their regular math classes and are ready for more rigorous, meaningful learning, creative problem solving, or getting prepared for future math competitions!',
+    name: 'Yuan Z.',
+    role: 'Parent of our students',
+    location: 'Tenafly, NJ',
     avatar: '🙌',
   },
 ];
