@@ -40,11 +40,14 @@ export function ScheduleTable({
 }: ScheduleTableProps) {
   const [timeHeader, ...sessionHeaders] = columnHeaders;
   return (
-    <div className="w-full overflow-x-auto">
-      <div className="min-w-[600px] overflow-hidden rounded-t-[10px] rounded-tr-[10px] flex flex-col">
+    <div className="w-full overflow-x-auto" style={{ WebkitOverflowScrolling: 'touch' }}>
+      {/* 平板约 820px：min-w 略大于视口，可左右滑动且三列更宽 */}
+      <div className="min-w-[600px] md:min-w-[880px] lg:min-w-[600px] overflow-hidden rounded-t-[10px] rounded-tr-[10px] flex flex-col">
         {/* 表头 */}
-        <div className="grid grid-cols-4 gap-0 bg-slate-700 text-white border-b-2 border-indigo-50 min-h-14 sm:min-h-16 items-center">
-          <div className="pl-3 sm:pl-4 md:pl-8 py-3 sm:py-4 text-sm sm:text-lg md:text-xl font-bold font-['Outfit'] leading-tight">{timeHeader}</div>
+        <div className="grid [grid-template-columns:minmax(90px,0.7fr)_repeat(3,minmax(0,1.1fr))] gap-0 bg-slate-700 text-white border-b-2 border-indigo-50 min-h-14 sm:min-h-16 items-center">
+          <div className="flex justify-center items-center py-3 sm:py-4 text-sm sm:text-lg md:text-xl font-bold font-['Outfit'] leading-tight text-center">
+            {timeHeader}
+          </div>
           {sessionHeaders.map((h, i) => (
             <div key={i} className="flex justify-center items-center py-3 sm:py-4 text-sm sm:text-lg md:text-xl font-bold font-['Outfit'] leading-tight text-center px-1">
               {h}
@@ -55,9 +58,10 @@ export function ScheduleTable({
         {rows.map((row, rowIndex) => (
           <div
             key={rowIndex}
-            className="grid grid-cols-4 gap-0 min-h-16 sm:min-h-20 md:min-h-[5rem] border-b border-indigo-50 last:border-b-0"
+            className="grid [grid-template-columns:minmax(90px,0.7fr)_repeat(3,minmax(0,1.1fr))] gap-0 min-h-16 sm:min-h-20 md:min-h-[5rem] border-b border-indigo-50 last:border-b-0"
           >
-            <div className="pl-2 sm:pl-4 md:pl-8 py-3 sm:py-4 flex flex-col justify-center items-center text-center text-sm sm:text-lg md:text-xl font-bold font-['Outfit'] leading-tight text-[#7C8B99]">
+            {/* 时间列：左右内边距对称、与表头居中；垂直方向在整行内居中 */}
+            <div className="px-2 sm:px-4 md:px-6 py-3 sm:py-4 flex flex-col justify-center items-center text-center text-sm sm:text-lg md:text-xl font-bold font-['Outfit'] leading-tight text-[#7C8B99]">
               {(() => {
                 const parts = row.timeSlot.split(' - ');
                 if (parts.length === 2) {
@@ -78,17 +82,27 @@ export function ScheduleTable({
                 <div key={i} className="inline-flex flex-col justify-center items-center gap-2 sm:gap-3 py-3 sm:py-4 px-1 sm:px-2 text-center">
                   {cells.map((cell: ScheduleCell, cellIndex) => (
                     <div key={cellIndex} className="flex flex-col items-center gap-1 sm:gap-2">
+                      {/* 第一行：课程名 */}
                       <span
-                        className={`text-slate-700 text-sm sm:text-lg md:text-xl font-['Outfit'] leading-tight ${
+                        className={`text-slate-700 text-sm sm:text-lg md:text-xl font-['Outfit'] leading-tight text-center whitespace-normal lg:whitespace-nowrap ${
                           courseNameWeight === 'semibold' || boldRowIndexes?.includes(rowIndex) ? 'font-semibold' : 'font-normal'
                         }`}
                       >
                         {cell.courseName}
                       </span>
-                      <ScheduleTag tag={cell.tag} tagVariant={cell.tagVariant} />
-                      {cell.tag2 != null && (
-                        <ScheduleTag tag={cell.tag2} tagVariant={cell.tag2Variant ?? cell.tagVariant} />
+                      {/* 第二行：课程类型 Lecture/Workshop，加粗 */}
+                      {cell.sessionType != null && (
+                        <span className="text-slate-700 text-sm sm:text-lg md:text-xl font-['Outfit'] font-bold leading-tight">
+                          {cell.sessionType}
+                        </span>
                       )}
+                      {/* 第三行：Online / Onsite 标签；移动端可换行，桌面端同一行 */}
+                      <div className="flex flex-wrap lg:flex-nowrap justify-center items-center gap-1.5 sm:gap-2">
+                        <ScheduleTag tag={cell.tag} tagVariant={cell.tagVariant} />
+                        {cell.tag2 != null && (
+                          <ScheduleTag tag={cell.tag2} tagVariant={cell.tag2Variant ?? cell.tagVariant} />
+                        )}
+                      </div>
                     </div>
                   ))}
                 </div>

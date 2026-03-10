@@ -62,7 +62,7 @@ export const summerCampPageData: SummerCampPageData = {
         trackB: 'Track B: Brain & Strategy',
       },
       rows: [
-        { feature: 'Target Grades', trackA: 'Grades 7 – 10', trackB: 'Grades 1 – 7' },
+        { feature: 'Target Grades', trackA: 'Grades 7 – 10', trackB: 'Grades 1 – 8' },
         {
           feature: 'Core Focus',
           trackA: 'Project-Based STEAM Exploration',
@@ -221,61 +221,151 @@ export const summerCampPageData: SummerCampPageData = {
       rows: [
         {
           timeSlot: '9:00 AM - 10:30 AM',
-          session1: { courseName: 'Spiral Wonders', tag: 'Online', tagVariant: 'blue' },
-          session2: { courseName: 'Bionic Acoustic Engineering', tag: 'Online', tagVariant: 'blue' },
-          session3: { courseName: 'Robotics and Biomimetics', tag: 'Online', tagVariant: 'blue' },
+          session1: {
+            courseName: 'Spiral Wonders',
+            sessionType: 'Lecture',
+            tag: 'Online',
+            tagVariant: 'blue',
+            tag2: 'Onsite',
+            tag2Variant: 'pink',
+          },
+          session2: {
+            courseName: 'Bionic Acoustic Engineering',
+            sessionType: 'Lecture',
+            tag: 'Online',
+            tagVariant: 'blue',
+            tag2: 'Onsite',
+            tag2Variant: 'pink',
+          },
+          session3: {
+            courseName: 'Robotics and Biomimetics',
+            sessionType: 'Lecture',
+            tag: 'Online',
+            tagVariant: 'blue',
+            tag2: 'Onsite',
+            tag2Variant: 'pink',
+          },
         },
         {
-          timeSlot: '10:50 AM - 12:20 PM',
-          session1: { courseName: 'Spiral Wonders', tag: 'Onsite', tagVariant: 'pink' },
-          session2: { courseName: 'Bionic Acoustic Engineering', tag: 'Onsite', tagVariant: 'pink' },
-          session3: { courseName: 'Robotics and Biomimetics', tag: 'Onsite', tagVariant: 'pink' },
+          timeSlot: '10:45 AM - 12:15 PM',
+          session1: { courseName: 'Spiral Wonders', sessionType: 'Workshop', tag: 'Onsite', tagVariant: 'pink' },
+          session2: { courseName: 'Bionic Acoustic Engineering', sessionType: 'Workshop', tag: 'Onsite', tagVariant: 'pink' },
+          session3: { courseName: 'Robotics and Biomimetics', sessionType: 'Workshop', tag: 'Onsite', tagVariant: 'pink' },
         },
         {
-          timeSlot: '1:20 PM - 2:50 PM',
-          session1: { courseName: 'The Art and Science of Origami', tag: 'Online', tagVariant: 'blue' },
-          session2: { courseName: 'The Science of Magic', tag: 'Online', tagVariant: 'blue' },
-          session3: { courseName: 'Bionic Organs Exploration', tag: 'Online', tagVariant: 'blue' },
+          timeSlot: '1:15 PM - 2:45 PM',
+          session1: {
+            courseName: 'The Art and Science of Origami',
+            sessionType: 'Lecture',
+            tag: 'Online',
+            tagVariant: 'blue',
+            tag2: 'Onsite',
+            tag2Variant: 'pink',
+          },
+          session2: {
+            courseName: 'The Science of Magic',
+            sessionType: 'Lecture',
+            tag: 'Online',
+            tagVariant: 'blue',
+            tag2: 'Onsite',
+            tag2Variant: 'pink',
+          },
+          session3: {
+            courseName: 'Bionic Organs Exploration',
+            sessionType: 'Lecture',
+            tag: 'Online',
+            tagVariant: 'blue',
+            tag2: 'Onsite',
+            tag2Variant: 'pink',
+          },
         },
         {
-          timeSlot: '1:20 PM - 2:50 PM',
-          session1: { courseName: 'The Art and Science of Origami', tag: 'Onsite', tagVariant: 'pink' },
-          session2: { courseName: 'The Science of Magic', tag: 'Onsite', tagVariant: 'pink' },
-          session3: { courseName: 'Bionic Organs Exploration', tag: 'Onsite', tagVariant: 'pink' },
+          timeSlot: '3:00 PM - 4:30 PM',
+          session1: { courseName: 'The Art and Science of Origami', sessionType: 'Workshop', tag: 'Onsite', tagVariant: 'pink' },
+          session2: { courseName: 'The Science of Magic', sessionType: 'Workshop', tag: 'Onsite', tagVariant: 'pink' },
+          session3: { courseName: 'Bionic Organs Exploration', sessionType: 'Workshop', tag: 'Onsite', tagVariant: 'pink' },
         },
       ],
     },
     trackBTable: {
       title: 'Track B: Brain & Strategy Schedule',
-      subtitle: 'We offer online and onsite options for each session.',
-      columnHeaders: ['Date & Time', 'Jun 20 - Jun 31', 'Aug 3 - Aug 14', 'Aug 17 - Aug 28'],
+      subtitle:
+        'We offer online and onsite options for each module. If a module does not reach its minimum enrollment, Art courses will be offered instead, with two 90-minute sessions daily.',
+      columnHeaders: ['Date & Time', 'Jul 20 - Jul 31', 'Aug 3 - Aug 14', 'Aug 17 - Aug 28'],
       rows: [
         {
           timeSlot: '9:00 AM - 10:30 AM',
-          session1: { courseName: 'Mental Math', tag: 'Grade 1-2', tagVariant: 'blue' },
-          session2: { courseName: 'Coding', tag: 'Beginner', tagVariant: 'blue' },
-          session3: { courseName: 'Chinese', tag: 'Beginner', tagVariant: 'blue' },
-        },
-        {
-          timeSlot: '10:50 AM - 12:20 PM',
-          session1: { courseName: 'GO', tag: 'Beginnner', tagVariant: 'blue' },
-          session2: { courseName: 'Chess', tag: 'Beginner', tagVariant: 'blue' },
-          session3: { courseName: 'AI', tag: 'Beginner', tagVariant: 'blue' },
-        },
-        {
-          timeSlot: '1:20 PM - 2:50 PM',
+          // Jul 20 - Jul 31：Mental Math（1-2）、Mental Math & Pre-Algebra（3-4）、GO（Intermediate）
           session1: [
-            { courseName: 'Mental Math', tag: 'Grade 3-4', tagVariant: 'blue' as const },
-            { courseName: 'AMC Math', tag: 'Grade 5-8', tagVariant: 'pink' as const },
+            { courseName: 'Mental Math', tag: 'Grade 1-2', tagVariant: 'blue' },
+            { courseName: 'Mental Math & Pre-Algebra', tag: 'Grade 3-4', tagVariant: 'blue' },
+            { courseName: 'GO', tag: 'Intermediate', tagVariant: 'pink' },
           ],
-          session2: { courseName: 'Coding', tag: 'Intermediate', tagVariant: 'pink' },
-          session3: { courseName: 'Chinese', tag: 'Intermediate', tagVariant: 'pink' },
+          // Aug 3 - Aug 14：Coding（Beginner）、Chess（Intermediate）
+          session2: [
+            { courseName: 'Coding', tag: 'Beginner', tagVariant: 'blue' },
+            { courseName: 'Chess', tag: 'Intermediate', tagVariant: 'pink' },
+          ],
+          // Aug 17 - Aug 28：Chinese（Beginner）、AI（Intermediate）
+          session3: [
+            { courseName: 'Chinese', tag: 'Beginner', tagVariant: 'blue' },
+            { courseName: 'AI', tag: 'Intermediate', tagVariant: 'pink' },
+          ],
         },
         {
-          timeSlot: '3:10 PM - 4:40 PM',
-          session1: { courseName: 'GO', tag: 'Intermediate', tagVariant: 'pink' },
-          session2: { courseName: 'Chess', tag: 'Intermediate', tagVariant: 'pink' },
-          session3: { courseName: 'AI', tag: 'Intermediate', tagVariant: 'pink' },
+          timeSlot: '10:45 AM - 12:15 PM',
+          // Jul 20 - Jul 31：GO（Beginner）、AMC Math（Grade 5-8）
+          session1: [
+            { courseName: 'GO', tag: 'Beginner', tagVariant: 'blue' },
+            { courseName: 'AMC Math', tag: 'Grade 5-8', tagVariant: 'pink' },
+          ],
+          // Aug 3 - Aug 14：Coding（Beginner）、Chess（Intermediate）
+          session2: [
+            { courseName: 'Coding', tag: 'Beginner', tagVariant: 'blue' },
+            { courseName: 'Chess', tag: 'Intermediate', tagVariant: 'pink' },
+          ],
+          // Aug 17 - Aug 28：Chinese（Beginner）、AI（Intermediate）
+          session3: [
+            { courseName: 'Chinese', tag: 'Beginner', tagVariant: 'blue' },
+            { courseName: 'AI', tag: 'Intermediate', tagVariant: 'pink' },
+          ],
+        },
+        {
+          timeSlot: '1:15 PM - 2:45 PM',
+          // Jul 20 - Jul 31：Mental Math（1-2）、Mental Math & Pre-Algebra（3-4）、GO（Intermediate）
+          session1: [
+            { courseName: 'Mental Math', tag: 'Grade 1-2', tagVariant: 'blue' },
+            { courseName: 'Mental Math & Pre-Algebra', tag: 'Grade 3-4', tagVariant: 'blue' },
+            { courseName: 'GO', tag: 'Intermediate', tagVariant: 'pink' },
+          ],
+          // Aug 3 - Aug 14：Chess（Beginner）、Coding（Intermediate）
+          session2: [
+            { courseName: 'Chess', tag: 'Beginner', tagVariant: 'blue' },
+            { courseName: 'Coding', tag: 'Intermediate', tagVariant: 'pink' },
+          ],
+          // Aug 17 - Aug 28：AI（Beginner）、Chinese（Intermediate）
+          session3: [
+            { courseName: 'AI', tag: 'Beginner', tagVariant: 'blue' },
+            { courseName: 'Chinese', tag: 'Intermediate', tagVariant: 'pink' },
+          ],
+        },
+        {
+          timeSlot: '3:00 PM - 4:30 PM',
+          // Jul 20 - Jul 31：GO（Beginner）、AMC Math（Grade 5-8）
+          session1: [
+            { courseName: 'GO', tag: 'Beginner', tagVariant: 'blue' },
+            { courseName: 'AMC Math', tag: 'Grade 5-8', tagVariant: 'pink' },
+          ],
+          // Aug 3 - Aug 14：Chess（Beginner）、Coding（Intermediate）
+          session2: [
+            { courseName: 'Chess', tag: 'Beginner', tagVariant: 'blue' },
+            { courseName: 'Coding', tag: 'Intermediate', tagVariant: 'pink' },
+          ],
+          // Aug 17 - Aug 28：AI（Beginner）、Chinese（Intermediate）
+          session3: [
+            { courseName: 'AI', tag: 'Beginner', tagVariant: 'blue' },
+            { courseName: 'Chinese', tag: 'Intermediate', tagVariant: 'pink' },
+          ],
         },
       ],
     },
@@ -285,51 +375,56 @@ export const summerCampPageData: SummerCampPageData = {
     heading: 'Flexible Pricing Options',
     description:
       "We've designed our pricing structure to offer maximum flexibility. Whether your child wants to explore a single project or dive into the full summer experience, we have options to fit your plans.",
-    trackATitle: 'Track A: STEM Innovation Pricing',
-    trackAHeaders: ['Enrollment Option', '1 Session (2 weeks)', '2 Sessions (4 weeks)', '3 Sessions (6 weeks)'],
+    trackATitle: 'Track A: STEM Innovation Weekly Pricing',
+    trackASubtitle: 'Flexible Options for Every Family • Per Week • 2 Week Per Session',
+    trackAHeaders: ['Enrollment Option', 'Onsite', 'Online'],
     trackARows: [
       {
-        optionName: 'Morning/Afternoon Only\n(Onsite)',
-        session1: '1450',
-        session2: { value: '2799 ($100+ OFF)', isDiscount: true },
-        session3: { value: '3999 ($350+ OFF)', isDiscount: true },
+        optionName: 'Half Day',
+        optionSubtitle: 'Morning OR Afternoon Project',
+        onsite: { value: '725', isDiscount: true },
+        online: '490',
       },
       {
-        optionName: 'Morning/Afternoon Only\n(Online)',
-        session1: '980',
-        session2: { value: '1899 ($70+ OFF)', isDiscount: true },
-        session3: { value: '2699 ($240+ OFF)', isDiscount: true },
+        optionName: 'Full Day',
+        optionSubtitle: 'Both Morning & Afternoon Projects',
+        onsite: { value: '1350', isDiscount: true },
+        online: '900',
       },
       {
-        optionName: 'Full Day (Onsite)',
-        session1: '2,700',
-        session2: { value: '4999 ($400+ OFF)', isDiscount: true },
-        session3: { value: '7399 ($700+ OFF)', isDiscount: true },
-      },
-      {
-        optionName: 'Full Day (Online)',
-        session1: '1,800',
-        session2: { value: '3399 ($200+ OFF)', isDiscount: true },
-        session3: { value: '4899 ($500+ OFF)', isDiscount: true },
+        optionName: 'Extended Hours (4:30 PM - 6 PM)',
+        onsite: '40/day',
+        online: '-',
       },
     ],
     materialFootnote:
       '* Additional material fees may apply to specific project-based learning courses.',
-    trackBTitle: 'Track B: Brain & Strategy Camp Pricing',
+    multiSessionSavings: {
+      heading: 'Multi-Session Savings',
+      offers: [
+        { percent: '5-10% OFF', description: 'Enroll in 2 Sessions', savings: 'Save up to $340' },
+        { percent: '10-15% OFF', description: 'Full Summer (3 Sessions)', savings: 'Save up to $765' },
+      ],
+    },
+    trackBTitle: 'Track B: Brain & Strategy Camp Weekly Pricing',
+    trackBSubtitle: 'Flexible Options for Every Family • Per Week • 2 Week Per Session',
     trackBHeaders: ['Enrollment Option', 'Onsite', 'Online'],
     trackBRows: [
-      { optionName: 'Go (Beginner)', onsite: { value: '630', isDiscount: true }, online: '560' },
-      { optionName: 'Go (Intermediate)', onsite: { value: '700', isDiscount: true }, online: '620' },
-      { optionName: 'AMC Math (Fundamental)', onsite: { value: '850', isDiscount: true }, online: '780' },
-      { optionName: 'AMC Math (Advanced)', onsite: { value: '980', isDiscount: true }, online: '900' },
-      { optionName: 'Chess (Beginner)', onsite: { value: '660', isDiscount: true }, online: '580' },
-      { optionName: 'Chess (Intermediate)', onsite: { value: '730', isDiscount: true }, online: '650' },
-      { optionName: 'Coding (Beginner)', onsite: { value: '780', isDiscount: true }, online: '700' },
-      { optionName: 'Coding (Intermediate)', onsite: { value: '870', isDiscount: true }, online: '780' },
-      { optionName: 'Chinese (Beginner)', onsite: { value: '600', isDiscount: true }, online: '520' },
-      { optionName: 'Chinese (Intermediate)', onsite: { value: '660', isDiscount: true }, online: '580' },
-      { optionName: 'AI (Beginner)', onsite: { value: '820', isDiscount: true }, online: '720' },
-      { optionName: 'AI (Intermediate)', onsite: { value: '920', isDiscount: true }, online: '820' },
+      { optionName: 'Go (Beginner)', onsite: { value: '315', isDiscount: true }, online: '280' },
+      { optionName: 'Go (Intermediate)', onsite: { value: '350', isDiscount: true }, online: '310' },
+      { optionName: 'Mental Math (Grade 1-2)', onsite: { value: '425', isDiscount: true }, online: '390' },
+      { optionName: 'Mental Math & Pre-Algebra (Grade 3-4)', onsite: { value: '425', isDiscount: true }, online: '390' },
+      { optionName: 'AMC 8/10(Grade 5-8)', onsite: { value: '490', isDiscount: true }, online: '450' },
+      { optionName: 'Chess (Beginner)', onsite: { value: '330', isDiscount: true }, online: '290' },
+      { optionName: 'Chess (Intermediate)', onsite: { value: '385', isDiscount: true }, online: '325' },
+      { optionName: 'Coding (Beginner)', onsite: { value: '390', isDiscount: true }, online: '350' },
+      { optionName: 'Coding (Intermediate)', onsite: { value: '435', isDiscount: true }, online: '390' },
+      { optionName: 'Chinese (Beginner)', onsite: { value: '300', isDiscount: true }, online: '260' },
+      { optionName: 'Chinese (Intermediate)', onsite: { value: '330', isDiscount: true }, online: '290' },
+      { optionName: 'AI (Beginner)', onsite: { value: '410', isDiscount: true }, online: '360' },
+      { optionName: 'AI (Intermediate)', onsite: { value: '460', isDiscount: true }, online: '410' },
+      { optionName: 'Art', onsite: { value: '260', isDiscount: true }, online: '-' },
+      { optionName: 'Extended Hours (4:30 PM - 6 PM)', onsite:{ value: '40/day', isDiscount: false }, online: '-' },
     ],
     limitedTimeOffer: {
       title: '⏱️ Limited Time Offer!',

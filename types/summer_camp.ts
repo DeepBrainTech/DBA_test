@@ -124,13 +124,15 @@ export interface SummerCampTrackBData {
   ctaLabel: string;
 }
 
-/** 日程表单元格（课程名 + 一或两个标签，如 Online/Onsite 或 Grade 3-5 / Grade 6-8） */
+/** 日程表单元格（课程名 + 可选 Lecture/Workshop + 一或两个标签，如 Online/Onsite） */
 export interface ScheduleCell {
   courseName: string;
+  /** Track A 可选：Lecture 或 Workshop，展示在课程名后并加粗 */
+  sessionType?: 'Lecture' | 'Workshop';
   tag: string;
   /** 蓝色 #45B7D1 为 Online/年级等，粉色 #EF6B83 为 Onsite/Intermediate 等 */
   tagVariant: 'blue' | 'pink';
-  /** 可选第二行标签（如 Grade 6-8），有则显示在 tag 下方 */
+  /** 可选第二标签（如同一格内 Online + Onsite 并排） */
   tag2?: string;
   tag2Variant?: 'blue' | 'pink';
 }
@@ -169,12 +171,20 @@ export interface PricingCell {
   isDiscount?: boolean;
 }
 
-/** Track A 价格表一行 */
+/** Track A 价格表一行（图1：周计价，Enrollment Option | Onsite | Online） */
 export interface SummerCampTrackAPricingRow {
   optionName: string;
-  session1: string;
-  session2: PricingCell;
-  session3: PricingCell;
+  /** 可选副标题，如 "Morning OR Afternoon Project" */
+  optionSubtitle?: string;
+  onsite: string | PricingCell;
+  online: string;
+}
+
+/** Multi-Session Savings 单条：折扣百分比 + 描述 + 节省金额 */
+export interface SummerCampMultiSessionOffer {
+  percent: string;
+  description: string;
+  savings: string;
 }
 
 /** Track B 价格表一行 */
@@ -204,11 +214,20 @@ export interface SummerCampPricingData {
   heading: string;
   description: string;
   trackATitle: string;
-  trackAHeaders: [string, string, string, string];
+  /** Track A 副标题，如 "Flexible Options for Every Family • Per Week • 2 Week Per Session" */
+  trackASubtitle?: string;
+  trackAHeaders: [string, string, string];
   trackARows: SummerCampTrackAPricingRow[];
   /** 如 "* Additional material fees may apply to specific project-based learning courses." */
   materialFootnote: string;
+  /** Multi-Session Savings：标题 + 若干档位（5-10% OFF / 10-15% OFF 等） */
+  multiSessionSavings?: {
+    heading: string;
+    offers: SummerCampMultiSessionOffer[];
+  };
   trackBTitle: string;
+  /** Track B 副标题，如 "Flexible Options for Every Family • Per Week • 2 Week Per Session" */
+  trackBSubtitle?: string;
   trackBHeaders: [string, string, string];
   trackBRows: SummerCampTrackBPricingRow[];
   limitedTimeOffer: {

@@ -57,12 +57,23 @@ export default function Timeline() {
             {schedule.heading}
           </h2>
           <p className="w-full max-w-[950px] text-slate-500 text-sm sm:text-base lg:text-lg xl:text-xl font-normal font-['Outfit'] leading-relaxed text-center">
-            {schedule.description}
+            {(() => {
+              const boldRange = 'Jun 8th to Aug 28th';
+              const idx = schedule.description.indexOf(boldRange);
+              if (idx === -1) return schedule.description;
+              return (
+                <>
+                  {schedule.description.slice(0, idx)}
+                  <span className="font-bold">{boldRange}</span>
+                  {schedule.description.slice(idx + boldRange.length)}
+                </>
+              );
+            })()}
           </p>
         </div>
 
-        {/* Track A 课表 */}
-        <ScheduleTableCard table={schedule.trackATable} courseNameWeight="normal" boldRowIndexes={[1, 3]} />
+        {/* Track A 课表：课程名正常，Lecture/Workshop 在数据中通过 sessionType 加粗 */}
+        <ScheduleTableCard table={schedule.trackATable} courseNameWeight="normal" />
 
         {/* Track B 课表 */}
         <ScheduleTableCard table={schedule.trackBTable} courseNameWeight="normal" />
