@@ -25,7 +25,7 @@ export default function ClassTimeWeChatSection({ data, variant }: ClassTimeWeCha
       {/* 左侧：Schedule + Location，文案来自 data */}
       <div className="flex-1 flex flex-col gap-6 sm:gap-8 min-w-0">
         <div className="flex flex-col gap-2">
-          <h3 className="font-outfit text-slate-700 text-xl sm:text-2xl lg:text-3xl font-semibold leading-tight flex items-center gap-2">
+          <h3 className="font-outfit text-slate-700 text-xl sm:text-1xl lg:text-2xl font-semibold leading-tight flex items-center gap-2">
             <span aria-hidden>⏰</span>
             Class Time
           </h3>
@@ -39,7 +39,7 @@ export default function ClassTimeWeChatSection({ data, variant }: ClassTimeWeCha
           </p>
         </div>
         <div className="flex flex-col gap-2">
-          <h3 className="font-outfit text-slate-700 text-xl sm:text-2xl lg:text-3xl font-semibold leading-tight flex items-center gap-2">
+          <h3 className="font-outfit text-slate-700 text-xl sm:text-1xl lg:text-2xl font-semibold leading-tight flex items-center gap-2">
             <span aria-hidden>📍</span>
             Location
           </h3>
