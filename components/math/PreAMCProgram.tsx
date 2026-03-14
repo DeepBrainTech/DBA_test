@@ -1,23 +1,27 @@
 /**
  * 文件用途：Our Programs 课程区块（PRE-AMC / AMC 8/10 等复用），含 badge + 标题 + 副标题 + 四张卡；引用与 CTA 按 data 可选渲染
- * 依赖关系：lucide-react、PreAMCProgramCard、data 由页面通过 props 传入
+ * 依赖关系：lucide-react、ClassTimeWeChatSection、FreeTrialButton、PreAMCProgramCard、data 由页面通过 props 传入
  */
 
 import Link from 'next/link';
 
 import { ArrowRight } from 'lucide-react';
 
+import ClassTimeWeChatSection from '@/components/math/ClassTimeWeChatSection';
+import FreeTrialButton from '@/components/math/FreeTrialButton';
 import PreAMCProgramCard from '@/components/math/PreAMCProgramCard';
-import type { PreAMCProgramData } from '@/types/math';
+import type { ClassTimeWeChatData, PreAMCProgramData } from '@/types/math';
 
 interface PreAMCProgramProps {
   /** 课程区块数据 */
   data: PreAMCProgramData;
   /** 可选：section 外层样式，用于覆盖背景等（如 bg-[#FBF9F4]、渐变）。不传则默认 bg-white */
   sectionClassName?: string;
+  /** Class Time + WeChat 区块数据（仅独立渲染 PRE-AMC 时传入，用于展示第一处区块） */
+  classTimeWeChat?: ClassTimeWeChatData;
 }
 
-export default function PreAMCProgram({ data, sectionClassName }: PreAMCProgramProps) {
+export default function PreAMCProgram({ data, sectionClassName, classTimeWeChat }: PreAMCProgramProps) {
   const sectionClass = `${sectionClassName ?? 'bg-white'} py-12 sm:py-16 lg:py-24`;
   return (
     <section className={sectionClass}>
@@ -99,30 +103,27 @@ export default function PreAMCProgram({ data, sectionClassName }: PreAMCProgramP
             </div>
           )}
 
-          {/* 双 CTA */}
-          {data.ctaWatchUrl != null && data.ctaWatchUrl !== '' && (
-            <div className="flex w-full flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4">
-              <Link
-                href={data.ctaWatchUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl sm:rounded-2xl lg:rounded-3xl bg-white px-6 sm:px-8 py-3 sm:py-4 font-outfit text-base sm:text-lg lg:text-xl font-bold text-[#7EC97E] shadow-md transition hover:bg-green-50"
-              >
-                Free Assessment
-                <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 shrink-0" strokeWidth={2.5} />
-              </Link>
-              {data.ctaRegisterUrl != null && data.ctaRegisterUrl !== '' && (
-                <Link
-                  href={data.ctaRegisterUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl sm:rounded-2xl lg:rounded-[33px] bg-[#7EC97E] px-6 sm:px-8 py-3 sm:py-4 font-outfit text-base sm:text-lg lg:text-xl font-bold text-white shadow-md transition hover:bg-green-500"
-                >
-                  Register Now
-                  <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 shrink-0" strokeWidth={2.5} />
-                </Link>
-              )}
-            </div>
+          {/* Class Time + WeChat 二维码，紧接双 CTA 上方；数据来自 data/math.ts */}
+          {data.ctaWatchUrl != null && data.ctaWatchUrl !== '' && classTimeWeChat != null && (
+            <>
+              <ClassTimeWeChatSection data={classTimeWeChat} variant="preamc" />
+              <div className="flex w-full flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4">
+                <FreeTrialButton
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl sm:rounded-2xl lg:rounded-3xl bg-white px-6 sm:px-8 py-3 sm:py-4 font-outfit text-base sm:text-lg lg:text-xl font-bold text-[#7EC97E] shadow-md transition hover:bg-green-50"
+                />
+                {data.ctaRegisterUrl != null && data.ctaRegisterUrl !== '' && (
+                  <Link
+                    href={data.ctaRegisterUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl sm:rounded-2xl lg:rounded-[33px] bg-[#7EC97E] px-6 sm:px-8 py-3 sm:py-4 font-outfit text-base sm:text-lg lg:text-xl font-bold text-white shadow-md transition hover:bg-green-500"
+                  >
+                    Register Now
+                    <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 shrink-0" strokeWidth={2.5} />
+                  </Link>
+                )}
+              </div>
+            </>
           )}
         </div>
       </div>

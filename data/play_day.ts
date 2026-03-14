@@ -35,8 +35,7 @@ export const playDayPageData: PlayDayPageData = {
   },
   location: {
     addresses: [
-      '120 County Rd, Suite 100-101, Tenafly, NJ',
-      '560 Sylvan Avenue, First Floor, Suite 1055, Englewood Cliffs, NJ 07632',
+      '120 County Rd, Suite 100-101, Tenafly, NJ'
     ],
     qrCodeImage: '/play_day/wechat_qr.jpg',
     qrCodeText: 'Scan to join our\nWeChat Community',

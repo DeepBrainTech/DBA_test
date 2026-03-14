@@ -8,8 +8,10 @@ import Link from 'next/link';
 
 import { ArrowRight } from 'lucide-react';
 
+import ClassTimeWeChatSection from '@/components/math/ClassTimeWeChatSection';
+import FreeTrialButton from '@/components/math/FreeTrialButton';
 import PreAMCProgram from '@/components/math/PreAMCProgram';
-import type { PreAMCProgramData, SevenStepsMethodData } from '@/types/math';
+import type { ClassTimeWeChatData, PreAMCProgramData, SevenStepsMethodData } from '@/types/math';
 
 const CTA_URL = 'https://forms.gle/2mMzKoQkXHa2CVHe6';
 
@@ -63,9 +65,11 @@ interface AMCProgramProps {
   data: PreAMCProgramData;
   /** 7 Steps Learning Method 区块数据 */
   sevenStepsData: SevenStepsMethodData;
+  /** Class Time + WeChat 区块数据（来自 data/math.ts） */
+  classTimeWeChat: ClassTimeWeChatData;
 }
 
-export default function AMCProgram({ data, sevenStepsData }: AMCProgramProps) {
+export default function AMCProgram({ data, sevenStepsData, classTimeWeChat }: AMCProgramProps) {
   const steps = sevenStepsData.steps;
   const stepsLeft = steps.slice(0, 4);
   const stepsRight = steps.slice(4, 7);
@@ -153,17 +157,12 @@ export default function AMCProgram({ data, sevenStepsData }: AMCProgramProps) {
             </div>
           </div>
 
-          {/* 双 CTA */}
-          <div className="flex w-full flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4">
-            <Link
-              href={CTA_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+          {/* Class Time + WeChat 二维码，紧接双 CTA 上方；文案在 data/math.ts classTimeWeChat.amc 维护 */}
+          <ClassTimeWeChatSection data={classTimeWeChat} variant="amc" />
+          <div className="flex w-full flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 mt-6 sm:mt-8">
+            <FreeTrialButton
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl sm:rounded-2xl lg:rounded-3xl bg-white px-6 sm:px-8 py-3 sm:py-4 font-outfit text-base sm:text-lg lg:text-xl font-bold text-[#7EC97E] shadow-md transition hover:bg-green-50"
-            >
-              Free Assessment
-              <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 shrink-0" strokeWidth={2.5} />
-            </Link>
+            />
             <Link
               href={CTA_URL}
               target="_blank"

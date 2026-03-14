@@ -147,6 +147,29 @@ export interface UnlockPotentialData {
   bottomQuote: string;
 }
 
+/** Class Time + WeChat 区块变体：第一处 PRE-AMC / 第二处 AMC 8/10 */
+export type ClassTimeWeChatVariant = 'preamc' | 'amc';
+
+/** Class Time + WeChat 区块单处数据（Schedule / Location 文案，支持多行） */
+export interface ClassTimeWeChatItemData {
+  /** Class Time 区块多行文案（每项一行） */
+  scheduleLines: string[];
+  /** Location 区块多行文案（每项一行） */
+  locationLines: string[];
+}
+
+/** Class Time + WeChat 区块全局数据（两处共用二维码与说明，PRE-AMC / AMC 8/10 文案分开） */
+export interface ClassTimeWeChatData {
+  /** WeChat 二维码图片路径 */
+  wechatQrSrc: string;
+  /** 二维码下方说明，两行 */
+  wechatCommunityLines: [string, string];
+  /** PRE-AMC 区块文案 */
+  preamc: ClassTimeWeChatItemData;
+  /** AMC 8/10 区块文案 */
+  amc: ClassTimeWeChatItemData;
+}
+
 /** Math 页面静态数据（按需扩展） */
 export interface MathPageData {
   hero: MathHeroData;
@@ -158,6 +181,8 @@ export interface MathPageData {
   amc810Program: PreAMCProgramData;
   /** 7 Steps Learning Method 区块 */
   sevenStepsMethod: SevenStepsMethodData;
+  /** Class Time + WeChat 区块（双 CTA 上方两处），文案与二维码统一在此维护 */
+  classTimeWeChat: ClassTimeWeChatData;
   /** Unlock Potential / Book Free Trial 区块 */
   unlockPotential: UnlockPotentialData;
 }

@@ -29,8 +29,12 @@ export default function MathPage() {
       <main>
         <MathHero data={mathPageData.hero} />
         <MathTeachingPhilosophy />
-        <PreAMCProgram data={mathPageData.preAMCProgram} />
-        <AMCProgram data={mathPageData.amc810Program} sevenStepsData={mathPageData.sevenStepsMethod} />
+        <PreAMCProgram data={mathPageData.preAMCProgram} classTimeWeChat={mathPageData.classTimeWeChat} />
+        <AMCProgram
+          data={mathPageData.amc810Program}
+          sevenStepsData={mathPageData.sevenStepsMethod}
+          classTimeWeChat={mathPageData.classTimeWeChat}
+        />
         <PricingSection />
         <LimitedTimeOffer />
         <UnlockPotential data={mathPageData.unlockPotential} />

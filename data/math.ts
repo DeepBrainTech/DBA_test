@@ -141,6 +141,28 @@ export const mathPageData: MathPageData = {
       },
     ],
   },
+  /** Class Time + WeChat 区块：PRE-AMC 与 AMC 8/10 两处文案统一在此维护 */
+  classTimeWeChat: {
+    wechatQrSrc: '/nav_footer/wechat_qr.jpg',
+    wechatCommunityLines: ['Scan to join our', 'WeChat Community'],
+    preamc: {
+      scheduleLines: [
+        'Mental Math and Prealgebra（Pre-AMC）',
+        'Saturday 1:00-2:30pm ET',
+      ],
+      locationLines: ['120 County Rd, Suite 100-101, Tenafly, NJ'],
+    },
+    amc: {
+      scheduleLines: [
+        'AMC8 Friday 3:45-5:15pm ET',
+        "AMC8 Sunday 1:30-3pm ET",
+        "AMC10 Sunday 3:30-5pm ET"
+      ],
+      locationLines: [
+        '120 County Rd, Suite 100-101, Tenafly, NJ',
+      ],
+    },
+  },
   sevenStepsMethod: {
     title: '7 Steps Learning Method',
     subtitle: 'AMC 8/10 Math program',
