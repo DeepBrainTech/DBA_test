@@ -25,7 +25,7 @@ const LIMITED_TIME_OFFER_CARDS: LimitedTimeOfferCardData[] = [
     title: 'Early Bird',
     discountLabel: '5% OFF',
     savings: { prefix: 'Up to', amount: '$200', suffix: 'Savings' },
-    endsDate: 'Ends 3/15',
+    endsDate: 'Ends 3/21',
   },
   {
     title: 'Regular',
@@ -245,7 +245,7 @@ export default function PricingSection({ data }: PricingSectionProps) {
           </div>
         </div>
 
-        {/* Track B: Brain & Strategy Camp Pricing */}
+        {/* Track B: AI & Strategy Camp Pricing */}
         <div className="w-full px-3 sm:px-6 md:px-9 py-6 sm:py-9 bg-gradient-to-br from-violet-400/5 to-blue-400/5 rounded-2xl sm:rounded-3xl flex flex-col justify-start items-start gap-5 sm:gap-7">
           <div className="w-full flex flex-col items-center gap-2">
             <h3 className="w-full text-center text-slate-700 text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold font-['Outfit']">

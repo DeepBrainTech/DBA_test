@@ -114,7 +114,7 @@ export interface SummerCampTrackBFeature {
   description: string;
 }
 
-/** Track B: Brain & Strategy Camp 区块数据 */
+/** Track B: AI & Strategy Camp 区块数据 */
 export interface SummerCampTrackBData {
   badge: SectionBadge;
   heading: string;
@@ -198,7 +198,7 @@ export interface SummerCampTrackBPricingRow {
 export interface LimitedTimeOfferCardData {
   /** 档位名称，如 Early Bird、Regular、Last minute */
   title: string;
-  /** 截止日，如 Ends 3/15 */
+  /** 截止日，如 Ends 3/21 */
   endsDate: string;
   /** 是否为“标准价”档位（只显示 Standard Pricing + 截止日） */
   isStandardPricing?: boolean;

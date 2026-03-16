@@ -1,5 +1,5 @@
 /**
- * 文件用途：Summer Camp Track B 区块容器组件（Brain & Strategy Camp）
+ * 文件用途：Summer Camp Track B 区块容器组件（AI & Strategy Camp）
  * 依赖关系：StrategyCard（策略卡）、data/summer_camp、next/image
  * 注意事项：四张卡片使用 StrategyCard（图标+标题+描述），与 Learning Strategies 策略卡一致
  */

@@ -22,7 +22,7 @@ export const summerCampPageData: SummerCampPageData = {
     title: 'Learning Strategies',
     badgeIcon: '⚙️',
     introQuote: {
-      text: 'Welcome to the DeepBrain Academy Summer Camp, a premier learning destination where young minds are inspired to explore, create, and innovate. We are more than just a tutoring center; we are a comprehensive learning institution dedicated to blending strong academic foundations with advanced strategic thinking. Our mission is to prepare students for the challenges of tomorrow by cultivating essential future-ready skills in an engaging and collaborative environment.\n\nThis summer, we invite your child to embark on an unforgettable journey of discovery. Whether they are diving into our STEM Innovation track to build functional prototypes or honing their strategic thinking skills in our Brain & Strategy camp, they will gain invaluable knowledge and experience. Join us and become part of a vibrant community of over 1,000 students who have benefited from our expert instruction and unique educational philosophy.',
+      text: 'Welcome to the DeepBrain Academy Summer Camp, a premier learning destination where young minds are inspired to explore, create, and innovate. We are more than just a tutoring center; we are a comprehensive learning institution dedicated to blending strong academic foundations with advanced strategic thinking. Our mission is to prepare students for the challenges of tomorrow by cultivating essential future-ready skills in an engaging and collaborative environment.\n\nThis summer, we invite your child to embark on an unforgettable journey of discovery. Whether they are diving into our STEM Innovation track to build functional prototypes or honing their strategic thinking skills in our AI & Strategy camp, they will gain invaluable knowledge and experience. Join us and become part of a vibrant community of over 1,000 students who have benefited from our expert instruction and unique educational philosophy.',
       attribution: 'DeepBrain Academy Coaching Team',
     },
     heading: 'Beyond Traditional Learning',
@@ -59,7 +59,7 @@ export const summerCampPageData: SummerCampPageData = {
       columnHeaders: {
         feature: 'Feature',
         trackA: 'Track A: STEM Innovation',
-        trackB: 'Track B: Brain & Strategy',
+        trackB: 'Track B: AI & Strategy',
       },
       rows: [
         { feature: 'Target Grades', trackA: 'Grades 7 – 10', trackB: 'Grades 1 – 8' },
@@ -180,7 +180,7 @@ export const summerCampPageData: SummerCampPageData = {
   },
   trackB: {
     badge: { text: '📖️ Program' },
-    heading: 'Track B: Brain & Strategy Camp',
+    heading: 'Track B: AI & Strategy Camp',
     description: 'A 1 to 6-week program focused on logic, focus, and structured thinking.',
     features: [
       {
@@ -288,7 +288,7 @@ export const summerCampPageData: SummerCampPageData = {
       ],
     },
     trackBTable: {
-      title: 'Track B: Brain & Strategy Schedule',
+      title: 'Track B: AI & Strategy Schedule',
       subtitle:
         'We offer online and onsite options for each module. If a module does not reach its minimum enrollment, Art courses will be offered instead, with two 90-minute sessions daily.',
       columnHeaders: ['Date & Time', 'Jul 20 - Jul 31', 'Aug 3 - Aug 14', 'Aug 17 - Aug 28'],
@@ -406,7 +406,7 @@ export const summerCampPageData: SummerCampPageData = {
         { percent: '10-15% OFF', description: 'Full Summer (3 Sessions)', savings: 'Save up to $765' },
       ],
     },
-    trackBTitle: 'Track B: Brain & Strategy Camp Weekly Pricing',
+    trackBTitle: 'Track B: AI & Strategy Camp Weekly Pricing',
     trackBSubtitle: 'Flexible Options for Every Family • Per Week • 2 Week Per Session',
     trackBHeaders: ['Enrollment Option', 'Onsite', 'Online'],
     trackBRows: [
@@ -429,7 +429,7 @@ export const summerCampPageData: SummerCampPageData = {
     limitedTimeOffer: {
       title: '⏱️ Limited Time Offer!',
       description:
-        '**Save More by Booking Early!**\n\n\u00A0\u00A0\u00A0\u00A0• Early Bird (Ends 3/15): Take an **additional 5% off** (up to $200 savings)!\n\n\u00A0\u00A0\u00A0\u00A0 • Regular (Ends 4/15): Take an **additional 3% off** (up to $120 savings).\n\n\u00A0\u00A0\u00A0\u00A0 • Last Call (Starting 5/15): Standard pricing applies.\n\n\u00A0\u00A0\u00A0\u00A0 • Note: These savings apply to Track A only and can be stacked with our Multi-Session discount. Track B is excluded from this promotion.\n\n **Sibling Discount**: Enroll two or more siblings and receive **10% off** the second child\'s tuition.\n\n **Payment Plans:** Flexible payment plans are available for enrollments of 2 or more sessions.',
+        '**Save More by Booking Early!**\n\n\u00A0\u00A0\u00A0\u00A0• Early Bird (Ends 3/21): Take an **additional 5% off** (up to $200 savings)!\n\n\u00A0\u00A0\u00A0\u00A0 • Regular (Ends 4/15): Take an **additional 3% off** (up to $120 savings).\n\n\u00A0\u00A0\u00A0\u00A0 • Last Call (Starting 5/15): Standard pricing applies.\n\n\u00A0\u00A0\u00A0\u00A0 • Note: These savings apply to Track A only and can be stacked with our Multi-Session discount. Track B is excluded from this promotion.\n\n **Sibling Discount**: Enroll two or more siblings and receive **10% off** the second child\'s tuition.\n\n **Payment Plans:** Flexible payment plans are available for enrollments of 2 or more sessions.',
     },
     ctaLabel: 'Enroll Now',
   },
