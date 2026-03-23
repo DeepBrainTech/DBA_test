@@ -25,18 +25,18 @@ const LIMITED_TIME_OFFER_CARDS: LimitedTimeOfferCardData[] = [
     title: 'Early Bird',
     discountLabel: '5% OFF',
     savings: { prefix: 'Up to', amount: '$200', suffix: 'Savings' },
-    endsDate: 'Ends 3/21',
+    endsDate: 'Ends 3/31',
   },
   {
     title: 'Regular',
     discountLabel: '3% OFF',
     savings: { prefix: 'Up to', amount: '$120', suffix: 'Savings' },
-    endsDate: 'Ends 3/31',
+    endsDate: 'Ends 4/15',
   },
   {
     title: 'Last minute',
     isStandardPricing: true,
-    endsDate: 'Ends 4/15',
+    endsDate: 'Ends 5/15',
   },
 ];
 
