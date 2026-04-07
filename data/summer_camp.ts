@@ -297,18 +297,17 @@ export const summerCampPageData: SummerCampPageData = {
           timeSlot: '9:00 AM - 10:30 AM',
           // Jul 20 - Jul 31：Mental Math（1-2）、Mental Math & Pre-Algebra（3-4）、GO（Intermediate）
           session1: [
-            { courseName: 'Mental Math', tag: 'Grade 1-2', tagVariant: 'blue' },
-            { courseName: 'Mental Math & Pre-Algebra', tag: 'Grade 3-4', tagVariant: 'blue' },
-            { courseName: 'GO', tag: 'Intermediate', tagVariant: 'pink' },
+            { courseName: 'Go', tag: 'Beginner', tagVariant: 'blue' },
+            { courseName: 'Chess', tag: 'Beginner', tagVariant: 'blue' },
           ],
           // Aug 3 - Aug 14：Coding（Beginner）、Chess（Intermediate）
           session2: [
-            { courseName: 'Coding', tag: 'Beginner', tagVariant: 'blue' },
-            { courseName: 'Chess', tag: 'Intermediate', tagVariant: 'pink' },
+            { courseName: 'Chinese', tag: 'Beginner', tagVariant: 'blue' },
+            { courseName: 'AI', tag: 'Beginner', tagVariant: 'blue' },
           ],
           // Aug 17 - Aug 28：Chinese（Beginner）、AI（Intermediate）
           session3: [
-            { courseName: 'Chinese', tag: 'Beginner', tagVariant: 'blue' },
+            { courseName: 'Chinese', tag: 'Intermediate', tagVariant: 'pink' },
             { courseName: 'AI', tag: 'Intermediate', tagVariant: 'pink' },
           ],
         },
@@ -317,16 +316,16 @@ export const summerCampPageData: SummerCampPageData = {
           // Jul 20 - Jul 31：GO（Beginner）、AMC Math（Grade 5-8）
           session1: [
             { courseName: 'GO', tag: 'Beginner', tagVariant: 'blue' },
-            { courseName: 'AMC Math', tag: 'Grade 5-8', tagVariant: 'pink' },
+            { courseName: 'Chess', tag: 'Beginner', tagVariant: 'blue' },
           ],
           // Aug 3 - Aug 14：Coding（Beginner）、Chess（Intermediate）
           session2: [
-            { courseName: 'Coding', tag: 'Beginner', tagVariant: 'blue' },
-            { courseName: 'Chess', tag: 'Intermediate', tagVariant: 'pink' },
+            { courseName: 'Chinese', tag: 'Beginner', tagVariant: 'blue' },
+            { courseName: 'AI', tag: 'Beginner', tagVariant: 'blue' },
           ],
           // Aug 17 - Aug 28：Chinese（Beginner）、AI（Intermediate）
           session3: [
-            { courseName: 'Chinese', tag: 'Beginner', tagVariant: 'blue' },
+            { courseName: 'Chinese', tag: 'Intermediate', tagVariant: 'pink' },
             { courseName: 'AI', tag: 'Intermediate', tagVariant: 'pink' },
           ],
         },
@@ -335,36 +334,37 @@ export const summerCampPageData: SummerCampPageData = {
           // Jul 20 - Jul 31：Mental Math（1-2）、Mental Math & Pre-Algebra（3-4）、GO（Intermediate）
           session1: [
             { courseName: 'Mental Math', tag: 'Grade 1-2', tagVariant: 'blue' },
-            { courseName: 'Mental Math & Pre-Algebra', tag: 'Grade 3-4', tagVariant: 'blue' },
-            { courseName: 'GO', tag: 'Intermediate', tagVariant: 'pink' },
+            { courseName: 'Coding', tag: 'Beginner', tagVariant: 'blue' },
           ],
           // Aug 3 - Aug 14：Chess（Beginner）、Coding（Intermediate）
           session2: [
-            { courseName: 'Chess', tag: 'Beginner', tagVariant: 'blue' },
+            { courseName: 'Go', tag: 'Intermediate', tagVariant: 'pink' },
+            { courseName: 'Chess', tag: 'Intermediate', tagVariant: 'pink' },
             { courseName: 'Coding', tag: 'Intermediate', tagVariant: 'pink' },
           ],
           // Aug 17 - Aug 28：AI（Beginner）、Chinese（Intermediate）
           session3: [
-            { courseName: 'AI', tag: 'Beginner', tagVariant: 'blue' },
-            { courseName: 'Chinese', tag: 'Intermediate', tagVariant: 'pink' },
+            { courseName: 'Mental Math & Pre-Algebra', tag: 'Grade 3-4', tagVariant: 'blue' },
+            { courseName: 'AMC 8/10', tag: 'Grade 5-8', tagVariant: 'pink' },
           ],
         },
         {
           timeSlot: '3:00 PM - 4:30 PM',
           // Jul 20 - Jul 31：GO（Beginner）、AMC Math（Grade 5-8）
           session1: [
-            { courseName: 'GO', tag: 'Beginner', tagVariant: 'blue' },
-            { courseName: 'AMC Math', tag: 'Grade 5-8', tagVariant: 'pink' },
+            { courseName: 'Mental Math', tag: 'Grade 1-2', tagVariant: 'blue' },
+            { courseName: 'Coding', tag: 'Beginner', tagVariant: 'blue' },
           ],
           // Aug 3 - Aug 14：Chess（Beginner）、Coding（Intermediate）
           session2: [
-            { courseName: 'Chess', tag: 'Beginner', tagVariant: 'blue' },
+            { courseName: 'Go', tag: 'Intermediate', tagVariant: 'pink' },
+            { courseName: 'Chess', tag: 'Intermediate', tagVariant: 'pink' },
             { courseName: 'Coding', tag: 'Intermediate', tagVariant: 'pink' },
           ],
           // Aug 17 - Aug 28：AI（Beginner）、Chinese（Intermediate）
           session3: [
-            { courseName: 'AI', tag: 'Beginner', tagVariant: 'blue' },
-            { courseName: 'Chinese', tag: 'Intermediate', tagVariant: 'pink' },
+            { courseName: 'Mental Math & Pre-Algebra', tag: 'Grade 3-4', tagVariant: 'blue' },
+            { courseName: 'AMC 8/10', tag: 'Grade 5-8', tagVariant: 'pink' },
           ],
         },
       ],
