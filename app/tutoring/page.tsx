@@ -1,5 +1,5 @@
 import TutoringHero from '@/components/tutoring/TutoringHero';
-import WhyDBASection from '@/components/tutoring/WhyDBASection';
+import TestimonialsSection from '@/components/tutoring/TestimonialsSection';
 import StudentSection from '@/components/tutoring/StudentSection';
 import TutorSection from '@/components/tutoring/TutorSection';
 import StudentForm from '@/components/tutoring/StudentForm';
@@ -15,7 +15,7 @@ export default function TutoringPage() {
   return (
     <main className="font-outfit">
       <TutoringHero />
-      <WhyDBASection />
+      <TestimonialsSection />
       <StudentSection />
       <TutorSection />
       <StudentForm />
