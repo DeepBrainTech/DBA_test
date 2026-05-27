@@ -6,7 +6,7 @@ export default function TutoringHero() {
   return (
     <section
       className="relative -mt-[106px] w-full overflow-hidden"
-      style={{ minHeight: '88vh' }}
+      style={{ minHeight: '100dvh' }}
     >
       {/* Pastel blob background */}
       <div
