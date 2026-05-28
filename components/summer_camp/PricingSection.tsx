@@ -36,7 +36,7 @@ const LIMITED_TIME_OFFER_CARDS: LimitedTimeOfferCardData[] = [
   {
     title: 'Last minute',
     isStandardPricing: true,
-    endsDate: 'Ends 5/15',
+    endsDate: 'Ends 6/01',
   },
 ];
 

@@ -23,6 +23,7 @@ const navLinks = [
   { href: '/math', label: 'Math' },
   { href: '/braingames', label: 'Brain Games' },
   { href: '/programming', label: 'Programming' },
+  { href: '/tutoring', label: 'Tutoring' },
   { href: '/about', label: 'About Us' }
 ];
 
