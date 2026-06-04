@@ -84,58 +84,6 @@ export default function LearningStrategies({ data }: LearningStrategiesProps) {
             <StrategyCard key={card.title} card={card} index={index} />
           ))}
         </div>
-
-        {/* 4. 底部对比表 */}
-        <div className="w-full bg-gradient-to-r from-red-400/10 to-red-400/10 rounded-2xl sm:rounded-3xl overflow-hidden">
-          <div className="flex justify-start items-start pt-3 pl-3 pb-0 md:pt-4 md:pl-4">
-            <div className="leading-none opacity-20 text-rose-400 text-4xl sm:text-5xl md:text-6xl font-normal font-['Outfit']" aria-hidden>
-              &quot;
-            </div>
-          </div>
-          <div className="px-3 sm:px-6 pt-0 pb-8 sm:pb-10 lg:pb-14 md:px-15 md:pt-1 lg:pb-15">
-            <h3 className="text-center text-slate-700 text-lg sm:text-xl md:text-2xl font-bold font-['Outfit'] leading-tight mb-4 sm:mb-6">
-              {data.comparisonSection.title}
-            </h3>
-            {/* 白卡：横向滚动 */}
-            <div className="w-full overflow-x-auto rounded-xl sm:rounded-2xl bg-white shadow-sm">
-              <div className="min-w-[500px] px-3 sm:px-4 md:px-5 py-4 sm:py-5 md:py-6">
-                {/* 表头 */}
-                <div className="grid grid-cols-[minmax(100px,1fr)_minmax(140px,1.5fr)_minmax(140px,1.5fr)] gap-2 sm:gap-4 border-b border-zinc-100 pb-3 text-sm sm:text-base md:text-lg font-['Outfit'] leading-7 bg-zinc-50/80">
-                  <div className="text-center font-semibold text-rose-400">
-                    {data.comparisonSection.columnHeaders.feature}
-                  </div>
-                  <div className="text-center font-semibold text-rose-400">
-                    {data.comparisonSection.columnHeaders.trackA}
-                  </div>
-                  <div className="text-center font-semibold text-rose-400">
-                    {data.comparisonSection.columnHeaders.trackB}
-                  </div>
-                </div>
-                {/* 表体 */}
-                {data.comparisonSection.rows.map((row, i) => (
-                  <div
-                    key={row.feature}
-                    className={`grid grid-cols-[minmax(100px,1fr)_minmax(140px,1.5fr)_minmax(140px,1.5fr)] gap-2 sm:gap-4 py-3 text-sm sm:text-base md:text-lg font-['Outfit'] leading-7 ${
-                      i < data.comparisonSection.rows.length - 1
-                        ? 'border-b border-zinc-100'
-                        : ''
-                    }`}
-                  >
-                    <div className="text-center font-semibold text-slate-500">
-                      {row.feature}
-                    </div>
-                    <div className="text-center font-normal text-slate-500">
-                      {row.trackA}
-                    </div>
-                    <div className="text-center font-normal text-slate-500">
-                      {row.trackB}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

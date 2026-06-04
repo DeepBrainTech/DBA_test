@@ -8,7 +8,7 @@ import type { SummerCampPageData } from '@/types/summer_camp';
 
 export const summerCampPageData: SummerCampPageData = {
   hero: {
-    title: '2026 Summer Camp',
+    title: '2026 Summer Courses',
     subtitle: 'Cultivating Curiosity, Creativity, and Real-World Problem Solving.',
     backgroundImage: '/summer_camp/hero/cover.png',
     features: [
