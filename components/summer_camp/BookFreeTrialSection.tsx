@@ -33,7 +33,8 @@ interface BookFreeTrialSectionProps {
 export default function BookFreeTrialSection({ data }: BookFreeTrialSectionProps) {
   return (
     <section
-      className="w-full relative bg-gradient-to-b from-[#EF6B83] to-[#BA495E] overflow-hidden"
+      id="book-free-trial"
+      className="w-full relative bg-[#EF6B83] overflow-hidden"
       aria-label="Book Free Trial"
     >
       <div className="relative w-full max-w-[min(1280px,90vw)] mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">

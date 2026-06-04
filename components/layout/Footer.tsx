@@ -100,6 +100,22 @@ export default function Footer({ className = '' }: { className?: string }) {
             </div>
           </div>
 
+          {/* Navigation */}
+          <div>
+            <h4 className="text-lg md:text-xl font-semibold mb-4 md:mb-5">Navigation</h4>
+            <div className="space-y-2 md:space-y-3">
+              <Link href="/" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Home</Link>
+              <Link href="/summer_camp" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Courses</Link>
+              <Link href="/play_day" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Play Day</Link>
+              <Link href="/global-education" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Global Education</Link>
+              <Link href="/math" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Math</Link>
+              <Link href="/braingames" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Brain Games</Link>
+              <Link href="/programming" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Programming</Link>
+              <Link href="/tutoring" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Tutoring</Link>
+              <Link href="/about" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">About Us</Link>
+            </div>
+          </div>
+
           {/* Course Center */}
           <div>
             <h4 className="text-lg md:text-xl font-semibold mb-4 md:mb-5">Course Center</h4>
@@ -108,17 +124,6 @@ export default function Footer({ className = '' }: { className?: string }) {
               <Link href="#" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Chess</Link>
               <Link href="/global-education" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Global Education</Link>
               <Link href="#" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Programming</Link>
-            </div>
-          </div>
-
-          {/* About Us */}
-          <div>
-            <h4 className="text-lg md:text-xl font-semibold mb-4 md:mb-5">About Us</h4>
-            <div className="space-y-2 md:space-y-3">
-              <Link href="#" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Our Company</Link>
-              <Link href="#" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Our Team</Link>
-              <Link href="#" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Contact Us</Link>
-              <Link href="#" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Careers</Link>
             </div>
           </div>
 

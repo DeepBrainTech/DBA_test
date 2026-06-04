@@ -6,13 +6,11 @@
 
 import { Outfit } from 'next/font/google';
 
-import BookFreeTrialSection from '@/components/summer_camp/BookFreeTrialSection';
 import Hero from '@/components/summer_camp/Hero';
 import LearningStrategies from '@/components/summer_camp/LearningStrategies';
-import PricingSection from '@/components/summer_camp/PricingSection';
-import TrackA from '@/components/summer_camp/trackA';
-import TrackB from '@/components/summer_camp/trackB';
-import Timeline from '@/components/summer_camp/Timeline';
+import CourseTimetable from '@/components/summer_camp/CourseTimetable';
+import CourseInformation from '@/components/summer_camp/CourseInformation';
+import BookFreeTrialSection from '@/components/summer_camp/BookFreeTrialSection';
 import { summerCampPageData } from '@/data/summer_camp';
 
 const outfit = Outfit({
@@ -22,16 +20,14 @@ const outfit = Outfit({
 });
 
 export default function Page() {
-  const { hero, learningStrategies, pricing, bookFreeTrial } = summerCampPageData;
+  const { hero, learningStrategies, bookFreeTrial } = summerCampPageData;
   return (
     <div className={`${outfit.variable} ${outfit.className} min-h-screen`}>
       <main>
         <Hero data={hero} />
         <LearningStrategies data={learningStrategies} />
-        <TrackA />
-        <TrackB />
-        <Timeline />
-        <PricingSection data={pricing} />
+        <CourseTimetable />
+        <CourseInformation />
         <BookFreeTrialSection data={bookFreeTrial} />
       </main>
     </div>
