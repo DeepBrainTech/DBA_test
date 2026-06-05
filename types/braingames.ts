@@ -4,13 +4,13 @@
  * 注意事项：所有字段必须与数据源保持一致
  */
 
-/** 英雄区特色亮点项（与 summer_camp Hero 一致，图标按顺序使用） */
+/** 英雄区特色亮点项（与 learning_program Hero 一致，图标按顺序使用） */
 export interface BraingamesHeroFeature {
     /** 文案 */
     label: string;
 }
 
-/** 英雄区数据（结构与 summer_camp Hero 一致） */
+/** 英雄区数据（结构与 learning_program Hero 一致） */
 export interface BraingamesHeroData {
     title: string;
     subtitle: string;
@@ -73,7 +73,7 @@ export interface CourseCard {
   description: string;
 }
 
-/** 限时优惠区块（与 summer_camp Pricing 中 limitedTimeOffer 结构一致） */
+/** 限时优惠区块（与 learning_program Pricing 中 limitedTimeOffer 结构一致） */
 export interface BraingamesLimitedTimeOffer {
   /** 标题，如 ⏱️ Limited Time Offer! */
   title: string;
@@ -81,32 +81,32 @@ export interface BraingamesLimitedTimeOffer {
   description: string;
 }
 
-/** Pricing 区块数据（限时优惠与 CTA 与 summer_camp 一致） */
+/** Pricing 区块数据（限时优惠与 CTA 与 learning_program 一致） */
 export interface BraingamesPricingData {
   limitedTimeOffer: BraingamesLimitedTimeOffer;
   /** 报名按钮文案 */
   ctaLabel: string;
 }
 
-/** Book Free Trial 区块：「We ensure」单条（与 summer_camp 一致） */
+/** Book Free Trial 区块：「We ensure」单条（与 learning_program 一致） */
 export interface BraingamesBookFreeEnsureItem {
   icon: string;
   text: string;
 }
 
-/** Book Free Trial 区块：信任标签（与 summer_camp 一致） */
+/** Book Free Trial 区块：信任标签（与 learning_program 一致） */
 export interface BraingamesBookFreeTrustItem {
   icon: string;
   label: string;
 }
 
-/** Book Free Trial 区块：底部统计项（与 summer_camp 一致） */
+/** Book Free Trial 区块：底部统计项（与 learning_program 一致） */
 export interface BraingamesBookFreeStat {
   value: string;
   label: string;
 }
 
-/** Book Free Trial 区块数据（与 summer_camp 结构一致，无表单输入） */
+/** Book Free Trial 区块数据（与 learning_program 结构一致，无表单输入） */
 export interface BraingamesBookFreeTrialData {
   badgeText: string;
   title: string;

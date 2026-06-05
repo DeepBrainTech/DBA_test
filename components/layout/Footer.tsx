@@ -105,8 +105,8 @@ export default function Footer({ className = '' }: { className?: string }) {
             <h4 className="text-lg md:text-xl font-semibold mb-4 md:mb-5">Navigation</h4>
             <div className="space-y-2 md:space-y-3">
               <Link href="/" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Home</Link>
-              <Link href="/summer_camp" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Courses</Link>
-              <Link href="/play_day" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Play Day</Link>
+              <Link href="/learning_program" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Learning Program</Link>
+              <Link href="/courses" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Courses</Link>
               <Link href="/global-education" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Global Education</Link>
               <Link href="/math" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Math</Link>
               <Link href="/braingames" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Brain Games</Link>

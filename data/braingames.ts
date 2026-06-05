@@ -1,6 +1,6 @@
 import type { Feature, Course, ChessPhilosophyData, BraingamesHeroData, BraingamesPricingData, BraingamesBookFreeTrialData } from "@/types/braingames";
 
-/** 英雄区数据（布局与 summer_camp Hero 一致） */
+/** 英雄区数据（布局与 learning_program Hero 一致） */
 export const hero: BraingamesHeroData = {
     title: 'Brain Games',
     subtitle: 'Small Board, Big Vision',
@@ -163,7 +163,7 @@ export const courses: Course[] = [
   },
 ];
 
-/** Pricing 区块数据（限时优惠与 summer_camp 完全一致） */
+/** Pricing 区块数据（限时优惠与 learning_program 完全一致） */
 export const pricing: BraingamesPricingData = {
   limitedTimeOffer: {
     title: '⏱️ Limited Time Offer!',
@@ -173,7 +173,7 @@ export const pricing: BraingamesPricingData = {
   ctaLabel: 'Enroll Now',
 };
 
-/** Book Free Trial 区块数据（与 summer_camp 一致：无表单，仅 CTA 跳转） */
+/** Book Free Trial 区块数据（与 learning_program 一致：无表单，仅 CTA 跳转） */
 export const bookFreeTrial: BraingamesBookFreeTrialData = {
   badgeText: 'Limited offer',
   title: 'Empowering the next generation of thinkers and creators.',

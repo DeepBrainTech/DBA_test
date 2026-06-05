@@ -42,7 +42,7 @@ export default function LimitedTimeOffer() {
                 Enroll Now
               </span>
               <Image
-                src="/summer_camp/trackA/registernow.svg"
+                src="/math/registernow.svg"
                 alt=""
                 width={24}
                 height={24}

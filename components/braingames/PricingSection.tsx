@@ -190,7 +190,7 @@ export default function PricingSection() {
               aria-label="Enroll Now"
             >
               Enroll Now
-              <Image src="/summer_camp/trackA/registernow.svg" alt="" width={24} height={24} className="shrink-0 w-5 h-5 sm:w-6 sm:h-6" aria-hidden />
+              <Image src="/braingames/FeaturedProgram-chess/registernow.svg" alt="" width={24} height={24} className="shrink-0 w-5 h-5 sm:w-6 sm:h-6" aria-hidden />
             </a>
           </div>
         </div>
