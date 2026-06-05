@@ -17,14 +17,20 @@ import { usePathname } from 'next/navigation';
  */
 const navLinks = [
   { href: '/', label: 'Home' },
-  { href: '/summer_camp', label: 'Courses' },
-  { href: '/play_day', label: 'Play Day' },
+  { href: '/learning_program', label: 'Learning Program' },
+  { href: '/courses', label: 'Courses' },
   { href: '/global-education', label: 'Global Education' },
   { href: '/math', label: 'Math' },
   { href: '/braingames', label: 'Brain Games' },
   { href: '/programming', label: 'Programming' },
   { href: '/tutoring', label: 'Tutoring' },
   { href: '/about', label: 'About Us' }
+];
+
+/** Learning Program 与 Courses 相邻，预加载封面避免切换时图片闪烁 */
+const ADJACENT_HERO_COVERS = [
+  '/learning_program/hero/cover.png',
+  '/courses/hero/cover.png',
 ];
 
 /**
@@ -38,6 +44,16 @@ export default function Navigation({ className = '' }: { className?: string }) {
   // 路由变化时关闭菜单
   useEffect(() => {
     setIsMenuOpen(false);
+  }, [pathname]);
+
+  // 在 Learning Program / Courses 间切换时预加载双方封面图
+  useEffect(() => {
+    if (pathname === '/learning_program' || pathname === '/courses') {
+      ADJACENT_HERO_COVERS.forEach((src) => {
+        const img = new window.Image();
+        img.src = src;
+      });
+    }
   }, [pathname]);
 
   // 菜单打开时禁止页面滚动

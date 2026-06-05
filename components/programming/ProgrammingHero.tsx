@@ -1,5 +1,5 @@
 /**
- * 文件用途：Programming 英雄区，主标题、副标题与四个特色亮点（与 summer_camp Hero 结构一致）
+ * 文件用途：Programming 英雄区，主标题、副标题与四个特色亮点（与 learning_program Hero 结构一致）
  * 依赖关系：next/image、ProgrammingHeroData 类型、scrollToElement
  * 注意事项：图片使用 public/programming/hero/ 下 cover.png、1–5.png；底部 5.png 点击滚动至 programming-pillars
  */
@@ -11,7 +11,7 @@ import Image from 'next/image';
 import { scrollToElement } from '@/lib/scroll';
 import type { ProgrammingHeroData } from '@/types/programming';
 
-// 四张卡片图标静态导入，用于按原始尺寸展示（与 summer_camp Hero 一致）
+// 四张卡片图标静态导入，用于按原始尺寸展示（与 learning_program Hero 一致）
 import hero1 from '@/public/programming/hero/1.png';
 import hero2 from '@/public/programming/hero/2.png';
 import hero3 from '@/public/programming/hero/3.png';
@@ -37,7 +37,7 @@ export default function ProgrammingHeroSection({ data }: ProgrammingHeroProps) {
             sizes="100vw"
             className="object-cover"
           />
-          {/* 与 Summer Camp 一致的遮罩：50% 浅灰半透明，提升文字可读性 */}
+          {/* 与 Learning Program 一致的遮罩：50% 浅灰半透明，提升文字可读性 */}
           <div className="absolute inset-0 bg-[lightgray]/50" aria-hidden />
         </div>
         {/* 整块内容区 */}

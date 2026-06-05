@@ -1,7 +1,7 @@
 /**
  * 文件用途：全球教育页面英雄区组件
  * 依赖关系：依赖 types/global-education.ts 中的 Feature 类型和 scrollToElement 工具函数
- * 注意事项：布局与 Summer Camp Hero 一致；-mt-[106px] 使首屏与透明导航重叠
+ * 注意事项：布局与 Learning Program Hero 一致；-mt-[106px] 使首屏与透明导航重叠
  */
 
 'use client';
@@ -15,13 +15,13 @@ interface GlobalHeroSectionProps {
 }
 
 /**
- * 全球教育英雄区组件（布局与 Summer Camp Hero 一致）
+ * 全球教育英雄区组件（布局与 Learning Program Hero 一致）
  * @param features 特性数据数组
  */
 export default function GlobalHeroSection({ features }: GlobalHeroSectionProps) {
   return (
     <section className="relative -mt-[106px] flex flex-col pb-10 bg-[#FFFFFF]">
-      {/* 背景图区域：高度与 Summer Camp 一致；用 svh 替代 vh 避免导航后封面区上下跳动 */}
+      {/* 背景图区域：高度与 Learning Program 一致；用 svh 替代 vh 避免导航后封面区上下跳动 */}
       <div className="relative min-h-[45svh] w-full overflow-visible bg-[#e8e8e8] md:min-h-[55svh] lg:min-h-[70svh]">
         <div className="absolute inset-0 z-0 [contain:layout]">
           <Image

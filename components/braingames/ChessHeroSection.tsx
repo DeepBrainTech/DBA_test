@@ -1,5 +1,5 @@
 /**
- * 文件用途：Brain Games 英雄区，主标题、副标题与四个特色亮点（与 summer_camp Hero 结构一致）
+ * 文件用途：Brain Games 英雄区，主标题、副标题与四个特色亮点（与 learning_program Hero 结构一致）
  * 依赖关系：依赖 next/image、BraingamesHeroData 类型、scrollToElement 工具函数
  * 注意事项：-mt-[106px] 使首屏与透明导航重叠；底部图标点击滚动至教育理念区块
  */
@@ -11,7 +11,7 @@ import Image from 'next/image';
 import { scrollToElement } from '@/lib/scroll';
 import type { BraingamesHeroData } from '@/types/braingames';
 
-// 四张卡片图标静态导入，与 summer_camp Hero 一致：按原始宽高展示，由 max-h 控制显示尺寸
+// 四张卡片图标静态导入，与 learning_program Hero 一致：按原始宽高展示，由 max-h 控制显示尺寸
 import hero1 from '@/public/braingames/hero/1.png';
 import hero2 from '@/public/braingames/hero/2.png';
 import hero3 from '@/public/braingames/hero/3.png';
@@ -37,7 +37,7 @@ export default function ChessHeroSection({ data }: ChessHeroSectionProps) {
             sizes="100vw"
             className="object-cover"
           />
-          {/* 遮罩：提升文字可读性（与 summer_camp 一致） */}
+          {/* 遮罩：提升文字可读性（与 learning_program 一致） */}
           <div className="absolute inset-0 bg-[lightgray]/10" aria-hidden />
         </div>
         {/* 内容区 */}
@@ -78,7 +78,7 @@ export default function ChessHeroSection({ data }: ChessHeroSectionProps) {
             Discover the Charm of Board Games
           </div>
         </div>
-        {/* 底部滚动指示：固定锚定在封面容器底部（与 summer_camp 一致） */}
+        {/* 底部滚动指示：固定锚定在封面容器底部（与 learning_program 一致） */}
         <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 flex translate-y-1/2 justify-center">
           <button
             type="button"

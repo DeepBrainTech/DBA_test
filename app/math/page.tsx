@@ -1,7 +1,7 @@
 /**
  * 文件用途：数学页面入口，负责组装各个Section组件
  * 依赖关系：依赖所有数学相关的Section组件与 data/math
- * 注意事项：页面只负责布局和组件组装；Hero 与 summer_camp 结构一致，需 Outfit 字体
+ * 注意事项：页面只负责布局和组件组装；Hero 与 learning_program 结构一致，需 Outfit 字体
  */
 
 'use client';

@@ -1,6 +1,6 @@
 /**
  * 文件用途：Book Free 预订入口组件（全球教育页面）
- * 依赖关系：无；布局参考 components/summer_camp/BookFreeTrialSection
+ * 依赖关系：无；布局参考 components/learning_program/BookFreeTrialSection
  * 图标均来自 public/global/book/，见下方 *ICON* 常量
  */
 

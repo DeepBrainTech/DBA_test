@@ -21,8 +21,12 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-/** 导航和页脚统一使用 Outfit 字体 */
-const outfit = Outfit({ subsets: ["latin"], weight: ["400", "700"] });
+/** 导航和页脚统一使用 Outfit 字体；variable 供全站 font-outfit 工具类使用 */
+const outfit = Outfit({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-outfit-family",
+});
 
 export const metadata: Metadata = {
   title: "DeepBrain Academy",
@@ -37,7 +41,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${outfit.className} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${outfit.variable} ${outfit.className} antialiased`}
       >
         <Navigation className={outfit.className} />
         {children}

@@ -29,7 +29,7 @@ export default function BraingamesPage() {
     return (
         <div className={`${outfit.variable} ${outfit.className} min-h-screen bg-[#FBF9F4]`}>
             {/*<ColorBoxSection />*/}
-            {/* Hero Section（与 summer_camp 结构一致） */}
+            {/* Hero Section（与 learning_program 结构一致） */}
             <ChessHeroSection data={hero} />
 
             {/* Philosophy / Educational Value */}
@@ -44,7 +44,7 @@ export default function BraingamesPage() {
             {/* Pricing（限时优惠为原版布局） */}
             <PricingSection />
 
-            {/* Book Free Trial（与 summer_camp 一致，无表单仅 CTA） */}
+            {/* Book Free Trial（与 learning_program 一致，无表单仅 CTA） */}
             <BookFreeSection data={bookFreeTrial} />
         </div>
     );
