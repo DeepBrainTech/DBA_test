@@ -4,8 +4,6 @@
  * 注意事项：Navigation 和 Footer 已在根布局统一管理，这里不重复引入
  */
 
-import { Outfit } from 'next/font/google';
-
 import Hero from '@/components/courses/Hero';
 import LearningStrategies from '@/components/courses/LearningStrategies';
 import CourseTimetable from '@/components/courses/CourseTimetable';
@@ -13,16 +11,10 @@ import CourseInformation from '@/components/courses/CourseInformation';
 import BookFreeTrialSection from '@/components/courses/BookFreeTrialSection';
 import { coursesPageData } from '@/data/courses';
 
-const outfit = Outfit({
-  subsets: ['latin'],
-  variable: '--font-outfit',
-  display: 'swap',
-});
-
 export default function Page() {
   const { hero, learningStrategies, timetable, courseInformation, bookFreeTrial } = coursesPageData;
   return (
-    <div className={`${outfit.variable} ${outfit.className} min-h-screen`}>
+    <div className="min-h-screen">
       <main>
         <Hero data={hero} />
         <LearningStrategies data={learningStrategies} />

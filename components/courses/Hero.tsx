@@ -1,6 +1,7 @@
 /**
  * 文件用途：Courses 英雄区，主标题、副标题与四个特色亮点
  * 依赖关系：依赖 next/image、CoursesHeroData 类型、scrollToElement 工具函数；图标来自 public/courses/hero
+ * 注意事项：布局与 Math/Programming Hero 完全一致
  */
 
 'use client';
@@ -36,7 +37,7 @@ export default function Hero({ data }: HeroProps) {
           />
           <div className="absolute inset-0 bg-[lightgray]/50" aria-hidden />
         </div>
-        <div className="relative z-10 mx-auto flex min-h-full max-w-[min(1280px,95vw)] flex-col items-center justify-center px-4 sm:px-6 lg:px-9 pt-[106px] pb-4 text-center">
+        <div className="relative z-10 mx-auto flex min-h-full max-w-[1344px] flex-col items-center justify-center px-4 sm:px-6 lg:px-9 pt-[106px] pb-4 text-center">
           <h1 className="font-outfit mt-10 sm:mt-14 lg:mt-20 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[80px] font-bold leading-tight lg:leading-[1.75] xl:leading-[140px] text-[#333333]">
             {data.title}
           </h1>
@@ -67,7 +68,7 @@ export default function Hero({ data }: HeroProps) {
               })}
             </div>
           </div>
-          <div className="mt-6 text-center font-outfit text-xl font-medium capitalize leading-10 text-white [text-shadow:_0px_2px_4px_rgb(0_0_0_/_0.20)]">
+          <div className="mt-4 sm:mt-6 text-center font-outfit text-base sm:text-lg lg:text-xl font-medium capitalize leading-relaxed lg:leading-10 text-white [text-shadow:_0px_2px_4px_rgb(0_0_0_/_0.20)]">
             Join us this summer
           </div>
         </div>
