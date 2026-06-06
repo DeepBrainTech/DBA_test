@@ -41,11 +41,6 @@ export default function Navigation({ className = '' }: { className?: string }) {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // 路由变化时关闭菜单
-  useEffect(() => {
-    setIsMenuOpen(false);
-  }, [pathname]);
-
   // 在 Learning Program / Courses 间切换时预加载双方封面图
   useEffect(() => {
     if (pathname === '/learning_program' || pathname === '/courses') {
@@ -77,7 +72,7 @@ export default function Navigation({ className = '' }: { className?: string }) {
             <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 flex items-center justify-center">
               <Image 
                 src="/nav_footer/logo.png" 
-                alt="DeepBrain Academy Logo" 
+                alt="DeepBrain Academy" 
                 width={64} 
                 height={64}
                 className="object-contain"

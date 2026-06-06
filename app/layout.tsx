@@ -29,8 +29,24 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "DeepBrain Academy",
-  description: "DeepBrain Academy",
+  metadataBase: new URL("https://www.deepbrainacademy.org"),
+  title: {
+    default: "DeepBrain Academy",
+    template: "%s | DeepBrain Academy",
+  },
+  description:
+    "We offer math thinking, chess, programming, and global education support for ages 6-18, helping children learn with joy and grow through challenges.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "DeepBrain Academy",
+    description:
+      "Math thinking, chess, programming, and global education support for ages 6-18.",
+    url: "https://www.deepbrainacademy.org",
+    siteName: "DeepBrain Academy",
+    type: "website",
+  },
 };
 
 export default function RootLayout({

@@ -25,7 +25,7 @@ export default function Footer({ className = '' }: { className?: string }) {
               <div className="w-14 h-14 md:w-16 md:h-16 flex items-center justify-center shrink-0">
                 <Image
                   src="/nav_footer/logo.png"
-                  alt="DeepBrain Academy Logo"
+                  alt="DeepBrain Academy"
                   width={64}
                   height={64}
                   className="object-contain w-full h-full"
