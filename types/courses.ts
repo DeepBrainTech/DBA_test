@@ -64,6 +64,42 @@ export interface CoursesLearningStrategiesComparisonRow {
 
 
 
+/** Explore Programs 单张项目卡 */
+
+export interface ProgramCardData {
+
+  index: number;
+
+  title: string;
+
+  description: string;
+
+  icon: string;
+
+  tags: string[];
+
+}
+
+
+
+/** Explore Programs 介绍区块数据 */
+
+export interface ExploreProgramsData {
+
+  badgeIcon: string;
+
+  badgeText: string;
+
+  title: string;
+
+  subtitle: string;
+
+  programs: ProgramCardData[];
+
+}
+
+
+
 /** Courses Learning Strategies 区块数据 */
 
 export interface CoursesLearningStrategiesData {
@@ -250,7 +286,7 @@ export interface CoursesPageData {
 
   hero: CoursesHeroData;
 
-  learningStrategies: CoursesLearningStrategiesData;
+  explorePrograms: ExploreProgramsData;
 
   timetable: CourseTimetableData;
 

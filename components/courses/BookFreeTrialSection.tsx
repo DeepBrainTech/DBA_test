@@ -26,7 +26,7 @@ export default function BookFreeTrialSection({ data }: BookFreeTrialSectionProps
   return (
     <section
       id="book-free-trial"
-      className="w-full relative bg-[#EF6B83] overflow-hidden"
+      className="w-full relative bg-[#599CED] overflow-hidden"
       aria-label="Book Free Trial"
     >
       <div className="relative w-full max-w-[min(1280px,90vw)] mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
@@ -104,7 +104,7 @@ export default function BookFreeTrialSection({ data }: BookFreeTrialSectionProps
 
           <div className="w-full lg:w-[500px] xl:w-[607px] lg:shrink-0 min-h-[320px] lg:min-h-[360px] mt-6 lg:mt-12 px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8 lg:pt-12 pb-5 sm:pb-6 lg:pb-8 bg-white rounded-2xl lg:rounded-3xl shadow-[0px_29px_58px_-14px_rgba(0,0,0,0.25)] flex flex-col gap-5 sm:gap-7 lg:gap-9">
             <div className="flex flex-col gap-2">
-              <h3 className="text-slate-700 text-xl sm:text-2xl lg:text-3xl font-semibold font-['Outfit'] leading-tight">
+              <h3 className="text-[#599CED] text-xl sm:text-2xl lg:text-3xl font-semibold font-['Outfit'] leading-tight">
                 {data.cardTitle}
               </h3>
               <p className="text-slate-500 text-sm sm:text-base lg:text-xl font-normal font-['Outfit'] leading-relaxed">
@@ -117,7 +117,7 @@ export default function BookFreeTrialSection({ data }: BookFreeTrialSectionProps
                 href="https://docs.google.com/forms/d/1wnsEKekngdFdpt465K4BIvXLT1mKvM2VmEI2Kc0QvCQ/viewform"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full h-11 sm:h-12 lg:h-14 bg-rose-400 rounded-xl lg:rounded-2xl inline-flex justify-center items-center gap-2 text-white text-base sm:text-lg lg:text-xl font-normal font-['Outfit'] hover:bg-rose-500 transition-colors"
+                className="w-full h-11 sm:h-12 lg:h-14 bg-[#599CED] rounded-xl lg:rounded-2xl inline-flex justify-center items-center gap-2 text-white text-base sm:text-lg lg:text-xl font-normal font-['Outfit'] hover:bg-[#4788D9] transition-colors"
               >
                 {data.ctaLabel}
                 <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 shrink-0" strokeWidth={2} />
@@ -127,7 +127,7 @@ export default function BookFreeTrialSection({ data }: BookFreeTrialSectionProps
             <div className="pt-4 sm:pt-6 border-t border-indigo-50 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-x-4 lg:gap-x-6 justify-items-center">
               {data.stats.map((stat, i) => (
                 <div key={i} className="flex flex-col gap-0.5 items-center text-center">
-                  <span className="text-rose-400 text-base sm:text-lg lg:text-xl font-semibold font-['Outfit']">
+                  <span className="text-[#599CED] text-base sm:text-lg lg:text-xl font-semibold font-['Outfit']">
                     {stat.value}
                   </span>
                   <span className="text-slate-500 text-xs sm:text-sm lg:text-base font-normal font-['Outfit'] text-center">

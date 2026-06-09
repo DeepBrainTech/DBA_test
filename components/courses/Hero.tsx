@@ -75,9 +75,9 @@ export default function Hero({ data }: HeroProps) {
         <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 flex translate-y-1/2 justify-center">
           <button
             type="button"
-            onClick={() => scrollToElement('learning-strategies')}
+            onClick={() => scrollToElement('explore-programs')}
             className="pointer-events-auto cursor-pointer border-0 bg-transparent p-0 min-w-[1vw] max-w-[35px]"
-            aria-label="滚动至 Learning Strategies"
+            aria-label="Scroll to Explore Our Programs"
           >
             <Image
               src="/courses/hero/5.png"
