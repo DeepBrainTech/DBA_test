@@ -1,122 +1,181 @@
 /**
- * 文件用途：Courses 页面课程信息区块，含分类筛选与课程详情
- * 依赖关系：依赖 types/courses 的 CourseInformationData，被 app/courses/page.tsx 使用
+ * 文件用途：Courses 页面课程信息区块，含图例筛选与可折叠课程卡片
+ * 依赖关系：依赖 CourseCategoryLegend、CourseInfoCard、FilterTapHint、lib/courseCategories
  */
 
 'use client';
 
-import React, { useState } from 'react';
-import type { CourseInfoCategory, CourseInformationData } from '@/types/courses';
+import { useCallback, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import CourseCategoryLegend, {
+  NeutralLegendButton,
+} from '@/components/courses/CourseCategoryLegend';
+import CourseInfoCard from '@/components/courses/CourseInfoCard';
+import FilterTapHint from '@/components/courses/FilterTapHint';
+import {
+  CONTEST_FILTER_CONFIG,
+  courseMatchesInformationFilter,
+  getCourseCardId,
+  type CourseInformationFilter,
+} from '@/lib/courseCategories';
+import type { CourseInformationData } from '@/types/courses';
 
-const CATEGORY_COLORS: Record<CourseInfoCategory, string> = {
-  All: 'bg-[#2C3E50]',
-  Physics: 'bg-[#EF6B83]',
-  Math: 'bg-[#4ADE80]',
-  Chess: 'bg-[#FDBA74]',
-  Languages: 'bg-[#A78BFA]',
-  AI: 'bg-[#60A5FA]',
-};
-
-const CATEGORY_TEXT_COLORS: Record<Exclude<CourseInfoCategory, 'All'>, string> = {
-  Physics: 'text-[#EF6B83]',
-  Math: 'text-[#4ADE80]',
-  Chess: 'text-[#FDBA74]',
-  Languages: 'text-[#A78BFA]',
-  AI: 'text-[#60A5FA]',
-};
+type ExpandState =
+  | { mode: 'all-collapsed' }
+  | { mode: 'all-expanded' }
+  | { mode: 'individual'; expandedIds: Set<string> };
 
 interface CourseInformationProps {
   data: CourseInformationData;
 }
 
-export default function CourseInformation({ data }: CourseInformationProps) {
-  const [activeTab, setActiveTab] = useState<CourseInfoCategory>('All');
+function isCardExpanded(id: string, expandState: ExpandState): boolean {
+  if (expandState.mode === 'all-collapsed') return false;
+  if (expandState.mode === 'all-expanded') return true;
+  return expandState.expandedIds.has(id);
+}
 
-  const displayedCourses = activeTab === 'All'
-    ? data.courses
-    : data.courses.filter((c) => c.cat === activeTab);
+export default function CourseInformation({ data }: CourseInformationProps) {
+  const [activeFilter, setActiveFilter] = useState<CourseInformationFilter>('All');
+  const [expandState, setExpandState] = useState<ExpandState>({ mode: 'all-collapsed' });
+  const [panelHeight, setPanelHeight] = useState<number | null>(null);
+
+  const panelRef = useRef<HTMLDivElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
+  const gridRef = useRef<HTMLDivElement>(null);
+
+  const displayedCourses = useMemo(
+    () => data.courses.filter((course) => courseMatchesInformationFilter(course, activeFilter)),
+    [data.courses, activeFilter],
+  );
+
+  const displayedIds = useMemo(
+    () => displayedCourses.map(getCourseCardId),
+    [displayedCourses],
+  );
+
+  const allDisplayedExpanded =
+    displayedIds.length > 0 &&
+    displayedIds.every((id) => isCardExpanded(id, expandState));
+
+  const measureCollapsedAllHeight = useCallback(() => {
+    const panel = panelRef.current;
+    const header = headerRef.current;
+    const grid = gridRef.current;
+    if (!panel || !header || !grid) return;
+
+    const styles = getComputedStyle(panel);
+    const paddingY =
+      parseFloat(styles.paddingTop) + parseFloat(styles.paddingBottom);
+    const gap = parseFloat(styles.rowGap || styles.gap || '0');
+
+    setPanelHeight(Math.ceil(header.offsetHeight + grid.offsetHeight + gap + paddingY));
+  }, []);
+
+  const isCollapsedAllBaseline =
+    activeFilter === 'All' && expandState.mode === 'all-collapsed';
+
+  useLayoutEffect(() => {
+    if (!isCollapsedAllBaseline) return;
+    measureCollapsedAllHeight();
+  }, [isCollapsedAllBaseline, measureCollapsedAllHeight, data.courses]);
+
+  useLayoutEffect(() => {
+    if (!isCollapsedAllBaseline) return;
+
+    const onResize = () => measureCollapsedAllHeight();
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, [isCollapsedAllBaseline, measureCollapsedAllHeight]);
+
+  const toggleCard = (id: string) => {
+    setExpandState((prev) => {
+      if (prev.mode === 'all-collapsed') {
+        return { mode: 'individual', expandedIds: new Set([id]) };
+      }
+
+      if (prev.mode === 'all-expanded') {
+        const expandedIds = new Set(displayedIds.filter((cardId) => cardId !== id));
+        return expandedIds.size === 0
+          ? { mode: 'all-collapsed' }
+          : { mode: 'individual', expandedIds };
+      }
+
+      const expandedIds = new Set(prev.expandedIds);
+      if (expandedIds.has(id)) expandedIds.delete(id);
+      else expandedIds.add(id);
+
+      if (expandedIds.size === 0) return { mode: 'all-collapsed' };
+      if (displayedIds.every((cardId) => expandedIds.has(cardId))) {
+        return { mode: 'all-expanded' };
+      }
+      return { mode: 'individual', expandedIds };
+    });
+  };
+
+  const handleToggleAll = () => {
+    setExpandState(allDisplayedExpanded ? { mode: 'all-collapsed' } : { mode: 'all-expanded' });
+  };
 
   return (
     <div className="w-full bg-[#FBF9F4] pb-16 md:pb-24">
-      <div className="w-full max-w-[min(1400px,95vw)] mx-auto px-4 lg:px-9 flex flex-col items-center gap-8">
-        <div className="w-full flex flex-col items-center text-center gap-4">
-          <h2 className="text-3xl md:text-4xl lg:text-[40px] font-bold font-['Outfit'] text-slate-800">
+      <div className="mx-auto flex w-full max-w-[min(1440px,98vw)] flex-col items-center gap-8 px-4 lg:px-9">
+        <div className="flex w-full flex-col items-center gap-4 text-center">
+          <h2 className="font-['Outfit'] text-3xl font-bold text-[#2C3E50] md:text-4xl lg:text-[40px]">
             {data.sectionTitle}
           </h2>
         </div>
 
-        <div className="w-full bg-[#E5E7EB]/50 rounded-3xl p-4 md:p-6 lg:p-8 flex flex-col gap-6 md:gap-8">
-          <div className="flex flex-wrap items-center justify-center gap-2 md:gap-4">
-            {data.categories.map((cat) => {
-              const isActive = activeTab === cat;
-              return (
-                <button
-                  key={cat}
-                  onClick={() => setActiveTab(cat)}
-                  className={`
-                    px-5 py-2.5 md:px-8 md:py-3 rounded-full font-['Outfit'] font-bold text-sm md:text-base transition-all duration-300
-                    ${CATEGORY_COLORS[cat]}
-                    ${isActive ? 'text-white opacity-100 shadow-md' : 'text-white opacity-40 hover:opacity-70'}
-                  `}
-                >
-                  {cat}
-                </button>
-              );
-            })}
+        <div
+          ref={panelRef}
+          style={panelHeight ? { height: panelHeight } : undefined}
+          className="flex w-full flex-col gap-5 rounded-3xl bg-[rgba(89,156,237,0.08)] p-4 md:gap-6 md:p-6 lg:gap-8 lg:p-8"
+        >
+          <div ref={headerRef} className="flex shrink-0 flex-col items-center gap-2">
+            <FilterTapHint showCardExpand />
+            <div className="flex flex-wrap items-center justify-center gap-4 md:gap-5">
+              <CourseCategoryLegend
+                includeAll
+                activeFilter={activeFilter}
+                onFilterChange={setActiveFilter}
+              />
+              <NeutralLegendButton
+                label={allDisplayedExpanded ? 'Collapse All' : 'Expand All'}
+                isActive={false}
+                onClick={handleToggleAll}
+                activeStyle={CONTEST_FILTER_CONFIG}
+                disabled={displayedCourses.length === 0}
+              />
+            </div>
           </div>
 
-          <div className="w-full h-[600px] md:h-[700px] lg:h-[800px]">
-            {activeTab === 'All' ? (
-              <div className="flex flex-wrap justify-center content-start gap-3 md:gap-4 h-full overflow-y-auto custom-scrollbar pr-2 pb-4">
-                {displayedCourses.map((course, idx) => (
-                  <div
-                    key={idx}
-                    className="bg-[#FCFBF8] border border-slate-100 shadow-sm rounded-xl px-4 py-3 flex items-center gap-3 h-fit"
-                  >
-                    <span className={`text-xs md:text-sm font-['Outfit'] font-medium ${CATEGORY_TEXT_COLORS[course.cat]}`}>
-                      {course.cat}
-                    </span>
-                    <span className="text-sm md:text-base font-['Outfit'] font-bold text-slate-800">
-                      {course.name}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <div className="w-full h-full overflow-y-auto pr-2 custom-scrollbar pb-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-                  {displayedCourses.map((course, idx) => (
-                    <div
-                      key={idx}
-                      className="bg-[#FCFBF8] border border-slate-100 shadow-sm rounded-2xl p-5 md:p-6 flex flex-col gap-4 h-auto min-h-[220px]"
-                    >
-                      <div className="flex items-center gap-2">
-                        <span className={`text-sm font-['Outfit'] font-medium ${CATEGORY_TEXT_COLORS[course.cat]}`}>
-                          {course.cat}
-                        </span>
-                        <span className="text-lg md:text-xl font-['Outfit'] font-bold text-slate-800">
-                          {course.name}
-                        </span>
-                      </div>
-                      <ul className="list-disc pl-5 text-sm md:text-[15px] font-['Outfit'] text-slate-500 space-y-2 leading-relaxed">
-                        {course.desc.map((d, i) => (
-                          <li key={i}>{d}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
+          <div
+            className={`min-h-0 flex-1 ${panelHeight ? 'overflow-y-auto pr-1 course-info-scroll' : ''}`}
+          >
+            <div
+              ref={gridRef}
+              className="grid w-full grid-cols-1 gap-4 md:grid-cols-2 md:gap-5 lg:grid-cols-3 lg:gap-6"
+            >
+              {displayedCourses.map((course) => {
+                const cardId = getCourseCardId(course);
+                return (
+                  <CourseInfoCard
+                    key={cardId}
+                    course={course}
+                    isExpanded={isCardExpanded(cardId, expandState)}
+                    onToggle={() => toggleCard(cardId)}
+                  />
+                );
+              })}
+            </div>
           </div>
         </div>
 
-        <div className="w-full flex justify-center mt-4">
+        <div className="flex w-full shrink-0 justify-center">
           <a
             href="https://docs.google.com/forms/d/1wnsEKekngdFdpt465K4BIvXLT1mKvM2VmEI2Kc0QvCQ/viewform"
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative inline-flex h-12 md:h-14 items-center justify-center gap-2 rounded-full bg-[#EF6B83] px-8 md:px-10 text-base md:text-lg font-bold font-['Outfit'] text-white shadow-lg transition-all hover:-translate-y-0.5 hover:shadow-xl hover:bg-[#E55A72] no-underline"
+            className="group relative inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#599CED] px-8 text-base font-bold font-['Outfit'] text-white no-underline shadow-lg transition-all hover:-translate-y-0.5 hover:bg-[#4788D9] hover:shadow-xl md:h-14 md:px-10 md:text-lg"
           >
             <span>Register Now</span>
             <svg
@@ -139,14 +198,14 @@ export default function CourseInformation({ data }: CourseInformationProps) {
       </div>
 
       <style jsx global>{`
-        .custom-scrollbar::-webkit-scrollbar {
+        .course-info-scroll::-webkit-scrollbar {
           width: 6px;
         }
-        .custom-scrollbar::-webkit-scrollbar-track {
+        .course-info-scroll::-webkit-scrollbar-track {
           background: transparent;
         }
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-          background-color: #CBD5E1;
+        .course-info-scroll::-webkit-scrollbar-thumb {
+          background-color: rgba(89, 156, 237, 0.25);
           border-radius: 20px;
         }
       `}</style>

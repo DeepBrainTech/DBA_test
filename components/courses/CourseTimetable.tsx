@@ -1,22 +1,22 @@
 /**
- * 文件用途：Courses 页面课程时间表区块
- * 依赖关系：依赖 types/courses 的 CourseTimetableData，被 app/courses/page.tsx 使用
+ * 文件用途：Courses 页面课程时间表区块（含可交互科目图例筛选）
+ * 依赖关系：依赖 types/courses、CourseCategoryLegend、lib/courseCategories
  */
 
 'use client';
 
+import { useState } from 'react';
+import CourseCategoryLegend from '@/components/courses/CourseCategoryLegend';
+import FilterTapHint from '@/components/courses/FilterTapHint';
+import {
+  COURSE_CATEGORY_CONFIG,
+  isContestCourse,
+  type CourseInformationFilter,
+} from '@/lib/courseCategories';
 import type { CourseTimetableData, TimetableCategory } from '@/types/courses';
 
-const COLORS: Record<TimetableCategory, string> = {
-  Physics: 'bg-[#EF6B83]',
-  Math: 'bg-[#4ADE80]',
-  Chess: 'bg-[#FDBA74]',
-  Language: 'bg-[#A78BFA]',
-  AI: 'bg-[#60A5FA]',
-};
-
-const DAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-const DAY_LABELS: Record<string, string> = {
+const DAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'] as const;
+const DAY_LABELS: Record<(typeof DAYS)[number], string> = {
   Mon: 'Monday',
   Tue: 'Tuesday',
   Wed: 'Wednesday',
@@ -31,42 +31,58 @@ interface CourseTimetableProps {
 }
 
 export default function CourseTimetable({ data }: CourseTimetableProps) {
+  const [activeFilter, setActiveFilter] = useState<CourseInformationFilter>('All');
+
+  const filterCourses = (courses: { name: string; cat: TimetableCategory }[] | undefined) => {
+    if (!courses) return [];
+    if (activeFilter === 'All') return courses;
+    if (activeFilter === 'Contest') {
+      return courses.filter((course) => isContestCourse(course.name));
+    }
+    return courses.filter((course) => course.cat === activeFilter);
+  };
+
   return (
-    <div className="w-full bg-[#FBF9F4] mt-8 md:mt-12 pb-16">
-      <div className="w-full max-w-[min(1400px,95vw)] mx-auto px-4 lg:px-9 flex flex-col justify-start items-center gap-8 sm:gap-12 lg:gap-16 pt-8 md:pt-12">
-        <div className="flex flex-col items-center gap-4">
-          <div className="inline-flex items-center justify-center gap-2 rounded-full bg-rose-400/10 px-5 py-2">
-            <span className="text-xl" aria-hidden>⏰</span>
-            <span className="text-rose-400 font-medium font-['Outfit']">Schedule</span>
+    <div className="w-full bg-[#FBF9F4] pb-16">
+      <div className="mx-auto flex w-full max-w-[min(1440px,98vw)] flex-col items-center gap-6 px-2 pt-6 sm:gap-10 sm:px-4 md:pt-8 lg:gap-12 lg:px-6">
+        <header className="flex flex-col items-center gap-4">
+          <div className="inline-flex items-center gap-2.5 rounded-[23px] bg-[rgba(89,156,237,0.1)] px-5 py-2.5">
+            <span className="text-[28px] leading-none" aria-hidden>
+              ⏰
+            </span>
+            <span className="font-['Outfit'] text-xl text-[#599CED]">Schedule</span>
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-[40px] font-bold font-['Outfit'] text-slate-800 text-center">
+          <h2 className="text-center font-['Outfit'] text-3xl font-bold text-[#2C3E50] md:text-4xl lg:text-[40px]">
             {data.sectionTitle}
           </h2>
-        </div>
+        </header>
 
-        <div className="w-full bg-white rounded-3xl p-6 md:p-10 shadow-sm border border-slate-100 overflow-hidden flex flex-col items-center">
-          <h3 className="text-2xl md:text-3xl font-bold text-slate-800 font-['Outfit'] text-center mb-6">
+        <div className="flex w-full flex-col items-center rounded-[28px] border border-slate-100 bg-white px-4 py-6 shadow-sm md:px-6 md:py-9 lg:px-8 lg:py-10">
+          <h3 className="mb-6 text-center font-['Outfit'] text-2xl font-semibold text-[#2C3E50] md:text-[28px]">
             {data.tableTitle}
           </h3>
 
-          <div className="flex flex-wrap justify-center gap-4 md:gap-6 mb-8 text-sm md:text-base font-['Outfit'] text-slate-500 font-medium">
-            {(Object.keys(COLORS) as TimetableCategory[]).map((cat) => (
-              <div key={cat} className="flex items-center gap-2">
-                <div className={`w-3 h-3 rounded-full ${COLORS[cat]}`} />
-                <span>{cat}</span>
-              </div>
-            ))}
-            <div className="flex items-center ml-2">
-              <span>*Contest</span>
-            </div>
+          <div className="mb-8 flex w-full flex-col items-center gap-2">
+            <FilterTapHint />
+            <CourseCategoryLegend
+              includeAll
+              activeFilter={activeFilter}
+              onFilterChange={setActiveFilter}
+            />
           </div>
 
-          <div className="w-full overflow-x-auto pb-4" style={{ WebkitOverflowScrolling: 'touch' }}>
-            <div className="min-w-[1000px] w-full flex flex-col border border-slate-200 rounded-t-xl overflow-hidden">
-              <div className="grid grid-cols-[120px_1fr_1fr_1fr_1fr_1fr_1fr_1fr] bg-[#2C3E50] text-white">
-                <div className="py-4 px-2 text-center text-sm md:text-base font-bold font-['Outfit']"></div>
+          <div
+            className="-mx-2 w-[calc(100%+1rem)] overflow-x-auto px-2 pb-4 sm:-mx-3 sm:w-[calc(100%+1.5rem)] sm:px-3 md:mx-0 md:w-full md:px-0"
+            style={{ WebkitOverflowScrolling: 'touch' }}
+          >
+            <div className="min-w-[1240px] w-full overflow-hidden rounded-t-[10px] border border-[#E8F4FC]">
+              <div className="grid grid-cols-[110px_repeat(7,minmax(160px,1fr))] bg-[#2C3E50] text-white">
+                <div className="py-2" />
                 {DAYS.map((day) => (
-                  <div key={day} className="py-4 px-2 text-center text-sm md:text-base font-bold font-['Outfit']">
+                  <div
+                    key={day}
+                    className="px-2 py-2 text-center font-['Outfit'] text-base font-bold"
+                  >
                     {DAY_LABELS[day]}
                   </div>
                 ))}
@@ -75,26 +91,39 @@ export default function CourseTimetable({ data }: CourseTimetableProps) {
               {data.scheduleRows.map((row, idx) => (
                 <div
                   key={idx}
-                  className={`grid grid-cols-[120px_1fr_1fr_1fr_1fr_1fr_1fr_1fr] border-b border-slate-200 relative ${
-                    idx % 2 === 0 ? 'bg-white' : 'bg-slate-50/50'
+                  className={`grid grid-cols-[110px_repeat(7,minmax(160px,1fr))] border-b border-[#E8F4FC] ${
+                    idx % 2 === 0 ? 'bg-white' : 'bg-slate-50/40'
                   }`}
                 >
-                  <div className="py-6 px-2 flex items-center justify-center text-center font-['Outfit'] font-medium text-slate-500 text-sm border-r border-slate-200 whitespace-pre-wrap">
+                  <div className="flex min-h-[136px] items-center justify-center border-r border-[#E8F4FC] px-2 py-2 text-center font-['Outfit'] text-base font-bold leading-5 text-[#7C8B99] whitespace-pre-wrap">
                     {row.time}
                   </div>
 
-                  {DAYS.map((day, dIdx) => (
-                    <div key={day} className={`p-3 flex flex-col gap-3 ${dIdx !== DAYS.length - 1 ? 'border-r border-slate-200' : ''}`}>
-                      {row.days[day]?.map((course, cIdx) => (
-                        <div key={cIdx} className="flex items-start gap-2">
-                          <div className={`w-2.5 h-2.5 rounded-full mt-1.5 shrink-0 ${COLORS[course.cat]}`} />
-                          <span className="font-['Outfit'] text-sm font-medium text-slate-700 leading-snug whitespace-pre-wrap">
-                            {course.name}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  ))}
+                  {DAYS.map((day, dIdx) => {
+                    const visibleCourses = filterCourses(row.days[day]);
+
+                    return (
+                      <div
+                        key={day}
+                        className={`flex min-h-[136px] flex-col justify-center gap-1 px-2 py-1.5 ${
+                          dIdx !== DAYS.length - 1 ? 'border-r border-[#E8F4FC]' : ''
+                        }`}
+                      >
+                        {visibleCourses.map((course, cIdx) => (
+                          <div key={cIdx} className="flex items-start gap-1.5">
+                            <span
+                              className="mt-0.5 size-3.5 shrink-0 rounded-full"
+                              style={{ backgroundColor: COURSE_CATEGORY_CONFIG[course.cat].dotColor }}
+                              aria-hidden
+                            />
+                            <span className="font-['Outfit'] text-sm font-medium leading-5 text-[#2C3E50] whitespace-pre-wrap">
+                              {course.name}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    );
+                  })}
                 </div>
               ))}
             </div>
