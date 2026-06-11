@@ -19,6 +19,7 @@ const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/learning_program', label: 'Learning Program' },
   { href: '/courses', label: 'Courses' },
+  { href: '/test_prep', label: 'Test Prep' },
   { href: '/global-education', label: 'Global Education' },
   { href: '/math', label: 'Math' },
   { href: '/braingames', label: 'Brain Games' },
