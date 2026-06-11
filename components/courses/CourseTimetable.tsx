@@ -28,9 +28,10 @@ const DAY_LABELS: Record<(typeof DAYS)[number], string> = {
 
 interface CourseTimetableProps {
   data: CourseTimetableData;
+  hideHeader?: boolean;
 }
 
-export default function CourseTimetable({ data }: CourseTimetableProps) {
+export default function CourseTimetable({ data, hideHeader = false }: CourseTimetableProps) {
   const [activeFilter, setActiveFilter] = useState<CourseInformationFilter>('All');
 
   const filterCourses = (courses: { name: string; cat: TimetableCategory }[] | undefined) => {
@@ -45,17 +46,19 @@ export default function CourseTimetable({ data }: CourseTimetableProps) {
   return (
     <div className="w-full bg-[#FBF9F4] pb-16">
       <div className="mx-auto flex w-full max-w-[min(1440px,98vw)] flex-col items-center gap-6 px-2 pt-6 sm:gap-10 sm:px-4 md:pt-8 lg:gap-12 lg:px-6">
-        <header className="flex flex-col items-center gap-4">
-          <div className="inline-flex items-center gap-2.5 rounded-[23px] bg-[rgba(89,156,237,0.1)] px-5 py-2.5">
-            <span className="text-[28px] leading-none" aria-hidden>
-              ⏰
-            </span>
-            <span className="font-['Outfit'] text-xl text-[#599CED]">Schedule</span>
-          </div>
-          <h2 className="text-center font-['Outfit'] text-3xl font-bold text-[#2C3E50] md:text-4xl lg:text-[40px]">
-            {data.sectionTitle}
-          </h2>
-        </header>
+        {!hideHeader && (
+          <header className="flex flex-col items-center gap-4">
+            <div className="inline-flex items-center gap-2.5 rounded-[23px] bg-[rgba(89,156,237,0.1)] px-5 py-2.5">
+              <span className="text-[28px] leading-none" aria-hidden>
+                ⏰
+              </span>
+              <span className="font-['Outfit'] text-xl text-[#599CED]">Schedule</span>
+            </div>
+            <h2 className="text-center font-['Outfit'] text-3xl font-bold text-[#2C3E50] md:text-4xl lg:text-[40px]">
+              {data.sectionTitle}
+            </h2>
+          </header>
+        )}
 
         <div className="flex w-full flex-col items-center rounded-[28px] border border-slate-100 bg-white px-4 py-6 shadow-sm md:px-6 md:py-9 lg:px-8 lg:py-10">
           <h3 className="mb-6 text-center font-['Outfit'] text-2xl font-semibold text-[#2C3E50] md:text-[28px]">

@@ -8,8 +8,11 @@ import type { Metadata } from 'next';
 
 import ScoreGrowthSystem from '@/components/test_prep/ScoreGrowthSystem';
 import SuccessStories from '@/components/test_prep/SuccessStories';
+import TestPrepBookFreeTrialSection from '@/components/test_prep/TestPrepBookFreeTrialSection';
 import TestPrepCourses from '@/components/test_prep/TestPrepCourses';
 import TestPrepHero from '@/components/test_prep/TestPrepHero';
+import TestPrepTimetableSection from '@/components/test_prep/TestPrepTimetableSection';
+import { coursesPageData } from '@/data/courses';
 import { testPrepPageData } from '@/data/test_prep';
 
 export const metadata: Metadata = {
@@ -20,6 +23,13 @@ export const metadata: Metadata = {
 
 export default function TestPrepPage() {
   const { hero, successStories, courses, scoreGrowthSystem } = testPrepPageData;
+  const { timetable, bookFreeTrial } = coursesPageData;
+  const testPrepBookFreeTrial = {
+    ...bookFreeTrial,
+    stats: bookFreeTrial.stats.map((stat) =>
+      stat.label === 'Sessions Booked' ? { ...stat, value: '110' } : stat
+    ),
+  };
 
   return (
     <div className="min-h-screen">
@@ -28,6 +38,8 @@ export default function TestPrepPage() {
         <SuccessStories data={successStories} />
         <TestPrepCourses data={courses} />
         <ScoreGrowthSystem data={scoreGrowthSystem} />
+        <TestPrepTimetableSection data={timetable} />
+        <TestPrepBookFreeTrialSection data={testPrepBookFreeTrial} />
       </main>
     </div>
   );
