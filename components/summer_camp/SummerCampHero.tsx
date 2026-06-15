@@ -1,6 +1,6 @@
 /**
  * 文件用途：Summer Camp 页面完整内容区
- * 依赖关系：依赖 next/image、next/link、PlayDayPageData 类型
+ * 依赖关系：依赖 next/image、next/link、SummerCampPageData 类型
  * 注意事项：-mt-[106px] 使首屏与透明导航重叠；max-w-[1344px] 与 Math 页面一致
  */
 
@@ -8,13 +8,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 
-import type { PlayDayPageData } from '@/types/play_day';
+import type { SummerCampPageData } from '@/types/summer_camp';
 
-interface PlayDayHeroProps {
-  data: PlayDayPageData;
+interface SummerCampHeroProps {
+  data: SummerCampPageData;
 }
 
-export default function PlayDayHero({ data }: PlayDayHeroProps) {
+export default function SummerCampHero({ data }: SummerCampHeroProps) {
   const {
     hero,
     intro,

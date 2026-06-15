@@ -106,11 +106,13 @@ export default function Footer({ className = '' }: { className?: string }) {
             <div className="space-y-2 md:space-y-3">
               <Link href="/" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Home</Link>
               <Link href="/learning_program" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Learning Program</Link>
+              <Link href="/summer_camp" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Summer Camp</Link>
               <Link href="/courses" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Courses</Link>
               <Link href="/global-education" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Global Education</Link>
               <Link href="/math" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Math</Link>
               <Link href="/braingames" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Brain Games</Link>
               <Link href="/programming" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Programming</Link>
+              <Link href="/test_prep" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Test Prep</Link>
               <Link href="/tutoring" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Tutoring</Link>
               <Link href="/about" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">About Us</Link>
             </div>
@@ -120,10 +122,10 @@ export default function Footer({ className = '' }: { className?: string }) {
           <div>
             <h4 className="text-lg md:text-xl font-semibold mb-4 md:mb-5">Course Center</h4>
             <div className="space-y-2 md:space-y-3">
-              <Link href="#" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Olympiad Math</Link>
-              <Link href="#" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Chess</Link>
+              <Link href="/math" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Olympiad Math</Link>
+              <Link href="/braingames" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Chess</Link>
               <Link href="/global-education" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Global Education</Link>
-              <Link href="#" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Programming</Link>
+              <Link href="/programming" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Programming</Link>
             </div>
           </div>
 
@@ -143,7 +145,7 @@ export default function Footer({ className = '' }: { className?: string }) {
             <h4 className="text-lg md:text-xl font-semibold mb-4 md:mb-5">Resource Center</h4>
             <div className="space-y-2 md:space-y-3">
               <Link href="#" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Learning Materials</Link>
-              <Link href="#" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Educational Blogs</Link>
+              <Link href="/blog/value-of-learning-chess" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Educational Blogs</Link>
               <Link href="#" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Successful Cases</Link>
               <Link href="#" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Events</Link>
             </div>
@@ -159,7 +161,7 @@ export default function Footer({ className = '' }: { className?: string }) {
             <div className="flex items-center gap-4 md:gap-6">
               <Link href="#" className="text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Privacy Policy</Link>
               <Link href="#" className="text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Terms of Use</Link>
-              <Link href="#" className="text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Site Map</Link>
+              <Link href="/sitemap.xml" className="text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Site Map</Link>
             </div>
           </div>
         </div>

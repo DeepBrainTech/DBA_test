@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     description:
       'Project-based STEM innovation and AI strategy programs for young learners.',
     url: 'https://www.deepbrainacademy.org/learning_program',
+    images: [{ url: '/learning_program/hero/cover.png' }],
   },
 };
 

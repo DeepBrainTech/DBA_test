@@ -1,15 +1,15 @@
 /**
- * 文件用途：Summer Camp / Play Day 页面数据
- * 依赖关系：依赖 types/play_day.ts 类型定义
+ * 文件用途：Summer Camp 页面数据
+ * 依赖关系：依赖 types/summer_camp.ts 类型定义
  * 注意事项：文案与 2026 Summer Camp 宣传物料保持一致，集中管理便于维护
  */
 
-import type { PlayDayPageData } from '@/types/play_day';
+import type { SummerCampPageData } from '@/types/summer_camp';
 
 /**
  * Summer Camp 页面完整数据
  */
-export const playDayPageData: PlayDayPageData = {
+export const summerCampPageData: SummerCampPageData = {
   hero: {
     badge: '☀️ Summer Camp',
     title: '2026 Summer Camp',
@@ -102,7 +102,7 @@ export const playDayPageData: PlayDayPageData = {
     addresses: ['120 County Rd, Suite 100-101, Tenafly, NJ 07670'],
     phone: '914-488-4460',
     email: 'info@deepbrainacademy.org',
-    qrCodeImage: '/play_day/wechat_qr.jpg',
+    qrCodeImage: '/summer_camp/wechat_qr.jpg',
     qrCodeText: 'Scan to Register Today!',
   },
   registerButtonText: 'Register Now',

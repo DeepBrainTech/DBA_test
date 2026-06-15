@@ -4,8 +4,6 @@
  * 注意事项：Navigation 和 Footer 已在根布局统一管理
  */
 
-import type { Metadata } from 'next';
-
 import ScoreGrowthSystem from '@/components/test_prep/ScoreGrowthSystem';
 import SuccessStories from '@/components/test_prep/SuccessStories';
 import TestPrepBookFreeTrialSection from '@/components/test_prep/TestPrepBookFreeTrialSection';
@@ -14,12 +12,6 @@ import TestPrepHero from '@/components/test_prep/TestPrepHero';
 import TestPrepTimetableSection from '@/components/test_prep/TestPrepTimetableSection';
 import { coursesPageData } from '@/data/courses';
 import { testPrepPageData } from '@/data/test_prep';
-
-export const metadata: Metadata = {
-  title: 'Test Prep',
-  description:
-    'Test prep that builds scores, skills, and confidence — SAT, ACT, SSAT/ISEE, AP, BCA, and AMC programs with expert instruction.',
-};
 
 export default function TestPrepPage() {
   const { hero, successStories, courses, scoreGrowthSystem } = testPrepPageData;

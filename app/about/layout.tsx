@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     description:
       'DeepBrain Academy helps students learn how to think, adapt, and grow with confidence.',
     url: 'https://www.deepbrainacademy.org/about',
+    images: [{ url: '/nav_footer/logo_with_text.png' }],
   },
 };
 

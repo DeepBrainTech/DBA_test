@@ -36,9 +36,6 @@ export const metadata: Metadata = {
   },
   description:
     "We offer math thinking, chess, programming, and global education support for ages 6-18, helping children learn with joy and grow through challenges.",
-  alternates: {
-    canonical: "/",
-  },
   openGraph: {
     title: "DeepBrain Academy",
     description:
@@ -46,6 +43,7 @@ export const metadata: Metadata = {
     url: "https://www.deepbrainacademy.org",
     siteName: "DeepBrain Academy",
     type: "website",
+    images: [{ url: "/nav_footer/logo_with_text.png" }],
   },
 };
 

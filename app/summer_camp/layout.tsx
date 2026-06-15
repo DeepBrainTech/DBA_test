@@ -1,7 +1,7 @@
 /**
  * 文件用途：Summer Camp 页面 SEO 元数据配置
  * 依赖关系：依赖 Next.js Metadata 类型
- * 注意事项：页面内容复用 play_day 数据与组件
+ * 注意事项：页面内容由 summer_camp 数据与组件驱动
  */
 
 import type { Metadata } from 'next';
@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     description:
       'A day of strategic games and math/logic puzzles that build focus, creativity, and problem-solving skills.',
     url: 'https://www.deepbrainacademy.org/summer_camp',
+    images: [{ url: '/nav_footer/logo_with_text.png' }],
   },
 };
 

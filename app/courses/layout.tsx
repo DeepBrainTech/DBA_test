@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     description:
       'Course schedules and information for physics, math, chess, languages, and AI.',
     url: 'https://www.deepbrainacademy.org/courses',
+    images: [{ url: '/courses/hero/cover.png' }],
   },
 };
 

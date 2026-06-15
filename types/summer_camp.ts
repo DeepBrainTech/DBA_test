@@ -1,5 +1,5 @@
 /**
- * 文件用途：Play Day / Summer Camp 页面相关类型定义
+ * 文件用途：Summer Camp 页面相关类型定义
  * 依赖关系：无
  * 注意事项：按业务模块拆分类型，保持与其他页面类型定义风格一致
  */
@@ -7,7 +7,7 @@
 /**
  * 页面 Hero 区数据类型
  */
-export interface PlayDayHeroData {
+export interface SummerCampHeroData {
   /** 页面标签（如 ☀️ Summer Camp） */
   badge: string;
   /** 主标题 */
@@ -19,7 +19,7 @@ export interface PlayDayHeroData {
 /**
  * 简介区数据类型
  */
-export interface PlayDayIntroData {
+export interface SummerCampIntroData {
   /** 简介主标题 */
   title: string;
   /** 简介描述内容 */
@@ -29,7 +29,7 @@ export interface PlayDayIntroData {
 /**
  * 单日课程科目
  */
-export interface PlayDaySubject {
+export interface SummerCampSubject {
   /** 科目名称 */
   name: string;
   /** 能力亮点列表 */
@@ -39,7 +39,7 @@ export interface PlayDaySubject {
 /**
  * 日程信息
  */
-export interface PlayDayScheduleData {
+export interface SummerCampScheduleData {
   /** 时间范围或项目周期说明 */
   timeRange: string;
   /** 日期列表，按年份分组 */
@@ -54,7 +54,7 @@ export interface PlayDayScheduleData {
 /**
  * 地点与联系方式
  */
-export interface PlayDayLocationData {
+export interface SummerCampLocationData {
   /** 地址列表 */
   addresses: string[];
   /** 电话 */
@@ -72,24 +72,24 @@ export interface PlayDayLocationData {
 /**
  * 页面完整数据结构
  */
-export interface PlayDayPageData {
+export interface SummerCampPageData {
   /** Hero 区数据 */
-  hero: PlayDayHeroData;
+  hero: SummerCampHeroData;
   /** 简介区数据 */
-  intro: PlayDayIntroData;
+  intro: SummerCampIntroData;
   /** 每日五门核心课程 */
-  subjects: PlayDaySubject[];
+  subjects: SummerCampSubject[];
   /** 家长选择理由 */
   whyChoose: {
     title: string;
     items: string[];
   };
   /** 日程数据 */
-  schedule: PlayDayScheduleData;
+  schedule: SummerCampScheduleData;
   /** 报名优惠与提醒 */
   offers: string[];
   /** 地点与联系信息 */
-  location: PlayDayLocationData;
+  location: SummerCampLocationData;
   /** 注册按钮文字 */
   registerButtonText: string;
   /** 注册链接（与传单二维码一致） */

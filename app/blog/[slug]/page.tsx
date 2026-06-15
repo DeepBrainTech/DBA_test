@@ -4,6 +4,7 @@
  * 注意事项：未知 slug 返回 404；页面只负责取数与拼接 components/blog 下的 Section 组件
  */
 
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Outfit } from 'next/font/google';
 import { getPostBySlug, getPrevNextSlugs, blogSlugs } from '@/data/blog';
@@ -27,6 +28,27 @@ export function generateStaticParams() {
 
 interface BlogPageProps {
   params: Promise<{ slug: string }>;
+}
+
+export async function generateMetadata({ params }: BlogPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
+  if (!post) return {};
+
+  return {
+    title: post.title,
+    description: post.excerpt,
+    alternates: {
+      canonical: `/blog/${slug}`,
+    },
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      url: `https://www.deepbrainacademy.org/blog/${slug}`,
+      type: 'article',
+      images: [{ url: post.image }],
+    },
+  };
 }
 
 export default async function BlogPostPage({ params }: BlogPageProps) {
