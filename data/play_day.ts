@@ -102,7 +102,6 @@ export const playDayPageData: PlayDayPageData = {
     addresses: ['120 County Rd, Suite 100-101, Tenafly, NJ 07670'],
     phone: '914-488-4460',
     email: 'info@deepbrainacademy.org',
-    website: 'www.deepbrainacademy.org',
     qrCodeImage: '/play_day/wechat_qr.jpg',
     qrCodeText: 'Scan to Register Today!',
   },
