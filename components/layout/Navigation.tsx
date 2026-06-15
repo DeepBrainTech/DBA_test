@@ -18,6 +18,7 @@ import { usePathname } from 'next/navigation';
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/learning_program', label: 'Learning Program' },
+  { href: '/summer_camp', label: 'Summer Camp' },
   { href: '/courses', label: 'Courses' },
   { href: '/test_prep', label: 'Test Prep' },
   { href: '/global-education', label: 'Global Education' },

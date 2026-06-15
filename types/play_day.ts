@@ -1,14 +1,14 @@
 /**
- * 文件用途：Play Day 页面相关类型定义
+ * 文件用途：Play Day / Summer Camp 页面相关类型定义
  * 依赖关系：无
  * 注意事项：按业务模块拆分类型，保持与其他页面类型定义风格一致
  */
 
 /**
- * Play Day 页面 Hero 区数据类型
+ * 页面 Hero 区数据类型
  */
 export interface PlayDayHeroData {
-  /** 页面标签（如 🎨 Play Day） */
+  /** 页面标签（如 ☀️ Summer Camp） */
   badge: string;
   /** 主标题 */
   title: string;
@@ -17,7 +17,7 @@ export interface PlayDayHeroData {
 }
 
 /**
- * Play Day 简介区数据类型
+ * 简介区数据类型
  */
 export interface PlayDayIntroData {
   /** 简介主标题 */
@@ -27,10 +27,20 @@ export interface PlayDayIntroData {
 }
 
 /**
- * Play Day 日程信息
+ * 单日课程科目
+ */
+export interface PlayDaySubject {
+  /** 科目名称 */
+  name: string;
+  /** 能力亮点列表 */
+  highlights: string[];
+}
+
+/**
+ * 日程信息
  */
 export interface PlayDayScheduleData {
-  /** 时间范围（如 9:00 AM - 3:30 PM） */
+  /** 时间范围或项目周期说明 */
   timeRange: string;
   /** 日期列表，按年份分组 */
   dates: {
@@ -42,11 +52,17 @@ export interface PlayDayScheduleData {
 }
 
 /**
- * Play Day 地点信息
+ * 地点与联系方式
  */
 export interface PlayDayLocationData {
   /** 地址列表 */
   addresses: string[];
+  /** 电话 */
+  phone?: string;
+  /** 邮箱 */
+  email?: string;
+  /** 网站 */
+  website?: string;
   /** 二维码图片路径 */
   qrCodeImage: string;
   /** 二维码描述文字 */
@@ -54,17 +70,28 @@ export interface PlayDayLocationData {
 }
 
 /**
- * Play Day 页面完整数据结构
+ * 页面完整数据结构
  */
 export interface PlayDayPageData {
   /** Hero 区数据 */
   hero: PlayDayHeroData;
   /** 简介区数据 */
   intro: PlayDayIntroData;
+  /** 每日五门核心课程 */
+  subjects: PlayDaySubject[];
+  /** 家长选择理由 */
+  whyChoose: {
+    title: string;
+    items: string[];
+  };
   /** 日程数据 */
   schedule: PlayDayScheduleData;
-  /** 地点数据 */
+  /** 报名优惠与提醒 */
+  offers: string[];
+  /** 地点与联系信息 */
   location: PlayDayLocationData;
   /** 注册按钮文字 */
   registerButtonText: string;
+  /** 注册链接（与传单二维码一致） */
+  registerUrl: string;
 }

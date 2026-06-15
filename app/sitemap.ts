@@ -1,7 +1,6 @@
 /**
  * 文件用途：生成 sitemap.xml，帮助搜索引擎优先发现当前有效页面
  * 依赖关系：依赖 Next.js MetadataRoute 类型
- * 注意事项：不收录旧 summer_camp 路径，避免旧页面继续出现在搜索结果中
  */
 
 import type { MetadataRoute } from 'next';
@@ -14,6 +13,7 @@ const lastModified = '2026-06-06';
 const routes = [
   '',
   '/learning_program',
+  '/summer_camp',
   '/courses',
   '/global-education',
   '/math',

@@ -1,41 +1,26 @@
 /**
- * 文件用途：旧 Summer Camp 路由迁移页，引导搜索引擎和用户前往 Learning Program
- * 依赖关系：依赖 Next.js Metadata 类型和 Link 组件
- * 注意事项：静态导出无法在代码层提供真实 301，部署平台仍需配置永久重定向
+ * 文件用途：Summer Camp 页面入口，复用 Play Day 数据与组件
+ * 依赖关系：依赖 components/play_day 下组件与 play_day 页面数据
+ * 注意事项：Navigation 和 Footer 已在根布局统一管理，这里不重复引入
  */
 
-import type { Metadata } from 'next';
-import Link from 'next/link';
+import { Outfit } from 'next/font/google';
 
-export const metadata: Metadata = {
-  title: 'Learning Program',
-  description:
-    'The former Summer Camp page has moved to DeepBrain Academy Learning Program.',
-  alternates: {
-    canonical: '/learning_program',
-  },
-  robots: {
-    index: false,
-    follow: true,
-  },
-};
+import PlayDayHero from '@/components/play_day/PlayDayHero';
+import { playDayPageData } from '@/data/play_day';
 
-export default function SummerCampRedirectPage() {
+const outfit = Outfit({
+  subsets: ['latin'],
+  variable: '--font-outfit',
+  display: 'swap',
+});
+
+export default function SummerCampPage() {
   return (
-    <>
-      <meta httpEquiv="refresh" content="0; url=/learning_program" />
-      <main className="min-h-screen bg-[#FBF9F4] px-6 py-24 text-center text-[#2C3E50]">
-        <h1 className="text-3xl font-bold">Learning Program</h1>
-        <p className="mx-auto mt-4 max-w-2xl text-base text-[#5F6F7E]">
-          This page has moved. Please visit the updated Learning Program page.
-        </p>
-        <Link
-          href="/learning_program"
-          className="mt-8 inline-flex rounded-md bg-[#274777] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#1F365C]"
-        >
-          Go to Learning Program
-        </Link>
+    <div className={`${outfit.variable} ${outfit.className} min-h-screen`}>
+      <main>
+        <PlayDayHero data={playDayPageData} />
       </main>
-    </>
+    </div>
   );
 }
