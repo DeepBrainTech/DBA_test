@@ -7,26 +7,32 @@
 
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
 /**
- * 导航链接配置
+ * Programs 下拉菜单项
+ */
+const programsLinks = [
+  { href: '/learning_program', label: 'Learning Program' },
+  { href: '/math', label: 'Math' },
+  { href: '/programming', label: 'Programming' },
+  { href: '/braingames', label: 'Brain Games' },
+  { href: '/test_prep', label: 'Test Prep' },
+];
+
+/**
+ * 顶级导航链接（Programs 单独处理为下拉）
  */
 const navLinks = [
   { href: '/', label: 'Home' },
-  { href: '/learning_program', label: 'Learning Program' },
   { href: '/summer_camp', label: 'Summer Camp' },
   { href: '/courses', label: 'Courses' },
-  { href: '/test_prep', label: 'Test Prep' },
   { href: '/global-education', label: 'Global Education' },
-  { href: '/math', label: 'Math' },
-  { href: '/braingames', label: 'Brain Games' },
-  { href: '/programming', label: 'Programming' },
   { href: '/tutoring', label: 'Tutoring' },
-  { href: '/about', label: 'About Us' }
+  { href: '/about', label: 'About Us' },
 ];
 
 /** Learning Program 与 Courses 相邻，预加载封面避免切换时图片闪烁 */
@@ -42,6 +48,11 @@ const ADJACENT_HERO_COVERS = [
 export default function Navigation({ className = '' }: { className?: string }) {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isProgramsOpen, setIsProgramsOpen] = useState(false);
+  const [isMobileProgramsOpen, setIsMobileProgramsOpen] = useState(false);
+  const programsRef = useRef<HTMLDivElement>(null);
+
+  const isProgramsActive = programsLinks.some((link) => pathname === link.href);
 
   // 在 Learning Program / Courses 间切换时预加载双方封面图
   useEffect(() => {
@@ -51,6 +62,26 @@ export default function Navigation({ className = '' }: { className?: string }) {
         img.src = src;
       });
     }
+  }, [pathname]);
+
+  // 点击外部关闭 Programs 下拉
+  useEffect(() => {
+    if (!isProgramsOpen) return;
+
+    const handleClickOutside = (event: MouseEvent) => {
+      if (programsRef.current && !programsRef.current.contains(event.target as Node)) {
+        setIsProgramsOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [isProgramsOpen]);
+
+  // 路由变化时关闭下拉
+  useEffect(() => {
+    setIsProgramsOpen(false);
+    setIsMobileProgramsOpen(false);
   }, [pathname]);
 
   // 菜单打开时禁止页面滚动
@@ -88,7 +119,59 @@ export default function Navigation({ className = '' }: { className?: string }) {
 
           {/* 桌面端导航链接 */}
           <div className="hidden xl:flex items-center gap-6 2xl:gap-[38px] text-base 2xl:text-[21px] text-[#333]">
-            {navLinks.map((link) => {
+            {/* Home */}
+            <Link
+              href="/"
+              className={`hover:text-black transition whitespace-nowrap ${pathname === '/' ? 'font-bold text-black' : ''}`}
+            >
+              Home
+            </Link>
+
+            {/* Programs 下拉 */}
+            <div ref={programsRef} className="relative">
+              <button
+                type="button"
+                className={`inline-flex items-center gap-1 hover:text-black transition whitespace-nowrap ${
+                  isProgramsActive || isProgramsOpen ? 'font-bold text-black' : ''
+                }`}
+                onClick={() => setIsProgramsOpen((prev) => !prev)}
+                aria-expanded={isProgramsOpen}
+                aria-haspopup="true"
+              >
+                Programs
+                <svg
+                  className={`w-4 h-4 transition-transform duration-200 ${isProgramsOpen ? 'rotate-180' : ''}`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+
+              {isProgramsOpen && (
+                <div className="absolute left-0 top-full mt-3 z-50 p-6 bg-white/80 rounded-2xl shadow-[0px_0px_20px_0px_rgba(0,0,0,0.10)] outline outline-1 outline-offset-[-1px] outline-slate-400/50 inline-flex flex-col justify-center items-start gap-5">
+                  {programsLinks.map((link) => {
+                    const isActive = pathname === link.href;
+                    return (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        className={`justify-start text-xl font-normal font-['Outfit'] whitespace-nowrap transition hover:text-blue-400 ${
+                          isActive ? 'text-blue-400' : 'text-zinc-800'
+                        }`}
+                        onClick={() => setIsProgramsOpen(false)}
+                      >
+                        {link.label}
+                      </Link>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
+
+            {navLinks.slice(1).map((link) => {
               const isActive = pathname === link.href;
               return (
                 <Link
@@ -149,7 +232,65 @@ export default function Navigation({ className = '' }: { className?: string }) {
 
         {/* 菜单链接 */}
         <div className="py-4">
-          {navLinks.map((link) => {
+          <Link
+            href="/"
+            className={`block px-6 py-3 text-lg transition ${
+              pathname === '/'
+                ? 'font-bold text-[#274777] bg-blue-50 border-r-4 border-[#274777]'
+                : 'text-gray-700 hover:bg-gray-50 hover:text-[#274777]'
+            }`}
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Home
+          </Link>
+
+          {/* 移动端 Programs 折叠 */}
+          <div>
+            <button
+              type="button"
+              className={`w-full flex items-center justify-between px-6 py-3 text-lg transition ${
+                isProgramsActive
+                  ? 'font-bold text-[#274777] bg-blue-50 border-r-4 border-[#274777]'
+                  : 'text-gray-700 hover:bg-gray-50 hover:text-[#274777]'
+              }`}
+              onClick={() => setIsMobileProgramsOpen((prev) => !prev)}
+              aria-expanded={isMobileProgramsOpen}
+            >
+              Programs
+              <svg
+                className={`w-5 h-5 transition-transform duration-200 ${isMobileProgramsOpen ? 'rotate-180' : ''}`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            {isMobileProgramsOpen && (
+              <div className="bg-gray-50 py-2">
+                {programsLinks.map((link) => {
+                  const isActive = pathname === link.href;
+                  return (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className={`block pl-10 pr-6 py-2.5 text-base transition ${
+                        isActive
+                          ? 'font-bold text-blue-400'
+                          : 'text-gray-600 hover:text-blue-400'
+                      }`}
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {link.label}
+                    </Link>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+
+          {navLinks.slice(1).map((link) => {
             const isActive = pathname === link.href;
             return (
               <Link
