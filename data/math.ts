@@ -9,7 +9,7 @@ export const mathPageData: MathPageData = {
   hero: {
     title: 'Math',
     subtitle: 'Beyond problem solving: Master the logic behind the numbers.',
-    backgroundImage: '/math/hero/math_background.jpg',
+    backgroundImage: '/math/hero/cover.png',
     features: [
       { label: 'Comprehensive Resources' },
       { label: 'Top Universities' },

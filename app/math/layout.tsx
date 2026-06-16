@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     description:
       'Olympiad math, PRE-AMC, and AMC enrichment with visual concepts, small classes, and world-class coaching.',
     url: 'https://www.deepbrainacademy.org/math',
-    images: [{ url: '/math/hero/math_background.jpg' }],
+    images: [{ url: '/math/hero/cover.png' }],
   },
 };
 

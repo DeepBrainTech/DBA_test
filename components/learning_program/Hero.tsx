@@ -36,7 +36,6 @@ export default function Hero({ data }: HeroProps) {
             sizes="100vw"
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-[lightgray]/50" aria-hidden />
         </div>
         <div className="relative z-10 mx-auto flex min-h-full max-w-[1344px] flex-col items-center justify-center px-4 sm:px-6 lg:px-9 pt-[106px] pb-4 text-center">
           <h1 className="font-outfit mt-10 sm:mt-14 lg:mt-20 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[80px] font-bold leading-tight lg:leading-[1.75] xl:leading-[140px] text-[#333333]">

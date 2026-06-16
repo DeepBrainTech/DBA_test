@@ -32,7 +32,6 @@ export default function CollegeCounselingHeroSection({ features }: CollegeCounse
             className="object-cover object-[50%_15%]"
             priority
           />
-          <div className="absolute inset-0 bg-[lightgray]/50" aria-hidden />
         </div>
         {/* 内容区 */}
         <div className="relative z-10 mx-auto flex min-h-full max-w-[min(1280px,95vw)] flex-col items-center justify-center px-4 sm:px-6 lg:px-9 pt-[106px] pb-4 text-center">

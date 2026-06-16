@@ -13,7 +13,7 @@ export const summerCampPageData: SummerCampPageData = {
   hero: {
     title: '2026 Summer Camp',
     subtitle: 'Give your child the edge to think, create, and succeed!',
-    backgroundImage: '/summer_camp/hero/summer_camp_cover.svg',
+    backgroundImage: '/summer_camp/hero/summer_camp_cover.png',
     features: [
       { label: 'Theory + Practice' },
       { label: 'Fun Experiments' },

@@ -1,7 +1,7 @@
 /**
  * 文件用途：Math 英雄区，主标题、副标题与四个特色亮点（与 learning_program Hero 结构一致）
  * 依赖关系：next/image、MathHeroData 类型、scrollToElement
- * 注意事项：图片使用 public/math/hero/ 下 1–5.png 与 math_background.jpg；底部 5.png 点击滚动至 math-teaching
+ * 注意事项：图片使用 public/math/hero/ 下 1–5.png 与 cover.png；底部 5.png 点击滚动至 math-teaching
  */
 
 'use client';
