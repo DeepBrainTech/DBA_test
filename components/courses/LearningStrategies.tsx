@@ -1,4 +1,4 @@
-/**
+﻿/**
  * 文件用途：Courses Learning Strategies 区块
  * 依赖关系：依赖 StrategyCard、types/courses；图标来自 public/courses/Learning_Strategies
  */
@@ -22,10 +22,10 @@ export default function LearningStrategies({ data }: LearningStrategiesProps) {
     >
       <div className="w-full max-w-[min(1280px,95vw)] mx-auto px-0 sm:px-4 lg:px-9 flex flex-col justify-start items-start gap-8 sm:gap-12 lg:gap-16">
         <div className="w-full max-w-[1200px] mx-auto rounded-2xl sm:rounded-3xl overflow-hidden bg-white p-4 sm:p-6 lg:p-10">
-          <div className="text-green-400 text-4xl sm:text-5xl md:text-6xl font-normal font-['Outfit'] leading-tight opacity-20 mb-2">
+          <div className="text-green-400 text-4xl sm:text-5xl md:text-6xl font-normal font-outfit leading-tight opacity-20 mb-2">
             &quot;
           </div>
-          <div className="text-center text-slate-700 text-sm sm:text-base lg:text-lg font-normal font-['Outfit'] leading-relaxed mb-4 sm:mb-6">
+          <div className="text-center text-slate-700 text-sm sm:text-base lg:text-lg font-normal font-outfit leading-relaxed mb-4 sm:mb-6">
             {introParagraphs.map((p, i) => (
               <span key={i}>
                 {p.replace(/\n/g, ' ')}
@@ -38,7 +38,7 @@ export default function LearningStrategies({ data }: LearningStrategiesProps) {
               </span>
             ))}
           </div>
-          <div className="text-center text-slate-500 text-sm sm:text-base font-normal font-['Outfit']">
+          <div className="text-center text-slate-500 text-sm sm:text-base font-normal font-outfit">
             {data.introQuote.attribution}
           </div>
         </div>
@@ -53,14 +53,14 @@ export default function LearningStrategies({ data }: LearningStrategiesProps) {
               className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-8 object-contain shrink-0"
               aria-hidden
             />
-            <span className="text-rose-400 text-base sm:text-lg md:text-xl font-normal font-['Outfit']">
+            <span className="text-rose-400 text-base sm:text-lg md:text-xl font-normal font-outfit">
               {data.title}
             </span>
           </div>
-          <h2 className="text-center text-slate-700 text-2xl sm:text-3xl md:text-4xl font-bold font-['Outfit'] leading-tight">
+          <h2 className="text-center text-slate-700 text-2xl sm:text-3xl md:text-4xl font-bold font-outfit leading-tight">
             {data.heading}
           </h2>
-          <p className="max-w-[892px] text-slate-500 text-sm sm:text-base md:text-lg font-normal font-['Outfit'] leading-relaxed text-center">
+          <p className="max-w-[892px] text-slate-500 text-sm sm:text-base md:text-lg font-normal font-outfit leading-relaxed text-center">
             {data.subtitle}
           </p>
         </div>

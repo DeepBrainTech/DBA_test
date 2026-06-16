@@ -1,4 +1,4 @@
-/**
+﻿/**
  * 文件用途：Courses 页面「Explore Our Programs」单张项目卡片
  * 依赖关系：依赖 types/courses 的 ProgramCardData，由 ExplorePrograms 使用
  */
@@ -30,17 +30,17 @@ export default function ProgramCard({ card }: ProgramCardProps) {
       </div>
 
       <div className="mt-6 flex flex-1 flex-col gap-[19px]">
-        <h3 className="font-['Outfit'] text-[28px] font-semibold leading-tight text-[#2C3E50]">
+        <h3 className="font-outfit text-[28px] font-semibold leading-tight text-[#2C3E50]">
           {card.title}
         </h3>
-        <p className="font-['Outfit'] text-lg md:text-xl font-normal leading-[1.5] text-[#7C8B99]">
+        <p className="font-outfit text-lg md:text-xl font-normal leading-[1.5] text-[#7C8B99]">
           {card.description}
         </p>
         <div className="mt-auto flex flex-wrap gap-3 pt-2">
           {card.tags.map((tag) => (
             <span
               key={tag}
-              className="rounded-[14px] bg-[rgba(89,156,237,0.08)] px-[19px] py-[9px] font-['Outfit'] text-lg text-[#599CED]"
+              className="rounded-[14px] bg-[rgba(89,156,237,0.08)] px-[19px] py-[9px] font-outfit text-lg text-[#599CED]"
             >
               {tag}
             </span>
@@ -52,7 +52,7 @@ export default function ProgramCard({ card }: ProgramCardProps) {
         className="absolute bottom-9 right-9 flex size-14 items-center justify-center rounded-[14px] border-2 border-[#599CED]/30"
         aria-hidden
       >
-        <span className="font-['Outfit'] text-[23px] text-[#599CED]/70">{card.index}</span>
+        <span className="font-outfit text-[23px] text-[#599CED]/70">{card.index}</span>
       </div>
     </article>
   );

@@ -1,10 +1,12 @@
-/**
- * 文件用途：Courses 页面课程时间表区块（含可交互科目图例筛选）
+﻿/**
+ * 文件用途：Courses / Schedule 页面课程时间表区块（含可交互科目图例筛选）
  * 依赖关系：依赖 types/courses、CourseCategoryLegend、lib/courseCategories
  */
 
 'use client';
 
+import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 import CourseCategoryLegend from '@/components/courses/CourseCategoryLegend';
 import FilterTapHint from '@/components/courses/FilterTapHint';
@@ -33,6 +35,9 @@ interface CourseTimetableProps {
 
 export default function CourseTimetable({ data, hideHeader = false }: CourseTimetableProps) {
   const [activeFilter, setActiveFilter] = useState<CourseInformationFilter>('All');
+  const isScheduleVariant = Boolean(data.badge);
+  const sectionBg = data.sectionClassName ?? 'bg-[#FBF9F4]';
+  const cardVariant = data.cardVariant ?? 'elevated';
 
   const filterCourses = (courses: { name: string; cat: TimetableCategory }[] | undefined) => {
     if (!courses) return [];
@@ -44,26 +49,82 @@ export default function CourseTimetable({ data, hideHeader = false }: CourseTime
   };
 
   return (
-    <div className="w-full bg-[#FBF9F4] pb-16">
+    <div className={`w-full pb-16 ${sectionBg}`}>
       <div className="mx-auto flex w-full max-w-[min(1440px,98vw)] flex-col items-center gap-6 px-2 pt-6 sm:gap-10 sm:px-4 md:pt-8 lg:gap-12 lg:px-6">
         {!hideHeader && (
-          <header className="flex flex-col items-center gap-4">
-            <div className="inline-flex items-center gap-2.5 rounded-[23px] bg-[rgba(89,156,237,0.1)] px-5 py-2.5">
-              <span className="text-[28px] leading-none" aria-hidden>
-                ⏰
-              </span>
-              <span className="font-['Outfit'] text-xl text-[#599CED]">Schedule</span>
-            </div>
-            <h2 className="text-center font-['Outfit'] text-3xl font-bold text-[#2C3E50] md:text-4xl lg:text-[40px]">
+          <header className="flex flex-col items-center gap-4 sm:gap-6">
+            {data.badge ? (
+              <div
+                className={`inline-flex items-center gap-2 rounded-2xl px-4 py-2.5 sm:gap-3 sm:rounded-3xl sm:px-5 sm:py-3.5 ${
+                  data.badge.className ?? 'bg-[#FBF9F4] text-slate-700'
+                }`}
+              >
+                {data.badge.iconSrc ? (
+                  <Image
+                    src={data.badge.iconSrc}
+                    alt=""
+                    width={24}
+                    height={24}
+                    className="size-5 shrink-0 object-contain sm:size-6"
+                    aria-hidden
+                  />
+                ) : (
+                  <span className="text-[28px] leading-none" aria-hidden>
+                    {data.badge.icon ?? '📅'}
+                  </span>
+                )}
+                <span className="font-outfit text-base font-normal leading-7 sm:text-lg md:text-xl">
+                  {data.badge.label}
+                </span>
+              </div>
+            ) : (
+              <div className="inline-flex items-center gap-2.5 rounded-[23px] bg-[rgba(89,156,237,0.1)] px-5 py-2.5">
+                <span className="text-[28px] leading-none" aria-hidden>
+                  ⏰
+                </span>
+                <span className="font-outfit text-xl text-[#599CED]">Schedule</span>
+              </div>
+            )}
+            <h2
+              className={`text-center font-outfit font-bold text-slate-700 ${
+                isScheduleVariant
+                  ? 'text-2xl sm:text-3xl md:text-4xl'
+                  : 'text-3xl text-[#2C3E50] md:text-4xl lg:text-[40px]'
+              }`}
+            >
               {data.sectionTitle}
             </h2>
+            {data.description && (
+              <p className="max-w-3xl text-center font-outfit text-lg text-slate-500 md:text-xl">
+                {data.description}
+                {data.descriptionLink && (
+                  <Link
+                    href={data.descriptionLink.href}
+                    className="font-semibold text-slate-500 underline-offset-2 hover:underline"
+                  >
+                    {data.descriptionLink.label}
+                  </Link>
+                )}
+                {data.descriptionLink ? ' tab.' : ''}
+              </p>
+            )}
           </header>
         )}
 
-        <div className="flex w-full flex-col items-center rounded-[28px] border border-slate-100 bg-white px-4 py-6 shadow-sm md:px-6 md:py-9 lg:px-8 lg:py-10">
-          <h3 className="mb-6 text-center font-['Outfit'] text-2xl font-semibold text-[#2C3E50] md:text-[28px]">
-            {data.tableTitle}
-          </h3>
+        <div
+          className={
+            cardVariant === 'flat'
+              ? 'flex w-full flex-col items-center px-2 sm:px-4 md:px-6 lg:px-9'
+              : cardVariant === 'white'
+                ? 'flex w-full flex-col items-center rounded-3xl bg-white px-4 py-6 sm:px-6 sm:py-8 md:px-9 md:pt-9'
+                : 'flex w-full flex-col items-center rounded-[28px] border border-slate-100 bg-white px-4 py-6 shadow-sm md:px-6 md:py-9 lg:px-8 lg:py-10'
+          }
+        >
+          {data.tableTitle && (
+            <h3 className="mb-6 text-center font-outfit text-2xl font-semibold text-[#2C3E50] md:text-[28px]">
+              {data.tableTitle}
+            </h3>
+          )}
 
           <div className="mb-8 flex w-full flex-col items-center gap-2">
             <FilterTapHint />
@@ -84,7 +145,7 @@ export default function CourseTimetable({ data, hideHeader = false }: CourseTime
                 {DAYS.map((day) => (
                   <div
                     key={day}
-                    className="px-2 py-2 text-center font-['Outfit'] text-base font-bold"
+                    className="px-2 py-2 text-center font-outfit text-base font-bold"
                   >
                     {DAY_LABELS[day]}
                   </div>
@@ -98,7 +159,7 @@ export default function CourseTimetable({ data, hideHeader = false }: CourseTime
                     idx % 2 === 0 ? 'bg-white' : 'bg-slate-50/40'
                   }`}
                 >
-                  <div className="flex min-h-[136px] items-center justify-center border-r border-[#E8F4FC] px-2 py-2 text-center font-['Outfit'] text-base font-bold leading-5 text-[#7C8B99] whitespace-pre-wrap">
+                  <div className="flex min-h-[136px] items-center justify-center border-r border-[#E8F4FC] px-2 py-2 text-center font-outfit text-base font-bold leading-5 text-[#7C8B99] whitespace-pre-wrap">
                     {row.time}
                   </div>
 
@@ -112,18 +173,38 @@ export default function CourseTimetable({ data, hideHeader = false }: CourseTime
                           dIdx !== DAYS.length - 1 ? 'border-r border-[#E8F4FC]' : ''
                         }`}
                       >
-                        {visibleCourses.map((course, cIdx) => (
-                          <div key={cIdx} className="flex items-start gap-1.5">
-                            <span
-                              className="mt-0.5 size-3.5 shrink-0 rounded-full"
-                              style={{ backgroundColor: COURSE_CATEGORY_CONFIG[course.cat].dotColor }}
-                              aria-hidden
-                            />
-                            <span className="font-['Outfit'] text-sm font-medium leading-5 text-[#2C3E50] whitespace-pre-wrap">
-                              {course.name}
-                            </span>
-                          </div>
-                        ))}
+                        {visibleCourses.map((course, cIdx) => {
+                          const lines = course.name.split('\n');
+
+                          return (
+                            <div key={cIdx} className="flex items-start gap-1.5">
+                              <span
+                                className="mt-0.5 size-3.5 shrink-0 rounded-full"
+                                style={{ backgroundColor: COURSE_CATEGORY_CONFIG[course.cat].dotColor }}
+                                aria-hidden
+                              />
+                              {isScheduleVariant ? (
+                                <span className="flex flex-col gap-0.5">
+                                  <span className="font-outfit text-base font-medium leading-5 text-slate-700">
+                                    {lines[0]}
+                                  </span>
+                                  {lines.slice(1).map((line, lineIdx) => (
+                                    <span
+                                      key={lineIdx}
+                                      className="font-outfit text-sm font-light leading-5 text-slate-700"
+                                    >
+                                      {line}
+                                    </span>
+                                  ))}
+                                </span>
+                              ) : (
+                                <span className="font-outfit text-sm font-medium leading-5 text-[#2C3E50] whitespace-pre-wrap">
+                                  {course.name}
+                                </span>
+                              )}
+                            </div>
+                          );
+                        })}
                       </div>
                     );
                   })}

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * 文件用途：Winter and Spring Program Pricing 组件
  * 依赖关系：无；限时优惠为原版布局（两行绿点 + 右侧橙色 Enroll 按钮）
  * 注意事项：布局与字体参考 global（AdmissionSection / CTASection）
@@ -186,7 +186,7 @@ export default function PricingSection() {
               href="https://forms.gle/2mMzKoQkXHa2CVHe6"
               target="_blank"
               rel="noopener noreferrer"
-              className="min-w-32 sm:min-w-[150px] h-11 sm:h-12 md:h-14 px-6 sm:px-8 lg:pl-20 lg:pr-7 py-2.5 sm:py-3 md:py-3.5 rounded-2xl sm:rounded-3xl bg-[#F4A460] inline-flex items-center justify-center gap-3 sm:gap-6 md:gap-7 font-['Outfit'] text-base sm:text-lg md:text-xl font-bold text-white shadow-md hover:bg-[#E89451] transition-colors no-underline"
+              className="min-w-32 sm:min-w-[150px] h-11 sm:h-12 md:h-14 px-6 sm:px-8 lg:pl-20 lg:pr-7 py-2.5 sm:py-3 md:py-3.5 rounded-2xl sm:rounded-3xl bg-[#F4A460] inline-flex items-center justify-center gap-3 sm:gap-6 md:gap-7 font-outfit text-base sm:text-lg md:text-xl font-bold text-white shadow-md hover:bg-[#E89451] transition-colors no-underline"
               aria-label="Enroll Now"
             >
               Enroll Now

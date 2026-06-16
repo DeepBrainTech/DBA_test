@@ -7,7 +7,7 @@ import TutorForm from '@/components/tutoring/TutorForm';
 
 export default function TutoringPage() {
   return (
-    <main className="font-outfit">
+    <main>
       <TutoringHero />
       <TestimonialsSection />
       <StudentSection />

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * 文件用途：Featured Projects 列表中的单张项目卡片（左图右文，流式布局无绝对定位）
  * 依赖关系：next/image、types/learning_program LearningProgramFeaturedProject
  * 注意事项：图片区仅用 relative 供 Next Image fill 使用，卡片内无 absolute 定位
@@ -35,14 +35,14 @@ export default function FeaturedProjectCard({ project }: FeaturedProjectCardProp
       {/* 内容区：与左侧图片的间距由 pl 控制，改 sm:pl-* 即可调大/调小 */}
       <div className="flex flex-col gap-4 min-w-0 flex-1 p-4 sm:py-6 sm:pr-5 sm:pl-10">
         <div className="flex flex-wrap items-baseline gap-1">
-          <span className="text-rose-400 text-base font-normal font-['Outfit'] leading-7">{label}</span>
-          <span className="text-slate-700 text-lg md:text-xl font-semibold font-['Outfit'] leading-7">{name}</span>
+          <span className="text-rose-400 text-base font-normal font-outfit leading-7">{label}</span>
+          <span className="text-slate-700 text-lg md:text-xl font-semibold font-outfit leading-7">{name}</span>
         </div>
         <ul className="flex flex-col gap-2.5 list-none">
           {project.bullets.map((bullet, i) => (
             <li key={i} className="flex gap-2 items-start">
-              <span className="text-rose-400 text-base font-normal font-['Outfit'] leading-5 shrink-0">▸</span>
-              <span className="text-slate-500 text-base md:text-lg font-normal font-['Outfit'] leading-7">{bullet}</span>
+              <span className="text-rose-400 text-base font-normal font-outfit leading-5 shrink-0">▸</span>
+              <span className="text-slate-500 text-base md:text-lg font-normal font-outfit leading-7">{bullet}</span>
             </li>
           ))}
         </ul>

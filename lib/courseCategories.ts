@@ -12,9 +12,9 @@ export const COURSE_CATEGORY_CONFIG = {
   },
   Math: {
     label: 'Math',
-    dotColor: '#4ADE80',
-    borderColor: '#4ADE80',
-    activeBg: 'rgba(74, 222, 128, 0.1)',
+    dotColor: '#7EC97E',
+    borderColor: '#7EC97E',
+    activeBg: 'rgba(126, 201, 126, 0.1)',
   },
   Chess: {
     label: 'Chess',

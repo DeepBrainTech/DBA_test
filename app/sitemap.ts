@@ -1,4 +1,4 @@
-/**
+﻿/**
  * 文件用途：生成 sitemap.xml，帮助搜索引擎优先发现当前有效页面
  * 依赖关系：依赖 Next.js MetadataRoute 类型与 data/blog 的 blogSlugs
  */
@@ -16,7 +16,8 @@ const staticRoutes = [
   '/learning_program',
   '/summer_camp',
   '/courses',
-  '/global-education',
+  '/schedule',
+  '/college_counseling',
   '/math',
   '/braingames',
   '/programming',

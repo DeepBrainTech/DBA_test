@@ -1,4 +1,4 @@
-/**
+﻿/**
  * 文件用途：编程页面核心理念卡片区块 - 展示编程教育的四大核心价值
  * 依赖关系：next/image；布局风格参考 ChessPhilosophySection（Educational Value）
  * 注意事项：响应式布局，字号与 braingames Educational Value 保持一致
@@ -53,11 +53,11 @@ function PillarCard({ title, desc, iconSrc }: PillarCardData) {
         />
       </div>
       {/* 标题 */}
-      <h3 className="mt-3 sm:mt-4 lg:mt-5 w-full text-center text-slate-700 text-lg sm:text-xl md:text-2xl font-semibold font-['Outfit'] leading-tight">
+      <h3 className="mt-3 sm:mt-4 lg:mt-5 w-full text-center text-slate-700 text-lg sm:text-xl md:text-2xl font-semibold font-outfit leading-tight">
         {title}
       </h3>
       {/* 描述 */}
-      <p className="mt-2 sm:mt-3 lg:mt-4 w-full max-w-[18rem] text-center text-slate-500 text-sm sm:text-base md:text-lg font-normal font-['Outfit'] leading-snug">
+      <p className="mt-2 sm:mt-3 lg:mt-4 w-full max-w-[18rem] text-center text-slate-500 text-sm sm:text-base md:text-lg font-normal font-outfit leading-snug">
         {desc}
       </p>
     </div>
@@ -80,16 +80,16 @@ export default function ProgrammingPillars() {
               className="w-5 h-5 sm:w-6 sm:h-6 object-contain"
               aria-hidden
             />
-            <span className="text-[#4ECDC4] text-base sm:text-lg md:text-xl font-normal font-['Outfit']">
+            <span className="text-[#4ECDC4] text-base sm:text-lg md:text-xl font-normal font-outfit">
               Learn to Code
             </span>
           </div>
           {/* 主标题 */}
-          <h2 className="text-center text-slate-700 text-2xl sm:text-3xl md:text-4xl font-bold font-['Outfit'] leading-tight">
+          <h2 className="text-center text-slate-700 text-2xl sm:text-3xl md:text-4xl font-bold font-outfit leading-tight">
             Coding Is the New Literacy
           </h2>
           {/* 副标题 */}
-          <p className="max-w-[892px] text-slate-500 text-sm sm:text-base md:text-lg font-normal font-['Outfit'] leading-relaxed text-center">
+          <p className="max-w-[892px] text-slate-500 text-sm sm:text-base md:text-lg font-normal font-outfit leading-relaxed text-center">
             In the digital age, the ability to understand and command computers is as essential as reading, writing, and mathematics.
           </p>
         </div>

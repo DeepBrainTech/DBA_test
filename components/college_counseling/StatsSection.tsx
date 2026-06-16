@@ -1,10 +1,10 @@
-/**
- * 文件用途：统计数据展示组件（全球教育页面）
- * 依赖关系：依赖 types/global-education.ts 中的 Stat 类型
+﻿/**
+ * 文件用途：统计数据展示组件（升学辅导页面）
+ * 依赖关系：依赖 types/college_counseling.ts 中的 Stat 类型
  * 注意事项：展示3个统计卡片，布局与设计稿一致；数据由页面从 /data 传入
  */
 
-import type { Stat } from '@/types/global-education';
+import type { Stat } from '@/types/college_counseling';
 
 interface StatsSectionProps {
   stats: Stat[];

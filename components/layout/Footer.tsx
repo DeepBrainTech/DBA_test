@@ -1,4 +1,4 @@
-/**
+﻿/**
  * 文件用途：页脚组件（可在多个页面复用）
  * 依赖关系：依赖 Next.js Link 和 Image 组件
  * 注意事项：包含公司信息、链接和版权声明
@@ -12,7 +12,7 @@ import SocialIconWithQR from './SocialIconWithQR';
 
 /**
  * 页脚组件
- * @param className 可选的额外样式类名（用于统一字体等）
+ * @param className 可选的额外样式类名
  */
 export default function Footer({ className = '' }: { className?: string }) {
   return (
@@ -40,7 +40,7 @@ export default function Footer({ className = '' }: { className?: string }) {
               />
             </div>
             <p className="text-base md:text-lg text-[#C8CFD6] leading-snug mb-6 md:mb-8">
-              We provide courses in Olympiad Math, Programming, Chess, and Global Education Planning to help children aged 6–18 learn happily, train their critical thinking, and build challenging skills.
+              We provide courses in Olympiad Math, Programming, Chess, and College Counseling to help children aged 6–18 learn happily, train their critical thinking, and build challenging skills.
             </p>
             {/* 电话、邮箱、地址图标颜色：修改下方三个 svg 的 className 中的 text-[#xxx] 即可 */}
             <div className="space-y-3 md:space-y-4">
@@ -108,7 +108,8 @@ export default function Footer({ className = '' }: { className?: string }) {
               <Link href="/learning_program" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Learning Program</Link>
               <Link href="/summer_camp" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Summer Camp</Link>
               <Link href="/courses" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Courses</Link>
-              <Link href="/global-education" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Global Education</Link>
+              <Link href="/schedule" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Schedule</Link>
+              <Link href="/college_counseling" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">College Counseling</Link>
               <Link href="/math" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Math</Link>
               <Link href="/braingames" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Brain Games</Link>
               <Link href="/programming" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Programming</Link>
@@ -124,7 +125,7 @@ export default function Footer({ className = '' }: { className?: string }) {
             <div className="space-y-2 md:space-y-3">
               <Link href="/math" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Olympiad Math</Link>
               <Link href="/braingames" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Chess</Link>
-              <Link href="/global-education" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Global Education</Link>
+              <Link href="/college_counseling" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">College Counseling</Link>
               <Link href="/programming" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Programming</Link>
             </div>
           </div>

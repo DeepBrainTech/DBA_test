@@ -1,4 +1,4 @@
-/**
+﻿/**
  * 文件用途：Brain Games「Book Free Trial」预约咨询区块
  * 依赖关系：依赖 types/braingames 的 BraingamesBookFreeTrialData；图标来自 public/braingames/bookfree
  * 注意事项：无表单输入，仅 CTA 跳转外链；Limited offer 用 icon.png，We ensure 标题用 get.png，下列 8 个用 1.png–8.png
@@ -40,7 +40,7 @@ export default function BookFreeSection({ data }: BookFreeSectionProps) {
               height={ICON_SIZE.badge}
               className="shrink-0 object-contain"
             />
-            <span className="text-white text-xl font-normal font-['Outfit'] leading-7">
+            <span className="text-white text-xl font-normal font-outfit leading-7">
               {data.badgeText}
             </span>
           </div>
@@ -50,10 +50,10 @@ export default function BookFreeSection({ data }: BookFreeSectionProps) {
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-10 lg:gap-12 items-start">
           <div className="flex flex-col gap-9">
             <div className="flex flex-col gap-5">
-              <h2 className="text-white text-3xl sm:text-4xl font-bold font-['Outfit'] leading-tight">
+              <h2 className="text-white text-3xl sm:text-4xl font-bold font-outfit leading-tight">
                 {data.title}
               </h2>
-              <p className="text-white/90 text-lg sm:text-xl font-normal font-['Outfit'] leading-7 max-w-[586px]">
+              <p className="text-white/90 text-lg sm:text-xl font-normal font-outfit leading-7 max-w-[586px]">
                 {data.subtitle}
               </p>
             </div>
@@ -67,7 +67,7 @@ export default function BookFreeSection({ data }: BookFreeSectionProps) {
                   height={28}
                   className="shrink-0 object-contain"
                 />
-                <span className="text-white text-xl font-semibold font-['Outfit'] leading-7">
+                <span className="text-white text-xl font-semibold font-outfit leading-7">
                   {data.ensureTitle}
                 </span>
               </div>
@@ -84,7 +84,7 @@ export default function BookFreeSection({ data }: BookFreeSectionProps) {
                       height={ICON_SIZE.ensure}
                       className="shrink-0 object-contain"
                     />
-                    <span className="text-white text-lg sm:text-xl font-normal font-['Outfit'] leading-7">
+                    <span className="text-white text-lg sm:text-xl font-normal font-outfit leading-7">
                       {item.text}
                     </span>
                   </li>
@@ -102,7 +102,7 @@ export default function BookFreeSection({ data }: BookFreeSectionProps) {
                     height={ICON_SIZE.trust}
                     className="w-5 h-5 sm:w-6 sm:h-6 shrink-0 object-contain opacity-90"
                   />
-                  <span className="text-white/80 text-sm sm:text-base lg:text-lg font-normal font-['Outfit'] leading-6">
+                  <span className="text-white/80 text-sm sm:text-base lg:text-lg font-normal font-outfit leading-6">
                     {item.label}
                   </span>
                 </div>
@@ -113,10 +113,10 @@ export default function BookFreeSection({ data }: BookFreeSectionProps) {
           {/* 右侧：白色预约卡片 */}
           <div className="w-full lg:w-[500px] xl:w-[607px] lg:shrink-0 min-h-[320px] lg:min-h-[360px] mt-6 lg:mt-12 px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8 lg:pt-12 pb-5 sm:pb-6 lg:pb-8 bg-white rounded-2xl lg:rounded-3xl shadow-[0px_29px_58px_-14px_rgba(0,0,0,0.25)] flex flex-col gap-5 sm:gap-7 lg:gap-9">
             <div className="flex flex-col gap-2">
-              <h3 className="text-slate-700 text-xl sm:text-2xl lg:text-3xl font-semibold font-['Outfit'] leading-tight">
+              <h3 className="text-slate-700 text-xl sm:text-2xl lg:text-3xl font-semibold font-outfit leading-tight">
                 {data.cardTitle}
               </h3>
-              <p className="text-slate-500 text-sm sm:text-base lg:text-xl font-normal font-['Outfit'] leading-relaxed">
+              <p className="text-slate-500 text-sm sm:text-base lg:text-xl font-normal font-outfit leading-relaxed">
                 {data.cardSubtitle}
               </p>
             </div>
@@ -126,7 +126,7 @@ export default function BookFreeSection({ data }: BookFreeSectionProps) {
                 href="https://forms.gle/2mMzKoQkXHa2CVHe6"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full h-11 sm:h-12 lg:h-14 bg-gradient-to-r from-[#F4A460] to-[#E89451] rounded-xl lg:rounded-2xl inline-flex justify-center items-center gap-2 text-white text-base sm:text-lg lg:text-xl font-normal font-['Outfit'] hover:opacity-90 transition-opacity"
+                className="w-full h-11 sm:h-12 lg:h-14 bg-gradient-to-r from-[#F4A460] to-[#E89451] rounded-xl lg:rounded-2xl inline-flex justify-center items-center gap-2 text-white text-base sm:text-lg lg:text-xl font-normal font-outfit hover:opacity-90 transition-opacity"
               >
                 {data.ctaLabel}
                 <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 shrink-0" strokeWidth={2} />
@@ -136,10 +136,10 @@ export default function BookFreeSection({ data }: BookFreeSectionProps) {
             <div className="pt-4 sm:pt-6 border-t border-indigo-50 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-x-4 lg:gap-x-6 justify-items-center">
               {data.stats.map((stat, i) => (
                 <div key={i} className="flex flex-col gap-0.5 items-center text-center">
-                  <span className="text-[#F4A460] text-base sm:text-lg lg:text-xl font-semibold font-['Outfit']">
+                  <span className="text-[#F4A460] text-base sm:text-lg lg:text-xl font-semibold font-outfit">
                     {stat.value}
                   </span>
-                  <span className="text-slate-500 text-xs sm:text-sm lg:text-base font-normal font-['Outfit'] text-center">
+                  <span className="text-slate-500 text-xs sm:text-sm lg:text-base font-normal font-outfit text-center">
                     {stat.label}
                   </span>
                 </div>
@@ -160,7 +160,7 @@ export default function BookFreeSection({ data }: BookFreeSectionProps) {
             />
           </div>
           <div className="px-6 sm:px-9 py-5 bg-white/20 rounded-3xl max-w-[780px]">
-            <p className="text-white text-lg sm:text-xl font-normal font-['Outfit'] leading-7">
+            <p className="text-white text-lg sm:text-xl font-normal font-outfit leading-7">
               {data.bottomQuote}
             </p>
           </div>

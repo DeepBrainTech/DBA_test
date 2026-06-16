@@ -1,4 +1,4 @@
-/**
+﻿/**
  * 文件用途：Brain Games 课程展示 Section
  * 依赖关系：依赖 types/braingames.ts
  * 注意事项：布局结构与 Educational Value（ChessPhilosophySection）一致：badge+标题+副标题、四张卡、WeChat/CTA 区
@@ -30,14 +30,14 @@ export default function CourseSection({ course }: CourseSectionProps) {
                         ) : (
                             <span className="text-[#2C3E50] text-base sm:text-lg" aria-hidden>{course.ctaIcon ?? "♟"}</span>
                         )}
-                        <span className="text-[#F4A460] text-base sm:text-lg md:text-xl font-normal font-['Outfit']">
+                        <span className="text-[#F4A460] text-base sm:text-lg md:text-xl font-normal font-outfit">
                             {course.tag}
                         </span>
                     </div>
-                    <h2 className="text-center text-slate-700 text-2xl sm:text-3xl md:text-4xl font-bold font-['Outfit'] leading-tight">
+                    <h2 className="text-center text-slate-700 text-2xl sm:text-3xl md:text-4xl font-bold font-outfit leading-tight">
                         {course.title}
                     </h2>
-                    <p className="max-w-[892px] text-slate-500 text-sm sm:text-base md:text-lg font-normal font-['Outfit'] leading-relaxed text-center">
+                    <p className="max-w-[892px] text-slate-500 text-sm sm:text-base md:text-lg font-normal font-outfit leading-relaxed text-center">
                         {course.subtitle}
                     </p>
                 </div>
@@ -59,10 +59,10 @@ export default function CourseSection({ course }: CourseSectionProps) {
                                         className="w-7 h-7 sm:w-8 sm:h-8 lg:w-10 lg:h-10 object-contain"
                                     />
                                 </div>
-                                <h3 className="mt-3 sm:mt-4 lg:mt-5 w-full text-center text-slate-700 text-lg sm:text-xl md:text-2xl font-semibold font-['Outfit'] leading-tight">
+                                <h3 className="mt-3 sm:mt-4 lg:mt-5 w-full text-center text-slate-700 text-lg sm:text-xl md:text-2xl font-semibold font-outfit leading-tight">
                                     {c.title}
                                 </h3>
-                                <p className="mt-2 sm:mt-3 lg:mt-4 w-full text-center text-slate-500 text-sm sm:text-base md:text-lg font-normal font-['Outfit'] leading-snug">
+                                <p className="mt-2 sm:mt-3 lg:mt-4 w-full text-center text-slate-500 text-sm sm:text-base md:text-lg font-normal font-outfit leading-snug">
                                     {c.description}
                                 </p>
                             </div>
@@ -84,10 +84,10 @@ export default function CourseSection({ course }: CourseSectionProps) {
                                     className="object-contain"
                                 />
                             </div>
-                            <h3 className="mt-5 w-full text-center text-slate-700 text-xl md:text-2xl font-semibold font-['Outfit'] leading-tight">
+                            <h3 className="mt-5 w-full text-center text-slate-700 text-xl md:text-2xl font-semibold font-outfit leading-tight">
                                 {c.title}
                             </h3>
-                            <p className="mt-4 w-full max-w-[13rem] text-center text-slate-500 text-base md:text-lg font-normal font-['Outfit'] leading-snug">
+                            <p className="mt-4 w-full max-w-[13rem] text-center text-slate-500 text-base md:text-lg font-normal font-outfit leading-snug">
                                 {c.description}
                             </p>
                         </div>
@@ -113,11 +113,11 @@ export default function CourseSection({ course }: CourseSectionProps) {
                                         {course.ctaIcon ?? "♟"}
                                     </span>
                                 )}
-                                <h4 className="text-slate-700 text-lg sm:text-xl md:text-2xl font-bold font-['Outfit'] leading-tight">
+                                <h4 className="text-slate-700 text-lg sm:text-xl md:text-2xl font-bold font-outfit leading-tight">
                                     {course.ctaText}
                                 </h4>
                             </div>
-                            <p className="mt-3 sm:mt-4 lg:mt-5 max-w-[28rem] text-slate-500 text-sm sm:text-base md:text-lg font-normal font-['Outfit'] leading-relaxed">
+                            <p className="mt-3 sm:mt-4 lg:mt-5 max-w-[28rem] text-slate-500 text-sm sm:text-base md:text-lg font-normal font-outfit leading-relaxed">
                                 {course.ctaDescription ??
                                     "Equip your child to face life's challenges with confidence through the timeless wisdom of chess."}
                             </p>
@@ -132,7 +132,7 @@ export default function CourseSection({ course }: CourseSectionProps) {
                                     className="w-full h-full object-contain"
                                 />
                             </div>
-                            <p className="mt-2 sm:mt-3 text-left text-slate-500 text-sm sm:text-base font-normal font-['Outfit']">
+                            <p className="mt-2 sm:mt-3 text-left text-slate-500 text-sm sm:text-base font-normal font-outfit">
                                 <span className="block">Scan to join our</span>
                                 <span className="block">WeChat Community</span>
                             </p>
@@ -146,7 +146,7 @@ export default function CourseSection({ course }: CourseSectionProps) {
                         href="https://forms.gle/2mMzKoQkXHa2CVHe6"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-full sm:w-auto inline-flex justify-center items-center gap-3 sm:gap-4 lg:gap-6 md:gap-7 min-w-[140px] sm:min-w-[150px] h-11 sm:h-12 md:h-14 px-6 sm:px-8 lg:pl-20 lg:pr-7 py-2.5 sm:py-3 md:py-3.5 bg-[#F4A460] rounded-xl sm:rounded-2xl lg:rounded-3xl text-white text-base sm:text-lg lg:text-xl font-bold font-['Outfit'] shadow-md hover:bg-rose-500 transition-colors no-underline"
+                        className="w-full sm:w-auto inline-flex justify-center items-center gap-3 sm:gap-4 lg:gap-6 md:gap-7 min-w-[140px] sm:min-w-[150px] h-11 sm:h-12 md:h-14 px-6 sm:px-8 lg:pl-20 lg:pr-7 py-2.5 sm:py-3 md:py-3.5 bg-[#F4A460] rounded-xl sm:rounded-2xl lg:rounded-3xl text-white text-base sm:text-lg lg:text-xl font-bold font-outfit shadow-md hover:bg-rose-500 transition-colors no-underline"
                     >
                         Register Now
                         <Image src="/braingames/FeaturedProgram-chess/registernow.svg" alt="" width={24} height={24} className="shrink-0 w-5 h-5 sm:w-6 sm:h-6" aria-hidden />

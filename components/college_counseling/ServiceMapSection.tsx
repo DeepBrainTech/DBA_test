@@ -1,12 +1,12 @@
-/**
- * 文件用途：服务流程地图区块组件（全球教育页面）
- * 依赖关系：@/components/global/RoadmapStepCard；types/global-education.ts；图标在 public/global/roadmap/1-5、t1-t3
+﻿/**
+ * 文件用途：服务流程地图区块组件（升学辅导页面）
+ * 依赖关系：@/components/college_counseling/RoadmapStepCard；types/college_counseling.ts；图标在 public/college_counseling/roadmap/1-5、t1-t3
  * 注意事项：展示5个服务步骤的时间线布局和透明服务说明
  */
 
 import Image from 'next/image';
-import type { ServiceStep } from '@/types/global-education';
-import { RoadmapStepCard } from '@/components/global/RoadmapStepCard';
+import type { ServiceStep } from '@/types/college_counseling';
+import { RoadmapStepCard } from '@/components/college_counseling/RoadmapStepCard';
 
 interface ServiceMapSectionProps {
   serviceSteps: ServiceStep[];
@@ -127,7 +127,7 @@ export default function ServiceMapSection({ serviceSteps }: ServiceMapSectionPro
             <div className="mt-6 sm:mt-8 lg:mt-12 flex flex-col sm:flex-row flex-wrap justify-center items-center gap-4 sm:gap-8 lg:gap-18">
               <div className="flex flex-col items-center gap-1 text-center shrink-0">
                 <div className="relative h-6 w-6 sm:h-8 sm:w-8 shrink-0">
-                  <Image src="/global/roadmap/t1.png" alt="" width={40} height={40} className="object-contain" />
+                  <Image src="/college_counseling/roadmap/t1.png" alt="" width={40} height={40} className="object-contain" />
                 </div>
                 <h4 className="font-outfit text-sm sm:text-base lg:text-lg font-normal text-slate-700">
                   Progress Tracking
@@ -135,7 +135,7 @@ export default function ServiceMapSection({ serviceSteps }: ServiceMapSectionPro
               </div>
               <div className="flex flex-col items-center gap-1 text-center shrink-0">
                 <div className="relative h-6 w-6 sm:h-8 sm:w-8 shrink-0">
-                  <Image src="/global/roadmap/t2.png" alt="" width={40} height={40} className="object-contain" />
+                  <Image src="/college_counseling/roadmap/t2.png" alt="" width={40} height={40} className="object-contain" />
                 </div>
                 <h4 className="font-outfit text-sm sm:text-base lg:text-lg font-normal text-slate-700">
                   Cloud Doc Storage
@@ -143,7 +143,7 @@ export default function ServiceMapSection({ serviceSteps }: ServiceMapSectionPro
               </div>
               <div className="flex flex-col items-center gap-1 text-center shrink-0">
                 <div className="relative h-6 w-6 sm:h-8 sm:w-8 shrink-0">
-                  <Image src="/global/roadmap/t3.png" alt="" width={40} height={40} className="object-contain" />
+                  <Image src="/college_counseling/roadmap/t3.png" alt="" width={40} height={40} className="object-contain" />
                 </div>
                 <h4 className="font-outfit text-sm sm:text-base lg:text-lg font-normal text-slate-700">
                   24/7 Chat

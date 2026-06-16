@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import Image from 'next/image';
 
@@ -167,16 +167,16 @@ export default function ProgrammingCourseRoadmap() {
               className="w-5 h-5 sm:w-6 sm:h-6 object-contain"
               aria-hidden
             />
-            <span className="text-[#4ECDC4] text-base sm:text-lg md:text-xl font-normal font-['Outfit']">
+            <span className="text-[#4ECDC4] text-base sm:text-lg md:text-xl font-normal font-outfit">
               Featured Course
             </span>
           </div>
           {/* 主标题 */}
-          <h2 className="text-center text-slate-700 text-2xl sm:text-3xl md:text-4xl font-bold font-['Outfit'] leading-tight">
+          <h2 className="text-center text-slate-700 text-2xl sm:text-3xl md:text-4xl font-bold font-outfit leading-tight">
             AI &amp; Coding Exploratory Course
           </h2>
           {/* 副标题 */}
-          <p className="max-w-4xl text-slate-500 text-sm sm:text-base md:text-lg font-normal font-['Outfit'] leading-relaxed text-center">
+          <p className="max-w-4xl text-slate-500 text-sm sm:text-base md:text-lg font-normal font-outfit leading-relaxed text-center">
             Python • AI Basics • Computer Vision • NLP • Chatbots • Game AI • Robotics
           </p>
         </div>
@@ -207,7 +207,7 @@ export default function ProgrammingCourseRoadmap() {
             href="https://forms.gle/2mMzKoQkXHa2CVHe6"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto inline-flex justify-center items-center gap-3 sm:gap-4 lg:gap-6 md:gap-7 min-w-[140px] sm:min-w-[150px] h-11 sm:h-12 md:h-14 px-6 sm:px-8 lg:pl-20 lg:pr-7 py-2.5 sm:py-3 md:py-3.5 bg-[#2AAED6] rounded-xl sm:rounded-2xl lg:rounded-3xl text-white text-base sm:text-lg lg:text-xl font-bold font-['Outfit'] shadow-md hover:bg-[#45B7D1] transition-colors no-underline"
+            className="w-full sm:w-auto inline-flex justify-center items-center gap-3 sm:gap-4 lg:gap-6 md:gap-7 min-w-[140px] sm:min-w-[150px] h-11 sm:h-12 md:h-14 px-6 sm:px-8 lg:pl-20 lg:pr-7 py-2.5 sm:py-3 md:py-3.5 bg-[#2AAED6] rounded-xl sm:rounded-2xl lg:rounded-3xl text-white text-base sm:text-lg lg:text-xl font-bold font-outfit shadow-md hover:bg-[#45B7D1] transition-colors no-underline"
           >
             Register Now
             <Image src="/programming/arrow.png" alt="" width={24} height={24} className="shrink-0 w-5 h-5 sm:w-6 sm:h-6" aria-hidden />

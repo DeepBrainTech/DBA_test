@@ -1,4 +1,4 @@
-/**
+﻿/**
  * 文件用途：首页数据配置
  * 依赖关系：依赖 types/program.ts 中的类型定义
  * 注意事项：数据修改后需要确保类型匹配
@@ -34,9 +34,9 @@ export const programs: Program[] = [
   },
   {
     icon: '🌍',
-    iconSrc: '/home/key-programs/Global_Education.svg',
-    title: 'Global Education',
-    slug: 'global-education',
+    iconSrc: '/home/key-programs/College_Counseling.svg',
+    title: 'College Counseling',
+    slug: 'college_counseling',
     subtitle: 'Plan Ahead · Go Global',
     description: 'One-step support for applications, language skills, and profile enhancement.',
     features: ['Personalized plans', 'Elite school guidance', 'Language improvement', 'Profile building'],

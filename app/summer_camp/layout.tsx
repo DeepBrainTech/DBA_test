@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     description:
       'A day of strategic games and math/logic puzzles that build focus, creativity, and problem-solving skills.',
     url: 'https://www.deepbrainacademy.org/summer_camp',
-    images: [{ url: '/nav_footer/logo_with_text.png' }],
+    images: [{ url: '/summer_camp/hero/summer_camp_cover.svg' }],
   },
 };
 

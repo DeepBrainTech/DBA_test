@@ -1,20 +1,20 @@
-/**
- * 文件用途：全球教育页面数据配置
- * 依赖关系：依赖 types/global-education.ts 中的类型定义
+﻿/**
+ * 文件用途：升学辅导页面数据配置
+ * 依赖关系：依赖 types/college_counseling.ts 中的类型定义
  * 注意事项：数据修改后需要确保类型匹配
  */
 
-import type { Feature, Stat, Challenge, ServiceStep, GlobalAdvantage } from '@/types/global-education';
+import type { Feature, Stat, Challenge, ServiceStep, CollegeCounselingAdvantage } from '@/types/college_counseling';
 
 /**
  * 特性列表
  */
-/** 英雄区四张卡片图标使用 public/global/Hero/ 下的 hero_1～hero_4.png */
+/** 英雄区四张卡片图标使用 public/college_counseling/Hero/ 下的 hero_1～hero_4.png */
 export const features: Feature[] = [
-  { icon: '/global/Hero/hero_1.png', title: 'Top Resources' },
-  { icon: '/global/Hero/hero_2.png', title: 'Prestigious Institutions' },
-  { icon: '/global/Hero/hero_3.png', title: 'Ivy League Mentors' },
-  { icon: '/global/Hero/hero_4.png', title: 'Direct Admission Pathways' }
+  { icon: '/college_counseling/Hero/hero_1.png', title: 'Top Resources' },
+  { icon: '/college_counseling/Hero/hero_2.png', title: 'Prestigious Institutions' },
+  { icon: '/college_counseling/Hero/hero_3.png', title: 'Ivy League Mentors' },
+  { icon: '/college_counseling/Hero/hero_4.png', title: 'Direct Admission Pathways' }
 ];
 
 /**
@@ -45,7 +45,7 @@ export const stats: Stat[] = [
  */
 export const challenges: Challenge[] = [
   {
-    icon: '/global/facing1.svg',
+    icon: '/college_counseling/facing1.svg',
     iconBg: '#E8E3FF',
     iconColor: '#9B8FD8',
     title: 'Lacking Clear Direction',
@@ -57,7 +57,7 @@ export const challenges: Challenge[] = [
     ]
   },
   {
-    icon: '/global/facing2.svg',
+    icon: '/college_counseling/facing2.svg',
     iconBg: '#E3F2FD',
     iconColor: '#6BB6FF',
     title: 'Building a Standout Profile',
@@ -69,7 +69,7 @@ export const challenges: Challenge[] = [
     ]
   },
   {
-    icon: '/global/facing3.svg',
+    icon: '/college_counseling/facing3.svg',
     iconBg: '#FFE8D6',
     iconColor: '#F4A460',
     title: 'Weak Personal Statement',
@@ -81,7 +81,7 @@ export const challenges: Challenge[] = [
     ]
   },
   {
-    icon: '/global/facing4.svg',
+    icon: '/college_counseling/facing4.svg',
     iconBg: '#E8F5E9',
     iconColor: '#7EC97E',
     title: 'Navigating the Maze',
@@ -183,7 +183,7 @@ export const serviceSteps: ServiceStep[] = [
 /**
  * 优势列表
  */
-export const globalAdvantages: GlobalAdvantage[] = [
+export const collegeCounselingAdvantages: CollegeCounselingAdvantage[] = [
   {
     icon: '👥',
     title: 'Former Admissions Team',

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * 文件用途：Learning Strategies 单张策略卡，标题、描述、图标均由 card 配置驱动
  * 依赖关系：依赖 types/learning_program 的 LearningStrategyCard、next/image；被 LearningStrategies 使用
  * 注意事项：布局与设计稿一致；图标来自 card.icon（或按 index 回退到默认四张），路径基于 public/learning_program/Learning_Strategies
@@ -47,11 +47,11 @@ export default function StrategyCard({ card, index }: StrategyCardProps) {
         </div>
       </div>
       {/* 卡片标题：与首页 KeyPrograms 卡片标题字号一致 */}
-      <h3 className="mt-5 w-full text-center text-slate-700 text-xl md:text-2xl font-semibold font-['Outfit'] leading-tight">
+      <h3 className="mt-5 w-full text-center text-slate-700 text-xl md:text-2xl font-semibold font-outfit leading-tight">
         {card.title}
       </h3>
       {/* 描述：居中，宽度由 max-w 限制 */}
-      <p className="mt-4 w-full max-w-[12rem] text-center text-slate-500 text-base md:text-lg font-normal font-['Outfit'] leading-snug">
+      <p className="mt-4 w-full max-w-[12rem] text-center text-slate-500 text-base md:text-lg font-normal font-outfit leading-snug">
         {card.description}
       </p>
     </div>

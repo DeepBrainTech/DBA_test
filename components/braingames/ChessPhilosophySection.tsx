@@ -1,4 +1,4 @@
-/**
+﻿/**
  * 文件用途：Brain Games 教育理念 Section
  * 依赖关系：依赖 types/braingames.ts
  * 注意事项：按钮格式与字体字号与 learning_program LearningStrategies 一致
@@ -26,14 +26,14 @@ export default function ChessPhilosophySection({
                             className="w-5 h-5 md:w-7 md:h-8 object-contain shrink-0"
                             aria-hidden
                         />
-                        <span className="text-[#F4A460] text-base sm:text-lg md:text-xl font-normal font-['Outfit']">
+                        <span className="text-[#F4A460] text-base sm:text-lg md:text-xl font-normal font-outfit">
                             {data.badgeText}
                         </span>
                     </div>
-                    <h2 className="text-center text-slate-700 text-2xl sm:text-3xl md:text-4xl font-bold font-['Outfit'] leading-tight">
+                    <h2 className="text-center text-slate-700 text-2xl sm:text-3xl md:text-4xl font-bold font-outfit leading-tight">
                         {data.heading}
                     </h2>
-                    <p className="max-w-[892px] text-slate-500 text-sm sm:text-base md:text-lg font-normal font-['Outfit'] leading-relaxed text-center">
+                    <p className="max-w-[892px] text-slate-500 text-sm sm:text-base md:text-lg font-normal font-outfit leading-relaxed text-center">
                         {data.subheading}
                     </p>
                 </div>
@@ -55,10 +55,10 @@ export default function ChessPhilosophySection({
                                         className="w-7 h-7 sm:w-8 sm:h-8 lg:w-10 lg:h-10 object-contain"
                                     />
                                 </div>
-                                <h3 className="mt-3 sm:mt-4 lg:mt-5 w-full text-center text-slate-700 text-lg sm:text-xl md:text-2xl font-semibold font-['Outfit'] leading-tight">
+                                <h3 className="mt-3 sm:mt-4 lg:mt-5 w-full text-center text-slate-700 text-lg sm:text-xl md:text-2xl font-semibold font-outfit leading-tight">
                                     {c.title}
                                 </h3>
-                                <p className="mt-2 sm:mt-3 lg:mt-4 w-full text-center text-slate-500 text-sm sm:text-base md:text-lg font-normal font-['Outfit'] leading-snug">
+                                <p className="mt-2 sm:mt-3 lg:mt-4 w-full text-center text-slate-500 text-sm sm:text-base md:text-lg font-normal font-outfit leading-snug">
                                     {c.description}
                                 </p>
                             </div>
@@ -80,10 +80,10 @@ export default function ChessPhilosophySection({
                                     className="object-contain"
                                 />
                             </div>
-                            <h3 className="mt-5 w-full text-center text-slate-700 text-xl md:text-2xl font-semibold font-['Outfit'] leading-tight">
+                            <h3 className="mt-5 w-full text-center text-slate-700 text-xl md:text-2xl font-semibold font-outfit leading-tight">
                                 {c.title}
                             </h3>
-                            <p className="mt-4 w-full max-w-[18rem] text-center text-slate-500 text-base md:text-lg font-normal font-['Outfit'] leading-snug">
+                            <p className="mt-4 w-full max-w-[18rem] text-center text-slate-500 text-base md:text-lg font-normal font-outfit leading-snug">
                                 {c.description}
                             </p>
                         </div>
@@ -93,13 +93,13 @@ export default function ChessPhilosophySection({
                 {/* 引用 / 说明面板 */}
                 <div className="w-full rounded-2xl lg:rounded-3xl bg-linear-to-r from-[#F4A4601A] to-[#E894511A] px-4 sm:px-6 md:px-14 py-6 sm:py-8 md:py-10 lg:py-14">
                     <div className="relative">
-                        <div className="leading-none opacity-20 text-[#F4A460] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal font-['Outfit']" aria-hidden>
+                        <div className="leading-none opacity-20 text-[#F4A460] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal font-outfit" aria-hidden>
                             &quot;
                         </div>
-                        <h3 className="text-center text-slate-700 text-lg sm:text-xl md:text-2xl font-semibold font-['Outfit'] leading-tight mt-1 sm:mt-2">
+                        <h3 className="text-center text-slate-700 text-lg sm:text-xl md:text-2xl font-semibold font-outfit leading-tight mt-1 sm:mt-2">
                             {data.quoteHeading}
                         </h3>
-                        <p className="mx-auto mt-3 sm:mt-4 lg:mt-5 max-w-[925px] text-center text-slate-500 text-sm sm:text-base md:text-lg font-normal font-['Outfit'] leading-relaxed">
+                        <p className="mx-auto mt-3 sm:mt-4 lg:mt-5 max-w-[925px] text-center text-slate-500 text-sm sm:text-base md:text-lg font-normal font-outfit leading-relaxed">
                             {data.quoteBody}
                         </p>
                         {/* quotePills：移动端横向滚动 */}
@@ -110,10 +110,10 @@ export default function ChessPhilosophySection({
                                         key={p.id}
                                         className="w-[200px] sm:w-[240px] flex-shrink-0 rounded-xl sm:rounded-2xl bg-white px-4 sm:px-6 py-4 sm:py-5 text-center"
                                     >
-                                        <div className="text-[#F4A460] text-sm sm:text-base md:text-lg font-semibold font-['Outfit']">
+                                        <div className="text-[#F4A460] text-sm sm:text-base md:text-lg font-semibold font-outfit">
                                             {p.title}
                                         </div>
-                                        <div className="mt-1.5 sm:mt-2 text-slate-500 text-xs sm:text-sm md:text-base font-normal font-['Outfit'] leading-relaxed">
+                                        <div className="mt-1.5 sm:mt-2 text-slate-500 text-xs sm:text-sm md:text-base font-normal font-outfit leading-relaxed">
                                             {p.description}
                                         </div>
                                     </div>
@@ -126,20 +126,20 @@ export default function ChessPhilosophySection({
                                     key={p.id}
                                     className="rounded-2xl bg-white px-6 py-5 md:px-8 md:py-6 text-center"
                                 >
-                                    <div className="text-[#F4A460] text-base md:text-lg font-semibold font-['Outfit'] leading-7">
+                                    <div className="text-[#F4A460] text-base md:text-lg font-semibold font-outfit leading-7">
                                         {p.title}
                                     </div>
-                                    <div className="mt-2 text-slate-500 text-base font-normal font-['Outfit'] leading-relaxed">
+                                    <div className="mt-2 text-slate-500 text-base font-normal font-outfit leading-relaxed">
                                         {p.description}
                                     </div>
                                 </div>
                             ))}
                         </div>
                         <div className="mt-6 sm:mt-8 lg:mt-10 text-center">
-                            <div className="text-slate-700 text-sm sm:text-base font-normal font-['Outfit']">
+                            <div className="text-slate-700 text-sm sm:text-base font-normal font-outfit">
                                 {data.footerLine1}
                             </div>
-                            <div className="mt-1 text-slate-500 text-xs sm:text-sm md:text-base font-normal font-['Outfit']">
+                            <div className="mt-1 text-slate-500 text-xs sm:text-sm md:text-base font-normal font-outfit">
                                 {data.footerLine2}
                             </div>
                         </div>

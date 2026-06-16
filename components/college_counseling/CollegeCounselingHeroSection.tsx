@@ -1,6 +1,6 @@
-/**
- * 文件用途：全球教育页面英雄区组件
- * 依赖关系：依赖 types/global-education.ts 中的 Feature 类型和 scrollToElement 工具函数
+﻿/**
+ * 文件用途：升学辅导页面英雄区组件
+ * 依赖关系：依赖 types/college_counseling.ts 中的 Feature 类型和 scrollToElement 工具函数
  * 注意事项：布局与 Learning Program Hero 一致；-mt-[106px] 使首屏与透明导航重叠
  */
 
@@ -8,25 +8,25 @@
 
 import Image from 'next/image';
 import { scrollToElement } from '@/lib/scroll';
-import type { Feature } from '@/types/global-education';
+import type { Feature } from '@/types/college_counseling';
 
-interface GlobalHeroSectionProps {
+interface CollegeCounselingHeroSectionProps {
   features: Feature[];
 }
 
 /**
- * 全球教育英雄区组件（布局与 Learning Program Hero 一致）
+ * 升学辅导英雄区组件（布局与 Learning Program Hero 一致）
  * @param features 特性数据数组
  */
-export default function GlobalHeroSection({ features }: GlobalHeroSectionProps) {
+export default function CollegeCounselingHeroSection({ features }: CollegeCounselingHeroSectionProps) {
   return (
     <section className="relative -mt-[106px] flex flex-col pb-10 bg-[#FFFFFF]">
       {/* 背景图区域：高度与 Learning Program 一致；用 svh 替代 vh 避免导航后封面区上下跳动 */}
       <div className="relative min-h-[45svh] w-full overflow-visible bg-[#e8e8e8] md:min-h-[55svh] lg:min-h-[70svh]">
         <div className="absolute inset-0 z-0 [contain:layout]">
           <Image
-            src="/global/Hero/cover.png"
-            alt="Global Education Background"
+            src="/college_counseling/Hero/cover.png"
+            alt="College Counseling Background"
             fill
             sizes="100vw"
             className="object-cover object-[50%_15%]"
@@ -38,7 +38,7 @@ export default function GlobalHeroSection({ features }: GlobalHeroSectionProps) 
         <div className="relative z-10 mx-auto flex min-h-full max-w-[min(1280px,95vw)] flex-col items-center justify-center px-4 sm:px-6 lg:px-9 pt-[106px] pb-4 text-center">
           <div className="w-full">
             <h1 className="font-outfit mt-10 sm:mt-14 lg:mt-20 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[80px] font-bold leading-tight lg:leading-[1.75] xl:leading-[140px] text-[#333333]">
-              Global Education
+              College Counseling
             </h1>
             <p className="font-outfit mx-auto mt-2 sm:mt-3 lg:mt-4 max-w-[926px] text-center text-base sm:text-lg md:text-xl lg:text-2xl xl:text-[32px] font-medium leading-relaxed lg:leading-[46px] text-black">
               A customized journey from aspiration to admission.
@@ -80,7 +80,7 @@ export default function GlobalHeroSection({ features }: GlobalHeroSectionProps) 
             aria-label="滚动至 Stats 区块"
           >
             <Image
-              src="/global/Hero/hero_5.png"
+              src="/college_counseling/Hero/hero_5.png"
               alt=""
               width={1200}
               height={600}
@@ -93,4 +93,3 @@ export default function GlobalHeroSection({ features }: GlobalHeroSectionProps) 
     </section>
   );
 }
-

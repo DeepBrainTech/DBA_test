@@ -1,4 +1,4 @@
-/**
+﻿/**
  * 文件用途：图例筛选友好提示（课表、课程信息共用）
  */
 
@@ -9,7 +9,7 @@ interface FilterTapHintProps {
 export default function FilterTapHint({ showCardExpand = false }: FilterTapHintProps) {
   return (
     <div className="flex flex-col items-center gap-0.5" role="note">
-      <span className="font-['Outfit'] text-sm text-[#599CED] md:text-[15px]">
+      <span className="font-outfit text-sm text-[#599CED] md:text-[15px]">
         ✨ Tap one to filter
         {showCardExpand ? ', tap one card to expand' : ''}
       </span>

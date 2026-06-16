@@ -5,68 +5,95 @@
  */
 
 /**
+ * Hero 区特色亮点项
+ */
+export interface SummerCampHeroFeature {
+  /** 亮点文案 */
+  label: string;
+}
+
+/**
  * 页面 Hero 区数据类型
  */
 export interface SummerCampHeroData {
-  /** 页面标签（如 ☀️ Summer Camp） */
-  badge: string;
   /** 主标题 */
   title: string;
   /** 副标题/描述文字 */
   subtitle: string;
+  /** 背景图路径 */
+  backgroundImage: string;
+  /** 四个特色亮点 */
+  features: SummerCampHeroFeature[];
+  /** Hero 底部 CTA 文案 */
+  ctaText: string;
+  /** 底部滚动按钮目标区块 id */
+  scrollTargetId: string;
+  /** 底部滚动指示图标 */
+  scrollIcon: string;
 }
 
 /**
- * 简介区数据类型
+ * Program Highlights 单张特色卡
  */
-export interface SummerCampIntroData {
-  /** 简介主标题 */
+export interface SummerCampHighlightCard {
+  /** 唯一标识 */
+  id: string;
+  /** 卡片标题 */
   title: string;
-  /** 简介描述内容 */
+  /** 卡片描述 */
   description: string;
+  /** 图标图片路径 */
+  iconSrc: string;
 }
 
 /**
- * 单日课程科目
+ * Program Highlights 区块数据
  */
-export interface SummerCampSubject {
+export interface SummerCampHighlightsData {
+  /** Badge 图标路径 */
+  badgeIcon: string;
+  /** Badge 文案 */
+  badgeText: string;
+  /** 主标题 */
+  title: string;
+  /** 副标题 */
+  subtitle: string;
+  /** 四张特色卡 */
+  cards: SummerCampHighlightCard[];
+}
+
+/**
+ * 全日项目单科课程
+ */
+export interface SummerCampProgramSubject {
+  /** 唯一标识 */
+  id: string;
   /** 科目名称 */
   name: string;
+  /** 科目图标路径 */
+  iconSrc: string;
   /** 能力亮点列表 */
   highlights: string[];
 }
 
 /**
- * 日程信息
+ * Full-day Program 区块数据
  */
-export interface SummerCampScheduleData {
-  /** 时间范围或项目周期说明 */
-  timeRange: string;
-  /** 日期列表，按年份分组 */
-  dates: {
-    /** 年份 */
-    year: string;
-    /** 该年份的日期列表 */
-    days: string;
-  }[];
-}
-
-/**
- * 地点与联系方式
- */
-export interface SummerCampLocationData {
-  /** 地址列表 */
-  addresses: string[];
-  /** 电话 */
-  phone?: string;
-  /** 邮箱 */
-  email?: string;
-  /** 网站 */
-  website?: string;
-  /** 二维码图片路径 */
-  qrCodeImage: string;
-  /** 二维码描述文字 */
-  qrCodeText: string;
+export interface SummerCampProgramData {
+  /** Badge 图标路径 */
+  badgeIcon: string;
+  /** Badge 文案 */
+  badgeText: string;
+  /** 主标题 */
+  title: string;
+  /** 副标题 */
+  subtitle: string;
+  /** 五门核心课程 */
+  subjects: SummerCampProgramSubject[];
+  /** 注册按钮文字 */
+  registerButtonText: string;
+  /** 注册链接 */
+  registerUrl: string;
 }
 
 /**
@@ -75,23 +102,8 @@ export interface SummerCampLocationData {
 export interface SummerCampPageData {
   /** Hero 区数据 */
   hero: SummerCampHeroData;
-  /** 简介区数据 */
-  intro: SummerCampIntroData;
-  /** 每日五门核心课程 */
-  subjects: SummerCampSubject[];
-  /** 家长选择理由 */
-  whyChoose: {
-    title: string;
-    items: string[];
-  };
-  /** 日程数据 */
-  schedule: SummerCampScheduleData;
-  /** 报名优惠与提醒 */
-  offers: string[];
-  /** 地点与联系信息 */
-  location: SummerCampLocationData;
-  /** 注册按钮文字 */
-  registerButtonText: string;
-  /** 注册链接（与传单二维码一致） */
-  registerUrl: string;
+  /** Program Highlights 区块 */
+  highlights: SummerCampHighlightsData;
+  /** Full-day Program 区块 */
+  program: SummerCampProgramData;
 }

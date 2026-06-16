@@ -1,4 +1,4 @@
-/**
+﻿/**
  * 文件用途：导航栏组件（可在多个页面复用）
  * 依赖关系：依赖 Next.js Link 和 Image 组件
  * 注意事项：需要根据当前路由高亮激活的链接；使用透明背景便于首屏大图延伸至顶部；导航在文档流顶部不固定，随页面滚动，仅滚回顶部时可见
@@ -30,7 +30,8 @@ const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/summer_camp', label: 'Summer Camp' },
   { href: '/courses', label: 'Courses' },
-  { href: '/global-education', label: 'Global Education' },
+  { href: '/schedule', label: 'Schedule' },
+  { href: '/college_counseling', label: 'College Counseling' },
   { href: '/tutoring', label: 'Tutoring' },
   { href: '/about', label: 'About Us' },
 ];
@@ -158,7 +159,7 @@ export default function Navigation({ className = '' }: { className?: string }) {
                       <Link
                         key={link.href}
                         href={link.href}
-                        className={`justify-start text-xl font-normal font-['Outfit'] whitespace-nowrap transition hover:text-blue-400 ${
+                        className={`justify-start text-xl font-normal font-outfit whitespace-nowrap transition hover:text-blue-400 ${
                           isActive ? 'text-blue-400' : 'text-zinc-800'
                         }`}
                         onClick={() => setIsProgramsOpen(false)}

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * 文件用途：Courses 页面第一部分 — Explore Our Programs 介绍区块
  * 依赖关系：依赖 ProgramCard、types/courses；图标来自 public/courses/icon
  */
@@ -23,12 +23,12 @@ export default function ExplorePrograms({ data }: ExploreProgramsProps) {
             <span className="text-[28px] leading-none" aria-hidden>
               {data.badgeIcon}
             </span>
-            <span className="font-['Outfit'] text-xl text-[#599CED]">{data.badgeText}</span>
+            <span className="font-outfit text-xl text-[#599CED]">{data.badgeText}</span>
           </div>
-          <h2 className="mt-6 font-['Outfit'] text-3xl md:text-4xl lg:text-[44px] font-bold leading-tight text-[#2C3E50]">
+          <h2 className="mt-6 font-outfit text-3xl md:text-4xl lg:text-[44px] font-bold leading-tight text-[#2C3E50]">
             {data.title}
           </h2>
-          <p className="mt-4 max-w-[892px] font-['Outfit'] text-lg md:text-xl lg:text-[22px] font-normal leading-relaxed text-[#7C8B99]">
+          <p className="mt-4 max-w-[892px] font-outfit text-lg md:text-xl lg:text-[22px] font-normal leading-relaxed text-[#7C8B99]">
             {data.subtitle}
           </p>
         </header>

@@ -1,5 +1,5 @@
 /**
- * 文件用途：行动号召区块组件（全球教育页面）
+ * 文件用途：行动号召区块组件（升学辅导页面）
  * 依赖关系：无
  * 注意事项：包含标题、描述和两个按钮
  */
@@ -15,7 +15,7 @@ export default function CTASection() {
       <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-14">
         <div className="bg-gradient-to-br from-[#9B8FD8] to-[#8A7CC7] rounded-2xl sm:rounded-3xl lg:rounded-[40px] p-6 sm:p-10 lg:p-16 xl:p-[80px] text-center text-white shadow-xl">
           <h2 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl 2xl:text-[53px] font-bold mb-4 sm:mb-6 lg:mb-[27px] leading-tight">
-            Ready to Start Your Global Education Journey?
+            Ready to Start Your College Counseling Journey?
           </h2>
           <p className="text-sm sm:text-base lg:text-xl xl:text-[28px] mb-6 sm:mb-8 lg:mb-12 xl:mb-[53px] opacity-90 max-w-full sm:max-w-[600px] md:max-w-[750px] lg:max-w-[900px] mx-auto px-2 sm:px-0">
             Book a free consultation with our expert team and discover how we can help you achieve your educational goals.

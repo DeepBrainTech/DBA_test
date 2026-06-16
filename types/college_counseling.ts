@@ -1,5 +1,5 @@
 /**
- * 文件用途：定义全球教育页面相关的类型
+ * 文件用途：定义升学辅导页面相关的类型
  * 依赖关系：无
  * 注意事项：所有字段必须与数据源保持一致
  */
@@ -69,9 +69,9 @@ export interface ServiceStep {
 }
 
 /**
- * 优势卡片类型（全球教育页面）
+ * 优势卡片类型（升学辅导页面）
  */
-export interface GlobalAdvantage {
+export interface CollegeCounselingAdvantage {
   /** emoji图标 */
   icon: string;
   /** 标题 */

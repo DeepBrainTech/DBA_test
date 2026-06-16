@@ -1,4 +1,4 @@
-/**
+﻿/**
  * 文件用途：Courses 页面可折叠课程信息卡片
  * 依赖关系：依赖 lib/courseCategories、types/courses
  */
@@ -35,18 +35,18 @@ export default function CourseInfoCard({ course, isExpanded, onToggle }: CourseI
     >
       <div className={`flex items-center gap-2.5 ${isExpanded ? 'mb-4' : ''}`}>
         <span
-          className="shrink-0 font-['Outfit'] text-sm font-medium md:text-base"
+          className="shrink-0 font-outfit text-sm font-medium md:text-base"
           style={{ color: categoryColor }}
         >
           {categoryLabel}
         </span>
-        <span className="font-['Outfit'] text-base font-bold text-[#2C3E50] md:text-lg">
+        <span className="font-outfit text-base font-bold text-[#2C3E50] md:text-lg">
           {course.name}
         </span>
       </div>
 
       {isExpanded && (
-        <ul className="list-disc space-y-2.5 pl-5 font-['Outfit'] text-sm leading-[1.65] text-[#7C8B99] md:text-[15px]">
+        <ul className="list-disc space-y-2.5 pl-5 font-outfit text-sm leading-[1.65] text-[#7C8B99] md:text-[15px]">
           {course.desc.map((item, index) => (
             <li key={index}>{item}</li>
           ))}

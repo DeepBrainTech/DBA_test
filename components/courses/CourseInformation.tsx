@@ -1,4 +1,4 @@
-/**
+﻿/**
  * 文件用途：Courses 页面课程信息区块，含图例筛选与可折叠课程卡片
  * 依赖关系：依赖 CourseCategoryLegend、CourseInfoCard、FilterTapHint、lib/courseCategories
  */
@@ -120,7 +120,7 @@ export default function CourseInformation({ data }: CourseInformationProps) {
     <div className="w-full bg-[#FBF9F4] pb-16 md:pb-24">
       <div className="mx-auto flex w-full max-w-[min(1440px,98vw)] flex-col items-center gap-8 px-4 lg:px-9">
         <div className="flex w-full flex-col items-center gap-4 text-center">
-          <h2 className="font-['Outfit'] text-3xl font-bold text-[#2C3E50] md:text-4xl lg:text-[40px]">
+          <h2 className="font-outfit text-3xl font-bold text-[#2C3E50] md:text-4xl lg:text-[40px]">
             {data.sectionTitle}
           </h2>
         </div>
@@ -175,7 +175,7 @@ export default function CourseInformation({ data }: CourseInformationProps) {
             href="https://docs.google.com/forms/d/1wnsEKekngdFdpt465K4BIvXLT1mKvM2VmEI2Kc0QvCQ/viewform"
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#599CED] px-8 text-base font-bold font-['Outfit'] text-white no-underline shadow-lg transition-all hover:-translate-y-0.5 hover:bg-[#4788D9] hover:shadow-xl md:h-14 md:px-10 md:text-lg"
+            className="group relative inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#599CED] px-8 text-base font-bold font-outfit text-white no-underline shadow-lg transition-all hover:-translate-y-0.5 hover:bg-[#4788D9] hover:shadow-xl md:h-14 md:px-10 md:text-lg"
           >
             <span>Register Now</span>
             <svg

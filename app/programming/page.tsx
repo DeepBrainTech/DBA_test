@@ -17,7 +17,7 @@ import ConsultationCTA from '@/components/programming/ConsultationCTA';
 
 export default function Page() {
   return (
-    <main className="font-outfit">
+    <main>
       <ProgrammingHero data={programmingHeroData} />
       <ProgrammingPillars />
       <ProgrammingInnovators />

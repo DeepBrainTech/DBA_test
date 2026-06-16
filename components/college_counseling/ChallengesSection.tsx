@@ -1,11 +1,11 @@
-/**
- * 文件用途：挑战区块组件（全球教育页面）
- * 依赖关系：依赖 types/global-education.ts 中的 Challenge 类型和 Next.js Image 组件
+﻿/**
+ * 文件用途：挑战区块组件（升学辅导页面）
+ * 依赖关系：依赖 types/college_counseling.ts 中的 Challenge 类型和 Next.js Image 组件
  * 注意事项：展示4个挑战卡片和一个总结区域
  */
 
 import Image from 'next/image';
-import type { Challenge } from '@/types/global-education';
+import type { Challenge } from '@/types/college_counseling';
 
 interface ChallengesSectionProps {
   challenges: Challenge[];

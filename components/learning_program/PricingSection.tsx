@@ -1,4 +1,4 @@
-/**
+﻿/**
  * 文件用途：Learning Program 价格区块，含标题、Track A/B 价格表、限时优惠说明与报名按钮
  * 依赖关系：依赖 types/learning_program 的 LearningProgramPricingData
  * 注意事项：表格用网格布局便于响应式；description 中 **text** 解析为加粗
@@ -47,11 +47,11 @@ function PriceCell({ cell }: { cell: string | PricingCell }) {
   return (
     <div className="flex justify-center items-center py-3 sm:py-4">
       {isDiscount ? (
-        <span className="inline-flex justify-center items-center px-2 sm:px-4 py-1 sm:py-2 bg-rose-400/10 rounded-full text-rose-400 text-sm sm:text-base lg:text-xl font-normal font-['Outfit']">
+        <span className="inline-flex justify-center items-center px-2 sm:px-4 py-1 sm:py-2 bg-rose-400/10 rounded-full text-rose-400 text-sm sm:text-base lg:text-xl font-normal font-outfit">
           {value}
         </span>
       ) : (
-        <span className="text-slate-700 text-sm sm:text-base lg:text-xl font-normal font-['Outfit']">{value}</span>
+        <span className="text-slate-700 text-sm sm:text-base lg:text-xl font-normal font-outfit">{value}</span>
       )}
     </div>
   );
@@ -69,18 +69,18 @@ export default function PricingSection({ data }: PricingSectionProps) {
         <div className="self-stretch flex flex-col justify-start items-center gap-4 sm:gap-6 text-center">
           <div className="inline-flex justify-start items-start">
             <div className="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 bg-rose-400/10 rounded-2xl sm:rounded-3xl">
-              <span className="text-slate-700 text-2xl sm:text-3xl font-normal font-['Outfit']">
+              <span className="text-slate-700 text-2xl sm:text-3xl font-normal font-outfit">
                 {data.badge.text.split(/\s+/)[0] || '💎️'}
               </span>
-              <span className="text-rose-400 text-base sm:text-lg lg:text-xl font-normal font-['Outfit']">
+              <span className="text-rose-400 text-base sm:text-lg lg:text-xl font-normal font-outfit">
                 {data.badge.text.split(/\s+/).slice(1).join(' ') || 'Pricing'}
               </span>
             </div>
           </div>
-          <h2 className="w-full text-slate-700 text-2xl sm:text-3xl md:text-4xl font-bold font-['Outfit'] leading-tight">
+          <h2 className="w-full text-slate-700 text-2xl sm:text-3xl md:text-4xl font-bold font-outfit leading-tight">
             {data.heading}
           </h2>
-          <p className="max-w-[1100px] text-slate-500 text-sm sm:text-base lg:text-lg xl:text-xl font-normal font-['Outfit'] leading-relaxed">
+          <p className="max-w-[1100px] text-slate-500 text-sm sm:text-base lg:text-lg xl:text-xl font-normal font-outfit leading-relaxed">
             {data.description}
           </p>
         </div>
@@ -88,11 +88,11 @@ export default function PricingSection({ data }: PricingSectionProps) {
         {/* Track A: STEM Innovation Weekly Pricing（图1：三列 Onsite/Online + Multi-Session Savings） */}
         <div className="w-full px-3 sm:px-6 md:px-9 py-6 sm:py-9 bg-gradient-to-br from-violet-400/5 to-blue-400/5 rounded-2xl sm:rounded-3xl flex flex-col justify-start items-start gap-5 sm:gap-7">
           <div className="w-full flex flex-col items-center gap-2">
-            <h3 className="w-full text-center text-slate-700 text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold font-['Outfit']">
+            <h3 className="w-full text-center text-slate-700 text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold font-outfit">
               {data.trackATitle}
             </h3>
             {data.trackASubtitle && (
-              <p className="w-full text-center text-slate-500 text-sm sm:text-base lg:text-lg font-normal font-['Outfit']">
+              <p className="w-full text-center text-slate-500 text-sm sm:text-base lg:text-lg font-normal font-outfit">
                 {data.trackASubtitle}
               </p>
             )}
@@ -100,13 +100,13 @@ export default function PricingSection({ data }: PricingSectionProps) {
           <div className="w-full overflow-x-auto">
             <div className="min-w-[400px] w-full">
               <div className="grid grid-cols-3 border-b-2 border-indigo-50">
-                <div className="py-2 sm:py-3 text-left text-slate-500 text-sm sm:text-base lg:text-xl font-bold font-['Outfit']">
+                <div className="py-2 sm:py-3 text-left text-slate-500 text-sm sm:text-base lg:text-xl font-bold font-outfit">
                   {data.trackAHeaders[0]}
                 </div>
-                <div className="py-2 sm:py-3 text-center text-slate-500 text-sm sm:text-base lg:text-xl font-bold font-['Outfit']">
+                <div className="py-2 sm:py-3 text-center text-slate-500 text-sm sm:text-base lg:text-xl font-bold font-outfit">
                   {data.trackAHeaders[1]}
                 </div>
-                <div className="py-2 sm:py-3 text-center text-slate-500 text-sm sm:text-base lg:text-xl font-bold font-['Outfit']">
+                <div className="py-2 sm:py-3 text-center text-slate-500 text-sm sm:text-base lg:text-xl font-bold font-outfit">
                   {data.trackAHeaders[2]}
                 </div>
               </div>
@@ -116,18 +116,18 @@ export default function PricingSection({ data }: PricingSectionProps) {
                   className="grid grid-cols-3 border-b border-indigo-50 last:border-b-0"
                 >
                   <div className="py-3 sm:py-4 flex flex-col justify-center gap-0.5">
-                    <span className="text-slate-700 text-sm sm:text-base lg:text-xl font-semibold font-['Outfit']">
+                    <span className="text-slate-700 text-sm sm:text-base lg:text-xl font-semibold font-outfit">
                       {row.optionName}
                     </span>
                     {row.optionSubtitle && (
-                      <span className="text-slate-500 text-xs sm:text-sm lg:text-base font-normal font-['Outfit']">
+                      <span className="text-slate-500 text-xs sm:text-sm lg:text-base font-normal font-outfit">
                         {row.optionSubtitle}
                       </span>
                     )}
                   </div>
                   <PriceCell cell={row.onsite} />
                   <div className="flex justify-center items-center py-3 sm:py-4">
-                    <span className="text-slate-700 text-sm sm:text-base lg:text-xl font-normal font-['Outfit']">
+                    <span className="text-slate-700 text-sm sm:text-base lg:text-xl font-normal font-outfit">
                       {row.online}
                     </span>
                   </div>
@@ -135,7 +135,7 @@ export default function PricingSection({ data }: PricingSectionProps) {
               ))}
               <div className="grid grid-cols-3 border-b border-indigo-50 py-3 sm:py-4">
                 <div className="col-span-3 flex items-center gap-1">
-                  <span className="text-slate-500 text-sm sm:text-base lg:text-xl font-normal font-['Outfit']">
+                  <span className="text-slate-500 text-sm sm:text-base lg:text-xl font-normal font-outfit">
                     {data.materialFootnote}
                   </span>
                 </div>
@@ -151,7 +151,7 @@ export default function PricingSection({ data }: PricingSectionProps) {
                 {/* 第一格：标题；lg 以下保持不压缩以支持横向滑动 */}
                 <div className="min-w-[280px] flex-1 min-h-52 px-8 sm:px-12 lg:px-16 py-8 sm:py-9 inline-flex flex-col justify-center items-center gap-2.5 shrink-0">
                   <div className="self-stretch text-center">
-                    <span className="text-slate-700 text-base sm:text-lg lg:text-xl font-bold font-['Outfit'] leading-7">
+                    <span className="text-slate-700 text-base sm:text-lg lg:text-xl font-bold font-outfit leading-7">
                       {data.multiSessionSavings.heading}
                     </span>
                   </div>
@@ -169,30 +169,30 @@ export default function PricingSection({ data }: PricingSectionProps) {
                       className="min-w-[280px] flex-1 min-h-52 px-8 sm:px-12 lg:px-16 py-8 sm:py-9 inline-flex flex-col justify-center items-center gap-2.5 shrink-0"
                     >
                       <div className="self-stretch text-center">
-                        <span className="text-rose-400 text-2xl sm:text-3xl font-semibold font-['Outfit'] leading-7">
+                        <span className="text-rose-400 text-2xl sm:text-3xl font-semibold font-outfit leading-7">
                           {percentLeft}
                         </span>
-                        <span className="text-rose-400 text-2xl sm:text-3xl font-semibold font-['Outfit']">
+                        <span className="text-rose-400 text-2xl sm:text-3xl font-semibold font-outfit">
                           {percentRight}
                         </span>
                       </div>
                       <div className="w-64 text-center">
-                      <span className="text-slate-700 text-base sm:text-lg font-semibold font-['Outfit'] leading-7">
+                      <span className="text-slate-700 text-base sm:text-lg font-semibold font-outfit leading-7">
                         {offer.description}
                       </span>
                       <br />
                       {savePrefix ? (
                         <>
-                          <span className="text-slate-500 text-base sm:text-lg font-normal font-['Outfit'] leading-7">
+                          <span className="text-slate-500 text-base sm:text-lg font-normal font-outfit leading-7">
                             {savePrefix}
                           </span>
-                          <span className="text-slate-500 text-base sm:text-lg font-bold font-['Outfit'] leading-7">
+                          <span className="text-slate-500 text-base sm:text-lg font-bold font-outfit leading-7">
                             {' '}
                             {saveAmount}
                           </span>
                         </>
                       ) : (
-                        <span className="text-slate-500 text-base sm:text-lg font-normal font-['Outfit'] leading-7">
+                        <span className="text-slate-500 text-base sm:text-lg font-normal font-outfit leading-7">
                           {offer.savings}
                         </span>
                       )}
@@ -209,13 +209,13 @@ export default function PricingSection({ data }: PricingSectionProps) {
         <div className="w-full px-3 sm:px-6 md:px-9 py-6 sm:py-9 bg-gradient-to-r from-[#C9B47E1A] to-[#6BABFF1A] rounded-2xl sm:rounded-3xl flex flex-col justify-start items-start gap-4 sm:gap-6">
           <div className="w-full flex flex-col justify-start items-start gap-4 sm:gap-5">
             <div className="self-stretch flex items-center flex-wrap gap-2">
-              <span className="text-slate-700 text-2xl sm:text-3xl font-normal font-['Outfit']">⏱️</span>
-              <span className="text-slate-700 text-xl sm:text-2xl lg:text-3xl font-semibold font-['Outfit']">Limited Time Offer!</span>
+              <span className="text-slate-700 text-2xl sm:text-3xl font-normal font-outfit">⏱️</span>
+              <span className="text-slate-700 text-xl sm:text-2xl lg:text-3xl font-semibold font-outfit">Limited Time Offer!</span>
             </div>
             <div className="w-full text-sm sm:text-base lg:text-xl">
-              <span className="text-slate-500 font-bold font-['Outfit']">Save More by Booking Early!</span>
+              <span className="text-slate-500 font-bold font-outfit">Save More by Booking Early!</span>
               <br />
-              <span className="text-slate-500 font-normal font-['Outfit']">*Note: These savings apply to Track A only and can be stacked with our Multi-Session discount. Track B is excluded from this promotion.</span>
+              <span className="text-slate-500 font-normal font-outfit">*Note: These savings apply to Track A only and can be stacked with our Multi-Session discount. Track B is excluded from this promotion.</span>
             </div>
             {/* 手机端横向滑动；桌面端 lg 三卡居中排布 */}
             <div
@@ -234,13 +234,13 @@ export default function PricingSection({ data }: PricingSectionProps) {
               </div>
             </div>
             <div className="w-full text-sm sm:text-base lg:text-xl">
-              <span className="text-slate-500 font-bold font-['Outfit']">Sibling Discount</span>
-              <span className="text-slate-500 font-normal font-['Outfit']">: Enroll two or more siblings and receive </span>
-              <span className="text-slate-500 font-bold font-['Outfit']">10% off</span>
-              <span className="text-slate-500 font-normal font-['Outfit']"> the second child&apos;s tuition.</span>
+              <span className="text-slate-500 font-bold font-outfit">Sibling Discount</span>
+              <span className="text-slate-500 font-normal font-outfit">: Enroll two or more siblings and receive </span>
+              <span className="text-slate-500 font-bold font-outfit">10% off</span>
+              <span className="text-slate-500 font-normal font-outfit"> the second child&apos;s tuition.</span>
               <br />
-              <span className="text-slate-500 font-bold font-['Outfit']">Payment Plans</span>
-              <span className="text-slate-500 font-normal font-['Outfit']">: Flexible payment plans are available for enrollments of 2 or more sessions.</span>
+              <span className="text-slate-500 font-bold font-outfit">Payment Plans</span>
+              <span className="text-slate-500 font-normal font-outfit">: Flexible payment plans are available for enrollments of 2 or more sessions.</span>
             </div>
           </div>
         </div>
@@ -248,11 +248,11 @@ export default function PricingSection({ data }: PricingSectionProps) {
         {/* Track B: AI & Strategy Camp Pricing */}
         <div className="w-full px-3 sm:px-6 md:px-9 py-6 sm:py-9 bg-gradient-to-br from-violet-400/5 to-blue-400/5 rounded-2xl sm:rounded-3xl flex flex-col justify-start items-start gap-5 sm:gap-7">
           <div className="w-full flex flex-col items-center gap-2">
-            <h3 className="w-full text-center text-slate-700 text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold font-['Outfit']">
+            <h3 className="w-full text-center text-slate-700 text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold font-outfit">
               {data.trackBTitle}
             </h3>
             {data.trackBSubtitle && (
-              <p className="w-full text-center text-slate-500 text-xl font-normal font-['Outfit'] leading-7">
+              <p className="w-full text-center text-slate-500 text-xl font-normal font-outfit leading-7">
                 {data.trackBSubtitle}
               </p>
             )}
@@ -260,13 +260,13 @@ export default function PricingSection({ data }: PricingSectionProps) {
           <div className="w-full overflow-x-auto py-3 sm:py-5">
             <div className="min-w-[400px] w-full">
               <div className="grid grid-cols-3 border-b-2 border-indigo-50">
-                <div className="py-2 sm:py-3 text-left text-slate-500 text-sm sm:text-base lg:text-xl font-bold font-['Outfit']">
+                <div className="py-2 sm:py-3 text-left text-slate-500 text-sm sm:text-base lg:text-xl font-bold font-outfit">
                   {data.trackBHeaders[0]}
                 </div>
-                <div className="py-2 sm:py-3 text-center text-slate-500 text-sm sm:text-base lg:text-xl font-bold font-['Outfit']">
+                <div className="py-2 sm:py-3 text-center text-slate-500 text-sm sm:text-base lg:text-xl font-bold font-outfit">
                   {data.trackBHeaders[1]}
                 </div>
-                <div className="py-2 sm:py-3 text-center text-slate-500 text-sm sm:text-base lg:text-xl font-bold font-['Outfit']">
+                <div className="py-2 sm:py-3 text-center text-slate-500 text-sm sm:text-base lg:text-xl font-bold font-outfit">
                   {data.trackBHeaders[2]}
                 </div>
               </div>
@@ -275,12 +275,12 @@ export default function PricingSection({ data }: PricingSectionProps) {
                   key={i}
                   className="grid grid-cols-3 border-b border-indigo-50"
                 >
-                  <div className="py-3 sm:py-4 flex items-center text-slate-700 text-sm sm:text-base lg:text-xl font-normal font-['Outfit']">
+                  <div className="py-3 sm:py-4 flex items-center text-slate-700 text-sm sm:text-base lg:text-xl font-normal font-outfit">
                     {row.optionName}
                   </div>
                   <PriceCell cell={row.onsite} />
                   <div className="flex justify-center items-center py-3 sm:py-4">
-                    <span className="text-slate-700 text-sm sm:text-base lg:text-xl font-normal font-['Outfit']">
+                    <span className="text-slate-700 text-sm sm:text-base lg:text-xl font-normal font-outfit">
                       {typeof row.online === 'string' ? row.online : row.online}
                     </span>
                   </div>
@@ -293,8 +293,8 @@ export default function PricingSection({ data }: PricingSectionProps) {
         {/* Special Discounts（图1）：Enroll Now 上方 */}
         <div className="w-full max-w-[min(1280px,95vw)] px-6 sm:px-12 lg:px-20 py-8 sm:py-14 bg-gradient-to-r from-stone-400/10 to-blue-400/10 rounded-3xl flex flex-col justify-start items-start gap-5 sm:gap-6">
           <div className="w-full flex items-center gap-2">
-            <span className="text-slate-700 text-2xl sm:text-3xl font-normal font-['Outfit'] leading-10">⏱️ </span>
-            <span className="text-slate-700 text-2xl sm:text-3xl font-semibold font-['Outfit'] leading-10">Special Discounts</span>
+            <span className="text-slate-700 text-2xl sm:text-3xl font-normal font-outfit leading-10">⏱️ </span>
+            <span className="text-slate-700 text-2xl sm:text-3xl font-semibold font-outfit leading-10">Special Discounts</span>
           </div>
           <div className="w-full flex flex-col lg:flex-row justify-start items-stretch gap-8 lg:gap-10 py-6 sm:py-10">
             {/* 左侧：周数折扣列表 */}
@@ -309,10 +309,10 @@ export default function PricingSection({ data }: PricingSectionProps) {
                   key={i}
                   className="w-full py-4 sm:py-5 flex justify-between items-center border-b border-slate-300 last:border-b-0"
                 >
-                  <span className="text-slate-700 text-lg sm:text-xl font-normal font-['Outfit'] leading-6">
+                  <span className="text-slate-700 text-lg sm:text-xl font-normal font-outfit leading-6">
                     {row.weeks}
                   </span>
-                  <span className="text-rose-400 text-lg sm:text-xl font-semibold font-['Outfit'] leading-6">
+                  <span className="text-rose-400 text-lg sm:text-xl font-semibold font-outfit leading-6">
                     {row.percent}
                   </span>
                 </div>
@@ -320,28 +320,28 @@ export default function PricingSection({ data }: PricingSectionProps) {
             </div>
             {/* 右侧：Full Summer 白卡 */}
             <div className="w-full lg:w-80 shrink-0 px-6 sm:px-7 py-8 bg-white rounded-2xl flex flex-col justify-center items-center gap-5 sm:gap-7">
-              <div className="w-full text-center text-slate-700 text-lg sm:text-xl font-bold font-['Outfit'] uppercase leading-7">
+              <div className="w-full text-center text-slate-700 text-lg sm:text-xl font-bold font-outfit uppercase leading-7">
                 Full Summer
                 <br />
                 6 Weeks
               </div>
               <div className="w-full text-center">
-                <span className="text-rose-400 text-4xl sm:text-5xl font-semibold font-['Outfit'] leading-7">15</span>
-                <span className="text-rose-400 text-4xl sm:text-5xl font-semibold font-['Outfit']">% OFF</span>
+                <span className="text-rose-400 text-4xl sm:text-5xl font-semibold font-outfit leading-7">15</span>
+                <span className="text-rose-400 text-4xl sm:text-5xl font-semibold font-outfit">% OFF</span>
               </div>
-              <div className="w-full text-center text-slate-500 text-base sm:text-lg font-normal font-['Outfit'] leading-7">
+              <div className="w-full text-center text-slate-500 text-base sm:text-lg font-normal font-outfit leading-7">
                 Enroll for the complete track
               </div>
             </div>
           </div>
           <div className="w-full text-lg sm:text-xl">
-            <span className="text-slate-500 font-bold font-['Outfit'] leading-7">Sibling Discount</span>
-            <span className="text-slate-500 font-normal font-['Outfit'] leading-7">: Enroll two or more siblings and receive </span>
-            <span className="text-slate-500 font-bold font-['Outfit'] leading-7">10% off</span>
-            <span className="text-slate-500 font-normal font-['Outfit'] leading-7"> the second child&apos;s tuition.</span>
+            <span className="text-slate-500 font-bold font-outfit leading-7">Sibling Discount</span>
+            <span className="text-slate-500 font-normal font-outfit leading-7">: Enroll two or more siblings and receive </span>
+            <span className="text-slate-500 font-bold font-outfit leading-7">10% off</span>
+            <span className="text-slate-500 font-normal font-outfit leading-7"> the second child&apos;s tuition.</span>
             <br />
-            <span className="text-slate-500 font-bold font-['Outfit'] leading-7">Payment Plans</span>
-            <span className="text-slate-500 font-normal font-['Outfit'] leading-7">: Flexible payment plans are available for enrollments of 2 or more sessions.</span>
+            <span className="text-slate-500 font-bold font-outfit leading-7">Payment Plans</span>
+            <span className="text-slate-500 font-normal font-outfit leading-7">: Flexible payment plans are available for enrollments of 2 or more sessions.</span>
           </div>
         </div>
 
@@ -351,7 +351,7 @@ export default function PricingSection({ data }: PricingSectionProps) {
             href="https://forms.gle/nrcBMPs8NCAn87pc8"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex justify-center items-center gap-3 sm:gap-6 md:gap-7 min-w-[140px] sm:min-w-[150px] h-11 sm:h-12 md:h-14 px-6 sm:px-8 lg:pl-20 lg:pr-7 py-2.5 sm:py-3 md:py-3.5 bg-rose-400 rounded-2xl sm:rounded-3xl text-white text-base sm:text-lg lg:text-xl font-bold font-['Outfit'] shadow-md hover:bg-rose-500 transition-colors no-underline"
+            className="inline-flex justify-center items-center gap-3 sm:gap-6 md:gap-7 min-w-[140px] sm:min-w-[150px] h-11 sm:h-12 md:h-14 px-6 sm:px-8 lg:pl-20 lg:pr-7 py-2.5 sm:py-3 md:py-3.5 bg-rose-400 rounded-2xl sm:rounded-3xl text-white text-base sm:text-lg lg:text-xl font-bold font-outfit shadow-md hover:bg-rose-500 transition-colors no-underline"
             aria-label={data.ctaLabel}
           >
             {data.ctaLabel}

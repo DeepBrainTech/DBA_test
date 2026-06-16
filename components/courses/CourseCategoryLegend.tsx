@@ -1,4 +1,4 @@
-/**
+﻿/**
  * 文件用途：Courses 页面可交互科目图例（课表、课程信息共用）
  * 依赖关系：依赖 lib/courseCategories
  */
@@ -66,7 +66,7 @@ export function NeutralLegendButton({
           : undefined
       }
     >
-      <span className="font-['Outfit'] text-lg md:text-[22px] leading-none">{label}</span>
+      <span className="font-outfit text-lg md:text-[22px] leading-none">{label}</span>
     </button>
   );
 }
@@ -133,7 +133,7 @@ export default function CourseCategoryLegend(props: CourseCategoryLegendProps) {
               style={{ backgroundColor: config.dotColor }}
               aria-hidden
             />
-            <span className="font-['Outfit'] text-lg md:text-[22px] leading-none">
+            <span className="font-outfit text-lg md:text-[22px] leading-none">
               {config.label}
             </span>
           </button>

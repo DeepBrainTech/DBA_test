@@ -232,15 +232,55 @@ export interface TimetableRow {
 
 
 
+/** 课表区块徽章配置（Schedule 页使用） */
+
+export interface CourseTimetableBadge {
+
+  label: string;
+
+  /** 徽章图标图片路径 */
+
+  iconSrc?: string;
+
+  /** 无图片时的 emoji 回退 */
+
+  icon?: string;
+
+  className?: string;
+
+}
+
+
+
 /** 课程时间表区块数据 */
 
 export interface CourseTimetableData {
 
   sectionTitle: string;
 
-  tableTitle: string;
+  tableTitle?: string;
 
   scheduleRows: TimetableRow[];
+
+  /** Schedule 页徽章，未设置时使用 Courses 默认样式 */
+
+  badge?: CourseTimetableBadge;
+
+  /** 区块标题下方说明文案 */
+
+  description?: string;
+
+  /** 说明文案中的链接（如指向 Courses 页） */
+
+  descriptionLink?: { label: string; href: string };
+
+  /** 外层区块背景类名 */
+
+  sectionClassName?: string;
+
+  /** 课表卡片样式：elevated 为 Courses 默认白卡片 */
+
+  cardVariant?: 'elevated' | 'flat' | 'white';
 
 }
 

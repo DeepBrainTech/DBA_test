@@ -1,5 +1,5 @@
-/**
- * 文件用途：录取通知书展示组件（全球教育页面）
+﻿/**
+ * 文件用途：录取通知书展示组件（升学辅导页面）
  * 依赖关系：依赖 Next.js Image 组件
  * 注意事项：展示3个顶尖学校的录取案例
  */
@@ -21,21 +21,21 @@ export default function AdmissionLettersSection() {
       studentName: 'Emma Z.',
       studentClass: 'Undergraduate Class of 2029',
       studentInitial: 'E',
-      imagePath: '/global/admission1.png'
+      imagePath: '/college_counseling/admission1.png'
     },
     {
       school: 'HARVARD',
       studentName: 'Ethan L.',
       studentClass: 'Undergraduate Class of 2029',
       studentInitial: 'E',
-      imagePath: '/global/admission2.png'
+      imagePath: '/college_counseling/admission2.png'
     },
     {
       school: 'Yale',
       studentName: 'Benjamin C.',
       studentClass: 'Undergraduate Class of 2027',
       studentInitial: 'B',
-      imagePath: '/global/admission3.png'
+      imagePath: '/college_counseling/admission3.png'
     }
   ];
 

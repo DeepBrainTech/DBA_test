@@ -1,11 +1,11 @@
-/**
+﻿/**
  * 文件用途：Roadmap 单步卡片（可复用），支持左/右对齐与图标大小、颜色配置
- * 依赖：next/image；types/global-education.ts 的 ServiceStep；图标在 public/global/roadmap/1-5.png
+ * 依赖：next/image；types/college_counseling.ts 的 ServiceStep；图标在 public/college_counseling/roadmap/1-5.png
  * 移动端响应式：去除 min-width 限制，允许内容换行
  */
 
 import Image from 'next/image';
-import type { ServiceStep } from '@/types/global-education';
+import type { ServiceStep } from '@/types/college_counseling';
 
 /** 卡片内容对齐方式：左对齐（图标在左） / 右对齐（图标在右） */
 export type StepCardAlign = 'left' | 'right';
@@ -59,7 +59,7 @@ export function RoadmapStepCard({
           >
             <div className="relative w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12">
               <Image
-                src={`/global/roadmap/${step.step}.png`}
+                src={`/college_counseling/roadmap/${step.step}.png`}
                 alt=""
                 width={iconImageSize}
                 height={iconImageSize}

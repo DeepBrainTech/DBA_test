@@ -1,4 +1,4 @@
-/**
+﻿/**
  * 文件用途：Programming 页面 Value of Coding 组件
  * 依赖关系：next/image；ValueCard
  * 注意事项：左侧为 Admissions Advantage，右侧为 Career Outlook
@@ -83,18 +83,18 @@ export default function ProgrammingValueSection() {
               className="w-6 h-6 object-contain"
               aria-hidden
             />
-            <span className="text-[#4ECDC4] text-lg md:text-xl font-normal font-['Outfit'] leading-7">
+            <span className="text-[#4ECDC4] text-lg md:text-xl font-normal font-outfit leading-7">
               Value of Coding
             </span>
           </div>
 
           {/* 主标题 */}
-          <h2 className="text-center text-slate-700 text-2xl md:text-3xl font-semibold font-['Outfit'] leading-tight">
+          <h2 className="text-center text-slate-700 text-2xl md:text-3xl font-semibold font-outfit leading-tight">
             Unlock Your Future
           </h2>
 
           {/* 副标题 */}
-          <p className="max-w-4xl text-slate-500 text-base md:text-2xl font-normal font-['Outfit'] leading-relaxed text-center">
+          <p className="max-w-4xl text-slate-500 text-base md:text-2xl font-normal font-outfit leading-relaxed text-center">
             A high-yield investment in your child&apos;s education, securing advantages in
             both college admissions and future careers.
           </p>

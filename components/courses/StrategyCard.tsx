@@ -1,4 +1,4 @@
-/**
+﻿/**
  * 文件用途：Courses Learning Strategies 单张策略卡
  * 依赖关系：依赖 types/courses 的 CoursesLearningStrategyCard；图标来自 public/courses/Learning_Strategies
  */
@@ -39,10 +39,10 @@ export default function StrategyCard({ card, index }: StrategyCardProps) {
           />
         </div>
       </div>
-      <h3 className="mt-5 w-full text-center text-slate-700 text-xl md:text-2xl font-semibold font-['Outfit'] leading-tight">
+      <h3 className="mt-5 w-full text-center text-slate-700 text-xl md:text-2xl font-semibold font-outfit leading-tight">
         {card.title}
       </h3>
-      <p className="mt-4 w-full max-w-[12rem] text-center text-slate-500 text-base md:text-lg font-normal font-['Outfit'] leading-snug">
+      <p className="mt-4 w-full max-w-[12rem] text-center text-slate-500 text-base md:text-lg font-normal font-outfit leading-snug">
         {card.description}
       </p>
     </div>
