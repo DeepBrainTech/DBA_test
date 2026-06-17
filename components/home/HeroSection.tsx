@@ -10,6 +10,8 @@ import { useState, useRef } from 'react';
 import Image from 'next/image';
 import { scrollToElement } from '@/lib/scroll';
 
+const HOME_VIDEO_ID = 'i1GjqsZiyyI';
+
 /**
  * 英雄区组件
  */
@@ -31,9 +33,8 @@ export default function HeroSection() {
     // 如果 iframe 已加载，通过 YouTube API 播放视频
     if (videoRef.current) {
       const iframe = videoRef.current;
-      const videoId = 'iG8ritExvgU';
       // 重新加载 iframe 以触发自动播放
-      iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+      iframe.src = `https://www.youtube.com/embed/${HOME_VIDEO_ID}?autoplay=1&rel=0`;
     }
   };
 
@@ -94,7 +95,7 @@ export default function HeroSection() {
                 {isVideoPlaying ? (
                   <iframe
                     ref={videoRef}
-                    src="https://www.youtube.com/embed/iG8ritExvgU?autoplay=1&rel=0"
+                    src={`https://www.youtube.com/embed/${HOME_VIDEO_ID}?autoplay=1&rel=0`}
                     title="Learning Scene Video"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
@@ -104,7 +105,7 @@ export default function HeroSection() {
                   <div className="relative w-full h-full bg-gray-200 flex items-center justify-center">
                     {/* YouTube 视频缩略图 */}
                     <Image
-                      src="https://img.youtube.com/vi/iG8ritExvgU/maxresdefault.jpg"
+                      src={`https://img.youtube.com/vi/${HOME_VIDEO_ID}/maxresdefault.jpg`}
                       alt="Learning Scene Video"
                       fill
                       className="object-cover"
