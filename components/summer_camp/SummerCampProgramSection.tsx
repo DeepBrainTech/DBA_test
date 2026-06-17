@@ -53,6 +53,37 @@ export default function SummerCampProgramSection({ data }: SummerCampProgramSect
           ))}
         </div>
 
+        {/* 报名开放 + 微信社群 */}
+        <div className="w-full rounded-2xl bg-[#599CED]/10 px-4 py-6 sm:rounded-3xl sm:px-6 sm:py-8 md:px-14 md:py-10 lg:py-12">
+          <div className="flex flex-col gap-6 sm:gap-8 md:flex-row md:items-center md:justify-between lg:gap-10">
+            <div className="max-w-[720px]">
+              <h3 className="font-outfit text-lg font-semibold leading-tight text-slate-700 sm:text-2xl md:text-3xl">
+                {data.registrationPanel.title}
+              </h3>
+              <p className="mt-3 max-w-[38rem] font-outfit text-sm font-normal leading-relaxed text-slate-500 sm:mt-4 sm:text-base md:mt-5 md:text-xl md:leading-7">
+                {data.registrationPanel.descriptionPrefix}
+                <span className="font-semibold">{data.registrationPanel.descriptionHighlight}</span>
+                {data.registrationPanel.descriptionSuffix}
+              </p>
+            </div>
+            <div className="flex shrink-0 flex-col items-start md:mr-8 lg:mr-16">
+              <div className="size-20 shrink-0 overflow-hidden rounded-lg bg-white sm:size-24 lg:size-[110px]">
+                <Image
+                  src={data.registrationPanel.wechatQrSrc}
+                  alt="WeChat QR Code"
+                  width={110}
+                  height={110}
+                  className="size-full object-contain"
+                />
+              </div>
+              <p className="mt-2 text-left font-outfit text-sm font-normal text-slate-700 sm:mt-3 sm:text-base sm:leading-5">
+                <span className="block">{data.registrationPanel.wechatCommunityLines[0]}</span>
+                <span className="block">{data.registrationPanel.wechatCommunityLines[1]}</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* Register Now */}
         <div className="flex justify-center pt-2 sm:pt-4">
           <Link

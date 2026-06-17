@@ -194,6 +194,9 @@ export interface CoursesBookFreeTrialData {
 
   ctaLabel: string;
 
+  /** CTA 按钮跳转链接 */
+  ctaUrl: string;
+
   stats: CoursesBookFreeTrialStat[];
 
   bottomQuote: string;

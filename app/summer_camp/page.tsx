@@ -16,13 +16,17 @@ import SummerCampHighlightsSection from '@/components/summer_camp/SummerCampHigh
 
 import SummerCampProgramSection from '@/components/summer_camp/SummerCampProgramSection';
 
+import SummerCampAdvantageSection from '@/components/summer_camp/SummerCampAdvantageSection';
+
+import BookFreeTrialSection from '@/components/courses/BookFreeTrialSection';
+
 import { summerCampPageData } from '@/data/summer_camp';
 
 
 
 export default function SummerCampPage() {
 
-  const { hero, highlights, program } = summerCampPageData;
+  const { hero, highlights, program, advantages, bookFreeTrial } = summerCampPageData;
 
 
 
@@ -37,6 +41,10 @@ export default function SummerCampPage() {
         <SummerCampHighlightsSection data={highlights} />
 
         <SummerCampProgramSection data={program} />
+
+        <SummerCampAdvantageSection data={advantages} />
+
+        <BookFreeTrialSection data={bookFreeTrial} />
 
       </main>
 

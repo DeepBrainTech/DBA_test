@@ -114,7 +114,7 @@ export default function BookFreeTrialSection({ data }: BookFreeTrialSectionProps
 
             <div className="flex flex-col gap-3 sm:gap-4">
               <a
-                href="https://docs.google.com/forms/d/1wnsEKekngdFdpt465K4BIvXLT1mKvM2VmEI2Kc0QvCQ/viewform"
+                href={data.ctaUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full h-11 sm:h-12 lg:h-14 bg-[#599CED] rounded-xl lg:rounded-2xl inline-flex justify-center items-center gap-2 text-white text-base sm:text-lg lg:text-xl font-normal font-outfit hover:bg-[#4788D9] transition-colors"

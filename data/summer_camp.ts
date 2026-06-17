@@ -124,7 +124,91 @@ export const summerCampPageData: SummerCampPageData = {
         ],
       },
     ],
+    registrationPanel: {
+      title: '🚀 Registration Now Open!',
+      descriptionPrefix: 'Starting the week of ',
+      descriptionHighlight: 'June 15th',
+      descriptionSuffix:
+        '. Daily rotation of 5 core classes. Scan QR code for daily schedule!',
+      wechatQrSrc: '/summer_camp/wechat.png',
+      wechatCommunityLines: ['Scan to join our', 'WeChat Community'],
+    },
     registerButtonText: 'Register Now',
     registerUrl: 'https://forms.gle/EZhgaiGQY8W9ZXWSA',
+  },
+  advantages: {
+    badgeIcon: '/summer_camp/advantage/advantage.png',
+    badgeText: 'Our Advantage',
+    title: 'Why families choose us?',
+    cards: [
+      {
+        id: 'stem',
+        title: 'Integrated STEM & Strategy',
+        description:
+          'We merge chess, mathematics, language, and STEM topics into a unified curriculum that sharpens critical thinking and problem-solving.',
+        stat: '5',
+        statLabel: 'core classes combined',
+        iconSrc: '/summer_camp/advantage/1.svg',
+      },
+      {
+        id: 'instructors',
+        title: 'Experienced Instructors',
+        description:
+          'Our educators bring deep expertise and infectious enthusiasm to every session, ensuring your child stays motivated and engaged.',
+        stat: '20yrs',
+        statLabel: 'teaching experience',
+        iconSrc: '/summer_camp/advantage/2.svg',
+      },
+      {
+        id: 'small-classes',
+        title: 'Small Classes, Big Confidence',
+        description:
+          'Small group sizes ensure personalized attention, allowing us to cultivate individual creativity, leadership, and self-belief.',
+        stat: '1 on 1',
+        statLabel: 'focused guidance',
+        iconSrc: '/summer_camp/advantage/3.svg',
+      },
+      {
+        id: 'safe-learning',
+        title: 'Safe & Inspiring Learning',
+        description:
+          'We provide a supportive, welcoming atmosphere where students feel secure taking intellectual risks and reaching their potential.',
+        stat: '360°',
+        statLabel: 'holistic support',
+        iconSrc: '/summer_camp/advantage/4.svg',
+      },
+    ],
+    registerButtonText: 'Register Now',
+    registerUrl: 'https://forms.gle/EZhgaiGQY8W9ZXWSA',
+  },
+  bookFreeTrial: {
+    badgeText: 'Limited offer',
+    title: 'Empowering the next generation of thinkers and creators.',
+    subtitle:
+      'Book a free consultation with our advisor now to enjoy an early bird discount!',
+    ensureTitle: 'We ensure:',
+    ensureItems: [
+      { icon: '🧑‍🏫', text: 'Small group instruction with supervision' },
+      { icon: '📚', text: 'Course Materials' },
+      { icon: '🔬', text: 'Strict laboratory safety protocols' },
+      { icon: '💼', text: 'Weekly parent updates' },
+    ],
+    trustItems: [
+      { icon: '🔒', label: 'Secure Information' },
+      { icon: '⚡', label: 'Fast Response Time' },
+      { icon: '💯', label: 'Risk-free Guarantee' },
+    ],
+    cardTitle: 'Schedule Your Consultation',
+    cardSubtitle:
+      'Submit your details and an advisor will contact you within 24h.',
+    ctaLabel: 'Book Free Trial',
+    ctaUrl: 'https://forms.gle/EZhgaiGQY8W9ZXWSA',
+    stats: [
+      { value: '1,234', label: 'Sessions Booked' },
+      { value: '100%', label: 'Satisfaction Rate' },
+      { value: '24h', label: 'Response Time' },
+    ],
+    bottomQuote:
+      'In the era of AI, we prepare students to lead by cultivating essential future-ready skills. 💻',
   },
 };

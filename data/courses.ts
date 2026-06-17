@@ -583,6 +583,8 @@ export const coursesPageData: CoursesPageData = {
     cardSubtitle:
       'Submit your details and an advisor will contact you within 24h.',
     ctaLabel: 'Book Free Trial',
+    ctaUrl:
+      'https://docs.google.com/forms/d/1wnsEKekngdFdpt465K4BIvXLT1mKvM2VmEI2Kc0QvCQ/viewform',
     stats: [
       { value: '1,234', label: 'Sessions Booked' },
       { value: '100%', label: 'Satisfaction Rate' },
