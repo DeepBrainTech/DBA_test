@@ -1,10 +1,10 @@
 ﻿/**
  * 文件用途：单张课表的表格本体（表头 + 表体），供 ScheduleTableCard 使用
- * 依赖关系：types LearningProgramScheduleRow / ScheduleCell / columnHeaders
+ * 依赖关系：types InnovationProgramScheduleRow / ScheduleCell / columnHeaders
  * 注意事项：课程名加粗策略可配置（按表/按行）
  */
 
-import type { ScheduleCell, LearningProgramScheduleRow } from '@/types/learning_program';
+import type { ScheduleCell, InnovationProgramScheduleRow } from '@/types/innovation_program';
 
 /** 单格标签：blue 为 Online/年级等，pink 为 Onsite/Intermediate 等；支持多行时每行一个 */
 function ScheduleTag({ tag, tagVariant }: { tag: string; tagVariant: 'blue' | 'pink' }) {
@@ -24,7 +24,7 @@ export interface ScheduleTableProps {
   /** 表头：Date & Time + 三个 session 日期范围 */
   columnHeaders: [string, string, string, string];
   /** 表体行数据 */
-  rows: LearningProgramScheduleRow[];
+  rows: InnovationProgramScheduleRow[];
   /** 课程名整体字重（默认 normal）；Track A 可设为 semibold */
   courseNameWeight?: 'normal' | 'semibold';
   /** 需要加粗的行索引（从 0 开始）；用于精细控制“哪几行加粗” */

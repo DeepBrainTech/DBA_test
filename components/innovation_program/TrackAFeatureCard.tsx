@@ -1,13 +1,13 @@
 ﻿/**
  * 文件用途：Track A 四宫格中的单张能力卡片（Theory+Practice / University Exposure / Expert Mentorship / Portfolio Building）
- * 依赖关系：依赖 next/image、types/learning_program LearningProgramTrackAFeature
+ * 依赖关系：依赖 next/image、types/innovation_program InnovationProgramTrackAFeature
  * 注意事项：响应式布局，小屏单列、md+ 双列由父级 Grid 控制；卡片内使用弹性布局适配不同宽度
  */
 
 import Image from 'next/image';
-import type { LearningProgramTrackAFeature } from '@/types/learning_program';
+import type { InnovationProgramTrackAFeature } from '@/types/innovation_program';
 
-export interface TrackAFeatureCardProps extends LearningProgramTrackAFeature {
+export interface TrackAFeatureCardProps extends InnovationProgramTrackAFeature {
   /** 卡片序号（1–4），用于右下角数字与图标路径 tracka-{index}.svg */
   index: number;
 }
@@ -18,7 +18,7 @@ export default function TrackAFeatureCard({
   description,
   tag,
 }: TrackAFeatureCardProps) {
-  const iconSrc = `/learning_program/trackA/tracka-${index}.svg`;
+  const iconSrc = `/innovation_program/trackA/tracka-${index}.svg`;
   return (
     <div className="w-full min-h-0 bg-white rounded-3xl overflow-hidden relative flex flex-col p-5 sm:p-6">
       {/* 装饰用模糊圆（绝对定位，不参与流式布局） */}

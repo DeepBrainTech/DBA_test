@@ -1,16 +1,16 @@
-/**
- * 文件用途：提供 Learning Program 页面静态数据源（文案与设计稿完全一致，不翻译）
- * 依赖关系：依赖 types/learning_program.ts，被 app/learning_program/page.tsx 导入
+﻿/**
+ * 文件用途：提供 Innovation Program 页面静态数据源（文案与设计稿完全一致，不翻译）
+ * 依赖关系：依赖 types/innovation_program.ts，被 app/innovation_program/page.tsx 导入
  * 注意事项：文字与设计稿一致，中英文按设计稿原文保留
  */
 
-import type { LearningProgramPageData } from '@/types/learning_program';
+import type { InnovationProgramPageData } from '@/types/innovation_program';
 
-export const learningProgramPageData: LearningProgramPageData = {
+export const innovationProgramPageData: InnovationProgramPageData = {
   hero: {
-    title: 'Project-Based Learning Programs',
+    title: 'Project-Based Innovation Programs',
     subtitle: 'Cultivating Curiosity, Creativity, and Real-World Problem Solving.',
-    backgroundImage: '/learning_program/hero/cover.png',
+    backgroundImage: '/innovation_program/hero/cover.png',
     features: [
       { label: 'Theory + Practice' },
       { label: 'University Exposure' },
@@ -22,7 +22,7 @@ export const learningProgramPageData: LearningProgramPageData = {
     title: 'Learning Strategies',
     badgeIcon: '⚙️',
     introQuote: {
-      text: 'Welcome to the DeepBrain Academy Project-Based Learning Program, a premier program (rolling enrollment) for young minds to explore, create, and innovate. We are more than just a tutoring center; we are a comprehensive learning institution dedicated to blending strong academic foundations with advanced strategic thinking. Our mission is to prepare students for the challenges of tomorrow by cultivating essential future-ready skills in an engaging and collaborative environment.\n\nThis summer, we invite your child to embark on an unforgettable journey of discovery. Whether they are diving into our STEM Innovation track to build functional prototypes or honing their strategic thinking skills in our Brain & Strategy camp, they will gain invaluable knowledge and experience. Join us and become part of a vibrant community of over 1,000 students who have benefited from our expert instruction and unique educational philosophy.',
+      text: 'Welcome to the DeepBrain Academy Project-Based Innovation Program, a premier program (rolling enrollment) for young minds to explore, create, and innovate. We are more than just a tutoring center; we are a comprehensive learning institution dedicated to blending strong academic foundations with advanced strategic thinking. Our mission is to prepare students for the challenges of tomorrow by cultivating essential future-ready skills in an engaging and collaborative environment.\n\nThis summer, we invite your child to embark on an unforgettable journey of discovery. Whether they are diving into our STEM Innovation track to build functional prototypes or honing their strategic thinking skills in our Brain & Strategy camp, they will gain invaluable knowledge and experience. Join us and become part of a vibrant community of over 1,000 students who have benefited from our expert instruction and unique educational philosophy.',
       attribution: 'DeepBrain Academy Coaching Team',
     },
     heading: 'Beyond Traditional Learning',
@@ -121,7 +121,7 @@ export const learningProgramPageData: LearningProgramPageData = {
       projects: [
         {
           title: 'Project 1 Spiral Wonders',
-          image: '/learning_program/trackA/projects1.png',
+          image: '/innovation_program/trackA/projects1.png',
           bullets: [
             'Explore bio-inspired structures like DNA and plant tendrils.',
             'Study mechanical anisotropy and geometric nonlinearity.',
@@ -130,7 +130,7 @@ export const learningProgramPageData: LearningProgramPageData = {
         },
         {
           title: 'Project 2 Art & Science of Origami',
-          image: '/learning_program/trackA/projects2.png',
+          image: '/innovation_program/trackA/projects2.png',
           bullets: [
             'Math meets Engineering: From solar panels to soft robotics.',
             'Computational origami and unfolding algorithms.',
@@ -139,7 +139,7 @@ export const learningProgramPageData: LearningProgramPageData = {
         },
         {
           title: 'Project 3 Bionic Acoustic Engineering',
-          image: '/learning_program/trackA/projects3.png',
+          image: '/innovation_program/trackA/projects3.png',
           bullets: [
             'Build instruments and analyze sound waveforms.',
             'Design artificial vocal cords and mimic animal sounds.',
@@ -148,7 +148,7 @@ export const learningProgramPageData: LearningProgramPageData = {
         },
         {
           title: 'Project 4 The Science of Magic',
-          image: '/learning_program/trackA/projects4.png',
+          image: '/innovation_program/trackA/projects4.png',
           bullets: [
             'Reverse-engineer "magic" using physics, materials, and perception.',
             'Explore anti-gravity, invisibility, and non-Newtonian fluids.',
@@ -157,7 +157,7 @@ export const learningProgramPageData: LearningProgramPageData = {
         },
         {
           title: 'Project 5 Robotics & Biomimetics',
-          image: '/learning_program/trackA/projects5.png',
+          image: '/innovation_program/trackA/projects5.png',
           bullets: [
             'Analyze insect locomotion patterns and soft-body motion.',
             'Design biomimetic mechanical structures and flexible grippers.',
@@ -166,7 +166,7 @@ export const learningProgramPageData: LearningProgramPageData = {
         },
         {
           title: 'Project 6 Bionic Organs Exploration',
-          image: '/learning_program/trackA/projects6.png',
+          image: '/innovation_program/trackA/projects6.png',
           bullets: [
             'Study human anatomy and organ function (heart, lungs, brain).',
             'Use micro-controller, muscle sensor, and servo motor to build prototypes.',

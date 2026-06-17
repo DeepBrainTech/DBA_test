@@ -1,11 +1,11 @@
 ﻿/**
  * 文件用途：Featured Projects 列表中的单张项目卡片（左图右文，流式布局无绝对定位）
- * 依赖关系：next/image、types/learning_program LearningProgramFeaturedProject
+ * 依赖关系：next/image、types/innovation_program InnovationProgramFeaturedProject
  * 注意事项：图片区仅用 relative 供 Next Image fill 使用，卡片内无 absolute 定位
  */
 
 import Image from 'next/image';
-import type { LearningProgramFeaturedProject } from '@/types/learning_program';
+import type { InnovationProgramFeaturedProject } from '@/types/innovation_program';
 
 /** 将 "Project 1 Spiral Wonders" 拆为 label "Project 1" 与 name "Spiral Wonders" */
 function parseProjectTitle(title: string): { label: string; name: string } {
@@ -15,7 +15,7 @@ function parseProjectTitle(title: string): { label: string; name: string } {
 
 export interface FeaturedProjectCardProps {
   /** 项目数据 */
-  project: LearningProgramFeaturedProject;
+  project: InnovationProgramFeaturedProject;
 }
 
 export default function FeaturedProjectCard({ project }: FeaturedProjectCardProps) {

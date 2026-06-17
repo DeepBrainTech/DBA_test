@@ -16,7 +16,7 @@ import { usePathname } from 'next/navigation';
  * Programs 下拉菜单项
  */
 const programsLinks = [
-  { href: '/learning_program', label: 'Learning Program' },
+  { href: '/innovation_program', label: 'Innovation Program' },
   { href: '/math', label: 'Math' },
   { href: '/programming', label: 'Programming' },
   { href: '/braingames', label: 'Brain Games' },
@@ -36,9 +36,9 @@ const navLinks = [
   { href: '/about', label: 'About Us' },
 ];
 
-/** Learning Program 与 Courses 相邻，预加载封面避免切换时图片闪烁 */
+/** Innovation Program 与 Courses 相邻，预加载封面避免切换时图片闪烁 */
 const ADJACENT_HERO_COVERS = [
-  '/learning_program/hero/cover.png',
+  '/innovation_program/hero/cover.png',
   '/courses/hero/cover.png',
 ];
 
@@ -55,9 +55,9 @@ export default function Navigation({ className = '' }: { className?: string }) {
 
   const isProgramsActive = programsLinks.some((link) => pathname === link.href);
 
-  // 在 Learning Program / Courses 间切换时预加载双方封面图
+  // 在 Innovation Program / Courses 间切换时预加载双方封面图
   useEffect(() => {
-    if (pathname === '/learning_program' || pathname === '/courses') {
+    if (pathname === '/innovation_program' || pathname === '/courses') {
       ADJACENT_HERO_COVERS.forEach((src) => {
         const img = new window.Image();
         img.src = src;

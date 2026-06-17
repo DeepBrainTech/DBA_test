@@ -1,22 +1,22 @@
-/**
- * 文件用途：定义 Learning Program 页面的全部静态数据类型（与设计稿一致）
- * 依赖关系：由 data/learning_program.ts 提供数据，并由 components/learning_program/* 消费
+﻿/**
+ * 文件用途：定义 Innovation Program 页面的全部静态数据类型（与设计稿一致）
+ * 依赖关系：由 data/innovation_program.ts 提供数据，并由 components/innovation_program/* 消费
  * 注意事项：字段与设计稿区块一一对应，文案与设计稿保持一致不翻译
  */
 
-/** 英雄区特色亮点项（图标按顺序使用 public/learning_program/hero/1.png–4.png） */
-export interface LearningProgramHeroFeature {
+/** 英雄区特色亮点项（图标按顺序使用 public/innovation_program/hero/1.png–4.png） */
+export interface InnovationProgramHeroFeature {
   /** 文案，与设计稿一致 */
   label: string;
 }
 
 /** 英雄区数据 */
-export interface LearningProgramHeroData {
+export interface InnovationProgramHeroData {
   title: string;
   subtitle: string;
   backgroundImage: string;
   /** 四个特色亮点（Theory + Practice, University Exposure, Expert Mentorship, Portfolio Building） */
-  features: LearningProgramHeroFeature[];
+  features: InnovationProgramHeroFeature[];
 }
 
 /** 区块标签（如 Program / Schedule / Pricing） */
@@ -25,7 +25,7 @@ export interface SectionBadge {
 }
 
 /** Track A 单张能力卡片 */
-export interface LearningProgramTrackAFeature {
+export interface InnovationProgramTrackAFeature {
   title: string;
   description: string;
   /** 如 Methodology, Experience, Guidance, Outcome */
@@ -33,13 +33,13 @@ export interface LearningProgramTrackAFeature {
 }
 
 /** 引用块 */
-export interface LearningProgramQuote {
+export interface InnovationProgramQuote {
   text: string;
   attribution: string;
 }
 
 /** 单个 Featured Project */
-export interface LearningProgramFeaturedProject {
+export interface InnovationProgramFeaturedProject {
   title: string;
   image: string;
   bullets: string[];
@@ -51,7 +51,7 @@ export interface LearningStrategyCard {
   title: string;
   /** 卡片描述 */
   description: string;
-  /** 可选：图标路径。可为完整路径（如 /learning_program/Learning_Strategies/identify.svg）或仅文件名（如 identify.svg），未填时按卡片顺序使用默认四张图 */
+  /** 可选：图标路径。可为完整路径（如 /innovation_program/Learning_Strategies/identify.svg）或仅文件名（如 identify.svg），未填时按卡片顺序使用默认四张图 */
   icon?: string;
 }
 
@@ -66,7 +66,7 @@ export interface LearningStrategiesComparisonRow {
 }
 
 /** Learning Strategies 独立区块数据（引言、标题、四卡、对比表） */
-export interface LearningProgramLearningStrategiesData {
+export interface InnovationProgramLearningStrategiesData {
   /** 区块 badge 文案，如 Learning Strategies（不含 emoji） */
   title: string;
   /** 区块 badge 前的 emoji，如 ⚙️ */
@@ -92,15 +92,15 @@ export interface LearningProgramLearningStrategiesData {
 }
 
 /** Track A: STEM Innovation 区块数据 */
-export interface LearningProgramTrackAData {
+export interface InnovationProgramTrackAData {
   heading: string;
   description: string;
-  features: LearningProgramTrackAFeature[];
-  quote: LearningProgramQuote;
+  features: InnovationProgramTrackAFeature[];
+  quote: InnovationProgramQuote;
   featuredProjects: {
     title: string;
     subtitle: string;
-    projects: LearningProgramFeaturedProject[];
+    projects: InnovationProgramFeaturedProject[];
   };
   /** 主按钮文案，如 Course Overview */
   primaryCtaLabel: string;
@@ -109,18 +109,18 @@ export interface LearningProgramTrackAData {
 }
 
 /** Track B 单张能力卡片 */
-export interface LearningProgramTrackBFeature {
+export interface InnovationProgramTrackBFeature {
   title: string;
   description: string;
 }
 
 /** Track B: AI & Strategy Camp 区块数据 */
-export interface LearningProgramTrackBData {
+export interface InnovationProgramTrackBData {
   badge: SectionBadge;
   heading: string;
   description: string;
-  features: LearningProgramTrackBFeature[];
-  quote: LearningProgramQuote;
+  features: InnovationProgramTrackBFeature[];
+  quote: InnovationProgramQuote;
   ctaLabel: string;
 }
 
@@ -138,7 +138,7 @@ export interface ScheduleCell {
 }
 
 /** 日程表一行 */
-export interface LearningProgramScheduleRow {
+export interface InnovationProgramScheduleRow {
   timeSlot: string;
   session1: ScheduleCell | ScheduleCell[];
   session2: ScheduleCell | ScheduleCell[];
@@ -146,22 +146,22 @@ export interface LearningProgramScheduleRow {
 }
 
 /** 单张日程表（Track A 或 Track B） */
-export interface LearningProgramScheduleTable {
+export interface InnovationProgramScheduleTable {
   title: string;
   /** 仅 Track B 有，如 "We offer online and onsite options for each session." */
   subtitle?: string;
   /** 表头：Date & Time, Jun 8 - Jun 19, Jun 22 - Jul 3, Jul 6 - Jul 17 */
   columnHeaders: [string, string, string, string];
-  rows: LearningProgramScheduleRow[];
+  rows: InnovationProgramScheduleRow[];
 }
 
 /** 日程区数据 */
-export interface LearningProgramScheduleData {
+export interface InnovationProgramScheduleData {
   badge: SectionBadge;
   heading: string;
   description: string;
-  trackATable: LearningProgramScheduleTable;
-  trackBTable: LearningProgramScheduleTable;
+  trackATable: InnovationProgramScheduleTable;
+  trackBTable: InnovationProgramScheduleTable;
 }
 
 /** 价格表单元格（纯数字或带折扣文案） */
@@ -172,7 +172,7 @@ export interface PricingCell {
 }
 
 /** Track A 价格表一行（图1：周计价，Enrollment Option | Onsite | Online） */
-export interface LearningProgramTrackAPricingRow {
+export interface InnovationProgramTrackAPricingRow {
   optionName: string;
   /** 可选副标题，如 "Morning OR Afternoon Project" */
   optionSubtitle?: string;
@@ -181,14 +181,14 @@ export interface LearningProgramTrackAPricingRow {
 }
 
 /** Multi-Session Savings 单条：折扣百分比 + 描述 + 节省金额 */
-export interface LearningProgramMultiSessionOffer {
+export interface InnovationProgramMultiSessionOffer {
   percent: string;
   description: string;
   savings: string;
 }
 
 /** Track B 价格表一行 */
-export interface LearningProgramTrackBPricingRow {
+export interface InnovationProgramTrackBPricingRow {
   optionName: string;
   onsite: PricingCell | string;
   online: string;
@@ -209,7 +209,7 @@ export interface LimitedTimeOfferCardData {
 }
 
 /** 价格区数据 */
-export interface LearningProgramPricingData {
+export interface InnovationProgramPricingData {
   badge: SectionBadge;
   heading: string;
   description: string;
@@ -217,19 +217,19 @@ export interface LearningProgramPricingData {
   /** Track A 副标题，如 "Flexible Options for Every Family • Per Week • 2 Week Per Session" */
   trackASubtitle?: string;
   trackAHeaders: [string, string, string];
-  trackARows: LearningProgramTrackAPricingRow[];
+  trackARows: InnovationProgramTrackAPricingRow[];
   /** 如 "* Additional material fees may apply to specific project-based learning courses." */
   materialFootnote: string;
   /** Multi-Session Savings：标题 + 若干档位（5-10% OFF / 10-15% OFF 等） */
   multiSessionSavings?: {
     heading: string;
-    offers: LearningProgramMultiSessionOffer[];
+    offers: InnovationProgramMultiSessionOffer[];
   };
   trackBTitle: string;
   /** Track B 副标题，如 "Flexible Options for Every Family • Per Week • 2 Week Per Session" */
   trackBSubtitle?: string;
   trackBHeaders: [string, string, string];
-  trackBRows: LearningProgramTrackBPricingRow[];
+  trackBRows: InnovationProgramTrackBPricingRow[];
   limitedTimeOffer: {
     title: string;
     description: string;
@@ -238,7 +238,7 @@ export interface LearningProgramPricingData {
 }
 
 /** Book Free Trial 区块：「We ensure」单条（图标 emoji + 文案） */
-export interface LearningProgramBookFreeTrialEnsureItem {
+export interface InnovationProgramBookFreeTrialEnsureItem {
   /** emoji，如 🧑‍🏫、📚、🔬、💼 */
   icon: string;
   /** 说明文案 */
@@ -246,20 +246,20 @@ export interface LearningProgramBookFreeTrialEnsureItem {
 }
 
 /** Book Free Trial 区块：信任标签（如 Secure Information） */
-export interface LearningProgramBookFreeTrialTrustItem {
+export interface InnovationProgramBookFreeTrialTrustItem {
   /** emoji，如 🔒、⚡、💯 */
   icon: string;
   label: string;
 }
 
 /** Book Free Trial 区块：底部统计项 */
-export interface LearningProgramBookFreeTrialStat {
+export interface InnovationProgramBookFreeTrialStat {
   value: string;
   label: string;
 }
 
 /** Book Free Trial 区块数据 */
-export interface LearningProgramBookFreeTrialData {
+export interface InnovationProgramBookFreeTrialData {
   /** 顶部徽标文案，如 Limited offer */
   badgeText: string;
   /** 主标题 */
@@ -269,9 +269,9 @@ export interface LearningProgramBookFreeTrialData {
   /** 「We ensure」标题 */
   ensureTitle: string;
   /** 四项保障列表 */
-  ensureItems: LearningProgramBookFreeTrialEnsureItem[];
+  ensureItems: InnovationProgramBookFreeTrialEnsureItem[];
   /** 底部信任标签：Secure Information、Fast Response Time、Risk-free Guarantee */
-  trustItems: LearningProgramBookFreeTrialTrustItem[];
+  trustItems: InnovationProgramBookFreeTrialTrustItem[];
   /** 右侧卡片标题 */
   cardTitle: string;
   /** 右侧卡片副标题 */
@@ -279,20 +279,20 @@ export interface LearningProgramBookFreeTrialData {
   /** 主按钮文案，如 Book Free Trial */
   ctaLabel: string;
   /** 卡片底部三项统计 */
-  stats: LearningProgramBookFreeTrialStat[];
+  stats: InnovationProgramBookFreeTrialStat[];
   /** 底部引用文案（AI 时代培养未来技能） */
   bottomQuote: string;
 }
 
 /** 页面聚合数据（与设计稿结构一致，无 Overview / Track 3 / FinalCta） */
-export interface LearningProgramPageData {
-  hero: LearningProgramHeroData;
+export interface InnovationProgramPageData {
+  hero: InnovationProgramHeroData;
   /** Learning Strategies 独立 section，位于 Intro 与 Track A 之间 */
-  learningStrategies: LearningProgramLearningStrategiesData;
-  trackA: LearningProgramTrackAData;
-  trackB: LearningProgramTrackBData;
-  schedule: LearningProgramScheduleData;
-  pricing: LearningProgramPricingData;
+  learningStrategies: InnovationProgramLearningStrategiesData;
+  trackA: InnovationProgramTrackAData;
+  trackB: InnovationProgramTrackBData;
+  schedule: InnovationProgramScheduleData;
+  pricing: InnovationProgramPricingData;
   /** Book Free Trial 预约咨询区块 */
-  bookFreeTrial: LearningProgramBookFreeTrialData;
+  bookFreeTrial: InnovationProgramBookFreeTrialData;
 }

@@ -1,12 +1,12 @@
 ﻿/**
- * 文件用途：Learning Program 日程区块（Timeline & Schedule），含 Track A / Track B 两张课表
- * 依赖关系：data/learning_program schedule 数据、ScheduleTable 组件、types LearningProgramScheduleTable
+ * 文件用途：Innovation Program 日程区块（Timeline & Schedule），含 Track A / Track B 两张课表
+ * 依赖关系：data/innovation_program schedule 数据、ScheduleTable 组件、types InnovationProgramScheduleTable
  * 注意事项：流式与网格布局，无绝对定位
  */
 
-import { ScheduleTable } from '@/components/learning_program/ScheduleTable';
-import { learningProgramPageData } from '@/data/learning_program';
-import type { LearningProgramScheduleTable } from '@/types/learning_program';
+import { ScheduleTable } from '@/components/innovation_program/ScheduleTable';
+import { innovationProgramPageData } from '@/data/innovation_program';
+import type { InnovationProgramScheduleTable } from '@/types/innovation_program';
 
 /** 单张课表卡片：标题 + 可选副标题 + 表格组件 */
 function ScheduleTableCard({
@@ -14,7 +14,7 @@ function ScheduleTableCard({
   courseNameWeight,
   boldRowIndexes,
 }: {
-  table: LearningProgramScheduleTable;
+  table: InnovationProgramScheduleTable;
   courseNameWeight?: 'normal' | 'semibold';
   boldRowIndexes?: number[];
 }) {
@@ -41,7 +41,7 @@ function ScheduleTableCard({
 }
 
 export default function Timeline() {
-  const { schedule } = learningProgramPageData;
+  const { schedule } = innovationProgramPageData;
   return (
     <div className="w-full px-4 sm:px-8 lg:px-14 py-12 sm:py-16 lg:py-24 bg-[#FBF9F4]">
       <div className="w-full max-w-[min(1280px,95vw)] mx-auto px-0 sm:px-4 lg:px-9 flex flex-col justify-start items-start gap-8 sm:gap-12 lg:gap-16">

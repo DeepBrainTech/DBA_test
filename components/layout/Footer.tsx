@@ -40,7 +40,7 @@ export default function Footer({ className = '' }: { className?: string }) {
               />
             </div>
             <p className="text-base md:text-lg text-[#C8CFD6] leading-snug mb-6 md:mb-8">
-              We provide courses in Olympiad Math, Programming, Chess, and College Counseling to help children aged 6–18 learn happily, train their critical thinking, and build challenging skills.
+              We provide expert instruction in Mathematics, Chess, AI & Coding, Languages, and Test Preparation, along with College Counseling services, helping K–12 students achieve academic excellence while developing critical thinking, problem-solving abilities, creativity, and a lifelong love of learning.
             </p>
             {/* 电话、邮箱、地址图标颜色：修改下方三个 svg 的 className 中的 text-[#xxx] 即可 */}
             <div className="space-y-3 md:space-y-4">
@@ -105,7 +105,7 @@ export default function Footer({ className = '' }: { className?: string }) {
             <h4 className="text-lg md:text-xl font-semibold mb-4 md:mb-5">Navigation</h4>
             <div className="space-y-2 md:space-y-3">
               <Link href="/" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Home</Link>
-              <Link href="/learning_program" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Learning Program</Link>
+              <Link href="/innovation_program" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Innovation Program</Link>
               <Link href="/summer_camp" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Summer Camp</Link>
               <Link href="/courses" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Courses</Link>
               <Link href="/schedule" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Schedule</Link>

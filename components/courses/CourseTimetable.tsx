@@ -175,6 +175,8 @@ export default function CourseTimetable({ data, hideHeader = false }: CourseTime
                       >
                         {visibleCourses.map((course, cIdx) => {
                           const lines = course.name.split('\n');
+                          const useTitleMetaLayout =
+                            data.courseNameLayout === 'title-meta' && lines.length > 1;
 
                           return (
                             <div key={cIdx} className="flex items-start gap-1.5">
@@ -183,7 +185,7 @@ export default function CourseTimetable({ data, hideHeader = false }: CourseTime
                                 style={{ backgroundColor: COURSE_CATEGORY_CONFIG[course.cat].dotColor }}
                                 aria-hidden
                               />
-                              {isScheduleVariant ? (
+                              {useTitleMetaLayout ? (
                                 <span className="flex flex-col gap-0.5">
                                   <span className="font-outfit text-base font-medium leading-5 text-slate-700">
                                     {lines[0]}
@@ -198,7 +200,13 @@ export default function CourseTimetable({ data, hideHeader = false }: CourseTime
                                   ))}
                                 </span>
                               ) : (
-                                <span className="font-outfit text-sm font-medium leading-5 text-[#2C3E50] whitespace-pre-wrap">
+                                <span
+                                  className={`font-outfit leading-5 whitespace-pre-wrap ${
+                                    isScheduleVariant
+                                      ? 'text-base font-medium text-slate-700'
+                                      : 'text-sm font-medium text-[#2C3E50]'
+                                  }`}
+                                >
                                   {course.name}
                                 </span>
                               )}

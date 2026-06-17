@@ -282,6 +282,12 @@ export interface CourseTimetableData {
 
   cardVariant?: 'elevated' | 'flat' | 'white';
 
+  /**
+   * 课程名多行排版：title-meta 首行课程名、后续行老师/年级用较轻样式；
+   * uniform 所有行统一样式（用于课程名换行）
+   */
+  courseNameLayout?: 'title-meta' | 'uniform';
+
 }
 
 

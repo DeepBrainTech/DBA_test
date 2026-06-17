@@ -1,6 +1,6 @@
 ﻿/**
  * 文件用途：Book Free 预订入口组件（升学辅导页面）
- * 依赖关系：无；布局参考 components/learning_program/BookFreeTrialSection
+ * 依赖关系：无；布局参考 components/innovation_program/BookFreeTrialSection
  * 图标均来自 public/college_counseling/book/，见下方 *ICON* 常量
  */
 

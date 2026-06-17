@@ -1,17 +1,17 @@
 ﻿/**
  * 文件用途：Learning Strategies 单张策略卡，标题、描述、图标均由 card 配置驱动
- * 依赖关系：依赖 types/learning_program 的 LearningStrategyCard、next/image；被 LearningStrategies 使用
- * 注意事项：布局与设计稿一致；图标来自 card.icon（或按 index 回退到默认四张），路径基于 public/learning_program/Learning_Strategies
+ * 依赖关系：依赖 types/innovation_program 的 LearningStrategyCard、next/image；被 LearningStrategies 使用
+ * 注意事项：布局与设计稿一致；图标来自 card.icon（或按 index 回退到默认四张），路径基于 public/innovation_program/Learning_Strategies
  */
 
 import Image from 'next/image';
 
-import type { LearningStrategyCard } from '@/types/learning_program';
+import type { LearningStrategyCard } from '@/types/innovation_program';
 
 /** 默认四张图标文件名（当 card.icon 未配置时按 index 使用） */
 const DEFAULT_ICON_NAMES = ['identify.svg', 'innovate.svg', 'prototype.svg', 'present.svg'] as const;
 
-const ICON_BASE = '/learning_program/Learning_Strategies';
+const ICON_BASE = '/innovation_program/Learning_Strategies';
 
 interface StrategyCardProps {
   /** 单张策略卡数据（标题、描述、可选图标）；全部可配置 */

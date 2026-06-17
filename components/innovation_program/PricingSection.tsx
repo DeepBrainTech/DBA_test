@@ -1,6 +1,6 @@
 ﻿/**
- * 文件用途：Learning Program 价格区块，含标题、Track A/B 价格表、限时优惠说明与报名按钮
- * 依赖关系：依赖 types/learning_program 的 LearningProgramPricingData
+ * 文件用途：Innovation Program 价格区块，含标题、Track A/B 价格表、限时优惠说明与报名按钮
+ * 依赖关系：依赖 types/innovation_program 的 InnovationProgramPricingData
  * 注意事项：表格用网格布局便于响应式；description 中 **text** 解析为加粗
  */
 
@@ -8,15 +8,15 @@ import Image from 'next/image';
 import type {
   LimitedTimeOfferCardData,
   PricingCell,
-  LearningProgramPricingData,
-  LearningProgramTrackAPricingRow,
-  LearningProgramTrackBPricingRow,
-} from '@/types/learning_program';
-import LimitedTimeOfferCard from '@/components/learning_program/LimitedTimeOfferCard';
+  InnovationProgramPricingData,
+  InnovationProgramTrackAPricingRow,
+  InnovationProgramTrackBPricingRow,
+} from '@/types/innovation_program';
+import LimitedTimeOfferCard from '@/components/innovation_program/LimitedTimeOfferCard';
 
 interface PricingSectionProps {
   /** 价格区块数据 */
-  data: LearningProgramPricingData;
+  data: InnovationProgramPricingData;
 }
 
 /** 限时优惠三档卡数据：Early Bird / Regular / Last minute */
@@ -110,7 +110,7 @@ export default function PricingSection({ data }: PricingSectionProps) {
                   {data.trackAHeaders[2]}
                 </div>
               </div>
-              {data.trackARows.map((row: LearningProgramTrackAPricingRow, i: number) => (
+              {data.trackARows.map((row: InnovationProgramTrackAPricingRow, i: number) => (
                 <div
                   key={i}
                   className="grid grid-cols-3 border-b border-indigo-50 last:border-b-0"
@@ -270,7 +270,7 @@ export default function PricingSection({ data }: PricingSectionProps) {
                   {data.trackBHeaders[2]}
                 </div>
               </div>
-              {data.trackBRows.map((row: LearningProgramTrackBPricingRow, i: number) => (
+              {data.trackBRows.map((row: InnovationProgramTrackBPricingRow, i: number) => (
                 <div
                   key={i}
                   className="grid grid-cols-3 border-b border-indigo-50"
@@ -355,7 +355,7 @@ export default function PricingSection({ data }: PricingSectionProps) {
             aria-label={data.ctaLabel}
           >
             {data.ctaLabel}
-            <Image src="/learning_program/trackA/registernow.svg" alt="" width={24} height={24} className="shrink-0 w-5 h-5 sm:w-6 sm:h-6" aria-hidden />
+            <Image src="/innovation_program/trackA/registernow.svg" alt="" width={24} height={24} className="shrink-0 w-5 h-5 sm:w-6 sm:h-6" aria-hidden />
           </a>
         </div>
       </div>

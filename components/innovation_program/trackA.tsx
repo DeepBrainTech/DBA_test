@@ -1,16 +1,16 @@
 ﻿/**
- * 文件用途：Learning Program Track A 区块容器组件（STEM Innovation）
- * 依赖关系：依赖 next/image、TrackAFeatureCard、FeaturedProjectCard、data/learning_program
+ * 文件用途：Innovation Program Track A 区块容器组件（STEM Innovation）
+ * 依赖关系：依赖 next/image、TrackAFeatureCard、FeaturedProjectCard、data/innovation_program
  * 注意事项：包含 Program 标题、四宫格特色、引用、Featured Projects 列表与注册按钮；无绝对定位
  */
 
 import Image from 'next/image';
-import { learningProgramPageData } from '@/data/learning_program';
-import TrackAFeatureCard from '@/components/learning_program/TrackAFeatureCard';
-import FeaturedProjectCard from '@/components/learning_program/FeaturedProjectCard';
+import { innovationProgramPageData } from '@/data/innovation_program';
+import TrackAFeatureCard from '@/components/innovation_program/TrackAFeatureCard';
+import FeaturedProjectCard from '@/components/innovation_program/FeaturedProjectCard';
 
 export default function TrackA() {
-  const { trackA } = learningProgramPageData;
+  const { trackA } = innovationProgramPageData;
   const features = trackA.features;
   const { featuredProjects } = trackA;
   return (
@@ -60,7 +60,7 @@ export default function TrackA() {
             {/* 区块头 */}
             <div className="flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-4">
               <div className="w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 shrink-0 rounded-2xl lg:rounded-3xl bg-rose-400/10 flex items-center justify-center">
-                <Image src="/learning_program/trackA/featured_projects.svg" alt="" width={42} height={42} className="w-7 h-7 sm:w-8 sm:h-8 lg:w-10 lg:h-10 object-contain" />
+                <Image src="/innovation_program/trackA/featured_projects.svg" alt="" width={42} height={42} className="w-7 h-7 sm:w-8 sm:h-8 lg:w-10 lg:h-10 object-contain" />
               </div>
               <div className="flex flex-col gap-1 min-w-0">
                 <h3 className="text-slate-700 text-lg sm:text-xl md:text-2xl font-semibold font-outfit leading-tight">{featuredProjects.title}</h3>
@@ -85,7 +85,7 @@ export default function TrackA() {
             className="w-full sm:w-auto min-w-[140px] sm:min-w-[150px] h-11 sm:h-12 md:h-14 px-6 sm:px-8 lg:pl-20 lg:pr-7 py-2.5 sm:py-3 md:py-3.5 rounded-xl sm:rounded-2xl lg:rounded-3xl bg-rose-400 inline-flex justify-center items-center gap-3 sm:gap-4 lg:gap-6 md:gap-7 shadow-md no-underline"
           >
             <span className="text-white text-base sm:text-lg md:text-xl font-bold font-outfit">{trackA.secondaryCtaLabel}</span>
-            <Image src="/learning_program/trackA/registernow.svg" alt="" width={24} height={24} className="shrink-0 w-5 h-5 sm:w-6 sm:h-6" aria-hidden />
+            <Image src="/innovation_program/trackA/registernow.svg" alt="" width={24} height={24} className="shrink-0 w-5 h-5 sm:w-6 sm:h-6" aria-hidden />
           </a>
         </div>
       </div>

@@ -1,7 +1,7 @@
 ﻿/**
  * 文件用途：Brain Games 教育理念 Section
  * 依赖关系：依赖 types/braingames.ts
- * 注意事项：按钮格式与字体字号与 learning_program LearningStrategies 一致
+ * 注意事项：按钮格式与字体字号与 innovation_program LearningStrategies 一致
  */
 
 import Image from "next/image";

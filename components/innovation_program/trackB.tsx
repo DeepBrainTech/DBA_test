@@ -1,15 +1,15 @@
 ﻿/**
- * 文件用途：Learning Program Track B 区块容器组件（AI & Strategy Camp）
- * 依赖关系：StrategyCard（策略卡）、data/learning_program、next/image
+ * 文件用途：Innovation Program Track B 区块容器组件（AI & Strategy Camp）
+ * 依赖关系：StrategyCard（策略卡）、data/innovation_program、next/image
  * 注意事项：四张卡片使用 StrategyCard（图标+标题+描述），与 Learning Strategies 策略卡一致
  */
 
 import Image from 'next/image';
-import { learningProgramPageData } from '@/data/learning_program';
-import StrategyCard from '@/components/learning_program/StrategyCard';
+import { innovationProgramPageData } from '@/data/innovation_program';
+import StrategyCard from '@/components/innovation_program/StrategyCard';
 
 export default function TrackB() {
-  const { trackB } = learningProgramPageData;
+  const { trackB } = innovationProgramPageData;
   const features = trackB.features;
   return (
     <div className="px-14 pt-20 bg-[#FFFFFF]">
@@ -35,7 +35,7 @@ export default function TrackB() {
           {features.map((card, index) => (
             <StrategyCard
               key={card.title}
-              card={{ ...card, icon: `/learning_program/trackB/trackb-${index + 1}.svg` }}
+              card={{ ...card, icon: `/innovation_program/trackB/trackb-${index + 1}.svg` }}
               index={index}
             />
           ))}
@@ -66,7 +66,7 @@ export default function TrackB() {
           >
             <div className="inline-flex items-center justify-center gap-6 md:gap-7">
               <span className="text-white text-lg md:text-xl font-bold font-outfit leading-7">{trackB.ctaLabel}</span>
-              <Image src="/learning_program/trackA/registernow.svg" alt="" width={24} height={24} className="shrink-0 w-6 h-6" aria-hidden />
+              <Image src="/innovation_program/trackA/registernow.svg" alt="" width={24} height={24} className="shrink-0 w-6 h-6" aria-hidden />
             </div>
           </a>
         </div>

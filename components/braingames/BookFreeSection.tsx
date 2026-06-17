@@ -46,7 +46,7 @@ export default function BookFreeSection({ data }: BookFreeSectionProps) {
           </div>
         </div>
 
-        {/* 主内容区：左文案 + 右卡片（与 learning_program 一致） */}
+        {/* 主内容区：左文案 + 右卡片（与 innovation_program 一致） */}
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-10 lg:gap-12 items-start">
           <div className="flex flex-col gap-9">
             <div className="flex flex-col gap-5">
@@ -148,7 +148,7 @@ export default function BookFreeSection({ data }: BookFreeSectionProps) {
           </div>
         </div>
 
-        {/* 底部引用气泡（与 learning_program 一致） */}
+        {/* 底部引用气泡（与 innovation_program 一致） */}
         <div className="mt-10 lg:mt-12 flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-5">
           <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/20 rounded-2xl flex justify-center items-center shrink-0 p-2">
             <Image

@@ -1,12 +1,12 @@
 ﻿/**
- * 文件用途：Learning Program「Book Free Trial」预约咨询区块，含左侧文案/保障列表、右侧预约卡片与底部引用
- * 依赖关系：依赖 types/learning_program 的 LearningProgramBookFreeTrialData；图标来自 public/learning_program/bookfreetrial
+ * 文件用途：Innovation Program「Book Free Trial」预约咨询区块，含左侧文案/保障列表、右侧预约卡片与底部引用
+ * 依赖关系：依赖 types/innovation_program 的 InnovationProgramBookFreeTrialData；图标来自 public/innovation_program/bookfreetrial
  * 注意事项：背景渐变玫瑰粉；布局响应式，大屏双栏、小屏堆叠
  */
 
 import Image from 'next/image';
 import { ArrowRight, ListChecks } from 'lucide-react';
-import type { LearningProgramBookFreeTrialData } from '@/types/learning_program';
+import type { InnovationProgramBookFreeTrialData } from '@/types/innovation_program';
 
 /** We ensure 四项对应的图标文件名（与 data.ensureItems 顺序一致） */
 const ENSURE_ICONS = ['smallgroup.png', 'Course Materials.png', 'Strict.png', 'Weekly.png'];
@@ -27,7 +27,7 @@ const ICON_SIZE = {
 
 interface BookFreeTrialSectionProps {
   /** Book Free Trial 区块数据 */
-  data: LearningProgramBookFreeTrialData;
+  data: InnovationProgramBookFreeTrialData;
 }
 
 export default function BookFreeTrialSection({ data }: BookFreeTrialSectionProps) {
@@ -42,7 +42,7 @@ export default function BookFreeTrialSection({ data }: BookFreeTrialSectionProps
         <div className="flex justify-center mb-6 lg:mb-8">
           <div className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-white/20 rounded-3xl opacity-90">
             <Image
-              src="/learning_program/bookfreetrial/limitedoffer.svg"
+              src="/innovation_program/bookfreetrial/limitedoffer.svg"
               alt=""
               width={ICON_SIZE.badge}
               height={ICON_SIZE.badge}
@@ -81,7 +81,7 @@ export default function BookFreeTrialSection({ data }: BookFreeTrialSectionProps
                     className="flex items-center gap-3.5 px-5 py-4 bg-white/20 rounded-xl"
                   >
                     <Image
-                      src={`/learning_program/bookfreetrial/${encodeURIComponent(ENSURE_ICONS[i] ?? '')}`}
+                      src={`/innovation_program/bookfreetrial/${encodeURIComponent(ENSURE_ICONS[i] ?? '')}`}
                       alt=""
                       width={ICON_SIZE.ensure}
                       height={ICON_SIZE.ensure}
@@ -99,7 +99,7 @@ export default function BookFreeTrialSection({ data }: BookFreeTrialSectionProps
               {data.trustItems.map((item, i) => (
                 <div key={i} className="flex items-center gap-2 shrink-0">
                   <Image
-                    src={`/learning_program/bookfreetrial/${encodeURIComponent(TRUST_ICONS[i] ?? '')}`}
+                    src={`/innovation_program/bookfreetrial/${encodeURIComponent(TRUST_ICONS[i] ?? '')}`}
                     alt=""
                     width={ICON_SIZE.trust}
                     height={ICON_SIZE.trust}
@@ -155,7 +155,7 @@ export default function BookFreeTrialSection({ data }: BookFreeTrialSectionProps
         <div className="mt-10 lg:mt-12 flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-5">
           <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/20 rounded-2xl flex justify-center items-center shrink-0 p-2">
             <Image
-              src="/learning_program/bookfreetrial/brain.png"
+              src="/innovation_program/bookfreetrial/brain.png"
               alt=""
               width={ICON_SIZE.quote}
               height={ICON_SIZE.quote}

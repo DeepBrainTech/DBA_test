@@ -1,17 +1,17 @@
 ﻿/**
  * 文件用途：Learning Strategies 完整区块，含顶部引言、四张策略卡、底部对比表
- * 依赖关系：依赖 next/image、StrategyCard、types/learning_program 的 LearningProgramLearningStrategiesData
+ * 依赖关系：依赖 next/image、StrategyCard、types/innovation_program 的 InnovationProgramLearningStrategiesData
  * 注意事项：样式与设计稿一致，使用 Outfit 字体与 rose/green 主题色；策略卡由 StrategyCard 组件渲染；区块标题图标使用 learning_strategies.png
  */
 
 import Image from 'next/image';
-import StrategyCard from '@/components/learning_program/StrategyCard';
-import type { LearningProgramLearningStrategiesData } from '@/types/learning_program';
+import StrategyCard from '@/components/innovation_program/StrategyCard';
+import type { InnovationProgramLearningStrategiesData } from '@/types/innovation_program';
 
 interface LearningStrategiesProps {
   /** Learning Strategies 区块数据 */
-  data: LearningProgramLearningStrategiesData;
-  /** 是否显示底部 Track A/B 对比表（Learning Program 页面使用） */
+  data: InnovationProgramLearningStrategiesData;
+  /** 是否显示底部 Track A/B 对比表（Innovation Program 页面使用） */
   showComparisonSection?: boolean;
 }
 
@@ -52,7 +52,7 @@ export default function LearningStrategies({ data, showComparisonSection = false
         <div className="w-full mt-4 sm:mt-8 lg:mt-12 flex flex-col items-center text-center gap-4 sm:gap-6 lg:gap-8">
           <div className="inline-flex items-center gap-2 sm:gap-3 rounded-2xl sm:rounded-3xl bg-rose-400/10 px-4 sm:px-5 py-2.5 sm:py-3.5">
             <Image
-              src="/learning_program/Learning_Strategies/learning_strategies.png"
+              src="/innovation_program/Learning_Strategies/learning_strategies.png"
               alt=""
               width={30}
               height={30}

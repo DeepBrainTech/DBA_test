@@ -17,6 +17,7 @@ export const schedulePageData: SchedulePageData = {
     sectionTitle: 'Current Timetable',
     sectionClassName: 'bg-white',
     cardVariant: 'flat',
+    courseNameLayout: 'title-meta',
     scheduleRows: [
       {
         time: '11:00 AM\n-\n12:30 PM',

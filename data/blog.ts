@@ -1,4 +1,4 @@
-/**
+﻿/**
  * 文件用途：博客详情页数据配置，供 /blog/[slug] 使用
  * 依赖关系：依赖 types/blog.ts 中的 BlogPost 类型
  * 注意事项：slug 与首页 newsArticles 的 url 路径一致；body 可后续替换为正式正文
@@ -63,7 +63,7 @@ If chess learning has a proper place, it is best understood as a long-term inves
 
 When we shift the focus away from "job skills" and instead look at how the brain learns and thinks, programming begins to resemble a form of structured mental training that has been extensively studied in modern cognitive science, rather than a purely vocational skill.
 
-To state the conclusion upfront: learning programming does not directly increase IQ scores, nor is it a shortcut to intelligence. However, research consistently shows that it can systematically train core cognitive abilities such as logical reasoning, problem decomposition, and executive control.
+To state the conclusion upfront: Innovation Programming does not directly increase IQ scores, nor is it a shortcut to intelligence. However, research consistently shows that it can systematically train core cognitive abilities such as logical reasoning, problem decomposition, and executive control.
 
 From a cognitive perspective, the essence of programming is not writing code, but translating a complex and often vague goal into clear, executable steps. To make a program work, learners must continuously clarify conditions, sequences, and cause–effect relationships. Any gap in logic or unfounded assumption is immediately reflected in the program's outcome. This highly explicit feedback makes programming an unusually "honest" thinking activity.
 

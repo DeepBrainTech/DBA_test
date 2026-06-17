@@ -1,13 +1,13 @@
-/**
- * 文件用途：Learning Program 价格区块（实验版，Project Pricing 单卡布局）
- * 依赖关系：依赖 types/learning_program 的 LearningProgramPricingData
+﻿/**
+ * 文件用途：Innovation Program 价格区块（实验版，Project Pricing 单卡布局）
+ * 依赖关系：依赖 types/innovation_program 的 InnovationProgramPricingData
  */
 
 import Image from 'next/image';
-import type { LearningProgramPricingData } from '@/types/learning_program';
+import type { InnovationProgramPricingData } from '@/types/innovation_program';
 
 interface PricingTempProps {
-  data: LearningProgramPricingData;
+  data: InnovationProgramPricingData;
 }
 
 const PROJECT_PRICING = {
@@ -80,7 +80,7 @@ export default function PricingTemp({ data }: PricingTempProps) {
         >
           {data.ctaLabel}
           <Image
-            src="/learning_program/trackA/registernow.svg"
+            src="/innovation_program/trackA/registernow.svg"
             alt=""
             width={24}
             height={24}

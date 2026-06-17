@@ -1,10 +1,10 @@
 ﻿/**
- * 文件用途：Learning Program 限时优惠单张档位卡（Early Bird / Regular / Last minute）
- * 依赖关系：依赖 types/learning_program 的 LimitedTimeOfferCardData
+ * 文件用途：Innovation Program 限时优惠单张档位卡（Early Bird / Regular / Last minute）
+ * 依赖关系：依赖 types/innovation_program 的 LimitedTimeOfferCardData
  * 注意事项：卡片通过 flex-1 铺满容器，内容在卡片内居中
  */
 
-import type { LimitedTimeOfferCardData } from '@/types/learning_program';
+import type { LimitedTimeOfferCardData } from '@/types/innovation_program';
 
 interface LimitedTimeOfferCardProps {
   /** 单张卡数据 */

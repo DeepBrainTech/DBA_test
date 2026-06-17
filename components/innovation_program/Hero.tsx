@@ -1,6 +1,6 @@
-/**
- * 文件用途：Learning Program 英雄区，主标题、副标题与四个特色亮点（与设计稿一致）
- * 依赖关系：依赖 next/image、LearningProgramHeroData 类型、scrollToElement 工具函数
+﻿/**
+ * 文件用途：Innovation Program 英雄区，主标题、副标题与四个特色亮点（与设计稿一致）
+ * 依赖关系：依赖 next/image、InnovationProgramHeroData 类型、scrollToElement 工具函数
  * 注意事项：文案与设计稿一致；-mt-[106px] 使首屏与透明导航重叠；布局与 Math/Programming Hero 完全一致
  */
 
@@ -9,17 +9,17 @@
 import Image from 'next/image';
 
 import { scrollToElement } from '@/lib/scroll';
-import type { LearningProgramHeroData } from '@/types/learning_program';
+import type { InnovationProgramHeroData } from '@/types/innovation_program';
 
-import hero1 from '@/public/learning_program/hero/1.png';
-import hero2 from '@/public/learning_program/hero/2.png';
-import hero3 from '@/public/learning_program/hero/3.png';
-import hero4 from '@/public/learning_program/hero/4.png';
+import hero1 from '@/public/innovation_program/hero/1.png';
+import hero2 from '@/public/innovation_program/hero/2.png';
+import hero3 from '@/public/innovation_program/hero/3.png';
+import hero4 from '@/public/innovation_program/hero/4.png';
 
 const HERO_CARD_IMGS = [hero1, hero2, hero3, hero4] as const;
 
 interface HeroProps {
-  data: LearningProgramHeroData;
+  data: InnovationProgramHeroData;
 }
 
 export default function Hero({ data }: HeroProps) {
@@ -30,7 +30,7 @@ export default function Hero({ data }: HeroProps) {
         <div className="absolute inset-0 z-0 [contain:layout]">
           <Image
             src={data.backgroundImage}
-            alt="Learning Program hero background"
+            alt="Innovation Program hero background"
             fill
             priority
             sizes="100vw"
@@ -80,7 +80,7 @@ export default function Hero({ data }: HeroProps) {
             aria-label="滚动至 Learning Strategies"
           >
             <Image
-              src="/learning_program/hero/5.png"
+              src="/innovation_program/hero/5.png"
               alt=""
               width={1200}
               height={600}
