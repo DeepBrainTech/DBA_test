@@ -7,7 +7,6 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'DeepBrain Academy',
   description:
     'We offer math thinking, chess, programming, and global education support for ages 6-18, helping children learn with joy and grow through challenges.',
   alternates: {
