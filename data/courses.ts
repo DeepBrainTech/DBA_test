@@ -164,9 +164,11 @@ export const coursesPageData: CoursesPageData = {
         time: '1:00 PM\n-\n2:30 PM',
         days: {
           Mon: [
+      
             { name: 'BCA Writing', cat: 'Language' },
             { name: 'Chinese', cat: 'Language' },
             { name: 'Precalculus', cat: 'Math' },
+            { name: 'Interactive English', cat: 'Language' },
           ],
           Tue: [
             { name: 'AP Physics C', cat: 'Physics' },
@@ -178,6 +180,7 @@ export const coursesPageData: CoursesPageData = {
           Wed: [
             { name: 'F=MA Physics\nContest*', cat: 'Physics' },
             { name: 'Chinese', cat: 'Language' },
+            { name: 'Spanish Beginner', cat: 'Language' },
           ],
           Thu: [
             { name: 'Precalculus', cat: 'Math' },
@@ -194,6 +197,7 @@ export const coursesPageData: CoursesPageData = {
           Sat: [
             { name: 'F=MA Physics\nContest*', cat: 'Physics' },
             { name: 'SAT Math', cat: 'Math' },
+            { name: 'Spanish Beginner', cat: 'Language' },
           ],
           Sun: [
             { name: 'Precalculus', cat: 'Math' },
@@ -205,17 +209,21 @@ export const coursesPageData: CoursesPageData = {
         time: '2:45 PM\n-\n4:15 PM',
         days: {
           Mon: [
-            { name: 'BCA Math', cat: 'Math' },
+            { name: 'SAT Math', cat: 'Math' },
             { name: 'Chinese', cat: 'Language' },
+            { name: 'Vocabulary & Reading', cat: 'Language' },
           ],
           Tue: [
             { name: 'Algebra 2', cat: 'Math' },
             { name: 'AI Beginner\nProject', cat: 'AI' },
             { name: 'Go Beginner', cat: 'Chess' },
           ],
-          Wed: [{ name: 'Chinese', cat: 'Language' }],
+          Wed: [{ name: 'Chinese', cat: 'Language' },
+            { name: 'Spanish Intermediate', cat: 'Language' },
+          ],
+          
           Thu: [
-            { name: 'BCA Math', cat: 'Math' },
+            { name: 'SAT Math', cat: 'Math' },
             { name: 'AI Intermediate\nProject', cat: 'AI' },
             { name: 'Chinese', cat: 'Language' },
           ],
@@ -223,7 +231,9 @@ export const coursesPageData: CoursesPageData = {
             { name: 'Algebra 2', cat: 'Math' },
             { name: 'Go Beginner', cat: 'Chess' },
           ],
-          Sat: [{ name: 'Mental Math', cat: 'Math' }],
+          Sat: [{ name: 'Mental Math', cat: 'Math' },
+            { name: 'Spanish Intermediate', cat: 'Language' },
+          ],
           Sun: [{ name: 'Linear Algebra', cat: 'Math' }],
         },
       },
@@ -258,7 +268,7 @@ export const coursesPageData: CoursesPageData = {
         days: {
           Mon: [{ name: 'AoPS Geometry', cat: 'Math' }],
           Tue: [{ name: 'Multivariable\nCalculus', cat: 'Math' }],
-          Wed: [],
+          Wed: [{ name: 'SAT Math', cat: 'Math' }],
           Thu: [{ name: 'AoPS Geometry', cat: 'Math' }],
           Fri: [{ name: 'Multivariable\nCalculus', cat: 'Math' }],
           Sat: [{ name: 'Linear Algebra', cat: 'Math' }],
