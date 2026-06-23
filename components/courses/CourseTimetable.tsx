@@ -31,12 +31,25 @@ const DAY_LABELS: Record<(typeof DAYS)[number], string> = {
 interface CourseTimetableProps {
   data: CourseTimetableData;
   hideHeader?: boolean;
+  /** Courses 页已在此 tab，隐藏「visit the Courses tab」引导文案 */
+  hideCoursesTabDescription?: boolean;
+  /** 作为同一页面区块内的子课表时，去掉独立背景与多余间距 */
+  nested?: boolean;
+  isLastInGroup?: boolean;
 }
 
-export default function CourseTimetable({ data, hideHeader = false }: CourseTimetableProps) {
+export default function CourseTimetable({
+  data,
+  hideHeader = false,
+  hideCoursesTabDescription = false,
+  nested = false,
+  isLastInGroup = false,
+}: CourseTimetableProps) {
   const [activeFilter, setActiveFilter] = useState<CourseInformationFilter>('All');
   const isScheduleVariant = Boolean(data.badge);
-  const sectionBg = data.sectionClassName ?? 'bg-[#FBF9F4]';
+  const sectionBg = nested ? 'bg-transparent' : (data.sectionClassName ?? 'bg-[#FBF9F4]');
+  const outerPadding = nested ? (isLastInGroup ? 'pb-16' : 'pb-6') : 'pb-16';
+  const innerPadding = nested ? 'pt-2 md:pt-4' : 'pt-6 md:pt-8';
   const cardVariant = data.cardVariant ?? 'elevated';
 
   const filterCourses = (courses: { name: string; cat: TimetableCategory }[] | undefined) => {
@@ -49,8 +62,10 @@ export default function CourseTimetable({ data, hideHeader = false }: CourseTime
   };
 
   return (
-    <div className={`w-full pb-16 ${sectionBg}`}>
-      <div className="mx-auto flex w-full max-w-[min(1440px,98vw)] flex-col items-center gap-6 px-2 pt-6 sm:gap-10 sm:px-4 md:pt-8 lg:gap-12 lg:px-6">
+    <div className={`w-full ${outerPadding} ${sectionBg}`}>
+      <div
+        className={`mx-auto flex w-full max-w-[min(1440px,98vw)] flex-col items-center gap-6 px-2 sm:gap-10 sm:px-4 lg:gap-12 lg:px-6 ${innerPadding}`}
+      >
         {!hideHeader && (
           <header className="flex flex-col items-center gap-4 sm:gap-6">
             {data.badge ? (
@@ -94,18 +109,20 @@ export default function CourseTimetable({ data, hideHeader = false }: CourseTime
             >
               {data.sectionTitle}
             </h2>
-            {data.description && (
-              <p className="max-w-3xl text-center font-outfit text-lg text-slate-500 md:text-xl">
+            {!hideCoursesTabDescription &&
+              (data.description || data.descriptionSuffix) && (
+              <p className="max-w-3xl text-center font-outfit text-lg text-[#7C8B99] md:text-xl lg:text-[22px]">
                 {data.description}
                 {data.descriptionLink && (
                   <Link
                     href={data.descriptionLink.href}
-                    className="font-semibold text-slate-500 underline-offset-2 hover:underline"
+                    className="font-semibold text-[#7C8B99] underline-offset-2 hover:underline"
                   >
                     {data.descriptionLink.label}
                   </Link>
                 )}
-                {data.descriptionLink ? ' tab.' : ''}
+                {data.descriptionSuffix ??
+                  (data.descriptionLink ? ' tab.' : '')}
               </p>
             )}
           </header>

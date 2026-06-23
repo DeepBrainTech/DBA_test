@@ -15,7 +15,7 @@ import { testPrepPageData } from '@/data/test_prep';
 
 export default function TestPrepPage() {
   const { hero, successStories, courses, scoreGrowthSystem } = testPrepPageData;
-  const { timetable, bookFreeTrial } = coursesPageData;
+  const { bookFreeTrial } = coursesPageData;
   const testPrepBookFreeTrial = {
     ...bookFreeTrial,
     stats: bookFreeTrial.stats.map((stat) =>
@@ -30,7 +30,7 @@ export default function TestPrepPage() {
         <SuccessStories data={successStories} />
         <TestPrepCourses data={courses} />
         <ScoreGrowthSystem data={scoreGrowthSystem} />
-        <TestPrepTimetableSection data={timetable} />
+        <TestPrepTimetableSection />
         <TestPrepBookFreeTrialSection data={testPrepBookFreeTrial} />
       </main>
     </div>

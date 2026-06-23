@@ -17,7 +17,8 @@ import SummerCampHighlightsSection from '@/components/summer_camp/SummerCampHigh
 import SummerCampProgramSection from '@/components/summer_camp/SummerCampProgramSection';
 
 import SummerCampAdvantageSection from '@/components/summer_camp/SummerCampAdvantageSection';
-
+import SummerTimetable from '@/components/schedule/SummerTimetable';
+import OnlineTimetable from '@/components/schedule/OnlineTimetable';
 import BookFreeTrialSection from '@/components/courses/BookFreeTrialSection';
 
 import { summerCampPageData } from '@/data/summer_camp';
@@ -43,6 +44,10 @@ export default function SummerCampPage() {
         <SummerCampProgramSection data={program} />
 
         <SummerCampAdvantageSection data={advantages} />
+
+        <SummerTimetable />
+
+        <OnlineTimetable isLastInGroup />
 
         <BookFreeTrialSection data={bookFreeTrial} />
 
