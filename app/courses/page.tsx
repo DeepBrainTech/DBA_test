@@ -7,12 +7,13 @@
 import Hero from '@/components/courses/Hero';
 import ExplorePrograms from '@/components/courses/ExplorePrograms';
 import CourseInformation from '@/components/courses/CourseInformation';
+import PricingSection from '@/components/courses/PricingSection';
 import BookFreeTrialSection from '@/components/courses/BookFreeTrialSection';
 import CourseScheduleSection from '@/components/schedule/CourseScheduleSection';
 import { coursesPageData } from '@/data/courses';
 
 export default function Page() {
-  const { hero, explorePrograms, courseInformation, bookFreeTrial } = coursesPageData;
+  const { hero, explorePrograms, courseInformation, pricing, bookFreeTrial } = coursesPageData;
   return (
     <div className="min-h-screen">
       <main>
@@ -20,6 +21,7 @@ export default function Page() {
         <ExplorePrograms data={explorePrograms} />
         <CourseScheduleSection />
         <CourseInformation data={courseInformation} />
+        <PricingSection data={pricing} />
         <BookFreeTrialSection data={bookFreeTrial} />
       </main>
     </div>

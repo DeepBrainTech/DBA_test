@@ -386,6 +386,122 @@ export const coursesPageData: CoursesPageData = {
   },
 ],
   },
+  pricing: {
+    badgeIcon: '💎️',
+    badgeText: 'Pricing',
+    title: 'Summer Courses Pricing',
+    tableHeaders: {
+      enrollmentOption: 'Enrollment Option',
+      tuition: 'Tuition',
+    },
+    rows: [
+      {
+        enrollmentOption: 'AoPS Prealgebra, Introduction to Algebra, Intermediate Algebra',
+        tuitions: ['$1360'],
+      },
+      {
+        enrollmentOption: 'AoPS Geometry',
+        tuitions: ['$1360 (Dr. Cao)', '$980 (Ms. Averboukh)'],
+      },
+      {
+        enrollmentOption: 'Mental Math',
+        tuitions: ['$1360 (Dr. Cao)', '$980 (Dr. Chen)'],
+      },
+      {
+        enrollmentOption: 'Upper Elementary Math',
+        tuitions: ['$880'],
+      },
+      {
+        enrollmentOption: 'AMC 8, AMC 10',
+        tuitions: ['$1360'],
+      },
+      {
+        enrollmentOption: 'SAT Math',
+        tuitions: ['$980'],
+      },
+      {
+        enrollmentOption: 'BCA Math',
+        tuitions: ['$980'],
+      },
+      {
+        enrollmentOption: 'Precalculus, Calculus AB, Calculus BC, Multivariable Calculus',
+        tuitions: ['$1360'],
+      },
+      {
+        enrollmentOption: 'Linear Algebra',
+        tuitions: ['$1360'],
+      },
+      {
+        enrollmentOption: 'Algebra 1, Algebra 2',
+        tuitions: ['$880'],
+      },
+      {
+        enrollmentOption: 'SparkEdu Math',
+        tuitions: ['$50 / session'],
+      },
+      {
+        enrollmentOption: 'ISEE Math',
+        tuitions: ['$880'],
+      },
+      {
+        enrollmentOption: 'Chess Beginner',
+        tuitions: ['$720'],
+      },
+      {
+        enrollmentOption: 'Chess Advanced',
+        tuitions: ['$780'],
+      },
+      {
+        enrollmentOption: 'Go Beginner',
+        tuitions: ['$600'],
+      },
+      {
+        enrollmentOption: 'Go Advanced',
+        tuitions: ['$780'],
+      },
+      {
+        enrollmentOption: 'Fog of War Chess & AI Thinking',
+        tuitions: ['$780'],
+      },
+      {
+        enrollmentOption: 'BCA Writing',
+        tuitions: ['$1500'],
+      },
+      {
+        enrollmentOption: 'SAT Reading & Writing',
+        tuitions: ['$1200'],
+      },
+      {
+        enrollmentOption: 'ISEE English',
+        tuitions: ['$880'],
+      },
+      {
+        enrollmentOption: 'Chinese',
+        tuitions: ['$800'],
+      },
+      {
+        enrollmentOption: 'AI Beginner + Project, AI Intermediate + Project',
+        tuitions: ['$880'],
+      },
+      {
+        enrollmentOption: 'Coding',
+        tuitions: ['$880'],
+      },
+    ],
+    discountsTitle: 'Special Discounts',
+    discounts: [
+      { label: 'Previous DBA students', discount: '10% Off' },
+      { label: 'Sibling discount', discount: '10% Off' },
+      { label: 'Camp attendees save on Summer Courses', discount: '15% Off' },
+      {
+        label: 'Multi-course registration discount (second course and more)',
+        discount: '5% Off',
+      },
+    ],
+    ctaLabel: 'Enroll Now',
+    ctaUrl:
+      'https://docs.google.com/forms/d/1wnsEKekngdFdpt465K4BIvXLT1mKvM2VmEI2Kc0QvCQ/viewform',
+  },
   bookFreeTrial: {
     badgeText: 'Limited offer',
     title: 'Empowering the next generation of thinkers and creators.',
