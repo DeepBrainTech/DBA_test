@@ -277,6 +277,10 @@ export interface CourseTimetableData {
 
   descriptionLink?: { label: string; href: string };
 
+  /** 链接后的补充说明（如线上线下选项） */
+
+  descriptionSuffix?: string;
+
   /** 外层区块背景类名 */
 
   sectionClassName?: string;
@@ -336,8 +340,6 @@ export interface CoursesPageData {
   hero: CoursesHeroData;
 
   explorePrograms: ExploreProgramsData;
-
-  timetable: CourseTimetableData;
 
   courseInformation: CourseInformationData;
 

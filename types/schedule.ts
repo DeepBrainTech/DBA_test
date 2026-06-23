@@ -15,4 +15,6 @@ export interface SchedulePageData {
 
   summerTimetable: CourseTimetableData;
 
+  onlineTimetable: CourseTimetableData;
+
 }
