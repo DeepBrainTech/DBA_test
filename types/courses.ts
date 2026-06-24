@@ -295,6 +295,9 @@ export interface CourseTimetableData {
    */
   courseNameLayout?: 'title-meta' | 'uniform';
 
+  /** 表格行最小高度缩放（默认 1，如 1.1 表示加高 10%） */
+  rowMinHeightScale?: number;
+
 }
 
 
@@ -333,6 +336,56 @@ export interface CourseInformationData {
 
 
 
+/** Courses Pricing 价格表一行 */
+
+export interface CoursesPricingRow {
+
+  enrollmentOption: string;
+
+  tuitions: string[];
+
+}
+
+
+
+/** Courses Pricing 折扣项 */
+
+export interface CoursesPricingDiscount {
+
+  label: string;
+
+  discount: string;
+
+}
+
+
+
+/** Courses Pricing 区块数据 */
+
+export interface CoursesPricingData {
+
+  badgeIcon: string;
+
+  badgeText: string;
+
+  title: string;
+
+  tableHeaders: { enrollmentOption: string; tuition: string };
+
+  rows: CoursesPricingRow[];
+
+  discountsTitle: string;
+
+  discounts: CoursesPricingDiscount[];
+
+  ctaLabel: string;
+
+  ctaUrl: string;
+
+}
+
+
+
 /** Courses 页面聚合数据 */
 
 export interface CoursesPageData {
@@ -342,6 +395,8 @@ export interface CoursesPageData {
   explorePrograms: ExploreProgramsData;
 
   courseInformation: CourseInformationData;
+
+  pricing: CoursesPricingData;
 
   bookFreeTrial: CoursesBookFreeTrialData;
 

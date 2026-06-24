@@ -10,6 +10,7 @@ export interface SummerTimetableProps {
   nested?: boolean;
   isLastInGroup?: boolean;
   hideHeader?: boolean;
+  hideBadge?: boolean;
   hideCoursesTabDescription?: boolean;
 }
 
@@ -17,12 +18,14 @@ export default function SummerTimetable({
   nested = false,
   isLastInGroup = false,
   hideHeader = false,
+  hideBadge = false,
   hideCoursesTabDescription = false,
 }: SummerTimetableProps) {
   return (
     <CourseTimetable
       data={summerTimetableData}
       hideHeader={hideHeader}
+      hideBadge={hideBadge}
       hideCoursesTabDescription={hideCoursesTabDescription}
       nested={nested}
       isLastInGroup={isLastInGroup}

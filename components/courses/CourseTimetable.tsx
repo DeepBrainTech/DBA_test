@@ -31,6 +31,7 @@ const DAY_LABELS: Record<(typeof DAYS)[number], string> = {
 interface CourseTimetableProps {
   data: CourseTimetableData;
   hideHeader?: boolean;
+  hideBadge?: boolean;
   /** Courses 页已在此 tab，隐藏「visit the Courses tab」引导文案 */
   hideCoursesTabDescription?: boolean;
   /** 作为同一页面区块内的子课表时，去掉独立背景与多余间距 */
@@ -41,6 +42,7 @@ interface CourseTimetableProps {
 export default function CourseTimetable({
   data,
   hideHeader = false,
+  hideBadge = false,
   hideCoursesTabDescription = false,
   nested = false,
   isLastInGroup = false,
@@ -51,6 +53,7 @@ export default function CourseTimetable({
   const outerPadding = nested ? (isLastInGroup ? 'pb-16' : 'pb-6') : 'pb-16';
   const innerPadding = nested ? 'pt-2 md:pt-4' : 'pt-6 md:pt-8';
   const cardVariant = data.cardVariant ?? 'elevated';
+  const rowMinHeight = Math.round(136 * (data.rowMinHeightScale ?? 1));
 
   const filterCourses = (courses: { name: string; cat: TimetableCategory }[] | undefined) => {
     if (!courses) return [];
@@ -68,7 +71,8 @@ export default function CourseTimetable({
       >
         {!hideHeader && (
           <header className="flex flex-col items-center gap-4 sm:gap-6">
-            {data.badge ? (
+            {!hideBadge &&
+              (data.badge ? (
               <div
                 className={`inline-flex items-center gap-2 rounded-2xl px-4 py-2.5 sm:gap-3 sm:rounded-3xl sm:px-5 sm:py-3.5 ${
                   data.badge.className ?? 'bg-[#FBF9F4] text-slate-700'
@@ -99,7 +103,7 @@ export default function CourseTimetable({
                 </span>
                 <span className="font-outfit text-xl text-[#599CED]">Schedule</span>
               </div>
-            )}
+            ))}
             <h2
               className={`text-center font-outfit font-bold text-slate-700 ${
                 isScheduleVariant
@@ -176,7 +180,10 @@ export default function CourseTimetable({
                     idx % 2 === 0 ? 'bg-white' : 'bg-slate-50/40'
                   }`}
                 >
-                  <div className="flex min-h-[136px] items-center justify-center border-r border-[#E8F4FC] px-2 py-2 text-center font-outfit text-base font-bold leading-5 text-[#7C8B99] whitespace-pre-wrap">
+                  <div
+                    className="flex items-center justify-center border-r border-[#E8F4FC] px-2 py-2 text-center font-outfit text-base font-bold leading-5 text-[#7C8B99] whitespace-pre-wrap"
+                    style={{ minHeight: rowMinHeight }}
+                  >
                     {row.time}
                   </div>
 
@@ -186,9 +193,10 @@ export default function CourseTimetable({
                     return (
                       <div
                         key={day}
-                        className={`flex min-h-[136px] flex-col justify-center gap-1 px-2 py-1.5 ${
+                        className={`flex flex-col justify-center gap-1 px-2 py-1.5 ${
                           dIdx !== DAYS.length - 1 ? 'border-r border-[#E8F4FC]' : ''
                         }`}
+                        style={{ minHeight: rowMinHeight }}
                       >
                         {visibleCourses.map((course, cIdx) => {
                           const lines = course.name.split('\n');
@@ -204,13 +212,13 @@ export default function CourseTimetable({
                               />
                               {useTitleMetaLayout ? (
                                 <span className="flex flex-col gap-0.5">
-                                  <span className="font-outfit text-base font-medium leading-5 text-slate-700">
+                                  <span className="font-outfit text-sm font-medium leading-4 text-slate-700">
                                     {lines[0]}
                                   </span>
                                   {lines.slice(1).map((line, lineIdx) => (
                                     <span
                                       key={lineIdx}
-                                      className="font-outfit text-sm font-light leading-5 text-slate-700"
+                                      className="font-outfit text-xs font-light leading-4 text-slate-700"
                                     >
                                       {line}
                                     </span>
@@ -218,10 +226,10 @@ export default function CourseTimetable({
                                 </span>
                               ) : (
                                 <span
-                                  className={`font-outfit leading-5 whitespace-pre-wrap ${
+                                  className={`font-outfit text-sm leading-4 whitespace-pre-wrap ${
                                     isScheduleVariant
-                                      ? 'text-base font-medium text-slate-700'
-                                      : 'text-sm font-medium text-[#2C3E50]'
+                                      ? 'font-medium text-slate-700'
+                                      : 'font-medium text-[#2C3E50]'
                                   }`}
                                 >
                                   {course.name}

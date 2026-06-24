@@ -1,9 +1,8 @@
 /**
- * 文件用途：Courses 页 Course Schedule 区块（课表 A + B）
- * 依赖关系：components/schedule/OngoingTimetable、SummerTimetable
+ * 文件用途：Courses 页 Course Schedule 区块（Summer + Online 课表）
+ * 依赖关系：components/schedule/SummerTimetable、OnlineTimetable
  */
 
-import OngoingTimetable from '@/components/schedule/OngoingTimetable';
 import SummerTimetable from '@/components/schedule/SummerTimetable';
 import OnlineTimetable from '@/components/schedule/OnlineTimetable';
 
@@ -15,9 +14,8 @@ export default function CourseScheduleSection() {
           Course Schedule
         </h2>
       </div>
-      <OngoingTimetable variant="courses" nested />
-      <SummerTimetable nested hideCoursesTabDescription />
-      <OnlineTimetable nested isLastInGroup hideCoursesTabDescription />
+      <SummerTimetable nested hideBadge hideCoursesTabDescription />
+      <OnlineTimetable nested isLastInGroup hideBadge hideCoursesTabDescription />
     </section>
   );
 }

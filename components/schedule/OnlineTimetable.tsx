@@ -10,6 +10,7 @@ export interface OnlineTimetableProps {
   nested?: boolean;
   isLastInGroup?: boolean;
   hideHeader?: boolean;
+  hideBadge?: boolean;
   hideCoursesTabDescription?: boolean;
 }
 
@@ -17,12 +18,14 @@ export default function OnlineTimetable({
   nested = false,
   isLastInGroup = false,
   hideHeader = false,
+  hideBadge = false,
   hideCoursesTabDescription = false,
 }: OnlineTimetableProps) {
   return (
     <CourseTimetable
       data={onlineTimetableData}
       hideHeader={hideHeader}
+      hideBadge={hideBadge}
       hideCoursesTabDescription={hideCoursesTabDescription}
       nested={nested}
       isLastInGroup={isLastInGroup}

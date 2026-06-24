@@ -19,6 +19,7 @@ export const summerTimetableData: CourseTimetableData = {
     ' tab. We offer both in-person and online options for courses in this timetable.',
   sectionClassName: 'bg-[#FBF9F4]',
   cardVariant: 'white',
+  rowMinHeightScale: 1.1,
   scheduleRows: [
     {
       time: '9:00 AM\n-\n10:30 AM',
