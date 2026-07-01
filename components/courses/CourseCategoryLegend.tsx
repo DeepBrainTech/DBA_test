@@ -5,6 +5,7 @@
 
 'use client';
 
+import type { ReactNode } from 'react';
 import {
   ALL_FILTER_CONFIG,
   CONTEST_FILTER_CONFIG,
@@ -28,7 +29,16 @@ type InformationLegendProps = {
 
 type CourseCategoryLegendProps = (TimetableLegendProps | InformationLegendProps) & {
   showContestFilter?: boolean;
+  trailing?: ReactNode;
 };
+
+/** 课表图例 pill 外壳（与搜索框共用） */
+export const LEGEND_CHIP_SHELL_CLASS =
+  'inline-flex items-center rounded-full border border-[#7C8B99] bg-transparent px-4 py-2';
+
+/** 课表图例 pill 文案（与搜索框共用） */
+export const LEGEND_CHIP_TEXT_CLASS =
+  'font-outfit text-lg leading-none font-normal md:text-[22px]';
 
 export function NeutralLegendButton({
   label,
@@ -50,7 +60,7 @@ export function NeutralLegendButton({
       disabled={disabled}
       aria-pressed={isActive}
       className={`
-        inline-flex items-center rounded-full px-4 py-2 transition-all duration-200
+        ${LEGEND_CHIP_SHELL_CLASS} transition-all duration-200
         disabled:cursor-not-allowed disabled:opacity-40
         ${isActive
           ? 'border-2 font-bold text-[#2C3E50]'
@@ -66,13 +76,15 @@ export function NeutralLegendButton({
           : undefined
       }
     >
-      <span className="font-outfit text-lg md:text-[22px] leading-none">{label}</span>
+      <span className={`${LEGEND_CHIP_TEXT_CLASS} ${isActive ? 'text-[#2C3E50]' : 'text-[#7C8B99]'}`}>
+        {label}
+      </span>
     </button>
   );
 }
 
 export default function CourseCategoryLegend(props: CourseCategoryLegendProps) {
-  const { showContestFilter = true } = props;
+  const { showContestFilter = true, trailing } = props;
 
   const handleCategoryClick = (category: CourseLegendFilter) => {
     if (props.includeAll) {
@@ -113,7 +125,7 @@ export default function CourseCategoryLegend(props: CourseCategoryLegendProps) {
             onClick={() => handleCategoryClick(category)}
             aria-pressed={isActive}
             className={`
-              inline-flex items-center gap-2.5 rounded-full px-4 py-2 transition-all duration-200
+              ${LEGEND_CHIP_SHELL_CLASS} gap-2.5 transition-all duration-200
               ${isActive
                 ? 'border-2 font-bold text-[#2C3E50]'
                 : 'border border-[#7C8B99] bg-transparent font-normal text-[#7C8B99] hover:border-[#7C8B99]/80 hover:bg-slate-50/60'}
@@ -133,7 +145,7 @@ export default function CourseCategoryLegend(props: CourseCategoryLegendProps) {
               style={{ backgroundColor: config.dotColor }}
               aria-hidden
             />
-            <span className="font-outfit text-lg md:text-[22px] leading-none">
+            <span className={`${LEGEND_CHIP_TEXT_CLASS} ${isActive ? 'text-[#2C3E50]' : 'text-[#7C8B99]'}`}>
               {config.label}
             </span>
           </button>
@@ -148,6 +160,8 @@ export default function CourseCategoryLegend(props: CourseCategoryLegendProps) {
           activeStyle={CONTEST_FILTER_CONFIG}
         />
       )}
+
+      {trailing}
     </div>
   );
 }

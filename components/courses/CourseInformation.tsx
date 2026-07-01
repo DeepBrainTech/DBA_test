@@ -10,6 +10,7 @@ import CourseCategoryLegend, {
   NeutralLegendButton,
 } from '@/components/courses/CourseCategoryLegend';
 import CourseInfoCard from '@/components/courses/CourseInfoCard';
+import CourseTimetableSearch from '@/components/courses/CourseTimetableSearch';
 import FilterTapHint from '@/components/courses/FilterTapHint';
 import {
   CONTEST_FILTER_CONFIG,
@@ -17,6 +18,7 @@ import {
   getCourseCardId,
   type CourseInformationFilter,
 } from '@/lib/courseCategories';
+import { matchesCourseTitleSearch } from '@/lib/timetableSearch';
 import type { CourseInformationData } from '@/types/courses';
 
 type ExpandState =
@@ -36,6 +38,7 @@ function isCardExpanded(id: string, expandState: ExpandState): boolean {
 
 export default function CourseInformation({ data }: CourseInformationProps) {
   const [activeFilter, setActiveFilter] = useState<CourseInformationFilter>('All');
+  const [searchQuery, setSearchQuery] = useState('');
   const [expandState, setExpandState] = useState<ExpandState>({ mode: 'all-collapsed' });
   const [panelHeight, setPanelHeight] = useState<number | null>(null);
 
@@ -44,8 +47,13 @@ export default function CourseInformation({ data }: CourseInformationProps) {
   const gridRef = useRef<HTMLDivElement>(null);
 
   const displayedCourses = useMemo(
-    () => data.courses.filter((course) => courseMatchesInformationFilter(course, activeFilter)),
-    [data.courses, activeFilter],
+    () =>
+      data.courses.filter(
+        (course) =>
+          courseMatchesInformationFilter(course, activeFilter) &&
+          matchesCourseTitleSearch(course.name, searchQuery),
+      ),
+    [data.courses, activeFilter, searchQuery],
   );
 
   const displayedIds = useMemo(
@@ -137,6 +145,9 @@ export default function CourseInformation({ data }: CourseInformationProps) {
                 includeAll
                 activeFilter={activeFilter}
                 onFilterChange={setActiveFilter}
+                trailing={
+                  <CourseTimetableSearch value={searchQuery} onChange={setSearchQuery} />
+                }
               />
               <NeutralLegendButton
                 label={allDisplayedExpanded ? 'Collapse All' : 'Expand All'}
