@@ -9,12 +9,14 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
 import CourseCategoryLegend from '@/components/courses/CourseCategoryLegend';
+import CourseTimetableSearch from '@/components/courses/CourseTimetableSearch';
 import FilterTapHint from '@/components/courses/FilterTapHint';
 import {
   COURSE_CATEGORY_CONFIG,
   isContestCourse,
   type CourseInformationFilter,
 } from '@/lib/courseCategories';
+import { matchesTimetableCourseSearch } from '@/lib/timetableSearch';
 import type { CourseTimetableData, TimetableCategory } from '@/types/courses';
 
 const DAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'] as const;
@@ -48,6 +50,7 @@ export default function CourseTimetable({
   isLastInGroup = false,
 }: CourseTimetableProps) {
   const [activeFilter, setActiveFilter] = useState<CourseInformationFilter>('All');
+  const [searchQuery, setSearchQuery] = useState('');
   const isScheduleVariant = Boolean(data.badge);
   const sectionBg = nested ? 'bg-transparent' : (data.sectionClassName ?? 'bg-[#FBF9F4]');
   const outerPadding = nested ? (isLastInGroup ? 'pb-16' : 'pb-6') : 'pb-16';
@@ -57,11 +60,24 @@ export default function CourseTimetable({
 
   const filterCourses = (courses: { name: string; cat: TimetableCategory }[] | undefined) => {
     if (!courses) return [];
-    if (activeFilter === 'All') return courses;
-    if (activeFilter === 'Contest') {
-      return courses.filter((course) => isContestCourse(course.name));
+
+    let filtered = courses;
+
+    if (activeFilter !== 'All') {
+      if (activeFilter === 'Contest') {
+        filtered = filtered.filter((course) => isContestCourse(course.name));
+      } else {
+        filtered = filtered.filter((course) => course.cat === activeFilter);
+      }
     }
-    return courses.filter((course) => course.cat === activeFilter);
+
+    if (searchQuery.trim().length > 0) {
+      filtered = filtered.filter((course) =>
+        matchesTimetableCourseSearch(course.name, searchQuery),
+      );
+    }
+
+    return filtered;
   };
 
   return (
@@ -153,6 +169,9 @@ export default function CourseTimetable({
               includeAll
               activeFilter={activeFilter}
               onFilterChange={setActiveFilter}
+              trailing={
+                <CourseTimetableSearch value={searchQuery} onChange={setSearchQuery} />
+              }
             />
           </div>
 
