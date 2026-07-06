@@ -221,6 +221,8 @@ export default function CourseTimetable({
                           const lines = course.name.split('\n');
                           const useTitleMetaLayout =
                             data.courseNameLayout === 'title-meta' && lines.length > 1;
+                          const titleLines = useTitleMetaLayout ? lines.slice(0, -1) : lines;
+                          const metaLine = useTitleMetaLayout ? lines[lines.length - 1] : null;
 
                           return (
                             <div key={cIdx} className="flex items-start gap-1.5">
@@ -231,17 +233,19 @@ export default function CourseTimetable({
                               />
                               {useTitleMetaLayout ? (
                                 <span className="flex flex-col gap-0.5">
-                                  <span className="font-outfit text-sm font-medium leading-4 text-slate-700">
-                                    {lines[0]}
-                                  </span>
-                                  {lines.slice(1).map((line, lineIdx) => (
+                                  {titleLines.map((line, lineIdx) => (
                                     <span
                                       key={lineIdx}
-                                      className="font-outfit text-xs font-light leading-4 text-slate-700"
+                                      className="font-outfit text-sm font-medium leading-4 text-slate-700"
                                     >
                                       {line}
                                     </span>
                                   ))}
+                                  {metaLine && (
+                                    <span className="font-outfit text-xs font-light leading-4 text-slate-700">
+                                      {metaLine}
+                                    </span>
+                                  )}
                                 </span>
                               ) : (
                                 <span

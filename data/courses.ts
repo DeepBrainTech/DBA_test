@@ -593,24 +593,6 @@ export const coursesPageData: CoursesPageData = {
   },
   {
     cat: 'AI',
-    name: 'AI Beginner Project',
-    desc: [
-      'Apply beginner AI concepts through hands-on projects.',
-      'Practice prompt design, testing, and presentation skills.',
-      'Build a completed AI vibe-coding project that students can explain and showcase.',
-    ],
-  },
-  {
-    cat: 'AI',
-    name: 'AI Intermediate Project',
-    desc: [
-      'Create a more advanced AI project using structured design, testing, and refinement.',
-      'Strengthen skills in AI agent building, model evaluation, and practical application.',
-      'Produce a AI agent application suitable for portfolios, presentations, or further study.',
-    ],
-  },
-  {
-    cat: 'AI',
     name: 'Coding',
     desc: [
       'Builds core programming skills through hands-on projects and coding challenges.',
@@ -635,7 +617,7 @@ export const coursesPageData: CoursesPageData = {
       },
       {
         enrollmentOption: 'AoPS Geometry',
-        tuitions: ['$1360 (Dr. Cao)', '$980 (Ms. Averboukh)'],
+        tuitions: ['$980'],
       },
       {
         enrollmentOption: 'Mental Math',
@@ -650,6 +632,10 @@ export const coursesPageData: CoursesPageData = {
         tuitions: ['$1360'],
       },
       {
+        enrollmentOption: 'AMC 12 (Online)',
+        tuitions: ['$999'],
+      },
+      {
         enrollmentOption: 'SAT Math',
         tuitions: ['$980'],
       },
@@ -658,8 +644,52 @@ export const coursesPageData: CoursesPageData = {
         tuitions: ['$980'],
       },
       {
+        enrollmentOption: 'PSAT Math, GRE Math, ACT Math (Online)',
+        tuitions: ['$799'],
+      },
+      {
+        enrollmentOption: 'GMAT Math (Online)',
+        tuitions: ['$899'],
+      },
+      {
         enrollmentOption: 'Precalculus, Calculus AB, Calculus BC, Multivariable Calculus',
         tuitions: ['$1360'],
+      },
+      {
+        enrollmentOption: 'Calculus (Online, 16 sessions)',
+        tuitions: ['$799'],
+      },
+      {
+        enrollmentOption: 'Advanced Calculus (Online)',
+        tuitions: ['$899'],
+      },
+      {
+        enrollmentOption: 'Integral Calculus (Online)',
+        tuitions: ['$799'],
+      },
+      {
+        enrollmentOption: 'Trigonometry (Online)',
+        tuitions: ['$799'],
+      },
+      {
+        enrollmentOption: 'Competition Math (Online)',
+        tuitions: ['$899'],
+      },
+      {
+        enrollmentOption: 'Differential Equations (Online)',
+        tuitions: ['$799'],
+      },
+      {
+        enrollmentOption: 'Real Analysis (Online)',
+        tuitions: ['$999'],
+      },
+      {
+        enrollmentOption: 'Number Theory (Online)',
+        tuitions: ['$799'],
+      },
+      {
+        enrollmentOption: 'Geometry (Online)',
+        tuitions: ['$899'],
       },
       {
         enrollmentOption: 'Linear Algebra',
@@ -668,6 +698,10 @@ export const coursesPageData: CoursesPageData = {
       {
         enrollmentOption: 'Algebra 1, Algebra 2',
         tuitions: ['$880'],
+      },
+      {
+        enrollmentOption: 'College Algebra (Online)',
+        tuitions: ['$899'],
       },
       {
         enrollmentOption: 'SparkEdu Math',
