@@ -67,26 +67,26 @@ export const summerTimetableData: CourseTimetableData = {
       days: {
         Mon: [
           { name: 'BCA Math', cat: 'Math' },
-          { name: 'AoPS Introduction\nto Algebra', cat: 'Math' },
-          { name: 'SAT Reading &\nWriting', cat: 'Language' },
+          { name: 'AoPS Introduction to Algebra', cat: 'Math' },
+          { name: 'SAT Reading & Writing', cat: 'Language' },
           { name: 'Chess Advanced', cat: 'Chess' },
         ],
         Tue: [
           { name: 'AP Physics 2', cat: 'Physics' },
-          { name: 'AoPS\nIntermediate\nAlgebra', cat: 'Math' },
+          { name: 'AoPS Intermediate Algebra', cat: 'Math' },
           { name: 'PSAT English', cat: 'Language' },
           { name: 'Chess Advanced', cat: 'Chess' },
         ],
         Wed: [
           { name: 'Calculus BC', cat: 'Math' },
-          { name: 'AoPS Prealgebra', cat: 'Math' },
+          { name: 'AoPS PreAlgebra', cat: 'Math' },
           { name: 'ISEE Math', cat: 'Math' },
           { name: 'Chess Advanced', cat: 'Chess' },
         ],
         Thu: [
           { name: 'BCA Math', cat: 'Math' },
           { name: 'Algebra 1', cat: 'Math' },
-          { name: 'SAT Reading &\nWriting', cat: 'Language' },
+          { name: 'SAT Reading & Writing', cat: 'Language' },
           { name: 'Chess Advanced', cat: 'Chess' },
         ],
         Fri: [
@@ -98,7 +98,7 @@ export const summerTimetableData: CourseTimetableData = {
         Sat: [
           { name: 'Calculus BC', cat: 'Math' },
           { name: 'ISEE Math', cat: 'Math' },
-          { name: 'AoPS Prealgebra', cat: 'Math' },
+          { name: 'AoPS PreAlgebra', cat: 'Math' },
         ],
         Sun: [{ name: 'Calculus BC', cat: 'Math' }],
       },
@@ -114,10 +114,10 @@ export const summerTimetableData: CourseTimetableData = {
         ],
         Tue: [
           { name: 'AP Physics C', cat: 'Physics' },
-          { name: 'SAT Reading &\nWriting', cat: 'Language' },
+          { name: 'SAT Reading & Writing', cat: 'Language' },
           { name: 'Chinese', cat: 'Language' },
           { name: 'AI Beginner', cat: 'AI' },
-          { name: 'Fog of War Chess\n& AI Thinking', cat: 'Chess' },
+          { name: 'Fog of War Chess & AI Thinking', cat: 'Chess' },
         ],
         Wed: [
           { name: 'F=MA Physics Contest*', cat: 'Physics' },
@@ -132,9 +132,9 @@ export const summerTimetableData: CourseTimetableData = {
         ],
         Fri: [
           { name: 'AP Physics C', cat: 'Physics' },
-          { name: 'SAT Reading &\nWriting', cat: 'Language' },
+          { name: 'SAT Reading & Writing', cat: 'Language' },
           { name: 'Chinese', cat: 'Language' },
-          { name: 'Fog of War Chess\n& AI Thinking', cat: 'Chess' },
+          { name: 'Fog of War Chess & AI Thinking', cat: 'Chess' },
         ],
         Sat: [
           { name: 'F=MA Physics Contest*', cat: 'Physics' },
@@ -157,7 +157,7 @@ export const summerTimetableData: CourseTimetableData = {
         ],
         Tue: [
           { name: 'Algebra 2', cat: 'Math' },
-          { name: 'AI Beginner\nProject', cat: 'AI' },
+          { name: 'AI Beginner', cat: 'AI' },
           { name: 'Go Beginner', cat: 'Chess' },
         ],
         Wed: [
@@ -167,7 +167,7 @@ export const summerTimetableData: CourseTimetableData = {
         Thu: [
           { name: 'BCA Math', cat: 'Math' },
           { name: 'Chinese', cat: 'Language' },
-          { name: 'AI Intermediate\nProject', cat: 'AI' },
+          { name: 'AI Intermediate', cat: 'AI' },
         ],
         Fri: [
           { name: 'Algebra 2', cat: 'Math' },
@@ -184,22 +184,22 @@ export const summerTimetableData: CourseTimetableData = {
       time: '4:30 PM\n-\n6:00 PM',
       days: {
         Mon: [
-          { name: 'AoPS Prealgebra', cat: 'Math' },
+          { name: 'AoPS PreAlgebra', cat: 'Math' },
           { name: 'AMC 10\n(5:00 - 6:30 PM)', cat: 'Math' },
         ],
         Tue: [
-          { name: 'AoPS Introduction\nto Algebra', cat: 'Math' },
+          { name: 'AoPS Introduction to Algebra', cat: 'Math' },
           { name: 'SparkEdu Math', cat: 'Math' },
           { name: 'AMC 8\n(5:00 - 6:30 PM)', cat: 'Math' },
         ],
         Wed: [{ name: 'Calculus AB', cat: 'Math' }],
         Thu: [
-          { name: 'AoPS Prealgebra', cat: 'Math' },
+          { name: 'AoPS PreAlgebra', cat: 'Math' },
           { name: 'SparkEdu Math', cat: 'Math' },
           { name: 'AMC 10\n(5:00 - 6:30 PM)', cat: 'Math' },
         ],
         Fri: [
-          { name: 'AoPS Introduction\nto Algebra', cat: 'Math' },
+          { name: 'AoPS Introduction to Algebra', cat: 'Math' },
           { name: 'AMC 8\n(5:00 - 6:30 PM)', cat: 'Math' },
         ],
         Sat: [{ name: 'Calculus AB', cat: 'Math' }],
@@ -210,12 +210,12 @@ export const summerTimetableData: CourseTimetableData = {
       time: '6:15 PM\n-\n7:45 PM',
       days: {
         Mon: [{ name: 'AoPS Geometry', cat: 'Math' }],
-        Tue: [{ name: 'Multivariable\nCalculus', cat: 'Math' }],
+        Tue: [{ name: 'Multivariable Calculus', cat: 'Math' }],
         Wed: [{ name: 'SAT Math', cat: 'Math' }],
         Thu: [{ name: 'AoPS Geometry', cat: 'Math' }],
-        Fri: [{ name: 'Multivariable\nCalculus', cat: 'Math' }],
+        Fri: [{ name: 'Multivariable Calculus', cat: 'Math' }],
         Sat: [{ name: 'Linear Algebra', cat: 'Math' }],
-        Sun: [{ name: 'Multivariable\nCalculus', cat: 'Math' }],
+        Sun: [{ name: 'Multivariable Calculus', cat: 'Math' }],
       },
     },
   ],
