@@ -67,19 +67,19 @@ export const summerTimetableData: CourseTimetableData = {
       days: {
         Mon: [
           { name: 'BCA Math', cat: 'Math' },
-          { name: 'AoPS Introduction to Algebra', cat: 'Math' },
+          { name: 'Algebra 1', cat: 'Math' },
           { name: 'SAT Reading & Writing', cat: 'Language' },
           { name: 'Chess Advanced', cat: 'Chess' },
         ],
         Tue: [
           { name: 'AP Physics 2', cat: 'Physics' },
-          { name: 'AoPS Intermediate Algebra', cat: 'Math' },
+          { name: 'AoPS Geometry', cat: 'Math' },
           { name: 'PSAT English', cat: 'Language' },
           { name: 'Chess Advanced', cat: 'Chess' },
         ],
         Wed: [
           { name: 'Calculus BC', cat: 'Math' },
-          { name: 'AoPS PreAlgebra', cat: 'Math' },
+          { name: 'AoPS Prealgebra', cat: 'Math' },
           { name: 'ISEE Math', cat: 'Math' },
           { name: 'Chess Advanced', cat: 'Chess' },
         ],
@@ -91,14 +91,14 @@ export const summerTimetableData: CourseTimetableData = {
         ],
         Fri: [
           { name: 'AP Physics 2', cat: 'Physics' },
-          { name: 'Algebra 2', cat: 'Math' },
+          { name: 'AoPS Geometry', cat: 'Math' },
           { name: 'PSAT English', cat: 'Language' },
           { name: 'Chess Advanced', cat: 'Chess' },
         ],
         Sat: [
           { name: 'Calculus BC', cat: 'Math' },
           { name: 'ISEE Math', cat: 'Math' },
-          { name: 'AoPS PreAlgebra', cat: 'Math' },
+          { name: 'AoPS Prealgebra', cat: 'Math' },
         ],
         Sun: [{ name: 'Calculus BC', cat: 'Math' }],
       },
@@ -184,7 +184,7 @@ export const summerTimetableData: CourseTimetableData = {
       time: '4:30 PM\n-\n6:00 PM',
       days: {
         Mon: [
-          { name: 'AoPS PreAlgebra', cat: 'Math' },
+          { name: 'AoPS Prealgebra', cat: 'Math' },
           { name: 'AMC 10\n(5:00 - 6:30 PM)', cat: 'Math' },
         ],
         Tue: [
@@ -194,7 +194,7 @@ export const summerTimetableData: CourseTimetableData = {
         ],
         Wed: [{ name: 'Calculus AB', cat: 'Math' }],
         Thu: [
-          { name: 'AoPS PreAlgebra', cat: 'Math' },
+          { name: 'AoPS Prealgebra', cat: 'Math' },
           { name: 'SparkEdu Math', cat: 'Math' },
           { name: 'AMC 10\n(5:00 - 6:30 PM)', cat: 'Math' },
         ],
@@ -209,10 +209,10 @@ export const summerTimetableData: CourseTimetableData = {
     {
       time: '6:15 PM\n-\n7:45 PM',
       days: {
-        Mon: [{ name: 'AoPS Geometry', cat: 'Math' }],
+        Mon: [],
         Tue: [{ name: 'Multivariable Calculus', cat: 'Math' }],
         Wed: [{ name: 'SAT Math', cat: 'Math' }],
-        Thu: [{ name: 'AoPS Geometry', cat: 'Math' }],
+        Thu: [],
         Fri: [{ name: 'Multivariable Calculus', cat: 'Math' }],
         Sat: [{ name: 'Linear Algebra', cat: 'Math' }],
         Sun: [{ name: 'Multivariable Calculus', cat: 'Math' }],

@@ -617,7 +617,7 @@ export const coursesPageData: CoursesPageData = {
       },
       {
         enrollmentOption: 'AoPS Geometry',
-        tuitions: ['$1360 (Dr. Cao)', '$980 (Ms. Averboukh)'],
+        tuitions: ['$980'],
       },
       {
         enrollmentOption: 'Mental Math',
