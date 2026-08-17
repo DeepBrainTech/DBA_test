@@ -641,7 +641,7 @@ export const coursesPageData: CoursesPageData = {
       },
       {
         enrollmentOption: 'BCA Math',
-        tuitions: ['$980'],
+        tuitions: ['$1500'],
       },
       {
         enrollmentOption: 'PSAT Math, GRE Math, ACT Math (Online)',
