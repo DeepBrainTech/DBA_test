@@ -27,51 +27,59 @@ export const coursesPageData: CoursesPageData = {
     programs: [
       {
         index: 1,
-        title: 'Physics',
+        title: 'Science',
         description:
-          'A clear pathway from middle school foundations to AP Physics, Physics Bowl, and F=MA contest.',
+          'Build a strong foundation in scientific concepts, reasoning, and real-world applications.',
         icon: '/courses/icon/physics.svg',
-        tags: ['AP', 'Physics Bowl', 'F=MA'],
+        tags: ['Physics', 'Biology', 'Chemistry'],
       },
       {
         index: 2,
         title: 'Mathematics',
         description:
-          'From elementary fluency to AoPS, AP Calculus, AMC, SAT Math, and BCA preparation.',
+          'Develop mathematical thinking, problem-solving skills, and confidence across different levels of study.',
         icon: '/courses/icon/mathematics.svg',
-        tags: ['AoPS', 'AP', 'AMC', 'SAT', 'BCA'],
+        tags: ['AoPS', 'Spark Math', 'BCA'],
       },
       {
         index: 3,
-        title: 'Chinese',
+        title: 'Language',
         description:
-          'Language learning through conversation, culture, reading, writing, and confidence-building practice.',
+          'Strengthen reading, writing, communication, and overall language proficiency.',
         icon: '/courses/icon/chinese.svg',
-        tags: ['Speaking', 'Literacy'],
+        tags: ['Chinese', 'ELO'],
       },
       {
         index: 4,
-        title: 'English Literacy',
+        title: 'Chess',
         description:
-          'Digital SAT Reading & Writing and BCA admissions writing with diagnostics and feedback.',
-        icon: '/courses/icon/english.svg',
-        tags: ['SAT', 'BCA', 'Reading', 'Writing'],
+          'Improve strategic thinking, planning, concentration, and decision-making skills.',
+        icon: '/courses/icon/chess.svg',
+        tags: ['Chess'],
       },
       {
         index: 5,
-        title: 'Chess & Go Strategy',
+        title: 'Programming & AI',
         description:
-          'Level-based strategy training aligned with ICA-style progression from beginner to elite.',
-        icon: '/courses/icon/chess.svg',
-        tags: ['Chess', 'Go', 'AI', 'Fog of War'],
+          'Develop coding, computational thinking, and practical skills with emerging technologies.',
+        icon: '/courses/icon/ai.svg',
+        tags: ['Python', 'AI'],
       },
       {
         index: 6,
-        title: 'AI Learning',
+        title: 'Contest Preparation',
         description:
-          'Students learn to use AI wisely, build projects, and design agent-style workflows.',
-        icon: '/courses/icon/ai.svg',
-        tags: ['AI Agents', 'Projects'],
+          'Strengthen problem-solving, analytical thinking, and competition strategies for academic contests.',
+        icon: '/courses/icon/mathematics.svg',
+        tags: ['AMC', 'F=MA', 'Math Kangaroo'],
+      },
+      {
+        index: 7,
+        title: 'Standardized Test Preparation',
+        description:
+          'Build subject knowledge, test-taking strategies, and confidence for standardized exams.',
+        icon: '/courses/icon/english.svg',
+        tags: ['AP', 'PSAT'],
       },
     ],
   },
@@ -336,8 +344,7 @@ export const coursesPageData: CoursesPageData = {
       { label: 'Previous DBA students', discount: '10% Off' },
       { label: 'Sibling discount', discount: '10% Off' },
       {
-        label:
-          'If student choose an onsite course and would like to do it online, then there will be a 15% off discount',
+        label: 'Switch from Onsite to Online',
         discount: '15% Off',
       },
       {

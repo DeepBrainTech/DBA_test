@@ -140,7 +140,7 @@ export const fallTimetableData: CourseTimetableData = {
           { name: 'AMC 8 Advanced*', cat: 'Math', tags: ['Contest'] },
           { name: 'Spark Math P3', cat: 'Math', format: 'InPersonOnly' },
         ],
-        Fri: [{ name: 'Math Kangaroo G1–G2*', cat: 'Math', tags: ['Contest'] }],
+        Fri: [{ name: 'Math Kangaroo*', cat: 'Math', tags: ['Contest'] }],
         Sat: [],
         Sun: [{ name: 'AP Calculus AB/BC', cat: 'Math', tags: ['StandardTest'] }],
       },
