@@ -145,6 +145,8 @@ export default function CourseInformation({ data }: CourseInformationProps) {
                 includeAll
                 activeFilter={activeFilter}
                 onFilterChange={setActiveFilter}
+                showContestFilter={false}
+                showStandardTestFilter={false}
                 trailing={
                   <CourseTimetableSearch value={searchQuery} onChange={setSearchQuery} />
                 }

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * 文件用途：导航栏组件（可在多个页面复用）
  * 依赖关系：依赖 Next.js Link 和 Image 组件
  * 注意事项：需要根据当前路由高亮激活的链接；使用透明背景便于首屏大图延伸至顶部；导航在文档流顶部不固定，随页面滚动，仅滚回顶部时可见
@@ -14,9 +14,10 @@ import { usePathname } from 'next/navigation';
 
 /**
  * Programs 下拉菜单项
+ * hidden: 秋季暂时隐藏入口，页面路由与代码保留以便复用
  */
 const programsLinks = [
-  { href: '/innovation_program', label: 'Innovation Program' },
+  { href: '/innovation_program', label: 'Innovation Program', hidden: true },
   { href: '/math', label: 'Math' },
   { href: '/programming', label: 'Programming' },
   { href: '/braingames', label: 'Brain Games' },
@@ -25,16 +26,20 @@ const programsLinks = [
 
 /**
  * 顶级导航链接（Programs 单独处理为下拉）
+ * hidden: 秋季暂时隐藏入口，页面路由与代码保留以便复用
  */
 const navLinks = [
   { href: '/', label: 'Home' },
-  { href: '/summer_camp', label: 'Summer Camp' },
+  { href: '/summer_camp', label: 'Summer Camp', hidden: true },
   { href: '/courses', label: 'Courses' },
-  { href: '/schedule', label: 'Schedule' },
+  { href: '/schedule', label: 'Schedule', hidden: true },
   { href: '/college_counseling', label: 'College Counseling' },
   { href: '/tutoring', label: 'Tutoring' },
   { href: '/about', label: 'About Us' },
 ];
+
+const visibleProgramsLinks = programsLinks.filter((link) => !link.hidden);
+const visibleNavLinks = navLinks.filter((link) => !link.hidden);
 
 /** Innovation Program 与 Courses 相邻，预加载封面避免切换时图片闪烁 */
 const ADJACENT_HERO_COVERS = [
@@ -53,7 +58,7 @@ export default function Navigation({ className = '' }: { className?: string }) {
   const [isMobileProgramsOpen, setIsMobileProgramsOpen] = useState(false);
   const programsRef = useRef<HTMLDivElement>(null);
 
-  const isProgramsActive = programsLinks.some((link) => pathname === link.href);
+  const isProgramsActive = visibleProgramsLinks.some((link) => pathname === link.href);
 
   // 在 Innovation Program / Courses 间切换时预加载双方封面图
   useEffect(() => {
@@ -153,7 +158,7 @@ export default function Navigation({ className = '' }: { className?: string }) {
 
               {isProgramsOpen && (
                 <div className="absolute left-0 top-full mt-3 z-50 p-6 bg-white/80 rounded-2xl shadow-[0px_0px_20px_0px_rgba(0,0,0,0.10)] outline outline-1 outline-offset-[-1px] outline-slate-400/50 inline-flex flex-col justify-center items-start gap-5">
-                  {programsLinks.map((link) => {
+                  {visibleProgramsLinks.map((link) => {
                     const isActive = pathname === link.href;
                     return (
                       <Link
@@ -172,7 +177,7 @@ export default function Navigation({ className = '' }: { className?: string }) {
               )}
             </div>
 
-            {navLinks.slice(1).map((link) => {
+            {visibleNavLinks.slice(1).map((link) => {
               const isActive = pathname === link.href;
               return (
                 <Link
@@ -270,7 +275,7 @@ export default function Navigation({ className = '' }: { className?: string }) {
             </button>
             {isMobileProgramsOpen && (
               <div className="bg-gray-50 py-2">
-                {programsLinks.map((link) => {
+                {visibleProgramsLinks.map((link) => {
                   const isActive = pathname === link.href;
                   return (
                     <Link
@@ -291,7 +296,7 @@ export default function Navigation({ className = '' }: { className?: string }) {
             )}
           </div>
 
-          {navLinks.slice(1).map((link) => {
+          {visibleNavLinks.slice(1).map((link) => {
             const isActive = pathname === link.href;
             return (
               <Link

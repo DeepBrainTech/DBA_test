@@ -69,7 +69,7 @@ export default function Hero({ data }: HeroProps) {
             </div>
           </div>
           <div className="mt-4 sm:mt-6 text-center font-outfit text-base sm:text-lg lg:text-xl font-medium capitalize leading-relaxed lg:leading-10 text-white [text-shadow:_0px_2px_4px_rgb(0_0_0_/_0.20)]">
-            Join us this summer
+            {data.ctaText ?? 'Join us this fall'}
           </div>
         </div>
         <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 flex translate-y-1/2 justify-center">
