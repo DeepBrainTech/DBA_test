@@ -1,4 +1,4 @@
-﻿/**
+/**
  * 文件用途：页脚组件（可在多个页面复用）
  * 依赖关系：依赖 Next.js Link 和 Image 组件
  * 注意事项：包含公司信息、链接和版权声明
@@ -105,10 +105,11 @@ export default function Footer({ className = '' }: { className?: string }) {
             <h4 className="text-lg md:text-xl font-semibold mb-4 md:mb-5">Navigation</h4>
             <div className="space-y-2 md:space-y-3">
               <Link href="/" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Home</Link>
-              <Link href="/innovation_program" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Innovation Program</Link>
-              <Link href="/summer_camp" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Summer Camp</Link>
+              {/* 秋季暂时隐藏：Innovation Program / Summer Camp / Schedule，页面代码保留 */}
+              {/* <Link href="/innovation_program" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Innovation Program</Link> */}
+              {/* <Link href="/summer_camp" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Summer Camp</Link> */}
               <Link href="/courses" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Courses</Link>
-              <Link href="/schedule" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Schedule</Link>
+              {/* <Link href="/schedule" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Schedule</Link> */}
               <Link href="/college_counseling" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">College Counseling</Link>
               <Link href="/math" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Math</Link>
               <Link href="/braingames" className="block text-sm md:text-base text-[#A8B5C3] hover:text-white transition">Brain Games</Link>

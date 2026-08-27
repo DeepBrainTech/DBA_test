@@ -25,31 +25,31 @@ export const summerTimetableData: CourseTimetableData = {
       time: '9:00 AM\n-\n10:30 AM',
       days: {
         Mon: [
-          { name: 'Physics Foundation', cat: 'Physics' },
+          { name: 'Physics Foundation', cat: 'Science' },
           { name: 'AoPS Prealgebra', cat: 'Math' },
           { name: 'BCA Writing', cat: 'Language' },
           { name: 'Chess Beginner', cat: 'Chess' },
         ],
         Tue: [
-          { name: 'AP Physics 1', cat: 'Physics' },
+          { name: 'AP Physics 1', cat: 'Science' },
           { name: 'AoPS Geometry', cat: 'Math' },
           { name: 'BCA Writing', cat: 'Language' },
           { name: 'Chess Beginner', cat: 'Chess' },
         ],
         Wed: [
-          { name: 'Physics Bowl*', cat: 'Physics' },
+          { name: 'Physics Bowl*', cat: 'Science' },
           { name: 'Upper Elementary Math', cat: 'Math' },
           { name: 'ISEE English', cat: 'Language' },
           { name: 'Chess Beginner', cat: 'Chess' },
         ],
         Thu: [
-          { name: 'Physics Foundation', cat: 'Physics' },
+          { name: 'Physics Foundation', cat: 'Science' },
           { name: 'AoPS Prealgebra', cat: 'Math' },
           { name: 'BCA Writing', cat: 'Language' },
           { name: 'Chess Beginner', cat: 'Chess' },
         ],
         Fri: [
-          { name: 'AP Physics 1', cat: 'Physics' },
+          { name: 'AP Physics 1', cat: 'Science' },
           { name: 'AoPS Geometry', cat: 'Math' },
           { name: 'BCA Writing', cat: 'Language' },
           { name: 'Chess Beginner', cat: 'Chess' },
@@ -59,7 +59,7 @@ export const summerTimetableData: CourseTimetableData = {
           { name: 'Upper Elementary Math', cat: 'Math' },
           { name: 'ISEE English', cat: 'Language' },
         ],
-        Sun: [{ name: 'Physics Bowl*', cat: 'Physics' }],
+        Sun: [{ name: 'Physics Bowl*', cat: 'Science' }],
       },
     },
     {
@@ -72,7 +72,7 @@ export const summerTimetableData: CourseTimetableData = {
           { name: 'Chess Advanced', cat: 'Chess' },
         ],
         Tue: [
-          { name: 'AP Physics 2', cat: 'Physics' },
+          { name: 'AP Physics 2', cat: 'Science' },
           { name: 'AoPS Geometry', cat: 'Math' },
           { name: 'PSAT English', cat: 'Language' },
           { name: 'Chess Advanced', cat: 'Chess' },
@@ -90,7 +90,7 @@ export const summerTimetableData: CourseTimetableData = {
           { name: 'Chess Advanced', cat: 'Chess' },
         ],
         Fri: [
-          { name: 'AP Physics 2', cat: 'Physics' },
+          { name: 'AP Physics 2', cat: 'Science' },
           { name: 'AoPS Geometry', cat: 'Math' },
           { name: 'PSAT English', cat: 'Language' },
           { name: 'Chess Advanced', cat: 'Chess' },
@@ -113,14 +113,14 @@ export const summerTimetableData: CourseTimetableData = {
           { name: 'Precalculus', cat: 'Math' },
         ],
         Tue: [
-          { name: 'AP Physics C', cat: 'Physics' },
+          { name: 'AP Physics C', cat: 'Science' },
           { name: 'SAT Reading & Writing', cat: 'Language' },
           { name: 'Chinese', cat: 'Language' },
-          { name: 'AI Beginner', cat: 'AI' },
+          { name: 'AI Beginner', cat: 'ProgrammingAI' },
           { name: 'Fog of War Chess & AI Thinking', cat: 'Chess' },
         ],
         Wed: [
-          { name: 'F=MA Physics Contest*', cat: 'Physics' },
+          { name: 'F=MA Physics Contest*', cat: 'Science' },
           { name: 'Chinese', cat: 'Language' },
           { name: 'Spanish Beginner', cat: 'Language' },
         ],
@@ -128,16 +128,16 @@ export const summerTimetableData: CourseTimetableData = {
           { name: 'Precalculus', cat: 'Math' },
           { name: 'Chinese', cat: 'Language' },
           { name: 'BCA Writing', cat: 'Language' },
-          { name: 'AI Intermediate', cat: 'AI' },
+          { name: 'AI Intermediate', cat: 'ProgrammingAI' },
         ],
         Fri: [
-          { name: 'AP Physics C', cat: 'Physics' },
+          { name: 'AP Physics C', cat: 'Science' },
           { name: 'SAT Reading & Writing', cat: 'Language' },
           { name: 'Chinese', cat: 'Language' },
           { name: 'Fog of War Chess & AI Thinking', cat: 'Chess' },
         ],
         Sat: [
-          { name: 'F=MA Physics Contest*', cat: 'Physics' },
+          { name: 'F=MA Physics Contest*', cat: 'Science' },
           { name: 'SAT Math', cat: 'Math' },
           { name: 'Spanish Beginner', cat: 'Language' },
         ],
@@ -157,7 +157,7 @@ export const summerTimetableData: CourseTimetableData = {
         ],
         Tue: [
           { name: 'Algebra 2', cat: 'Math' },
-          { name: 'AI Beginner', cat: 'AI' },
+          { name: 'AI Beginner', cat: 'ProgrammingAI' },
           { name: 'Go Beginner', cat: 'Chess' },
         ],
         Wed: [
@@ -167,7 +167,7 @@ export const summerTimetableData: CourseTimetableData = {
         Thu: [
           { name: 'BCA Math', cat: 'Math' },
           { name: 'Chinese', cat: 'Language' },
-          { name: 'AI Intermediate', cat: 'AI' },
+          { name: 'AI Intermediate', cat: 'ProgrammingAI' },
         ],
         Fri: [
           { name: 'Algebra 2', cat: 'Math' },

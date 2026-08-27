@@ -1,6 +1,6 @@
-﻿/**
- * 文件用途：Courses / Schedule 页面课程时间表区块（含可交互科目图例筛选）
- * 依赖关系：依赖 types/courses、CourseCategoryLegend、lib/courseCategories
+/**
+ * 文件用途：Courses / Schedule 页面课程时间表区块（含三行筛选图例）
+ * 依赖关系：依赖 types/courses、TimetableFilterLegend、lib/courseCategories
  */
 
 'use client';
@@ -8,17 +8,17 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
-import CourseCategoryLegend from '@/components/courses/CourseCategoryLegend';
 import CourseTimetableSearch from '@/components/courses/CourseTimetableSearch';
 import FilterTapHint from '@/components/courses/FilterTapHint';
+import TimetableFilterLegend from '@/components/courses/TimetableFilterLegend';
 import {
   COURSE_CATEGORY_CONFIG,
-  isContestCourse,
-  type CourseInformationFilter,
+  DEFAULT_TIMETABLE_TRIPLE_FILTERS,
+  courseMatchesTimetableTripleFilters,
+  type TimetableTripleFilters,
 } from '@/lib/courseCategories';
 import { matchesTimetableCourseSearch } from '@/lib/timetableSearch';
-import type { CourseTimetableData, TimetableCategory } from '@/types/courses';
-
+import type { CourseTimetableData, TimetableCourse } from '@/types/courses';
 const DAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'] as const;
 const DAY_LABELS: Record<(typeof DAYS)[number], string> = {
   Mon: 'Monday',
@@ -49,7 +49,9 @@ export default function CourseTimetable({
   nested = false,
   isLastInGroup = false,
 }: CourseTimetableProps) {
-  const [activeFilter, setActiveFilter] = useState<CourseInformationFilter>('All');
+  const [filters, setFilters] = useState<TimetableTripleFilters>(
+    DEFAULT_TIMETABLE_TRIPLE_FILTERS,
+  );
   const [searchQuery, setSearchQuery] = useState('');
   const isScheduleVariant = Boolean(data.badge);
   const sectionBg = nested ? 'bg-transparent' : (data.sectionClassName ?? 'bg-[#FBF9F4]');
@@ -58,18 +60,12 @@ export default function CourseTimetable({
   const cardVariant = data.cardVariant ?? 'elevated';
   const rowMinHeight = Math.round(136 * (data.rowMinHeightScale ?? 1));
 
-  const filterCourses = (courses: { name: string; cat: TimetableCategory }[] | undefined) => {
+  const filterCourses = (courses: TimetableCourse[] | undefined) => {
     if (!courses) return [];
 
-    let filtered = courses;
-
-    if (activeFilter !== 'All') {
-      if (activeFilter === 'Contest') {
-        filtered = filtered.filter((course) => isContestCourse(course.name));
-      } else {
-        filtered = filtered.filter((course) => course.cat === activeFilter);
-      }
-    }
+    let filtered = courses.filter((course) =>
+      courseMatchesTimetableTripleFilters(course, filters),
+    );
 
     if (searchQuery.trim().length > 0) {
       filtered = filtered.filter((course) =>
@@ -163,12 +159,11 @@ export default function CourseTimetable({
             </h3>
           )}
 
-          <div className="mb-8 flex w-full flex-col items-center gap-2">
+          <div className="mb-8 flex w-full flex-col items-stretch gap-2 sm:items-center">
             <FilterTapHint />
-            <CourseCategoryLegend
-              includeAll
-              activeFilter={activeFilter}
-              onFilterChange={setActiveFilter}
+            <TimetableFilterLegend
+              filters={filters}
+              onChange={setFilters}
               trailing={
                 <CourseTimetableSearch value={searchQuery} onChange={setSearchQuery} />
               }
@@ -195,7 +190,7 @@ export default function CourseTimetable({
               {data.scheduleRows.map((row, idx) => (
                 <div
                   key={idx}
-                  className={`grid grid-cols-[110px_repeat(7,minmax(160px,1fr))] border-b border-[#E8F4FC] ${
+                  className={`grid grid-cols-[110px_repeat(7,minmax(160px,1fr))] border-b border-[#7C8B99]/35 ${
                     idx % 2 === 0 ? 'bg-white' : 'bg-slate-50/40'
                   }`}
                 >

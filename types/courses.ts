@@ -30,6 +30,9 @@ export interface CoursesHeroData {
 
   features: CoursesHeroFeature[];
 
+  /** 封面底部 CTA 文案，如 Join us this fall */
+  ctaText?: string;
+
 }
 
 
@@ -207,7 +210,7 @@ export interface CoursesBookFreeTrialData {
 
 /** 课程时间表分类 */
 
-export type TimetableCategory = 'Physics' | 'Math' | 'Chess' | 'Language' | 'AI';
+export type TimetableCategory = 'Science' | 'Math' | 'Chess' | 'Language' | 'ProgrammingAI';
 
 
 
@@ -218,6 +221,15 @@ export interface TimetableCourse {
   name: string;
 
   cat: TimetableCategory;
+
+  /** * Contest / * Standard Test 等特殊筛选标签 */
+  tags?: Array<'Contest' | 'StandardTest'>;
+
+  /**
+   * 上课形式：未设置时视为 Hybrid
+   * InPersonOnly / Online Only / Hybrid
+   */
+  format?: 'Hybrid' | 'InPersonOnly' | 'OnlineOnly';
 
 }
 
@@ -304,7 +316,7 @@ export interface CourseTimetableData {
 
 /** 课程信息分类 */
 
-export type CourseInfoCategory = 'All' | 'Physics' | 'Math' | 'Chess' | 'Languages' | 'AI';
+export type CourseInfoCategory = 'All' | 'Science' | 'Math' | 'Chess' | 'Language' | 'ProgrammingAI';
 
 
 
@@ -317,6 +329,9 @@ export interface CourseInfoItem {
   name: string;
 
   desc: string[];
+
+  /** * Contest / * Standard Test 等特殊筛选标签 */
+  tags?: Array<'Contest' | 'StandardTest'>;
 
 }
 
@@ -331,18 +346,6 @@ export interface CourseInformationData {
   categories: CourseInfoCategory[];
 
   courses: CourseInfoItem[];
-
-}
-
-
-
-/** Courses Pricing 价格表一行 */
-
-export interface CoursesPricingRow {
-
-  enrollmentOption: string;
-
-  tuitions: string[];
 
 }
 
@@ -370,9 +373,8 @@ export interface CoursesPricingData {
 
   title: string;
 
-  tableHeaders: { enrollmentOption: string; tuition: string };
-
-  rows: CoursesPricingRow[];
+  /** 价格表 PDF 路径（public 下, /courses/Fall_Pricing.pdf） */
+  pdfUrl: string;
 
   discountsTitle: string;
 

@@ -1,6 +1,6 @@
 /**
- * 文件用途：Courses 页面 Summer Courses Pricing 区块
- * 依赖关系：依赖 types/courses 的 CoursesPricingData
+ * 文件用途：Courses 页面 Fall Course Pricing 区块（PDF 预览 + 折扣 + CTA）
+ * 依赖关系：依赖 types/courses 的 CoursesPricingData；PDF 放在 public/courses/Fall_Pricing.pdf
  */
 
 import type { CoursesPricingData } from '@/types/courses';
@@ -9,27 +9,14 @@ interface PricingSectionProps {
   data: CoursesPricingData;
 }
 
-function TuitionPills({ tuitions }: { tuitions: string[] }) {
-  return (
-    <div className="flex flex-wrap items-center justify-center gap-2 md:gap-4 lg:gap-6">
-      {tuitions.map((tuition) => (
-        <span
-          key={tuition}
-          className="inline-flex min-h-[36px] items-center justify-center rounded-full bg-[rgba(89,156,237,0.1)] px-4 py-1.5 font-outfit text-base text-[#599CED] md:text-lg lg:min-w-[160px] lg:px-5"
-        >
-          {tuition}
-        </span>
-      ))}
-    </div>
-  );
-}
-
 export default function PricingSection({ data }: PricingSectionProps) {
+  const pdfFileName = data.pdfUrl.split('/').pop() ?? 'Fall_Pricing.pdf';
+
   return (
     <section
       id="pricing"
       className="w-full bg-[#FBF9F4] pb-16 md:pb-24"
-      aria-label="Summer Courses Pricing"
+      aria-label="Fall Course Pricing"
     >
       <div className="mx-auto flex w-full max-w-[min(1270px,95vw)] flex-col items-center gap-12 px-4 sm:px-8 md:gap-16 lg:gap-[72px] lg:px-9">
         <header className="flex w-full flex-col items-center text-center">
@@ -44,55 +31,87 @@ export default function PricingSection({ data }: PricingSectionProps) {
           </h2>
         </header>
 
-        <div
-          className="w-full rounded-[28px] px-4 py-6 sm:px-6 sm:py-8 md:px-8 md:py-10"
-          style={{
-            background:
-              'linear-gradient(123deg, rgba(155, 143, 216, 0.05) 0%, rgba(107, 182, 255, 0.05) 100%)',
-          }}
-        >
-          <div className="hidden md:block overflow-x-auto">
-            <table className="w-full">
-              <thead>
-                <tr className="border-b border-[rgba(89,156,237,0.2)]">
-                  <th className="py-2.5 text-left font-outfit text-lg font-bold text-[#7C8B99] lg:text-xl">
-                    {data.tableHeaders.enrollmentOption}
-                  </th>
-                  <th className="py-2.5 text-center font-outfit text-lg font-bold text-[#7C8B99] lg:text-xl">
-                    {data.tableHeaders.tuition}
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {data.rows.map((row) => (
-                  <tr
-                    key={row.enrollmentOption}
-                    className="border-b border-[rgba(89,156,237,0.2)] last:border-b-0"
-                  >
-                    <td className="py-2.5 pr-4 font-outfit text-base text-[#2C3E50] lg:py-3 lg:text-xl">
-                      {row.enrollmentOption}
-                    </td>
-                    <td className="py-2.5 lg:py-3">
-                      <TuitionPills tuitions={row.tuitions} />
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+        <div className="w-full overflow-hidden rounded-[28px] border border-[rgba(89,156,237,0.2)] bg-white shadow-sm">
+          <div className="flex flex-col gap-3 border-b border-[rgba(89,156,237,0.15)] bg-[rgba(89,156,237,0.06)] px-4 py-3 sm:flex-row sm:items-center sm:justify-between sm:px-6 sm:py-4">
+            <p className="font-outfit text-base font-medium text-[#2C3E50] md:text-lg">
+              {pdfFileName}
+            </p>
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+              <a
+                href={data.pdfUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex h-10 items-center justify-center rounded-[23px] border border-[#599CED] bg-white px-5 font-outfit text-sm font-semibold text-[#599CED] no-underline transition-colors hover:bg-[rgba(89,156,237,0.08)] md:text-base"
+              >
+                Open
+              </a>
+              <a
+                href={data.pdfUrl}
+                download={pdfFileName}
+                className="inline-flex h-10 items-center justify-center rounded-[23px] bg-[#599CED] px-5 font-outfit text-sm font-semibold text-white no-underline transition-colors hover:bg-[#4788D9] md:text-base"
+              >
+                Download
+              </a>
+            </div>
           </div>
 
-          <div className="md:hidden space-y-2.5">
-            {data.rows.map((row) => (
-              <div
-                key={row.enrollmentOption}
-                className="rounded-2xl border border-[rgba(89,156,237,0.15)] bg-white/60 p-3"
+          {/* Desktop / tablet: inline PDF preview */}
+          <div className="relative hidden min-h-[520px] bg-[#F8FAFC] md:block lg:min-h-[640px]">
+            <iframe
+              title="Fall Course Pricing PDF preview"
+              src={`${data.pdfUrl}#toolbar=0`}
+              className="absolute inset-0 h-full w-full border-0"
+            />
+          </div>
+
+          {/* Mobile: preview often unreliable — show open/download prompt */}
+          <div className="flex flex-col items-center gap-4 px-6 py-10 text-center md:hidden">
+            <div
+              className="flex size-14 items-center justify-center rounded-2xl bg-[rgba(89,156,237,0.12)]"
+              aria-hidden
+            >
+              <svg
+                className="size-7 text-[#599CED]"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <p className="mb-2 font-outfit text-base font-medium text-[#2C3E50]">
-                  {row.enrollmentOption}
-                </p>
-                <TuitionPills tuitions={row.tuitions} />
-              </div>
-            ))}
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={1.75}
+                  d="M7 3h7l5 5v13a1 1 0 01-1 1H7a1 1 0 01-1-1V4a1 1 0 011-1z"
+                />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={1.75}
+                  d="M14 3v5h5M9 13h6M9 17h6"
+                />
+              </svg>
+            </div>
+            <p className="max-w-sm font-outfit text-base text-[#7C8B99]">
+              Tap Open to preview the pricing table, or Download to save{' '}
+              {pdfFileName}.
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-3">
+              <a
+                href={data.pdfUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex h-11 items-center justify-center rounded-[23px] border border-[#599CED] bg-white px-6 font-outfit text-base font-semibold text-[#599CED] no-underline"
+              >
+                Open
+              </a>
+              <a
+                href={data.pdfUrl}
+                download={pdfFileName}
+                className="inline-flex h-11 items-center justify-center rounded-[23px] bg-[#599CED] px-6 font-outfit text-base font-semibold text-white no-underline"
+              >
+                Download
+              </a>
+            </div>
           </div>
         </div>
 

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * 文件用途：Courses 页面可交互科目图例（课表、课程信息共用）
  * 依赖关系：依赖 lib/courseCategories
  */
@@ -11,6 +11,7 @@ import {
   CONTEST_FILTER_CONFIG,
   COURSE_CATEGORY_CONFIG,
   COURSE_FILTER_CATEGORIES,
+  STANDARD_TEST_FILTER_CONFIG,
   type CourseInformationFilter,
   type CourseLegendFilter,
 } from '@/lib/courseCategories';
@@ -29,6 +30,7 @@ type InformationLegendProps = {
 
 type CourseCategoryLegendProps = (TimetableLegendProps | InformationLegendProps) & {
   showContestFilter?: boolean;
+  showStandardTestFilter?: boolean;
   trailing?: ReactNode;
 };
 
@@ -84,7 +86,11 @@ export function NeutralLegendButton({
 }
 
 export default function CourseCategoryLegend(props: CourseCategoryLegendProps) {
-  const { showContestFilter = true, trailing } = props;
+  const {
+    showContestFilter = true,
+    showStandardTestFilter = true,
+    trailing,
+  } = props;
 
   const handleCategoryClick = (category: CourseLegendFilter) => {
     if (props.includeAll) {
@@ -99,9 +105,8 @@ export default function CourseCategoryLegend(props: CourseCategoryLegendProps) {
     return props.activeFilter === category;
   };
 
-  const isContestActive = props.includeAll
-    ? props.activeFilter === 'Contest'
-    : props.activeFilter === 'Contest';
+  const isContestActive = props.activeFilter === 'Contest';
+  const isStandardTestActive = props.activeFilter === 'StandardTest';
 
   return (
     <div className="flex flex-wrap items-center justify-center gap-4 md:gap-5">
@@ -158,6 +163,15 @@ export default function CourseCategoryLegend(props: CourseCategoryLegendProps) {
           isActive={isContestActive}
           onClick={() => handleCategoryClick('Contest')}
           activeStyle={CONTEST_FILTER_CONFIG}
+        />
+      )}
+
+      {showStandardTestFilter && (
+        <NeutralLegendButton
+          label={STANDARD_TEST_FILTER_CONFIG.label}
+          isActive={isStandardTestActive}
+          onClick={() => handleCategoryClick('StandardTest')}
+          activeStyle={STANDARD_TEST_FILTER_CONFIG}
         />
       )}
 

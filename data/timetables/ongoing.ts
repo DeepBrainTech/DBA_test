@@ -21,18 +21,18 @@ export const ongoingTimetableData: CourseTimetableData = {
       time: '9:00 AM\n-\n10:30 AM',
       days: {
         Mon: [
-          { name: 'Physics Foundation\nDr. Cao | Grade 1-8', cat: 'Physics' },
+          { name: 'Physics Foundation\nDr. Cao | Grade 1-8', cat: 'Science' },
           { name: 'BCA Writing\nEdward H.', cat: 'Language' },
         ],
         Tue: [{ name: 'BCA Writing\nEdward H.', cat: 'Language' }],
-        Wed: [{ name: 'Physics Bowl\nDr. Cao', cat: 'Physics' }],
+        Wed: [{ name: 'Physics Bowl\nDr. Cao', cat: 'Science' }],
         Thu: [
-          { name: 'Physics Foundation\nDr. Cao | Grade 1-8', cat: 'Physics' },
+          { name: 'Physics Foundation\nDr. Cao | Grade 1-8', cat: 'Science' },
           { name: 'BCA Writing\nEdward H.', cat: 'Language' },
         ],
         Fri: [{ name: 'BCA Writing\nEdward H.', cat: 'Language' }],
         Sat: [],
-        Sun: [{ name: 'Physics Bowl\nDr. Cao', cat: 'Physics' }],
+        Sun: [{ name: 'Physics Bowl\nDr. Cao', cat: 'Science' }],
       },
     },
     {
@@ -70,25 +70,25 @@ export const ongoingTimetableData: CourseTimetableData = {
           { name: 'Chinese\nYannie H.', cat: 'Language' },
         ],
         Tue: [
-          { name: 'Physics C\nDr. Cao', cat: 'Physics' },
+          { name: 'Physics C\nDr. Cao', cat: 'Science' },
           { name: 'Chinese\nYannie H.', cat: 'Language' },
-          { name: 'AI Beginner\nYani C.', cat: 'AI' },
+          { name: 'AI Beginner\nYani C.', cat: 'ProgrammingAI' },
         ],
         Wed: [
-          { name: 'F=MA Physics Contest*\nDr. Cao', cat: 'Physics' },
+          { name: 'F=MA Physics Contest*\nDr. Cao', cat: 'Science' },
           { name: 'Chinese\nYannie H.', cat: 'Language' },
         ],
         Thu: [
           { name: 'Precalculus\nDr. Cao', cat: 'Math' },
           { name: 'Chinese\nYannie H.', cat: 'Language' },
-          { name: 'AI Intermediate\nYani C.', cat: 'AI' },
+          { name: 'AI Intermediate\nYani C.', cat: 'ProgrammingAI' },
         ],
         Fri: [
-          { name: 'Physics C\nDr. Cao', cat: 'Physics' },
+          { name: 'Physics C\nDr. Cao', cat: 'Science' },
           { name: 'Chinese\nYannie H.', cat: 'Language' },
         ],
         Sat: [
-          { name: 'F=MA Physics Contest*\nDr. Cao', cat: 'Physics' },
+          { name: 'F=MA Physics Contest*\nDr. Cao', cat: 'Science' },
           { name: 'Spanish Beginner\nJuan', cat: 'Language' },
         ],
         Sun: [],
@@ -101,10 +101,10 @@ export const ongoingTimetableData: CourseTimetableData = {
         Tue: [
           { name: 'Algebra 2\nDr. Cao', cat: 'Math' },
           { name: 'Go Beginner\nDr. Chen', cat: 'Chess' },
-          { name: 'AI Beginner\nYani C.', cat: 'AI' },
+          { name: 'AI Beginner\nYani C.', cat: 'ProgrammingAI' },
         ],
         Wed: [],
-        Thu: [{ name: 'AI Intermediate\nYani C.', cat: 'AI' }],
+        Thu: [{ name: 'AI Intermediate\nYani C.', cat: 'ProgrammingAI' }],
         Fri: [
           { name: 'Algebra 2\nDr. Cao', cat: 'Math' },
           { name: 'Go Beginner\nDr. Chen', cat: 'Chess' },
@@ -128,7 +128,7 @@ export const ongoingTimetableData: CourseTimetableData = {
         ],
         Fri: [{ name: 'AMC 8\nDr. Chen', cat: 'Math' }],
         Sat: [],
-        Sun: [{ name: 'Physics\n(5 - 6:30 PM)\nDr. Cao', cat: 'Physics' }],
+        Sun: [{ name: 'Physics\n(5 - 6:30 PM)\nDr. Cao', cat: 'Science' }],
       },
     },
   ],
