@@ -47,7 +47,7 @@ export const coursesPageData: CoursesPageData = {
         description:
           'Strengthen reading, writing, communication, and overall language proficiency.',
         icon: '/courses/icon/chinese.svg',
-        tags: ['Chinese', 'ELO'],
+        tags: ['Chinese', 'ESL'],
       },
       {
         index: 4,
@@ -270,7 +270,7 @@ export const coursesPageData: CoursesPageData = {
   },
   {
     cat: 'Language',
-    name: 'Elementary ELO Beginner',
+    name: 'Elementary ESL Beginner',
     desc: [
       'Builds foundational English skills in vocabulary, reading comprehension, sentence structure, and written expression.',
       'Uses Wordly Wise as the primary learning material, with additional resources from Pearson, Oxford, and other age-appropriate materials when needed.',
@@ -279,7 +279,7 @@ export const coursesPageData: CoursesPageData = {
   },
   {
     cat: 'Language',
-    name: 'Elementary ELO Intermediate',
+    name: 'Elementary ESL Intermediate',
     desc: [
       'Strengthens vocabulary, reading comprehension, grammar, and structured writing for students with an established English foundation.',
       'Uses Wordly Wise as the primary learning material, supported by Pearson, Oxford, and other selected resources.',
@@ -288,7 +288,7 @@ export const coursesPageData: CoursesPageData = {
   },
   {
     cat: 'Language',
-    name: 'Middle School ELO Beginner',
+    name: 'Middle School ESL Beginner',
     desc: [
       'Builds essential middle school English skills in vocabulary, reading comprehension, grammar, and paragraph writing.',
       'Introduces strategies for understanding unfamiliar vocabulary, identifying main ideas, and organizing written responses.',
@@ -297,7 +297,7 @@ export const coursesPageData: CoursesPageData = {
   },
   {
     cat: 'Language',
-    name: 'Middle School ELO Intermediate',
+    name: 'Middle School ESL Intermediate',
     desc: [
       'Develops stronger academic vocabulary, reading analysis, grammar, and multi-paragraph writing skills.',
       'Helps students analyze more challenging texts, support ideas with evidence, and communicate with greater accuracy and clarity.',

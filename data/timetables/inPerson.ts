@@ -42,7 +42,7 @@ export const inPersonTimetableData: CourseTimetableData = {
         Wed: [],
         Thu: [],
         Fri: [],
-        Sat: [{ name: 'Middle School ELO Intermediate', cat: 'Language' }],
+        Sat: [{ name: 'Middle School ESL Intermediate', cat: 'Language' }],
         Sun: [],
       },
     },
@@ -76,16 +76,16 @@ export const inPersonTimetableData: CourseTimetableData = {
         Mon: [],
         Tue: [
           { name: 'AoPS Prealgebra', cat: 'Math' },
-          { name: 'Elementary ELO Beginner', cat: 'Language' },
+          { name: 'Elementary ESL Beginner', cat: 'Language' },
         ],
         Wed: [
           { name: 'PSAT Math', cat: 'Math', tags: ['StandardTest'] },
-          { name: 'Elementary ELO Intermediate', cat: 'Language' },
+          { name: 'Elementary ESL Intermediate', cat: 'Language' },
         ],
         Thu: [{ name: 'Spark Math P1', cat: 'Math' }],
         Fri: [
           { name: 'Spark Math P2', cat: 'Math' },
-          { name: 'Middle School ELO Beginner', cat: 'Language' },
+          { name: 'Middle School ESL Beginner', cat: 'Language' },
         ],
         Sat: [],
         Sun: [],

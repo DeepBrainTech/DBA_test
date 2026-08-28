@@ -43,7 +43,7 @@ export const fallTimetableData: CourseTimetableData = {
         Thu: [],
         Fri: [],
         Sat: [
-          { name: 'Middle School ELO Intermediate', cat: 'Language' },
+          { name: 'Middle School ESL Intermediate', cat: 'Language', format: 'InPersonOnly' },
           {
             name: 'AP Biology',
             cat: 'Science',
@@ -91,7 +91,7 @@ export const fallTimetableData: CourseTimetableData = {
         ],
         Tue: [
           { name: 'AoPS Prealgebra', cat: 'Math' },
-          { name: 'Elementary ELO Beginner', cat: 'Language' },
+          { name: 'Elementary ESL Beginner', cat: 'Language', format: 'InPersonOnly' },
         ],
         Wed: [
           {
@@ -100,12 +100,12 @@ export const fallTimetableData: CourseTimetableData = {
             tags: ['StandardTest'],
             format: 'OnlineOnly',
           },
-          { name: 'Elementary ELO Intermediate', cat: 'Language' },
+          { name: 'Elementary ESL Intermediate', cat: 'Language', format: 'InPersonOnly' },
         ],
         Thu: [{ name: 'Spark Math P1', cat: 'Math', format: 'InPersonOnly' }],
         Fri: [
           { name: 'Spark Math P2', cat: 'Math', format: 'InPersonOnly' },
-          { name: 'Middle School ELO Beginner', cat: 'Language' },
+          { name: 'Middle School ESL Beginner', cat: 'Language', format: 'InPersonOnly' },
         ],
         Sat: [],
         Sun: [
