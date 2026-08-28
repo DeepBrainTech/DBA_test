@@ -375,6 +375,8 @@ export interface CoursesPricingData {
 
   /** 价格表 PDF 路径（public 下, /courses/Fall_Pricing.pdf） */
   pdfUrl: string;
+  /** 覆盖 PDF 后请改此值，避免浏览器预览仍走旧缓存 */
+  pdfVersion: string;
 
   discountsTitle: string;
 

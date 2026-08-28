@@ -1,6 +1,7 @@
 /**
  * 文件用途：Courses 页面 Fall Course Pricing 区块（PDF 预览 + 折扣 + CTA）
  * 依赖关系：依赖 types/courses 的 CoursesPricingData；PDF 放在 public/courses/Fall_Pricing.pdf
+ * 注意事项：预览/打开/下载共用带版本号的地址，避免换文件后 iframe 仍显示旧 PDF
  */
 
 import type { CoursesPricingData } from '@/types/courses';
@@ -11,6 +12,9 @@ interface PricingSectionProps {
 
 export default function PricingSection({ data }: PricingSectionProps) {
   const pdfFileName = data.pdfUrl.split('/').pop() ?? 'Fall_Pricing.pdf';
+  // 查询参数在 hash 前，强制预览和下载走同一份新文件
+  const pdfHref = `${data.pdfUrl}?v=${encodeURIComponent(data.pdfVersion)}`;
+  const pdfPreviewSrc = `${pdfHref}#toolbar=0`;
 
   return (
     <section
@@ -38,7 +42,7 @@ export default function PricingSection({ data }: PricingSectionProps) {
             </p>
             <div className="flex flex-wrap items-center gap-2 sm:gap-3">
               <a
-                href={data.pdfUrl}
+                href={pdfHref}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex h-10 items-center justify-center rounded-[23px] border border-[#599CED] bg-white px-5 font-outfit text-sm font-semibold text-[#599CED] no-underline transition-colors hover:bg-[rgba(89,156,237,0.08)] md:text-base"
@@ -46,7 +50,7 @@ export default function PricingSection({ data }: PricingSectionProps) {
                 Open
               </a>
               <a
-                href={data.pdfUrl}
+                href={pdfHref}
                 download={pdfFileName}
                 className="inline-flex h-10 items-center justify-center rounded-[23px] bg-[#599CED] px-5 font-outfit text-sm font-semibold text-white no-underline transition-colors hover:bg-[#4788D9] md:text-base"
               >
@@ -58,8 +62,9 @@ export default function PricingSection({ data }: PricingSectionProps) {
           {/* Desktop / tablet: inline PDF preview */}
           <div className="relative hidden min-h-[520px] bg-[#F8FAFC] md:block lg:min-h-[640px]">
             <iframe
+              key={pdfPreviewSrc}
               title="Fall Course Pricing PDF preview"
-              src={`${data.pdfUrl}#toolbar=0`}
+              src={pdfPreviewSrc}
               className="absolute inset-0 h-full w-full border-0"
             />
           </div>
@@ -97,7 +102,7 @@ export default function PricingSection({ data }: PricingSectionProps) {
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3">
               <a
-                href={data.pdfUrl}
+                href={pdfHref}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex h-11 items-center justify-center rounded-[23px] border border-[#599CED] bg-white px-6 font-outfit text-base font-semibold text-[#599CED] no-underline"
@@ -105,7 +110,7 @@ export default function PricingSection({ data }: PricingSectionProps) {
                 Open
               </a>
               <a
-                href={data.pdfUrl}
+                href={pdfHref}
                 download={pdfFileName}
                 className="inline-flex h-11 items-center justify-center rounded-[23px] bg-[#599CED] px-6 font-outfit text-base font-semibold text-white no-underline"
               >
