@@ -185,7 +185,7 @@ export default function CourseInformation({ data }: CourseInformationProps) {
 
         <div className="flex w-full shrink-0 justify-center">
           <a
-            href="https://docs.google.com/forms/d/1wnsEKekngdFdpt465K4BIvXLT1mKvM2VmEI2Kc0QvCQ/viewform"
+            href="https://forms.gle/7Q1vHVNcJT3GnS2K7"
             target="_blank"
             rel="noopener noreferrer"
             className="group relative inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#599CED] px-8 text-base font-bold font-outfit text-white no-underline shadow-lg transition-all hover:-translate-y-0.5 hover:bg-[#4788D9] hover:shadow-xl md:h-14 md:px-10 md:text-lg"

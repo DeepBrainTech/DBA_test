@@ -353,8 +353,7 @@ export const coursesPageData: CoursesPageData = {
       },
     ],
     ctaLabel: 'Enroll Now',
-    ctaUrl:
-      'https://docs.google.com/forms/d/1wnsEKekngdFdpt465K4BIvXLT1mKvM2VmEI2Kc0QvCQ/viewform',
+    ctaUrl: 'https://forms.gle/7Q1vHVNcJT3GnS2K7',
   },
   bookFreeTrial: {
     badgeText: 'Limited offer',
