@@ -44,12 +44,6 @@ export const fallTimetableData: CourseTimetableData = {
         Fri: [],
         Sat: [
           { name: 'Middle School ESL Intermediate', cat: 'Language', format: 'InPersonOnly' },
-          {
-            name: 'AP Biology',
-            cat: 'Science',
-            tags: ['StandardTest'],
-            format: 'OnlineOnly',
-          },
         ],
         Sun: [],
       },
