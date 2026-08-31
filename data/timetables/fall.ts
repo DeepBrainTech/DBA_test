@@ -92,6 +92,7 @@ export const fallTimetableData: CourseTimetableData = {
         Tue: [
           { name: 'AoPS Prealgebra', cat: 'Math' },
           { name: 'Elementary ESL Beginner', cat: 'Language', format: 'InPersonOnly' },
+          { name: 'AP Biology', cat: 'Science', tags: ['StandardTest'], format: 'OnlineOnly' }
         ],
         Wed: [
           {
