@@ -33,7 +33,7 @@ export default function CourseInfoCard({ course, isExpanded, onToggle }: CourseI
         ${isExpanded ? 'p-5 pb-6 md:p-6 md:pb-7' : 'px-4 py-3.5 md:px-5 md:py-4'}
       `}
     >
-      <div className={`flex items-center gap-2.5 ${isExpanded ? 'mb-4' : ''}`}>
+      <div className={`flex flex-wrap items-center gap-x-2.5 gap-y-1 ${isExpanded ? 'mb-4' : ''}`}>
         <span
           className="shrink-0 font-outfit text-sm font-medium md:text-base"
           style={{ color: categoryColor }}

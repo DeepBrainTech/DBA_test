@@ -85,31 +85,34 @@ export const coursesPageData: CoursesPageData = {
   },
   courseInformation: {
     sectionTitle: 'Course Information',
-    categories: ['All', 'Science', 'Math', 'Chess', 'Language', 'ProgrammingAI'],
+    categories: ['All', 'Science', 'Physics', 'Math', 'Chess', 'Language', 'ProgrammingAI'],
     courses: [
   {
     cat: 'Science',
     name: 'AP Physics 1',
+    format: 'Hybrid',
     tags: ['StandardTest'],
     desc: [
       'Emphasis on conceptual understanding alongside mathematical problem solving.',
       'Prepares students for both the AP exam and future physics coursework.',
-      'Extensive practice with AP-style multiple choice and free-response questions.',
+      'Extensive practice with AP-style multiple choice and free-response questions',
     ],
   },
   {
     cat: 'Science',
     name: 'AP Physics C – Mechanics',
+    format: 'Hybrid',
     tags: ['StandardTest'],
     desc: [
       'Combines calculus and physics to model real systems with precision.',
-      'Covers AP Physics C: Mechanics.',
-      'Builds the problem-solving depth expected at top engineering and science programs.',
+      'Covers AP Physics C: Mechanics',
+      'Builds the problem-solving depth expected at top engineering and science programs',
     ],
   },
   {
     cat: 'Science',
     name: 'AP Biology',
+    format: 'OnlineOnly',
     tags: ['StandardTest'],
     desc: [
       'Covers core AP Biology topics including cell biology, genetics, evolution, ecology, and biological systems.',
@@ -120,6 +123,7 @@ export const coursesPageData: CoursesPageData = {
   {
     cat: 'Science',
     name: 'AP Chemistry',
+    format: 'OnlineOnly',
     tags: ['StandardTest'],
     desc: [
       'Develops a strong understanding of chemical principles, quantitative reasoning, and laboratory-based concepts.',
@@ -130,6 +134,7 @@ export const coursesPageData: CoursesPageData = {
   {
     cat: 'Science',
     name: 'Honor Physics',
+    format: 'Hybrid',
     desc: [
       'Builds a strong foundation in core physics concepts through algebra-based problem solving and real-world applications.',
       'Develops deeper reasoning skills through multi-step problems, data analysis, and conceptual challenges.',
@@ -138,7 +143,8 @@ export const coursesPageData: CoursesPageData = {
   },
   {
     cat: 'Science',
-    name: 'F=MA Competition*',
+    name: 'F=MA Competition',
+    format: 'Hybrid',
     tags: ['Contest'],
     desc: [
       'Deep, flexible mastery of Newtonian mechanics beyond AP-level expectations.',
@@ -147,8 +153,20 @@ export const coursesPageData: CoursesPageData = {
     ],
   },
   {
+    cat: 'Physics',
+    name: 'Physics Bowl',
+    format: 'Hybrid',
+    tags: ['Contest'],
+    desc: [
+      'Reviews core physics concepts through challenging conceptual and quantitative problems.',
+      'Builds speed, accuracy, and flexible reasoning for physics competition questions.',
+      'Strengthens the foundation needed for advanced physics coursework and contests.',
+    ],
+  },
+  {
     cat: 'Math',
     name: 'Spark Math P1',
+    format: 'InPersonOnly',
     desc: [
       'Builds early number sense through counting, patterns, shapes, and basic addition and subtraction.',
       'Uses visual models and engaging problem-solving activities to make math concepts easier to understand.',
@@ -158,6 +176,7 @@ export const coursesPageData: CoursesPageData = {
   {
     cat: 'Math',
     name: 'Spark Math P2',
+    format: 'InPersonOnly',
     desc: [
       'Strengthens addition, subtraction, place value, measurement, and early problem-solving skills.',
       'Encourages students to explain their thinking and explore different ways to solve a problem.',
@@ -167,6 +186,7 @@ export const coursesPageData: CoursesPageData = {
   {
     cat: 'Math',
     name: 'Spark Math P3',
+    format: 'InPersonOnly',
     desc: [
       'Develops stronger skills in multiplication, division, fractions, geometry, and multi-step problem solving.',
       'Introduces students to more challenging reasoning questions that require careful planning and analysis.',
@@ -175,17 +195,41 @@ export const coursesPageData: CoursesPageData = {
   },
   {
     cat: 'Math',
-    name: 'Math Kangaroo*',
+    name: 'Math Kangaroo G1-2',
+    format: 'Hybrid',
     tags: ['Contest'],
     desc: [
-      'Introduces young students to Math Kangaroo-style problems through patterns, logic, spatial reasoning, and number puzzles.',
-      'Develops flexible problem-solving strategies beyond standard classroom exercises.',
-      'Includes targeted practice with age-appropriate competition-style questions.',
+      'Introduces early elementary students to Math Kangaroo-style problems through patterns, logic, and number puzzles.',
+      'Develops flexible problem-solving strategies with age-appropriate visual and hands-on activities.',
+      'Builds confidence and curiosity through accessible competition-style questions.',
+    ],
+  },
+  {
+    cat: 'Math',
+    name: 'Math Kangaroo G3-4',
+    format: 'Hybrid',
+    tags: ['Contest'],
+    desc: [
+      'Strengthens number sense, spatial reasoning, patterns, and logical thinking through Math Kangaroo-style problems.',
+      'Develops strategies for solving multi-step questions beyond standard classroom exercises.',
+      'Provides focused practice with age-appropriate competition-style questions.',
+    ],
+  },
+  {
+    cat: 'Math',
+    name: 'Math Kangaroo G5-6',
+    format: 'Hybrid',
+    tags: ['Contest'],
+    desc: [
+      'Builds deeper problem-solving skills through challenging Math Kangaroo-style logic, geometry, and number problems.',
+      'Develops flexible strategies for unfamiliar and multi-step competition questions.',
+      'Strengthens accuracy, persistence, and confidence for advanced elementary math contests.',
     ],
   },
   {
     cat: 'Math',
     name: 'Math Clinics',
+    format: 'Hybrid',
     desc: [
       "Provides targeted support based on each student's current math needs, skill gaps, and schoolwork.",
       'Reinforces key concepts through guided practice, problem-solving strategies, and individualized feedback.',
@@ -195,6 +239,7 @@ export const coursesPageData: CoursesPageData = {
   {
     cat: 'Math',
     name: 'AoPS Prealgebra',
+    format: 'Hybrid',
     desc: [
       'Emphasizes reasoning, explanation, and problem-solving strategy.',
       'Uses challenging problems to develop persistence and mathematical creativity.',
@@ -203,7 +248,38 @@ export const coursesPageData: CoursesPageData = {
   },
   {
     cat: 'Math',
-    name: 'AMC 8 Beginner*',
+    name: 'AoPS Intro to Algebra',
+    format: 'OnlineOnly',
+    desc: [
+      'Builds algebraic reasoning through variables, equations, inequalities, functions, and problem-solving strategies.',
+      'Uses challenging AoPS problems to develop persistence, precision, and mathematical creativity.',
+      'Prepares students for more advanced algebra and contest mathematics.',
+    ],
+  },
+  {
+    cat: 'Math',
+    name: 'AoPS Intermediate Algebra',
+    format: 'OnlineOnly',
+    desc: [
+      'Develops advanced algebraic fluency through functions, polynomials, inequalities, sequences, and number theory.',
+      'Emphasizes elegant solutions, proof-based reasoning, and solving unfamiliar problems.',
+      'Prepares students for advanced contest math and higher-level coursework.',
+    ],
+  },
+  {
+    cat: 'Math',
+    name: 'AoPS Geometry',
+    format: 'OnlineOnly',
+    desc: [
+      'Develops geometric reasoning through angles, triangles, circles, transformations, and proof.',
+      'Uses challenging problems to connect visual intuition with rigorous deductive thinking.',
+      'Strengthens the foundation for advanced geometry and math competitions.',
+    ],
+  },
+  {
+    cat: 'Math',
+    name: 'AMC 8 Beginner',
+    format: 'Hybrid',
     tags: ['Contest'],
     desc: [
       'Focuses on the thinking behind AMC 8 problems, not just answer-getting.',
@@ -213,7 +289,8 @@ export const coursesPageData: CoursesPageData = {
   },
   {
     cat: 'Math',
-    name: 'AMC 8 Advanced*',
+    name: 'AMC 8 Advanced',
+    format: 'Hybrid',
     tags: ['Contest'],
     desc: [
       'Teacher students how to move beyond brute force.',
@@ -223,7 +300,19 @@ export const coursesPageData: CoursesPageData = {
   },
   {
     cat: 'Math',
+    name: 'AMC 10',
+    format: 'Hybrid',
+    tags: ['Contest'],
+    desc: [
+      'Develops the algebra, geometry, counting, and number theory skills needed for AMC 10 problems.',
+      'Builds efficient strategies for multi-step contest questions and unfamiliar problem types.',
+      'Strengthens accuracy, persistence, and confidence for competition mathematics.',
+    ],
+  },
+  {
+    cat: 'Math',
     name: 'BCA Math',
+    format: 'Hybrid',
     desc: [
       'Covers the math skills and reasoning habits needed for competitive school admissions.',
       'Help students read complex questions carefully and organize work under time pressure.',
@@ -232,7 +321,49 @@ export const coursesPageData: CoursesPageData = {
   },
   {
     cat: 'Math',
+    name: 'Algebra 1',
+    format: 'Hybrid',
+    desc: [
+      'Builds fluency with expressions, equations, inequalities, functions, and graphing.',
+      'Develops clear algebraic reasoning through multi-step problem solving.',
+      'Establishes the foundation for geometry, Algebra 2, and advanced mathematics.',
+    ],
+  },
+  {
+    cat: 'Math',
+    name: 'Algebra 2',
+    format: 'Hybrid',
+    desc: [
+      'Extends algebraic reasoning through polynomial, rational, exponential, and logarithmic functions.',
+      'Connects equations, graphs, tables, and real-world applications.',
+      'Prepares students for precalculus, standardized tests, and higher-level math.',
+    ],
+  },
+  {
+    cat: 'Math',
+    name: 'Geometry',
+    format: 'Hybrid',
+    desc: [
+      'Develops spatial reasoning through angles, triangles, circles, transformations, and proof.',
+      'Connects visual models with algebraic and deductive reasoning.',
+      'Builds the confidence and precision needed for advanced geometry and contest problems.',
+    ],
+  },
+  {
+    cat: 'Math',
+    name: 'AP Precalculus',
+    format: 'Hybrid',
+    tags: ['StandardTest'],
+    desc: [
+      'Builds strong skills in functions, polynomial and rational expressions, and trigonometry.',
+      'Uses graphs, equations, and tables to analyze mathematical relationships.',
+      'Includes AP-style practice and prepares students for calculus.',
+    ],
+  },
+  {
+    cat: 'Math',
     name: 'AP Calculus AB/BC',
+    format: 'Hybrid',
     tags: ['StandardTest'],
     desc: [
       'Use multiple representations: graphs, equations, tables, and verbal descriptions.',
@@ -243,6 +374,7 @@ export const coursesPageData: CoursesPageData = {
   {
     cat: 'Math',
     name: 'PSAT Math',
+    format: 'OnlineOnly',
     tags: ['StandardTest'],
     desc: [
       'Reviews key PSAT math topics including algebra, advanced math, problem solving, data analysis, and geometry.',
@@ -253,6 +385,7 @@ export const coursesPageData: CoursesPageData = {
   {
     cat: 'Chess',
     name: 'Chess I',
+    format: 'InPersonOnly',
     desc: [
       'Uses beginner-friendly puzzles and mini-games before full games.',
       'Builds focus, patience, memory, and turn-based thinking.',
@@ -262,6 +395,7 @@ export const coursesPageData: CoursesPageData = {
   {
     cat: 'Chess',
     name: 'Chess II',
+    format: 'InPersonOnly',
     desc: [
       'Turns rule knowledge into confident and playable chess.',
       'Introduces the idea that every move should have a reason.',
@@ -270,7 +404,8 @@ export const coursesPageData: CoursesPageData = {
   },
   {
     cat: 'Language',
-    name: 'Elementary ESL Beginner',
+    name: 'Elementary ELA Beginner',
+    format: 'InPersonOnly',
     desc: [
       'Builds foundational English skills in vocabulary, reading comprehension, sentence structure, and written expression.',
       'Uses Wordly Wise as the primary learning material, with additional resources from Pearson, Oxford, and other age-appropriate materials when needed.',
@@ -279,7 +414,8 @@ export const coursesPageData: CoursesPageData = {
   },
   {
     cat: 'Language',
-    name: 'Elementary ESL Intermediate',
+    name: 'Elementary ELA Intermediate',
+    format: 'InPersonOnly',
     desc: [
       'Strengthens vocabulary, reading comprehension, grammar, and structured writing for students with an established English foundation.',
       'Uses Wordly Wise as the primary learning material, supported by Pearson, Oxford, and other selected resources.',
@@ -288,7 +424,8 @@ export const coursesPageData: CoursesPageData = {
   },
   {
     cat: 'Language',
-    name: 'Middle School ESL Beginner',
+    name: 'Middle School ELA Beginner',
+    format: 'InPersonOnly',
     desc: [
       'Builds essential middle school English skills in vocabulary, reading comprehension, grammar, and paragraph writing.',
       'Introduces strategies for understanding unfamiliar vocabulary, identifying main ideas, and organizing written responses.',
@@ -297,7 +434,8 @@ export const coursesPageData: CoursesPageData = {
   },
   {
     cat: 'Language',
-    name: 'Middle School ESL Intermediate',
+    name: 'Middle School ELA Intermediate',
+    format: 'InPersonOnly',
     desc: [
       'Develops stronger academic vocabulary, reading analysis, grammar, and multi-paragraph writing skills.',
       'Helps students analyze more challenging texts, support ideas with evidence, and communicate with greater accuracy and clarity.',
@@ -307,6 +445,7 @@ export const coursesPageData: CoursesPageData = {
   {
     cat: 'Language',
     name: 'PSAT Reading & Writing',
+    format: 'OnlineOnly',
     tags: ['StandardTest'],
     desc: [
       'Strengthens reading comprehension, grammar, vocabulary in context, and evidence-based reasoning.',
@@ -316,7 +455,38 @@ export const coursesPageData: CoursesPageData = {
   },
   {
     cat: 'Language',
+    name: 'SAT Reading & Writing',
+    format: 'OnlineOnly',
+    desc: [
+      'Strengthens reading comprehension, grammar, vocabulary in context, and evidence-based reasoning.',
+      'Teaches efficient strategies for analyzing passages and answering digital SAT-style questions.',
+      'Includes targeted practice to improve accuracy, pacing, and test-taking strategy.',
+    ],
+  },
+  {
+    cat: 'Language',
+    name: 'SSAT Reading & Writing',
+    format: 'OnlineOnly',
+    desc: [
+      'Builds reading comprehension, vocabulary, grammar, and written expression for the SSAT.',
+      'Develops strategies for identifying main ideas, using context clues, and revising sentences.',
+      'Provides focused practice to improve accuracy, pacing, and confidence on test-style questions.',
+    ],
+  },
+  {
+    cat: 'Language',
+    name: 'Creative Writing',
+    format: 'OnlineOnly',
+    desc: [
+      'Develops original ideas through storytelling, descriptive writing, poetry, and personal voice.',
+      'Strengthens organization, word choice, sentence fluency, and revision skills.',
+      'Encourages students to give and use feedback while building confidence as writers.',
+    ],
+  },
+  {
+    cat: 'Language',
     name: 'Chinese',
+    format: 'InPersonOnly',
     desc: [
       'Strengthen Chinese listening, speaking, reading, and writing skills.',
       'Build vocabulary, grammar, pronunciation, and cultural understanding.',
@@ -326,6 +496,7 @@ export const coursesPageData: CoursesPageData = {
   {
     cat: 'ProgrammingAI',
     name: 'Python 1 (Beginner)',
+    format: 'Hybrid',
     desc: [
       'Builds core programming skills through hands-on projects and coding challenges.',
       'Trains students to think logically, debug code, and break problems into clear steps.',
@@ -340,7 +511,7 @@ export const coursesPageData: CoursesPageData = {
     title: 'Fall Course Pricing',
     pdfUrl: '/courses/Fall_Pricing.pdf',
     // 每次覆盖 Fall_Pricing.pdf 后改这一项
-    pdfVersion: '20260831-114500',
+    pdfVersion: '20260901-113211',
     discountsTitle: 'Special Discounts',
     discounts: [
       { label: 'Previous DBA students', discount: '10% Off' },

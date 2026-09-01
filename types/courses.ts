@@ -210,7 +210,16 @@ export interface CoursesBookFreeTrialData {
 
 /** 课程时间表分类 */
 
-export type TimetableCategory = 'Science' | 'Math' | 'Chess' | 'Language' | 'ProgrammingAI';
+export type TimetableCategory =
+  | 'Science'
+  | 'Physics'
+  | 'Math'
+  | 'Chess'
+  | 'Language'
+  | 'ProgrammingAI';
+
+/** 课程授课形式；未指定时按 Hybrid 处理 */
+export type CourseFormat = 'Hybrid' | 'InPersonOnly' | 'OnlineOnly';
 
 
 
@@ -219,6 +228,9 @@ export type TimetableCategory = 'Science' | 'Math' | 'Chess' | 'Language' | 'Pro
 export interface TimetableCourse {
 
   name: string;
+
+  /** 该时段授课教师，显示在课程名后方 */
+  teacher?: string;
 
   cat: TimetableCategory;
 
@@ -229,7 +241,7 @@ export interface TimetableCourse {
    * 上课形式：未设置时视为 Hybrid
    * InPersonOnly / Online Only / Hybrid
    */
-  format?: 'Hybrid' | 'InPersonOnly' | 'OnlineOnly';
+  format?: CourseFormat;
 
 }
 
@@ -316,7 +328,14 @@ export interface CourseTimetableData {
 
 /** 课程信息分类 */
 
-export type CourseInfoCategory = 'All' | 'Science' | 'Math' | 'Chess' | 'Language' | 'ProgrammingAI';
+export type CourseInfoCategory =
+  | 'All'
+  | 'Science'
+  | 'Physics'
+  | 'Math'
+  | 'Chess'
+  | 'Language'
+  | 'ProgrammingAI';
 
 
 
@@ -329,6 +348,9 @@ export interface CourseInfoItem {
   name: string;
 
   desc: string[];
+
+  /** 课程授课形式；未填写时在课程卡片中显示 Hybrid */
+  format?: CourseFormat;
 
   /** * Contest / * Standard Test 等特殊筛选标签 */
   tags?: Array<'Contest' | 'StandardTest'>;

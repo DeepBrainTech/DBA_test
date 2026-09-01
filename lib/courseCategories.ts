@@ -10,6 +10,12 @@ export const COURSE_CATEGORY_CONFIG = {
     borderColor: '#EF6B83',
     activeBg: 'rgba(239, 107, 131, 0.1)',
   },
+  Physics: {
+    label: 'Physics',
+    dotColor: '#E76F51',
+    borderColor: '#E76F51',
+    activeBg: 'rgba(231, 111, 81, 0.1)',
+  },
   Math: {
     label: 'Math',
     dotColor: '#7EC97E',
@@ -43,6 +49,7 @@ export type CourseSpecialTag = 'Contest' | 'StandardTest';
 
 export const COURSE_FILTER_CATEGORIES: CourseCategory[] = [
   'Science',
+  'Physics',
   'Math',
   'Chess',
   'Language',
@@ -175,7 +182,8 @@ export function isStandardTestCourseInfo(
 
 export function normalizeCourseInfoCategory(cat: string): CourseCategory | null {
   if (cat === 'Languages' || cat === 'Language') return 'Language';
-  if (cat === 'Physics' || cat === 'Science') return 'Science';
+  if (cat === 'Physics') return 'Physics';
+  if (cat === 'Science') return 'Science';
   if (cat === 'AI' || cat === 'ProgrammingAI') return 'ProgrammingAI';
   if (cat in COURSE_CATEGORY_CONFIG) return cat as CourseCategory;
   return null;

@@ -251,6 +251,7 @@ export default function CourseTimetable({
                                   }`}
                                 >
                                   {course.name}
+                                  {course.teacher && ` — ${course.teacher}`}
                                 </span>
                               )}
                             </div>

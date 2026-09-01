@@ -12,12 +12,17 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
+interface NavigationLink {
+  href: string;
+  label: string;
+  hidden?: boolean;
+}
+
 /**
  * Programs 下拉菜单项
- * hidden: 秋季暂时隐藏入口，页面路由与代码保留以便复用
  */
-const programsLinks = [
-  { href: '/innovation_program', label: 'Innovation Program', hidden: true },
+const programsLinks: NavigationLink[] = [
+  { href: '/innovation_program', label: 'Innovation Program' },
   { href: '/math', label: 'Math' },
   { href: '/programming', label: 'Programming' },
   { href: '/braingames', label: 'Brain Games' },
@@ -28,7 +33,7 @@ const programsLinks = [
  * 顶级导航链接（Programs 单独处理为下拉）
  * hidden: 秋季暂时隐藏入口，页面路由与代码保留以便复用
  */
-const navLinks = [
+const navLinks: NavigationLink[] = [
   { href: '/', label: 'Home' },
   { href: '/summer_camp', label: 'Summer Camp', hidden: true },
   { href: '/courses', label: 'Courses' },
