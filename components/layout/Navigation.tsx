@@ -65,6 +65,17 @@ export default function Navigation({ className = '' }: { className?: string }) {
 
   const isProgramsActive = visibleProgramsLinks.some((link) => pathname === link.href);
 
+  // 导航发生时主动收起菜单，避免用 effect 同步重置本地状态
+  const closeProgramsMenus = () => {
+    setIsProgramsOpen(false);
+    setIsMobileProgramsOpen(false);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMenuOpen(false);
+    setIsMobileProgramsOpen(false);
+  };
+
   // 在 Innovation Program / Courses 间切换时预加载双方封面图
   useEffect(() => {
     if (pathname === '/innovation_program' || pathname === '/courses') {
@@ -89,12 +100,6 @@ export default function Navigation({ className = '' }: { className?: string }) {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [isProgramsOpen]);
 
-  // 路由变化时关闭下拉
-  useEffect(() => {
-    setIsProgramsOpen(false);
-    setIsMobileProgramsOpen(false);
-  }, [pathname]);
-
   // 菜单打开时禁止页面滚动
   useEffect(() => {
     if (isMenuOpen) {
@@ -112,7 +117,11 @@ export default function Navigation({ className = '' }: { className?: string }) {
       <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-11">
         <div className="flex items-center justify-between h-16 sm:h-20 lg:h-[106px]">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 sm:gap-4">
+          <Link
+            href="/"
+            className="flex items-center gap-2 sm:gap-4"
+            onClick={closeProgramsMenus}
+          >
             <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 flex items-center justify-center">
               <Image 
                 src="/nav_footer/logo.png" 
@@ -134,6 +143,7 @@ export default function Navigation({ className = '' }: { className?: string }) {
             <Link
               href="/"
               className={`hover:text-black transition whitespace-nowrap ${pathname === '/' ? 'font-bold text-black' : ''}`}
+              onClick={closeProgramsMenus}
             >
               Home
             </Link>
@@ -172,7 +182,7 @@ export default function Navigation({ className = '' }: { className?: string }) {
                         className={`justify-start text-xl font-normal font-outfit whitespace-nowrap transition hover:text-blue-400 ${
                           isActive ? 'text-blue-400' : 'text-zinc-800'
                         }`}
-                        onClick={() => setIsProgramsOpen(false)}
+                        onClick={closeProgramsMenus}
                       >
                         {link.label}
                       </Link>
@@ -189,6 +199,7 @@ export default function Navigation({ className = '' }: { className?: string }) {
                   key={link.label}
                   href={link.href}
                   className={`hover:text-black transition whitespace-nowrap ${isActive ? 'font-bold text-black' : ''}`}
+                  onClick={closeProgramsMenus}
                 >
                   {link.label}
                 </Link>
@@ -232,7 +243,7 @@ export default function Navigation({ className = '' }: { className?: string }) {
           <button
             type="button"
             className="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-gray-100 transition"
-            onClick={() => setIsMenuOpen(false)}
+            onClick={closeMobileMenu}
             aria-label="关闭菜单"
           >
             <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -250,7 +261,7 @@ export default function Navigation({ className = '' }: { className?: string }) {
                 ? 'font-bold text-[#274777] bg-blue-50 border-r-4 border-[#274777]'
                 : 'text-gray-700 hover:bg-gray-50 hover:text-[#274777]'
             }`}
-            onClick={() => setIsMenuOpen(false)}
+            onClick={closeMobileMenu}
           >
             Home
           </Link>
@@ -291,7 +302,7 @@ export default function Navigation({ className = '' }: { className?: string }) {
                           ? 'font-bold text-blue-400'
                           : 'text-gray-600 hover:text-blue-400'
                       }`}
-                      onClick={() => setIsMenuOpen(false)}
+                      onClick={closeMobileMenu}
                     >
                       {link.label}
                     </Link>
@@ -312,7 +323,7 @@ export default function Navigation({ className = '' }: { className?: string }) {
                     ? 'font-bold text-[#274777] bg-blue-50 border-r-4 border-[#274777]'
                     : 'text-gray-700 hover:bg-gray-50 hover:text-[#274777]'
                 }`}
-                onClick={() => setIsMenuOpen(false)}
+                onClick={closeMobileMenu}
               >
                 {link.label}
               </Link>

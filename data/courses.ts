@@ -47,7 +47,7 @@ export const coursesPageData: CoursesPageData = {
         description:
           'Strengthen reading, writing, communication, and overall language proficiency.',
         icon: '/courses/icon/chinese.svg',
-        tags: ['Chinese', 'ESL'],
+        tags: ['Chinese', 'ELA'],
       },
       {
         index: 4,
