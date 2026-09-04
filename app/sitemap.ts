@@ -13,6 +13,7 @@ const baseUrl = 'https://www.deepbrainacademy.org';
 
 const staticRoutes = [
   '',
+  '/referral',
   '/innovation_program',
   '/summer_camp',
   '/courses',

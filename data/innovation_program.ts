@@ -10,7 +10,7 @@ export const innovationProgramPageData: InnovationProgramPageData = {
   hero: {
     title: 'Project-Based Innovation Programs',
     subtitle: 'Cultivating Curiosity, Creativity, and Real-World Problem Solving.',
-    backgroundImage: '/innovation_program/hero/cover.png',
+    backgroundImage: '/courses/hero/cover.png',
     features: [
       { label: 'Theory + Practice' },
       { label: 'University Exposure' },

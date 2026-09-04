@@ -35,6 +35,7 @@ const programsLinks: NavigationLink[] = [
  */
 const navLinks: NavigationLink[] = [
   { href: '/', label: 'Home' },
+  { href: '/referral', label: 'Referral Program' },
   { href: '/summer_camp', label: 'Summer Camp', hidden: true },
   { href: '/courses', label: 'Courses' },
   { href: '/schedule', label: 'Schedule', hidden: true },
