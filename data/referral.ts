@@ -100,11 +100,6 @@ export const referralPageData: ReferralPageData = {
           'The $100 Tuition Credit is issued after the referred student enrolls and purchases an eligible course package. A confirmation email will be sent to the email address on file once the enrollment is confirmed.',
       },
       {
-        question: 'When do I receive my $100 Tuition Credit?',
-        answer:
-          'The $100 Tuition Credit is issued after the referred student enrolls and purchases an eligible course package. A confirmation email will be sent to the email address on file once the enrollment is confirmed.',
-      },
-      {
         question: 'Can I exchange my Tuition Credit for something else?',
         answer:
           'Yes. You may exchange your $100 Tuition Credit for a $100 Amazon Gift Card within 60 days of issuance.',

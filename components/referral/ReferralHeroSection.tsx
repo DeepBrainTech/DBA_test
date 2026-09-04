@@ -22,20 +22,6 @@ export default function ReferralHeroSection({ content }: ReferralHeroSectionProp
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
         <div className="absolute right-[20%] top-24 size-24 rounded-full bg-[#FFD4A3] opacity-20 blur-[55px]" />
         <Image
-          src="/referral/decor-line-6.svg"
-          alt=""
-          width={161}
-          height={1}
-          className="absolute left-[29%] top-[145px] hidden h-px w-[161px] lg:block"
-        />
-        <Image
-          src="/referral/decor-line-6.svg"
-          alt=""
-          width={161}
-          height={1}
-          className="absolute left-[29%] top-[194px] hidden h-px w-[161px] lg:block"
-        />
-        <Image
           src="/referral/decor-line-2.svg"
           alt=""
           width={990}
