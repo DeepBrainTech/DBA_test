@@ -59,9 +59,9 @@ export const referralPageData: ReferralPageData = {
           text: ' Welcome Tuition Credit',
         },
         referringFamily: {
-          amount: '$100',
-          text: ' Tuition Credit',
-          note: '(May be exchanged for a $100 Amazon Gift Card within 60 days)',
+          amount: '',
+          text: 'A tuition credit equivalent to 10% of the referred student’s initially enrolled course tuition, up to $100 per successful referral.',
+          note: '(May be exchanged for an Amazon Gift Card of equal value within 60 days.)',
         },
       },
       {
@@ -95,14 +95,14 @@ export const referralPageData: ReferralPageData = {
     title: 'Frequently Asked Questions',
     items: [
       {
-        question: 'When do I receive my $100 Tuition Credit?',
+        question: 'When do I receive my Tuition Credit?',
         answer:
-          'The $100 Tuition Credit is issued after the referred student enrolls and purchases an eligible course package. A confirmation email will be sent to the email address on file once the enrollment is confirmed.',
+          'The Tuition Credit is issued after the referred student enrolls and purchases an eligible course package. A confirmation email will be sent to the email address on file once the enrollment is confirmed.',
       },
       {
         question: 'Can I exchange my Tuition Credit for something else?',
         answer:
-          'Yes. You may exchange your $100 Tuition Credit for a $100 Amazon Gift Card within 60 days of issuance.',
+          'Yes. You can exchange your Tuition Credit for an Amazon Gift Card of equal value within 60 days of issuance.',
       },
       {
         question: 'What happens after 60 days?',
