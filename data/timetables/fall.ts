@@ -187,12 +187,12 @@ export const fallTimetableData: CourseTimetableData = {
           { name: 'Chess I', teacher: 'Kamran', cat: 'Chess', format: 'InPersonOnly' },
         ],
         Thu: [
-          { name: 'Spark Math P1', teacher: 'Kaiwen', cat: 'Math', format: 'InPersonOnly' },
+          { name: 'Spark Math P1', teacher: 'Dr.Chen', cat: 'Math', format: 'InPersonOnly' },
           { name: 'Algebra 2', teacher: 'Cao', cat: 'Math' },
           { name: 'AoPS Geometry', teacher: 'Arielle', cat: 'Math', format: 'OnlineOnly' },
         ],
         Fri: [
-          { name: 'Spark Math P2', teacher: 'Kaiwen', cat: 'Math', format: 'InPersonOnly' },
+          { name: 'Spark Math P2', teacher: 'Dr.Chen', cat: 'Math', format: 'InPersonOnly' },
           {
             name: 'Middle School ELA Beginner',
             teacher: 'Madiha',
@@ -260,7 +260,7 @@ export const fallTimetableData: CourseTimetableData = {
         Wed: [{ name: 'BCA Math', teacher: 'Cao', cat: 'Math' }],
         Thu: [
           { name: 'AMC 8 Advanced', teacher: 'Chen', cat: 'Math', tags: ['Contest'] },
-          { name: 'Spark Math P3', teacher: 'Kaiwen', cat: 'Math', format: 'InPersonOnly' },
+          { name: 'Spark Math P3', teacher: 'Dr.Chen', cat: 'Math', format: 'InPersonOnly' },
         ],
         Fri: [
           { name: 'Math Kangaroo G5–G6', teacher: 'Chen', cat: 'Math', tags: ['Contest'] },

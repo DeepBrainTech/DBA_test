@@ -511,7 +511,7 @@ export const coursesPageData: CoursesPageData = {
     title: 'Fall Course Pricing',
     pdfUrl: '/courses/Fall_Pricing.pdf',
     // 每次覆盖 Fall_Pricing.pdf 后改这一项
-    pdfVersion: '20260901-113211',
+    pdfVersion: '20260908-145725',
     discountsTitle: 'Special Discounts',
     discounts: [
       { label: 'Previous DBA students', discount: '10% Off' },
