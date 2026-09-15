@@ -311,6 +311,17 @@ export const coursesPageData: CoursesPageData = {
   },
   {
     cat: 'Math',
+    name: 'AMC 12',
+    format: 'OnlineOnly',
+    tags: ['Contest'],
+    desc: [
+      'Strengthens advanced problem-solving across algebra, geometry, counting, and number theory.',
+      'Trains students to solve challenging multi-step and non-routine problems efficiently.',
+      'Builds speed, accuracy, and mathematical creativity for AMC 12 and AIME preparation.',
+    ],
+  },
+  {
+    cat: 'Math',
     name: 'BCA Math',
     format: 'Hybrid',
     desc: [
@@ -351,7 +362,7 @@ export const coursesPageData: CoursesPageData = {
   },
   {
     cat: 'Math',
-    name: 'AP Precalculus',
+    name: 'AP Pre-Calculus',
     format: 'Hybrid',
     tags: ['StandardTest'],
     desc: [
@@ -380,6 +391,50 @@ export const coursesPageData: CoursesPageData = {
       'Reviews key PSAT math topics including algebra, advanced math, problem solving, data analysis, and geometry.',
       'Develops efficient problem-solving strategies for both calculator-supported and reasoning-based questions.',
       'Includes targeted PSAT-style practice to improve accuracy, pacing, and test-taking strategy.',
+    ],
+  },
+  {
+    cat: 'Math',
+    name: 'AIME',
+    format: 'OnlineOnly',
+    tags: ['Contest'],
+    desc: [
+      'Develops advanced problem-solving across algebra, geometry, combinatorics, and number theory.',
+      'Trains students to write efficient solutions for challenging, multi-step olympiad-style problems.',
+      'Builds the precision, creativity, and persistence needed for AIME preparation.',
+    ],
+  },
+  {
+    cat: 'Math',
+    name: 'ISEE',
+    format: 'OnlineOnly',
+    tags: ['Contest'],
+    desc: [
+      'Focuses on core math skills and ISEE test-taking strategy.',
+      'Trains students to recognize question patterns in Quantitative Reasoning and Mathematics Achievement sections.',
+      'Builds accuracy, pacing, and confidence through targeted practice and guided correction.',
+    ],
+  },
+  {
+    cat: 'Math',
+    name: 'SSAT Math',
+    format: 'OnlineOnly',
+    tags: ['StandardTest'],
+    desc: [
+      'Covers the quantitative concepts and problem-solving skills tested on the SSAT.',
+      'Builds efficient strategies for arithmetic, algebra, geometry, and word problems.',
+      'Includes focused SSAT-style practice to improve accuracy, pacing, and confidence.',
+    ],
+  },
+  {
+    cat: 'Math',
+    name: 'SAT Math',
+    format: 'OnlineOnly',
+    tags: ['StandardTest'],
+    desc: [
+      'Focuses on high-yield SAT math patterns and common traps.',
+      'Helps students translate word problems into equations quickly.',
+      'Builds test confidence through repeated timed practice and review.',
     ],
   },
   {
@@ -511,7 +566,7 @@ export const coursesPageData: CoursesPageData = {
     title: 'Fall Course Pricing',
     pdfUrl: '/courses/Fall_Pricing.pdf',
     // 每次覆盖 Fall_Pricing.pdf 后改这一项
-    pdfVersion: '20260908-145725',
+    pdfVersion: '20260915-134028',
     discountsTitle: 'Special Discounts',
     discounts: [
       { label: 'Previous DBA students', discount: '10% Off' },

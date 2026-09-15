@@ -32,9 +32,11 @@ export const fallTimetableData: CourseTimetableData = {
         Fri: [],
         Sat: [
           { name: 'Chess I', teacher: 'Daniel', cat: 'Chess', format: 'InPersonOnly' },
+          { name: 'AIME', teacher: 'Dr. G', cat: 'Math', tags: ['Contest'], format: 'OnlineOnly' },
         ],
         Sun: [
           { name: 'Chess II', teacher: 'Daniel', cat: 'Chess', format: 'InPersonOnly' },
+          { name: 'SSAT Math', teacher: 'Dr. G', cat: 'Math', tags: ['StandardTest'], format: 'OnlineOnly' },
         ],
       },
     },
@@ -67,8 +69,11 @@ export const fallTimetableData: CourseTimetableData = {
             cat: 'Language',
             format: 'InPersonOnly',
           },
+          { name: 'ISEE', teacher: 'Dr. G', cat: 'Math', tags: ['Contest'], format: 'OnlineOnly' },
         ],
-        Sun: [],
+        Sun: [
+          { name: 'SAT Math', teacher: 'Dr. G', cat: 'Math', tags: ['StandardTest'], format: 'OnlineOnly' },
+        ],
       },
     },
     {
@@ -82,7 +87,7 @@ export const fallTimetableData: CourseTimetableData = {
         Sat: [
           {
             name: 'AP Pre-Calculus',
-            teacher: 'Cao',
+            teacher: 'Dr. Cao',
             cat: 'Math',
             tags: ['StandardTest'],
           },
@@ -130,7 +135,7 @@ export const fallTimetableData: CourseTimetableData = {
         Wed: [],
         Thu: [],
         Fri: [],
-        Sat: [{ name: 'Math Clinics', teacher: 'Cao', cat: 'Math' }],
+        Sat: [{ name: 'Math Clinics', teacher: 'Dr. Cao', cat: 'Math' }],
         Sun: [],
       },
     },
@@ -145,7 +150,7 @@ export const fallTimetableData: CourseTimetableData = {
             tags: ['StandardTest'],
             format: 'OnlineOnly',
           },
-          { name: 'Physics Bowl', teacher: 'Cao', cat: 'Physics', tags: ['Contest'] },
+          { name: 'Physics Bowl', teacher: 'Dr. Cao', cat: 'Physics', tags: ['Contest'] },
           {
             name: 'AoPS Intro to Algebra',
             teacher: 'Arielle',
@@ -154,7 +159,7 @@ export const fallTimetableData: CourseTimetableData = {
           },
         ],
         Tue: [
-          { name: 'AoPS Prealgebra', teacher: 'Cao', cat: 'Math' },
+          { name: 'AoPS Prealgebra', teacher: 'Dr. Cao', cat: 'Math' },
           {
             name: 'Elementary ELA Beginner',
             teacher: 'Madiha',
@@ -183,23 +188,25 @@ export const fallTimetableData: CourseTimetableData = {
             cat: 'Language',
             format: 'InPersonOnly',
           },
-          { name: 'Algebra 1', teacher: 'Cao', cat: 'Math' },
+          { name: 'Algebra 1', teacher: 'Dr. Cao', cat: 'Math' },
           { name: 'Chess I', teacher: 'Kamran', cat: 'Chess', format: 'InPersonOnly' },
+          { name: 'AMC 12', teacher: 'Dr. G', cat: 'Math', tags: ['Contest'], format: 'OnlineOnly' },
         ],
         Thu: [
-          { name: 'Spark Math P1', teacher: 'Dr.Chen', cat: 'Math', format: 'InPersonOnly' },
-          { name: 'Algebra 2', teacher: 'Cao', cat: 'Math' },
+          { name: 'Spark Math P1', teacher: 'Dr. Chen', cat: 'Math', format: 'InPersonOnly' },
+          { name: 'Algebra 2', teacher: 'Dr. Cao', cat: 'Math' },
           { name: 'AoPS Geometry', teacher: 'Arielle', cat: 'Math', format: 'OnlineOnly' },
+          { name: 'PSAT Math', teacher: 'Dr. G', cat: 'Math', tags: ['StandardTest'], format: 'OnlineOnly' },
         ],
         Fri: [
-          { name: 'Spark Math P2', teacher: 'Dr.Chen', cat: 'Math', format: 'InPersonOnly' },
+          { name: 'Spark Math P2', teacher: 'Dr. Chen', cat: 'Math', format: 'InPersonOnly' },
           {
             name: 'Middle School ELA Beginner',
             teacher: 'Madiha',
             cat: 'Language',
             format: 'InPersonOnly',
           },
-          { name: 'Geometry', teacher: 'Cao', cat: 'Math' },
+          { name: 'Geometry', teacher: 'Dr. Cao', cat: 'Math' },
         ],
         Sat: [],
         Sun: [
@@ -210,7 +217,7 @@ export const fallTimetableData: CourseTimetableData = {
             tags: ['StandardTest'],
             format: 'OnlineOnly',
           },
-          { name: 'AMC 10', teacher: 'Chen', cat: 'Math', tags: ['Contest'] },
+          { name: 'AMC 10', teacher: 'Dr. Chen', cat: 'Math', tags: ['Contest'] },
         ],
       },
     },
@@ -247,7 +254,7 @@ export const fallTimetableData: CourseTimetableData = {
         ],
         Sat: [
           { name: 'Chinese', teacher: 'Yannie', cat: 'Language', format: 'InPersonOnly' },
-          { name: 'Math Kangaroo G3–G4', teacher: 'Cao', cat: 'Math', tags: ['Contest'] },
+          { name: 'Math Kangaroo G3–G4', teacher: 'Dr. Cao', cat: 'Math', tags: ['Contest'] },
         ],
         Sun: [],
       },
@@ -255,27 +262,27 @@ export const fallTimetableData: CourseTimetableData = {
     {
       time: '5:00 PM\n-\n6:30 PM',
       days: {
-        Mon: [{ name: 'AMC 8 Beginner', teacher: 'Cao', cat: 'Math', tags: ['Contest'] }],
-        Tue: [{ name: 'Python 1', teacher: 'Cao', cat: 'ProgrammingAI' }],
-        Wed: [{ name: 'BCA Math', teacher: 'Cao', cat: 'Math' }],
+        Mon: [{ name: 'AMC 8 Beginner', teacher: 'Dr. Cao', cat: 'Math', tags: ['Contest'] }],
+        Tue: [{ name: 'Python 1', teacher: 'Dr. Cao', cat: 'ProgrammingAI' }],
+        Wed: [{ name: 'BCA Math', teacher: 'Dr. Cao', cat: 'Math' }],
         Thu: [
-          { name: 'AMC 8 Advanced', teacher: 'Chen', cat: 'Math', tags: ['Contest'] },
-          { name: 'Spark Math P3', teacher: 'Dr.Chen', cat: 'Math', format: 'InPersonOnly' },
+          { name: 'AMC 8 Advanced', teacher: 'Dr. Chen', cat: 'Math', tags: ['Contest'] },
+          { name: 'Spark Math P3', teacher: 'Dr. Chen', cat: 'Math', format: 'InPersonOnly' },
         ],
         Fri: [
-          { name: 'Math Kangaroo G5–G6', teacher: 'Chen', cat: 'Math', tags: ['Contest'] },
-          { name: 'Math Kangaroo G1–G2', teacher: 'Cao', cat: 'Math', tags: ['Contest'] },
+          { name: 'Math Kangaroo G5–G6', teacher: 'Dr. Chen', cat: 'Math', tags: ['Contest'] },
+          { name: 'Math Kangaroo G1–G2', teacher: 'Dr. Cao', cat: 'Math', tags: ['Contest'] },
         ],
         Sat: [],
         Sun: [
-          { name: 'AP Calculus AB/BC', teacher: 'Cao', cat: 'Math', tags: ['StandardTest'] },
+          { name: 'AP Calculus AB/BC', teacher: 'Dr. Cao', cat: 'Math', tags: ['StandardTest'] },
         ],
       },
     },
     {
       time: '7:00 PM\n-\n8:30 PM',
       days: {
-        Mon: [{ name: 'Honor Physics', teacher: 'Cao', cat: 'Science' }],
+        Mon: [{ name: 'Honor Physics', teacher: 'Dr. Cao', cat: 'Science' }],
         Tue: [],
         Wed: [],
         Thu: [],
@@ -288,15 +295,15 @@ export const fallTimetableData: CourseTimetableData = {
       time: '7:30 PM\n-\n9:00 PM',
       days: {
         Mon: [],
-        Tue: [{ name: 'AP Physics 1', teacher: 'Cao', cat: 'Science', tags: ['StandardTest'] }],
+        Tue: [{ name: 'AP Physics 1', teacher: 'Dr. Cao', cat: 'Science', tags: ['StandardTest'] }],
         Wed: [],
-        Thu: [{ name: 'F=MA Competition', teacher: 'Cao', cat: 'Science', tags: ['Contest'] }],
+        Thu: [{ name: 'F=MA Competition', teacher: 'Dr. Cao', cat: 'Science', tags: ['Contest'] }],
         Fri: [],
         Sat: [],
         Sun: [
           {
             name: 'AP Physics C – Mechanics',
-            teacher: 'Cao',
+            teacher: 'Dr. Cao',
             cat: 'Science',
             tags: ['StandardTest'],
           },
