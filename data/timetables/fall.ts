@@ -263,8 +263,14 @@ export const fallTimetableData: CourseTimetableData = {
       time: '5:00 PM\n-\n6:30 PM',
       days: {
         Mon: [{ name: 'AMC 8 Beginner', teacher: 'Dr. Cao', cat: 'Math', tags: ['Contest'] }],
-        Tue: [{ name: 'Python 1', teacher: 'Dr. Cao', cat: 'ProgrammingAI' }],
-        Wed: [{ name: 'BCA Math', teacher: 'Dr. Cao', cat: 'Math' }],
+        Tue: [
+          { name: 'Python 1', teacher: 'Dr. Cao', cat: 'ProgrammingAI' },
+          { name: 'Chess I', teacher: 'Shahryar', cat: 'Chess', format: 'InPersonOnly' },
+        ],
+        Wed: [
+          { name: 'BCA Math', teacher: 'Dr. Cao', cat: 'Math' },
+          { name: 'Chess II', teacher: 'Shahryar', cat: 'Chess', format: 'InPersonOnly' },
+        ],
         Thu: [
           { name: 'AMC 8 Advanced', teacher: 'Dr. Chen', cat: 'Math', tags: ['Contest'] },
           { name: 'Spark Math P3', teacher: 'Dr. Chen', cat: 'Math', format: 'InPersonOnly' },
