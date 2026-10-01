@@ -126,6 +126,18 @@ export const fallTimetableData: CourseTimetableData = {
       },
     },
     {
+      time: '2:00 PM\n-\n3:30 PM',
+      days: {
+        Mon: [],
+        Tue: [],
+        Wed: [],
+        Thu: [],
+        Fri: [],
+        Sat: [],
+        Sun: [{ name: 'Physics Bowl', teacher: 'Dr. Cao', cat: 'Physics', tags: ['Contest'] }],
+      },
+    },
+    {
       time: '2:45 PM\n-\n4:15 PM',
       days: {
         Mon: [],
@@ -150,7 +162,6 @@ export const fallTimetableData: CourseTimetableData = {
             tags: ['StandardTest'],
             format: 'OnlineOnly',
           },
-          { name: 'Physics Bowl', teacher: 'Dr. Cao', cat: 'Physics', tags: ['Contest'] },
           {
             name: 'AoPS Intro to Algebra',
             teacher: 'Arielle',
@@ -281,7 +292,7 @@ export const fallTimetableData: CourseTimetableData = {
         ],
         Sat: [],
         Sun: [
-          { name: 'AP Calculus AB/BC', teacher: 'Dr. Cao', cat: 'Math', tags: ['StandardTest'] },
+          { name: 'AoPS Geometry', teacher: 'Dr. Cao', cat: 'Math' },
         ],
       },
     },
@@ -302,7 +313,7 @@ export const fallTimetableData: CourseTimetableData = {
       days: {
         Mon: [],
         Tue: [{ name: 'AP Physics 1', teacher: 'Dr. Cao', cat: 'Science', tags: ['StandardTest'] }],
-        Wed: [],
+        Wed: [{ name: 'Physics Bowl', teacher: 'Dr. Cao', cat: 'Physics', tags: ['Contest'] }],
         Thu: [{ name: 'F=MA Competition', teacher: 'Dr. Cao', cat: 'Science', tags: ['Contest'] }],
         Fri: [],
         Sat: [],
